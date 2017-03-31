@@ -1,0 +1,1 @@
+../../../../BaiduMapKit/BaiduMapKit/BaiduMapAPI_Cloud.framework/Headers/BMKCloudSearch.h

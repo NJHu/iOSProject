@@ -27,7 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window.rootViewController = [LMJHomeViewController new];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LMJHomeViewController new]];
     
     
     return YES;

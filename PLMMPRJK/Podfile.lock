@@ -1,0 +1,135 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BaiduMapKit (3.2.1)
+  - CocoaLumberjack (3.1.0):
+    - CocoaLumberjack/Default (= 3.1.0)
+    - CocoaLumberjack/Extensions (= 3.1.0)
+  - CocoaLumberjack/Default (3.1.0)
+  - CocoaLumberjack/Extensions (3.1.0):
+    - CocoaLumberjack/Default
+  - CYLTabBarController (1.10.0)
+  - DACircularProgress (2.3.1)
+  - FLEX (2.4.0)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/SQLCipher (2.5):
+    - FMDB/common
+    - SQLCipher
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - GTSDK (1.5.3)
+  - IQKeyboardManager (4.0.8)
+  - JSONModel (1.7.0)
+  - LBXScan (1.1.1):
+    - ZXingObjC (~> 3.0)
+  - LKDBHelper (2.4.1):
+    - FMDB
+  - M13ProgressSuite (1.2.9)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
+  - MWPhotoBrowser (1.3.1):
+    - DACircularProgress
+    - MBProgressHUD
+    - PSTCollectionView (~> 1.2)
+    - SDWebImage (~> 3.5.4)
+  - PSTCollectionView (1.2.3)
+  - RegexKitLite (4.0)
+  - SDWebImage (3.5.4):
+    - SDWebImage/Core (= 3.5.4)
+  - SDWebImage/Core (3.5.4)
+  - SQLCipher (3.4.1):
+    - SQLCipher/standard (= 3.4.1)
+  - SQLCipher/common (3.4.1)
+  - SQLCipher/standard (3.4.1):
+    - SQLCipher/common
+  - UMengAnalytics (4.2.4)
+  - UMengSocial (5.0)
+  - WebViewJavascriptBridge (6.0.2)
+  - XAspect (1.0.5):
+    - XAspect/Core (= 1.0.5)
+    - XAspect/Macros (= 1.0.5)
+  - XAspect/Core (1.0.5):
+    - XAspect/Macros
+  - XAspect/Macros (1.0.5)
+  - YYText (1.0.7)
+  - ZXingObjC (3.2.1):
+    - ZXingObjC/All (= 3.2.1)
+  - ZXingObjC/All (3.2.1)
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0
+  - AFNetworking
+  - BaiduMapKit
+  - CocoaLumberjack
+  - CYLTabBarController
+  - FLEX (~> 2.0)
+  - FMDB/common
+  - FMDB/SQLCipher
+  - GTSDK
+  - IQKeyboardManager
+  - JSONModel
+  - LBXScan
+  - LKDBHelper
+  - M13ProgressSuite
+  - Masonry
+  - MBProgressHUD
+  - MJExtension
+  - MWPhotoBrowser
+  - RegexKitLite
+  - SDWebImage
+  - UMengAnalytics
+  - UMengSocial
+  - WebViewJavascriptBridge
+  - XAspect
+  - YYText
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BaiduMapKit: 9c748785aa3dddfc41dcb70c14b21ce32f680930
+  CocoaLumberjack: 8311463ddf9ee86a06ef92a071dd656c89244500
+  CYLTabBarController: 2de9a4c26f50d33574398becf8e7b0aaed794240
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  GTSDK: 1b55fc5b0f29c7ea9061946f07aeee49ef70c90e
+  IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
+  LKDBHelper: 531581fa6a7d0f14236cc028ce0d277bca73436a
+  M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MWPhotoBrowser: 21c403da4f44043e0cd2cd27a6fd30a7f4c431c1
+  PSTCollectionView: 6749df92885353521f55279a7ce2b293762e2be4
+  RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
+  SDWebImage: 32ca144928625f9a04d561115028cf6db3aa7b63
+  SQLCipher: 43d12c0eb9c57fb438749618fc3ce0065509a559
+  UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  UMengSocial: 48b67179c492a8cf7803fbb0438b8f55432e2fc1
+  WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
+  XAspect: db50bf487f92dbb8557a7a5365556966c8493af8
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
+
+PODFILE CHECKSUM: 497c1d8200c28ba0cb5d672ff0cbba1cebcf2100
+
+COCOAPODS: 1.0.1

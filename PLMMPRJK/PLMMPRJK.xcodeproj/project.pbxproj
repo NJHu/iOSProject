@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
+		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
+		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
 		E7D0E05F1E8B9DCB001E4585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05D1E8B9DCB001E4585 /* LaunchScreen.storyboard */; };
@@ -15,7 +18,6 @@
 		E7D0E0881E8B9F41001E4585 /* LMJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0861E8B9F41001E4585 /* LMJAppDelegate.m */; };
 		E7D0E0891E8B9F41001E4585 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0871E8B9F41001E4585 /* main.m */; };
 		E7D0E08D1E8B9F7D001E4585 /* LMJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E08C1E8B9F7D001E4585 /* LMJBaseViewController.m */; };
-		E7D0E0901E8B9F92001E4585 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E08F1E8B9F92001E4585 /* LMJHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23E10B7ADDCDC21B761F123C /* Pods-PLMMPRJK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLMMPRJK.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK.release.xcconfig"; sourceTree = "<group>"; };
+		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
+		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
+		E78212151E8CD75F00258845 /* LMJMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJMeViewController.h; sourceTree = "<group>"; };
+		E78212161E8CD75F00258845 /* LMJMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJMeViewController.m; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D0E0591E8B9DCB001E4585 /* PLMMPRJK.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PLMMPRJK.xcdatamodel; sourceTree = "<group>"; };
 		E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,8 +60,7 @@
 		E7D0E0871E8B9F41001E4585 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E7D0E08B1E8B9F7D001E4585 /* LMJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBaseViewController.h; sourceTree = "<group>"; };
 		E7D0E08C1E8B9F7D001E4585 /* LMJBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBaseViewController.m; sourceTree = "<group>"; };
-		E7D0E08E1E8B9F92001E4585 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
-		E7D0E08F1E8B9F92001E4585 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
+		F3EB25B4106095BF9996A7E1 /* Pods-PLMMPRJK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLMMPRJK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +89,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79F866E3BAD80F021129F8EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB25B4106095BF9996A7E1 /* Pods-PLMMPRJK.debug.xcconfig */,
+				23E10B7ADDCDC21B761F123C /* Pods-PLMMPRJK.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE243CE87CE32DA5EDBEB4B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E78212071E8BB5ED00258845 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E78212081E8BB5ED00258845 /* LMJHomeViewController.h */,
+				E78212091E8BB5ED00258845 /* LMJHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E782120A1E8BB5ED00258845 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E782120B1E8BB5ED00258845 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E782120C1E8BB5ED00258845 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E782120D1E8BB5ED00258845 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E782120F1E8CD75400258845 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				E78212101E8CD75400258845 /* Controller */,
+				E78212111E8CD75400258845 /* Model */,
+				E78212121E8CD75400258845 /* Other */,
+				E78212131E8CD75400258845 /* Service */,
+				E78212141E8CD75400258845 /* View */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		E78212101E8CD75400258845 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E78212151E8CD75F00258845 /* LMJMeViewController.h */,
+				E78212161E8CD75F00258845 /* LMJMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E78212111E8CD75400258845 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E78212121E8CD75400258845 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E78212131E8CD75400258845 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E78212141E8CD75400258845 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E7D0E0401E8B9DCA001E4585 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +199,8 @@
 				E7D0E0681E8B9DCB001E4585 /* PLMMPRJKTests */,
 				E7D0E0731E8B9DCB001E4585 /* PLMMPRJKUITests */,
 				E7D0E04A1E8B9DCA001E4585 /* Products */,
+				79F866E3BAD80F021129F8EF /* Pods */,
+				AE243CE87CE32DA5EDBEB4B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +247,7 @@
 		E7D0E0821E8B9F41001E4585 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E782120F1E8CD75400258845 /* Me */,
 				E7D0E08A1E8B9F6D001E4585 /* LMJBase */,
 				E7D0E0831E8B9F41001E4585 /* Home */,
 				E7D0E0841E8B9F41001E4585 /* System */,
@@ -144,8 +258,11 @@
 		E7D0E0831E8B9F41001E4585 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E7D0E08E1E8B9F92001E4585 /* LMJHomeViewController.h */,
-				E7D0E08F1E8B9F92001E4585 /* LMJHomeViewController.m */,
+				E78212071E8BB5ED00258845 /* Controller */,
+				E782120A1E8BB5ED00258845 /* Model */,
+				E782120B1E8BB5ED00258845 /* Other */,
+				E782120C1E8BB5ED00258845 /* Service */,
+				E782120D1E8BB5ED00258845 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -176,9 +293,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7D0E0791E8B9DCB001E4585 /* Build configuration list for PBXNativeTarget "PLMMPRJK" */;
 			buildPhases = (
+				12E828A68402C82C0D24C514 /* [CP] Check Pods Manifest.lock */,
 				E7D0E0451E8B9DCA001E4585 /* Sources */,
 				E7D0E0461E8B9DCA001E4585 /* Frameworks */,
 				E7D0E0471E8B9DCA001E4585 /* Resources */,
+				2F5200203228B7DEE2AE1850 /* [CP] Embed Pods Frameworks */,
+				0A44BCFAE0EB613CC460914E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,6 +420,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A44BCFAE0EB613CC460914E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		12E828A68402C82C0D24C514 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2F5200203228B7DEE2AE1850 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7D0E0451E8B9DCA001E4585 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -307,8 +475,9 @@
 			files = (
 				E7D0E0881E8B9F41001E4585 /* LMJAppDelegate.m in Sources */,
 				E7D0E0891E8B9F41001E4585 /* main.m in Sources */,
+				E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */,
 				E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */,
-				E7D0E0901E8B9F92001E4585 /* LMJHomeViewController.m in Sources */,
+				E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */,
 				E7D0E08D1E8B9F7D001E4585 /* LMJBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +615,7 @@
 		};
 		E7D0E07A1E8B9DCB001E4585 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3EB25B4106095BF9996A7E1 /* Pods-PLMMPRJK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EH8D228RS6;
@@ -459,6 +629,7 @@
 		};
 		E7D0E07B1E8B9DCB001E4585 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23E10B7ADDCDC21B761F123C /* Pods-PLMMPRJK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EH8D228RS6;

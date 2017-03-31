@@ -1,0 +1,1 @@
+../../../YYText/YYText/Component/YYTextEffectWindow.h

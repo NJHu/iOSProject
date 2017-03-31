@@ -1,0 +1,1 @@
+../../../../BaiduMapKit/BaiduMapKit/BaiduMapAPI_Utils.framework/Headers/BMKFavPoiInfo.h
