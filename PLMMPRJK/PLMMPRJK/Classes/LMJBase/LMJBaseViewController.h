@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImage+Color.h"
 
 @protocol  LLMJBaseViewControllerDataSource<NSObject>
 

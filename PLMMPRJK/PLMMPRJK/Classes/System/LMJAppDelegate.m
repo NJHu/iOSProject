@@ -7,6 +7,7 @@
 //
 
 #import "LMJAppDelegate.h"
+#import "LMJNavigationController.h"
 #import "LMJHomeViewController.h"
 
 @interface LMJAppDelegate ()
@@ -27,7 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LMJHomeViewController new]];
+    self.window.rootViewController = [[LMJNavigationController alloc] initWithRootViewController:[LMJHomeViewController new]];
     
     
     return YES;

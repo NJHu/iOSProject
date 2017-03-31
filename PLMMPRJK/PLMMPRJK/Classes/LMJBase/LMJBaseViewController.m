@@ -8,17 +8,17 @@
 
 #import "LMJBaseViewController.h"
 #import "LMJNavigationBar.h"
-#import "UIImage+Color.h"
+
 
 #define kStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 
 #define kSmallTouchSize 44.0
 
-#define kLeftMargin 20.0
+#define kLeftMargin 0.0
 
-#define kRightMargin 20.0
+#define kRightMargin 0.0
 
-#define kNavBarCenterY ((self.lmj_navgationBar.frame.size.height - kStatusBarHeight) * 0.5 + kStatusBarHeight)
+#define kNavBarCenterY(H) ((self.lmj_navgationBar.frame.size.height - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
 
 @interface LMJBaseViewController ()
 
@@ -33,6 +33,7 @@
     
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     self.lmj_prefersNavigationBarHidden = NO;
     
@@ -100,7 +101,7 @@
         
         UIView *titleView = [self set_titleView];
         
-        titleView.center = CGPointMake(self.lmj_navgationBar.frame.size.width * 0.5, kNavBarCenterY);
+        titleView.center = CGPointMake(self.lmj_navgationBar.frame.size.width * 0.5, kNavBarCenterY(titleView.frame.size.height));
         
         [self.lmj_navgationBar addSubview:titleView];
         
@@ -128,7 +129,7 @@
         
         UIView *leftView = [self set_leftView];
         
-        leftView.frame = CGRectMake(kLeftMargin, kNavBarCenterY, leftView.frame.size.width, leftView.frame.size.height);
+        leftView.frame = CGRectMake(kLeftMargin, kNavBarCenterY(leftView.frame.size.height), leftView.frame.size.width, leftView.frame.size.height);
         
         [self.lmj_navgationBar addSubview:leftView];
         
@@ -139,7 +140,7 @@
         
         UIView *rightView = [self set_rightView];
         
-        rightView.frame = CGRectMake(self.lmj_navgationBar.frame.size.width - kRightMargin - rightView.frame.size.width, kNavBarCenterY, rightView.frame.size.width, rightView.frame.size.height);
+        rightView.frame = CGRectMake(self.lmj_navgationBar.frame.size.width - kRightMargin - rightView.frame.size.width, kNavBarCenterY(rightView.frame.size.height), rightView.frame.size.width, rightView.frame.size.height);
         
         [self.lmj_navgationBar addSubview:rightView];
         
@@ -155,7 +156,7 @@
         
         UIImage *image = [[self set_leftBarButtonItemWithImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(kLeftMargin, kNavBarCenterY, kSmallTouchSize, kSmallTouchSize)];
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(kLeftMargin, kNavBarCenterY(kSmallTouchSize), kSmallTouchSize, kSmallTouchSize)];
         
         [btn addTarget:self action:@selector(left_click:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -172,7 +173,7 @@
         
         UIImage *image = [[self set_rightBarButtonItemWithImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(self.lmj_navgationBar.frame.size.width - kRightMargin - kSmallTouchSize, kNavBarCenterY, kSmallTouchSize, kSmallTouchSize)];
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(self.lmj_navgationBar.frame.size.width - kRightMargin - kSmallTouchSize, kNavBarCenterY(kSmallTouchSize), kSmallTouchSize, kSmallTouchSize)];
         
         [btn addTarget:self action:@selector(left_click:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -218,7 +219,7 @@
         return;
     }
     
-    UILabel *navTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.lmj_navgationBar.frame.size.width * 0.5, kNavBarCenterY, 120, 44)];
+    UILabel *navTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake((self.lmj_navgationBar.frame.size.width - 120) * 0.5, kNavBarCenterY(44), 120, 44)];
     
     navTitleLabel.numberOfLines=0;//可能出现多行的标题
     [navTitleLabel setAttributedText:title];
@@ -254,7 +255,7 @@
         
         [leftbutton addTarget:self action:@selector(left_click:) forControlEvents:UIControlEventTouchUpInside];
         
-        leftbutton.frame = CGRectMake(kLeftMargin, kNavBarCenterY, leftbutton.frame.size.width, leftbutton.frame.size.height);
+        leftbutton.frame = CGRectMake(kLeftMargin, kNavBarCenterY(leftbutton.frame.size.height), leftbutton.frame.size.width, leftbutton.frame.size.height);
         
         [self.lmj_navgationBar addSubview:leftbutton];
     }
@@ -270,7 +271,7 @@
         
         [right_button addTarget:self action:@selector(right_click:) forControlEvents:UIControlEventTouchUpInside];
         
-        right_button.frame = CGRectMake(self.lmj_navgationBar.frame.size.width - kRightMargin - right_button.frame.size.width, kNavBarCenterY, right_button.frame.size.width, right_button.frame.size.height);
+        right_button.frame = CGRectMake(self.lmj_navgationBar.frame.size.width - kRightMargin - right_button.frame.size.width, kNavBarCenterY(right_button.frame.size.height), right_button.frame.size.width, right_button.frame.size.height);
         
         [self.lmj_navgationBar addSubview:right_button];
         
