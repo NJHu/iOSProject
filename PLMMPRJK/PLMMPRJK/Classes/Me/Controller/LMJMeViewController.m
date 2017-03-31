@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
+
 #pragma mark - setNav
 
 - (UIColor *)set_colorBackground
@@ -62,5 +63,6 @@
     
     return btn;
 }
+
 
 @end
