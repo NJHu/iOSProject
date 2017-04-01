@@ -4,62 +4,62 @@ platform :ios, '8.1'
 target 'PLMMPRJK' do
 
 #网络请求
-pod "AFNetworking"
+#pod "AFNetworking"
 
 #字典转模型
-pod 'MJExtension'
+#pod 'MJExtension'
 
-pod 'SDWebImage'
+#pod 'SDWebImage'
 
-pod 'JSONModel'
+#pod 'JSONModel'
 
 #用于适配
-pod 'Masonry'
+#pod 'Masonry'
 #友盟统计
-pod 'UMengAnalytics'
+#pod 'UMengAnalytics'
 
-pod 'FMDB/common'
+#pod 'FMDB/common'
 
-pod 'FMDB/SQLCipher'
+#pod 'FMDB/SQLCipher'
 
-pod 'CocoaLumberjack'
+#pod 'CocoaLumberjack'
 
-pod 'BaiduMapKit' #百度地图SDK
-
-
-pod 'GTSDK'  #个推SDK
-
-pod 'UMengSocial'  #友盟社会化分享及第三方登录
-
-pod 'FLEX', '~> 2.0', :configurations => ['Debug']
-
-pod 'ActionSheetPicker-3.0'
+#pod 'BaiduMapKit' #百度地图SDK
 
 
+##pod 'GTSDK'  #个推SDK
 
-pod 'XAspect'
+#pod 'UMengSocial'  #友盟社会化分享及第三方登录
 
-pod 'CYLTabBarController'
+#pod 'FLEX', '~> 2.0', :configurations => ['Debug']
 
-pod 'LKDBHelper'
+#pod 'ActionSheetPicker-3.0'
 
-pod 'RegexKitLite'
 
-pod 'IQKeyboardManager' #兼容IOS7
 
-pod 'LBXScan'
+#pod 'XAspect'
 
-pod 'MBProgressHUD'
+#pod 'CYLTabBarController'
 
-pod 'MWPhotoBrowser'
+#pod 'LKDBHelper'
 
-pod 'M13ProgressSuite'
+#pod 'RegexKitLite'
 
-pod 'WebViewJavascriptBridge'
+#pod 'IQKeyboardManager' #兼容IOS7
 
-pod 'YYText'
+#pod 'LBXScan'
 
-#pod 'MLeaksFinder'
+#pod 'MBProgressHUD'
+
+#pod 'MWPhotoBrowser'
+
+#pod 'M13ProgressSuite'
+
+#pod 'WebViewJavascriptBridge'
+
+#pod 'YYText'
+
+##pod 'MLeaksFinder'
 #可以把它放在MobileProject_Local的target中 这样就不会影响到产品环境
 
 

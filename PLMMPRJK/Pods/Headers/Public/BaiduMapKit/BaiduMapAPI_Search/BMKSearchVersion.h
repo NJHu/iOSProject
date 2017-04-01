@@ -1,1 +1,0 @@
-../../../../BaiduMapKit/BaiduMapKit/BaiduMapAPI_Search.framework/Headers/BMKSearchVersion.h

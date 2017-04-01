@@ -1,1 +1,0 @@
-../../../../BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Headers/BMKMapComponent.h

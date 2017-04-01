@@ -1,1 +1,0 @@
-../../../GTSDK/GeTuiExtSdk.h

@@ -1,1 +1,0 @@
-../../../LBXScan/LBXScan/ZXingWrapper.h

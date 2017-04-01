@@ -36,7 +36,7 @@
 
 - (UIColor *)set_colorBackground
 {
-    return [UIColor greenColor];
+    return [UIColor whiteColor];
 }
 
 - (void)left_button_event:(UIButton *)sender
@@ -56,7 +56,7 @@
 
 - (NSMutableAttributedString *)setTitle
 {
-    return [[NSMutableAttributedString alloc] initWithString:@"主页控制器" attributes:nil];
+    return [[NSMutableAttributedString alloc] initWithString:@"主页控制器主页控制器主页控制器" attributes:nil];
 }
 
 - (UIButton *)set_leftButton
@@ -79,7 +79,13 @@
 }
 
 
+
 #pragma mark 自定义代码
+
+- (BOOL)hideNavigationBar_BottomLine
+{
+    return YES;
+}
 
 //-(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 //{
