@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
 //
 
-#import "UIWebView+Load.h"
+#import "UIWebView+load.h"
 
 @implementation UIWebView (Load)
 /**

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 iosdev. All rights reserved.
 //
 
-#import "UIButton+countDown.h"
+#import "UIButton+CountDown.h"
 
 @implementation UIButton (countDown)
 -(void)startTime:(NSInteger )timeout title:(NSString *)tittle waitTittle:(NSString *)waitTittle{

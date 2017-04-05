@@ -1,0 +1,1 @@
+../../../MWPhotoBrowser/Pod/Classes/MWPhoto.h

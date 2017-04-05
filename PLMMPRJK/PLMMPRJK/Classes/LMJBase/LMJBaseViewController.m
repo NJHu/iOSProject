@@ -332,6 +332,18 @@
 
 }
 
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+}
+
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    [self.view bringSubviewToFront:self.lmj_navgationBar];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {

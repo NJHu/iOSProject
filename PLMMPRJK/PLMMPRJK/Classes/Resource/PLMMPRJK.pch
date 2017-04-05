@@ -1,0 +1,26 @@
+//
+//  PLMMPRJK.pch
+//  PLMMPRJK
+//
+//  Created by HuXuPeng on 2017/4/5.
+//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//
+
+#ifndef PLMMPRJK_pch
+#define PLMMPRJK_pch
+
+
+
+//引入Masonry两个宏 便于写布局代码
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+
+#import <YYKit.h>
+#import <AFNetworking/AFNetworking.h>
+#import <Masonry/Masonry.h>
+
+
+
+
+
+#endif /* PLMMPRJK_pch */
