@@ -67,17 +67,7 @@
         [self.lmj_navgationBar setBackgroundImage:bgimage forBarMetrics:UIBarMetricsDefault];
     }
     
-    
-    // 控制导航条的线
-    UIImageView* blackLineImageView = [self findHairlineImageViewUnder:self.lmj_navgationBar];
-    //默认显示黑线
-    blackLineImageView.hidden = NO;
-    if ([self respondsToSelector:@selector(hideNavigationBar_BottomLine)]) {
-        if ([self hideNavigationBar_BottomLine]) {
-            //隐藏黑线
-            blackLineImageView.hidden = YES;
-        }
-    }
+
     
 }
 
@@ -204,6 +194,9 @@
         
         [self.view addSubview:navigationBar];
         
+        
+        [navigationBar layoutIfNeeded];
+        
         _lmj_navgationBar = navigationBar;
     }
     return _lmj_navgationBar;
@@ -300,21 +293,7 @@
 
 
 #pragma mark - FullNavBar
-//找查到Nav底部的黑线
-- (UIImageView *)findHairlineImageViewUnder:(UIView *)view
-{
-    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0)
-    {
-        return (UIImageView *)view;
-    }
-    for (UIView *subview in view.subviews) {
-        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
-        if (imageView) {
-            return imageView;
-        }
-    }
-    return nil;
-}
+
 
 -(void)changeNavigationBarTranslationY:(CGFloat)translationY
 {
@@ -344,12 +323,33 @@
 }
 
 
+#pragma mark - 生命周期
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
 
-    self.lmj_navgationBar.hidden = self.lmj_prefersNavigationBarHidden;
 }
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // 控制导航条的线
+    //默认显示黑线
+    if ([self respondsToSelector:@selector(hideNavigationBar_BottomLine)]) {
+        if ([self hideNavigationBar_BottomLine]) {
+            //隐藏黑线
+            self.lmj_navgationBar.bottomBlackLineView.hidden = YES;
+        }
+    }
+    
+    
+    
+    
+}
+
 
 @end
 
