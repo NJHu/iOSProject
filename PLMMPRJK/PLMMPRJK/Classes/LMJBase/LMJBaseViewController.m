@@ -219,6 +219,7 @@
     navTitleLabel.textAlignment = NSTextAlignmentCenter;
     navTitleLabel.backgroundColor = [UIColor clearColor];
     navTitleLabel.userInteractionEnabled = YES;
+    navTitleLabel.lineBreakMode = NSLineBreakByClipping;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(titleClick:)];
     [navTitleLabel addGestureRecognizer:tap];

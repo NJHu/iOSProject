@@ -82,11 +82,6 @@
 
 #pragma mark 自定义代码
 
-- (BOOL)hideNavigationBar_BottomLine
-{
-    return YES;
-}
-
 //-(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 //{
 //    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];

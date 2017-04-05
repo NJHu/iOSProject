@@ -33,8 +33,8 @@
 @protocol LLMJBaseViewControllerDelegate <NSObject>
 
 @optional
--(void)left_button_event:(UIButton*)sender;
--(void)right_button_event:(UIButton*)sender;
+-(void)left_button_event:(UIButton *)sender;
+-(void)right_button_event:(UIButton *)sender;
 -(void)title_click_event:(UILabel *)sender;
 @end
 
