@@ -29,7 +29,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.navigationController pushViewController:[LMJMeViewController new] animated:YES];
+    
 }
 
 
@@ -47,6 +47,8 @@
 
 - (void)right_button_event:(UIButton *)sender
 {
+    
+    [self.navigationController pushViewController:[LMJMeViewController new] animated:YES];
     NSLog(@"%s", __func__);
 }
 
