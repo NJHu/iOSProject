@@ -14,11 +14,12 @@
 
 @implementation LMJMeViewController
 
+#pragma mark viewController生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 
-#pragma mark - setNav
+#pragma mark 重写BaseViewController设置内容
 
 - (UIColor *)set_colorBackground
 {

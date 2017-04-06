@@ -7,10 +7,8 @@
 //  https://github.com/andreamazz/UIView-Shake
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-typedef NS_ENUM(NSInteger, ShakeDirection) {
-    ShakeDirectionHorizontal = 0,
-    ShakeDirectionVertical
-};
+
+
 
 @interface UIView (Shake)
 

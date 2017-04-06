@@ -15,6 +15,7 @@
 
 @implementation LMJHomeViewController
 
+#pragma mark viewController生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,7 +33,7 @@
 }
 
 
-#pragma mark - setNav
+#pragma mark 重写BaseViewController设置内容
 
 - (UIColor *)set_colorBackground
 {
@@ -82,16 +83,16 @@
 
 #pragma mark 自定义代码
 
-//-(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-//{
-//    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
-//    
-//    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
-//    
-//    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(18) range:NSMakeRange(0, title.length)];
-//    
-//    return title;
-//}
+-(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
+{
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
+    
+    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
+    
+    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(18) range:NSMakeRange(0, title.length)];
+    
+    return title;
+}
 
 
 @end

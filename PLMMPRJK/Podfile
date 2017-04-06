@@ -36,5 +36,8 @@ pod 'MWPhotoBrowser'
 pod 'YYKit'
 
 
+pod 'CocoaLumberjack'
+
+
 
 end

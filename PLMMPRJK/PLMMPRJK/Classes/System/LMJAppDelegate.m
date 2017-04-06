@@ -7,8 +7,7 @@
 //
 
 #import "LMJAppDelegate.h"
-#import "LMJNavigationController.h"
-#import "LMJHomeViewController.h"
+#import "LMJTabBarController.h"
 
 @interface LMJAppDelegate ()
 
@@ -28,7 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window.rootViewController = [[LMJNavigationController alloc] initWithRootViewController:[LMJHomeViewController new]];
+    self.window.rootViewController = [[LMJTabBarController alloc] init];
     
     
     return YES;

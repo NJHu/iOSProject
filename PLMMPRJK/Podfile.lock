@@ -16,6 +16,12 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - BaiduMapKit (3.2.1)
+  - CocoaLumberjack (3.1.0):
+    - CocoaLumberjack/Default (= 3.1.0)
+    - CocoaLumberjack/Extensions (= 3.1.0)
+  - CocoaLumberjack/Default (3.1.0)
+  - CocoaLumberjack/Extensions (3.1.0):
+    - CocoaLumberjack/Default
   - DACircularProgress (2.3.1)
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
@@ -37,6 +43,7 @@ DEPENDENCIES:
   - ActionSheetPicker-3.0
   - AFNetworking
   - BaiduMapKit
+  - CocoaLumberjack
   - Masonry
   - MBProgressHUD
   - MJExtension
@@ -50,6 +57,7 @@ SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BaiduMapKit: 9c748785aa3dddfc41dcb70c14b21ce32f680930
+  CocoaLumberjack: 8311463ddf9ee86a06ef92a071dd656c89244500
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
@@ -60,6 +68,6 @@ SPEC CHECKSUMS:
   UMengSocial: 48b67179c492a8cf7803fbb0438b8f55432e2fc1
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: '0969106ad25e075b34f9abb07f0fb395ab538ba5'
+PODFILE CHECKSUM: cf418fc88cf08f7c382c7a9c655c5cfdf8fb06c7
 
 COCOAPODS: 1.2.0

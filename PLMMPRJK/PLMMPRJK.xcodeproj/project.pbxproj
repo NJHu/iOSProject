@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5862EE061E96204000B809F8 /* LMJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE051E96204000B809F8 /* LMJMessageViewController.m */; };
+		5862EE091E96206100B809F8 /* LMJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE081E96206100B809F8 /* LMJTabBarController.m */; };
+		5862EE0C1E96237100B809F8 /* LMJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE0B1E96237100B809F8 /* LMJTabBar.m */; };
+		5862EE1B1E96273500B809F8 /* LMJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE1A1E96273500B809F8 /* LMJNewViewController.m */; };
+		5862EE471E96389600B809F8 /* LMJGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE461E96389600B809F8 /* LMJGuideManager.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
 		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
@@ -168,6 +173,24 @@
 /* Begin PBXFileReference section */
 		23E10B7ADDCDC21B761F123C /* Pods-PLMMPRJK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLMMPRJK.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK.release.xcconfig"; sourceTree = "<group>"; };
 		5862EDB81E949EA900B809F8 /* PLMMPRJK.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMMPRJK.pch; sourceTree = "<group>"; };
+		5862EDF81E95D77300B809F8 /* LMJMacos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJMacos.h; sourceTree = "<group>"; };
+		5862EDF91E95D78300B809F8 /* LMJThirdMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJThirdMacros.h; sourceTree = "<group>"; };
+		5862EDFA1E95D79000B809F8 /* LMJTargetConfigMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJTargetConfigMacros.h; sourceTree = "<group>"; };
+		5862EDFB1E95D7B500B809F8 /* LMJConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJConstants.h; sourceTree = "<group>"; };
+		5862EDFC1E95D7C100B809F8 /* LMJNotificationContants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJNotificationContants.h; sourceTree = "<group>"; };
+		5862EDFD1E95D7D200B809F8 /* LMJTargetConfigContants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJTargetConfigContants.h; sourceTree = "<group>"; };
+		5862EE041E96204000B809F8 /* LMJMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJMessageViewController.h; sourceTree = "<group>"; };
+		5862EE051E96204000B809F8 /* LMJMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJMessageViewController.m; sourceTree = "<group>"; };
+		5862EE071E96206100B809F8 /* LMJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTabBarController.h; sourceTree = "<group>"; };
+		5862EE081E96206100B809F8 /* LMJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTabBarController.m; sourceTree = "<group>"; };
+		5862EE0A1E96237100B809F8 /* LMJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTabBar.h; sourceTree = "<group>"; };
+		5862EE0B1E96237100B809F8 /* LMJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTabBar.m; sourceTree = "<group>"; };
+		5862EE191E96273500B809F8 /* LMJNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNewViewController.h; sourceTree = "<group>"; };
+		5862EE1A1E96273500B809F8 /* LMJNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNewViewController.m; sourceTree = "<group>"; };
+		5862EE431E9632D700B809F8 /* LMJUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJUIKit.h; sourceTree = "<group>"; };
+		5862EE451E96389600B809F8 /* LMJGuideManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJGuideManager.h; sourceTree = "<group>"; };
+		5862EE461E96389600B809F8 /* LMJGuideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJGuideManager.m; sourceTree = "<group>"; };
+		5862EE481E9639D400B809F8 /* LMJTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJTools.h; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
 		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
@@ -478,8 +501,122 @@
 			isa = PBXGroup;
 			children = (
 				5862EDB81E949EA900B809F8 /* PLMMPRJK.pch */,
+				5862EDF81E95D77300B809F8 /* LMJMacos.h */,
+				5862EDF91E95D78300B809F8 /* LMJThirdMacros.h */,
+				5862EDFA1E95D79000B809F8 /* LMJTargetConfigMacros.h */,
+				5862EDFB1E95D7B500B809F8 /* LMJConstants.h */,
+				5862EDFC1E95D7C100B809F8 /* LMJNotificationContants.h */,
+				5862EDFD1E95D7D200B809F8 /* LMJTargetConfigContants.h */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		5862EDFE1E96202800B809F8 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				5862EDFF1E96202800B809F8 /* Controller */,
+				5862EE001E96202800B809F8 /* Model */,
+				5862EE011E96202800B809F8 /* Other */,
+				5862EE021E96202800B809F8 /* Service */,
+				5862EE031E96202800B809F8 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		5862EDFF1E96202800B809F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5862EE041E96204000B809F8 /* LMJMessageViewController.h */,
+				5862EE051E96204000B809F8 /* LMJMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5862EE001E96202800B809F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5862EE011E96202800B809F8 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		5862EE021E96202800B809F8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5862EE031E96202800B809F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5862EE131E9626EF00B809F8 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				5862EE141E9626EF00B809F8 /* Controller */,
+				5862EE151E9626EF00B809F8 /* Model */,
+				5862EE161E9626EF00B809F8 /* Other */,
+				5862EE171E9626EF00B809F8 /* Service */,
+				5862EE181E9626EF00B809F8 /* View */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
+		5862EE141E9626EF00B809F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5862EE191E96273500B809F8 /* LMJNewViewController.h */,
+				5862EE1A1E96273500B809F8 /* LMJNewViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5862EE151E9626EF00B809F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5862EE161E9626EF00B809F8 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		5862EE171E9626EF00B809F8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5862EE181E9626EF00B809F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5862EE441E96387900B809F8 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5862EE451E96389600B809F8 /* LMJGuideManager.h */,
+				5862EE461E96389600B809F8 /* LMJGuideManager.m */,
+				5862EE481E9639D400B809F8 /* LMJTools.h */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		79F866E3BAD80F021129F8EF /* Pods */ = {
@@ -596,6 +733,7 @@
 		E78215FF1E8EAE9000258845 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				5862EE431E9632D700B809F8 /* LMJUIKit.h */,
 				E78216001E8EAE9000258845 /* UIAlertView */,
 				E78216031E8EAE9000258845 /* UIApplication */,
 				E782160C1E8EAE9000258845 /* UIBarButtonItem */,
@@ -1147,6 +1285,9 @@
 		E7D0E0821E8B9F41001E4585 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5862EE441E96387900B809F8 /* Tool */,
+				5862EE131E9626EF00B809F8 /* New */,
+				5862EDFE1E96202800B809F8 /* Message */,
 				5862EDB71E949E6E00B809F8 /* Resource */,
 				E78215FE1E8EAE9000258845 /* Expend */,
 				E782120F1E8CD75400258845 /* Me */,
@@ -1188,6 +1329,10 @@
 				E78212191E8E76D400258845 /* LMJNavigationController.m */,
 				E782121B1E8E77C300258845 /* LMJNavigationBar.h */,
 				E782121C1E8E77C300258845 /* LMJNavigationBar.m */,
+				5862EE071E96206100B809F8 /* LMJTabBarController.h */,
+				5862EE081E96206100B809F8 /* LMJTabBarController.m */,
+				5862EE0A1E96237100B809F8 /* LMJTabBar.h */,
+				5862EE0B1E96237100B809F8 /* LMJTabBar.m */,
 			);
 			path = LMJBase;
 			sourceTree = "<group>";
@@ -1390,6 +1535,7 @@
 				E78217231E8EAE9000258845 /* UIBezierPath+SVG.m in Sources */,
 				E78217581E8EAE9000258845 /* UINavigationItem+Loading.m in Sources */,
 				E78217291E8EAE9000258845 /* UIButton+MiddleAligning.m in Sources */,
+				5862EE471E96389600B809F8 /* LMJGuideManager.m in Sources */,
 				E782175D1E8EAE9000258845 /* UIResponder+FirstResponder.m in Sources */,
 				E78217601E8EAE9000258845 /* UIScrollView+Addition.m in Sources */,
 				E78217301E8EAE9000258845 /* UIColor+Web.m in Sources */,
@@ -1456,11 +1602,14 @@
 				E78217771E8EAE9000258845 /* UIView+CustomBorder.m in Sources */,
 				E782176B1E8EAE9000258845 /* UITableViewCell+NIB.m in Sources */,
 				E78217961E8EAE9000258845 /* WebView+Debug.m in Sources */,
+				5862EE1B1E96273500B809F8 /* LMJNewViewController.m in Sources */,
 				E78217911E8EAE9000258845 /* UIWebView+JS.m in Sources */,
 				E78217341E8EAE9000258845 /* UIDevice+PasscodeStatus.m in Sources */,
 				E78217871E8EAE9000258845 /* UIViewController+BackButtonTouched.m in Sources */,
 				E782173C1E8EAE9000258845 /* UIImage+Capture.m in Sources */,
+				5862EE061E96204000B809F8 /* LMJMessageViewController.m in Sources */,
 				E78217891E8EAE9000258845 /* UIViewController+DDPopUpViewController.m in Sources */,
+				5862EE091E96206100B809F8 /* LMJTabBarController.m in Sources */,
 				E78217941E8EAE9000258845 /* UIWebView+Style.m in Sources */,
 				E782171F1E8EAE9000258845 /* UIBarButtonItem+Action.m in Sources */,
 				E782174B1E8EAE9000258845 /* UIImageView+GeometryConversion.m in Sources */,
@@ -1471,6 +1620,7 @@
 				E78217551E8EAE9000258845 /* UINavigationController+JZExtension.m in Sources */,
 				E78217521E8EAE9000258845 /* UINavigationBar+Awesome.m in Sources */,
 				E782172D1E8EAE9000258845 /* UIColor+HEX.m in Sources */,
+				5862EE0C1E96237100B809F8 /* LMJTabBar.m in Sources */,
 				E78217621E8EAE9000258845 /* UIScrollView+EmptyDataSet.m in Sources */,
 				E782121D1E8E77C300258845 /* LMJNavigationBar.m in Sources */,
 				E78217221E8EAE9000258845 /* UIBezierPath+LxThroughPointsBezier.m in Sources */,
