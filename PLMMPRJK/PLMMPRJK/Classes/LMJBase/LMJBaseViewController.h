@@ -43,6 +43,7 @@
 
 -(void)changeNavigationBarTranslationY:(CGFloat)translationY;
 -(void)set_Title:(NSMutableAttributedString *)title;
+-(void)changeNavigationBarHeight:(CGFloat)height;
 
 /** 默认不隐藏NO */
 @property (assign, nonatomic) BOOL lmj_prefersNavigationBarHidden;

@@ -27,7 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window.rootViewController = [[LMJTabBarController alloc] init];
+    [LMJGuideManager sharedManager].keyWindow = self.window;
     
     
     return YES;

@@ -8,6 +8,18 @@
 
 #import "LMJNavigationBar.h"
 
+
+#define kStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
+
+#define kSmallTouchSize 44.0
+
+#define kLeftMargin 0.0
+
+#define kRightMargin 0.0
+
+#define kNavBarCenterY(H) ((64.0 - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
+
+
 @implementation LMJNavigationBar
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -37,6 +49,18 @@
 {
     [super layoutSubviews];
     
+    self.titleView.frame = CGRectMake((self.frame.size.width - 120) * 0.5, kNavBarCenterY(44), 120, 44);
+}
+
+- (void)setTitleView:(UIView *)titleView
+{
+    [_titleView removeFromSuperview];
+    
+    _titleView = titleView;
+    
+    [self addSubview:titleView];
+    
+    [self layoutIfNeeded];
 }
 
 

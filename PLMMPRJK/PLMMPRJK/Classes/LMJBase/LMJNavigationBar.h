@@ -13,4 +13,7 @@
 /** 底部的黑线 */
 @property (weak, nonatomic, readonly) UIImageView *bottomBlackLineView;
 
+/** <#digest#> */
+@property (weak, nonatomic) UIView *titleView;
+
 @end

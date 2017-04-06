@@ -15,7 +15,7 @@
 
 - (void)setKeyWindow:(UIWindow *)keyWindow
 {
-    
+    keyWindow.rootViewController = [[LMJTabBarController alloc] init];
 
 }
 

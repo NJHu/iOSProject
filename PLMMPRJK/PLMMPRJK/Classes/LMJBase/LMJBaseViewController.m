@@ -18,7 +18,7 @@
 
 #define kRightMargin 0.0
 
-#define kNavBarCenterY(H) ((self.lmj_navgationBar.frame.size.height - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
+#define kNavBarCenterY(H) ((64.0 - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
 
 @interface LMJBaseViewController ()
 
@@ -224,9 +224,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(titleClick:)];
     [navTitleLabel addGestureRecognizer:tap];
     
-//    self.navigationItem.titleView = navTitleLabel;
-    
-    [self.lmj_navgationBar addSubview:navTitleLabel];
+    self.lmj_navgationBar.titleView = navTitleLabel;
 }
 
 

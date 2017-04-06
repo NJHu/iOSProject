@@ -11,7 +11,7 @@
 
 
 
-#ifndef DEBUG  //产品环境
+#if PRODUCT  //产品环境
 
 static NSString* const MBTargetConfig_NetWork_s=@"";
 

@@ -13,7 +13,7 @@
 
 
 
-#ifndef DEBUG  //产品环境
+#if PRODUCT  //产品环境
 
 //输出转换成DDLog
 #define NSLog(...) DDLogVerbose(__VA_ARGS__)
