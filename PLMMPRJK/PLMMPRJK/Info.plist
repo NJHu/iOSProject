@@ -140,5 +140,7 @@
 		<string>mqqbrowser</string>
 		<string>mttbrowser</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

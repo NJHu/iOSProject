@@ -8,7 +8,7 @@
 
 #import "LMJNavigationController.h"
 
-@interface LMJNavigationController () <UIGestureRecognizerDelegate>
+@interface LMJNavigationController ()
 
 /** 系统的右划返回功能的代理记录 */
 @property (nonatomic, strong) id popGesDelegate;
@@ -23,9 +23,9 @@
     self.navigationBar.hidden = YES;
     
 
-    [self getSystemGestureOfBack];
+    [self setupPOPGes];
 }
-
+/*
 #pragma mark - 全局侧滑代码------------BEGIN----
 - (void)getSystemGestureOfBack
 {
@@ -48,7 +48,14 @@
     return self.childViewControllers.count > 1;
 }
 #pragma mark - 全局侧滑代码------------END----
+*/
 
+- (void)setupPOPGes
+{
+    self.fd_viewControllerBasedNavigationBarAppearanceEnabled = NO;
+    
+    
+}
 
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
