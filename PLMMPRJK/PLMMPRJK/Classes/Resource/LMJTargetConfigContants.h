@@ -11,21 +11,15 @@
 
 
 
-#if PRODUCT  //产品环境
+#ifdef DEBUG
 
-static NSString* const MBTargetConfig_NetWork_s=@"";
+static const int ddLogLevel = DDLogLevelVerbose;
 
-//DDLog等级
-static const int ddLogLevel = LOG_LEVEL_ERROR;
+#else
 
-#else   //其它环境
-
-//DDLog等级
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static const int ddLogLevel = DDLogLevelWarning;
 
 #endif
-
-
 
 
 #endif /* LMJTargetConfigContants_h */

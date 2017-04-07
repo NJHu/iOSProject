@@ -10,10 +10,7 @@
 #define LMJMPTargetConfigMacros_h
 
 
-
-
-
-#if PRODUCT  //产品环境
+#ifdef DEBUG
 
 //输出转换成DDLog
 #define NSLog(...) DDLogVerbose(__VA_ARGS__)
@@ -26,8 +23,6 @@
 #define Log(...) DDLogVerbose(__VA_ARGS__)
 
 #endif
-
-
 
 
 #endif /* LMJMPTargetConfigMacros_h */

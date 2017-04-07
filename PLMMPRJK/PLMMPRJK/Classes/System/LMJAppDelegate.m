@@ -29,6 +29,9 @@
     
     [LMJGuideManager sharedManager].keyWindow = self.window;
     
+    //配置DDLog
+    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
+    [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
     
     return YES;
 }
