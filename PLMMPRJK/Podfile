@@ -19,7 +19,9 @@ pod 'Masonry'
 pod 'BaiduMapKit' #百度地图SDK
 
 
-pod 'UMengSocial'  #友盟社会化分享及第三方登录
+pod 'UMengAnalytics'
+#pod 'UMengSocial'  #友盟社会化分享及第三方登录
+#pod 'UMengUShare'
 
 
 pod 'ActionSheetPicker-3.0'
@@ -28,7 +30,7 @@ pod 'ActionSheetPicker-3.0'
 pod 'RegexKitLite'
 
 
-pod 'MBProgressHUD'
+pod 'SVProgressHUD'
 
 pod 'MWPhotoBrowser'
 
@@ -38,6 +40,6 @@ pod 'YYKit'
 
 pod 'CocoaLumberjack'
 
-
+pod 'MagicWindowSDK'
 
 end

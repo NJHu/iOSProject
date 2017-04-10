@@ -23,6 +23,9 @@ PODS:
   - CocoaLumberjack/Extensions (3.1.0):
     - CocoaLumberjack/Default
   - DACircularProgress (2.3.1)
+  - MagicWindowSDK (3.90.170116):
+    - MagicWindowSDK/WeChat (= 3.90.170116)
+  - MagicWindowSDK/WeChat (3.90.170116)
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
   - MJExtension (3.0.13)
@@ -34,7 +37,8 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - UMengSocial (5.0)
+  - SVProgressHUD (2.1.2)
+  - UMengAnalytics (4.2.4)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -44,13 +48,14 @@ DEPENDENCIES:
   - AFNetworking
   - BaiduMapKit
   - CocoaLumberjack
+  - MagicWindowSDK
   - Masonry
-  - MBProgressHUD
   - MJExtension
   - MWPhotoBrowser
   - RegexKitLite
   - SDWebImage
-  - UMengSocial
+  - SVProgressHUD
+  - UMengAnalytics
   - YYKit
 
 SPEC CHECKSUMS:
@@ -59,15 +64,17 @@ SPEC CHECKSUMS:
   BaiduMapKit: 9c748785aa3dddfc41dcb70c14b21ce32f680930
   CocoaLumberjack: 8311463ddf9ee86a06ef92a071dd656c89244500
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  MagicWindowSDK: 96eef59392c2b488a8139275546103b9566fc5a7
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
-  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
-  UMengSocial: 48b67179c492a8cf7803fbb0438b8f55432e2fc1
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: cf418fc88cf08f7c382c7a9c655c5cfdf8fb06c7
+PODFILE CHECKSUM: 6df656be298e17af83d3349e9d7b8bd364f96e0a
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.0.1

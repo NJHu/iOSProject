@@ -7,7 +7,10 @@
 //
 
 #import "LMJAppDelegate.h"
-#import "LMJTabBarController.h"
+#import "LMJActivityViewController.h"
+
+
+
 
 @interface LMJAppDelegate ()
 
@@ -33,8 +36,78 @@
     [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
     [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
     
+    // 友盟统计
+    // UM统计
+    UMConfigInstance.appKey = CFPThirdSDKManagerUMConfigInstanceAppKey;
+    UMConfigInstance.channelId = CFPThirdSDKManagerUMConfigInstanceChannelId;
+    
+    [MobClick setAppVersion:appMPVersion];
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+    /** 设置是否开启background模式, 默认YES. */
+    //    [MobClick setBackgroundTaskEnabled:YES];
+    
+    // 友盟分享
+    
+    //设置友盟appkey
+    [[UMSocialManager defaultManager] setUmSocialAppkey:CFPThirdSDKManagerUMSocialAppkey];
+    
+    // 获取友盟social版本号
+    //NSLog(@"UMeng social version: %@", [UMSocialGlobal umSocialSDKVersion]);
+    
+    //设置微信的appKey和appSecret
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:CFPThirdSDKManagerWeChatAppKey appSecret:CFPThirdSDKManagerWeChatAppSecret redirectURL:CFPThirdSDKManagerWeChatRedirectURL];
+    
+    
+    //设置分享到QQ互联的appKey和appSecret
+    //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:CFPThirdSDKManagerQQAppKey  appSecret:CFPThirdSDKManagerQQAppSecret redirectURL:CFPThirdSDKManagerQQRedirectURL];
+    //
+    //    //设置新浪的appKey和appSecret
+    //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:CFPThirdSDKManagerSinaAppKey  appSecret:CFPThirdSDKManagerSinaAppSecret redirectURL:CFPThirdSDKManagerSinaRedirectURL];
+    
+    // 如果不想显示平台下的某些类型，可用以下接口设置
+    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_AlipaySession),@(UMSocialPlatformType_YixinSession),@(UMSocialPlatformType_LaiWangSession), @(UMSocialPlatformType_Linkedin), @(UMSocialPlatformType_Twitter), @(UMSocialPlatformType_Sina), @(UMSocialPlatformType_WechatFavorite), @(UMSocialPlatformType_QQ), @(UMSocialPlatformType_Qzone), @(UMSocialPlatformType_TencentWb)]];
+    
+
+    
+    // 魔窗
+    [MWApi registerApp:kMagicWindowKey];
+    
+    [MWApi registerMLinkHandlerWithKey:@"test1Key" handler:^(NSURL *url, NSDictionary *params) {
+        
+        if ([params[@"url"] length] == 0) {
+            return ;
+        }
+        
+        
+        Log(@"%@\n\n%@", url.absoluteString, params);
+        
+        
+        [SVProgressHUD showSuccessWithStatus:params.description];
+        
+        //跳转到app展示页，示例如下：
+        LMJActivityViewController *activityWebVc = [[LMJActivityViewController alloc] init];
+        
+        
+        activityWebVc.gotoURL = params[@"url"];
+        
+
+        
+        [kKeyWindow.rootViewController.childViewControllers.firstObject.childViewControllers.firstObject.navigationController pushViewController:activityWebVc animated:NO];
+    }];
+    
     return YES;
 }
+
+
+
+#pragma mark - 魔窗
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+{
+    //如果使用了Universal link ，此方法必写
+    return [MWApi continueUserActivity:userActivity];
+}
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -61,6 +134,25 @@
 
     [self saveContext];
 }
+
+//iOS9以下
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    //必写
+    [MWApi routeMLink:url];
+    return YES;
+}
+//iOS9+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(nonnull NSDictionary *)options
+{
+    //必写
+    [MWApi routeMLink:url];
+    return YES;
+}
+
+
+
+
 
 
 #pragma mark - Core Data stack

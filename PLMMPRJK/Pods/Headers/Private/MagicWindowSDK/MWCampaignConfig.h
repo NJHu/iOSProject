@@ -1,0 +1,1 @@
+../../../MagicWindowSDK/MagicWindowSDK/MagicWindowSDK/MWCampaignConfig.h

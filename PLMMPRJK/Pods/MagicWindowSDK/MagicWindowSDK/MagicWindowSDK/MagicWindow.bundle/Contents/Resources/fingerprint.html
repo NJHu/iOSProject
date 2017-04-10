@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>fingerprintjs</title>
+    <style type="text/css">
+        body{
+        font-family: 'Sans'
+        }
+    </style>
+    <script src="fingerprint.js"></script>
+</head>
+<body>
+<div style="text-align: center;">
+    <h3 style="margin-top: 60px">Your browser fingerprint with default settings (canvas, screen resolutin, activeX disabled)</h3>
+    <h1 id="fp1"></h1>
+</div>
+<div style="text-align: center;">
+    <h3 style="margin-top: 20px">Your browser fingerprint with canvas enabled is:</h3>
+    <h1 id="fp2"></h1>
+</div>
+<div style="text-align: center;">
+    <h3 style="margin-top: 20px">Your browser fingerprint with ie_activex enabled is:</h3>
+    <h1 id="fp3"></h1>
+</div>
+<div style="text-align: center;">
+    <h3 style="margin-top: 20px">Your browser fingerprint with screen_resolution enabled is:</h3>
+    <h1 id="fp4"></h1>
+</div>
+<script>
+    var fp1 = new Fingerprint();
+    var fp2 = new Fingerprint({canvas: true});
+    var fp3 = new Fingerprint({ie_activex: true});
+    var fp4 = new Fingerprint({screen_resolution: true});
+    document.getElementById('fp1').innerHTML = fp1.get();
+    document.getElementById('fp2').innerHTML = fp2.get();
+    document.getElementById('fp3').innerHTML = fp3.get();
+    document.getElementById('fp4').innerHTML = fp4.get();
+    function getFingerPrint()
+    {
+        return fp1.get();
+    }
+</script>
+</body>
+</html>

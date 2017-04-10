@@ -10,7 +10,8 @@
 #define LMJThirdMacros_h
 
 
-
+// 磨窗的appkey
+#define kMagicWindowKey @"75Z6Q063T395YQ85QN27FDR7RAVIEKR7"
 
 
 //百度地图SDK的Key

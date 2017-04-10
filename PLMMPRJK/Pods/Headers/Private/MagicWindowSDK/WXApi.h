@@ -1,0 +1,1 @@
+../../../MagicWindowSDK/MagicWindowSDK/WeChat/WXApi.h

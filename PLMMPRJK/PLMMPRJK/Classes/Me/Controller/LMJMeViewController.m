@@ -26,6 +26,7 @@
     return [UIColor purpleColor];
 }
 
+
 - (void)left_button_event:(UIButton *)sender
 {
     [self.navigationController popViewControllerAnimated:YES];

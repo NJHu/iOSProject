@@ -1,0 +1,181 @@
+/* 
+  Localizable.strings
+  SocialSDK
+
+  Created by yeahugo on 13-6-17.
+  Copyright (c) 2013年 Umeng. All rights reserved.
+*/
+"button_cancel" = "取消";
+"button_ok" = "确定";
+"button_start" = "开启";
+
+"button_close" = "关闭";
+"button_back" = "返回";
+"button_refresh" = "刷新";
+
+"label_request_account" = "正在获取账户信息，请稍等...";
+
+"oauth_title" = "授权";
+"oauth_text" = "正在连接授权页面，请稍等...";
+"mask_text" = "正在获取数据，请稍等...";
+"oauth_follow" = "关注官方微博";
+
+"oauth_error_title" = "授权失败";
+"oauth_error_message" = "服务器繁忙，授权失败，请稍后再试";
+"oauth_error_not_approved" = "由于没有在开放平台添加此账号作为测试账号或者没有通过审核等原因授权失败";
+
+"shareQQ_error" = "抱歉";
+"shareQQ_notInstall" = "没有安装手机QQ客户端";
+"shareQQ_openFail" = "打开手机QQ失败";
+"shareQQ_ShareFail" = "分享到QQ失败";
+"shareClient_notInstall" = "没有安装客户端";
+"shareInstagram_openFail" = "没有安装Instagram客户端";
+
+"custom_share_title" = "友盟分享";
+
+"shareList_title" = "分享至";
+"shareEdit_title" = "分享至";
+"shareEdit_post" = "发布";
+"shareEdit_change_account" = "切换账号";
+"shareEdit_post_finish" = "发送成功";
+"shareEdit_post_fail" = "发送失败";
+"shareEdit_posting" = "正在发送";
+"shareEdit_delete_picture" = "删除图片";
+"shareEdit_delete_video" = "删除视频";
+"shareEdit_delete_music" = "删除音乐";
+"shareEdit_error_not_empty" = "分享内容不能为空";
+"shareEdit_error_too_long" = "分享内容长度超出限制";
+"shareEdit_error_auth_expired" = "授权过期，分享失败";
+"shareEdit_error_auth_again" = "重新授权";
+"shareEdit_error_text_repeated" = "内容重复，分享失败";
+"shareEdit_error_user_baned" = "对不起，因为违反了用户协议您已被禁言";
+"shareEdit_error_fail" = "分享失败";
+"shareEdit_error_no_auth" = "无上传图片的权限，分享失败";
+"shareEdit_error_empty_content" = "分享内容为空，分享失败";
+"shareEdit_addFollow" = "关注官方微博";
+"shareEdit_C" = "符";
+"shareEdit_used" = "常";
+"shareShake_button" = "分享";
+
+"share_wechat" = "分享至微信";
+"share_wechat_friend" = "分享至微信好友";
+"share_wechat_moments" = "分享至微信朋友圈";
+"share_wechat_no_title" = "温馨提示";
+"share_wechat_no_message" = "您的设备没有安装微信";
+"share_facebook_not_login" = "账号未登录";
+"share_facebook_not_login_message" = "账号未登录";
+"share_facebook_no_osSupport" = "系统不支持";
+"share_facebook_no_osSupport_message" = "您的iOS系统版本过低，不支持分享到该平台";
+
+"share_alipay" = "分享至支付宝";
+"share_alipay_friend" = "分享至支付宝好友";
+"share_alipay_moments" = "分享至支付宝生活圈";
+"share_alipay_no_title" = "温馨提示";
+"share_alipay_no_message" = "您的设备没有安装支付宝";
+"share_alipay_version_not_supported" = "您的支付宝版本不支持分享";
+
+"share_sms_no_osSupport" = "不支持短信";
+"share_sms_no_osSupport_message" = "您的设备不支持短信功能";
+
+"share_email_no_osSupport" = "邮件功能未开启";
+"share_email_no_osSupport_message" = "您当前的邮件服务处于未启用状态，请先前往系统设置中配置邮件服务后，再进行分享";
+
+"login_title" = "登录";
+"login_as_tourists" = "游客身份";
+"login_choose" = "选择已有账号登录";
+
+"commentList_title" = "评论列表";
+"commentList_mask_text" = "正在获取评论数据，请稍等...";
+"commentList_comment_here" = "在这说点什么...";
+
+"commentDetail_title" = "评论详情";
+
+"commentEdit_no_location" = "取消定位";
+"commentEdit_post_fail" = "评论失败";
+"commentEdit_post_success" = "评论成功";
+"commentEdit_noLocation_title" = "定位服务未开启";
+"commentEdit_noLocation_message" = "您当前的定位服务处于关闭状态，或者没有对此应用开启地理位置服务，请先前往系统设置中开启本应用的定位服务，再进行分享";
+"commentEdit_title" = "新评论";
+"commentEdit_wait" = "评论发送中，请稍等...";
+
+"ego_pull_down" = "下拉刷新";
+"ego_pull_up" = "上拉加载更多";
+"ego_refreshing" = "正在刷新";
+"ego_loading_more" = "正在加载更多";
+"ego_refresh" = "松开立即刷新";
+"ego_loadmore" = "松开立即加载更多";
+"shareEdit_error_network_fail_message" = "网络不给力，发送失败了";
+
+"loading" = "  加载中  ";
+
+"network_fail_title" = "温馨提示";
+"network_fail_message" = "当前网络不给力";
+
+"account_title" = "个人中心";
+"account_title_authorize_status" = "授权信息";
+"account_label_login_tourist" = "游客登录";
+"account_label_login_account" = "登录账号";
+"account_lable_not_auth" = "尚未授权";
+"account_lable_have_auth" = "已授权";
+"account_title_sns_config" = "分享设置";
+
+//分享面板
+"umsocial_sina" = "新浪微博";
+
+"umsocial_wechat" = "微信";
+"umsocial_wechat_session" = "微信好友";
+"umsocial_wechat_timeline" = "微信朋友圈";
+"umsocial_wechat_favorite" = "微信收藏";
+
+"umsocial_qq" = "QQ";
+"umsocial_qzone" = "QQ空间";
+"umsocial_tencentWB" = "腾讯微博";
+
+"umsocial_alipay" = "支付宝";
+"umsocial_alipay_session" = "支付宝好友";
+"umsocial_aliay_circle" = "生活圈";
+
+"umsocial_lw_session" = "点点虫";
+"umsocial_lw_timeline" = "点点虫动态";
+
+"umsocial_yixin_session" = "易信";
+"umsocial_yixin_timeline" = "易信朋友圈";
+
+"umsocial_douban" = "豆瓣";
+
+"umsocial_renren" = "人人网";
+
+"umsocial_email" = "邮箱";
+"umsocial_sms" = "短信";
+
+"umsocial_facebook" = "Facebook";
+"umsocial_twitter" = "Twitter";
+"umsocial_instagram" = "Instagram";
+"umsocial_line" = "Line";
+"umsocial_flickr" = "Flickr";
+"umsocial_kakaoTalk" = "KakaoTalk";
+"umsocial_pinterest" = "Pinterest";
+"umsocial_tumblr" = "Tumblr";
+"umsocial_linkedin" = "Linkedin";
+"umsocial_whatsapp" = "Whatsapp";
+
+"umsocial_youdaonote" = "有道云笔记";
+"umsocial_evernote" = "印象笔记";
+"umsocial_googleplus" = "Google+";
+"umsocial_pocket" = "Pocket";
+"umsocial_dropbox" = "Dropbox";
+"umsocial_vkontakte" = "VKontakte";
+"umsocial_facebookmessenger" = "Messenger";
+
+"umsocial_default" = "自定义模板";
+
+//云端分享认证的国际化字符串
+"cloudShare_share_success" = "分享成功";
+"cloudShare_share_failed" = "分享失败";
+
+"cloudShare_share_close" = "关闭";
+"cloudShare_share_send" = "发送";
+"cloudShare_share" = "分享";
+
+"cloudShare_oauth_title" = "授权";
+"cloudShare_oauth_error" = "授权错误";

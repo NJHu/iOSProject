@@ -7,7 +7,7 @@
 //
 
 #import "LMJHomeViewController.h"
-#import "LMJMeViewController.h"
+#import "LMJActivityViewController.h"
 
 @interface LMJHomeViewController ()
 
@@ -47,8 +47,10 @@
 
 - (void)right_button_event:(UIButton *)sender
 {
+    LMJActivityViewController *ac = [LMJActivityViewController new];
+    ac.gotoURL = @"http://www.baidu.com";
     
-    [self.navigationController pushViewController:[LMJMeViewController new] animated:YES];
+    [self.navigationController pushViewController:ac animated:YES];
     NSLog(@"%s", __func__);
 }
 
