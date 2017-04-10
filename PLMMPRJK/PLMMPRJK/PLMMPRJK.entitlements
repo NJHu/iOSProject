@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:eagle</string>
+		<string>applinks:eagleHolds.com.cn</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>

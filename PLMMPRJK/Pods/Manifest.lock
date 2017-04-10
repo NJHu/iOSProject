@@ -22,7 +22,22 @@ PODS:
   - CocoaLumberjack/Default (3.1.0)
   - CocoaLumberjack/Extensions (3.1.0):
     - CocoaLumberjack/Default
+  - CYLTabBarController (1.10.0)
   - DACircularProgress (2.3.1)
+  - FLEX (2.4.0)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/SQLCipher (2.5):
+    - FMDB/common
+    - SQLCipher
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - IQKeyboardManager (3.3.7)
+  - LBXScan (1.1.1):
+    - ZXingObjC (~> 3.0)
+  - LKDBHelper (2.4.1):
+    - FMDB
   - MagicWindowSDK (3.90.170116):
     - MagicWindowSDK/WeChat (= 3.90.170116)
   - MagicWindowSDK/WeChat (3.90.170116)
@@ -37,25 +52,50 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SQLCipher (3.4.1):
+    - SQLCipher/standard (= 3.4.1)
+  - SQLCipher/common (3.4.1)
+  - SQLCipher/standard (3.4.1):
+    - SQLCipher/common
   - SVProgressHUD (2.1.2)
   - UMengAnalytics (4.2.4)
+  - WebViewJavascriptBridge (5.2.0)
+  - XAspect (1.0.5):
+    - XAspect/Core (= 1.0.5)
+    - XAspect/Macros (= 1.0.5)
+  - XAspect/Core (1.0.5):
+    - XAspect/Macros
+  - XAspect/Macros (1.0.5)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
+  - ZXingObjC (3.2.1):
+    - ZXingObjC/All (= 3.2.1)
+  - ZXingObjC/All (3.2.1)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - AFNetworking
   - BaiduMapKit
   - CocoaLumberjack
+  - CYLTabBarController
+  - FLEX (~> 2.0)
+  - FMDB/common (~> 2.5)
+  - FMDB/SQLCipher (~> 2.5)
+  - IQKeyboardManager (~> 3.3.7)
+  - LBXScan (~> 1.1.1)
+  - LKDBHelper
   - MagicWindowSDK
   - Masonry
+  - MBProgressHUD (~> 0.9)
   - MJExtension
   - MWPhotoBrowser
   - RegexKitLite
   - SDWebImage
   - SVProgressHUD
   - UMengAnalytics
+  - WebViewJavascriptBridge (~> 5.0)
+  - XAspect
   - YYKit
 
 SPEC CHECKSUMS:
@@ -63,18 +103,28 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BaiduMapKit: 9c748785aa3dddfc41dcb70c14b21ce32f680930
   CocoaLumberjack: 8311463ddf9ee86a06ef92a071dd656c89244500
+  CYLTabBarController: 2de9a4c26f50d33574398becf8e7b0aaed794240
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
+  LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
+  LKDBHelper: 531581fa6a7d0f14236cc028ce0d277bca73436a
   MagicWindowSDK: 96eef59392c2b488a8139275546103b9566fc5a7
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  SQLCipher: 43d12c0eb9c57fb438749618fc3ce0065509a559
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  WebViewJavascriptBridge: a00b2d61252aec5207e3263d46fd0fd3cfaf7895
+  XAspect: db50bf487f92dbb8557a7a5365556966c8493af8
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: 6df656be298e17af83d3349e9d7b8bd364f96e0a
+PODFILE CHECKSUM: f3bfaafa90c04736275cb98d1abd59837e225ecd
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0

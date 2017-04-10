@@ -1,0 +1,11 @@
+CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/SQLCipher
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) SQLITE_HAS_CODEC=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/SQLCipher" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/ActionSheetPicker-3.0" "${PODS_ROOT}/Headers/Public/BaiduMapKit" "${PODS_ROOT}/Headers/Public/CYLTabBarController" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/DACircularProgress" "${PODS_ROOT}/Headers/Public/FLEX" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/IQKeyboardManager" "${PODS_ROOT}/Headers/Public/LBXScan" "${PODS_ROOT}/Headers/Public/LKDBHelper" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/MJExtension" "${PODS_ROOT}/Headers/Public/MWPhotoBrowser" "${PODS_ROOT}/Headers/Public/MagicWindowSDK" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/RegexKitLite" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/SQLCipher" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/UMengAnalytics" "${PODS_ROOT}/Headers/Public/WebViewJavascriptBridge" "${PODS_ROOT}/Headers/Public/XAspect" "${PODS_ROOT}/Headers/Public/YYKit" "${PODS_ROOT}/Headers/Public/ZXingObjC"
+OTHER_CFLAGS = $(inherited) -DSQLITE_HAS_CODEC -DSQLITE_TEMP_STORE=2 -DSQLITE_SOUNDEX -DSQLITE_THREADSAFE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_STAT3 -DSQLITE_ENABLE_STAT4 -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_ENABLE_MEMORY_MANAGEMENT -DSQLITE_ENABLE_LOAD_EXTENSION -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_FTS4_UNICODE61 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_UNLOCK_NOTIFY -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_FTS5 -DSQLCIPHER_CRYPTO_CC
+OTHER_LDFLAGS = -framework "Foundation" -framework "Security"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/SQLCipher
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES
