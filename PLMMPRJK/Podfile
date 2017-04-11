@@ -3,7 +3,7 @@ platform :ios, '9.1'
 
 target 'PLMMPRJK' do
     
-inhibit_all_warnings!
+    inhibit_all_warnings!
 
 #网络请求
 pod "AFNetworking"
@@ -25,15 +25,14 @@ pod 'MWPhotoBrowser'
 pod 'YYKit'
 pod 'CocoaLumberjack'
 pod 'MagicWindowSDK'
-pod 'FMDB/common' , '~>2.5'
-#pod 'FMDB/SQLCipher', '~>2.5'
+pod 'FMDB'
 pod 'FLEX', '~> 2.0', :configurations => ['Debug']
 pod 'ActionSheetPicker-3.0'
 pod 'XAspect'
 pod 'LKDBHelper'
 pod 'IQKeyboardManager', '~> 3.3.7'  #兼容IOS7
 pod 'LBXScan','~> 1.1.1'
-pod 'MBProgressHUD', '~> 0.9'
+pod 'MBProgressHUD'
 pod 'MWPhotoBrowser'
 pod 'WebViewJavascriptBridge', '~> 5.0'
 

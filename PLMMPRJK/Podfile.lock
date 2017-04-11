@@ -25,11 +25,9 @@ PODS:
   - CYLTabBarController (1.10.0)
   - DACircularProgress (2.3.1)
   - FLEX (2.4.0)
-  - FMDB (2.5):
-    - FMDB/standard (= 2.5)
-  - FMDB/common (2.5)
-  - FMDB/standard (2.5):
-    - FMDB/common
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - IQKeyboardManager (3.3.7)
   - LBXScan (1.1.1):
     - ZXingObjC (~> 3.0)
@@ -72,13 +70,13 @@ DEPENDENCIES:
   - CocoaLumberjack
   - CYLTabBarController
   - FLEX (~> 2.0)
-  - FMDB/common (~> 2.5)
+  - FMDB
   - IQKeyboardManager (~> 3.3.7)
   - LBXScan (~> 1.1.1)
   - LKDBHelper
   - MagicWindowSDK
   - Masonry
-  - MBProgressHUD (~> 0.9)
+  - MBProgressHUD
   - MJExtension
   - MWPhotoBrowser
   - RegexKitLite
@@ -97,7 +95,7 @@ SPEC CHECKSUMS:
   CYLTabBarController: 2de9a4c26f50d33574398becf8e7b0aaed794240
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
-  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
   LKDBHelper: 531581fa6a7d0f14236cc028ce0d277bca73436a
@@ -115,6 +113,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: 47df658d9888b678243d7ba4cdda26f027eb37ac
+PODFILE CHECKSUM: f8b911490b5b4caab303cb79d63106216ef6009c
 
 COCOAPODS: 1.2.0

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "sqlite3.h"
 
 @class FMDatabase;
 
@@ -117,6 +116,17 @@
 
 - (instancetype)initWithPath:(NSString*)aPath flags:(int)openFlags;
 
+/** Create queue using path and specified flags.
+ 
+ @param aPath The file path of the database.
+ @param openFlags Flags passed to the openWithFlags method of the database
+ @param vfsName The name of a custom virtual file system
+ 
+ @return The `FMDatabaseQueue` object. `nil` on error.
+ */
+
+- (instancetype)initWithPath:(NSString*)aPath flags:(int)openFlags vfs:(NSString *)vfsName;
+
 /** Returns the Class of 'FMDatabase' subclass, that will be used to instantiate database object.
  
  Subclasses can override this method to return specified Class of 'FMDatabase' subclass.
@@ -164,11 +174,9 @@
  @param block The code to be run on the queue of `FMDatabaseQueue`
  */
 
-#if SQLITE_VERSION_NUMBER >= 3007000
 // NOTE: you can not nest these, since calling it will pull another database out of the pool and you'll get a deadlock.
 // If you need to nest, use FMDatabase's startSavePointWithName:error: instead.
 - (NSError*)inSavePoint:(void (^)(FMDatabase *db, BOOL *rollback))block;
-#endif
 
 @end
 
