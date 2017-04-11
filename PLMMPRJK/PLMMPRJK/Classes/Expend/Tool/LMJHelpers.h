@@ -36,7 +36,6 @@
 #import "GCDTimer.h"
 #import "introductoryPagesHelper.h"
 #import "introductoryPagesView.h"
-#import "JSPatchHelper.h"
 #import "CLLocation+MPLocation.h"
 #import "MPLocationManager.h"
 #import "MPLKDBHelper.h"
@@ -49,7 +48,7 @@
 #import "UITapImageView.h"
 #import "Reachability.h"
 #import "MPUmengHelper.h"
-#import "YYFPSLabel.h"
+
 
 
 

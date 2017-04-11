@@ -28,9 +28,6 @@ PODS:
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
-  - FMDB/SQLCipher (2.5):
-    - FMDB/common
-    - SQLCipher
   - FMDB/standard (2.5):
     - FMDB/common
   - IQKeyboardManager (3.3.7)
@@ -52,11 +49,6 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - SQLCipher (3.4.1):
-    - SQLCipher/standard (= 3.4.1)
-  - SQLCipher/common (3.4.1)
-  - SQLCipher/standard (3.4.1):
-    - SQLCipher/common
   - SVProgressHUD (2.1.2)
   - UMengAnalytics (4.2.4)
   - WebViewJavascriptBridge (5.2.0)
@@ -81,7 +73,6 @@ DEPENDENCIES:
   - CYLTabBarController
   - FLEX (~> 2.0)
   - FMDB/common (~> 2.5)
-  - FMDB/SQLCipher (~> 2.5)
   - IQKeyboardManager (~> 3.3.7)
   - LBXScan (~> 1.1.1)
   - LKDBHelper
@@ -117,7 +108,6 @@ SPEC CHECKSUMS:
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
-  SQLCipher: 43d12c0eb9c57fb438749618fc3ce0065509a559
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   WebViewJavascriptBridge: a00b2d61252aec5207e3263d46fd0fd3cfaf7895
@@ -125,6 +115,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: f3bfaafa90c04736275cb98d1abd59837e225ecd
+PODFILE CHECKSUM: 47df658d9888b678243d7ba4cdda26f027eb37ac
 
 COCOAPODS: 1.2.0

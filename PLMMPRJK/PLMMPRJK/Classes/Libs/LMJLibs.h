@@ -9,12 +9,10 @@
 #ifndef LMJLibs_h
 #define LMJLibs_h
 
-
 //引入Masonry两个宏 便于写布局代码
 #define MAS_SHORTHAND
 #define MAS_SHORTHAND_GLOBALS
 
-#import <UIKit/UIKit.h>
 #import <CocoaLumberjack.h>
 #import <DDLog.h>
 #import <YYKit.h>
@@ -39,13 +37,16 @@
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
 
-#import "IFlyContact.h"
 
 #import "GVUserDefaults.h"
 #import "iCarousel.h"
 #import "JDStatusBarNotification.h"
 #import "JDStatusBarStyle.h"
 #import "JDStatusBarView.h"
+
+#import "UIPlaceHolderTextView.h"
+#import "UUInputAccessoryView.h"
+
 #import "QBAssetsCollectionCheckmarkView.h"
 #import "QBAssetsCollectionFooterView.h"
 #import "QBAssetsCollectionOverlayView.h"
@@ -56,17 +57,8 @@
 #import "QBImagePickerController.h"
 #import "QBImagePickerGroupCell.h"
 #import "QBImagePickerThumbnailView.h"
-#import "UIPlaceHolderTextView.h"
-#import "UUInputAccessoryView.h"
-#import "XACExtensions.h"
-#import "XACrystallization.h"
-#import "XAWeaveHandler.h"
-#import "XADebugMacros.h"
-#import "XAExtObjcMetamacros.h"
-#import "XAFoundation.h"
-#import "XAObjcMetaprogramming.h"
-#import "XAInjectionTemplate.h"
-#import "XAspect.h"
+
+
 
 
 #endif /* LMJLibs_h */

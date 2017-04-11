@@ -2,6 +2,8 @@ platform :ios, '9.1'
 
 
 target 'PLMMPRJK' do
+    
+inhibit_all_warnings!
 
 #网络请求
 pod "AFNetworking"
@@ -24,7 +26,7 @@ pod 'YYKit'
 pod 'CocoaLumberjack'
 pod 'MagicWindowSDK'
 pod 'FMDB/common' , '~>2.5'
-pod 'FMDB/SQLCipher', '~>2.5'
+#pod 'FMDB/SQLCipher', '~>2.5'
 pod 'FLEX', '~> 2.0', :configurations => ['Debug']
 pod 'ActionSheetPicker-3.0'
 pod 'XAspect'

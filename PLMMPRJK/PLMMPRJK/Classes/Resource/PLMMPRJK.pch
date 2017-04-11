@@ -1,3 +1,4 @@
+
 //
 //  PLMMPRJK.pch
 //  PLMMPRJK
@@ -10,22 +11,20 @@
 #define PLMMPRJK_pch
 
 
+#import <UIKit/UIKit.h>
+
+//-Wdocumentation
+//#pragma clang diagnostic push
+//￼#pragma clang diagnostic ignored "警告名称"
 
 #import "LMJLibs.h"
-
-
-#import "LMJBaseViewController.h"
-#import "LMJNavigationController.h"
-#import "LMJTabBarController.h"
-#import "LMJWebViewController.h"
-
-
 #import "LMJMacos.h"
 #import "LMJTargetConfigContants.h"
 #import "LMJThirdMacros.h"
 #import "LMJTargetConfigMacros.h"
 #import "LMJConstants.h"
 #import "LMJNotificationContants.h"
+
 
 #import "LMJUIKit.h"
 #import "LMJTools.h"
@@ -34,14 +33,17 @@
 #import "LMJCategorys.h"
 
 
+
+
+#import "LMJBaseViewController.h"
+#import "LMJNavigationController.h"
+#import "LMJTabBarController.h"
+#import "LMJWebViewController.h"
+
+
+
+
+
+
 #endif /* PLMMPRJK_pch */
-
-
-
-
-
-
-
-
-
 
