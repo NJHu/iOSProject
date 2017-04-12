@@ -27,18 +27,10 @@
     [super viewWillAppear:animated];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    
-}
 
 
 #pragma mark 重写BaseViewController设置内容
 
-- (UIColor *)set_colorBackground
-{
-    return [UIColor clearColor];
-}
 
 - (void)left_button_event:(UIButton *)sender
 {

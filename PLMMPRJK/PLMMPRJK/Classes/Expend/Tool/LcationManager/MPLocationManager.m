@@ -30,7 +30,7 @@
 
 + (void)installMapSDK{
     BMKMapManager *manager = [[BMKMapManager alloc] init];
-    [manager start:kBaiduMapKey generalDelegate:nil];
+    [manager start:LMJThirdSDKBaiduMapKey generalDelegate:nil];
 }
 
 #pragma mark - 苹果

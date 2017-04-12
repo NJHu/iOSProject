@@ -48,6 +48,7 @@
 #import "UITapImageView.h"
 #import "Reachability.h"
 #import "MPUmengHelper.h"
+#import "LMJMagicWindowHelper.h"
 
 
 

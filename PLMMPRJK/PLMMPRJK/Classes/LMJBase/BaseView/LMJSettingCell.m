@@ -7,6 +7,7 @@
 //
 
 #import "LMJSettingCell.h"
+#import "LMJWordItem.h"
 
 
 @interface LMJSettingCell ()
@@ -61,12 +62,17 @@ static NSString *const ID = @"cellSetting";
 
 - (void)fillData
 {
-
+    self.textLabel.text = self.item.title;
+    self.detailTextLabel.text = self.item.subTitle;
 }
 
 - (void)changeUI
 {
-
+    self.textLabel.font = self.item.titleFont;
+    self.textLabel.textColor = self.item.titleColor;
+    
+    self.detailTextLabel.font = self.item.subTitleFont;
+    self.detailTextLabel.textColor = self.item.subTitleColor;
     
 }
 

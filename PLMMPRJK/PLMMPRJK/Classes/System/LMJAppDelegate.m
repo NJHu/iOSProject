@@ -7,14 +7,7 @@
 //
 
 #import "LMJAppDelegate.h"
-#import "LMJActivityViewController.h"
 
-
-
-
-@interface LMJAppDelegate ()
-
-@end
 
 @implementation LMJAppDelegate
 
@@ -36,64 +29,16 @@
     [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
     [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
     
-    // 友盟统计
-    // UM统计
-    UMConfigInstance.appKey = CFPThirdSDKManagerUMConfigInstanceAppKey;
-    UMConfigInstance.channelId = CFPThirdSDKManagerUMConfigInstanceChannelId;
-    
-    [MobClick setAppVersion:appMPVersion];
-    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
-    /** 设置是否开启background模式, 默认YES. */
-    //    [MobClick setBackgroundTaskEnabled:YES];
-    
-    // 友盟分享
-    
-    //设置友盟appkey
-    [[UMSocialManager defaultManager] setUmSocialAppkey:CFPThirdSDKManagerUMSocialAppkey];
-    
-    // 获取友盟social版本号
-    //NSLog(@"UMeng social version: %@", [UMSocialGlobal umSocialSDKVersion]);
-    
-    //设置微信的appKey和appSecret
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:CFPThirdSDKManagerWeChatAppKey appSecret:CFPThirdSDKManagerWeChatAppSecret redirectURL:CFPThirdSDKManagerWeChatRedirectURL];
     
     
-    //设置分享到QQ互联的appKey和appSecret
-    //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:CFPThirdSDKManagerQQAppKey  appSecret:CFPThirdSDKManagerQQAppSecret redirectURL:CFPThirdSDKManagerQQRedirectURL];
-    //
-    //    //设置新浪的appKey和appSecret
-    //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:CFPThirdSDKManagerSinaAppKey  appSecret:CFPThirdSDKManagerSinaAppSecret redirectURL:CFPThirdSDKManagerSinaRedirectURL];
+    [MPUmengHelper UMAnalyticStart];
+    [MPUmengHelper UMSocialStart];
+    [MPUmengHelper UMPushStart:launchOptions];
     
-    // 如果不想显示平台下的某些类型，可用以下接口设置
-    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_AlipaySession),@(UMSocialPlatformType_YixinSession),@(UMSocialPlatformType_LaiWangSession), @(UMSocialPlatformType_Linkedin), @(UMSocialPlatformType_Twitter), @(UMSocialPlatformType_Sina), @(UMSocialPlatformType_WechatFavorite), @(UMSocialPlatformType_QQ), @(UMSocialPlatformType_Qzone), @(UMSocialPlatformType_TencentWb)]];
     
-
+    [LMJMagicWindowHelper MagicStart];
     
-    // 魔窗
-//    [MWApi registerApp:kMagicWindowKey];
-//    
-//    [MWApi registerMLinkHandlerWithKey:@"test1Key" handler:^(NSURL *url, NSDictionary *params) {
-//        
-//        if ([params[@"url"] length] == 0) {
-//            return ;
-//        }
-//        
-//        
-//        Log(@"%@\n\n%@", url.absoluteString, params);
-//        
-//        
-//        [SVProgressHUD showSuccessWithStatus:params.description];
-//        
-//        //跳转到app展示页，示例如下：
-//        LMJActivityViewController *activityWebVc = [[LMJActivityViewController alloc] init];
-//        
-//        
-//        activityWebVc.gotoURL = params[@"url"];
-//        
-//
-//        
-//        [kKeyWindow.rootViewController.childViewControllers.firstObject.childViewControllers.firstObject.navigationController pushViewController:activityWebVc animated:NO];
-//    }];
+    
     
     return YES;
 }
@@ -111,46 +56,106 @@
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-
+    
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-
+    
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-
+    
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-
+    
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-
+    
     [self saveContext];
 }
 
-//iOS9以下
+
+// 支持所有iOS系统, UM
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     //必写
     [MWApi routeMLink:url];
-    return YES;
+    
+    
+    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    
+    
+    
+    return result;
 }
-//iOS9+
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(nonnull NSDictionary *)options
+
+
+
+
+
+//iOS10以下使用这个方法接收通知
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    //必写
-    [MWApi routeMLink:url];
-    return YES;
+    
+    [UMessage didReceiveRemoteNotification:userInfo];
+    
+    //    self.userInfo = userInfo;
+    //    //定制自定的的弹出框
+    //    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
+    //    {
+    //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"标题"
+    //                                                            message:@"Test On ApplicationStateActive"
+    //                                                           delegate:self
+    //                                                  cancelButtonTitle:@"确定"
+    //                                                  otherButtonTitles:nil];
+    //
+    //        [alertView show];
+    //
+    //    }
 }
 
 
+//iOS10新增：处理前台收到通知的代理方法
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于前台时的远程推送接受
+        //关闭U-Push自带的弹出框
+        [UMessage setAutoAlert:NO];
+        //必须加这句代码
+        [UMessage didReceiveRemoteNotification:userInfo];
+        
+    }else{
+        //应用处于前台时的本地推送接受
+    }
+    //当应用处于前台时提示设置，需要哪个可以设置哪一个
+    completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
+}
+
+//iOS10新增：处理后台点击通知的代理方法
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler{
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于后台时的远程推送接受
+        //必须加这句代码
+        [UMessage didReceiveRemoteNotification:userInfo];
+        
+    }else{
+        //应用处于后台时的本地推送接受
+    }
+    
+    
+}
 
 
 
@@ -176,7 +181,7 @@
                      * The device is out of space.
                      * The store could not be migrated to the current model version.
                      Check the error message to determine what the actual problem was.
-                    */
+                     */
                     NSLog(@"Unresolved error %@, %@", error, error.userInfo);
                     abort();
                 }

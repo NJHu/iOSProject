@@ -33,7 +33,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxe8f33b5e1217167a</string>
+				<string>wxf510029cc41f5123</string>
 			</array>
 		</dict>
 		<dict>
@@ -44,15 +44,43 @@
 				<string>seedplan</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wxdc1e388c3822c80b</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb3921700954</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tencent100424468</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>QQ05fc5b14</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>0.0.1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>linkedin</string>
-		<string>seedPlan2</string>
-		<string>linkedin-sdk2</string>
-		<string>linkedin-sdk</string>
 		<string>wechat</string>
 		<string>weixin</string>
 		<string>sinaweibohd</string>
@@ -85,28 +113,53 @@
 		<string>mqzoneopensdkapi</string>
 		<string>mqqbrowser</string>
 		<string>mttbrowser</string>
-		<string>TencentWeibo</string>
-		<string>tencentweiboSdkv2</string>
 		<string>alipay</string>
 		<string>alipayshare</string>
-		<string>renrenios</string>
-		<string>renrenapi</string>
-		<string>renren</string>
-		<string>renreniphone</string>
+		<string>dingtalk</string>
+		<string>dingtalk-open</string>
+		<string>linkedin</string>
+		<string>linkedin-sdk2</string>
+		<string>linkedin-sdk</string>
 		<string>laiwangsso</string>
 		<string>yixin</string>
 		<string>yixinopenapi</string>
-		<string>yixinoauth</string>
-		<string>yixinfav</string>
-		<string>laiwangsso</string>
 		<string>instagram</string>
 		<string>whatsapp</string>
 		<string>line</string>
-		<string>tumblr</string>
 		<string>fbapi</string>
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
+		<string>kakaofa63a0b2356e923f3edd6512d531f546</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>kakaolink</string>
+		<string>kakaotalk-4.5.0</string>
+		<string>kakaostory-2.9.0</string>
+		<string>pinterestsdk.v1</string>
+		<string>tumblr</string>
+		<string>evernote</string>
+		<string>en</string>
+		<string>enx</string>
+		<string>evernotecid</string>
+		<string>evernotemsg</string>
+		<string>youdaonote</string>
+		<string>ynotedictfav</string>
+		<string>com.youdao.note.todayViewNote</string>
+		<string>ynotesharesdk</string>
+		<string>gplus</string>
+		<string>pocket</string>
+		<string>readitlater</string>
+		<string>pocket-oauth-v1</string>
+		<string>fb131450656879143</string>
+		<string>en-readitlater-5776</string>
+		<string>com.ideashower.ReadItLaterPro3</string>
+		<string>com.ideashower.ReadItLaterPro</string>
+		<string>com.ideashower.ReadItLaterProAlpha</string>
+		<string>com.ideashower.ReadItLaterProEnterprise</string>
+		<string>vk</string>
+		<string>vk-share</string>
+		<string>vkauthorize</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

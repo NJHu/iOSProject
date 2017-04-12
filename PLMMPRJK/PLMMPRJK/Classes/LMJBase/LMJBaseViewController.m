@@ -17,6 +17,8 @@
 
 @implementation LMJBaseViewController
 
+
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,6 +29,25 @@
 
     [self.reachHost startNotifier];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // 配置友盟统计
+    [MPUmengHelper beginLogPageViewName:self.title];
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    // 配置友盟统计
+    [MPUmengHelper endLogPageViewName:self.title];
+}
+
+
 
 
 - (instancetype)initWithTitle:(NSString *)title

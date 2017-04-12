@@ -10,6 +10,21 @@
 #define LMJMPTargetConfigMacros_h
 
 
+
+
+
+#ifdef DEBUG
+
+static const int ddLogLevel = DDLogLevelVerbose;
+
+#else
+
+static const int ddLogLevel = DDLogLevelWarning;
+
+#endif
+
+
+
 #ifdef DEBUG
 
 //输出转换成DDLog

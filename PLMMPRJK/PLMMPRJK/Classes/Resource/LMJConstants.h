@@ -13,40 +13,55 @@ static const CGFloat LMJTitlesListsParentViewControllerTitleHeight = 40.0;
 
 
 //邮件接收人
-static NSString* const kMail_cc_ToRecipients_Address=@"mobileproject@126.com";
+static NSString* const kMail_cc_ToRecipients_Address = @"mobileproject@126.com";
 
 //网络状态监控地址
-static NSString* const kURL_Reachability__Address=@"www.baidu.com";
+static NSString* const kURL_Reachability__Address = @"www.baidu.com";
 
 
-static NSString *const CFPThirdSDKManagerUMConfigInstanceAppKey = @"58d0df931061d241d0000e37";
+static NSString *const LMJThirdSDKUMConfigInstanceAppKey = @"58aa7d20e88bad08c1001dcd";
 
-static NSString *const CFPThirdSDKManagerUMConfigInstanceChannelId = @"App Store";
+static NSString *const LMJThirdSDKUMConfigInstanceChannelId = nil;
 
-static NSString *const CFPThirdSDKManagerUMSocialAppkey = @"58d0df931061d241d0000e37";
+static NSString *const LMJThirdSDKUMSocialAppkey = @"58aa7d20e88bad08c1001dcd";
 
-static NSString *const CFPThirdSDKManagerUMessageStartWithAppkey = @"58d0df931061d241d0000e37";
+static NSString *const LMJThirdSDKUMessageStartWithAppkey = @"58aa7d20e88bad08c1001dcd";
 
-
-static NSString *const CFPThirdSDKManagerWeChatAppKey = @"wxe8f33b5e1217167a";
-
-static NSString *const CFPThirdSDKManagerWeChatAppSecret = @"6614439a0ae143daff7cd070a7f4c03a";
-
-static NSString *const CFPThirdSDKManagerWeChatRedirectURL = @"https://www.zplan.com";
+static NSString *const LMJThirdSDKUMessageAppMasterSecret = @"ntljqfii29nachyuqpbmwl5u5yofkyk6";
 
 
 
-static NSString *const CFPThirdSDKManagerSinaAppKey = @"4061770881";
+// 种子计划
+//static NSString *const LMJThirdSDKWeChatAppKey = @"wxf510029cc41f5123";
 
-static NSString *const CFPThirdSDKManagerSinaAppSecret = @"f48ff7f7791061a99a523c5381bf48ee";
+// UM 微信
+static NSString *const LMJThirdSDKWeChatAppKey = @"wxdc1e388c3822c80b";
 
-static NSString *const CFPThirdSDKManagerSinaRedirectURL = @"http://zplan.com.cn";
+
+static NSString *const LMJThirdSDKWeChatAppSecret = @"3baf1193c85774b3fd9d18447d76cab0";
+
+static NSString *const LMJThirdSDKWeChatRedirectURL = @"http://mobile.umeng.com/social";
 
 
-static NSString *const CFPThirdSDKManagerQQAppKey = @"1105997860";
 
-static NSString *const CFPThirdSDKManagerQQAppSecret = nil;
+static NSString *const LMJThirdSDKSinaAppKey = @"3921700954";
 
-static NSString *const CFPThirdSDKManagerQQRedirectURL = @"http://zplan.com.cn";
+static NSString *const LMJThirdSDKSinaAppSecret = @"04b48b094faeb16683c32669824ebdad";
+
+static NSString *const LMJThirdSDKSinaRedirectURL = @"https://sns.whalecloud.com/sina2/callback";
+
+
+
+static NSString *const LMJThirdSDKQQAppKey = @"1105821097";
+
+static NSString *const LMJThirdSDKQQAppSecret = nil;
+
+static NSString *const LMJThirdSDKQQRedirectURL = @"http://mobile.umeng.com/social";
+
+
+static NSString *const LMJThirdSDKMagicWindow = @"75Z6Q063T395YQ85QN27FDR7RAVIEKR7";
+
+
+static NSString *const LMJThirdSDKBaiduMapKey = @"";
 
 #endif /* LMJConstants_h */

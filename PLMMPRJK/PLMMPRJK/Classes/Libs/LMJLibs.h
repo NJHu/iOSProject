@@ -33,6 +33,8 @@
 #import <UMMobClick/MobClick.h>
 #import <UMMobClick/MobClickSocialAnalytics.h>
 #import <UMSocialCore/UMSocialCore.h>
+#import <UShareUI/UShareUI.h>
+#import "UMessage.h"
 
 
 #import <UIImageView+WebCache.h>

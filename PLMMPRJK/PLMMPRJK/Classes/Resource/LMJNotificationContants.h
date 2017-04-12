@@ -19,5 +19,7 @@ static NSString* const NotificationContants_Advertise_Key=@"AdvertisePush";
 
 static NSString *const LMJTableViewControllerDeallocNotification = @"LMJTableViewControllerDeallocNotification";
 
+static NSString *const LMJUMSocialShareSucceedNotification = @"LMJUMSocialShareSucceedNotification";
+
 
 #endif /* LMJNotificationContants_h */

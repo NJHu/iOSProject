@@ -25,9 +25,11 @@
         _titleColor = LMJHexColor(1F3D3F);
         _subTitleColor = LMJHexColor(1F3D3F);
         
+        _cellHeight = AdaptedWidth(50);
+        _titleFont = AdaptedFontSize(17);
+        _subTitleFont = AdaptedFontSize(18);
         
-
-    }
+}
     
     return self;
 }
