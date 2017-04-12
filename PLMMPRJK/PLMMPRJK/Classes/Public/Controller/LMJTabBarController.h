@@ -1,5 +1,5 @@
 //
-//  LMJTabBar.h
+//  LMJTabBarController.h
 //  PLMMPRJK
 //
 //  Created by HuXuPeng on 2017/4/6.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CYLTabBarController.h>
 
-@interface LMJTabBar : UITabBar
+@interface LMJTabBarController : CYLTabBarController
 
 @end

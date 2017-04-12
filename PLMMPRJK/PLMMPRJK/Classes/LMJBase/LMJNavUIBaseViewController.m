@@ -18,7 +18,7 @@
 
 #define kRightMargin 0.0
 
-#define kNavBarCenterY(H) ((64.0 - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
+#define kNavBarCenterY(H) (([self set_navigationHeight] - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
 
 @interface LMJNavUIBaseViewController ()
 
@@ -204,7 +204,11 @@
     return _lmj_navgationBar;
 }
 
-
+// tabBar-height
+- (CGFloat)set_navigationHeight
+{
+    return 64.0;
+}
 
 
 #pragma mark - addTitleLabel

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5862EE061E96204000B809F8 /* LMJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE051E96204000B809F8 /* LMJMessageViewController.m */; };
-		5862EE091E96206100B809F8 /* LMJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE081E96206100B809F8 /* LMJTabBarController.m */; };
 		5862EE1B1E96273500B809F8 /* LMJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE1A1E96273500B809F8 /* LMJNewViewController.m */; };
 		5862EE471E96389600B809F8 /* LMJGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE461E96389600B809F8 /* LMJGuideManager.m */; };
 		588AA9811E9BA693005F2A89 /* NSFetchRequest+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AA8801E9BA693005F2A89 /* NSFetchRequest+Extensions.m */; };
@@ -195,7 +194,6 @@
 		588AABDC1E9CEE79005F2A89 /* LMJAutoRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABD31E9CEE79005F2A89 /* LMJAutoRefreshFooter.m */; };
 		588AABDD1E9CEE79005F2A89 /* LMJNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABD51E9CEE79005F2A89 /* LMJNavigationBar.m */; };
 		588AABDE1E9CEE79005F2A89 /* LMJNormalRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABD71E9CEE79005F2A89 /* LMJNormalRefreshHeader.m */; };
-		588AABDF1E9CEE79005F2A89 /* LMJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABD91E9CEE79005F2A89 /* LMJTabBar.m */; };
 		588AABE01E9CEE79005F2A89 /* LMJWaterflowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABDB1E9CEE79005F2A89 /* LMJWaterflowLayout.m */; };
 		588AABF01E9CEE9C005F2A89 /* CFPExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABE31E9CEE9C005F2A89 /* CFPExpandHeader.m */; };
 		588AABF11E9CEE9C005F2A89 /* CFPExpandImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABE51E9CEE9C005F2A89 /* CFPExpandImageView.m */; };
@@ -207,6 +205,7 @@
 		588AABFC1E9CEEED005F2A89 /* LMJWordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABFA1E9CEEED005F2A89 /* LMJWordItem.m */; };
 		588AABFF1E9CF0A4005F2A89 /* LMJSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABFE1E9CF0A4005F2A89 /* LMJSettingCell.m */; };
 		588AAC021E9CF0F2005F2A89 /* LMJWordArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAC011E9CF0F2005F2A89 /* LMJWordArrowItem.m */; };
+		588AAC0B1E9DF97D005F2A89 /* LMJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAC0A1E9DF97D005F2A89 /* LMJTabBarController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
 		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
@@ -388,8 +387,6 @@
 		5862EDFD1E95D7D200B809F8 /* LMJTargetConfigContants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJTargetConfigContants.h; sourceTree = "<group>"; };
 		5862EE041E96204000B809F8 /* LMJMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJMessageViewController.h; sourceTree = "<group>"; };
 		5862EE051E96204000B809F8 /* LMJMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJMessageViewController.m; sourceTree = "<group>"; };
-		5862EE071E96206100B809F8 /* LMJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTabBarController.h; sourceTree = "<group>"; };
-		5862EE081E96206100B809F8 /* LMJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTabBarController.m; sourceTree = "<group>"; };
 		5862EE191E96273500B809F8 /* LMJNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNewViewController.h; sourceTree = "<group>"; };
 		5862EE1A1E96273500B809F8 /* LMJNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNewViewController.m; sourceTree = "<group>"; };
 		5862EE431E9632D700B809F8 /* LMJUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJUIKit.h; sourceTree = "<group>"; };
@@ -758,8 +755,6 @@
 		588AABD51E9CEE79005F2A89 /* LMJNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNavigationBar.m; sourceTree = "<group>"; };
 		588AABD61E9CEE79005F2A89 /* LMJNormalRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNormalRefreshHeader.h; sourceTree = "<group>"; };
 		588AABD71E9CEE79005F2A89 /* LMJNormalRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNormalRefreshHeader.m; sourceTree = "<group>"; };
-		588AABD81E9CEE79005F2A89 /* LMJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTabBar.h; sourceTree = "<group>"; };
-		588AABD91E9CEE79005F2A89 /* LMJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTabBar.m; sourceTree = "<group>"; };
 		588AABDA1E9CEE79005F2A89 /* LMJWaterflowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJWaterflowLayout.h; sourceTree = "<group>"; };
 		588AABDB1E9CEE79005F2A89 /* LMJWaterflowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJWaterflowLayout.m; sourceTree = "<group>"; };
 		588AABE21E9CEE9C005F2A89 /* CFPExpandHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPExpandHeader.h; sourceTree = "<group>"; };
@@ -783,6 +778,8 @@
 		588AABFE1E9CF0A4005F2A89 /* LMJSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJSettingCell.m; sourceTree = "<group>"; };
 		588AAC001E9CF0F2005F2A89 /* LMJWordArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJWordArrowItem.h; sourceTree = "<group>"; };
 		588AAC011E9CF0F2005F2A89 /* LMJWordArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJWordArrowItem.m; sourceTree = "<group>"; };
+		588AAC091E9DF97D005F2A89 /* LMJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTabBarController.h; sourceTree = "<group>"; };
+		588AAC0A1E9DF97D005F2A89 /* LMJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTabBarController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
 		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
@@ -2147,8 +2144,6 @@
 				588AABD51E9CEE79005F2A89 /* LMJNavigationBar.m */,
 				588AABD61E9CEE79005F2A89 /* LMJNormalRefreshHeader.h */,
 				588AABD71E9CEE79005F2A89 /* LMJNormalRefreshHeader.m */,
-				588AABD81E9CEE79005F2A89 /* LMJTabBar.h */,
-				588AABD91E9CEE79005F2A89 /* LMJTabBar.m */,
 				588AABDA1E9CEE79005F2A89 /* LMJWaterflowLayout.h */,
 				588AABDB1E9CEE79005F2A89 /* LMJWaterflowLayout.m */,
 				588AABFD1E9CF0A4005F2A89 /* LMJSettingCell.h */,
@@ -2196,6 +2191,55 @@
 				588AAC011E9CF0F2005F2A89 /* LMJWordArrowItem.m */,
 			);
 			path = BaseModels;
+			sourceTree = "<group>";
+		};
+		588AAC031E9DF8F4005F2A89 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				588AAC041E9DF92C005F2A89 /* Controller */,
+				588AAC051E9DF92C005F2A89 /* Model */,
+				588AAC061E9DF92C005F2A89 /* Other */,
+				588AAC071E9DF92C005F2A89 /* Service */,
+				588AAC081E9DF92C005F2A89 /* View */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		588AAC041E9DF92C005F2A89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				588AAC091E9DF97D005F2A89 /* LMJTabBarController.h */,
+				588AAC0A1E9DF97D005F2A89 /* LMJTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		588AAC051E9DF92C005F2A89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		588AAC061E9DF92C005F2A89 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		588AAC071E9DF92C005F2A89 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		588AAC081E9DF92C005F2A89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		79F866E3BAD80F021129F8EF /* Pods */ = {
@@ -3044,6 +3088,7 @@
 				5862EE441E96387900B809F8 /* Tool */,
 				E78217A51E9A087A00258845 /* Libs */,
 				5862EDB71E949E6E00B809F8 /* Resource */,
+				588AAC031E9DF8F4005F2A89 /* Public */,
 				E7D0E08A1E8B9F6D001E4585 /* LMJBase */,
 				E7D0E0831E8B9F41001E4585 /* Home */,
 				E782179C1E99F6DB00258845 /* Activity */,
@@ -3088,8 +3133,6 @@
 				588AAB751E9CB944005F2A89 /* LMJBaseViewController.m */,
 				E78212181E8E76D400258845 /* LMJNavigationController.h */,
 				E78212191E8E76D400258845 /* LMJNavigationController.m */,
-				5862EE071E96206100B809F8 /* LMJTabBarController.h */,
-				5862EE081E96206100B809F8 /* LMJTabBarController.m */,
 				588AAB771E9CBFB3005F2A89 /* LMJTableViewController.h */,
 				588AAB781E9CBFB4005F2A89 /* LMJTableViewController.m */,
 				588AAB851E9CD3DB005F2A89 /* LMJCollectionViewController.h */,
@@ -3510,7 +3553,6 @@
 				588AAB931E9CE072005F2A89 /* LMJRefreshCollectionViewController.m in Sources */,
 				588AAB601E9CAED2005F2A89 /* JDStatusBarView.m in Sources */,
 				E78217891E8EAE9000258845 /* UIViewController+DDPopUpViewController.m in Sources */,
-				5862EE091E96206100B809F8 /* LMJTabBarController.m in Sources */,
 				588AA98A1E9BA693005F2A89 /* CLLocationManager+Blocks.m in Sources */,
 				E78217941E8EAE9000258845 /* UIWebView+Style.m in Sources */,
 				588AA9CB1E9BA693005F2A89 /* NSString+Score.m in Sources */,
@@ -3576,7 +3618,6 @@
 				588AAB981E9CE3F0005F2A89 /* LMJTitleListChildViewController.m in Sources */,
 				588AAB641E9CAED2005F2A89 /* QBAssetsCollectionVideoIndicatorView.m in Sources */,
 				E782173A1E8EAE9000258845 /* UIImage+BetterFace.m in Sources */,
-				588AABDF1E9CEE79005F2A89 /* LMJTabBar.m in Sources */,
 				588AA9DE1E9BA693005F2A89 /* UIImage+RoundedCorner.m in Sources */,
 				588AA99D1E9BA693005F2A89 /* NSDateFormatter+Make.m in Sources */,
 				E78217751E8EAE9000258845 /* UIView+BlockGesture.m in Sources */,
@@ -3629,6 +3670,7 @@
 				E78217641E8EAE9000258845 /* UISearchBar+Blocks.m in Sources */,
 				E78217451E8EAE9000258845 /* UIImage+Resize.m in Sources */,
 				588AAA8E1E9BA797005F2A89 /* MyFileLogger.m in Sources */,
+				588AAC0B1E9DF97D005F2A89 /* LMJTabBarController.m in Sources */,
 				588AAA6A1E9BA797005F2A89 /* AddressPickerView.m in Sources */,
 				588AA9D11E9BA693005F2A89 /* NSTimer+Addition.m in Sources */,
 				588AAA871E9BA797005F2A89 /* introductoryPagesView.m in Sources */,

@@ -44,8 +44,9 @@
 
 - (NSMutableAttributedString *)setTitle
 {
-    return [[NSMutableAttributedString alloc] initWithString:self.navigationItem.title.copy attributes:nil];
+    return [self changeTitle:@"新控制器"];
 }
+
 
 - (UIButton *)set_leftButton
 {

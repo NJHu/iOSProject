@@ -45,7 +45,7 @@
 
 - (NSMutableAttributedString *)setTitle
 {
-    return [[NSMutableAttributedString alloc] initWithString:@"主页控制器" attributes:nil];
+    return [[NSMutableAttributedString alloc] initWithString:@"我的" attributes:nil];
 }
 
 - (UIButton *)set_leftButton

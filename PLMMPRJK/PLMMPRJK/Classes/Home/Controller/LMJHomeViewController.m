@@ -61,15 +61,18 @@
 
 - (NSMutableAttributedString *)setTitle
 {
-    return [[NSMutableAttributedString alloc] initWithString:@"主页控制器主页控制器主页控制器" attributes:nil];
+    return [self changeTitle:@"主页"];
 }
 
 - (UIButton *)set_leftButton
 {
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateNormal];
     
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+    [btn setTitle:@"查看" forState:UIControlStateNormal];
+    
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    
+    [btn setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
     
     return btn;
 }
