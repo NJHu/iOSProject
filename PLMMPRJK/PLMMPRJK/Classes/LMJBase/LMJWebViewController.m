@@ -89,7 +89,7 @@
 #pragma mark - title
 - (NSMutableAttributedString *)setTitle
 {
-    return [self changeTitle:@"测试"];
+    return [self changeTitle:@"请添加标题"];
 }
 
 #pragma mark 自定义代码

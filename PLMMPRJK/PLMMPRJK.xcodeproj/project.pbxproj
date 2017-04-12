@@ -184,7 +184,7 @@
 		588AAB6F1E9CAFBA005F2A89 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588AAB6E1E9CAFBA005F2A89 /* iflyMSC.framework */; };
 		588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB701E9CB84A005F2A89 /* Preview.xcassets */; };
 		588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB721E9CB858005F2A89 /* Public.xcassets */; };
-		588AAB761E9CB944005F2A89 /* LLMJBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAB751E9CB944005F2A89 /* LLMJBBaseViewController.m */; };
+		588AAB761E9CB944005F2A89 /* LMJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAB751E9CB944005F2A89 /* LMJBaseViewController.m */; };
 		588AAB791E9CBFB4005F2A89 /* LMJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAB781E9CBFB4005F2A89 /* LMJTableViewController.m */; };
 		588AAB871E9CD3DB005F2A89 /* LMJCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAB861E9CD3DB005F2A89 /* LMJCollectionViewController.m */; };
 		588AAB901E9CE061005F2A89 /* LMJRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAB8F1E9CE061005F2A89 /* LMJRefreshTableViewController.m */; };
@@ -358,7 +358,7 @@
 		E7D0E0751E8B9DCB001E4585 /* PLMMPRJKUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0741E8B9DCB001E4585 /* PLMMPRJKUITests.m */; };
 		E7D0E0881E8B9F41001E4585 /* LMJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0861E8B9F41001E4585 /* LMJAppDelegate.m */; };
 		E7D0E0891E8B9F41001E4585 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0871E8B9F41001E4585 /* main.m */; };
-		E7D0E08D1E8B9F7D001E4585 /* LMJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E08C1E8B9F7D001E4585 /* LMJBaseViewController.m */; };
+		E7D0E08D1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E08C1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -736,8 +736,8 @@
 		588AAB6E1E9CAFBA005F2A89 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		588AAB701E9CB84A005F2A89 /* Preview.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Preview.xcassets; sourceTree = "<group>"; };
 		588AAB721E9CB858005F2A89 /* Public.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Public.xcassets; sourceTree = "<group>"; };
-		588AAB741E9CB944005F2A89 /* LLMJBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMJBBaseViewController.h; sourceTree = "<group>"; };
-		588AAB751E9CB944005F2A89 /* LLMJBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMJBBaseViewController.m; sourceTree = "<group>"; };
+		588AAB741E9CB944005F2A89 /* LMJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBaseViewController.h; sourceTree = "<group>"; };
+		588AAB751E9CB944005F2A89 /* LMJBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBaseViewController.m; sourceTree = "<group>"; };
 		588AAB771E9CBFB3005F2A89 /* LMJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTableViewController.h; sourceTree = "<group>"; };
 		588AAB781E9CBFB4005F2A89 /* LMJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTableViewController.m; sourceTree = "<group>"; };
 		588AAB851E9CD3DB005F2A89 /* LMJCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCollectionViewController.h; sourceTree = "<group>"; };
@@ -1079,8 +1079,8 @@
 		E7D0E0851E8B9F41001E4585 /* LMJAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAppDelegate.h; sourceTree = "<group>"; };
 		E7D0E0861E8B9F41001E4585 /* LMJAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAppDelegate.m; sourceTree = "<group>"; };
 		E7D0E0871E8B9F41001E4585 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E7D0E08B1E8B9F7D001E4585 /* LMJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBaseViewController.h; sourceTree = "<group>"; };
-		E7D0E08C1E8B9F7D001E4585 /* LMJBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBaseViewController.m; sourceTree = "<group>"; };
+		E7D0E08B1E8B9F7D001E4585 /* LMJNavUIBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNavUIBaseViewController.h; sourceTree = "<group>"; };
+		E7D0E08C1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNavUIBaseViewController.m; sourceTree = "<group>"; };
 		F3EB25B4106095BF9996A7E1 /* Pods-PLMMPRJK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLMMPRJK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -3082,10 +3082,10 @@
 			children = (
 				588AABF61E9CEECE005F2A89 /* BaseModels */,
 				588AABD11E9CEE79005F2A89 /* BaseView */,
-				588AAB741E9CB944005F2A89 /* LLMJBBaseViewController.h */,
-				588AAB751E9CB944005F2A89 /* LLMJBBaseViewController.m */,
-				E7D0E08B1E8B9F7D001E4585 /* LMJBaseViewController.h */,
-				E7D0E08C1E8B9F7D001E4585 /* LMJBaseViewController.m */,
+				E7D0E08B1E8B9F7D001E4585 /* LMJNavUIBaseViewController.h */,
+				E7D0E08C1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m */,
+				588AAB741E9CB944005F2A89 /* LMJBaseViewController.h */,
+				588AAB751E9CB944005F2A89 /* LMJBaseViewController.m */,
 				E78212181E8E76D400258845 /* LMJNavigationController.h */,
 				E78212191E8E76D400258845 /* LMJNavigationController.m */,
 				5862EE071E96206100B809F8 /* LMJTabBarController.h */,
@@ -3345,7 +3345,7 @@
 				588AA9BA1E9BA693005F2A89 /* NSObject+Reflection.m in Sources */,
 				588AAB681E9CAED2005F2A89 /* QBImagePickerController.m in Sources */,
 				E782179B1E99F5FF00258845 /* LMJWebViewController.m in Sources */,
-				588AAB761E9CB944005F2A89 /* LLMJBBaseViewController.m in Sources */,
+				588AAB761E9CB944005F2A89 /* LMJBaseViewController.m in Sources */,
 				588AAA801E9BA797005F2A89 /* UIDevice+FCUUID.m in Sources */,
 				588AABF11E9CEE9C005F2A89 /* CFPExpandImageView.m in Sources */,
 				588AABF31E9CEE9C005F2A89 /* MPMultitextCell.m in Sources */,
@@ -3639,7 +3639,7 @@
 				588AAA941E9BA797005F2A89 /* MPUmengHelper.m in Sources */,
 				E782174F1E8EAE9000258845 /* UILabel+AutoSize.m in Sources */,
 				588AA9BB1E9BA693005F2A89 /* NSObject+Runtime.m in Sources */,
-				E7D0E08D1E8B9F7D001E4585 /* LMJBaseViewController.m in Sources */,
+				E7D0E08D1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m in Sources */,
 				588AA9AB1E9BA693005F2A89 /* NSNotificationCenter+MainThread.m in Sources */,
 				588AAA7B1E9BA797005F2A89 /* UIImage+Extensions.m in Sources */,
 				E78217471E8EAE9000258845 /* UIImage+Vector.m in Sources */,
