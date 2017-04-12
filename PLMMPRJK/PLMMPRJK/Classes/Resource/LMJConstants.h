@@ -9,7 +9,7 @@
 #ifndef LMJConstants_h
 #define LMJConstants_h
 
-
+static const CGFloat LMJTitlesListsParentViewControllerTitleHeight = 40.0;
 
 
 //邮件接收人

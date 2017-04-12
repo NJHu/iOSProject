@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -37,7 +37,7 @@
 
 - (UIColor *)set_colorBackground
 {
-    return [UIColor whiteColor];
+    return [UIColor clearColor];
 }
 
 - (void)left_button_event:(UIButton *)sender

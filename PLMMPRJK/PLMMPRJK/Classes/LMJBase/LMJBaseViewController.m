@@ -33,10 +33,6 @@
     
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    
-    self.lmj_prefersNavigationBarHidden = NO;
-    
     [self setupFullNavBar];
     
     [self setupNavTitleView];
@@ -47,7 +43,7 @@
 // 设置导航条的背景图片, 设置导航条的背景色, 设置导航条的底部条
 - (void)setupFullNavBar
 {
-    if (!self.lmj_navgationBar || self.lmj_prefersNavigationBarHidden) {
+    if (!self.lmj_navgationBar) {
         return;
     }
     
@@ -61,10 +57,11 @@
     
     //设置导航条的背景色
     if ([self respondsToSelector:@selector(set_colorBackground)]) {
+        
         UIColor *backgroundColor =  [self set_colorBackground];
         UIImage *bgimage = [UIImage imageWithColor:backgroundColor];
         
-        [self.lmj_navgationBar setBackgroundImage:bgimage forBarMetrics:UIBarMetricsDefault];
+        [self setNavigationBack:bgimage];
     }
     
 
@@ -75,14 +72,19 @@
 // 设置导航条的标题View
 - (void)setupNavTitleView
 {
-    if (!self.lmj_navgationBar || self.lmj_prefersNavigationBarHidden) {
+    if (!self.lmj_navgationBar) {
         return;
     }
     
     // 文字标题
     if ([self respondsToSelector:@selector(setTitle)]) {
+        
         NSMutableAttributedString *titleAttri = [self setTitle];
         [self set_Title:titleAttri];
+        
+    }else if (self.title.length > 0)
+    {
+        [self set_Title:[self changeTitle:self.title]];
     }
     
     
@@ -103,7 +105,7 @@
 // 设置导航条_左右_边的View
 - (void)setupNavLeftView
 {
-    if (!self.lmj_navgationBar || self.lmj_prefersNavigationBarHidden) {
+    if (!self.lmj_navgationBar) {
         return;
     }
     
@@ -181,7 +183,7 @@
 - (LMJNavigationBar *)lmj_navgationBar
 {
     // 父类控制器必须是导航控制器
-    if(_lmj_navgationBar == nil && [self.parentViewController isKindOfClass:[UINavigationController class]])
+    if(_lmj_navgationBar == nil && [self.parentViewController isKindOfClass:[UINavigationController class]] && [self set_isNeedNavBar])
     {
         LMJNavigationBar *navigationBar = [[LMJNavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
         
@@ -208,7 +210,7 @@
 #pragma mark - addTitleLabel
 -(void)set_Title:(NSMutableAttributedString *)title
 {
-    if (!self.lmj_navgationBar || self.lmj_prefersNavigationBarHidden) {
+    if (!self.lmj_navgationBar) {
         return;
     }
     
@@ -296,7 +298,7 @@
 
 -(void)changeNavigationBarTranslationY:(CGFloat)translationY
 {
-    if (!self.lmj_navgationBar || self.lmj_prefersNavigationBarHidden) {
+    if (!self.lmj_navgationBar) {
         return;
     }
     
@@ -312,6 +314,17 @@
     
 }
 
+- (void)changeNavgationBarColor:(UIColor *)bgColor
+{
+    if (!bgColor) {
+        return;
+    }
+    
+    UIImage *bgimage = [UIImage imageWithColor:bgColor];
+    
+    [self setNavigationBack:bgimage];
+}
+
 // 设置导航条的背景图片
 -(void)setNavigationBack:(UIImage *)image
 {
@@ -320,6 +333,28 @@
     [self.lmj_navgationBar setBackIndicatorTransitionMaskImage:image ];
     [self.lmj_navgationBar setShadowImage:image];
 }
+
+
+- (BOOL)set_isNeedNavBar
+{
+    return YES;
+    
+}
+
+#pragma mark 自定义代码
+
+-(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
+{
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
+    
+    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
+    
+    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(18) range:NSMakeRange(0, title.length)];
+    
+    return title;
+}
+
+
 
 
 #pragma mark - 生命周期

@@ -29,7 +29,6 @@
     
     [super viewDidLoad];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.fd_interactivePopDisabled = YES;
     
     LMJWeakSelf(self);
@@ -78,11 +77,12 @@
 
 
 
-- (void)viewWillLayoutSubviews
+- (void)viewDidLayoutSubviews
 {
-    [super viewWillLayoutSubviews];
-    
+    [super viewDidLayoutSubviews];
+
     [self.view bringSubviewToFront:self.progressView];
+    
 }
 
 

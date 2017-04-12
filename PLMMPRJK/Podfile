@@ -9,6 +9,7 @@ target 'PLMMPRJK' do
 pod "AFNetworking"
 #字典转模型
 pod 'MJExtension'
+pod 'MJRefresh'
 pod 'SDWebImage'
 #用于适配
 pod 'Masonry'

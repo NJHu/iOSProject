@@ -24,6 +24,7 @@
 #import <MWPhotoBrowser.h>
 #import <RegexKitLite.h>
 #import <MWApi.h>
+#import <MJRefresh.h>
 
 
 

@@ -7,21 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIImage+Color.h"
+#import "LLMJBBaseViewController.h"
 
+
+// 主要处理导航条
 @protocol  LLMJBaseViewControllerDataSource<NSObject>
 
 @optional
 - (NSMutableAttributedString*)setTitle;
+- (BOOL)set_isNeedNavBar;
+- (UIImage *)navigationBar_BackgroundImage;
+- (UIColor *)set_colorBackground;
+- (BOOL)hideNavigationBar_BottomLine;
+- (CGFloat)set_navigationHeight;
+
 - (UIView *)set_leftView;
 - (UIView *)set_rightView;
 - (UIView *)set_titleView;
-
-- (UIColor *)set_colorBackground;
-- (CGFloat)set_navigationHeight;
-
-- (UIImage *)navigationBar_BackgroundImage;
-- (BOOL)hideNavigationBar_BottomLine;
 
 - (UIButton *)set_leftButton;
 - (UIButton *)set_rightButton;
@@ -39,13 +41,12 @@
 @end
 
 
-@interface LMJBaseViewController : UIViewController<LLMJBaseViewControllerDataSource, LLMJBaseViewControllerDelegate>
+@interface LMJBaseViewController : LLMJBBaseViewController <LLMJBaseViewControllerDataSource, LLMJBaseViewControllerDelegate>
 
 -(void)changeNavigationBarTranslationY:(CGFloat)translationY;
 -(void)set_Title:(NSMutableAttributedString *)title;
 -(void)changeNavigationBarHeight:(CGFloat)height;
+-(void)changeNavgationBarColor:(UIColor *)bgColor;
 
-/** 默认不隐藏NO */
-@property (assign, nonatomic) BOOL lmj_prefersNavigationBarHidden;
 
 @end

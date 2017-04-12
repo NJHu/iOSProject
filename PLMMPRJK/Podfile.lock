@@ -39,6 +39,7 @@ PODS:
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
   - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
   - MWPhotoBrowser (2.1.2):
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJExtension
+  - MJRefresh
   - MWPhotoBrowser
   - RegexKitLite
   - SDWebImage
@@ -103,6 +105,7 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
@@ -113,6 +116,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: f8b911490b5b4caab303cb79d63106216ef6009c
+PODFILE CHECKSUM: 61b50a6ef8c4a8ba92253214046011de2a252de6
 
 COCOAPODS: 1.2.0

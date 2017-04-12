@@ -1,0 +1,104 @@
+//
+//  LMJTableViewController.m
+//  PLMMPRJK
+//
+//  Created by HuXuPeng on 2017/4/11.
+//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//
+
+#import "LMJTableViewController.h"
+
+@interface LMJTableViewController ()
+/** <#digest#> */
+@property (nonatomic, assign) UITableViewStyle tableViewStyle;
+@end
+
+@implementation LMJTableViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setupBaseTableViewUI];
+    
+}
+
+
+
+
+
+- (void)setupBaseTableViewUI
+{
+    self.tableView.backgroundColor = self.view.backgroundColor;
+    
+    
+    if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
+        self.tableView.contentInset  = UIEdgeInsetsMake(64, 0, 0, 0);
+        
+        if ([self respondsToSelector:@selector(set_navigationHeight)]) {
+            
+            self.tableView.contentInset  = UIEdgeInsetsMake([self set_navigationHeight], 0, 0, 0);
+        }
+    }
+    
+    
+    
+    
+    
+}
+
+
+
+#pragma mark - scrollDeleggate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    [self.view endEditing:YES];
+}
+
+
+#pragma mark - TableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [UITableViewCell new];
+}
+
+
+
+- (UITableView *)tableView
+{
+    if(_tableView == nil)
+    {
+        
+        UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:self.tableViewStyle];
+        [self.view addSubview:tableView];
+        
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        
+        tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        _tableView = tableView;
+    }
+    return _tableView;
+}
+
+- (instancetype)initWithStyle:(UITableViewStyle)style
+{
+    if (self = [super init]) {
+        _tableViewStyle = style;
+    }
+    
+    return self;
+}
+
+- (void)dealloc
+{
+    [kNotificationCenter postNotificationName:LMJTableViewControllerDeallocNotification object:self];
+}
+
+@end

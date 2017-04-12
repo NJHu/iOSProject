@@ -11,7 +11,10 @@
 @interface UIColor (HEX)
 + (UIColor *)colorWithHex:(UInt32)hex;
 + (UIColor *)colorWithHex:(UInt32)hex andAlpha:(CGFloat)alpha;
+
 + (UIColor *)colorWithHexString:(NSString *)hexString;
+#define LMJHexColor(hex) [UIColor colorWithHexString:@#hex]
+
 - (NSString *)HEXString;
 
 + (UIColor *)colorWithWholeRed:(CGFloat)red
