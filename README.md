@@ -6,11 +6,11 @@
 - 启动导引, 启动广告
 - 友盟第三方登录, 友盟分享, 友盟推送
 
-![](./images/home4.png =320)
+![img-w150](./images/home4.png)
 
-![](./images/home3.png =320)
+![img-w150](./images/home3.png)
 
 
 ###正在完善中
 
-![](./images/home1.png =320)
+![img-w150](./images/home1.png)
