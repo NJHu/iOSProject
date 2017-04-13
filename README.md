@@ -1,5 +1,7 @@
 # 完善项目中的各种功能
 
+### 感谢原作者[wujunyang](https://github.com/wujunyang)在 GitHub 上[MobileProject](https://github.com/wujunyang/MobileProject)开源项目, [PLMMPrjk](https://github.com/NJHu/PLMMPrjk)开源项目大部分代码直接借鉴[MobileProject](https://github.com/wujunyang/MobileProject)学习.
+
 ## 已经完成的
 
 - 导航条自定义
