@@ -38,8 +38,9 @@
     
     [LMJMagicWindowHelper MagicStart];
     
-    if (launchOptions) {
-        // 10 下 先3后1
+    if (launchOptions && kSystemVersion.doubleValue < 10.0) { // 只处理10以下的
+        
+        // 10 > 先3后1,,,,,,,,,,,,,9就是1
         [WJYAlertView showOneButtonWithTitle:@"1_launchOptions" Message:launchOptions.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
             
         }];
@@ -52,6 +53,7 @@
 
 
 #pragma mark - 魔窗
+//
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
 {
     //如果使用了Universal link ，此方法必写
@@ -128,7 +130,7 @@
 
 
 
-//iOS10以下使用这个方法接收通知
+//iOS10以下后台使用这个方法接收通知
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     
@@ -147,10 +149,12 @@
     //        [alertView show];
     //
     //    }
-    
-    [WJYAlertView showOneButtonWithTitle:@"4iOS10以下使用这个方法接收通知" Message:userInfo.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
+    if (userInfo) {
         
-    }];
+        [WJYAlertView showOneButtonWithTitle:@"4iOS10以下使用这个方法接收通知" Message:userInfo.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
+            
+        }];
+    }
 }
 
 
@@ -179,8 +183,11 @@
 
 //iOS10新增：处理后台点击通知的代理方法
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler{
+    
     NSDictionary * userInfo = response.notification.request.content.userInfo;
+    
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        
         //应用处于后台时的远程推送接受
         //必须加这句代码
         [UMessage didReceiveRemoteNotification:userInfo];

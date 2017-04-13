@@ -17,6 +17,9 @@
 /** <#digest#> */
 @property (weak, nonatomic) UIButton *SinaLoginBtn;
 
+/** <#digest#> */
+@property (weak, nonatomic) UIButton *shareBtn;
+
 @end
 
 @implementation LMJMeViewController
@@ -49,6 +52,13 @@
         
     }];
     
+    
+    [self.shareBtn makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.right.offset(-20);
+        make.top.offset(100);
+        
+    }];
 }
 
 
@@ -184,6 +194,33 @@
 }
 
 
+- (UIButton *)shareBtn
+{
+    if(_shareBtn == nil)
+    {
+        UIButton *loginBtn = [[UIButton alloc] init];
+        
+        [loginBtn setTitle:@"分享面板" forState:UIControlStateNormal];
+        
+        [loginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
+        [loginBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+        
+        loginBtn.tag = 4;
+        [loginBtn addTarget:self action:@selector(right_button_event:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view addSubview:loginBtn];
+        
+        loginBtn.titleLabel.font = AdaptedFontSize(20);
+        
+        [loginBtn setBackgroundColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [loginBtn setBackgroundColor:[UIColor redColor] forState:UIControlStateHighlighted];
+        
+        _shareBtn = loginBtn;
+    }
+    return _shareBtn;
+}
+
 
 #pragma mark 重写BaseViewController设置内容
 
@@ -207,18 +244,37 @@
 
 - (NSMutableAttributedString *)setTitle
 {
-    return [[NSMutableAttributedString alloc] initWithString:@"我的" attributes:nil];
+    return [self changeTitle:@"友盟分享和第三方登录"];
 }
 
-- (UIButton *)set_leftButton
+#pragma mark 自定义代码
+
+-(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
-//    navigationButtonReturn
-    //navigationButtonReturnClick
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
     
-    return btn;
+    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
+    
+    [title addAttribute:NSFontAttributeName value:SYSTEMFONT(13) range:NSMakeRange(0, title.length)];
+    
+    return title;
+}
+
+//
+//- (UIButton *)set_leftButton
+//{
+//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+//    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
+////    navigationButtonReturn
+//    //navigationButtonReturnClick
+//    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+//    
+//    return btn;
+//}
+
+- (UIImage *)set_leftBarButtonItemWithImage
+{
+    return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 

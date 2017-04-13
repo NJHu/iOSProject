@@ -13,4 +13,5 @@
 @dynamic userName;
 @dynamic name;
 @dynamic role;
+@dynamic MBJsPatchTime;
 @end
