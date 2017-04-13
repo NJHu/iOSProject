@@ -49,7 +49,7 @@
 #import "Reachability.h"
 #import "MPUmengHelper.h"
 #import "LMJMagicWindowHelper.h"
-
+#import "YYFPSLabel.h"
 
 
 

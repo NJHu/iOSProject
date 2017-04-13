@@ -74,6 +74,15 @@ static NSString *const ID = @"cellSetting";
     self.detailTextLabel.font = self.item.subTitleFont;
     self.detailTextLabel.textColor = self.item.subTitleColor;
     
+    if ([self.item isKindOfClass:[LMJWordArrowItem class]]) {
+        
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+    }else
+    {
+        self.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
 }
 
 - (void)layoutSubviews

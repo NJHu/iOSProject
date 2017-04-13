@@ -42,6 +42,9 @@
 #import "LMJCollectionViewController.h"
 #import "LMJRefreshTableViewController.h"
 #import "LMJRefreshCollectionViewController.h"
+#import "LMJTitleListChildViewController.h"
+#import "LMJTitlesListsParentViewController.h"
+#import "LMJStaticTableViewController.h"
 
 
 

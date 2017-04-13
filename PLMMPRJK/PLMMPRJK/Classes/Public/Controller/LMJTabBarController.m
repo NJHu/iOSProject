@@ -53,23 +53,23 @@
     
     
     NSDictionary *firstTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"首页",
+                                                 CYLTabBarItemTitle : @"基础",
                                                  CYLTabBarItemImage : @"tabBar_essence_icon",
                                                  CYLTabBarItemSelectedImage : @"tabBar_essence_click_icon",
                                                  };
     
     NSDictionary *secondTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"基础",
+                                                 CYLTabBarItemTitle : @"功能",
                                                  CYLTabBarItemImage : @"tabBar_friendTrends_icon",
                                                  CYLTabBarItemSelectedImage : @"tabBar_friendTrends_click_icon",
                                                  };
     NSDictionary *thirdTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"服务",
+                                                 CYLTabBarItemTitle : @"其他",
                                                  CYLTabBarItemImage : @"tabBar_new_icon",
                                                  CYLTabBarItemSelectedImage : @"tabBar_new_click_icon",
                                                  };
     NSDictionary *fourthTabBarItemsAttributes = @{
-                                                  CYLTabBarItemTitle : @"更多",
+                                                  CYLTabBarItemTitle : @"分享登录",
                                                   CYLTabBarItemImage : @"tabBar_me_icon",
                                                   CYLTabBarItemSelectedImage : @"tabBar_me_click_icon"
                                                   };

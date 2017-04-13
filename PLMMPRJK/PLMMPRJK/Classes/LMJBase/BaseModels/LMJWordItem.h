@@ -27,7 +27,7 @@
 
 
 
-/** 设置cell的高度, 默认60 */
+/** 设置cell的高度, 默认50 */
 @property (assign, nonatomic) CGFloat cellHeight;
 
 

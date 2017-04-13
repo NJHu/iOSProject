@@ -31,6 +31,8 @@
     
     [AdvertiseHelper showAdvertiserView:imagesURLS];
     
+    
+    [kKeyWindow addSubview:[[YYFPSLabel alloc] initWithFrame:CGRectMake(20, 70, 0, 0)]];
 }
 
 - (void)setupOnce

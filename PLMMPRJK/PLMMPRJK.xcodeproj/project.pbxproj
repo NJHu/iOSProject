@@ -233,6 +233,9 @@
 		588AAD891E9F489F005F2A89 /* imageCompressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD5C1E9F489F005F2A89 /* imageCompressHelper.m */; };
 		588AAD8A1E9F489F005F2A89 /* UITapImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD5E1E9F489F005F2A89 /* UITapImageView.m */; };
 		588AAD8B1E9F489F005F2A89 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD611E9F489F005F2A89 /* Reachability.m */; };
+		588AAD941E9F5384005F2A89 /* LMJLiftCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD931E9F5384005F2A89 /* LMJLiftCycleViewController.m */; };
+		58C745CF1E9F5D960040F1D0 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C745CE1E9F5D960040F1D0 /* YYFPSLabel.m */; };
+		58C745D21E9F63E50040F1D0 /* LMJRunTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C745D11E9F63E50040F1D0 /* LMJRunTimeViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
 		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
@@ -845,6 +848,12 @@
 		588AAD5E1E9F489F005F2A89 /* UITapImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITapImageView.m; sourceTree = "<group>"; };
 		588AAD601E9F489F005F2A89 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		588AAD611E9F489F005F2A89 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		588AAD921E9F5384005F2A89 /* LMJLiftCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLiftCycleViewController.h; sourceTree = "<group>"; };
+		588AAD931E9F5384005F2A89 /* LMJLiftCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLiftCycleViewController.m; sourceTree = "<group>"; };
+		58C745CD1E9F5D960040F1D0 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		58C745CE1E9F5D960040F1D0 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		58C745D01E9F63E50040F1D0 /* LMJRunTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJRunTimeViewController.h; sourceTree = "<group>"; };
+		58C745D11E9F63E50040F1D0 /* LMJRunTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJRunTimeViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
 		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
@@ -1863,33 +1872,35 @@
 		588AA9F91E9BA797005F2A89 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				588AAD001E9F489F005F2A89 /* AddressManager */,
-				588AAD041E9F489F005F2A89 /* AdvertiseHelper */,
-				588AAD091E9F489F005F2A89 /* AlertViewManager */,
-				588AAD0E1E9F489F005F2A89 /* EaseBlankPage */,
-				588AAD181E9F489F005F2A89 /* FaceManager */,
-				588AAD2E1E9F489F005F2A89 /* FCUUID */,
-				588AAD351E9F489F005F2A89 /* FileManager */,
-				588AAD381E9F489F005F2A89 /* GCDHelper */,
-				588AAD421E9F489F005F2A89 /* IntroductoryPages */,
-				588AAD471E9F489F005F2A89 /* LcationManager */,
-				588AAD4C1E9F489F005F2A89 /* LKDBHelper */,
-				588AAD511E9F489F005F2A89 /* Logger */,
+				58C745CC1E9F5D960040F1D0 /* YYFPSLabel */,
+				588AAD001E9F489F005F2A89 /* AddressManager(地址管理) */,
+				588AAD041E9F489F005F2A89 /* AdvertiseHelper(启动广告) */,
+				588AAD091E9F489F005F2A89 /* AlertViewManager(弹框管理) */,
+				588AAD0E1E9F489F005F2A89 /* EaseBlankPage(空白页展示) */,
+				588AAD181E9F489F005F2A89 /* FaceManager(科大讯飞) */,
+				588AAD2E1E9F489F005F2A89 /* FCUUID(获取设备标识) */,
+				588AAD351E9F489F005F2A89 /* FileManager(文件管理) */,
+				588AAD381E9F489F005F2A89 /* GCDHelper(GCD助手) */,
+				588AAD421E9F489F005F2A89 /* IntroductoryPages(启动引导页) */,
+				588AAD471E9F489F005F2A89 /* LcationManager(地位管理) */,
+				588AAD4C1E9F489F005F2A89 /* LKDBHelper(数据库管理) */,
+				588AAD511E9F489F005F2A89 /* Logger(日志记录仪) */,
 				588AAD561E9F489F005F2A89 /* OtherHelper */,
 				588AAD5F1E9F489F005F2A89 /* Reachability */,
-				588AAC611E9E22A7005F2A89 /* MagicWinHelper */,
-				588AAA5F1E9BA797005F2A89 /* UmengHelper */,
+				588AAC611E9E22A7005F2A89 /* MagicWinHelper(魔窗) */,
+				588AAA5F1E9BA797005F2A89 /* UmengHelper(UM 集成助手) */,
 				588AAA971E9BA7BE005F2A89 /* LMJHelpers.h */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		588AAA5F1E9BA797005F2A89 /* UmengHelper */ = {
+		588AAA5F1E9BA797005F2A89 /* UmengHelper(UM 集成助手) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAA601E9BA797005F2A89 /* MPUmengHelper.h */,
 				588AAA611E9BA797005F2A89 /* MPUmengHelper.m */,
 			);
+			name = "UmengHelper(UM 集成助手)";
 			path = UmengHelper;
 			sourceTree = "<group>";
 		};
@@ -2248,12 +2259,13 @@
 			path = UMessage_Sdk_1.5.0;
 			sourceTree = "<group>";
 		};
-		588AAC611E9E22A7005F2A89 /* MagicWinHelper */ = {
+		588AAC611E9E22A7005F2A89 /* MagicWinHelper(魔窗) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAC621E9E22B6005F2A89 /* LMJMagicWindowHelper.h */,
 				588AAC631E9E22B6005F2A89 /* LMJMagicWindowHelper.m */,
 			);
+			name = "MagicWinHelper(魔窗)";
 			path = MagicWinHelper;
 			sourceTree = "<group>";
 		};
@@ -2269,17 +2281,18 @@
 			path = PLMMPRIKImages;
 			sourceTree = "<group>";
 		};
-		588AAD001E9F489F005F2A89 /* AddressManager */ = {
+		588AAD001E9F489F005F2A89 /* AddressManager(地址管理) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD011E9F489F005F2A89 /* addressData.plist */,
 				588AAD021E9F489F005F2A89 /* AddressPickerView.h */,
 				588AAD031E9F489F005F2A89 /* AddressPickerView.m */,
 			);
+			name = "AddressManager(地址管理)";
 			path = AddressManager;
 			sourceTree = "<group>";
 		};
-		588AAD041E9F489F005F2A89 /* AdvertiseHelper */ = {
+		588AAD041E9F489F005F2A89 /* AdvertiseHelper(启动广告) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD051E9F489F005F2A89 /* AdvertiseHelper.h */,
@@ -2287,10 +2300,11 @@
 				588AAD071E9F489F005F2A89 /* AdvertiseView.h */,
 				588AAD081E9F489F005F2A89 /* AdvertiseView.m */,
 			);
+			name = "AdvertiseHelper(启动广告)";
 			path = AdvertiseHelper;
 			sourceTree = "<group>";
 		};
-		588AAD091E9F489F005F2A89 /* AlertViewManager */ = {
+		588AAD091E9F489F005F2A89 /* AlertViewManager(弹框管理) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD0A1E9F489F005F2A89 /* WJYAlertInputTextView.h */,
@@ -2298,10 +2312,11 @@
 				588AAD0C1E9F489F005F2A89 /* WJYAlertView.h */,
 				588AAD0D1E9F489F005F2A89 /* WJYAlertView.m */,
 			);
+			name = "AlertViewManager(弹框管理)";
 			path = AlertViewManager;
 			sourceTree = "<group>";
 		};
-		588AAD0E1E9F489F005F2A89 /* EaseBlankPage */ = {
+		588AAD0E1E9F489F005F2A89 /* EaseBlankPage(空白页展示) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD0F1E9F489F005F2A89 /* blankpage_button_reload@2x.png */,
@@ -2314,10 +2329,11 @@
 				588AAD161E9F489F005F2A89 /* UIView+EaseBlankPage.h */,
 				588AAD171E9F489F005F2A89 /* UIView+EaseBlankPage.m */,
 			);
+			name = "EaseBlankPage(空白页展示)";
 			path = EaseBlankPage;
 			sourceTree = "<group>";
 		};
-		588AAD181E9F489F005F2A89 /* FaceManager */ = {
+		588AAD181E9F489F005F2A89 /* FaceManager(科大讯飞) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD191E9F489F005F2A89 /* CanvasView */,
@@ -2326,6 +2342,7 @@
 				588AAD281E9F489F005F2A89 /* Permission */,
 				588AAD2B1E9F489F005F2A89 /* Result */,
 			);
+			name = "FaceManager(科大讯飞)";
 			path = FaceManager;
 			sourceTree = "<group>";
 		};
@@ -2380,7 +2397,7 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
-		588AAD2E1E9F489F005F2A89 /* FCUUID */ = {
+		588AAD2E1E9F489F005F2A89 /* FCUUID(获取设备标识) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD2F1E9F489F005F2A89 /* FCUUID.h */,
@@ -2390,19 +2407,21 @@
 				588AAD331E9F489F005F2A89 /* UIDevice+FCUUID.h */,
 				588AAD341E9F489F005F2A89 /* UIDevice+FCUUID.m */,
 			);
+			name = "FCUUID(获取设备标识)";
 			path = FCUUID;
 			sourceTree = "<group>";
 		};
-		588AAD351E9F489F005F2A89 /* FileManager */ = {
+		588AAD351E9F489F005F2A89 /* FileManager(文件管理) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD361E9F489F005F2A89 /* MPFileManager.h */,
 				588AAD371E9F489F005F2A89 /* MPFileManager.m */,
 			);
+			name = "FileManager(文件管理)";
 			path = FileManager;
 			sourceTree = "<group>";
 		};
-		588AAD381E9F489F005F2A89 /* GCDHelper */ = {
+		588AAD381E9F489F005F2A89 /* GCDHelper(GCD助手) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD391E9F489F005F2A89 /* GCD.h */,
@@ -2415,10 +2434,11 @@
 				588AAD401E9F489F005F2A89 /* GCDTimer.h */,
 				588AAD411E9F489F005F2A89 /* GCDTimer.m */,
 			);
+			name = "GCDHelper(GCD助手)";
 			path = GCDHelper;
 			sourceTree = "<group>";
 		};
-		588AAD421E9F489F005F2A89 /* IntroductoryPages */ = {
+		588AAD421E9F489F005F2A89 /* IntroductoryPages(启动引导页) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD431E9F489F005F2A89 /* introductoryPagesHelper.h */,
@@ -2426,10 +2446,11 @@
 				588AAD451E9F489F005F2A89 /* introductoryPagesView.h */,
 				588AAD461E9F489F005F2A89 /* introductoryPagesView.m */,
 			);
+			name = "IntroductoryPages(启动引导页)";
 			path = IntroductoryPages;
 			sourceTree = "<group>";
 		};
-		588AAD471E9F489F005F2A89 /* LcationManager */ = {
+		588AAD471E9F489F005F2A89 /* LcationManager(地位管理) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD481E9F489F005F2A89 /* CLLocation+MPLocation.h */,
@@ -2437,10 +2458,11 @@
 				588AAD4A1E9F489F005F2A89 /* MPLocationManager.h */,
 				588AAD4B1E9F489F005F2A89 /* MPLocationManager.m */,
 			);
+			name = "LcationManager(地位管理)";
 			path = LcationManager;
 			sourceTree = "<group>";
 		};
-		588AAD4C1E9F489F005F2A89 /* LKDBHelper */ = {
+		588AAD4C1E9F489F005F2A89 /* LKDBHelper(数据库管理) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD4D1E9F489F005F2A89 /* MPLKDBHelper.h */,
@@ -2448,10 +2470,11 @@
 				588AAD4F1E9F489F005F2A89 /* NSObject+PrintSQL.h */,
 				588AAD501E9F489F005F2A89 /* NSObject+PrintSQL.m */,
 			);
+			name = "LKDBHelper(数据库管理)";
 			path = LKDBHelper;
 			sourceTree = "<group>";
 		};
-		588AAD511E9F489F005F2A89 /* Logger */ = {
+		588AAD511E9F489F005F2A89 /* Logger(日志记录仪) */ = {
 			isa = PBXGroup;
 			children = (
 				588AAD521E9F489F005F2A89 /* MPLoggerFormatter.h */,
@@ -2459,6 +2482,7 @@
 				588AAD541E9F489F005F2A89 /* MyFileLogger.h */,
 				588AAD551E9F489F005F2A89 /* MyFileLogger.m */,
 			);
+			name = "Logger(日志记录仪)";
 			path = Logger;
 			sourceTree = "<group>";
 		};
@@ -2484,6 +2508,66 @@
 				588AAD611E9F489F005F2A89 /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		588AAD8C1E9F5347005F2A89 /* Theory */ = {
+			isa = PBXGroup;
+			children = (
+				588AAD8D1E9F5347005F2A89 /* Controller */,
+				588AAD8E1E9F5347005F2A89 /* Model */,
+				588AAD8F1E9F5347005F2A89 /* Other */,
+				588AAD901E9F5347005F2A89 /* Service */,
+				588AAD911E9F5347005F2A89 /* View */,
+			);
+			path = Theory;
+			sourceTree = "<group>";
+		};
+		588AAD8D1E9F5347005F2A89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				588AAD921E9F5384005F2A89 /* LMJLiftCycleViewController.h */,
+				588AAD931E9F5384005F2A89 /* LMJLiftCycleViewController.m */,
+				58C745D01E9F63E50040F1D0 /* LMJRunTimeViewController.h */,
+				58C745D11E9F63E50040F1D0 /* LMJRunTimeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		588AAD8E1E9F5347005F2A89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		588AAD8F1E9F5347005F2A89 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		588AAD901E9F5347005F2A89 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		588AAD911E9F5347005F2A89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		58C745CC1E9F5D960040F1D0 /* YYFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				58C745CD1E9F5D960040F1D0 /* YYFPSLabel.h */,
+				58C745CE1E9F5D960040F1D0 /* YYFPSLabel.m */,
+			);
+			path = YYFPSLabel;
 			sourceTree = "<group>";
 		};
 		79F866E3BAD80F021129F8EF /* Pods */ = {
@@ -3194,9 +3278,9 @@
 				E78217981E99F38700258845 /* PLMMPRJK.entitlements */,
 				E7D0E0821E8B9F41001E4585 /* Classes */,
 				E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */,
-				588AACF51E9F2253005F2A89 /* PLMMPRIKImages */,
 				588AAB701E9CB84A005F2A89 /* Preview.xcassets */,
 				588AAB721E9CB858005F2A89 /* Public.xcassets */,
+				588AACF51E9F2253005F2A89 /* PLMMPRIKImages */,
 				E7D0E05D1E8B9DCB001E4585 /* LaunchScreen.storyboard */,
 				E7D0E0601E8B9DCB001E4585 /* Info.plist */,
 				E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */,
@@ -3232,6 +3316,7 @@
 				588AAC031E9DF8F4005F2A89 /* Public */,
 				E7D0E08A1E8B9F6D001E4585 /* LMJBase */,
 				E7D0E0831E8B9F41001E4585 /* Home */,
+				588AAD8C1E9F5347005F2A89 /* Theory */,
 				E782179C1E99F6DB00258845 /* Activity */,
 				5862EE131E9626EF00B809F8 /* New */,
 				5862EDFE1E96202800B809F8 /* Message */,
@@ -3585,6 +3670,7 @@
 				588AAD7E1E9F489F005F2A89 /* GCDTimer.m in Sources */,
 				588AAC021E9CF0F2005F2A89 /* LMJWordArrowItem.m in Sources */,
 				E7D0E0881E8B9F41001E4585 /* LMJAppDelegate.m in Sources */,
+				58C745CF1E9F5D960040F1D0 /* YYFPSLabel.m in Sources */,
 				588AA9911E9BA693005F2A89 /* NSData+Gzip.m in Sources */,
 				E78217331E8EAE9000258845 /* UIDevice+Hardware.m in Sources */,
 				E7D0E0891E8B9F41001E4585 /* main.m in Sources */,
@@ -3628,6 +3714,7 @@
 				E78217361E8EAE9000258845 /* UIFont+WDCustomLoader.m in Sources */,
 				588AA9AD1E9BA693005F2A89 /* NSDecimalNumber+Extensions.m in Sources */,
 				588AABF01E9CEE9C005F2A89 /* CFPExpandHeader.m in Sources */,
+				58C745D21E9F63E50040F1D0 /* LMJRunTimeViewController.m in Sources */,
 				E782177D1E8EAE9000258845 /* UIView+GestureCallback.m in Sources */,
 				588AAD761E9F489F005F2A89 /* IFlyFaceResultKeys.m in Sources */,
 				588AAD731E9F489F005F2A89 /* UIImage+compress.m in Sources */,
@@ -3835,6 +3922,7 @@
 				E7D0E08D1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m in Sources */,
 				588AA9AB1E9BA693005F2A89 /* NSNotificationCenter+MainThread.m in Sources */,
 				E78217471E8EAE9000258845 /* UIImage+Vector.m in Sources */,
+				588AAD941E9F5384005F2A89 /* LMJLiftCycleViewController.m in Sources */,
 				E782175E1E8EAE9000258845 /* UIResponder+UIAdapt.m in Sources */,
 				588AAB631E9CAED2005F2A89 /* QBAssetsCollectionOverlayView.m in Sources */,
 				588AA9AE1E9BA693005F2A89 /* NSNumber+CGFloat.m in Sources */,
