@@ -196,7 +196,8 @@
 
 - (void)right_button_event:(UIButton *)sender
 {
-    NSLog(@"%s", __func__);
+    [MPUmengHelper shareTitle:@"NJHu-GitHub" subTitle:@"查看内容" thumbImage:@"https://wx.qlogo.cn/mmopen/VXT2numxe2Ru4jyibuTnxGqiabZbY3Vgic2byS4jibMDQkuCSGLdbFcrJvJgnpOKc5fehkWS11AFMapbfn8QgNdl9g/0" shareURL:@"https://www.github.com/njhu"];
+    
 }
 
 - (void)title_click_event:(UILabel *)sender
@@ -224,7 +225,15 @@
 - (UIButton *)set_rightButton
 {
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    
     btn.backgroundColor = [UIColor yellowColor];
+
+    [btn setTitle:@"分享" forState:UIControlStateNormal];
+    
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    
     
     return btn;
 }

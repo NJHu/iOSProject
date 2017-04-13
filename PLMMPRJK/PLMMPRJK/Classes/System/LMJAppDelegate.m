@@ -38,6 +38,12 @@
     
     [LMJMagicWindowHelper MagicStart];
     
+    if (launchOptions) {
+        // 10 下 先3后1
+        [WJYAlertView showOneButtonWithTitle:@"1_launchOptions" Message:launchOptions.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
+            
+        }];
+    }
     
     
     return YES;
@@ -53,6 +59,22 @@
 }
 
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString * string =[[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                         stringByReplacingOccurrencesOfString: @">" withString: @""]
+                        stringByReplacingOccurrencesOfString: @" " withString: @""];
+    
+    NSLog(@"%@", string);
+}
+
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    
+    NSLog(@"注册远程通知失败: %@", error);
+    
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -81,7 +103,7 @@
 }
 
 
-// 支持所有iOS系统, UM
+// 支持所有iOS系统,
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     //必写
@@ -90,15 +112,18 @@
     
     //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    
     if (!result) {
         // 其他如支付等SDK的回调
+        
+        
+        
     }
     
     
     
     return result;
 }
-
 
 
 
@@ -122,18 +147,28 @@
     //        [alertView show];
     //
     //    }
+    
+    [WJYAlertView showOneButtonWithTitle:@"4iOS10以下使用这个方法接收通知" Message:userInfo.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
+        
+    }];
 }
 
 
 //iOS10新增：处理前台收到通知的代理方法
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
+    
     NSDictionary * userInfo = notification.request.content.userInfo;
+    
     if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
         //应用处于前台时的远程推送接受
         //关闭U-Push自带的弹出框
         [UMessage setAutoAlert:NO];
         //必须加这句代码
         [UMessage didReceiveRemoteNotification:userInfo];
+        
+        [WJYAlertView showOneButtonWithTitle:@"2_iOS10新增：处理前台收到通知的代理方法" Message:userInfo.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
+            
+        }];
         
     }else{
         //应用处于前台时的本地推送接受
@@ -149,6 +184,11 @@
         //应用处于后台时的远程推送接受
         //必须加这句代码
         [UMessage didReceiveRemoteNotification:userInfo];
+        
+        
+        [WJYAlertView showOneButtonWithTitle:@"3_iOS10新增：处理后台点击通知的代理方法" Message:userInfo.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
+            
+        }];
         
     }else{
         //应用处于后台时的本地推送接受

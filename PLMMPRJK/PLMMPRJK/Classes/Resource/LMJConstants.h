@@ -43,18 +43,19 @@ static NSString *const LMJThirdSDKWeChatAppSecret = @"3baf1193c85774b3fd9d18447d
 static NSString *const LMJThirdSDKWeChatRedirectURL = @"http://mobile.umeng.com/social";
 
 
+//ZJ4061770881
+static NSString *const LMJThirdSDKSinaAppKey = @"4061770881";
 
-static NSString *const LMJThirdSDKSinaAppKey = @"3921700954";
+static NSString *const LMJThirdSDKSinaAppSecret = @"f48ff7f7791061a99a523c5381bf48ee";
 
-static NSString *const LMJThirdSDKSinaAppSecret = @"04b48b094faeb16683c32669824ebdad";
-
-static NSString *const LMJThirdSDKSinaRedirectURL = @"https://sns.whalecloud.com/sina2/callback";
+static NSString *const LMJThirdSDKSinaRedirectURL = @"http://zplan.com.cn";
 
 
 
+// UM
 static NSString *const LMJThirdSDKQQAppKey = @"1105821097";
 
-static NSString *const LMJThirdSDKQQAppSecret = nil;
+static NSString *const LMJThirdSDKQQAppSecret = @"ublD75ttNYKh0zXx";
 
 static NSString *const LMJThirdSDKQQRedirectURL = @"http://mobile.umeng.com/social";
 

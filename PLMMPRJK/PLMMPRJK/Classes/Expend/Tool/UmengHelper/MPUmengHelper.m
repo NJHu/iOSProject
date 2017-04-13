@@ -58,10 +58,10 @@
     //设置新浪的appKey和appSecret
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:LMJThirdSDKSinaAppKey  appSecret:LMJThirdSDKSinaAppSecret redirectURL:LMJThirdSDKSinaRedirectURL];
     
-//    [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_Sina),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_WechatSession)]];
+    [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_Sina),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_WechatSession), @(UMSocialPlatformType_WechatTimeLine), @(UMSocialPlatformType_Qzone)]];
     
     // 如果不想显示平台下的某些类型，可用以下接口设置
-//    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_AlipaySession),@(UMSocialPlatformType_YixinSession),@(UMSocialPlatformType_LaiWangSession), @(UMSocialPlatformType_Linkedin), @(UMSocialPlatformType_Twitter), @(UMSocialPlatformType_WechatFavorite), @(UMSocialPlatformType_TencentWb)]];
+//    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_AlipaySession),@(UMSocialPlatformType_Email),@(UMSocialPlatformType_Sms), @(UMSocialPlatformType_WechatFavorite), @(UMSocialPlatformType_TencentWb)]];
     
 #ifdef DEBUG
     
