@@ -6,11 +6,11 @@
 - 启动导引, 启动广告
 - 友盟第三方登录, 友盟分享, 友盟推送
 
-![](./images/Simulator Screen Shot 2017年4月13日 16.08.16.png)
+![](./images/home4.png)
 
-![](./images/Simulator Screen Shot 2017年4月13日 16.08.23.png)
+![](./images/home3.png)
 
 
 ###正在完善中
 
-![](./images/Simulator Screen Shot 2017年4月13日 16.08.05.png)
+![](./images/home1.png)
