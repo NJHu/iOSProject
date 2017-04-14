@@ -312,7 +312,7 @@ static AddressPickerView *shareInstance = nil;
     }
     
     // 区
-    for (int k=0; k<[[tempArray[twoColumn] objectForKey:@"areas"] count]; k++)
+    for (int k=0; k< [(NSArray *)[tempArray[twoColumn] objectForKey:@"areas"] count]; k++)
     {
         if ([districtStr isEqualToString:[tempArray[twoColumn] objectForKey:@"areas"][k]])
         {

@@ -56,7 +56,7 @@
                     }
                 }
                 else if ([[obj class] isSubclassOfClass:[NSSet class]]) {
-                    if ([obj count] > 0) {
+                    if ([(NSSet *)obj count] > 0) {
                         NSArray *array = [(NSSet *)obj allObjects];
                         NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:[array count]];
                         for (id o in array)

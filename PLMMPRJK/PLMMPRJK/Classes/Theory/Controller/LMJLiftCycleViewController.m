@@ -10,6 +10,9 @@
 
 @interface LMJLiftCycleViewController ()
 
+/** <#digest#> */
+@property (weak, nonatomic) UITextView *inputTextView;
+
 @end
 
 @implementation LMJLiftCycleViewController
@@ -18,6 +21,8 @@
 - (void)loadView
 {
     [super loadView];
+    
+    [self life:__FUNCTION__];
 }
 
 #pragma mark - 生命周期
@@ -36,45 +41,106 @@
     [self.view addSubview:twoView];
     
     
+    [self life:__FUNCTION__];
+}
+
+
+- (void)life:(const char *)func
+{
+    NSMutableString *strM = [NSMutableString stringWithFormat:@"%@", self.inputTextView.text ?: @""];
     
+    [strM appendString:[NSString stringWithUTF8String:func]];
+    
+    self.inputTextView.text = [strM.copy stringByAppendingString:@"\n"];
+    
+}
+
+- (UITextView *)inputTextView
+{
+    if(_inputTextView == nil)
+    {
+        UITextView *textView = [[UITextView alloc] init];
+        
+        [self.view addSubview:textView];
+        
+//        textView.userInteractionEnabled = YES;
+//        textView.editable = YES;
+//        textView.selectable = NO;
+//        textView.scrollEnabled = YES;
+        
+//        [textView addPlaceHolder:@"我是占位的"];
+        
+        [textView makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.edges.equalTo(UIEdgeInsetsMake(60, 0, 0, 0));
+            
+        }];
+        
+        textView.textColor = [UIColor RandomColor];
+        textView.font = AdaptedFontSize(16);
+        
+        _inputTextView = textView;
+        
+    }
+    return _inputTextView;
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self life:__FUNCTION__];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
+    [self life:__FUNCTION__];
     
 }
 
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
+    
+    [self life:__FUNCTION__];
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    
+    [self life:__FUNCTION__];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self life:__FUNCTION__];
+}
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    [self life:__FUNCTION__];
 }
 
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
+    
+    [self life:__FUNCTION__];
 }
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    
+    [self life:__FUNCTION__];
 }
 
 

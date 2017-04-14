@@ -102,7 +102,7 @@
 #import "MKMapView+MoveLogo.h"
 #import "MKMapView+ZoomLevel.h"
 #import "GVUserDefaults+BBProperties.h"
-#import "UIImage+RoundedCorner.h"
+#import "UIImage+JMRoundedCorner.h"
 #import "UIView+RoundedCorner.h"
 #import "MBProgressHUD+MP.h"
 #import "NSString+Additions.h"

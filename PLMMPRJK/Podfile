@@ -31,7 +31,7 @@ pod 'FLEX', '~> 2.0', :configurations => ['Debug']
 pod 'ActionSheetPicker-3.0'
 pod 'XAspect'
 pod 'LKDBHelper'
-pod 'IQKeyboardManager', '~> 3.3.7'  #兼容IOS7
+#pod 'IQKeyboardManager', '~> 4.0.8'
 pod 'LBXScan','~> 1.1.1'
 pod 'MBProgressHUD'
 pod 'MWPhotoBrowser'

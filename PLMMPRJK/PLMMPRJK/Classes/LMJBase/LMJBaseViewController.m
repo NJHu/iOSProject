@@ -36,6 +36,15 @@
     
     // 配置友盟统计
     [MPUmengHelper beginLogPageViewName:self.title];
+    
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.view endEditing:YES];
 }
 
 
@@ -45,6 +54,7 @@
     
     // 配置友盟统计
     [MPUmengHelper endLogPageViewName:self.title];
+
 }
 
 
@@ -97,7 +107,8 @@
 - (void)dealloc
 {
     
-    NSLog(@"Dealloc-[%@]", self.class);
+    LMJLog(@"%@", self.class);
+    
     [kNotificationCenter removeObserver:self];
     self.reachHost = nil;
     

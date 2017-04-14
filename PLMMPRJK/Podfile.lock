@@ -28,7 +28,6 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - IQKeyboardManager (3.3.7)
   - LBXScan (1.1.1):
     - ZXingObjC (~> 3.0)
   - LKDBHelper (2.4.1):
@@ -72,7 +71,6 @@ DEPENDENCIES:
   - CYLTabBarController
   - FLEX (~> 2.0)
   - FMDB
-  - IQKeyboardManager (~> 3.3.7)
   - LBXScan (~> 1.1.1)
   - LKDBHelper
   - MagicWindowSDK
@@ -98,7 +96,6 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
   LKDBHelper: 531581fa6a7d0f14236cc028ce0d277bca73436a
   MagicWindowSDK: 96eef59392c2b488a8139275546103b9566fc5a7
@@ -116,6 +113,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: 61b50a6ef8c4a8ba92253214046011de2a252de6
+PODFILE CHECKSUM: 2561984e79fa9327e19041550e882382e98d38f6
 
 COCOAPODS: 1.2.0

@@ -7,6 +7,7 @@
 //
 
 #import "LMJAppDelegate.h"
+#import "LMJAppDelegate+LMJCTool.h"
 
 
 @implementation LMJAppDelegate
@@ -16,6 +17,7 @@
     if(!_window)
     {
         _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _window.backgroundColor = [UIColor RandomColor];
         [_window makeKeyAndVisible];
     }
     return _window;
@@ -23,29 +25,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
     [LMJGuideManager sharedManager].keyWindow = self.window;
     
-    //配置DDLog
-    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
-    [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
+    self.launchOptions = launchOptions;
     
-    
-    
-    [MPUmengHelper UMAnalyticStart];
-    [MPUmengHelper UMSocialStart];
-    [MPUmengHelper UMPushStart:launchOptions];
-    
-    
-    [LMJMagicWindowHelper MagicStart];
-    
+    // 10以下的推送
     if (launchOptions && kSystemVersion.doubleValue < 10.0) { // 只处理10以下的
         
         // 10 > 先3后1,,,,,,,,,,,,,9就是1
         [WJYAlertView showOneButtonWithTitle:@"1_launchOptions" Message:launchOptions.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
             
         }];
+        
     }
-    
+
     
     return YES;
 }
@@ -53,11 +47,24 @@
 
 
 #pragma mark - 魔窗
-//
+//[application(_:continueUserActivity:restorationHandler:)]。
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
 {
+    if (userActivity.webpageURL) {
+        
+        NSLog(@"%@", userActivity.webpageURL);
+        
+        [WJYAlertView showOneButtonWithTitle:@"web跳转应用" Message:userActivity.webpageURL.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"确认" Click:^{
+            
+        }];
+    
+    }
+    
+    return YES;
+    
     //如果使用了Universal link ，此方法必写
-    return [MWApi continueUserActivity:userActivity];
+//    return [MWApi continueUserActivity:userActivity];
+    
 }
 
 
@@ -109,7 +116,7 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     //必写
-    [MWApi routeMLink:url];
+//    [MWApi routeMLink:url];
     
     
     //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
@@ -136,24 +143,13 @@
     
     [UMessage didReceiveRemoteNotification:userInfo];
     
-    //    self.userInfo = userInfo;
-    //    //定制自定的的弹出框
-    //    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
-    //    {
-    //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"标题"
-    //                                                            message:@"Test On ApplicationStateActive"
-    //                                                           delegate:self
-    //                                                  cancelButtonTitle:@"确定"
-    //                                                  otherButtonTitles:nil];
-    //
-    //        [alertView show];
-    //
-    //    }
+
     if (userInfo) {
         
         [WJYAlertView showOneButtonWithTitle:@"4iOS10以下使用这个方法接收通知" Message:userInfo.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
             
         }];
+        
     }
 }
 
