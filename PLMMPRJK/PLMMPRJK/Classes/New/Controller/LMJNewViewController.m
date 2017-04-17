@@ -8,6 +8,7 @@
 
 #import "LMJNewViewController.h"
 #import "LMJLoggerViewController.h"
+#import "LMJAddressPickerViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -33,8 +34,12 @@
     item0.destVc = [LMJLoggerViewController class];
     
     
+    LMJWordArrowItem *item1 = [LMJWordArrowItem itemWithTitle:@"省市区三级联动" subTitle: nil];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0] andHeaderTitle:nil footerTitle:nil];
+    item1.destVc = [LMJAddressPickerViewController class];
+    
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1] andHeaderTitle:nil footerTitle:nil];
     
     [self.sections addObject:section0];
 }
@@ -65,7 +70,7 @@
 
 - (NSMutableAttributedString *)setTitle
 {
-    return [self changeTitle:@"新控制器"];
+    return [self changeTitle:@"预演列表"];
 }
 
 

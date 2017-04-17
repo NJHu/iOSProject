@@ -277,6 +277,11 @@
 		58F46AAB1EA4AB5B0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AA71EA4AB5B0073A58C /* README.md */; };
 		58F46AAE1EA4AB980073A58C /* LMJLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AAD1EA4AB980073A58C /* LMJLoggerViewController.m */; };
 		58F46AB11EA4AE850073A58C /* LMJDetailLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AB01EA4AE850073A58C /* LMJDetailLoggerViewController.m */; };
+		58F46ABC1EA4C2BF0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AB51EA4C2BF0073A58C /* README.md */; };
+		58F46ABD1EA4C2BF0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AB71EA4C2BF0073A58C /* README.md */; };
+		58F46ABE1EA4C2BF0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AB91EA4C2BF0073A58C /* README.md */; };
+		58F46ABF1EA4C2BF0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46ABB1EA4C2BF0073A58C /* README.md */; };
+		58F46AC21EA4C3050073A58C /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AC11EA4C3050073A58C /* LMJAddressPickerViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
 		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
@@ -974,6 +979,12 @@
 		58F46AAD1EA4AB980073A58C /* LMJLoggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLoggerViewController.m; sourceTree = "<group>"; };
 		58F46AAF1EA4AE850073A58C /* LMJDetailLoggerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDetailLoggerViewController.h; sourceTree = "<group>"; };
 		58F46AB01EA4AE850073A58C /* LMJDetailLoggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDetailLoggerViewController.m; sourceTree = "<group>"; };
+		58F46AB51EA4C2BF0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		58F46AB71EA4C2BF0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		58F46AB91EA4C2BF0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		58F46ABB1EA4C2BF0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		58F46AC01EA4C3050073A58C /* LMJAddressPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAddressPickerViewController.h; sourceTree = "<group>"; };
+		58F46AC11EA4C3050073A58C /* LMJAddressPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAddressPickerViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
 		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
@@ -2866,6 +2877,59 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		58F46AB21EA4C2BF0073A58C /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AB31EA4C2BF0073A58C /* Controller */,
+				58F46AB41EA4C2BF0073A58C /* Model */,
+				58F46AB61EA4C2BF0073A58C /* Other */,
+				58F46AB81EA4C2BF0073A58C /* Service */,
+				58F46ABA1EA4C2BF0073A58C /* View */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		58F46AB31EA4C2BF0073A58C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AC01EA4C3050073A58C /* LMJAddressPickerViewController.h */,
+				58F46AC11EA4C3050073A58C /* LMJAddressPickerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		58F46AB41EA4C2BF0073A58C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AB51EA4C2BF0073A58C /* README.md */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		58F46AB61EA4C2BF0073A58C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AB71EA4C2BF0073A58C /* README.md */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		58F46AB81EA4C2BF0073A58C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AB91EA4C2BF0073A58C /* README.md */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		58F46ABA1EA4C2BF0073A58C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				58F46ABB1EA4C2BF0073A58C /* README.md */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		79F866E3BAD80F021129F8EF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3617,6 +3681,7 @@
 				E782179C1E99F6DB00258845 /* Activity */,
 				5862EE131E9626EF00B809F8 /* New */,
 				58F46A9E1EA4AB5B0073A58C /* Logger */,
+				58F46AB21EA4C2BF0073A58C /* Preview */,
 				5862EDFE1E96202800B809F8 /* Message */,
 				E782120F1E8CD75400258845 /* Me */,
 				E7D0E0841E8B9F41001E4585 /* System */,
@@ -3955,6 +4020,7 @@
 				588AA9E91E9BA693005F2A89 /* CAAnimation+EasingEquations.m in Sources */,
 				E78217611E8EAE9000258845 /* UIScrollView+APParallaxHeader.m in Sources */,
 				E78217491E8EAE9000258845 /* UIImageView+BetterFace.m in Sources */,
+				58F46ABD1EA4C2BF0073A58C /* README.md in Sources */,
 				E782178B1E8EAE9000258845 /* UIViewController+StoreKit.m in Sources */,
 				588AAB5C1E9CAED2005F2A89 /* GVUserDefaults.m in Sources */,
 				588AA9C61E9BA693005F2A89 /* NSString+MIME.m in Sources */,
@@ -4178,6 +4244,7 @@
 				5800FB031E9F88CA0059B7B8 /* LMJRunTimeTest.m in Sources */,
 				E78217371E8EAE9000258845 /* UIFont-TTF.m in Sources */,
 				E782172A1E8EAE9000258845 /* UIButton+Submitting.m in Sources */,
+				58F46AC21EA4C3050073A58C /* LMJAddressPickerViewController.m in Sources */,
 				5800FB461EA0B08E0059B7B8 /* IQTitleBarButtonItem.m in Sources */,
 				588AA9821E9BA693005F2A89 /* NSManagedObject+DictionaryExport.m in Sources */,
 				E782174A1E8EAE9000258845 /* UIImageView+FaceAwareFill.m in Sources */,
@@ -4185,6 +4252,7 @@
 				588AAB641E9CAED2005F2A89 /* QBAssetsCollectionVideoIndicatorView.m in Sources */,
 				E782173A1E8EAE9000258845 /* UIImage+BetterFace.m in Sources */,
 				588AA9DE1E9BA693005F2A89 /* UIImage+JMRoundedCorner.m in Sources */,
+				58F46ABE1EA4C2BF0073A58C /* README.md in Sources */,
 				588AA99D1E9BA693005F2A89 /* NSDateFormatter+Make.m in Sources */,
 				5800FB471EA0B08E0059B7B8 /* IQToolbar.m in Sources */,
 				E78217751E8EAE9000258845 /* UIView+BlockGesture.m in Sources */,
@@ -4239,6 +4307,7 @@
 				588AAB6C1E9CAED2005F2A89 /* UIPlaceHolderTextView.m in Sources */,
 				588AABDE1E9CEE79005F2A89 /* LMJNormalRefreshHeader.m in Sources */,
 				588AA98C1E9BA693005F2A89 /* NSArray+SafeAccess.m in Sources */,
+				58F46ABC1EA4C2BF0073A58C /* README.md in Sources */,
 				5800FB531EA0DBB70059B7B8 /* LMJGCDViewController.m in Sources */,
 				588AABDC1E9CEE79005F2A89 /* LMJAutoRefreshFooter.m in Sources */,
 				E782178E1E8EAE9000258845 /* UIWebView+Alert.m in Sources */,
@@ -4260,6 +4329,7 @@
 				588AA9BB1E9BA693005F2A89 /* NSObject+Runtime.m in Sources */,
 				E7D0E08D1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m in Sources */,
 				5800FB151EA0A8F50059B7B8 /* LMJAppDelegate+LMJCTool.m in Sources */,
+				58F46ABF1EA4C2BF0073A58C /* README.md in Sources */,
 				588AA9AB1E9BA693005F2A89 /* NSNotificationCenter+MainThread.m in Sources */,
 				E78217471E8EAE9000258845 /* UIImage+Vector.m in Sources */,
 				588AAD941E9F5384005F2A89 /* LMJLiftCycleViewController.m in Sources */,
