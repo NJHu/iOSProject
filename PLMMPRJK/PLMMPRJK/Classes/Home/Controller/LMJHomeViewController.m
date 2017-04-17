@@ -10,6 +10,9 @@
 #import "LMJActivityViewController.h"
 #import "LMJLiftCycleViewController.h"
 #import "LMJRunTimeViewController.h"
+#import "LMJMultithreadViewController.h"
+#import "LMJProtocolViewController.h"
+#import "LMJBlockLoopViewController.h"
 
 @interface LMJHomeViewController ()
 
@@ -33,14 +36,14 @@
     item1.destVc = [LMJRunTimeViewController class];
     
     LMJWordArrowItem *item2 = [LMJWordArrowItem itemWithTitle:@"多线程知识运用" subTitle: nil];
-    item2.destVc = [LMJBaseViewController class];
+    item2.destVc = [LMJMultithreadViewController class];
     
     LMJWordArrowItem *item3 = [LMJWordArrowItem itemWithTitle:@"Protocol 的实现类" subTitle: nil];
-    item3.destVc = [LMJBaseViewController class];
+    item3.destVc = [LMJProtocolViewController class];
     
     
     LMJWordArrowItem *item4 = [LMJWordArrowItem itemWithTitle:@"Block 内存释放" subTitle: nil];
-    item4.destVc = [LMJBaseViewController class];
+    item4.destVc = [LMJBlockLoopViewController class];
     
     
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4] andHeaderTitle:nil footerTitle:nil];
