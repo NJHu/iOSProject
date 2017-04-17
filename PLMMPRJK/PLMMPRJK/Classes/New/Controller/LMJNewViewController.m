@@ -7,6 +7,7 @@
 //
 
 #import "LMJNewViewController.h"
+#import "LMJLoggerViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -16,6 +17,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    [self.navigationController.tabBarItem setBadgeColor:[UIColor RandomColor]];
+    
+    [self.navigationController.tabBarItem setBadgeValue:@"2"];
+    
+    
+    
+    UIEdgeInsets edgeInsets = self.tableView.contentInset;
+    edgeInsets.bottom += self.tabBarController.tabBar.height;
+    self.tableView.contentInset = edgeInsets;
+    
+    LMJWordArrowItem *item0 = [LMJWordArrowItem itemWithTitle:@"日志记录" subTitle: nil];
+    item0.destVc = [LMJLoggerViewController class];
+    
+    
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0] andHeaderTitle:nil footerTitle:nil];
+    
+    [self.sections addObject:section0];
 }
 
 

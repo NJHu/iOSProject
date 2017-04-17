@@ -45,9 +45,6 @@ const UIEdgeInsets tableViewDefaultLayoutMargins = {8, 8, 8, 8};
 {
     LMJWordItem *item = self.sections[indexPath.section].items[indexPath.row];
     
-    if (item.isNeedCustom) {
-        return nil;
-    }
     
     LMJSettingCell *cell = [LMJSettingCell cellWithTableView:tableView andCellStyle:UITableViewCellStyleValue1];
     

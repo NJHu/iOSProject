@@ -32,6 +32,7 @@
     [self addTabarItems];
     [self addChildViewControllers];
     
+    
 }
 
 - (void)addChildViewControllers

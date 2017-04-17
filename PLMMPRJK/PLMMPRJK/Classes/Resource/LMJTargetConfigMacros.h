@@ -12,32 +12,32 @@
 
 
 
-//
-//#ifdef DEBUG
-//
-//static const int ddLogLevel = DDLogLevelVerbose;
-//
-//#else
-//
-//static const int ddLogLevel = DDLogLevelWarning;
-//
-//#endif
+
+#ifdef DEBUG
+
+static const int ddLogLevel = DDLogLevelVerbose;
+
+#else
+
+static const int ddLogLevel = DDLogLevelWarning;
+
+#endif
 
 
 
-//#ifdef DEBUG
-//
-////输出转换成DDLog
-//#define NSLog(...) DDLogVerbose(__VA_ARGS__)
-//#define Log(...) DDLogVerbose(__VA_ARGS__)
-//
-//#else   //其它环境
-//
-////输出转换成DDLog
-//#define NSLog(...) DDLogVerbose(__VA_ARGS__)
-//#define Log(...) DDLogVerbose(__VA_ARGS__)
-//
-//#endif
+#ifdef DEBUG
+
+//输出转换成DDLog
+#define NSLog(...) DDLogVerbose(__VA_ARGS__)
+#define Log(...) DDLogVerbose(__VA_ARGS__)
+
+#else   //其它环境
+
+//输出转换成DDLog
+#define NSLog(...) DDLogVerbose(__VA_ARGS__)
+#define Log(...) DDLogVerbose(__VA_ARGS__)
+
+#endif
 
 
 
@@ -51,7 +51,7 @@
 #define LMJLog(fmt, ...) NSLog((@"=====Begin==========\n FILE: %@\n FUNC: %s\n LINE: %d\n " fmt), [NSString stringWithUTF8String:__FILE__].lastPathComponent, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 
-#define Log(fmt, ...) NSLog((@"=====Begin==========\n FILE: %@\n FUNC: %s\n LINE: %d\n " fmt), [NSString stringWithUTF8String:__FILE__].lastPathComponent, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+//#define Log(fmt, ...) NSLog((@"=====Begin==========\n FILE: %@\n FUNC: %s\n LINE: %d\n " fmt), [NSString stringWithUTF8String:__FILE__].lastPathComponent, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 /**
  *  打印函数

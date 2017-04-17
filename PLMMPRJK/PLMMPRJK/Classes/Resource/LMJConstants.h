@@ -13,7 +13,7 @@ static const CGFloat LMJTitlesListsParentViewControllerTitleHeight = 40.0;
 
 
 //邮件接收人
-static NSString* const kMail_cc_ToRecipients_Address = @"mobileproject@126.com";
+static NSString* const kMail_cc_ToRecipients_Address = @"64hp@163.com";
 
 //网络状态监控地址
 static NSString* const kURL_Reachability__Address = @"www.baidu.com";

@@ -50,6 +50,12 @@
     
     [self.sections addObject:section0];
     
+    
+    
+    UITabBarItem *homeItem = self.navigationController.tabBarItem;
+    
+    [homeItem setBadgeValue:@"3"];
+    
 }
 
 

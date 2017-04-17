@@ -271,6 +271,12 @@
 		58F46A941EA498B90073A58C /* MPBlockLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46A931EA498B90073A58C /* MPBlockLoopOperation.m */; };
 		58F46A971EA499220073A58C /* LMJChildBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46A961EA499220073A58C /* LMJChildBlockViewController.m */; };
 		58F46A9D1EA4994A0073A58C /* LMJModalBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46A9C1EA4994A0073A58C /* LMJModalBlockViewController.m */; };
+		58F46AA81EA4AB5B0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AA11EA4AB5B0073A58C /* README.md */; };
+		58F46AA91EA4AB5B0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AA31EA4AB5B0073A58C /* README.md */; };
+		58F46AAA1EA4AB5B0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AA51EA4AB5B0073A58C /* README.md */; };
+		58F46AAB1EA4AB5B0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AA71EA4AB5B0073A58C /* README.md */; };
+		58F46AAE1EA4AB980073A58C /* LMJLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AAD1EA4AB980073A58C /* LMJLoggerViewController.m */; };
+		58F46AB11EA4AE850073A58C /* LMJDetailLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AB01EA4AE850073A58C /* LMJDetailLoggerViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
 		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
@@ -960,6 +966,14 @@
 		58F46A961EA499220073A58C /* LMJChildBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJChildBlockViewController.m; sourceTree = "<group>"; };
 		58F46A9B1EA4994A0073A58C /* LMJModalBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJModalBlockViewController.h; sourceTree = "<group>"; };
 		58F46A9C1EA4994A0073A58C /* LMJModalBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJModalBlockViewController.m; sourceTree = "<group>"; };
+		58F46AA11EA4AB5B0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		58F46AA31EA4AB5B0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		58F46AA51EA4AB5B0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		58F46AA71EA4AB5B0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		58F46AAC1EA4AB980073A58C /* LMJLoggerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLoggerViewController.h; sourceTree = "<group>"; };
+		58F46AAD1EA4AB980073A58C /* LMJLoggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLoggerViewController.m; sourceTree = "<group>"; };
+		58F46AAF1EA4AE850073A58C /* LMJDetailLoggerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDetailLoggerViewController.h; sourceTree = "<group>"; };
+		58F46AB01EA4AE850073A58C /* LMJDetailLoggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDetailLoggerViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
 		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
@@ -2797,6 +2811,61 @@
 			path = YYFPSLabel;
 			sourceTree = "<group>";
 		};
+		58F46A9E1EA4AB5B0073A58C /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				58F46A9F1EA4AB5B0073A58C /* Controller */,
+				58F46AA01EA4AB5B0073A58C /* Model */,
+				58F46AA21EA4AB5B0073A58C /* Other */,
+				58F46AA41EA4AB5B0073A58C /* Service */,
+				58F46AA61EA4AB5B0073A58C /* View */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		58F46A9F1EA4AB5B0073A58C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AAC1EA4AB980073A58C /* LMJLoggerViewController.h */,
+				58F46AAD1EA4AB980073A58C /* LMJLoggerViewController.m */,
+				58F46AAF1EA4AE850073A58C /* LMJDetailLoggerViewController.h */,
+				58F46AB01EA4AE850073A58C /* LMJDetailLoggerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		58F46AA01EA4AB5B0073A58C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AA11EA4AB5B0073A58C /* README.md */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		58F46AA21EA4AB5B0073A58C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AA31EA4AB5B0073A58C /* README.md */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		58F46AA41EA4AB5B0073A58C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AA51EA4AB5B0073A58C /* README.md */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		58F46AA61EA4AB5B0073A58C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				58F46AA71EA4AB5B0073A58C /* README.md */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		79F866E3BAD80F021129F8EF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3547,6 +3616,7 @@
 				588AAD8C1E9F5347005F2A89 /* Theory */,
 				E782179C1E99F6DB00258845 /* Activity */,
 				5862EE131E9626EF00B809F8 /* New */,
+				58F46A9E1EA4AB5B0073A58C /* Logger */,
 				5862EDFE1E96202800B809F8 /* Message */,
 				E782120F1E8CD75400258845 /* Me */,
 				E7D0E0841E8B9F41001E4585 /* System */,
@@ -3860,9 +3930,11 @@
 				E782179B1E99F5FF00258845 /* LMJWebViewController.m in Sources */,
 				588AAB761E9CB944005F2A89 /* LMJBaseViewController.m in Sources */,
 				588AABF11E9CEE9C005F2A89 /* CFPExpandImageView.m in Sources */,
+				58F46AAE1EA4AB980073A58C /* LMJLoggerViewController.m in Sources */,
 				5800FB591EA0DBD10059B7B8 /* LMJLockViewController.m in Sources */,
 				588AABF31E9CEE9C005F2A89 /* MPMultitextCell.m in Sources */,
 				E78217581E8EAE9000258845 /* UINavigationItem+Loading.m in Sources */,
+				58F46AA81EA4AB5B0073A58C /* README.md in Sources */,
 				588AA9D21E9BA693005F2A89 /* NSTimer+Blocks.m in Sources */,
 				E78217291E8EAE9000258845 /* UIButton+MiddleAligning.m in Sources */,
 				5862EE471E96389600B809F8 /* LMJGuideManager.m in Sources */,
@@ -3970,6 +4042,7 @@
 				E782176E1E8EAE9000258845 /* UITextField+History.m in Sources */,
 				E78217A41E99F6F600258845 /* LMJActivityViewController.m in Sources */,
 				E78217531E8EAE9000258845 /* UINavigationController+BATransitions.m in Sources */,
+				58F46AA91EA4AB5B0073A58C /* README.md in Sources */,
 				E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */,
 				E78217281E8EAE9000258845 /* UIButton+Indicator.m in Sources */,
 				E78217411E8EAE9000258845 /* UIImage+Merge.m in Sources */,
@@ -4027,6 +4100,7 @@
 				588AABF41E9CEE9C005F2A89 /* MPTitleAndPromptCell.m in Sources */,
 				5800FB431EA0B08E0059B7B8 /* IQTextView.m in Sources */,
 				588AAB671E9CAED2005F2A89 /* QBAssetsCollectionViewLayout.m in Sources */,
+				58F46AB11EA4AE850073A58C /* LMJDetailLoggerViewController.m in Sources */,
 				5862EE061E96204000B809F8 /* LMJMessageViewController.m in Sources */,
 				588AABE01E9CEE79005F2A89 /* LMJWaterflowLayout.m in Sources */,
 				588AA9831E9BA693005F2A89 /* NSManagedObject+Extensions.m in Sources */,
@@ -4119,6 +4193,7 @@
 				E78217681E8EAE9000258845 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				E782174C1E8EAE9000258845 /* UIImageView+Letters.m in Sources */,
 				5800FB3D1EA0B08E0059B7B8 /* IQUITextFieldView+Additions.m in Sources */,
+				58F46AAB1EA4AB5B0073A58C /* README.md in Sources */,
 				E782176A1E8EAE9000258845 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				588AAB5D1E9CAED2005F2A89 /* iCarousel.m in Sources */,
 				E78217661E8EAE9000258845 /* UITableView+iOS7Style.m in Sources */,
@@ -4135,6 +4210,7 @@
 				588AAD7B1E9F489F005F2A89 /* GCDGroup.m in Sources */,
 				588AAB611E9CAED2005F2A89 /* QBAssetsCollectionCheckmarkView.m in Sources */,
 				588AAD651E9F489F005F2A89 /* AdvertiseView.m in Sources */,
+				58F46AAA1EA4AB5B0073A58C /* README.md in Sources */,
 				E782171C1E8EAE9000258845 /* UIApplication+KeyboardFrame.m in Sources */,
 				588AAD8A1E9F489F005F2A89 /* UITapImageView.m in Sources */,
 				5800FB501EA0DBA30059B7B8 /* LMJNSThreadViewController.m in Sources */,
