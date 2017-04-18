@@ -30,6 +30,7 @@
         
     }];
     
+    [self.collectionView.mj_header beginRefreshing];
 }
 
 
@@ -44,6 +45,14 @@
         ![self.collectionView.mj_footer isRefreshing] ?: [self.collectionView.mj_footer endRefreshing];
     }
     [self loadMore:isMore];
+}
+
+// 结束刷新
+- (void)endHeaderFooterRefreshing
+{
+    // 结束刷新状态
+    ![self.collectionView.mj_header isRefreshing] ?: [self.collectionView.mj_header endRefreshing];
+    ![self.collectionView.mj_footer isRefreshing] ?: [self.collectionView.mj_footer endRefreshing];
 }
 
 

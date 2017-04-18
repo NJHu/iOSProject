@@ -53,23 +53,23 @@
 
 - (void)syncConCurrent
 {
-    LMJLog(@"syncConcurrent---begin");
+    NSLog(@"syncConcurrent---begin");
     
     dispatch_queue_t queue= dispatch_queue_create("test.queue", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_sync(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            LMJLog(@"1------%@",[NSThread currentThread]);
+            NSLog(@"1------%@",[NSThread currentThread]);
         }
     });
     dispatch_sync(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            LMJLog(@"2------%@",[NSThread currentThread]);
+            NSLog(@"2------%@",[NSThread currentThread]);
         }
     });
     dispatch_sync(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            LMJLog(@"3------%@",[NSThread currentThread]);
+            NSLog(@"3------%@",[NSThread currentThread]);
         }
     });
     
@@ -88,32 +88,32 @@
     //    从并发队列 + 同步执行中可以看到，所有任务都是在主线程中执行的。由于只有一个线程，所以任务只能一个一个执行
     //    所有任务都在打印的syncConcurrent---begin和syncConcurrent---end之间，这说明任务是添加到队列中马上执行的
     
-        LMJLog(@"syncConcurrent---end");
+        NSLog(@"syncConcurrent---end");
 }
 
 - (void)asyncConcurrent
 {
-    LMJLog(@"asyncConcurrent---begin");
+    NSLog(@"asyncConcurrent---begin");
     
     dispatch_queue_t queue= dispatch_queue_create("test.asyncqueue", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_async(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            LMJLog(@"1------%@",[NSThread currentThread]);
+            NSLog(@"1------%@",[NSThread currentThread]);
         }
     });
     dispatch_async(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            LMJLog(@"2------%@",[NSThread currentThread]);
+            NSLog(@"2------%@",[NSThread currentThread]);
         }
     });
     dispatch_async(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            LMJLog(@"3------%@",[NSThread currentThread]);
+            NSLog(@"3------%@",[NSThread currentThread]);
         }
     });
     
-    LMJLog(@"asyncConcurrent---end");
+    NSLog(@"asyncConcurrent---end");
     
     
     //输出内容：
@@ -345,19 +345,19 @@
 
 - (void)left_button_event:(UIButton *)sender
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)right_button_event:(UIButton *)sender
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
 }
 
 - (void)title_click_event:(UILabel *)sender
 {
-    LMJLog(@"%@", sender);
+    NSLog(@"%@", sender);
 }
 
 - (NSMutableAttributedString *)setTitle

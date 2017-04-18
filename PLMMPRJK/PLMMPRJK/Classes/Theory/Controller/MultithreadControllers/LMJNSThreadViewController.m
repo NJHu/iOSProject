@@ -25,11 +25,11 @@
     
     [self addThreadAction];
     
-    LMJLog(@"%lf", CFAbsoluteTimeGetCurrent());
+    NSLog(@"%lf", CFAbsoluteTimeGetCurrent());
     
     [self addMutableThread];
     
-    LMJLog(@"%lf", CFAbsoluteTimeGetCurrent());
+    NSLog(@"%lf", CFAbsoluteTimeGetCurrent());
     
     
     [self ExitThread];
@@ -50,7 +50,7 @@
 
 - (void)runAction
 {
-    LMJLog(@"当前NSInvocationOperation执行的线程为：%@", [NSThread currentThread]);
+    NSLog(@"当前NSInvocationOperation执行的线程为：%@", [NSThread currentThread]);
     //输出：当前NSInvocationOperation执行的线程为：<NSThread: 0x600000071940>{number = 1, name = main}
     
     //说明
@@ -87,7 +87,7 @@
 
 -(void)runMutableAction
 {
-    LMJLog(@"当前线程为：%@",[NSThread currentThread]);
+    NSLog(@"当前线程为：%@",[NSThread currentThread]);
 }
 
 
@@ -216,19 +216,19 @@
 
 - (void)left_button_event:(UIButton *)sender
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)right_button_event:(UIButton *)sender
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
 }
 
 - (void)title_click_event:(UILabel *)sender
 {
-    LMJLog(@"%@", sender);
+    NSLog(@"%@", sender);
 }
 
 - (NSMutableAttributedString *)setTitle

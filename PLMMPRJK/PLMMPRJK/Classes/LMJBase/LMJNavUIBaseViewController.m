@@ -312,10 +312,7 @@
 
 -(void)changeNavigationBarHeight:(CGFloat)height
 {
-    [UIView animateWithDuration:0.3f animations:^{
-        self.lmj_navgationBar.frame = CGRectMake(0, 0, self.lmj_navgationBar.frame.size.width, height);
-    }];
-    
+    self.lmj_navgationBar.frame = CGRectMake(0, 0, self.lmj_navgationBar.frame.size.width, height);   
 }
 
 - (void)changeNavgationBarColor:(UIColor *)bgColor

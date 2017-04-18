@@ -35,19 +35,19 @@ static char BlankPageViewKey;
             self.blankPageView = [[EaseBlankPageView alloc] initWithFrame:self.bounds];
         }
         self.blankPageView.hidden = NO;
-        [self.blankPageContainer addSubview:self.blankPageView];
+        [self addSubview:self.blankPageView];
         
         [self.blankPageView configWithType:blankPageType hasData:hasData hasError:hasError reloadButtonBlock:block];
     }
 }
 
-- (UIView *)blankPageContainer{
-    UIView *blankPageContainer = self;
-    for (UIView *aView in [self subviews]) {
-        if ([aView isKindOfClass:[UITableView class]]) {
-            blankPageContainer = aView;
-        }
-    }
-    return blankPageContainer;
-}
+//- (UIView *)blankPageContainer{
+//    UIView *blankPageContainer = self;
+//    for (UIView *aView in [self subviews]) {
+//        if ([aView isKindOfClass:[UITableView class]]) {
+//            blankPageContainer = aView;
+//        }
+//    }
+//    return blankPageContainer;
+//}
 @end

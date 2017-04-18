@@ -12,12 +12,12 @@
 //引入Masonry两个宏 便于写布局代码
 #define MAS_SHORTHAND
 #define MAS_SHORTHAND_GLOBALS
+#import <Masonry/Masonry.h>
 
 #import <CocoaLumberjack.h>
 #import <DDLog.h>
 #import <YYKit.h>
 #import <AFNetworking/AFNetworking.h>
-#import <Masonry/Masonry.h>
 #import <ActionSheetPicker.h>
 #import <SVProgressHUD.h>
 #import <MJExtension.h>

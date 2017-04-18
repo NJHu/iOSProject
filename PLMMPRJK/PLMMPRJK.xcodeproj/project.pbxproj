@@ -139,7 +139,6 @@
 		588AA9E41E9BA693005F2A89 /* UIImage+OuterCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AA9681E9BA693005F2A89 /* UIImage+OuterCircle.m */; };
 		588AA9E51E9BA693005F2A89 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AA96A1E9BA693005F2A89 /* UITextField+Extension.m */; };
 		588AA9E61E9BA693005F2A89 /* UIView+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AA96C1E9BA693005F2A89 /* UIView+Empty.m */; };
-		588AA9E71E9BA693005F2A89 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AA96E1E9BA693005F2A89 /* UIView+Extension.m */; };
 		588AA9E81E9BA693005F2A89 /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AA9721E9BA693005F2A89 /* CAAnimation+Blocks.m */; };
 		588AA9E91E9BA693005F2A89 /* CAAnimation+EasingEquations.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AA9741E9BA693005F2A89 /* CAAnimation+EasingEquations.m */; };
 		588AA9EA1E9BA693005F2A89 /* CALayer+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AA9771E9BA693005F2A89 /* CALayer+UIColor.m */; };
@@ -277,11 +276,11 @@
 		58F46AAB1EA4AB5B0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AA71EA4AB5B0073A58C /* README.md */; };
 		58F46AAE1EA4AB980073A58C /* LMJLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AAD1EA4AB980073A58C /* LMJLoggerViewController.m */; };
 		58F46AB11EA4AE850073A58C /* LMJDetailLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AB01EA4AE850073A58C /* LMJDetailLoggerViewController.m */; };
-		58F46ABC1EA4C2BF0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AB51EA4C2BF0073A58C /* README.md */; };
-		58F46ABD1EA4C2BF0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AB71EA4C2BF0073A58C /* README.md */; };
-		58F46ABE1EA4C2BF0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AB91EA4C2BF0073A58C /* README.md */; };
-		58F46ABF1EA4C2BF0073A58C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F46ABB1EA4C2BF0073A58C /* README.md */; };
 		58F46AC21EA4C3050073A58C /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AC11EA4C3050073A58C /* LMJAddressPickerViewController.m */; };
+		58F46AC51EA4CC710073A58C /* LMJNoNavBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AC41EA4CC710073A58C /* LMJNoNavBarViewController.m */; };
+		58F46AC81EA59D3F0073A58C /* LMJAdaptFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AC71EA59D3F0073A58C /* LMJAdaptFontViewController.m */; };
+		58F46ACB1EA5A0900073A58C /* LMJAdaptFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46ACA1EA5A0900073A58C /* LMJAdaptFontCell.m */; };
+		58F46ACE1EA5B4E20073A58C /* LMJBlankPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46ACD1EA5B4E20073A58C /* LMJBlankPageViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
 		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
@@ -383,7 +382,6 @@
 		E78217791E8EAE9000258845 /* UIView+draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = E78216DA1E8EAE9000258845 /* UIView+draggable.m */; };
 		E782177A1E8EAE9000258845 /* UIView+FDCollapsibleConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = E78216DC1E8EAE9000258845 /* UIView+FDCollapsibleConstraints.m */; };
 		E782177B1E8EAE9000258845 /* UIView+Find.m in Sources */ = {isa = PBXBuildFile; fileRef = E78216DE1E8EAE9000258845 /* UIView+Find.m */; };
-		E782177C1E8EAE9000258845 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E78216E01E8EAE9000258845 /* UIView+Frame.m */; };
 		E782177D1E8EAE9000258845 /* UIView+GestureCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = E78216E21E8EAE9000258845 /* UIView+GestureCallback.m */; };
 		E782177E1E8EAE9000258845 /* UIView+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = E78216E41E8EAE9000258845 /* UIView+Nib.m */; };
 		E782177F1E8EAE9000258845 /* UIView+Recursion.m in Sources */ = {isa = PBXBuildFile; fileRef = E78216E61E8EAE9000258845 /* UIView+Recursion.m */; };
@@ -712,8 +710,6 @@
 		588AA96A1E9BA693005F2A89 /* UITextField+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extension.m"; sourceTree = "<group>"; };
 		588AA96B1E9BA693005F2A89 /* UIView+Empty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Empty.h"; sourceTree = "<group>"; };
 		588AA96C1E9BA693005F2A89 /* UIView+Empty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Empty.m"; sourceTree = "<group>"; };
-		588AA96D1E9BA693005F2A89 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		588AA96E1E9BA693005F2A89 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		588AA9711E9BA693005F2A89 /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
 		588AA9721E9BA693005F2A89 /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
 		588AA9731E9BA693005F2A89 /* CAAnimation+EasingEquations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+EasingEquations.h"; sourceTree = "<group>"; };
@@ -979,12 +975,16 @@
 		58F46AAD1EA4AB980073A58C /* LMJLoggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLoggerViewController.m; sourceTree = "<group>"; };
 		58F46AAF1EA4AE850073A58C /* LMJDetailLoggerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDetailLoggerViewController.h; sourceTree = "<group>"; };
 		58F46AB01EA4AE850073A58C /* LMJDetailLoggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDetailLoggerViewController.m; sourceTree = "<group>"; };
-		58F46AB51EA4C2BF0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		58F46AB71EA4C2BF0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		58F46AB91EA4C2BF0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		58F46ABB1EA4C2BF0073A58C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		58F46AC01EA4C3050073A58C /* LMJAddressPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAddressPickerViewController.h; sourceTree = "<group>"; };
 		58F46AC11EA4C3050073A58C /* LMJAddressPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAddressPickerViewController.m; sourceTree = "<group>"; };
+		58F46AC31EA4CC710073A58C /* LMJNoNavBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNoNavBarViewController.h; sourceTree = "<group>"; };
+		58F46AC41EA4CC710073A58C /* LMJNoNavBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNoNavBarViewController.m; sourceTree = "<group>"; };
+		58F46AC61EA59D3F0073A58C /* LMJAdaptFontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAdaptFontViewController.h; sourceTree = "<group>"; };
+		58F46AC71EA59D3F0073A58C /* LMJAdaptFontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAdaptFontViewController.m; sourceTree = "<group>"; };
+		58F46AC91EA5A0900073A58C /* LMJAdaptFontCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAdaptFontCell.h; sourceTree = "<group>"; };
+		58F46ACA1EA5A0900073A58C /* LMJAdaptFontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAdaptFontCell.m; sourceTree = "<group>"; };
+		58F46ACC1EA5B4E20073A58C /* LMJBlankPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBlankPageViewController.h; sourceTree = "<group>"; };
+		58F46ACD1EA5B4E20073A58C /* LMJBlankPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBlankPageViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
 		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
@@ -1186,8 +1186,6 @@
 		E78216DC1E8EAE9000258845 /* UIView+FDCollapsibleConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FDCollapsibleConstraints.m"; sourceTree = "<group>"; };
 		E78216DD1E8EAE9000258845 /* UIView+Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Find.h"; sourceTree = "<group>"; };
 		E78216DE1E8EAE9000258845 /* UIView+Find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Find.m"; sourceTree = "<group>"; };
-		E78216DF1E8EAE9000258845 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		E78216E01E8EAE9000258845 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		E78216E11E8EAE9000258845 /* UIView+GestureCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GestureCallback.h"; sourceTree = "<group>"; };
 		E78216E21E8EAE9000258845 /* UIView+GestureCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GestureCallback.m"; sourceTree = "<group>"; };
 		E78216E31E8EAE9000258845 /* UIView+Nib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Nib.h"; sourceTree = "<group>"; };
@@ -2004,8 +2002,6 @@
 				588AA96A1E9BA693005F2A89 /* UITextField+Extension.m */,
 				588AA96B1E9BA693005F2A89 /* UIView+Empty.h */,
 				588AA96C1E9BA693005F2A89 /* UIView+Empty.m */,
-				588AA96D1E9BA693005F2A89 /* UIView+Extension.h */,
-				588AA96E1E9BA693005F2A89 /* UIView+Extension.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -2894,6 +2890,12 @@
 			children = (
 				58F46AC01EA4C3050073A58C /* LMJAddressPickerViewController.h */,
 				58F46AC11EA4C3050073A58C /* LMJAddressPickerViewController.m */,
+				58F46AC31EA4CC710073A58C /* LMJNoNavBarViewController.h */,
+				58F46AC41EA4CC710073A58C /* LMJNoNavBarViewController.m */,
+				58F46AC61EA59D3F0073A58C /* LMJAdaptFontViewController.h */,
+				58F46AC71EA59D3F0073A58C /* LMJAdaptFontViewController.m */,
+				58F46ACC1EA5B4E20073A58C /* LMJBlankPageViewController.h */,
+				58F46ACD1EA5B4E20073A58C /* LMJBlankPageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2901,7 +2903,6 @@
 		58F46AB41EA4C2BF0073A58C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				58F46AB51EA4C2BF0073A58C /* README.md */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2909,7 +2910,6 @@
 		58F46AB61EA4C2BF0073A58C /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				58F46AB71EA4C2BF0073A58C /* README.md */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -2917,7 +2917,6 @@
 		58F46AB81EA4C2BF0073A58C /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				58F46AB91EA4C2BF0073A58C /* README.md */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -2925,7 +2924,8 @@
 		58F46ABA1EA4C2BF0073A58C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				58F46ABB1EA4C2BF0073A58C /* README.md */,
+				58F46AC91EA5A0900073A58C /* LMJAdaptFontCell.h */,
+				58F46ACA1EA5A0900073A58C /* LMJAdaptFontCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3463,8 +3463,6 @@
 				E78216DC1E8EAE9000258845 /* UIView+FDCollapsibleConstraints.m */,
 				E78216DD1E8EAE9000258845 /* UIView+Find.h */,
 				E78216DE1E8EAE9000258845 /* UIView+Find.m */,
-				E78216DF1E8EAE9000258845 /* UIView+Frame.h */,
-				E78216E01E8EAE9000258845 /* UIView+Frame.m */,
 				E78216E11E8EAE9000258845 /* UIView+GestureCallback.h */,
 				E78216E21E8EAE9000258845 /* UIView+GestureCallback.m */,
 				E78216E31E8EAE9000258845 /* UIView+Nib.h */,
@@ -3969,6 +3967,7 @@
 				5800FB411EA0B08E0059B7B8 /* IQKeyboardManager.m in Sources */,
 				E78217571E8EAE9000258845 /* UINavigationController+StackManager.m in Sources */,
 				588AAD811E9F489F005F2A89 /* CLLocation+MPLocation.m in Sources */,
+				58F46AC81EA59D3F0073A58C /* LMJAdaptFontViewController.m in Sources */,
 				588AA9BD1E9BA693005F2A89 /* NSSet+Block.m in Sources */,
 				588AABF51E9CEE9C005F2A89 /* MPSolidColorButton.m in Sources */,
 				E78217921E8EAE9000258845 /* UIWebView+Load.m in Sources */,
@@ -3993,6 +3992,7 @@
 				588AAD821E9F489F005F2A89 /* MPLocationManager.m in Sources */,
 				588AAB681E9CAED2005F2A89 /* QBImagePickerController.m in Sources */,
 				E782179B1E99F5FF00258845 /* LMJWebViewController.m in Sources */,
+				58F46AC51EA4CC710073A58C /* LMJNoNavBarViewController.m in Sources */,
 				588AAB761E9CB944005F2A89 /* LMJBaseViewController.m in Sources */,
 				588AABF11E9CEE9C005F2A89 /* CFPExpandImageView.m in Sources */,
 				58F46AAE1EA4AB980073A58C /* LMJLoggerViewController.m in Sources */,
@@ -4020,7 +4020,6 @@
 				588AA9E91E9BA693005F2A89 /* CAAnimation+EasingEquations.m in Sources */,
 				E78217611E8EAE9000258845 /* UIScrollView+APParallaxHeader.m in Sources */,
 				E78217491E8EAE9000258845 /* UIImageView+BetterFace.m in Sources */,
-				58F46ABD1EA4C2BF0073A58C /* README.md in Sources */,
 				E782178B1E8EAE9000258845 /* UIViewController+StoreKit.m in Sources */,
 				588AAB5C1E9CAED2005F2A89 /* GVUserDefaults.m in Sources */,
 				588AA9C61E9BA693005F2A89 /* NSString+MIME.m in Sources */,
@@ -4073,7 +4072,6 @@
 				E78217701E8EAE9000258845 /* UITextField+Shake.m in Sources */,
 				588AA9BC1E9BA693005F2A89 /* NSRunLoop+PerformBlock.m in Sources */,
 				588AAD701E9F489F005F2A89 /* CaptureManager.m in Sources */,
-				588AA9E71E9BA693005F2A89 /* UIView+Extension.m in Sources */,
 				588AA99F1E9BA693005F2A89 /* NSDictionary+JSONString.m in Sources */,
 				588AA99E1E9BA693005F2A89 /* NSDictionary+Block.m in Sources */,
 				588AA9941E9BA693005F2A89 /* NSData+zlib.m in Sources */,
@@ -4097,7 +4095,6 @@
 				588AAD731E9F489F005F2A89 /* UIImage+compress.m in Sources */,
 				58F46A8B1EA494F90073A58C /* LMJProtocolViewController.m in Sources */,
 				588AAD7D1E9F489F005F2A89 /* GCDSemaphore.m in Sources */,
-				E782177C1E8EAE9000258845 /* UIView+Frame.m in Sources */,
 				588AA9DA1E9BA693005F2A89 /* MKMapView+BetterMaps.m in Sources */,
 				588AA9D81E9BA693005F2A89 /* NSUserDefaults+iCloudSync.m in Sources */,
 				588AA9951E9BA693005F2A89 /* NSDate+CupertinoYankee.m in Sources */,
@@ -4162,6 +4159,7 @@
 				E78217871E8EAE9000258845 /* UIViewController+BackButtonTouched.m in Sources */,
 				588AAD771E9F489F005F2A89 /* FCUUID.m in Sources */,
 				588AA98F1E9BA693005F2A89 /* NSData+Base64.m in Sources */,
+				58F46ACB1EA5A0900073A58C /* LMJAdaptFontCell.m in Sources */,
 				E782173C1E8EAE9000258845 /* UIImage+Capture.m in Sources */,
 				588AABF41E9CEE9C005F2A89 /* MPTitleAndPromptCell.m in Sources */,
 				5800FB431EA0B08E0059B7B8 /* IQTextView.m in Sources */,
@@ -4200,6 +4198,7 @@
 				588AA9B11E9BA693005F2A89 /* NSObject+AddProperty.m in Sources */,
 				588AA9DD1E9BA693005F2A89 /* GVUserDefaults+BBProperties.m in Sources */,
 				588AA9CD1E9BA693005F2A89 /* NSString+Trims.m in Sources */,
+				58F46ACE1EA5B4E20073A58C /* LMJBlankPageViewController.m in Sources */,
 				588AA9961E9BA693005F2A89 /* NSDate+Extension.m in Sources */,
 				588AA9CE1E9BA693005F2A89 /* NSString+UrlEncode.m in Sources */,
 				588AA9B41E9BA693005F2A89 /* NSObject+AutoCoding.m in Sources */,
@@ -4252,7 +4251,6 @@
 				588AAB641E9CAED2005F2A89 /* QBAssetsCollectionVideoIndicatorView.m in Sources */,
 				E782173A1E8EAE9000258845 /* UIImage+BetterFace.m in Sources */,
 				588AA9DE1E9BA693005F2A89 /* UIImage+JMRoundedCorner.m in Sources */,
-				58F46ABE1EA4C2BF0073A58C /* README.md in Sources */,
 				588AA99D1E9BA693005F2A89 /* NSDateFormatter+Make.m in Sources */,
 				5800FB471EA0B08E0059B7B8 /* IQToolbar.m in Sources */,
 				E78217751E8EAE9000258845 /* UIView+BlockGesture.m in Sources */,
@@ -4307,7 +4305,6 @@
 				588AAB6C1E9CAED2005F2A89 /* UIPlaceHolderTextView.m in Sources */,
 				588AABDE1E9CEE79005F2A89 /* LMJNormalRefreshHeader.m in Sources */,
 				588AA98C1E9BA693005F2A89 /* NSArray+SafeAccess.m in Sources */,
-				58F46ABC1EA4C2BF0073A58C /* README.md in Sources */,
 				5800FB531EA0DBB70059B7B8 /* LMJGCDViewController.m in Sources */,
 				588AABDC1E9CEE79005F2A89 /* LMJAutoRefreshFooter.m in Sources */,
 				E782178E1E8EAE9000258845 /* UIWebView+Alert.m in Sources */,
@@ -4329,7 +4326,6 @@
 				588AA9BB1E9BA693005F2A89 /* NSObject+Runtime.m in Sources */,
 				E7D0E08D1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m in Sources */,
 				5800FB151EA0A8F50059B7B8 /* LMJAppDelegate+LMJCTool.m in Sources */,
-				58F46ABF1EA4C2BF0073A58C /* README.md in Sources */,
 				588AA9AB1E9BA693005F2A89 /* NSNotificationCenter+MainThread.m in Sources */,
 				E78217471E8EAE9000258845 /* UIImage+Vector.m in Sources */,
 				588AAD941E9F5384005F2A89 /* LMJLiftCycleViewController.m in Sources */,

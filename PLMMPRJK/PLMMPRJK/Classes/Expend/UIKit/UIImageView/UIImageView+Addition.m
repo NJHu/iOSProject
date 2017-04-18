@@ -31,7 +31,7 @@
 }
 + (id) imageViewWithImageArray:(NSArray *)imageArray duration:(NSTimeInterval)duration;
 {
-    if (imageArray && ![imageArray count]>0)
+    if (imageArray && !([imageArray count]>0))
     {
         return nil;
     }

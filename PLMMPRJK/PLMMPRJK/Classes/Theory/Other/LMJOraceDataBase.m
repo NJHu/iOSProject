@@ -12,13 +12,13 @@
 
 - (void)start
 {
-    LMJLogFunc;
+    NSLog(@"%s", __func__);
 }
 
 
 - (void)end
 {
-    LMJLogFunc;
+    NSLog(@"%s", __func__);
 }
 
 @end

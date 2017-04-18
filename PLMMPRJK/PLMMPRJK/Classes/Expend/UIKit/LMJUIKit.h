@@ -134,7 +134,7 @@
 #import "UIView+draggable.h"
 #import "UIView+FDCollapsibleConstraints.h"
 #import "UIView+Find.h"
-#import "UIView+Frame.h"
+#import <UIView+MJExtension.h>
 #import "UIView+GestureCallback.h"
 #import "UIView+Nib.h"
 #import "UIView+Recursion.h"

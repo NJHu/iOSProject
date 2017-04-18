@@ -9,6 +9,9 @@
 #import "LMJNewViewController.h"
 #import "LMJLoggerViewController.h"
 #import "LMJAddressPickerViewController.h"
+#import "LMJNoNavBarViewController.h"
+#import "LMJAdaptFontViewController.h"
+#import "LMJBlankPageViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -27,7 +30,7 @@
     
     
     UIEdgeInsets edgeInsets = self.tableView.contentInset;
-    edgeInsets.bottom += self.tabBarController.tabBar.height;
+    edgeInsets.bottom += self.tabBarController.tabBar.mj_h;
     self.tableView.contentInset = edgeInsets;
     
     LMJWordArrowItem *item0 = [LMJWordArrowItem itemWithTitle:@"日志记录" subTitle: nil];
@@ -39,7 +42,22 @@
     item1.destVc = [LMJAddressPickerViewController class];
     
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1] andHeaderTitle:nil footerTitle:nil];
+    LMJWordArrowItem *item2 = [LMJWordArrowItem itemWithTitle:@"没有导航栏全局返回" subTitle: nil];
+    
+    item2.destVc = [LMJNoNavBarViewController class];
+    
+    
+    LMJWordArrowItem *item3 = [LMJWordArrowItem itemWithTitle:@"字体适配屏幕" subTitle: nil];
+    
+    item3.destVc = [ LMJAdaptFontViewController class];
+    
+    
+    LMJWordArrowItem *item4 = [LMJWordArrowItem itemWithTitle:@"空白页展示" subTitle: nil];
+    
+    item4.destVc = [LMJBlankPageViewController class];
+    
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4] andHeaderTitle:nil footerTitle:nil];
     
     [self.sections addObject:section0];
 }

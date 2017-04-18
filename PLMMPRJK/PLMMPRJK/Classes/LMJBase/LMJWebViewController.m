@@ -89,7 +89,7 @@
 #pragma mark - title
 - (NSMutableAttributedString *)setTitle
 {
-    return [self changeTitle:@"请添加标题"];
+    return [self changeTitle:@""];
 }
 
 #pragma mark 自定义代码
@@ -117,7 +117,7 @@
     
     self.backBtn.origin = CGPointZero;
     
-    self.closeBtn.left = leftView.width - self.closeBtn.width;
+    self.closeBtn.mj_x = leftView.mj_w - self.closeBtn.mj_w;
     
     [leftView addSubview:self.backBtn];
     

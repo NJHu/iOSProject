@@ -61,11 +61,11 @@
     [self.view addSubview:titlesView];
     self.titlesView = titlesView;
     
-    titlesView.x = 0;
-    titlesView.y = 64;
+    titlesView.mj_x = 0;
+    titlesView.mj_y = 64;
     
-    titlesView.width = self.view.width;
-    titlesView.height = LMJTitlesViewInEssenceHeight;
+    titlesView.mj_w = self.view.mj_w;
+    titlesView.mj_h = LMJTitlesViewInEssenceHeight;
     titlesView.backgroundColor = [UIColor whiteColor];
     
     [self addButtonsInTitleswView:titlesView];
@@ -77,13 +77,13 @@
 // 选中了第一个
 - (void)addButtonsInTitleswView:(UIView *)titlesView
 {
-    CGFloat buttonW = titlesView.width / self.childViewControllers.count;
+    CGFloat buttonW = titlesView.mj_w / self.childViewControllers.count;
     
     CGFloat buttonY = 0;
     
     CGFloat buttonContentTopMargin = 10;
     
-    CGFloat buttonH = titlesView.height;
+    CGFloat buttonH = titlesView.mj_h;
     
     CGFloat buttonX = 0;
 
@@ -131,8 +131,8 @@
     
     indicatorView.backgroundColor = self.titleBtnSelectedColor;
     
-    indicatorView.height = 2;
-    indicatorView.y = titlesView.height - indicatorView.height;
+    indicatorView.mj_h = 2;
+    indicatorView.mj_y = titlesView.mj_h - indicatorView.mj_h;
 }
 
 
@@ -144,13 +144,17 @@
     
 //     指示器缓慢移动汇过去
     [UIView animateWithDuration:0.15 animations:^{
-        self.indicatorView.width = self.selectedBtn.titleLabel.width;
-        self.indicatorView.centerX = self.selectedBtn.centerX;
+        
+        self.indicatorView.mj_w = self.selectedBtn.titleLabel.mj_w;
+        
+        CGPoint center = self.indicatorView.center;
+        center.x = self.selectedBtn.center.x;
+        self.indicatorView.center = center;
     }];
     
     CGPoint contentScrollViewContentOffset = self.contentScrollView.contentOffset;
     
-    contentScrollViewContentOffset.x = self.selectedBtn.tag * self.contentScrollView.width;
+    contentScrollViewContentOffset.x = self.selectedBtn.tag * self.contentScrollView.mj_w;
     
     // 设置完后才会调用, 如果指没有变, 是不会调用的
     self.contentScrollView.contentOffset = contentScrollViewContentOffset;
@@ -161,14 +165,14 @@
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-    NSInteger index = scrollView.contentOffset.x / scrollView.width;
+    NSInteger index = scrollView.contentOffset.x / scrollView.mj_w;
     
     UIViewController *vc = self.childViewControllers[index];
     
     // 如果已经加载到contentScrollView上边的时候, 就不用再加了
     if(vc.view.superview) return;
     
-    vc.view.x = index * scrollView.width;
+    vc.view.mj_x = index * scrollView.mj_w;
     
     [self.contentScrollView addSubview:vc.view];
     
@@ -181,7 +185,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    NSInteger index = 1.0 * scrollView.contentOffset.x / scrollView.width;
+    NSInteger index = 1.0 * scrollView.contentOffset.x / scrollView.mj_w;
     
     [self selectTitle:self.titleBtns[index]];
 }
@@ -195,11 +199,11 @@
     offsetXScale = (offsetXScale >= 0) ? offsetXScale : 0;
     
     
-    CGFloat indicatorIngoreCenterX = self.titleBtns.firstObject.centerX;
+    CGFloat indicatorIngoreCenterX = self.titleBtns.firstObject.center.x;
     
-    CGFloat indicatorMaxCenterX = self.titleBtns.lastObject.centerX;
+    CGFloat indicatorMaxCenterX = self.titleBtns.lastObject.center.x;
     
-    CGFloat indicatorDistance = self.titlesView.width;
+    CGFloat indicatorDistance = self.titlesView.mj_w;
     
     CGFloat centerX = indicatorIngoreCenterX + indicatorDistance * offsetXScale;
     
@@ -263,7 +267,7 @@
     contentScrollView.delegate = self;
     
     // 设置contentScrollView的属性
-    contentScrollView.contentSize = CGSizeMake(contentScrollView.width * self.childViewControllers.count, 0);
+    contentScrollView.contentSize = CGSizeMake(contentScrollView.mj_w * self.childViewControllers.count, 0);
     contentScrollView.showsHorizontalScrollIndicator = NO;
     contentScrollView.pagingEnabled = YES;
     
@@ -289,8 +293,13 @@
 {
     [super viewWillAppear:animated];
     
-    self.indicatorView.width = self.selectedBtn.titleLabel.width;
-    self.indicatorView.centerX = self.selectedBtn.centerX;
+    self.indicatorView.mj_w = self.selectedBtn.titleLabel.mj_w;
+
+    
+    CGPoint center = self.indicatorView.center;
+    center.x = self.selectedBtn.center.x;
+    self.indicatorView.center = center;
+    
     [self scrollViewDidEndDecelerating:self.contentScrollView];
     
 }

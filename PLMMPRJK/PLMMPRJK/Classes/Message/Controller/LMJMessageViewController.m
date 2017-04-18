@@ -24,7 +24,13 @@
 {
     [self set_Title:[self changeTitle:@"快看快看快看快看"]];
     
-    [self changeNavigationBarHeight:100];
+    
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        [self changeNavigationBarHeight:100];
+        
+    }];
 }
 
 #pragma mark 重写BaseViewController设置内容

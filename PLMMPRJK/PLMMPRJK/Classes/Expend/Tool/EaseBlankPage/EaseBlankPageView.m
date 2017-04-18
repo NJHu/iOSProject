@@ -43,8 +43,8 @@
     
     //    布局
     [_monkeyView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.centerY.equalTo(self.top).with.offset(100);
+        make.centerX.equalTo(self.mas_centerX);
+        make.centerY.equalTo(self.mas_top).offset(kScreenHeight * 0.38);
     }];
     [_tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.centerX.equalTo(self);
