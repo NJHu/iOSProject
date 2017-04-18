@@ -42,14 +42,17 @@
         
         if (contentOffsetY == 0) {
             
+            [self changeNavigationBarTranslationY:0];
             [self changeNavgationBarBackgroundColor:[UIColor clearColor]];
             [self changeNavigationBarHeight:[self lmjNavigationHeight:nil]];
             
         }else if (contentOffsetY < 0)
         {
-            [self changeNavigationBarHeight:0.01];
+            [self changeNavigationBarTranslationY:-[self lmjNavigationHeight:nil]];
         }else
         {
+            [self changeNavigationBarTranslationY:0];
+            
             UIColor *redColor = [self lmjNavigationBackgroundColor:nil];
             
             redColor = [redColor colorWithAlphaComponent:(contentOffsetY/ (([self lmjNavigationHeight:nil] + CGRectGetHeight([UIApplication sharedApplication].statusBarFrame)) * 2.0 * 0.63))];
@@ -90,6 +93,11 @@
 - (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 {
     return [UIColor redColor];
+}
+
+- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
+{
+    return YES;
 }
 
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar

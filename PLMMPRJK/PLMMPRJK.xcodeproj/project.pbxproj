@@ -283,6 +283,7 @@
 		58F46ACE1EA5B4E20073A58C /* LMJBlankPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46ACD1EA5B4E20073A58C /* LMJBlankPageViewController.m */; };
 		58F46AD11EA5E8360073A58C /* LMJAnimationNavBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AD01EA5E8360073A58C /* LMJAnimationNavBarViewController.m */; };
 		58F46AD41EA5F07A0073A58C /* LMJYYTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AD31EA5F07A0073A58C /* LMJYYTextViewController.m */; };
+		58F46AD71EA645D30073A58C /* LMJListExpandHideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AD61EA645D30073A58C /* LMJListExpandHideViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
 		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
@@ -991,6 +992,8 @@
 		58F46AD01EA5E8360073A58C /* LMJAnimationNavBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAnimationNavBarViewController.m; sourceTree = "<group>"; };
 		58F46AD21EA5F07A0073A58C /* LMJYYTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJYYTextViewController.h; sourceTree = "<group>"; };
 		58F46AD31EA5F07A0073A58C /* LMJYYTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJYYTextViewController.m; sourceTree = "<group>"; };
+		58F46AD51EA645D30073A58C /* LMJListExpandHideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJListExpandHideViewController.h; sourceTree = "<group>"; };
+		58F46AD61EA645D30073A58C /* LMJListExpandHideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJListExpandHideViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
 		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
@@ -2906,6 +2909,8 @@
 				58F46AD01EA5E8360073A58C /* LMJAnimationNavBarViewController.m */,
 				58F46AD21EA5F07A0073A58C /* LMJYYTextViewController.h */,
 				58F46AD31EA5F07A0073A58C /* LMJYYTextViewController.m */,
+				58F46AD51EA645D30073A58C /* LMJListExpandHideViewController.h */,
+				58F46AD61EA645D30073A58C /* LMJListExpandHideViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4006,6 +4011,7 @@
 				588AAB761E9CB944005F2A89 /* LMJBaseViewController.m in Sources */,
 				588AABF11E9CEE9C005F2A89 /* CFPExpandImageView.m in Sources */,
 				58F46AAE1EA4AB980073A58C /* LMJLoggerViewController.m in Sources */,
+				58F46AD71EA645D30073A58C /* LMJListExpandHideViewController.m in Sources */,
 				5800FB591EA0DBD10059B7B8 /* LMJLockViewController.m in Sources */,
 				588AABF31E9CEE9C005F2A89 /* MPMultitextCell.m in Sources */,
 				E78217581E8EAE9000258845 /* UINavigationItem+Loading.m in Sources */,
