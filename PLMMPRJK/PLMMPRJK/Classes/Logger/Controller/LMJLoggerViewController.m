@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     
-    
+    self.tableView.backgroundColor = [UIColor whiteColor];
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
 
@@ -160,11 +160,16 @@
 }
 
 #pragma mark 重写BaseViewController设置内容
-//
+
 //- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 //{
-//    return [UIColor RandomColor];
+//    return [UIColor whiteColor];
 //}
+
+- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
+{
+    return NO;
+}
 
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {

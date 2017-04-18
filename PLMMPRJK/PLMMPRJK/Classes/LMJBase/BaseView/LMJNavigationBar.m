@@ -48,6 +48,7 @@
 {
     [super layoutSubviews];
     
+    
     /** 是否显示底部条 */
     if ([self.dataSource respondsToSelector:@selector(lmjNavigationIsHideBottomLine:)]) {
         
@@ -65,6 +66,7 @@
     self.titleView.frame = CGRectMake(0, kStatusBarHeight, self.width - MAX(self.leftView.width, self.rightView.width) * 2 - kViewMargin * 2, self.titleView.height);
     self.titleView.centerX = self.width * 0.5;
     
+    self.bottomBlackLineView.mj_y = self.height - 1;
 }
 
 
@@ -224,10 +226,12 @@
 // 设置导航条的背景图片
 -(void)setNavigationBack:(UIImage *)image
 {
+//    [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+//    self.backgroundColor = [UIColor clearColor];
+//    [self setBackIndicatorTransitionMaskImage:image ];
+//    [self setShadowImage:image];
+    
     [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    self.backgroundColor = [UIColor clearColor];
-    [self setBackIndicatorTransitionMaskImage:image ];
-    [self setShadowImage:image];
 }
 
 //找查到Nav底部的黑线
@@ -263,14 +267,14 @@
     }
     
     /** 是否显示底部黑线 */
-    if ([self.dataSource respondsToSelector:@selector(lmjNavigationIsHideBottomLine:)]) {
-        
-        self.bottomBlackLineView.hidden = [self.dataSource lmjNavigationIsHideBottomLine:self];
-        
-    }else
-    {
-        self.bottomBlackLineView.hidden = NO;
-    }
+//    if ([self.dataSource respondsToSelector:@selector(lmjNavigationIsHideBottomLine:)]) {
+//        
+//        self.bottomBlackLineView.hidden = [self.dataSource lmjNavigationIsHideBottomLine:self];
+//        
+//    }else
+//    {
+//        self.bottomBlackLineView.hidden = NO;
+//    }
     
     /** 背景图片 */
     if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarBackgroundImage:)]) {
@@ -356,8 +360,7 @@
 
 - (void)setupLMJNavigationBarUIOnce
 {
-    
-    self.clipsToBounds = YES;
+    self.translucent = YES;
 }
 
 

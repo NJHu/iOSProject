@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
     [self.navigationController.tabBarItem setBadgeColor:[UIColor RandomColor]];
     
@@ -38,6 +39,8 @@
     LMJWordArrowItem *item0 = [LMJWordArrowItem itemWithTitle:@"日志记录" subTitle: nil];
     item0.destVc = [LMJLoggerViewController class];
     
+    item0.titleColor = [UIColor blackColor];
+    item0.titleFont = BOLDSYSTEMFONT(16);
     
     LMJWordArrowItem *item1 = [LMJWordArrowItem itemWithTitle:@"省市区三级联动" subTitle: nil];
     
@@ -80,6 +83,11 @@
 //{
 //    return [UIColor whiteColor];
 //}
+//
+//- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
+//{
+//    return NO;
+//}
 
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
@@ -104,9 +112,9 @@
 
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-
-return [UIImage imageNamed:@"navigationButtonReturnClick"];
+    [leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+    
+    return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 
