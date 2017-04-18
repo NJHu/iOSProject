@@ -7,45 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LMJNavigationBar.h"
 
-
-// 主要处理导航条
-@protocol  LMJNavUIBaseViewControllerDataSource<NSObject>
-
-@optional
-- (NSMutableAttributedString*)setTitle;
-- (BOOL)set_isNeedNavBar;
-- (UIImage *)navigationBar_BackgroundImage;
-- (UIColor *)set_colorBackground;
-- (BOOL)hideNavigationBar_BottomLine;
-- (CGFloat)set_navigationHeight;
-
-- (UIView *)set_leftView;
-- (UIView *)set_rightView;
-- (UIView *)set_titleView;
-
-- (UIButton *)set_leftButton;
-- (UIButton *)set_rightButton;
-- (UIImage *)set_leftBarButtonItemWithImage;
-- (UIImage *)set_rightBarButtonItemWithImage;
-@end
-
-
-@protocol LMJNavUIBaseViewControllerDelegate <NSObject>
+@class LMJNavUIBaseViewController;
+@protocol LMJNavUIBaseViewControllerDataSource <NSObject>
 
 @optional
--(void)left_button_event:(UIButton *)sender;
--(void)right_button_event:(UIButton *)sender;
--(void)title_click_event:(UILabel *)sender;
+- (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController;
+
 @end
 
-
-@interface LMJNavUIBaseViewController : UIViewController <LMJNavUIBaseViewControllerDataSource, LMJNavUIBaseViewControllerDelegate>
+@interface LMJNavUIBaseViewController : UIViewController <LMJNavigationBarDelegate, LMJNavigationBarDataSource, LMJNavUIBaseViewControllerDataSource>
 
 -(void)changeNavigationBarTranslationY:(CGFloat)translationY;
--(void)set_Title:(NSMutableAttributedString *)title;
+
+-(void)changeNavgationTitle:(NSMutableAttributedString *)title;
+
 -(void)changeNavigationBarHeight:(CGFloat)height;
--(void)changeNavgationBarColor:(UIColor *)bgColor;
+
+-(void)changeNavgationBarBackgroundColor:(UIColor *)backgroundColor;
 
 
 @end

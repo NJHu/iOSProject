@@ -23,7 +23,7 @@
         }
         
         
-        Log(@"%@\n\n%@", url.absoluteString, params);
+        DDLogVerbose(@"%@\n\n%@", url.absoluteString, params);
         
         
         [SVProgressHUD showSuccessWithStatus:params.description];

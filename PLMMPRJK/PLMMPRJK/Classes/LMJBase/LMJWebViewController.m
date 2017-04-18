@@ -59,7 +59,7 @@
             if ([newVal isKindOfClass:[NSString class]]) {
                 
                 weakself.title = newVal;
-                [weakself set_Title:[weakself changeTitle:weakself.title]];
+                [weakself changeNavgationTitle:[weakself changeTitle:weakself.title]];
                 
             }
             
@@ -87,7 +87,7 @@
 
 
 #pragma mark - title
-- (NSMutableAttributedString *)setTitle
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
     return [self changeTitle:@""];
 }
@@ -108,8 +108,10 @@
 
 #pragma mark - 设置左上角的一个返回按钮和一个关闭按钮
 
-
-- (UIView *)set_leftView
+#pragma mark - LMJNavUIBaseViewControllerDataSource
+\
+/** 导航条的左边的 view */
+- (UIView *)lmjNavigationBarLeftView:(LMJNavigationBar *)navigationBar
 {
     UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 90, 44)];
     
@@ -126,6 +128,19 @@
     return leftView;
 }
 
+
+
+#pragma mark - Delegate
+
+/** 中间如果是 label 就会有点击 */
+-(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+}
+
+
+
+
 - (UIButton *)backBtn
 {
     if(_backBtn == nil)
@@ -137,7 +152,7 @@
         
         btn.size = CGSizeMake(34, 44);
         
-        [btn addTarget:self action:@selector(left_button_event:) forControlEvents:UIControlEventTouchUpInside];
+        [btn addTarget:self action:@selector(leftButtonEvent:navigationBar:) forControlEvents:UIControlEventTouchUpInside];
         
         _backBtn = btn;
     }
@@ -167,7 +182,7 @@
     return _closeBtn;
 }
 
-- (void)left_button_event:(UIButton *)sender
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     [self backBtnClick:sender webView:self.webView];
 }
@@ -223,7 +238,7 @@
 // 1, 在发送请求之前，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    NSLog(@"decidePolicyForNavigationAction   ====    %@", navigationAction);
+    LMJLog(@"decidePolicyForNavigationAction   ====    %@", navigationAction);
     decisionHandler(WKNavigationActionPolicyAllow);
     
 }
@@ -231,7 +246,7 @@
 // 2开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
     
-    NSLog(@"didStartProvisionalNavigation   ====    %@", navigation);
+    LMJLog(@"didStartProvisionalNavigation   ====    %@", navigation);
     
 }
 
@@ -239,7 +254,7 @@
 // 4, 在收到响应后，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     
-    NSLog(@"decidePolicyForNavigationResponse   ====    %@", navigationResponse);
+    LMJLog(@"decidePolicyForNavigationResponse   ====    %@", navigationResponse);
     decisionHandler(WKNavigationResponsePolicyAllow);
     
 }
@@ -247,7 +262,7 @@
 // 5,内容开始返回时调用
 - (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
     
-    NSLog(@"didCommitNavigation   ====    %@", navigation);
+    LMJLog(@"didCommitNavigation   ====    %@", navigation);
 }
 
 // 3, 6, 加载 HTTPS 的链接，需要权限认证时调用  \  如果 HTTPS 是用的证书在信任列表中这不要此代理方法
@@ -271,14 +286,14 @@
 // 7页面加载完调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     
-    NSLog(@"didFinishNavigation   ====    %@", navigation);
+    LMJLog(@"didFinishNavigation   ====    %@", navigation);
     
 }
 
 // 8页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
     
-    NSLog(@"didFailProvisionalNavigation   ====    %@\nerror   ====   %@", navigation, error);
+    LMJLog(@"didFailProvisionalNavigation   ====    %@\nerror   ====   %@", navigation, error);
     
     [SVProgressHUD showErrorWithStatus:@"网页加载失败"];
 }
@@ -364,7 +379,7 @@
 
 - (void)dealloc
 {
-    Log(@"LMJWebViewController -- dealloc");
+    LMJLog(@"LMJWebViewController -- dealloc");
     
     [self.webView removeObserverBlocks];
     

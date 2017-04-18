@@ -53,23 +53,23 @@
 
 - (void)syncConCurrent
 {
-    NSLog(@"syncConcurrent---begin");
+    LMJLog(@"syncConcurrent---begin");
     
     dispatch_queue_t queue= dispatch_queue_create("test.queue", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_sync(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"1------%@",[NSThread currentThread]);
+            LMJLog(@"1------%@",[NSThread currentThread]);
         }
     });
     dispatch_sync(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"2------%@",[NSThread currentThread]);
+            LMJLog(@"2------%@",[NSThread currentThread]);
         }
     });
     dispatch_sync(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"3------%@",[NSThread currentThread]);
+            LMJLog(@"3------%@",[NSThread currentThread]);
         }
     });
     
@@ -88,32 +88,32 @@
     //    从并发队列 + 同步执行中可以看到，所有任务都是在主线程中执行的。由于只有一个线程，所以任务只能一个一个执行
     //    所有任务都在打印的syncConcurrent---begin和syncConcurrent---end之间，这说明任务是添加到队列中马上执行的
     
-        NSLog(@"syncConcurrent---end");
+        LMJLog(@"syncConcurrent---end");
 }
 
 - (void)asyncConcurrent
 {
-    NSLog(@"asyncConcurrent---begin");
+    LMJLog(@"asyncConcurrent---begin");
     
     dispatch_queue_t queue= dispatch_queue_create("test.asyncqueue", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_async(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"1------%@",[NSThread currentThread]);
+            LMJLog(@"1------%@",[NSThread currentThread]);
         }
     });
     dispatch_async(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"2------%@",[NSThread currentThread]);
+            LMJLog(@"2------%@",[NSThread currentThread]);
         }
     });
     dispatch_async(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"3------%@",[NSThread currentThread]);
+            LMJLog(@"3------%@",[NSThread currentThread]);
         }
     });
     
-    NSLog(@"asyncConcurrent---end");
+    LMJLog(@"asyncConcurrent---end");
     
     
     //输出内容：
@@ -168,27 +168,27 @@
 
 - (void)syncSerial
 {
-    NSLog(@"syncSerial---begin");
+    LMJLog(@"syncSerial---begin");
     
     dispatch_queue_t queue = dispatch_queue_create("test.syncSerial", DISPATCH_QUEUE_SERIAL);
     
     dispatch_sync(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"1------%@",[NSThread currentThread]);
+            LMJLog(@"1------%@",[NSThread currentThread]);
         }
     });
     dispatch_sync(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"2------%@",[NSThread currentThread]);
+            LMJLog(@"2------%@",[NSThread currentThread]);
         }
     });
     dispatch_sync(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"3------%@",[NSThread currentThread]);
+            LMJLog(@"3------%@",[NSThread currentThread]);
         }
     });
     
-    NSLog(@"syncSerial---end");
+    LMJLog(@"syncSerial---end");
     
     
     //输出内容
@@ -211,27 +211,27 @@
 - (void)asyncSerial
 {
     
-    NSLog(@"asyncSerial---begin");
+    LMJLog(@"asyncSerial---begin");
     
     dispatch_queue_t queue = dispatch_queue_create("test.asyncSerial", DISPATCH_QUEUE_SERIAL);
     
     dispatch_async(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"1------%@",[NSThread currentThread]);
+            LMJLog(@"1------%@",[NSThread currentThread]);
         }
     });
     dispatch_async(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"2------%@",[NSThread currentThread]);
+            LMJLog(@"2------%@",[NSThread currentThread]);
         }
     });
     dispatch_async(queue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"3------%@",[NSThread currentThread]);
+            LMJLog(@"3------%@",[NSThread currentThread]);
         }
     });
     
-    NSLog(@"asyncSerial---end");
+    LMJLog(@"asyncSerial---end");
     
     
     //输出的内容
@@ -258,21 +258,21 @@
     
     dispatch_sync(mainQueue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"1------%@",[NSThread currentThread]);
+            LMJLog(@"1------%@",[NSThread currentThread]);
         }
     });
     dispatch_sync(mainQueue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"2------%@",[NSThread currentThread]);
+            LMJLog(@"2------%@",[NSThread currentThread]);
         }
     });
     dispatch_sync(mainQueue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"3------%@",[NSThread currentThread]);
+            LMJLog(@"3------%@",[NSThread currentThread]);
         }
     });
     
-    NSLog(@"asyncSerial---end");
+    LMJLog(@"asyncSerial---end");
 }
 
 
@@ -283,21 +283,21 @@
     
     dispatch_async(mainQueue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"1------%@",[NSThread currentThread]);
+            LMJLog(@"1------%@",[NSThread currentThread]);
         }
     });
     dispatch_async(mainQueue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"2------%@",[NSThread currentThread]);
+            LMJLog(@"2------%@",[NSThread currentThread]);
         }
     });
     dispatch_async(mainQueue, ^{
         for (int i = 0; i < 2; ++i) {
-            NSLog(@"3------%@",[NSThread currentThread]);
+            LMJLog(@"3------%@",[NSThread currentThread]);
         }
     });
     
-    NSLog(@"asyncSerial---end");
+    LMJLog(@"asyncSerial---end");
     
 }
 
@@ -311,10 +311,10 @@
     // 2. 异步执行
     for (int i = 0; i < 10; ++i) {
         dispatch_async(q, ^{
-            NSLog(@"asyncGloba：%@ %d", [NSThread currentThread], i);
+            LMJLog(@"asyncGloba：%@ %d", [NSThread currentThread], i);
         });
     }
-    NSLog(@"come here");
+    LMJLog(@"come here");
     
     //输出内容：
     //    come here
@@ -343,45 +343,41 @@
 #pragma mark 重写BaseViewController设置内容
 
 
-- (void)left_button_event:(UIButton *)sender
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)right_button_event:(UIButton *)sender
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
 }
 
-- (void)title_click_event:(UILabel *)sender
+- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%@", sender);
+    LMJLog(@"%@", sender);
 }
 
-- (NSMutableAttributedString *)setTitle
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
     return [self changeTitle:@"GCD"];;
 }
 
-- (UIButton *)set_leftButton
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateNormal];
-    
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-    
-    return btn;
+[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+
+return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 
-- (UIButton *)set_rightButton
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    btn.backgroundColor = [UIColor yellowColor];
+    rightButton.backgroundColor = [UIColor RandomColor];
     
-    return btn;
+    return nil;
 }
 
 

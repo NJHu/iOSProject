@@ -45,7 +45,7 @@
     
     LMJNavigationController *four = [[LMJNavigationController alloc] initWithRootViewController:[[LMJMeViewController alloc] init]];
     
-    self.viewControllers = @[one, two, three, four];
+    self.viewControllers = @[two, one, three, four];
     
 }
 
@@ -74,8 +74,8 @@
                                                   CYLTabBarItemImage : @"tabBar_me_icon",
                                                   CYLTabBarItemSelectedImage : @"tabBar_me_click_icon"
                                                   };
-    self.tabBarItemsAttributes = @[    firstTabBarItemsAttributes,
-                                       secondTabBarItemsAttributes,
+    self.tabBarItemsAttributes = @[    secondTabBarItemsAttributes,
+                                       firstTabBarItemsAttributes,
                                        thirdTabBarItemsAttributes,
                                        fourthTabBarItemsAttributes
                                        ];

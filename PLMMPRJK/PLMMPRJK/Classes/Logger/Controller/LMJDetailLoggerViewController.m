@@ -64,19 +64,19 @@
     switch (result)
     {
         case MFMailComposeResultCancelled:
-            NSLog(@"Mail send canceled...");
+            LMJLog(@"Mail send canceled...");
             [MBProgressHUD showError:@"Mail send canceled..." ToView:self.view];
             break;
         case MFMailComposeResultSaved:
-            NSLog(@"Mail saved...");
+            LMJLog(@"Mail saved...");
             [MBProgressHUD showError:@"Mail saved..." ToView:self.view];
             break;
         case MFMailComposeResultSent:
-            NSLog(@"Mail sent...");
+            LMJLog(@"Mail sent...");
             [MBProgressHUD showSuccess:@"发送邮件成功" ToView:self.view];
             break;
         case MFMailComposeResultFailed:
-            NSLog(@"Mail send errored: %@...", [error localizedDescription]);
+            LMJLog(@"Mail send errored: %@...", [error localizedDescription]);
             [MBProgressHUD showError:@"发送邮件失败" ToView:self.view];
             break;
         default:
@@ -122,50 +122,47 @@
 
 #pragma mark 重写BaseViewController设置内容
 
-//- (UIColor *)set_colorBackground
+//- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 //{
 //    return [UIColor RandomColor];
 //}
 
-- (void)left_button_event:(UIButton *)sender
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 // 发送邮件
-- (void)right_button_event:(UIButton *)sender
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     
     [self sendMFMail];
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
 }
 
-- (void)title_click_event:(UILabel *)sender
+- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%@", sender);
+    LMJLog(@"%@", sender);
 }
 
-- (NSMutableAttributedString *)setTitle
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
     return [self changeTitle:@"title"];;
 }
 
-- (UIButton *)set_leftButton
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateNormal];
-    
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-    
-    return btn;
+[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+
+return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 
-- (UIButton *)set_rightButton
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIButton *btn = rightButton;
     btn.backgroundColor = [UIColor RandomColor];
     
     [btn setTitle:@"邮件" forState: UIControlStateNormal];
@@ -178,7 +175,7 @@
     
     [btn setBackgroundImage:[UIImage imageWithColor:[UIColor RandomColor]] forState:UIControlStateHighlighted];
     
-    return btn;
+    return nil;
 }
 
 

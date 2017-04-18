@@ -25,11 +25,11 @@
     
     [self addThreadAction];
     
-    NSLog(@"%lf", CFAbsoluteTimeGetCurrent());
+    LMJLog(@"%lf", CFAbsoluteTimeGetCurrent());
     
     [self addMutableThread];
     
-    NSLog(@"%lf", CFAbsoluteTimeGetCurrent());
+    LMJLog(@"%lf", CFAbsoluteTimeGetCurrent());
     
     
     [self ExitThread];
@@ -50,7 +50,7 @@
 
 - (void)runAction
 {
-    NSLog(@"当前NSInvocationOperation执行的线程为：%@", [NSThread currentThread]);
+    LMJLog(@"当前NSInvocationOperation执行的线程为：%@", [NSThread currentThread]);
     //输出：当前NSInvocationOperation执行的线程为：<NSThread: 0x600000071940>{number = 1, name = main}
     
     //说明
@@ -87,7 +87,7 @@
 
 -(void)runMutableAction
 {
-    NSLog(@"当前线程为：%@",[NSThread currentThread]);
+    LMJLog(@"当前线程为：%@",[NSThread currentThread]);
 }
 
 
@@ -111,11 +111,11 @@
     
     //结合下面的cancel运用 进行强制退出线程的操作
     if ([[NSThread currentThread] isCancelled]) {
-        NSLog(@"当前thread-exit被exit动作了");
+        LMJLog(@"当前thread-exit被exit动作了");
         [NSThread exit];
     }
     
-    NSLog(@"当前thread-exit线程为：%@",[NSThread currentThread]);
+    LMJLog(@"当前thread-exit线程为：%@",[NSThread currentThread]);
 }
 
 
@@ -147,7 +147,7 @@
 -(void)loadAction:(NSNumber *)index
 {
     NSThread *thread=[NSThread currentThread];
-    NSLog(@"loadAction是在线程%@中执行",thread.name);
+    LMJLog(@"loadAction是在线程%@中执行",thread.name);
     
     //回主线程去执行  有些UI相应 必须在主线程中更新
     [self performSelectorOnMainThread:@selector(updateImage) withObject:nil waitUntilDone:YES];
@@ -155,8 +155,8 @@
 
 -(void)updateImage
 {
-    NSLog(@"执行完成了");
-    NSLog(@"执行方法updateImage是在%@线程中",[NSThread isMainThread]?@"主":@"子");
+    LMJLog(@"执行完成了");
+    LMJLog(@"执行方法updateImage是在%@线程中",[NSThread isMainThread]?@"主":@"子");
     //输出：执行方法updateImage是在主线程中
 }
 
@@ -177,9 +177,9 @@
     [super viewWillDisappear:animated];
     //结合VC生命周期 viewWillDisappear退出页面时就把线程标识为cancel
     if (self.myThread && ![self.myThread isCancelled]) {
-        NSLog(@"当前thread-exit线程被cancel");
+        LMJLog(@"当前thread-exit线程被cancel");
         [self.myThread cancel];
-        NSLog(@"当前thread-exit线程被cancel的状态 %@",[self.myThread isCancelled]?@"被标识为Cancel":@"没有被标识");
+        LMJLog(@"当前thread-exit线程被cancel的状态 %@",[self.myThread isCancelled]?@"被标识为Cancel":@"没有被标识");
         //cancel 只是一个标识 最下退出强制终止线程的操作是exit 如果单写cancel 线程还是会继续执行
     }
     
@@ -188,7 +188,7 @@
     for (int i=0; i<self.myThreadList.count; i++){
         NSThread *thread=self.myThreadList[i];
         if (![thread isCancelled]) {
-            NSLog(@"当前thread-exit线程被cancel");
+            LMJLog(@"当前thread-exit线程被cancel");
             [thread cancel];
             //cancel 只是一个标识 最下退出强制终止线程的操作是exit 如果单写cancel 线程还是会继续执行
         }}
@@ -209,50 +209,46 @@
 
 #pragma mark 重写BaseViewController设置内容
 
-- (UIColor *)set_colorBackground
+- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 {
     return [UIColor RandomColor];
 }
 
-- (void)left_button_event:(UIButton *)sender
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)right_button_event:(UIButton *)sender
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
 }
 
-- (void)title_click_event:(UILabel *)sender
+- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%@", sender);
+    LMJLog(@"%@", sender);
 }
 
-- (NSMutableAttributedString *)setTitle
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
     return [self changeTitle:@"NSThread"];;
 }
 
-- (UIButton *)set_leftButton
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateNormal];
-    
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-    
-    return btn;
+[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+
+return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 
-- (UIButton *)set_rightButton
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    btn.backgroundColor = [UIColor yellowColor];
+    rightButton.backgroundColor = [UIColor RandomColor];
     
-    return btn;
+    return nil;
 }
 
 

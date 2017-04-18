@@ -102,7 +102,7 @@
     
     [MPUmengHelper getUserInfoForPlatform:type completion:^(UMSocialUserInfoResponse *result, NSError *error) {
         
-        NSLog(@"%@", result);
+        LMJLog(@"%@", result);
         
     }];
     
@@ -207,7 +207,7 @@
         [loginBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         
         loginBtn.tag = 4;
-        [loginBtn addTarget:self action:@selector(right_button_event:) forControlEvents:UIControlEventTouchUpInside];
+        [loginBtn addTarget:self action:@selector(rightButtonEvent:navigationBar:) forControlEvents:UIControlEventTouchUpInside];
         
         [self.view addSubview:loginBtn];
         
@@ -225,24 +225,24 @@
 #pragma mark 重写BaseViewController设置内容
 
 
-- (void)left_button_event:(UIButton *)sender
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     [self.navigationController popViewControllerAnimated:YES];
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
 }
 
-- (void)right_button_event:(UIButton *)sender
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     [MPUmengHelper shareTitle:@"NJHu-GitHub" subTitle:@"查看内容" thumbImage:@"https://wx.qlogo.cn/mmopen/VXT2numxe2Ru4jyibuTnxGqiabZbY3Vgic2byS4jibMDQkuCSGLdbFcrJvJgnpOKc5fehkWS11AFMapbfn8QgNdl9g/0" shareURL:@"https://www.github.com/njhu"];
     
 }
 
-- (void)title_click_event:(UILabel *)sender
+- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%@", sender);
+    LMJLog(@"%@", sender);
 }
 
-- (NSMutableAttributedString *)setTitle
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
     return [self changeTitle:@"友盟分享和第三方登录"];
 }
@@ -260,27 +260,19 @@
     return title;
 }
 
-//
-//- (UIButton *)set_leftButton
-//{
-//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-//    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
-////    navigationButtonReturn
-//    //navigationButtonReturnClick
-//    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
-//    
-//    return btn;
-//}
 
-- (UIImage *)set_leftBarButtonItemWithImage
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    return [UIImage imageNamed:@"navigationButtonReturnClick"];
+    [leftButton setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+    
+    return [UIImage imageNamed:@"navigationButtonReturn"];
 }
 
 
-- (UIButton *)set_rightButton
+
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIButton *btn = rightButton;
     
     btn.backgroundColor = [UIColor yellowColor];
 
@@ -291,7 +283,7 @@
     [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     
     
-    return btn;
+    return nil;
 }
 
 

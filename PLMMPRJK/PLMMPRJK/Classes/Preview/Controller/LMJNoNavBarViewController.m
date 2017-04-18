@@ -30,7 +30,7 @@
     }];
 }
 
-- (BOOL)set_isNeedNavBar
+- (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController
 {
     return NO;
 }

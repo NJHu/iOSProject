@@ -12,6 +12,8 @@
 #import "LMJNoNavBarViewController.h"
 #import "LMJAdaptFontViewController.h"
 #import "LMJBlankPageViewController.h"
+#import "LMJAnimationNavBarViewController.h"
+#import "LMJYYTextViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -56,8 +58,16 @@
     
     item4.destVc = [LMJBlankPageViewController class];
     
+    LMJWordArrowItem *item5 = [LMJWordArrowItem itemWithTitle:@"导航条颜色或者高度渐变" subTitle: nil];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4] andHeaderTitle:nil footerTitle:nil];
+    item5.destVc = [LMJAnimationNavBarViewController class];
+    
+    LMJWordArrowItem *item6 = [LMJWordArrowItem itemWithTitle:@"关于 YYText 使用" subTitle: nil];
+    
+    item6.destVc = [LMJYYTextViewController class];
+    
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }
@@ -66,49 +76,45 @@
 
 #pragma mark 重写BaseViewController设置内容
 
-- (UIColor *)set_colorBackground
+//- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
+//{
+//    return [UIColor whiteColor];
+//}
+
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    return [UIColor whiteColor];
+    LMJLog(@"%s", __func__);
 }
 
-- (void)left_button_event:(UIButton *)sender
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
 }
 
-- (void)right_button_event:(UIButton *)sender
+- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%@", sender);
 }
 
-- (void)title_click_event:(UILabel *)sender
-{
-    NSLog(@"%@", sender);
-}
-
-- (NSMutableAttributedString *)setTitle
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
     return [self changeTitle:@"预演列表"];
 }
 
 
-- (UIButton *)set_leftButton
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateNormal];
-    
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-    
-    return btn;
+[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+
+return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 
-- (UIButton *)set_rightButton
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    btn.backgroundColor = [UIColor yellowColor];
+    rightButton.backgroundColor = [UIColor RandomColor];
     
-    return btn;
+    return nil;
 }
 
 

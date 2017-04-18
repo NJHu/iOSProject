@@ -8,7 +8,28 @@
 
 #ifndef LMJMPTargetConfigMacros_h
 #define LMJMPTargetConfigMacros_h
+#ifdef __OBJC__
 
+/**
+ *  调试模式======================================
+ */
+#ifdef DEBUG
+
+
+#define LMJLog(fmt, ...) NSLog((@"=====Begin==========\n FILE: %@\n FUNC: %s\n LINE: %d\n " fmt), [NSString stringWithUTF8String:__FILE__].lastPathComponent, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+/**
+ *  打印函数
+ */
+#define LMJLogFunc CFPLog(@"\n")
+
+
+#else
+
+#define LMJLog(fmt, ...)
+#define LMJLogFunc
+
+#endif
 
 
 
@@ -25,23 +46,8 @@ static const int ddLogLevel = DDLogLevelWarning;
 
 
 
-#ifdef DEBUG
-
-//输出转换成DDLog
-#define NSLog(...) DDLogVerbose(__VA_ARGS__)
-#define Log(...) DDLogVerbose(__VA_ARGS__)
 
 
-#else   //其它环境
-
-//输出转换成DDLog
-#define NSLog(...) DDLogVerbose(__VA_ARGS__)
-
-#define Log(...) DDLogVerbose(__VA_ARGS__)
 
 #endif
-
-
-
-
 #endif /* LMJMPTargetConfigMacros_h */

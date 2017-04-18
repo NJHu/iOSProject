@@ -46,50 +46,46 @@
 
 #pragma mark 重写BaseViewController设置内容
 
-//- (UIColor *)set_colorBackground
+//- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 //{
 //    return [UIColor RandomColor];
 //}
 
-- (void)left_button_event:(UIButton *)sender
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)right_button_event:(UIButton *)sender
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
 }
 
-- (void)title_click_event:(UILabel *)sender
+- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%@", sender);
+    LMJLog(@"%@", sender);
 }
 
-- (NSMutableAttributedString *)setTitle
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
     return [self changeTitle:@"多线程知识"];
 }
 
-- (UIButton *)set_leftButton
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateNormal];
-    
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-    
-    return btn;
+[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+
+return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 
-- (UIButton *)set_rightButton
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    btn.backgroundColor = [UIColor yellowColor];
+    rightButton.backgroundColor = [UIColor RandomColor];
     
-    return btn;
+    return nil;
 }
 
 

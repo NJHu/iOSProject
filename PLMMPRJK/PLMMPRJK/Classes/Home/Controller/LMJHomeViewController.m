@@ -60,62 +60,98 @@
 
 
 
+#pragma mark - LMJNavUIBaseViewControllerDataSource
+//- (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController
+//{
+//    return YES;
+//}
 
 
 
-
-
-#pragma mark 重写BaseViewController设置内容
-
-
-- (void)left_button_event:(UIButton *)sender
+#pragma mark - DataSource
+/**头部标题*/
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    return [self changeTitle:@"预演 功能列表"];
 }
 
-- (void)right_button_event:(UIButton *)sender
+/** 背景图片 */
+//- (UIImage *)lmjNavigationBarBackgroundImage:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+
+/** 背景色 */
+//- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+
+/** 是否隐藏底部黑线 */
+//- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
+//{
+//    return NO;
+//}
+
+/** 导航条的高度 */
+//- (CGFloat)lmjNavigationHeight:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+
+
+/** 导航条的左边的 view */
+//- (UIView *)lmjNavigationBarLeftView:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+/** 导航条右边的 view */
+//- (UIView *)lmjNavigationBarRightView:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+/** 导航条中间的 View */
+//- (UIView *)lmjNavigationBarTitleView:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+/** 导航条左边的按钮 */
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [leftButton setTitle:@"😁" forState:UIControlStateNormal];
+    return nil;
+}
+/** 导航条右边的按钮 */
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [rightButton setTitle:@"百度" forState:UIControlStateNormal];
+    
+    [rightButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
+    return nil;
+}
+
+
+
+#pragma mark - Delegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+}
+/** 右边的按钮的点击 */
+-(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     LMJActivityViewController *ac = [LMJActivityViewController new];
     ac.gotoURL = @"http://www.baidu.com";
     
     [self.navigationController pushViewController:ac animated:YES];
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
 }
-
-- (void)title_click_event:(UILabel *)sender
+/** 中间如果是 label 就会有点击 */
+-(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%@", sender);
+    LMJLog(@"%s", __func__);
 }
-
-- (NSMutableAttributedString *)setTitle
-{
-    return [self changeTitle:@"基础知识点"];
-}
-
-- (UIButton *)set_leftButton
-{
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    
-    [btn setTitle:@"😁" forState:UIControlStateNormal];
-    
-    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    
-    [btn setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
-    
-    return btn;
-}
-
-
-- (UIButton *)set_rightButton
-{
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    btn.backgroundColor = [UIColor yellowColor];
-    
-    [btn setAttributedTitle:[self changeTitle:@"百度"] forState:UIControlStateNormal];
-    
-    return btn;
-}
-
 
 
 #pragma mark 自定义代码
@@ -126,10 +162,14 @@
     
     [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
     
-    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(18) range:NSMakeRange(0, title.length)];
+    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(16) range:NSMakeRange(0, title.length)];
     
     return title;
 }
+
+
+
+
 
 
 @end

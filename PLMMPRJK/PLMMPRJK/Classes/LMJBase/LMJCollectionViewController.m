@@ -30,11 +30,12 @@
     
     
     if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
+        
         self.collectionView.contentInset  = UIEdgeInsetsMake(64, 0, 0, 0);
         
-        if ([self respondsToSelector:@selector(set_navigationHeight)]) {
+        if ([self respondsToSelector:@selector(lmjNavigationHeight:)]) {
             
-            self.collectionView.contentInset  = UIEdgeInsetsMake([self set_navigationHeight], 0, 0, 0);
+            self.collectionView.contentInset  = UIEdgeInsetsMake([self lmjNavigationHeight:nil], 0, 0, 0);
         }
     }
     

@@ -37,7 +37,7 @@
 }
 
 - (void)mySendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
-    NSLog(@"这里面存放着我其它操作");
+    LMJLog(@"这里面存放着我其它操作");
     //这边要写自个的 在swizzling的过程中，方法中的[self mySendAction...]已经被重新指定到self类的sendAction:中  不会产生无限循环 如果调用sendAction就会产生无限循环
     [self mySendAction:action to:target forEvent:event];
 }

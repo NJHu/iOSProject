@@ -281,6 +281,8 @@
 		58F46AC81EA59D3F0073A58C /* LMJAdaptFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AC71EA59D3F0073A58C /* LMJAdaptFontViewController.m */; };
 		58F46ACB1EA5A0900073A58C /* LMJAdaptFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46ACA1EA5A0900073A58C /* LMJAdaptFontCell.m */; };
 		58F46ACE1EA5B4E20073A58C /* LMJBlankPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46ACD1EA5B4E20073A58C /* LMJBlankPageViewController.m */; };
+		58F46AD11EA5E8360073A58C /* LMJAnimationNavBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AD01EA5E8360073A58C /* LMJAnimationNavBarViewController.m */; };
+		58F46AD41EA5F07A0073A58C /* LMJYYTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AD31EA5F07A0073A58C /* LMJYYTextViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
 		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
@@ -985,6 +987,10 @@
 		58F46ACA1EA5A0900073A58C /* LMJAdaptFontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAdaptFontCell.m; sourceTree = "<group>"; };
 		58F46ACC1EA5B4E20073A58C /* LMJBlankPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBlankPageViewController.h; sourceTree = "<group>"; };
 		58F46ACD1EA5B4E20073A58C /* LMJBlankPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBlankPageViewController.m; sourceTree = "<group>"; };
+		58F46ACF1EA5E8360073A58C /* LMJAnimationNavBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAnimationNavBarViewController.h; sourceTree = "<group>"; };
+		58F46AD01EA5E8360073A58C /* LMJAnimationNavBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAnimationNavBarViewController.m; sourceTree = "<group>"; };
+		58F46AD21EA5F07A0073A58C /* LMJYYTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJYYTextViewController.h; sourceTree = "<group>"; };
+		58F46AD31EA5F07A0073A58C /* LMJYYTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJYYTextViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
 		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
@@ -2896,6 +2902,10 @@
 				58F46AC71EA59D3F0073A58C /* LMJAdaptFontViewController.m */,
 				58F46ACC1EA5B4E20073A58C /* LMJBlankPageViewController.h */,
 				58F46ACD1EA5B4E20073A58C /* LMJBlankPageViewController.m */,
+				58F46ACF1EA5E8360073A58C /* LMJAnimationNavBarViewController.h */,
+				58F46AD01EA5E8360073A58C /* LMJAnimationNavBarViewController.m */,
+				58F46AD21EA5F07A0073A58C /* LMJYYTextViewController.h */,
+				58F46AD31EA5F07A0073A58C /* LMJYYTextViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4035,6 +4045,7 @@
 				E782171B1E8EAE9000258845 /* UIApplication+ApplicationSize.m in Sources */,
 				E78217831E8EAE9000258845 /* UIView+ViewController.m in Sources */,
 				E78217481E8EAE9000258845 /* UIImageView+Addition.m in Sources */,
+				58F46AD41EA5F07A0073A58C /* LMJYYTextViewController.m in Sources */,
 				588AAD721E9F489F005F2A89 /* IFlyFaceImage.m in Sources */,
 				5800FB3F1EA0B08E0059B7B8 /* IQUIViewController+Additions.m in Sources */,
 				588AA98B1E9BA693005F2A89 /* NSArray+Block.m in Sources */,
@@ -4143,6 +4154,7 @@
 				5800FB441EA0B08E0059B7B8 /* IQBarButtonItem.m in Sources */,
 				588AA9C21E9BA693005F2A89 /* NSString+Emoji.m in Sources */,
 				588AA9DC1E9BA693005F2A89 /* MKMapView+ZoomLevel.m in Sources */,
+				58F46AD11EA5E8360073A58C /* LMJAnimationNavBarViewController.m in Sources */,
 				588AA9901E9BA693005F2A89 /* NSData+Encrypt.m in Sources */,
 				588AA9E21E9BA693005F2A89 /* JRSwizzle.m in Sources */,
 				5862EE1B1E96273500B809F8 /* LMJNewViewController.m in Sources */,

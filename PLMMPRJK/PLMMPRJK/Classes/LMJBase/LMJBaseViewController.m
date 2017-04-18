@@ -85,7 +85,7 @@
 
 - (void)netStatusChange:(NSNotification *)noti
 {
-    NSLog(@"-----%@",noti.userInfo);
+    LMJLog(@"-----%@",noti.userInfo);
     
     //判断网络状态
     switch (self.reachHost.currentReachabilityStatus) {
@@ -93,10 +93,10 @@
             [MBProgressHUD showInfo:@"当前网络连接失败，请查看设置" ToView:self.view];
             break;
         case ReachableViaWiFi:
-            NSLog(@"wifi上网2");
+            LMJLog(@"wifi上网2");
             break;
         case ReachableViaWWAN:
-            NSLog(@"手机上网2");
+            LMJLog(@"手机上网2");
             break;
         default:
             break;
@@ -107,7 +107,7 @@
 - (void)dealloc
 {
     
-    NSLog(@"%@", self.class);
+    LMJLog(@"%@", self.class);
     
     [kNotificationCenter removeObserver:self];
     self.reachHost = nil;

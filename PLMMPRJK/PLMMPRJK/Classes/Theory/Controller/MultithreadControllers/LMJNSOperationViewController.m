@@ -94,7 +94,7 @@
 
 -(void)runAction
 {
-    NSLog(@"当前NSInvocationOperation执行的线程为：%@", [NSThread currentThread]);
+    LMJLog(@"当前NSInvocationOperation执行的线程为：%@", [NSThread currentThread]);
     //输出：当前NSInvocationOperation执行的线程为：<NSThread: 0x600000071940>{number = 1, name = main}
     
     //说明
@@ -116,7 +116,7 @@
 
 -(void)runAsnysAction
 {
-    NSLog(@"当前addAsnysOperationFormInvocation执行的线程为：%@", [NSThread currentThread]);
+    LMJLog(@"当前addAsnysOperationFormInvocation执行的线程为：%@", [NSThread currentThread]);
     //输出：当前addAsnysOperationFormInvocation执行的线程为：<NSThread: 0x600000279040>{number = 8, name = (null)}
     
     //说明
@@ -131,19 +131,19 @@
     
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         // 在主线程
-        NSLog(@"NSBlockOperation当前的线程：%@", [NSThread currentThread]);
+        LMJLog(@"NSBlockOperation当前的线程：%@", [NSThread currentThread]);
         //输出：NSBlockOperation当前的线程：<NSThread: 0x60800007ecc0>{number = 1, name = main}
     }];
     
     // 添加额外的任务(部分在子线程执行)
     [op addExecutionBlock:^{
-        NSLog(@"NSBlockOperation当前的线程2------%@", [NSThread currentThread]);
+        LMJLog(@"NSBlockOperation当前的线程2------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        NSLog(@"NSBlockOperation当前的线程3------%@", [NSThread currentThread]);
+        LMJLog(@"NSBlockOperation当前的线程3------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        NSLog(@"NSBlockOperation当前的线程4------%@", [NSThread currentThread]);
+        LMJLog(@"NSBlockOperation当前的线程4------%@", [NSThread currentThread]);
     }];
     
     [op start];
@@ -165,18 +165,18 @@
     
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         // 在子线程
-        NSLog(@"addAsnysOperationFormBlock当前的线程：%@", [NSThread currentThread]);
+        LMJLog(@"addAsnysOperationFormBlock当前的线程：%@", [NSThread currentThread]);
     }];
     
     // 添加额外的任务（部分在新的子线程运行）
     [op addExecutionBlock:^{
-        NSLog(@"addAsnysOperationFormBlock当前的线程2------%@", [NSThread currentThread]);
+        LMJLog(@"addAsnysOperationFormBlock当前的线程2------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        NSLog(@"addAsnysOperationFormBlock当前的线程3------%@", [NSThread currentThread]);
+        LMJLog(@"addAsnysOperationFormBlock当前的线程3------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        NSLog(@"addAsnysOperationFormBlock当前的线程4------%@", [NSThread currentThread]);
+        LMJLog(@"addAsnysOperationFormBlock当前的线程4------%@", [NSThread currentThread]);
     }];
     
     [queue addOperation:op];
@@ -203,18 +203,18 @@
     
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         // 在子线程
-        NSLog(@"addMaxConcurrentOperation当前的线程：%@", [NSThread currentThread]);
+        LMJLog(@"addMaxConcurrentOperation当前的线程：%@", [NSThread currentThread]);
     }];
     
     // 添加额外的任务（部分在新的子线程运行）
     [op addExecutionBlock:^{
-        NSLog(@"addMaxConcurrentOperation当前的线程2------%@", [NSThread currentThread]);
+        LMJLog(@"addMaxConcurrentOperation当前的线程2------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        NSLog(@"addMaxConcurrentOperation当前的线程3------%@", [NSThread currentThread]);
+        LMJLog(@"addMaxConcurrentOperation当前的线程3------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        NSLog(@"addMaxConcurrentOperation当前的线程4------%@", [NSThread currentThread]);
+        LMJLog(@"addMaxConcurrentOperation当前的线程4------%@", [NSThread currentThread]);
     }];
     
     [queue addOperation:op];
@@ -255,10 +255,10 @@
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
     NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"addDependency1当前线程%@", [NSThread  currentThread]);
+        LMJLog(@"addDependency1当前线程%@", [NSThread  currentThread]);
     }];
     NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"addDependency2当前线程%@", [NSThread  currentThread]);
+        LMJLog(@"addDependency2当前线程%@", [NSThread  currentThread]);
     }];
     
     [op1 addDependency:op2];    // 让op1 依赖于 op2，则先执行op2，在执行op1
@@ -278,50 +278,46 @@
 
 #pragma mark 重写BaseViewController设置内容
 
-- (UIColor *)set_colorBackground
+- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 {
     return [UIColor RandomColor];
 }
 
-- (void)left_button_event:(UIButton *)sender
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)right_button_event:(UIButton *)sender
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
 }
 
-- (void)title_click_event:(UILabel *)sender
+- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%@", sender);
+    LMJLog(@"%@", sender);
 }
 
-- (NSMutableAttributedString *)setTitle
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
     return [self changeTitle:@"NSOperation"];;
 }
 
-- (UIButton *)set_leftButton
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateNormal];
-    
-    [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-    
-    return btn;
+[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+
+return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 
-- (UIButton *)set_rightButton
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    btn.backgroundColor = [UIColor yellowColor];
+    rightButton.backgroundColor = [UIColor RandomColor];
     
-    return btn;
+    return nil;
 }
 
 

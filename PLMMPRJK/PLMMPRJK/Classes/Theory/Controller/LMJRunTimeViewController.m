@@ -44,7 +44,7 @@
     
     [self.view addSubview:self.myButton];
     
-    [self.myButton addTarget:self action:@selector(right_button_event:) forControlEvents:UIControlEventTouchUpInside];
+    [self.myButton addTarget:self action:@selector(rightButtonEvent:navigationBar:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.myButton mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -68,20 +68,20 @@
 
 #pragma mark 重写BaseViewController设置内容
 
-- (UIColor *)set_colorBackground
+- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 {
     return [UIColor RandomColor];
 }
 
-- (void)left_button_event:(UIButton *)sender
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)right_button_event:(UIButton *)sender
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
+    LMJLog(@"%s", __func__);
     
     
     //利用关联 封装BLOCK调用
@@ -89,37 +89,37 @@
     
     [alert showWithBlock:^(NSInteger buttonIndex) {
         
-        NSLog(@"当前选中了%ld",buttonIndex);
+        LMJLog(@"当前选中了%ld",buttonIndex);
         
     }];
 }
 
-- (void)title_click_event:(UILabel *)sender
+- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%@", sender);
+    LMJLog(@"%@", sender);
 }
 
-- (NSMutableAttributedString *)setTitle
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
     return [self changeTitle:@"运行时"];
 }
 
 
 
-- (UIImage *)set_leftBarButtonItemWithImage
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
     return [UIImage imageNamed:@"navigationButtonReturn"];
 }
 
 
-- (UIButton *)set_rightButton
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIButton *btn = rightButton;
     btn.backgroundColor = [UIColor blackColor];
     
     [btn setTitle:@"弹框" forState:UIControlStateNormal];
     
-    return btn;
+    return nil;
 }
 
 
@@ -143,25 +143,25 @@
 -(NSString *)getClassInfo
 {
     //类名
-    NSLog(@"class name: %s", class_getName([self.myRunTimeTest class]));
+    LMJLog(@"class name: %s", class_getName([self.myRunTimeTest class]));
     
-    NSLog(@"==========================================================");
+    LMJLog(@"==========================================================");
     
     // 父类
-    NSLog(@"super class name: %s", class_getName(class_getSuperclass([self.myRunTimeTest class])));
-    NSLog(@"==========================================================");
+    LMJLog(@"super class name: %s", class_getName(class_getSuperclass([self.myRunTimeTest class])));
+    LMJLog(@"==========================================================");
     
     // 是否是元类
-    NSLog(@"MyClass is %@ a meta-class", (class_isMetaClass([self.myRunTimeTest class]) ? @"" : @"not"));
-    NSLog(@"==========================================================");
+    LMJLog(@"MyClass is %@ a meta-class", (class_isMetaClass([self.myRunTimeTest class]) ? @"" : @"not"));
+    LMJLog(@"==========================================================");
     
     Class meta_class = objc_getMetaClass(class_getName([self.myRunTimeTest class]));
-    NSLog(@"%s's meta-class is %s", class_getName([LMJRunTimeTest class]), class_getName(meta_class));
-    NSLog(@"==========================================================");
+    LMJLog(@"%s's meta-class is %s", class_getName([LMJRunTimeTest class]), class_getName(meta_class));
+    LMJLog(@"==========================================================");
     
     // 变量实例大小
-    NSLog(@"instance size: %zu", class_getInstanceSize([self.myRunTimeTest class]));
-    NSLog(@"==========================================================");
+    LMJLog(@"instance size: %zu", class_getInstanceSize([self.myRunTimeTest class]));
+    LMJLog(@"==========================================================");
     
     
     NSMutableString *strM = [NSMutableString string];
@@ -185,10 +185,10 @@
     objc_property_t *propertyList = class_copyPropertyList([self.myRunTimeTest class], &count);
     for (unsigned int i=0; i<count; i++) {
         const char *propertyName = property_getName(propertyList[i]);
-        NSLog(@"属性名称为---->%@", [NSString stringWithUTF8String:propertyName]);
+        LMJLog(@"属性名称为---->%@", [NSString stringWithUTF8String:propertyName]);
         
         NSString *getPropertyNameString = [NSString stringWithCString:property_getAttributes(propertyList[i]) encoding:NSUTF8StringEncoding];
-        NSLog(@"属性类型及修饰符为:  %@",getPropertyNameString);
+        LMJLog(@"属性类型及修饰符为:  %@",getPropertyNameString);
     }
     
     free(propertyList);
@@ -201,7 +201,7 @@
     
     objc_property_t array = class_getProperty([self.myRunTimeTest class], "address");
     if (array != NULL) {
-        NSLog(@"当前存在属性 %s", property_getName(array));
+        LMJLog(@"当前存在属性 %s", property_getName(array));
     }
     
     //******显示内容如下******
@@ -216,7 +216,7 @@
     for (unsigned int i = 0; i < count; i++) {
         Ivar myIvar = ivarList[i];
         const char *ivarName = ivar_getName(myIvar);
-        NSLog(@"成员变量为---->%@", [NSString stringWithUTF8String:ivarName]);
+        LMJLog(@"成员变量为---->%@", [NSString stringWithUTF8String:ivarName]);
     }
     
     free(ivarList);
@@ -228,7 +228,7 @@
     
     Ivar string = class_getInstanceVariable([self.myRunTimeTest class], "_UserAge");
     if (string != NULL) {
-        NSLog(@"当前存在变量 %s", ivar_getName(string));
+        LMJLog(@"当前存在变量 %s", ivar_getName(string));
     }
     
     //******显示内容如下******
@@ -239,7 +239,7 @@
     LMJRunTimeTest *testModel=[[LMJRunTimeTest alloc]init];
     testModel.name=@"wujunyang";
     
-    NSLog(@"当前值没有被修改为：%@",testModel.name);
+    LMJLog(@"当前值没有被修改为：%@",testModel.name);
     
     unsigned int myCount = 0;
     Ivar *ivar = class_copyIvarList([testModel class], &myCount);
@@ -254,7 +254,7 @@
         }
     }
     free(ivar);
-    NSLog(@"当前修改后的变量值为：%@",testModel.name);
+    LMJLog(@"当前修改后的变量值为：%@",testModel.name);
     
     //******显示内容如下******
     //可以用来动态改变一些已经存在的值，或者是统一变量处理
@@ -269,7 +269,8 @@
     Method *methods = class_copyMethodList([self.myRunTimeTest class], &count);
     for (int i = 0; i < count; i++) {
         Method method = methods[i];
-        NSLog(@"类的实例方法: %s", method_getName(method));
+        LMJLog(@"类的实例方法: %s", method_getName(method));
+        
     }
     
     free(methods);
@@ -286,7 +287,7 @@
     Method *classmethods = class_copyMethodList(object_getClass([self.myRunTimeTest class]), &classcount);
     for (int i = 0; i < classcount; i++) {
         Method method = classmethods[i];
-        NSLog(@"类方法: %s", method_getName(method));
+        LMJLog(@"类方法: %s", method_getName(method));
     }
     
     free(classmethods);
@@ -300,7 +301,7 @@
     //判断类实例方法是否存在
     Method method1 = class_getInstanceMethod([self.myRunTimeTest class], @selector(showUserName:));
     if (method1 != NULL) {
-        NSLog(@"当前存在方法 %s", method_getName(method1));
+        LMJLog(@"当前存在方法 %s", method_getName(method1));
     }
     
     //******显示内容如下******
@@ -310,7 +311,7 @@
     //判断类方法是否存在
     Method classMethod = class_getClassMethod([self.myRunTimeTest class], @selector(showAddressInfo));
     if (classMethod != NULL) {
-        NSLog(@"当前存在方法 : %s", method_getName(classMethod));
+        LMJLog(@"当前存在方法 : %s", method_getName(classMethod));
     }
     
     //******显示内容如下******
@@ -326,13 +327,13 @@
     Protocol * protocol;
     for (int i = 0; i < count; i++) {
         protocol = protocols[i];
-        NSLog(@"协议名称: %s", protocol_getName(protocol));
+        LMJLog(@"协议名称: %s", protocol_getName(protocol));
     }
     
     //******显示内容如下******
     //协议名称:NSCopying
     
-    NSLog(@"LMJRunTimeTest is%@ responsed to protocol %s", class_conformsToProtocol([self.myRunTimeTest class], protocol) ? @"" : @" not", protocol_getName(protocol));
+    LMJLog(@"LMJRunTimeTest is%@ responsed to protocol %s", class_conformsToProtocol([self.myRunTimeTest class], protocol) ? @"" : @" not", protocol_getName(protocol));
     
     //******显示内容如下******
     //LMJRunTimeTest is responsed to protocol NSCopying
@@ -348,13 +349,13 @@
         [self.myRunTimeTest performSelector:@selector(guess)];
         
     } else{
-        NSLog(@"方法没有增加成功");
+        LMJLog(@"方法没有增加成功");
     }
 }
 
 void guessAnswer(id self,SEL _cmd){
     //一个Objective-C方法是一个简单的C函数，它至少包含两个参数–self和_cmd。所以，我们的实现函数(IMP参数指向的函数)至少需要两个参数
-    NSLog(@"我是动态增加的方法响应");
+    LMJLog(@"我是动态增加的方法响应");
 }
 
 //分类动态增加属性
@@ -363,7 +364,7 @@ void guessAnswer(id self,SEL _cmd){
     LMJRunTimeTest *test=[[LMJRunTimeTest alloc]init];
     [test setWorkName:@"XM"];
     
-    NSLog(@"当前的公司为：%@",test.workName);
+    LMJLog(@"当前的公司为：%@",test.workName);
     
     //******显示内容如下******
     //可以为已经存在的类进行分类动态增加属性
@@ -379,8 +380,8 @@ void guessAnswer(id self,SEL _cmd){
     
     method_exchangeImplementations(m1, m2);
     
-    NSLog(@"%@", [self.myRunTimeTest showUserAge:@"wujunyang"]);
-    NSLog(@"%@", [self.myRunTimeTest showUserAge:@"20"]);
+    LMJLog(@"%@", [self.myRunTimeTest showUserAge:@"wujunyang"]);
+    LMJLog(@"%@", [self.myRunTimeTest showUserAge:@"20"]);
     
     //******显示内容如下******
     //注意 如果有参数 记得参数的类型要一般 或者可以进行相应的转换 或者两个方法类型不同会闪退
