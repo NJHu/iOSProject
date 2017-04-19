@@ -379,10 +379,10 @@
     return outstring;
 }
 
-+ (NSString *)systemVersion
-{
-    return [[UIDevice currentDevice] systemVersion];
-}
+//+ (NSString *)systemVersion
+//{
+//    return [[UIDevice currentDevice] systemVersion];
+//}
 + (BOOL)hasCamera
 {
     return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];

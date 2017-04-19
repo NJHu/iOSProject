@@ -106,8 +106,9 @@ typedef enum
 + (NSUInteger)cpuNumber;
 //Return the current device total memory
 
-/// 获取iOS系统的版本号
-+ (NSString *)systemVersion;
+// 获取iOS系统的版本号
+//+ (NSString *)systemVersion;
+
 /// 判断当前系统是否有摄像头
 + (BOOL)hasCamera;
 /// 获取手机内存总量, 返回的是字节数

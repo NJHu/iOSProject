@@ -34,6 +34,7 @@
 		5800FB531EA0DBB70059B7B8 /* LMJGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800FB521EA0DBB70059B7B8 /* LMJGCDViewController.m */; };
 		5800FB561EA0DBC10059B7B8 /* LMJNSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800FB551EA0DBC10059B7B8 /* LMJNSOperationViewController.m */; };
 		5800FB591EA0DBD10059B7B8 /* LMJLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800FB581EA0DBD10059B7B8 /* LMJLockViewController.m */; };
+		581005E01EA78F0500729046 /* LMJElementsFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 581005DF1EA78F0500729046 /* LMJElementsFlowLayout.m */; };
 		5862EE061E96204000B809F8 /* LMJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE051E96204000B809F8 /* LMJMessageViewController.m */; };
 		5862EE1B1E96273500B809F8 /* LMJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE1A1E96273500B809F8 /* LMJNewViewController.m */; };
 		5862EE471E96389600B809F8 /* LMJGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE461E96389600B809F8 /* LMJGuideManager.m */; };
@@ -284,6 +285,7 @@
 		58F46AD11EA5E8360073A58C /* LMJAnimationNavBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AD01EA5E8360073A58C /* LMJAnimationNavBarViewController.m */; };
 		58F46AD41EA5F07A0073A58C /* LMJYYTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AD31EA5F07A0073A58C /* LMJYYTextViewController.m */; };
 		58F46AD71EA645D30073A58C /* LMJListExpandHideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AD61EA645D30073A58C /* LMJListExpandHideViewController.m */; };
+		58F46ADA1EA6FC310073A58C /* LMJElementsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46AD91EA6FC310073A58C /* LMJElementsCollectionViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E782120E1E8BB5ED00258845 /* LMJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212091E8BB5ED00258845 /* LMJHomeViewController.m */; };
 		E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78212161E8CD75F00258845 /* LMJMeViewController.m */; };
@@ -498,6 +500,8 @@
 		5800FB551EA0DBC10059B7B8 /* LMJNSOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNSOperationViewController.m; sourceTree = "<group>"; };
 		5800FB571EA0DBD10059B7B8 /* LMJLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLockViewController.h; sourceTree = "<group>"; };
 		5800FB581EA0DBD10059B7B8 /* LMJLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLockViewController.m; sourceTree = "<group>"; };
+		581005DE1EA78F0500729046 /* LMJElementsFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJElementsFlowLayout.h; sourceTree = "<group>"; };
+		581005DF1EA78F0500729046 /* LMJElementsFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJElementsFlowLayout.m; sourceTree = "<group>"; };
 		5862EDF81E95D77300B809F8 /* LMJMacos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJMacos.h; sourceTree = "<group>"; };
 		5862EDFA1E95D79000B809F8 /* LMJTargetConfigMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJTargetConfigMacros.h; sourceTree = "<group>"; };
 		5862EDFB1E95D7B500B809F8 /* LMJConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJConstants.h; sourceTree = "<group>"; };
@@ -994,6 +998,8 @@
 		58F46AD31EA5F07A0073A58C /* LMJYYTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJYYTextViewController.m; sourceTree = "<group>"; };
 		58F46AD51EA645D30073A58C /* LMJListExpandHideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJListExpandHideViewController.h; sourceTree = "<group>"; };
 		58F46AD61EA645D30073A58C /* LMJListExpandHideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJListExpandHideViewController.m; sourceTree = "<group>"; };
+		58F46AD81EA6FC310073A58C /* LMJElementsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJElementsCollectionViewController.h; sourceTree = "<group>"; };
+		58F46AD91EA6FC310073A58C /* LMJElementsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJElementsCollectionViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78212081E8BB5ED00258845 /* LMJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHomeViewController.h; sourceTree = "<group>"; };
 		E78212091E8BB5ED00258845 /* LMJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHomeViewController.m; sourceTree = "<group>"; };
@@ -2219,6 +2225,8 @@
 				588AABD71E9CEE79005F2A89 /* LMJNormalRefreshHeader.m */,
 				588AABDA1E9CEE79005F2A89 /* LMJWaterflowLayout.h */,
 				588AABDB1E9CEE79005F2A89 /* LMJWaterflowLayout.m */,
+				581005DE1EA78F0500729046 /* LMJElementsFlowLayout.h */,
+				581005DF1EA78F0500729046 /* LMJElementsFlowLayout.m */,
 				588AABFD1E9CF0A4005F2A89 /* LMJSettingCell.h */,
 				588AABFE1E9CF0A4005F2A89 /* LMJSettingCell.m */,
 			);
@@ -2911,6 +2919,8 @@
 				58F46AD31EA5F07A0073A58C /* LMJYYTextViewController.m */,
 				58F46AD51EA645D30073A58C /* LMJListExpandHideViewController.h */,
 				58F46AD61EA645D30073A58C /* LMJListExpandHideViewController.m */,
+				58F46AD81EA6FC310073A58C /* LMJElementsCollectionViewController.h */,
+				58F46AD91EA6FC310073A58C /* LMJElementsCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4125,6 +4135,7 @@
 				58F46AA91EA4AB5B0073A58C /* README.md in Sources */,
 				E78212171E8CD75F00258845 /* LMJMeViewController.m in Sources */,
 				E78217281E8EAE9000258845 /* UIButton+Indicator.m in Sources */,
+				58F46ADA1EA6FC310073A58C /* LMJElementsCollectionViewController.m in Sources */,
 				E78217411E8EAE9000258845 /* UIImage+Merge.m in Sources */,
 				E78217801E8EAE9000258845 /* UIView+Screenshot.m in Sources */,
 				588AA9971E9BA693005F2A89 /* NSDate+Formatter.m in Sources */,
@@ -4132,6 +4143,7 @@
 				E78217561E8EAE9000258845 /* UINavigationController+KeyboardFix.m in Sources */,
 				E782178A1E8EAE9000258845 /* UIViewController+MJPopupViewController.m in Sources */,
 				E78217501E8EAE9000258845 /* UILabel+ESAdjustableLabel.m in Sources */,
+				581005E01EA78F0500729046 /* LMJElementsFlowLayout.m in Sources */,
 				5800FB421EA0B08E0059B7B8 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				E782175A1E8EAE9000258845 /* UINavigationItem+Margin.m in Sources */,
 				588AAD791E9F489F005F2A89 /* UIDevice+FCUUID.m in Sources */,

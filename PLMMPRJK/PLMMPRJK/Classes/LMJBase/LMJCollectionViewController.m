@@ -45,7 +45,7 @@
 #pragma mark - delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -69,15 +69,14 @@
         myLayout.delegate = self;
         
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:myLayout];
-        
         [self.view addSubview:collectionView];
+        _collectionView = collectionView;
         
         collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         collectionView.dataSource = self;
         collectionView.delegate = self;
         
-        _collectionView = collectionView;
     }
     return _collectionView;
 }

@@ -60,6 +60,8 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    self.view.backgroundColor = self.childViewControllers.lastObject.view.backgroundColor;
+    
     if (self.childViewControllers.count != 0) {
         
         viewController.hidesBottomBarWhenPushed = YES;

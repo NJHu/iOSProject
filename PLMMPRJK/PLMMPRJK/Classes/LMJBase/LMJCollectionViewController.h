@@ -8,6 +8,7 @@
 
 #import "LMJBaseViewController.h"
 #import "LMJWaterflowLayout.h"
+#import "LMJElementsFlowLayout.h"
 
 @interface LMJCollectionViewController : LMJBaseViewController <UICollectionViewDelegate, UICollectionViewDataSource, LMJWaterflowLayoutDelegate>
 

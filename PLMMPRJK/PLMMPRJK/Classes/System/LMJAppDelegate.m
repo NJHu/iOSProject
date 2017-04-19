@@ -30,9 +30,18 @@
     
     self.launchOptions = launchOptions;
     
-    // 10以下的推送
-    if (launchOptions && kSystemVersion.doubleValue < 10.0) { // 只处理10以下的
+    if (launchOptions) {
+
         
+        [WJYAlertView showOneButtonWithTitle:@"有launchOptions!!" Message:launchOptions.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"知道了" Click:^{
+            
+        }];
+
+        
+    }
+    
+    // 10以下的推送
+    if (launchOptions && kSystemVersion < 10.0) { // 只处理10以下的推送
         // 10 > 先3后1,,,,,,,,,,,,,9就是1
         [WJYAlertView showOneButtonWithTitle:@"1_launchOptions" Message:launchOptions.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"123" Click:^{
             
