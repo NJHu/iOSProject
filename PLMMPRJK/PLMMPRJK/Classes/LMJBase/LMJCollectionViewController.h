@@ -7,10 +7,21 @@
 //
 
 #import "LMJBaseViewController.h"
-#import "LMJWaterflowLayout.h"
 #import "LMJElementsFlowLayout.h"
+#import "LMJVerticalFlowLayout.h"
+#import "LMJHorizontalFlowLayout.h"
 
-@interface LMJCollectionViewController : LMJBaseViewController <UICollectionViewDelegate, UICollectionViewDataSource, LMJWaterflowLayoutDelegate>
+
+@class LMJCollectionViewController;
+@protocol LMJCollectionViewControllerDataSource <NSObject>
+
+@required
+// 需要返回对应的布局
+- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForcollectionView:(UICollectionView *)collectionView;
+
+@end
+
+@interface LMJCollectionViewController : LMJBaseViewController <UICollectionViewDelegate, UICollectionViewDataSource, LMJCollectionViewControllerDataSource>
 
 /** <#digest#> */
 @property (weak, nonatomic) UICollectionView *collectionView;

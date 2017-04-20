@@ -8,7 +8,7 @@
 
 #import "LMJCollectionViewController.h"
 
-@interface LMJCollectionViewController ()
+@interface LMJCollectionViewController ()<LMJVerticalFlowLayoutDelegate>
 
 
 @end
@@ -19,8 +19,10 @@
     [super viewDidLoad];
     
     
-    
     [self setupBaseCFPCollectionViewControllerUI];
+    
+    
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
 }
 
 - (void)setupBaseCFPCollectionViewControllerUI
@@ -45,12 +47,30 @@
 #pragma mark - delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    return 100;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [UICollectionViewCell new];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
+    
+    cell.contentView.backgroundColor = [UIColor yellowColor];
+    
+    
+    if (![cell.contentView viewWithTag:100]) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        label.tag = 100;
+        label.textColor = [UIColor redColor];
+        label.font = [UIFont boldSystemFontOfSize:17];
+        [cell.contentView addSubview:label];
+    }
+    
+    UILabel *label = [cell.contentView viewWithTag:100];
+    
+    label.text = [NSString stringWithFormat:@"%zd", indexPath.item];
+    
+    
+    return cell;
 }
 
 #pragma mark - scrollDeleggate
@@ -64,16 +84,15 @@
 {
     if(_collectionView == nil)
     {
-        LMJWaterflowLayout *myLayout = [[LMJWaterflowLayout alloc] init];
-        
-        myLayout.delegate = self;
-        
-        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:myLayout];
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:[UICollectionViewFlowLayout new]];
         [self.view addSubview:collectionView];
         _collectionView = collectionView;
         
-        collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        UICollectionViewLayout *myLayout = [self collectionViewController:self layoutForcollectionView:collectionView];
         
+        collectionView.collectionViewLayout = myLayout;
+        
+        collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         collectionView.dataSource = self;
         collectionView.delegate = self;
         
@@ -82,14 +101,23 @@
 }
 
 
-#pragma mark - LMJWaterflowLayoutDelegate
-- (CGFloat)waterflowLayout:(LMJWaterflowLayout *)waterflowLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth
+#pragma mark - LMJCollectionViewControllerDataSource
+- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForcollectionView:(UICollectionView *)collectionView
 {
-    // 默认
     
-//    NSAssert(0, @"子类必须重载%s", __FUNCTION__);
+    LMJVerticalFlowLayout *myLayout = [[LMJVerticalFlowLayout alloc] init];
+    myLayout.delegate = self;
     
-    return 100;
+    return myLayout;
 }
+
+
+#pragma mark - LMJVerticalFlowLayoutDelegate
+
+- (CGFloat)waterflowLayout:(LMJVerticalFlowLayout *)waterflowLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth
+{
+    return itemWidth * (arc4random() % 4 + 1);
+}
+
 
 @end

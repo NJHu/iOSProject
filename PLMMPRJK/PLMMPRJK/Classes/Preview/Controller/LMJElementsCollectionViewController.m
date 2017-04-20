@@ -24,11 +24,6 @@
     
     self.title = @"京东首页布局";
     
-    LMJElementsFlowLayout *elementsFlowLayout = [[LMJElementsFlowLayout alloc] init];
-    elementsFlowLayout.delegate = self;
-    
-    self.collectionView.collectionViewLayout = elementsFlowLayout;
-    
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
     
 }
@@ -45,7 +40,21 @@
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor RandomColor];
+    cell.contentView.backgroundColor = [UIColor yellowColor];
+    
+    
+    if (![cell.contentView viewWithTag:100]) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        label.tag = 100;
+        label.textColor = [UIColor redColor];
+        label.font = [UIFont boldSystemFontOfSize:17];
+        [cell.contentView addSubview:label];
+    }
+    
+    UILabel *label = [cell.contentView viewWithTag:100];
+    
+    label.text = [NSString stringWithFormat:@"%zd", indexPath.item];
+    
     
     return cell;
 }
@@ -60,16 +69,27 @@
 
 #pragma mark - LMJElementsFlowLayoutDelegate
 
-- (CGSize)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGSize)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.elementsHight[indexPath.item].CGSizeValue;
 }
 
-- (UIEdgeInsets)waterflowLayoutOfEdgeInsets:(LMJWaterflowLayout *)waterflowLayout
+- (UIEdgeInsets)waterflowLayoutOfEdgeInsets:(LMJElementsFlowLayout *)waterflowLayout
 {
     return UIEdgeInsetsMake(1, 10, 10, 10);
 }
 
+
+
+#pragma mark - <#digest#>
+
+- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForcollectionView:(UICollectionView *)collectionView
+{
+    LMJElementsFlowLayout *elementsFlowLayout = [[LMJElementsFlowLayout alloc] init];
+    elementsFlowLayout.delegate = self;
+    
+    return elementsFlowLayout;
+}
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
 //- (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController

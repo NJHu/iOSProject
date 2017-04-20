@@ -11,8 +11,6 @@ static const CGFloat LMJ_XMargin_ = 10;
 static const CGFloat LMJ_YMargin_ = 10;
 static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
 
-#define LMJElementsFlowLayoutScreenWidth [UIScreen mainScreen].bounds.size.width
-
 @interface LMJElementsFlowLayout()
 
 /** 所有的cell的attrbts */
@@ -48,7 +46,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     
     //如果重新刷新就需要移除之前存储的高度
     //复赋值以顶部的高度, 并且根据列数
-    self.lmj_LastAtrbsFrame = CGRectMake(0, 0, LMJElementsFlowLayoutScreenWidth, self.edgeInsets.top);
+    self.lmj_LastAtrbsFrame = CGRectMake(0, 0, self.collectionView.frame.size.width, self.edgeInsets.top);
     
     
     
@@ -76,14 +74,14 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     // 原来的
     //    CGFloat w = 1.0 * (self.collectionView.frame.size.width - self.edgeInsets.left - self.edgeInsets.right - self.xMargin * (self.columns - 1)) / self.columns;
     
-    CGFloat w = [self.delegate waterflowLayout:self heightForItemAtIndexPath:indexPath].width;
+    CGFloat w = [self.delegate waterflowLayout:self sizeForItemAtIndexPath:indexPath].width;
     w = MIN(w, [UIScreen mainScreen].bounds.size.width);
     
     // 高度由外界决定, 外界必须实现这个方法
-    CGFloat h = [self.delegate waterflowLayout:self heightForItemAtIndexPath:indexPath].height;
+    CGFloat h = [self.delegate waterflowLayout:self sizeForItemAtIndexPath:indexPath].height;
     
     // 拿到最后的高度最小的那一列, 假设第0列最小
-    CGFloat rightLeftWidth = LMJElementsFlowLayoutScreenWidth - CGRectGetMaxX(self.lmj_LastAtrbsFrame) - self.xMargin - self.edgeInsets.right;
+    CGFloat rightLeftWidth = self.collectionView.frame.size.width - CGRectGetMaxX(self.lmj_LastAtrbsFrame) - self.xMargin - self.edgeInsets.right;
     
     CGFloat x = 0;
     CGFloat y = 0;
@@ -91,7 +89,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     
     if (w > [UIScreen mainScreen].bounds.size.width - self.edgeInsets.left - self.edgeInsets.right) {
         
-        x = (LMJElementsFlowLayoutScreenWidth - w) * 0.5;
+        x = (self.collectionView.frame.size.width - w) * 0.5;
         y = CGRectGetMaxY(self.lmj_LastAtrbsFrame) + self.yMargin;
         
     }else if (rightLeftWidth >= w) {
@@ -128,7 +126,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
 
 - (CGRect)maxHeightFrame
 {
-    __block CGRect maxHeightFrame = CGRectMake(0, 0, LMJElementsFlowLayoutScreenWidth, self.edgeInsets.top);
+    __block CGRect maxHeightFrame = CGRectMake(0, 0, self.collectionView.frame.size.width, self.edgeInsets.top);
     
     
     [self.lmj_AtrbsArray enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -149,7 +147,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
 - (CGSize)collectionViewContentSize
 {
     
-    return CGSizeMake(LMJElementsFlowLayoutScreenWidth, CGRectGetMaxY(self.maxHeightFrame) + self.edgeInsets.bottom);
+    return CGSizeMake(self.collectionView.frame.size.width, CGRectGetMaxY(self.maxHeightFrame) + self.edgeInsets.bottom);
 }
 
 

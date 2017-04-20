@@ -1,18 +1,19 @@
 //
-//  LMJWaterflowLayout.m
+//  LMJVerticalFlowLayout.m
 //  瀑布流完善接口
 //
 //  Created by apple on 16/7/31.
 //  Copyright © 2016年 NJHu. All rights reserved.
 //
-#import "LMJWaterflowLayout.h"
+
+#import "LMJVerticalFlowLayout.h"
 
 static const NSInteger LMJ_Columns_ = 3;
 static const CGFloat LMJ_XMargin_ = 10;
 static const CGFloat LMJ_YMargin_ = 10;
 static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
 
-@interface LMJWaterflowLayout()
+@interface LMJVerticalFlowLayout()
 
 /** 所有的cell的attrbts */
 @property (nonatomic, strong) NSMutableArray *lmj_AtrbsArray;
@@ -30,7 +31,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
 
 @end
 
-@implementation LMJWaterflowLayout
+@implementation LMJVerticalFlowLayout
 
 
 

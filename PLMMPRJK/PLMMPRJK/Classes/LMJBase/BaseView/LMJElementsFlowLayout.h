@@ -23,7 +23,7 @@
  *
  *  @return 需要代理高度对应的cell的高度
  */
-- (CGSize)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (CGSize)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 
 

@@ -16,6 +16,8 @@
 #import "LMJYYTextViewController.h"
 #import "LMJListExpandHideViewController.h"
 #import "LMJElementsCollectionViewController.h"
+#import "LMJVerticalLayoutViewController.h"
+#import "LMJHorizontalLayoutViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -80,7 +82,17 @@
     item8.destVc = [LMJElementsCollectionViewController class];
     
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    LMJWordArrowItem *item9 = [LMJWordArrowItem itemWithTitle:@"垂直流水布局" subTitle: nil];
+    
+    item9.destVc = [LMJVerticalLayoutViewController class];
+    
+    
+    LMJWordArrowItem *item10 = [LMJWordArrowItem itemWithTitle:@"水平流水布局" subTitle: nil];
+    
+    item10.destVc = [LMJHorizontalLayoutViewController class];
+    
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }
