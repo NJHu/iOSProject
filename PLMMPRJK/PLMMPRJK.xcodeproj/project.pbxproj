@@ -34,11 +34,11 @@
 		5800FB531EA0DBB70059B7B8 /* LMJGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800FB521EA0DBB70059B7B8 /* LMJGCDViewController.m */; };
 		5800FB561EA0DBC10059B7B8 /* LMJNSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800FB551EA0DBC10059B7B8 /* LMJNSOperationViewController.m */; };
 		5800FB591EA0DBD10059B7B8 /* LMJLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800FB581EA0DBD10059B7B8 /* LMJLockViewController.m */; };
-		581006331EA87DE200729046 /* LMJVerticalFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 581006321EA87DE200729046 /* LMJVerticalFlowLayout.m */; };
-		581006361EA87DF000729046 /* LMJHorizontalFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 581006351EA87DF000729046 /* LMJHorizontalFlowLayout.m */; };
 		581006391EA8846D00729046 /* LMJVerticalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581006381EA8846D00729046 /* LMJVerticalLayoutViewController.m */; };
 		5810063C1EA885A000729046 /* LMJHorizontalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5810063B1EA885A000729046 /* LMJHorizontalLayoutViewController.m */; };
-		5810064F1EA8EADC00729046 /* LMJElementsFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5810064E1EA8EADC00729046 /* LMJElementsFlowLayout.m */; };
+		581006521EA920E700729046 /* LMJVerticalFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 581006511EA920E700729046 /* LMJVerticalFlowLayout.m */; };
+		581006551EA920F700729046 /* LMJHorizontalFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 581006541EA920F700729046 /* LMJHorizontalFlowLayout.m */; };
+		581006581EA9210700729046 /* LMJElementsFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 581006571EA9210700729046 /* LMJElementsFlowLayout.m */; };
 		5862EE061E96204000B809F8 /* LMJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE051E96204000B809F8 /* LMJMessageViewController.m */; };
 		5862EE1B1E96273500B809F8 /* LMJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE1A1E96273500B809F8 /* LMJNewViewController.m */; };
 		5862EE471E96389600B809F8 /* LMJGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE461E96389600B809F8 /* LMJGuideManager.m */; };
@@ -503,16 +503,16 @@
 		5800FB551EA0DBC10059B7B8 /* LMJNSOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNSOperationViewController.m; sourceTree = "<group>"; };
 		5800FB571EA0DBD10059B7B8 /* LMJLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLockViewController.h; sourceTree = "<group>"; };
 		5800FB581EA0DBD10059B7B8 /* LMJLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLockViewController.m; sourceTree = "<group>"; };
-		581006311EA87DE200729046 /* LMJVerticalFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJVerticalFlowLayout.h; sourceTree = "<group>"; };
-		581006321EA87DE200729046 /* LMJVerticalFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJVerticalFlowLayout.m; sourceTree = "<group>"; };
-		581006341EA87DF000729046 /* LMJHorizontalFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHorizontalFlowLayout.h; sourceTree = "<group>"; };
-		581006351EA87DF000729046 /* LMJHorizontalFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHorizontalFlowLayout.m; sourceTree = "<group>"; };
 		581006371EA8846D00729046 /* LMJVerticalLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJVerticalLayoutViewController.h; sourceTree = "<group>"; };
 		581006381EA8846D00729046 /* LMJVerticalLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJVerticalLayoutViewController.m; sourceTree = "<group>"; };
 		5810063A1EA885A000729046 /* LMJHorizontalLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHorizontalLayoutViewController.h; sourceTree = "<group>"; };
 		5810063B1EA885A000729046 /* LMJHorizontalLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHorizontalLayoutViewController.m; sourceTree = "<group>"; };
-		5810064D1EA8EADC00729046 /* LMJElementsFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJElementsFlowLayout.h; sourceTree = "<group>"; };
-		5810064E1EA8EADC00729046 /* LMJElementsFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJElementsFlowLayout.m; sourceTree = "<group>"; };
+		581006501EA920E700729046 /* LMJVerticalFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJVerticalFlowLayout.h; sourceTree = "<group>"; };
+		581006511EA920E700729046 /* LMJVerticalFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJVerticalFlowLayout.m; sourceTree = "<group>"; };
+		581006531EA920F700729046 /* LMJHorizontalFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHorizontalFlowLayout.h; sourceTree = "<group>"; };
+		581006541EA920F700729046 /* LMJHorizontalFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHorizontalFlowLayout.m; sourceTree = "<group>"; };
+		581006561EA9210700729046 /* LMJElementsFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJElementsFlowLayout.h; sourceTree = "<group>"; };
+		581006571EA9210700729046 /* LMJElementsFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJElementsFlowLayout.m; sourceTree = "<group>"; };
 		5862EDF81E95D77300B809F8 /* LMJMacos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJMacos.h; sourceTree = "<group>"; };
 		5862EDFA1E95D79000B809F8 /* LMJTargetConfigMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJTargetConfigMacros.h; sourceTree = "<group>"; };
 		5862EDFB1E95D7B500B809F8 /* LMJConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJConstants.h; sourceTree = "<group>"; };
@@ -2234,12 +2234,12 @@
 				588AABD71E9CEE79005F2A89 /* LMJNormalRefreshHeader.m */,
 				588AABFD1E9CF0A4005F2A89 /* LMJSettingCell.h */,
 				588AABFE1E9CF0A4005F2A89 /* LMJSettingCell.m */,
-				5810064D1EA8EADC00729046 /* LMJElementsFlowLayout.h */,
-				5810064E1EA8EADC00729046 /* LMJElementsFlowLayout.m */,
-				581006311EA87DE200729046 /* LMJVerticalFlowLayout.h */,
-				581006321EA87DE200729046 /* LMJVerticalFlowLayout.m */,
-				581006341EA87DF000729046 /* LMJHorizontalFlowLayout.h */,
-				581006351EA87DF000729046 /* LMJHorizontalFlowLayout.m */,
+				581006501EA920E700729046 /* LMJVerticalFlowLayout.h */,
+				581006511EA920E700729046 /* LMJVerticalFlowLayout.m */,
+				581006531EA920F700729046 /* LMJHorizontalFlowLayout.h */,
+				581006541EA920F700729046 /* LMJHorizontalFlowLayout.m */,
+				581006561EA9210700729046 /* LMJElementsFlowLayout.h */,
+				581006571EA9210700729046 /* LMJElementsFlowLayout.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -4159,11 +4159,12 @@
 				E782178A1E8EAE9000258845 /* UIViewController+MJPopupViewController.m in Sources */,
 				E78217501E8EAE9000258845 /* UILabel+ESAdjustableLabel.m in Sources */,
 				5800FB421EA0B08E0059B7B8 /* IQKeyboardReturnKeyHandler.m in Sources */,
-				5810064F1EA8EADC00729046 /* LMJElementsFlowLayout.m in Sources */,
+				581006581EA9210700729046 /* LMJElementsFlowLayout.m in Sources */,
 				E782175A1E8EAE9000258845 /* UINavigationItem+Margin.m in Sources */,
 				588AAD791E9F489F005F2A89 /* UIDevice+FCUUID.m in Sources */,
 				588AA9DF1E9BA693005F2A89 /* UIView+RoundedCorner.m in Sources */,
 				E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */,
+				581006551EA920F700729046 /* LMJHorizontalFlowLayout.m in Sources */,
 				E78217211E8EAE9000258845 /* UIBezierPath+Length.m in Sources */,
 				588AA9A01E9BA693005F2A89 /* NSDictionary+Merge.m in Sources */,
 				E78217731E8EAE9000258845 /* UITextView+Select.m in Sources */,
@@ -4171,7 +4172,6 @@
 				588AAB621E9CAED2005F2A89 /* QBAssetsCollectionFooterView.m in Sources */,
 				E78217811E8EAE9000258845 /* UIView+Shake.m in Sources */,
 				588AA9A81E9BA693005F2A89 /* NSIndexPath+Offset.m in Sources */,
-				581006361EA87DF000729046 /* LMJHorizontalFlowLayout.m in Sources */,
 				588AA9C91E9BA693005F2A89 /* NSString+RemoveEmoji.m in Sources */,
 				E78217861E8EAE9000258845 /* UIViewController+BackButtonItemTitle.m in Sources */,
 				58F46A971EA499220073A58C /* LMJChildBlockViewController.m in Sources */,
@@ -4204,7 +4204,6 @@
 				588AA9931E9BA693005F2A89 /* NSData+SDDataCache.m in Sources */,
 				E78217871E8EAE9000258845 /* UIViewController+BackButtonTouched.m in Sources */,
 				588AAD771E9F489F005F2A89 /* FCUUID.m in Sources */,
-				581006331EA87DE200729046 /* LMJVerticalFlowLayout.m in Sources */,
 				588AA98F1E9BA693005F2A89 /* NSData+Base64.m in Sources */,
 				58F46ACB1EA5A0900073A58C /* LMJAdaptFontCell.m in Sources */,
 				E782173C1E8EAE9000258845 /* UIImage+Capture.m in Sources */,
@@ -4338,6 +4337,7 @@
 				E78217421E8EAE9000258845 /* UIImage+Orientation.m in Sources */,
 				E782176D1E8EAE9000258845 /* UITextField+Blocks.m in Sources */,
 				E782175F1E8EAE9000258845 /* UIScreen+Frame.m in Sources */,
+				581006521EA920E700729046 /* LMJVerticalFlowLayout.m in Sources */,
 				588AAB661E9CAED2005F2A89 /* QBAssetsCollectionViewController.m in Sources */,
 				588AA9B51E9BA693005F2A89 /* NSObject+Blocks.m in Sources */,
 				588AAD891E9F489F005F2A89 /* imageCompressHelper.m in Sources */,

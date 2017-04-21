@@ -23,7 +23,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
 
 - (NSInteger)lines;
 
-- (CGFloat)xMargin;
+- (CGFloat)xMarginAtIndexPath:(NSIndexPath *)indexPath;
 
 - (CGFloat)yMargin;
 
@@ -75,7 +75,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
     CGFloat h = 1.0 * (self.collectionView.frame.size.height - self.edgeInsets.top - self.edgeInsets.bottom - self.yMargin * (self.lines - 1)) / self.lines;
     
     // 宽度由外界决定, 外界必须实现这个方法
-    CGFloat w = [self.delegate waterflowLayout:self widthForItemAtIndexPath:indexPath itemHeight:h];
+    CGFloat w = [self.delegate waterflowLayout:self collectionView:self.collectionView widthForItemAtIndexPath:indexPath itemHeight:h];
     
     // 拿到最后的高度最小的那一列, 假设第0列最小
     NSInteger indexLine = 0;
@@ -92,7 +92,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
     }
     
     
-    CGFloat x = self.xMargin + minLineW;
+    CGFloat x = [self xMarginAtIndexPath:indexPath] + minLineW;
     
     if (minLineW == self.edgeInsets.left) {
         x = self.edgeInsets.left;
@@ -152,9 +152,9 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
 
 - (NSInteger)lines
 {
-    if([self.delegate respondsToSelector:@selector(waterflowLayoutOfLines:)])
+    if([self.delegate respondsToSelector:@selector(waterflowLayout:linesInCollectionView:)])
     {
-        return [self.delegate waterflowLayoutOfLines:self];
+        return [self.delegate waterflowLayout:self linesInCollectionView:self.collectionView];
     }
     else
     {
@@ -162,11 +162,11 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
     }
 }
 
-- (CGFloat)xMargin
+- (CGFloat)xMarginAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([self.delegate respondsToSelector:@selector(waterflowLayouOftMarginBetweenColumns:)])
+    if([self.delegate respondsToSelector:@selector(waterflowLayout:collectionView:columnsMarginForItemAtIndexPath:)])
     {
-        return [self.delegate waterflowLayouOftMarginBetweenColumns:self];
+        return [self.delegate waterflowLayout:self collectionView:self.collectionView columnsMarginForItemAtIndexPath:indexPath];
     }
     else
     {
@@ -176,9 +176,9 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
 
 - (CGFloat)yMargin
 {
-    if([self.delegate respondsToSelector:@selector(waterflowLayoutOfMarginBetweenLines:)])
+    if([self.delegate respondsToSelector:@selector(waterflowLayout:linesMarginInCollectionView:)])
     {
-        return [self.delegate waterflowLayoutOfMarginBetweenLines:self];
+        return [self.delegate waterflowLayout:self linesMarginInCollectionView:self.collectionView];
     }else
     {
         return LMJ_YMargin_;
@@ -187,14 +187,33 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
 
 - (UIEdgeInsets)edgeInsets
 {
-    if([self.delegate respondsToSelector:@selector(waterflowLayoutOfEdgeInsets:)])
+    if([self.delegate respondsToSelector:@selector(waterflowLayout:edgeInsetsInCollectionView:)])
     {
-        return [self.delegate waterflowLayoutOfEdgeInsets:self];
+        return [self.delegate waterflowLayout:self edgeInsetsInCollectionView:self.collectionView];
     }
     else
     {
         return LMJ_EdgeInsets_;
     }
+}
+
+- (id<LMJHorizontalFlowLayoutDelegate>)delegate
+{
+    return (id<LMJHorizontalFlowLayoutDelegate>)self.collectionView.dataSource;
+}
+
+- (instancetype)initWithDelegate:(id<LMJHorizontalFlowLayoutDelegate>)delegate
+{
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
+
++ (instancetype)flowLayoutWithDelegate:(id<LMJHorizontalFlowLayoutDelegate>)delegate
+{
+    return [[self alloc] initWithDelegate:delegate];
 }
 
 @end

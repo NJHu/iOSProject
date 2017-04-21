@@ -24,26 +24,26 @@
  *
  *  @return 需要代理高度对应的cell的高度
  */
-- (CGFloat)waterflowLayout:(LMJVerticalFlowLayout *)waterflowLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth;
+- (CGFloat)waterflowLayout:(LMJVerticalFlowLayout *)waterflowLayout collectionView:(UICollectionView *)collectionView heightForItemAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth;
 @optional
 
 /**
  *  需要显示的列数, 默认3
  */
-- (NSInteger)waterflowLayoutOfColumns:(LMJVerticalFlowLayout *)waterflowLayout;
+- (NSInteger)waterflowLayout:(LMJVerticalFlowLayout *)waterflowLayout columnsInCollectionView:(UICollectionView *)collectionView;
 /**
- *  竖直方向的间距, 默认10
+ *  列间距, 默认10
  */
-- (CGFloat)waterflowLayouOftMarginBetweenColumns:(LMJVerticalFlowLayout *)waterflowLayout;
+- (CGFloat)waterflowLayout:(LMJVerticalFlowLayout *)waterflowLayout columnsMarginInCollectionView:(UICollectionView *)collectionView;
 /**
- *  水平方向的间距, 默认10
+ *  行间距, 默认10
  */
-- (CGFloat)waterflowLayoutOfMarginBetweenLines:(LMJVerticalFlowLayout *)waterflowLayout;
+- (CGFloat)waterflowLayout:(LMJVerticalFlowLayout *)waterflowLayout collectionView:(UICollectionView *)collectionView linesMarginForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  *  距离collectionView四周的间距, 默认{20, 10, 10, 10}
  */
-- (UIEdgeInsets)waterflowLayoutOfEdgeInsets:(LMJVerticalFlowLayout *)waterflowLayout;
+- (UIEdgeInsets)waterflowLayout:(LMJVerticalFlowLayout *)waterflowLayout edgeInsetsInCollectionView:(UICollectionView *)collectionView;
 
 
 @end
@@ -53,5 +53,8 @@
 @interface LMJVerticalFlowLayout : UICollectionViewLayout
 
 /** layout的代理 */
-@property (weak, nonatomic) id<LMJVerticalFlowLayoutDelegate> delegate;
+- (instancetype)initWithDelegate:(id<LMJVerticalFlowLayoutDelegate>)delegate;
+
++ (instancetype)flowLayoutWithDelegate:(id<LMJVerticalFlowLayoutDelegate>)delegate;
+
 @end

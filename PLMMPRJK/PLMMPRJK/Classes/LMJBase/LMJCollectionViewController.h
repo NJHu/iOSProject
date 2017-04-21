@@ -17,7 +17,7 @@
 
 @required
 // 需要返回对应的布局
-- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForcollectionView:(UICollectionView *)collectionView;
+- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForCollectionView:(UICollectionView *)collectionView;
 
 @end
 

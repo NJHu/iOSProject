@@ -69,24 +69,23 @@
 
 #pragma mark - LMJElementsFlowLayoutDelegate
 
-- (CGSize)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGSize)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout collectionView:(UICollectionView *)collectionView sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.elementsHight[indexPath.item].CGSizeValue;
 }
 
-- (UIEdgeInsets)waterflowLayoutOfEdgeInsets:(LMJElementsFlowLayout *)waterflowLayout
+- (UIEdgeInsets)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout edgeInsetsInCollectionView:(UICollectionView *)collectionView
 {
     return UIEdgeInsetsMake(1, 10, 10, 10);
 }
 
 
 
-#pragma mark - <#digest#>
+#pragma mark - LMJCollectionViewControllerDataSource
 
-- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForcollectionView:(UICollectionView *)collectionView
+- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForCollectionView:(UICollectionView *)collectionView
 {
-    LMJElementsFlowLayout *elementsFlowLayout = [[LMJElementsFlowLayout alloc] init];
-    elementsFlowLayout.delegate = self;
+    LMJElementsFlowLayout *elementsFlowLayout = [[LMJElementsFlowLayout alloc] initWithDelegate:self];
     
     return elementsFlowLayout;
 }

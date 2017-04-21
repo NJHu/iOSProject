@@ -88,7 +88,7 @@
         [self.view addSubview:collectionView];
         _collectionView = collectionView;
         
-        UICollectionViewLayout *myLayout = [self collectionViewController:self layoutForcollectionView:collectionView];
+        UICollectionViewLayout *myLayout = [self collectionViewController:self layoutForCollectionView:collectionView];
         
         collectionView.collectionViewLayout = myLayout;
         
@@ -102,11 +102,10 @@
 
 
 #pragma mark - LMJCollectionViewControllerDataSource
-- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForcollectionView:(UICollectionView *)collectionView
+- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForCollectionView:(UICollectionView *)collectionView
 {
     
-    LMJVerticalFlowLayout *myLayout = [[LMJVerticalFlowLayout alloc] init];
-    myLayout.delegate = self;
+    LMJVerticalFlowLayout *myLayout = [[LMJVerticalFlowLayout alloc] initWithDelegate:self];
     
     return myLayout;
 }
@@ -114,7 +113,7 @@
 
 #pragma mark - LMJVerticalFlowLayoutDelegate
 
-- (CGFloat)waterflowLayout:(LMJVerticalFlowLayout *)waterflowLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth
+- (CGFloat)waterflowLayout:(LMJVerticalFlowLayout *)waterflowLayout collectionView:(UICollectionView *)collectionView heightForItemAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth
 {
     return itemWidth * (arc4random() % 4 + 1);
 }

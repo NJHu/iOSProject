@@ -37,12 +37,11 @@
 }
 
 
+#pragma mark - LMJCollectionViewControllerDataSource
 
-- (UICollectionViewLayout *)collectionViewController:(LMJHorizontalLayoutViewController *)collectionViewController layoutForcollectionView:(UICollectionView *)collectionView
+- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForCollectionView:(UICollectionView *)collectionView
 {
-    LMJHorizontalFlowLayout *layout = [[LMJHorizontalFlowLayout alloc] init];
-    
-    layout.delegate = collectionViewController;
+    LMJHorizontalFlowLayout *layout = [[LMJHorizontalFlowLayout alloc] initWithDelegate:self];
     
     
     return layout;
@@ -51,14 +50,14 @@
 
 #pragma mark - LMJHorizontalFlowLayoutDelegate
 
-- (CGFloat)waterflowLayout:(LMJHorizontalFlowLayout *)waterflowLayout widthForItemAtIndexPath:(NSIndexPath *)indexPath itemHeight:(CGFloat)itemHeight
+- (CGFloat)waterflowLayout:(LMJHorizontalFlowLayout *)waterflowLayout collectionView:(UICollectionView *)collectionView widthForItemAtIndexPath:(NSIndexPath *)indexPath itemHeight:(CGFloat)itemHeight
 {
     
     return (arc4random() % 4 + 1) * itemHeight;
 }
 
 
-- (NSInteger)waterflowLayoutOfLines:(LMJHorizontalFlowLayout *)waterflowLayout
+- (NSInteger)waterflowLayout:(LMJHorizontalFlowLayout *)waterflowLayout linesInCollectionView:(UICollectionView *)collectionView
 {
     return 5;
 }
