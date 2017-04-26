@@ -16,7 +16,7 @@ static const CGFloat LMJTitlesListsParentViewControllerTitleHeight = 40.0;
 static NSString* const kMail_cc_ToRecipients_Address = @"64hp@163.com";
 
 //网络状态监控地址
-static NSString* const kURL_Reachability__Address = @"https://www.baidu.com";
+static NSString* const kURL_Reachability__Address = @"www.baidu.com";
 
 
 static NSString *const LMJThirdSDKUMConfigInstanceAppKey = @"58aa7d20e88bad08c1001dcd";

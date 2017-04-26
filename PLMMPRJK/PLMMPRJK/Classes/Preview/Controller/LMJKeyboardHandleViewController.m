@@ -35,11 +35,10 @@
 @property (nonatomic, strong) NSNumber *duration;
 @property (nonatomic, strong) NSNumber *curve;
 
-@property(nonatomic)CGFloat keyBoardHeight;
+@property(nonatomic) CGFloat keyBoardHeight;
 @end
 
 static const CGFloat topViewHeigt=100;
-static const CGFloat TopBarHeight=64;
 
 @implementation LMJKeyboardHandleViewController
 
@@ -90,11 +89,11 @@ static const CGFloat TopBarHeight=64;
     
     self.myBottomView=[[UIView alloc]init];
     
-    self.myBottomView.hidden=YES;
-    self.myBottomView.backgroundColor=[UIColor greenColor];
+    self.myBottomView.backgroundColor=[UIColor yellowColor];
     
     UILabel *myLabel=[[UILabel alloc]init];
     myLabel.text=@"我是自定义视图";
+    myLabel.textColor = [UIColor redColor];
     [self.myBottomView addSubview:myLabel];
     [myLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(self.myBottomView);
@@ -117,10 +116,10 @@ static const CGFloat TopBarHeight=64;
     // 键盘弹出后的frame的结构体对象
     NSValue *valueEndFrame = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     // 得到键盘弹出后的键盘视图所在y坐标
-    CGFloat keyBoardEndY = valueEndFrame.CGRectValue.origin.y;
     CGRect keyboardRect       = [valueEndFrame CGRectValue];
     CGFloat KBHeight              = keyboardRect.size.height;
     self.keyBoardHeight=KBHeight;
+    
     // ------键盘出现或改变时的操作代码
     NSLog(@"当前的键盘高度为：%f",KBHeight);
     // 键盘弹出的动画时间
@@ -134,7 +133,7 @@ static const CGFloat TopBarHeight=64;
         [UIView setAnimationBeginsFromCurrentState:YES];
         
         [UIView setAnimationCurve:[_curve intValue]];
-        self.myTopView.frame = CGRectMake(0, keyBoardEndY+topViewHeigt+TopBarHeight, Main_Screen_Width, topViewHeigt);
+        self.myTopView.frame = CGRectMake(0, self.view.height - topViewHeigt, Main_Screen_Width, topViewHeigt);
     }];
     
 }
@@ -156,11 +155,9 @@ static const CGFloat TopBarHeight=64;
 }
 
 
-
-
 - (void)myAction
 {
-    self.myBottomView.frame = CGRectMake(0, 0, Main_Screen_Width, 200);
+    self.myBottomView.frame = CGRectMake(0, 0, Main_Screen_Width, self.keyBoardHeight);
     
     [self.myTextField resignFirstResponder];
     
@@ -170,6 +167,13 @@ static const CGFloat TopBarHeight=64;
     
     [self.myTextField becomeFirstResponder];
     
+}
+
+
+#pragma mark - lmjtextDlegate
+- (BOOL)textViewControllerEnableAutoToolbar:(LMJTextViewController *)textViewController
+{
+    return NO;
 }
 
 
@@ -214,20 +218,6 @@ static const CGFloat TopBarHeight=64;
 
 
 #pragma mark - life
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
-}
-
-
 
 #pragma mark - LMJNavUIBaseViewControllerDelegate
 /** 左边的按钮的点击 */

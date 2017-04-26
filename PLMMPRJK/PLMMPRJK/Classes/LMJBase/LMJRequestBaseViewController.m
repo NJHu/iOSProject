@@ -21,7 +21,7 @@
     [super viewDidLoad];
     
     
-     [self.reachHost startNotifier];
+    [self reachHost];
 }
 
 
@@ -106,27 +106,39 @@
     {
         _reachHost = [Reachability reachabilityWithHostName:kURL_Reachability__Address];
         
+        LMJWeakSelf(self);
+        [_reachHost setUnreachableBlock:^(Reachability * reachability){
         
-        [kNotificationCenter addObserver:self selector:@selector(netStatusChange:) name:kReachabilityChangedNotification object:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [weakself networkStatusChange:reachability.currentReachabilityStatus];
+                
+            });
+            
+        }];
+        
+        
+        [_reachHost setReachableBlock:^(Reachability * reachability){
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [weakself networkStatusChange:reachability.currentReachabilityStatus];
+                
+            });
+            
+        }];
+        
+        [_reachHost startNotifier];
         
     }
     return _reachHost;
 }
 
 
-- (void)netStatusChange:(NSNotification *)noti
+- (void)networkStatusChange:(NetworkStatus)networkStatus
 {
-    LMJLog(@"-----%@",noti.userInfo);
-    
-    if ([self respondsToSelector:@selector(networkStatusChange:)]) {
-        
-        [self networkStatusChange:self.reachHost.currentReachabilityStatus];
-        
-        return;
-    }
-    
     //判断网络状态
-    switch (self.reachHost.currentReachabilityStatus) {
+    switch (networkStatus) {
         case NotReachable:
             [MBProgressHUD showError:@"当前网络连接失败，请查看设置" ToView:self.view];
             break;
@@ -140,12 +152,17 @@
             break;
     }
     
+    
 }
+
+
 
 
 - (void)dealloc
 {
     [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+    [_reachHost stopNotifier];
+    _reachHost = nil;
 }
 
 @end

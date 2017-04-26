@@ -12,7 +12,7 @@
 
 - (NSDictionary *)requestParameters:(LMJBaseRequest *)request
 {
-    NSAssert(1, @"需要重写");
+    NSAssert(0, @"需要重写");
     return nil;
 }
 
@@ -20,7 +20,7 @@
 
 - (NSString *)requestURL:(LMJBaseRequest *)request
 {
-    NSAssert(1, @"需要重写");
+    NSAssert(0, @"需要重写");
     return nil;
 }
 
