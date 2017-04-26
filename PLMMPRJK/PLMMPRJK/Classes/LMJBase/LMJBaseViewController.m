@@ -43,7 +43,7 @@
 {
     [super viewWillDisappear:animated];
     
-    [self.view endEditing:YES];
+    
 }
 
 

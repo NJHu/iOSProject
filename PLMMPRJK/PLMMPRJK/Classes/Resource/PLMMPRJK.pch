@@ -35,6 +35,7 @@
 
 #import "LMJNavUIBaseViewController.h"
 #import "LMJRequestBaseViewController.h"
+#import "LMJTextViewController.h"
 #import "LMJBaseViewController.h"
 #import "LMJNavigationController.h"
 #import "LMJTabBarController.h"

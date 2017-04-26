@@ -98,7 +98,7 @@
 
 - (void)dealloc
 {
-    [kNotificationCenter postNotificationName:LMJTableViewControllerDeallocNotification object:self];
+    [kNotificationCenter postNotificationName:LMJTableViewControllerDeallocNotification object:self.tableView];
 }
 
 @end

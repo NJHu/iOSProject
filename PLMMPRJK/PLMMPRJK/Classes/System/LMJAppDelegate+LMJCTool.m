@@ -30,16 +30,6 @@
     // 魔窗
 //    [LMJMagicWindowHelper MagicStart];
     
-    // 键盘
-    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-    manager.enable = YES;
-    manager.shouldResignOnTouchOutside = YES;
-    manager.shouldToolbarUsesTextFieldTintColor = YES;
-    manager.enableAutoToolbar = YES;
-    manager.shouldPlayInputClicks = YES;
-    manager.shouldShowTextFieldPlaceholder = YES;
-    
-    
 }
 
 

@@ -8,14 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class LMJBaseViewController;
-@protocol LMJBaseViewControllerDelegate <NSObject>
 
-
-
-@end
-
-@interface LMJBaseViewController : LMJRequestBaseViewController
+@interface LMJBaseViewController : LMJTextViewController
 
 - (instancetype)initWithTitle:(NSString *)title;
 

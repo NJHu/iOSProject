@@ -265,6 +265,7 @@
 		588AAD8A1E9F489F005F2A89 /* UITapImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD5E1E9F489F005F2A89 /* UITapImageView.m */; };
 		588AAD8B1E9F489F005F2A89 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD611E9F489F005F2A89 /* Reachability.m */; };
 		588AAD941E9F5384005F2A89 /* LMJLiftCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD931E9F5384005F2A89 /* LMJLiftCycleViewController.m */; };
+		5890A0931EB07859002F892A /* LMJTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5890A0921EB07859002F892A /* LMJTextViewController.m */; };
 		58C0C1991EADEC4F00632381 /* LMJRequestBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C0C1981EADEC4F00632381 /* LMJRequestBaseViewController.m */; };
 		58C0C1A01EADEF5D00632381 /* LMJRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C0C19F1EADEF5D00632381 /* LMJRequestManager.m */; };
 		58C0C1A31EADEF7B00632381 /* LMJBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C0C1A21EADEF7B00632381 /* LMJBaseRequest.m */; };
@@ -970,6 +971,8 @@
 		588AAD611E9F489F005F2A89 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		588AAD921E9F5384005F2A89 /* LMJLiftCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLiftCycleViewController.h; sourceTree = "<group>"; };
 		588AAD931E9F5384005F2A89 /* LMJLiftCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLiftCycleViewController.m; sourceTree = "<group>"; };
+		5890A0911EB07859002F892A /* LMJTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTextViewController.h; sourceTree = "<group>"; };
+		5890A0921EB07859002F892A /* LMJTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTextViewController.m; sourceTree = "<group>"; };
 		58C0C1971EADEC4F00632381 /* LMJRequestBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJRequestBaseViewController.h; sourceTree = "<group>"; };
 		58C0C1981EADEC4F00632381 /* LMJRequestBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJRequestBaseViewController.m; sourceTree = "<group>"; };
 		58C0C19E1EADEF5D00632381 /* LMJRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJRequestManager.h; sourceTree = "<group>"; };
@@ -3796,6 +3799,8 @@
 				E7D0E08C1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m */,
 				58C0C1971EADEC4F00632381 /* LMJRequestBaseViewController.h */,
 				58C0C1981EADEC4F00632381 /* LMJRequestBaseViewController.m */,
+				5890A0911EB07859002F892A /* LMJTextViewController.h */,
+				5890A0921EB07859002F892A /* LMJTextViewController.m */,
 				588AAB741E9CB944005F2A89 /* LMJBaseViewController.h */,
 				588AAB751E9CB944005F2A89 /* LMJBaseViewController.m */,
 				E78212181E8E76D400258845 /* LMJNavigationController.h */,
@@ -4291,6 +4296,7 @@
 				588AA9B41E9BA693005F2A89 /* NSObject+AutoCoding.m in Sources */,
 				588AA9A71E9BA693005F2A89 /* NSHTTPCookieStorage+FreezeDry.m in Sources */,
 				588AAD8B1E9F489F005F2A89 /* Reachability.m in Sources */,
+				5890A0931EB07859002F892A /* LMJTextViewController.m in Sources */,
 				588AA9CF1E9BA693005F2A89 /* NSString+UUID.m in Sources */,
 				588AA9EC1E9BA693005F2A89 /* CAShapeLayer+UIBezierPath.m in Sources */,
 				E782177E1E8EAE9000258845 /* UIView+Nib.m in Sources */,
