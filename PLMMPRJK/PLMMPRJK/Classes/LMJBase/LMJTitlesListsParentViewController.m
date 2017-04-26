@@ -341,7 +341,7 @@
     LMJWeakSelf(self);
     [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
        
-        [obj addObserverBlockForKeyPath:CFPKeyPath(obj, title) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+        [obj addObserverBlockForKeyPath:LMJKeyPath(obj, title) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
            
             [weakself.titleBtns[idx] setTitle:newVal forState:UIControlStateNormal];
             
@@ -354,7 +354,7 @@
 {
     [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        [obj removeObserverBlocksForKeyPath:CFPKeyPath(obj, title)];
+        [obj removeObserverBlocksForKeyPath:LMJKeyPath(obj, title)];
         
     }];
 }

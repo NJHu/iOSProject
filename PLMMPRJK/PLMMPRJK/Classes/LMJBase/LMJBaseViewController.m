@@ -10,8 +10,7 @@
 
 @interface LMJBaseViewController ()
 
-/** <#digest#> */
-@property (nonatomic, strong) Reachability *reachHost;
+
 
 @end
 
@@ -27,7 +26,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
 
-    [self.reachHost startNotifier];
+   
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -70,39 +69,7 @@
 }
 
 
-- (Reachability *)reachHost
-{
-    if(_reachHost == nil)
-    {
-        _reachHost = [Reachability reachabilityWithHostName:kURL_Reachability__Address];
-        
-        
-        [kNotificationCenter addObserver:self selector:@selector(netStatusChange:) name:kReachabilityChangedNotification object:nil];
-        
-    }
-    return _reachHost;
-}
 
-- (void)netStatusChange:(NSNotification *)noti
-{
-    LMJLog(@"-----%@",noti.userInfo);
-    
-    //判断网络状态
-    switch (self.reachHost.currentReachabilityStatus) {
-        case NotReachable:
-            [MBProgressHUD showInfo:@"当前网络连接失败，请查看设置" ToView:self.view];
-            break;
-        case ReachableViaWiFi:
-            LMJLog(@"wifi上网2");
-            break;
-        case ReachableViaWWAN:
-            LMJLog(@"手机上网2");
-            break;
-        default:
-            break;
-    }
-    
-}
 
 - (void)dealloc
 {
@@ -110,7 +77,6 @@
     LMJLog(@"%@", self.class);
     
     [kNotificationCenter removeObserver:self];
-    self.reachHost = nil;
     
 }
 

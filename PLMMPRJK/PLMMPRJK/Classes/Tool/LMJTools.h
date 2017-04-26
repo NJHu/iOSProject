@@ -12,4 +12,8 @@
 
 #import "LMJGuideManager.h"
 
+#import "LMJBaseRequest.h"
+#import "LMJBaseResponse.h"
+#import "LMJRequestManager.h"
+
 #endif /* LMJTools_h */

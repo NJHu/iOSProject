@@ -1,13 +1,13 @@
 //
-//  CFPExpandHeader.m
+//  LMJExpandHeader.m
 //
 
 #define CExpandContentOffset @"contentOffset"
 
-#import "CFPExpandHeader.h"
+#import "LMJExpandHeader.h"
 
 
-@interface CFPExpandHeader ()
+@interface LMJExpandHeader ()
 
 /** <#digest#> */
 @property (weak, nonatomic) UIScrollView *scrollView;
@@ -24,7 +24,7 @@
 @end
 
 
-@implementation CFPExpandHeader
+@implementation LMJExpandHeader
 
 - (void)dealloc{
     NSLog(@"");
@@ -32,7 +32,7 @@
 }
 
 + (instancetype)expandWithScrollView:(UIScrollView*)scrollView expandView:(UIView*)expandView{
-    CFPExpandHeader *expandHeader = [CFPExpandHeader new];
+    LMJExpandHeader *expandHeader = [LMJExpandHeader new];
     [expandHeader expandWithScrollView:scrollView expandView:expandView];
     return expandHeader;
 }

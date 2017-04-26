@@ -32,7 +32,7 @@
     self.fd_interactivePopDisabled = YES;
     
     LMJWeakSelf(self);
-    [self.webView addObserverBlockForKeyPath:CFPKeyPath(weakself.webView, estimatedProgress) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+    [self.webView addObserverBlockForKeyPath:LMJKeyPath(weakself.webView, estimatedProgress) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
         
         
         weakself.progressView.progress = weakself.webView.estimatedProgress;
@@ -54,7 +54,7 @@
     
     if ([self isNeedAutoTitle]) {
         
-        [self.webView addObserverBlockForKeyPath:CFPKeyPath(self.webView, title) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+        [self.webView addObserverBlockForKeyPath:LMJKeyPath(self.webView, title) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
             
             if ([newVal isKindOfClass:[NSString class]]) {
                 

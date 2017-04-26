@@ -1,5 +1,5 @@
 //
-//  CFPExpandImageView.h
+//  LMJExpandImageView.h
 //  GoMeYWLC
 //
 //  Created by NJHu on 2016/11/10.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CFPExpandImageView : UIImageView
+@interface LMJExpandImageView : UIImageView
 
 @end

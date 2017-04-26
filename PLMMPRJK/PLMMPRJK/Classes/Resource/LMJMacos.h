@@ -156,7 +156,7 @@
 /**
  *  属性转字符串
  */
-#define CFPKeyPath(obj, key) @(((void)obj.key, #key))
+#define LMJKeyPath(obj, key) @(((void)obj.key, #key))
 
 
 //上传图片相关

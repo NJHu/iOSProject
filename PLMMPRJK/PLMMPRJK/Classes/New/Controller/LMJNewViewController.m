@@ -18,6 +18,8 @@
 #import "LMJElementsCollectionViewController.h"
 #import "LMJVerticalLayoutViewController.h"
 #import "LMJHorizontalLayoutViewController.h"
+#import "LMJKeyboardHandleViewController.h"
+#import "LMJDownLoadFileViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -91,8 +93,16 @@
     
     item10.destVc = [LMJHorizontalLayoutViewController class];
     
+    LMJWordArrowItem *item11 = [LMJWordArrowItem itemWithTitle:@"键盘处理" subTitle: nil];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    item11.destVc = [LMJKeyboardHandleViewController class];
+    
+    LMJWordArrowItem *item12 = [LMJWordArrowItem itemWithTitle:@"文件下载" subTitle: nil];
+    
+    item12.destVc = [LMJDownLoadFileViewController class];
+    
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }

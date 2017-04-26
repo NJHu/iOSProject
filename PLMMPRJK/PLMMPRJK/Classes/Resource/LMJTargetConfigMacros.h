@@ -21,7 +21,7 @@
 /**
  *  打印函数
  */
-#define LMJLogFunc CFPLog(@"\n")
+#define LMJLogFunc LMJLog(@"\n")
 
 
 #else

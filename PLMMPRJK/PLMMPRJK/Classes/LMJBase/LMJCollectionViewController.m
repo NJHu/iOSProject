@@ -19,13 +19,13 @@
     [super viewDidLoad];
     
     
-    [self setupBaseCFPCollectionViewControllerUI];
+    [self setupBaseLMJCollectionViewControllerUI];
     
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
 }
 
-- (void)setupBaseCFPCollectionViewControllerUI
+- (void)setupBaseLMJCollectionViewControllerUI
 {
     
     self.collectionView.backgroundColor = self.view.backgroundColor;

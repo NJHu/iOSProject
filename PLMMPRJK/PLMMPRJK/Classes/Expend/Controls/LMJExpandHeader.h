@@ -1,22 +1,22 @@
 //
-//  CFPExpandHeader.h
+//  LMJExpandHeader.h
 //
 //
 //
 
 #import <Foundation/Foundation.h>
-#import "CFPExpandImageView.h"
+#import "LMJExpandImageView.h"
 
-@interface CFPExpandHeader : NSObject <UIScrollViewDelegate>
+@interface LMJExpandHeader : NSObject <UIScrollViewDelegate>
 
 #pragma mark - 类方法 
 /**
- *  生成一个CFPExpandHeader实例
+ *  生成一个LMJExpandHeader实例
  *
  *  @param scrollView
  *  @param expandView 可以伸展的背景View
  *
- *  @return CFPExpandHeader 对象
+ *  @return LMJExpandHeader 对象
  */
 + (instancetype)expandWithScrollView:(UIScrollView*)scrollView expandView:(UIView*)expandView;
 

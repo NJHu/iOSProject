@@ -14,10 +14,10 @@
 - (void)addChildViewControllers;
 
 // 子类实现即可定制下边的标题颜色和字体
-/** 正常情况下的颜色, 默认CFPHexAlpaColor(@"#646464 100%"); */
+/** 正常情况下的颜色, 默认LMJHexAlpaColor(@"#646464 100%"); */
 - (UIColor *)titleBtnNormalColor;
 
-/** 选中的颜色, 默认 CFPHexAlpaColor(@"#13A5B5 100%"); */
+/** 选中的颜色, 默认 LMJHexAlpaColor(@"#13A5B5 100%"); */
 - (UIColor *)titleBtnSelectedColor;
 
 /** 标题的字体, 默认14 */

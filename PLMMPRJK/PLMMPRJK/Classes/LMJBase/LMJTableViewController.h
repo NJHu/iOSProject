@@ -7,7 +7,7 @@
 //
 
 #import "LMJBaseViewController.h"
-#import "CFPExpandHeader.h"
+#import "LMJExpandHeader.h"
 
 @interface LMJTableViewController : LMJBaseViewController<UITableViewDelegate, UITableViewDataSource>
 

@@ -55,8 +55,8 @@
 
 
 
-#pragma mark - 魔窗
-//[application(_:continueUserActivity:restorationHandler:)]。
+#pragma mark -应用跳转
+//Universal link
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
 {
     if (userActivity.webpageURL) {
@@ -77,6 +77,78 @@
 }
 
 
+
+// 支持所有iOS9以下系统,scheme 跳转
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    //必写
+    //    [MWApi routeMLink:url];
+
+    
+    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    
+    if (!result) {
+        // 其他如支付等SDK的回调
+        
+        
+        
+    }
+    
+    if (url) {
+        
+        NSLog(@"%@", url);
+        
+        [WJYAlertView showOneButtonWithTitle:@"web跳转应用" Message:url.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"确认" Click:^{
+            
+        }];
+        
+    }
+    
+    
+    
+    return result;
+}
+
+
+
+
+//iOS9+scheme跳转
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(nonnull NSDictionary *)options
+{
+    //必写
+//        [MWApi routeMLink:url];
+    
+    
+    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
+    
+    if (!result) {
+        // 其他如支付等SDK的回调
+        
+        
+        
+    }
+    
+    if (url) {
+        
+        NSLog(@"%@", url);
+        
+        [WJYAlertView showOneButtonWithTitle:@"web跳转应用" Message:url.description ButtonType:WJYAlertViewButtonTypeCancel ButtonTitle:@"确认" Click:^{
+            
+        }];
+        
+    }
+    
+    
+    
+    return result;
+}
+
+
+
+
+#pragma mark - deviceToken
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     NSString * string =[[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
@@ -95,6 +167,8 @@
 }
 
 
+
+#pragma mark - life
 - (void)applicationWillResignActive:(UIApplication *)application {
     
 }
@@ -121,31 +195,12 @@
 }
 
 
-// 支持所有iOS系统,
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    //必写
-//    [MWApi routeMLink:url];
-    
-    
-    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    
-    if (!result) {
-        // 其他如支付等SDK的回调
-        
-        
-        
-    }
-    
-    
-    
-    return result;
-}
 
 
 
 
+
+#pragma mark - 通知
 //iOS10以下后台使用这个方法接收通知
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {

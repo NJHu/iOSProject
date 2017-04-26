@@ -39,6 +39,7 @@
 		581006521EA920E700729046 /* LMJVerticalFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 581006511EA920E700729046 /* LMJVerticalFlowLayout.m */; };
 		581006551EA920F700729046 /* LMJHorizontalFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 581006541EA920F700729046 /* LMJHorizontalFlowLayout.m */; };
 		581006581EA9210700729046 /* LMJElementsFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 581006571EA9210700729046 /* LMJElementsFlowLayout.m */; };
+		582F62191EA9E6AC00342DFD /* LMJKeyboardHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F62181EA9E6AC00342DFD /* LMJKeyboardHandleViewController.m */; };
 		5862EE061E96204000B809F8 /* LMJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE051E96204000B809F8 /* LMJMessageViewController.m */; };
 		5862EE1B1E96273500B809F8 /* LMJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE1A1E96273500B809F8 /* LMJNewViewController.m */; };
 		5862EE471E96389600B809F8 /* LMJGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862EE461E96389600B809F8 /* LMJGuideManager.m */; };
@@ -183,8 +184,8 @@
 		588AABDC1E9CEE79005F2A89 /* LMJAutoRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABD31E9CEE79005F2A89 /* LMJAutoRefreshFooter.m */; };
 		588AABDD1E9CEE79005F2A89 /* LMJNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABD51E9CEE79005F2A89 /* LMJNavigationBar.m */; };
 		588AABDE1E9CEE79005F2A89 /* LMJNormalRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABD71E9CEE79005F2A89 /* LMJNormalRefreshHeader.m */; };
-		588AABF01E9CEE9C005F2A89 /* CFPExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABE31E9CEE9C005F2A89 /* CFPExpandHeader.m */; };
-		588AABF11E9CEE9C005F2A89 /* CFPExpandImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABE51E9CEE9C005F2A89 /* CFPExpandImageView.m */; };
+		588AABF01E9CEE9C005F2A89 /* LMJExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABE31E9CEE9C005F2A89 /* LMJExpandHeader.m */; };
+		588AABF11E9CEE9C005F2A89 /* LMJExpandImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABE51E9CEE9C005F2A89 /* LMJExpandImageView.m */; };
 		588AABF21E9CEE9C005F2A89 /* MPIconAndTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABE81E9CEE9C005F2A89 /* MPIconAndTitleCell.m */; };
 		588AABF31E9CEE9C005F2A89 /* MPMultitextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABEA1E9CEE9C005F2A89 /* MPMultitextCell.m */; };
 		588AABF41E9CEE9C005F2A89 /* MPTitleAndPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AABEC1E9CEE9C005F2A89 /* MPTitleAndPromptCell.m */; };
@@ -264,6 +265,11 @@
 		588AAD8A1E9F489F005F2A89 /* UITapImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD5E1E9F489F005F2A89 /* UITapImageView.m */; };
 		588AAD8B1E9F489F005F2A89 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD611E9F489F005F2A89 /* Reachability.m */; };
 		588AAD941E9F5384005F2A89 /* LMJLiftCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AAD931E9F5384005F2A89 /* LMJLiftCycleViewController.m */; };
+		58C0C1991EADEC4F00632381 /* LMJRequestBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C0C1981EADEC4F00632381 /* LMJRequestBaseViewController.m */; };
+		58C0C1A01EADEF5D00632381 /* LMJRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C0C19F1EADEF5D00632381 /* LMJRequestManager.m */; };
+		58C0C1A31EADEF7B00632381 /* LMJBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C0C1A21EADEF7B00632381 /* LMJBaseRequest.m */; };
+		58C0C1A61EADEF8800632381 /* LMJBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C0C1A51EADEF8800632381 /* LMJBaseResponse.m */; };
+		58C0C21F1EAF0D3000632381 /* LMJDownLoadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C0C21E1EAF0D3000632381 /* LMJDownLoadFileViewController.m */; };
 		58C745CF1E9F5D960040F1D0 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C745CE1E9F5D960040F1D0 /* YYFPSLabel.m */; };
 		58C745D21E9F63E50040F1D0 /* LMJRunTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C745D11E9F63E50040F1D0 /* LMJRunTimeViewController.m */; };
 		58F46A851EA494360073A58C /* LMJOraceDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F46A841EA494360073A58C /* LMJOraceDataBase.m */; };
@@ -513,6 +519,8 @@
 		581006541EA920F700729046 /* LMJHorizontalFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHorizontalFlowLayout.m; sourceTree = "<group>"; };
 		581006561EA9210700729046 /* LMJElementsFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJElementsFlowLayout.h; sourceTree = "<group>"; };
 		581006571EA9210700729046 /* LMJElementsFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJElementsFlowLayout.m; sourceTree = "<group>"; };
+		582F62171EA9E6AC00342DFD /* LMJKeyboardHandleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJKeyboardHandleViewController.h; sourceTree = "<group>"; };
+		582F62181EA9E6AC00342DFD /* LMJKeyboardHandleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJKeyboardHandleViewController.m; sourceTree = "<group>"; };
 		5862EDF81E95D77300B809F8 /* LMJMacos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJMacos.h; sourceTree = "<group>"; };
 		5862EDFA1E95D79000B809F8 /* LMJTargetConfigMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJTargetConfigMacros.h; sourceTree = "<group>"; };
 		5862EDFB1E95D7B500B809F8 /* LMJConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJConstants.h; sourceTree = "<group>"; };
@@ -806,10 +814,10 @@
 		588AABD51E9CEE79005F2A89 /* LMJNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNavigationBar.m; sourceTree = "<group>"; };
 		588AABD61E9CEE79005F2A89 /* LMJNormalRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNormalRefreshHeader.h; sourceTree = "<group>"; };
 		588AABD71E9CEE79005F2A89 /* LMJNormalRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNormalRefreshHeader.m; sourceTree = "<group>"; };
-		588AABE21E9CEE9C005F2A89 /* CFPExpandHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPExpandHeader.h; sourceTree = "<group>"; };
-		588AABE31E9CEE9C005F2A89 /* CFPExpandHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPExpandHeader.m; sourceTree = "<group>"; };
-		588AABE41E9CEE9C005F2A89 /* CFPExpandImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPExpandImageView.h; sourceTree = "<group>"; };
-		588AABE51E9CEE9C005F2A89 /* CFPExpandImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPExpandImageView.m; sourceTree = "<group>"; };
+		588AABE21E9CEE9C005F2A89 /* LMJExpandHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJExpandHeader.h; sourceTree = "<group>"; };
+		588AABE31E9CEE9C005F2A89 /* LMJExpandHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJExpandHeader.m; sourceTree = "<group>"; };
+		588AABE41E9CEE9C005F2A89 /* LMJExpandImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJExpandImageView.h; sourceTree = "<group>"; };
+		588AABE51E9CEE9C005F2A89 /* LMJExpandImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJExpandImageView.m; sourceTree = "<group>"; };
 		588AABE71E9CEE9C005F2A89 /* MPIconAndTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPIconAndTitleCell.h; sourceTree = "<group>"; };
 		588AABE81E9CEE9C005F2A89 /* MPIconAndTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPIconAndTitleCell.m; sourceTree = "<group>"; };
 		588AABE91E9CEE9C005F2A89 /* MPMultitextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMultitextCell.h; sourceTree = "<group>"; };
@@ -962,6 +970,16 @@
 		588AAD611E9F489F005F2A89 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		588AAD921E9F5384005F2A89 /* LMJLiftCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLiftCycleViewController.h; sourceTree = "<group>"; };
 		588AAD931E9F5384005F2A89 /* LMJLiftCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLiftCycleViewController.m; sourceTree = "<group>"; };
+		58C0C1971EADEC4F00632381 /* LMJRequestBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJRequestBaseViewController.h; sourceTree = "<group>"; };
+		58C0C1981EADEC4F00632381 /* LMJRequestBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJRequestBaseViewController.m; sourceTree = "<group>"; };
+		58C0C19E1EADEF5D00632381 /* LMJRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJRequestManager.h; sourceTree = "<group>"; };
+		58C0C19F1EADEF5D00632381 /* LMJRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJRequestManager.m; sourceTree = "<group>"; };
+		58C0C1A11EADEF7B00632381 /* LMJBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBaseRequest.h; sourceTree = "<group>"; };
+		58C0C1A21EADEF7B00632381 /* LMJBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBaseRequest.m; sourceTree = "<group>"; };
+		58C0C1A41EADEF8800632381 /* LMJBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBaseResponse.h; sourceTree = "<group>"; };
+		58C0C1A51EADEF8800632381 /* LMJBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBaseResponse.m; sourceTree = "<group>"; };
+		58C0C21D1EAF0D3000632381 /* LMJDownLoadFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDownLoadFileViewController.h; sourceTree = "<group>"; };
+		58C0C21E1EAF0D3000632381 /* LMJDownLoadFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDownLoadFileViewController.m; sourceTree = "<group>"; };
 		58C745CD1E9F5D960040F1D0 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		58C745CE1E9F5D960040F1D0 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		58C745D01E9F63E50040F1D0 /* LMJRunTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJRunTimeViewController.h; sourceTree = "<group>"; };
@@ -1540,6 +1558,7 @@
 				5862EE451E96389600B809F8 /* LMJGuideManager.h */,
 				5862EE461E96389600B809F8 /* LMJGuideManager.m */,
 				5862EE481E9639D400B809F8 /* LMJTools.h */,
+				58C0C19D1EADEF5D00632381 /* RequestTool */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2248,10 +2267,10 @@
 			isa = PBXGroup;
 			children = (
 				588AABED1E9CEE9C005F2A89 /* LMJControls.h */,
-				588AABE21E9CEE9C005F2A89 /* CFPExpandHeader.h */,
-				588AABE31E9CEE9C005F2A89 /* CFPExpandHeader.m */,
-				588AABE41E9CEE9C005F2A89 /* CFPExpandImageView.h */,
-				588AABE51E9CEE9C005F2A89 /* CFPExpandImageView.m */,
+				588AABE21E9CEE9C005F2A89 /* LMJExpandHeader.h */,
+				588AABE31E9CEE9C005F2A89 /* LMJExpandHeader.m */,
+				588AABE41E9CEE9C005F2A89 /* LMJExpandImageView.h */,
+				588AABE51E9CEE9C005F2A89 /* LMJExpandImageView.m */,
 				588AABE61E9CEE9C005F2A89 /* CustomCell */,
 				588AABEE1E9CEE9C005F2A89 /* MPSolidColorButton.h */,
 				588AABEF1E9CEE9C005F2A89 /* MPSolidColorButton.m */,
@@ -2837,6 +2856,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		58C0C19D1EADEF5D00632381 /* RequestTool */ = {
+			isa = PBXGroup;
+			children = (
+				58C0C19E1EADEF5D00632381 /* LMJRequestManager.h */,
+				58C0C19F1EADEF5D00632381 /* LMJRequestManager.m */,
+				58C0C1A11EADEF7B00632381 /* LMJBaseRequest.h */,
+				58C0C1A21EADEF7B00632381 /* LMJBaseRequest.m */,
+				58C0C1A41EADEF8800632381 /* LMJBaseResponse.h */,
+				58C0C1A51EADEF8800632381 /* LMJBaseResponse.m */,
+			);
+			path = RequestTool;
+			sourceTree = "<group>";
+		};
 		58C745CC1E9F5D960040F1D0 /* YYFPSLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2936,6 +2968,10 @@
 				581006381EA8846D00729046 /* LMJVerticalLayoutViewController.m */,
 				5810063A1EA885A000729046 /* LMJHorizontalLayoutViewController.h */,
 				5810063B1EA885A000729046 /* LMJHorizontalLayoutViewController.m */,
+				582F62171EA9E6AC00342DFD /* LMJKeyboardHandleViewController.h */,
+				582F62181EA9E6AC00342DFD /* LMJKeyboardHandleViewController.m */,
+				58C0C21D1EAF0D3000632381 /* LMJDownLoadFileViewController.h */,
+				58C0C21E1EAF0D3000632381 /* LMJDownLoadFileViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3758,6 +3794,8 @@
 				588AABD11E9CEE79005F2A89 /* BaseView */,
 				E7D0E08B1E8B9F7D001E4585 /* LMJNavUIBaseViewController.h */,
 				E7D0E08C1E8B9F7D001E4585 /* LMJNavUIBaseViewController.m */,
+				58C0C1971EADEC4F00632381 /* LMJRequestBaseViewController.h */,
+				58C0C1981EADEC4F00632381 /* LMJRequestBaseViewController.m */,
 				588AAB741E9CB944005F2A89 /* LMJBaseViewController.h */,
 				588AAB751E9CB944005F2A89 /* LMJBaseViewController.m */,
 				E78212181E8E76D400258845 /* LMJNavigationController.h */,
@@ -4034,7 +4072,7 @@
 				E782179B1E99F5FF00258845 /* LMJWebViewController.m in Sources */,
 				58F46AC51EA4CC710073A58C /* LMJNoNavBarViewController.m in Sources */,
 				588AAB761E9CB944005F2A89 /* LMJBaseViewController.m in Sources */,
-				588AABF11E9CEE9C005F2A89 /* CFPExpandImageView.m in Sources */,
+				588AABF11E9CEE9C005F2A89 /* LMJExpandImageView.m in Sources */,
 				58F46AAE1EA4AB980073A58C /* LMJLoggerViewController.m in Sources */,
 				58F46AD71EA645D30073A58C /* LMJListExpandHideViewController.m in Sources */,
 				5800FB591EA0DBD10059B7B8 /* LMJLockViewController.m in Sources */,
@@ -4045,6 +4083,7 @@
 				E78217291E8EAE9000258845 /* UIButton+MiddleAligning.m in Sources */,
 				5862EE471E96389600B809F8 /* LMJGuideManager.m in Sources */,
 				E782175D1E8EAE9000258845 /* UIResponder+FirstResponder.m in Sources */,
+				58C0C1A61EADEF8800632381 /* LMJBaseResponse.m in Sources */,
 				588AA9E01E9BA693005F2A89 /* MBProgressHUD+MP.m in Sources */,
 				588AAD7C1E9F489F005F2A89 /* GCDQueue.m in Sources */,
 				588AAD6E1E9F489F005F2A89 /* UIView+EaseBlankPage.m in Sources */,
@@ -4113,6 +4152,7 @@
 				E78217821E8EAE9000258845 /* UIView+Toast.m in Sources */,
 				E78217701E8EAE9000258845 /* UITextField+Shake.m in Sources */,
 				588AA9BC1E9BA693005F2A89 /* NSRunLoop+PerformBlock.m in Sources */,
+				58C0C1A01EADEF5D00632381 /* LMJRequestManager.m in Sources */,
 				588AAD701E9F489F005F2A89 /* CaptureManager.m in Sources */,
 				588AA99F1E9BA693005F2A89 /* NSDictionary+JSONString.m in Sources */,
 				588AA99E1E9BA693005F2A89 /* NSDictionary+Block.m in Sources */,
@@ -4130,7 +4170,7 @@
 				E78217511E8EAE9000258845 /* UILabel+SuggestSize.m in Sources */,
 				E78217361E8EAE9000258845 /* UIFont+WDCustomLoader.m in Sources */,
 				588AA9AD1E9BA693005F2A89 /* NSDecimalNumber+Extensions.m in Sources */,
-				588AABF01E9CEE9C005F2A89 /* CFPExpandHeader.m in Sources */,
+				588AABF01E9CEE9C005F2A89 /* LMJExpandHeader.m in Sources */,
 				58C745D21E9F63E50040F1D0 /* LMJRunTimeViewController.m in Sources */,
 				E782177D1E8EAE9000258845 /* UIView+GestureCallback.m in Sources */,
 				588AAD761E9F489F005F2A89 /* IFlyFaceResultKeys.m in Sources */,
@@ -4206,6 +4246,7 @@
 				588AAD771E9F489F005F2A89 /* FCUUID.m in Sources */,
 				588AA98F1E9BA693005F2A89 /* NSData+Base64.m in Sources */,
 				58F46ACB1EA5A0900073A58C /* LMJAdaptFontCell.m in Sources */,
+				58C0C1A31EADEF7B00632381 /* LMJBaseRequest.m in Sources */,
 				E782173C1E8EAE9000258845 /* UIImage+Capture.m in Sources */,
 				588AABF41E9CEE9C005F2A89 /* MPTitleAndPromptCell.m in Sources */,
 				5800FB431EA0B08E0059B7B8 /* IQTextView.m in Sources */,
@@ -4215,6 +4256,7 @@
 				588AA9831E9BA693005F2A89 /* NSManagedObject+Extensions.m in Sources */,
 				588AA9BE1E9BA693005F2A89 /* NSMutableString+Ruby.m in Sources */,
 				588AA9C11E9BA693005F2A89 /* NSString+DictionaryValue.m in Sources */,
+				582F62191EA9E6AC00342DFD /* LMJKeyboardHandleViewController.m in Sources */,
 				588AAD6D1E9F489F005F2A89 /* EaseBlankPageView.m in Sources */,
 				588AAD661E9F489F005F2A89 /* WJYAlertInputTextView.m in Sources */,
 				588AAD801E9F489F005F2A89 /* introductoryPagesView.m in Sources */,
@@ -4292,6 +4334,7 @@
 				58F46AC21EA4C3050073A58C /* LMJAddressPickerViewController.m in Sources */,
 				5800FB461EA0B08E0059B7B8 /* IQTitleBarButtonItem.m in Sources */,
 				588AA9821E9BA693005F2A89 /* NSManagedObject+DictionaryExport.m in Sources */,
+				58C0C21F1EAF0D3000632381 /* LMJDownLoadFileViewController.m in Sources */,
 				E782174A1E8EAE9000258845 /* UIImageView+FaceAwareFill.m in Sources */,
 				588AAB981E9CE3F0005F2A89 /* LMJTitleListChildViewController.m in Sources */,
 				588AAB641E9CAED2005F2A89 /* QBAssetsCollectionVideoIndicatorView.m in Sources */,
@@ -4333,6 +4376,7 @@
 				588AA99A1E9BA693005F2A89 /* NSDate+TimeAgo.m in Sources */,
 				588AABFB1E9CEEED005F2A89 /* LMJItemSection.m in Sources */,
 				E78217711E8EAE9000258845 /* UITextView+PinchZoom.m in Sources */,
+				58C0C1991EADEC4F00632381 /* LMJRequestBaseViewController.m in Sources */,
 				58F46A8E1EA4959F0073A58C /* LMJBlockLoopViewController.m in Sources */,
 				E78217421E8EAE9000258845 /* UIImage+Orientation.m in Sources */,
 				E782176D1E8EAE9000258845 /* UITextField+Blocks.m in Sources */,

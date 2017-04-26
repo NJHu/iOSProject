@@ -15,7 +15,7 @@
 
 
 
-@interface LMJTabBarController ()
+@interface LMJTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -32,7 +32,7 @@
     [self addTabarItems];
     [self addChildViewControllers];
     
-    
+    self.delegate = self;
 }
 
 - (void)addChildViewControllers
@@ -80,6 +80,11 @@
                                        fourthTabBarItemsAttributes
                                        ];
 
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    return YES;
 }
 
 

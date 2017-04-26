@@ -92,7 +92,7 @@
 
 - (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 {
-    return [UIColor redColor];
+    return [[UIColor purpleColor] colorWithAlphaComponent:0.63];
 }
 
 - (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar

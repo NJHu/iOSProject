@@ -1,14 +1,14 @@
 //
-//  CFPExpandImageView.m
+//  LMJExpandImageView.m
 //  GoMeYWLC
 //
 //  Created by NJHu on 2016/11/10.
 //  Copyright © 2016年 NJHu. All rights reserved.
 //
 
-#import "CFPExpandImageView.h"
+#import "LMJExpandImageView.h"
 
-@implementation CFPExpandImageView
+@implementation LMJExpandImageView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

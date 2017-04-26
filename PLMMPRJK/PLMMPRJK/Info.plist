@@ -33,7 +33,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>seedplan</string>
+				<string>zplan</string>
 			</array>
 		</dict>
 		<dict>
@@ -74,7 +74,6 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>wechat</string>
-		<string>seedPlan2</string>
 		<string>weixin</string>
 		<string>sinaweibohd</string>
 		<string>sinaweibo</string>
@@ -298,7 +297,7 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>App需要您的同意,才能访问日历</string>
 	<key>NSCameraUsageDescription</key>
-	<string>MobileProject需要使用您的相机</string>
+	<string>App需要使用您的相机</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>获取当前的位置</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
