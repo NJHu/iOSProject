@@ -168,10 +168,15 @@
 //    return YES;
 //}
 
+//- (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
+//{
+//    return UIStatusBarStyleDefault;
+//}
+
 /**头部标题*/
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
-    return [self changeTitle:self.title];
+    return [self changeTitle:self.navigationItem.title];
 }
 
 /** 背景图片 */
@@ -256,11 +261,11 @@
 
 -(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 {
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
     
-    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
+    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x032124) range:NSMakeRange(0, title.length)];
     
-    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(16) range:NSMakeRange(0, title.length)];
+    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(18) range:NSMakeRange(0, title.length)];
     
     return title;
 }

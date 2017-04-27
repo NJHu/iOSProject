@@ -49,7 +49,7 @@
 {
     [super viewDidAppear:animated];
     
-    
+    [UIApplication sharedApplication].statusBarStyle = [self navUIBaseViewControllerPreferStatusBarStyle:self];
 }
 
 
@@ -63,12 +63,17 @@
 }
 
 
+- (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
+{
+    return UIStatusBarStyleDefault;
+}
+
 
 #pragma mark - DataSource
 /**头部标题*/
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
-    return [self changeTitle:self.title];
+    return [self changeTitle:self.navigationItem.title ?: self.title];
 }
 
 /** 背景图片 */
@@ -146,11 +151,11 @@
 
 -(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 {
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
     
-    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
+    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x032124) range:NSMakeRange(0, title.length)];
     
-    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(16) range:NSMakeRange(0, title.length)];
+    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(18) range:NSMakeRange(0, title.length)];
     
     return title;
 }
@@ -183,6 +188,13 @@
 -(void)changeNavgationTitle:(NSMutableAttributedString *)title
 {
     self.lmj_navgationBar.title = title;
+}
+
+- (void)setTitle:(NSString *)title
+{
+    [super setTitle:title];
+    
+    self.lmj_navgationBar.title = [self changeTitle:title];
 }
 
 -(void)changeNavigationBarHeight:(CGFloat)height
