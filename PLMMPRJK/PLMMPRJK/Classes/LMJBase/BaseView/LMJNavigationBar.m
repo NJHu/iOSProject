@@ -11,7 +11,9 @@
 
 #define kStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 
-#define kSmallTouchSize 44.0
+#define kSmallTouchSizeHeight 44.0
+
+#define kLeftRightViewSizeMinWidth 60.0
 
 #define kLeftMargin 0.0
 
@@ -321,7 +323,7 @@
         
     }else if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarLeftButtonImage:navigationBar:)])
     {
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kSmallTouchSize, kSmallTouchSize)];
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kLeftRightViewSizeMinWidth, kSmallTouchSizeHeight)];
         
         btn.titleLabel.font = CHINESE_SYSTEM(16);
         
@@ -342,7 +344,7 @@
         
     }else if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarRightButtonImage:navigationBar:)])
     {
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kSmallTouchSize, kSmallTouchSize)];
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kLeftRightViewSizeMinWidth, kSmallTouchSizeHeight)];
         
         btn.titleLabel.font = CHINESE_SYSTEM(16);
         

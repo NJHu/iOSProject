@@ -6,7 +6,7 @@
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import "LMJRequestBaseViewController.h"
+#import "LMJNavUIBaseViewController.h"
 
 @class LMJTextViewController;
 @protocol LMJTextViewControllerDataSource <NSObject>
@@ -34,7 +34,7 @@
 
 
 
-@interface LMJTextViewController : LMJRequestBaseViewController<LMJTextViewControllerDataSource, LMJTextViewControllerDelegate>
+@interface LMJTextViewController : LMJNavUIBaseViewController<LMJTextViewControllerDataSource, LMJTextViewControllerDelegate>
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField NS_REQUIRES_SUPER;
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string NS_REQUIRES_SUPER;

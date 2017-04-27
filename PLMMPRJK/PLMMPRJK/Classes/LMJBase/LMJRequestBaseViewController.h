@@ -6,7 +6,7 @@
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import "LMJNavUIBaseViewController.h"
+#import "LMJTextViewController.h"
 
 @class LMJRequestBaseViewController;
 @protocol LMJRequestBaseViewControllerDelegate <NSObject>
@@ -35,7 +35,7 @@
 
 
 
-@interface LMJRequestBaseViewController : LMJNavUIBaseViewController<LMJRequestBaseViewControllerDelegate>
+@interface LMJRequestBaseViewController : LMJTextViewController<LMJRequestBaseViewControllerDelegate>
 
 #pragma mark - 加载框
 - (void)showLoading;

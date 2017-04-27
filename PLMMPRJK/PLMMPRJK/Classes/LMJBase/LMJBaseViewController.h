@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface LMJBaseViewController : LMJTextViewController
+@interface LMJBaseViewController : LMJRequestBaseViewController
 
 - (instancetype)initWithTitle:(NSString *)title;
 
