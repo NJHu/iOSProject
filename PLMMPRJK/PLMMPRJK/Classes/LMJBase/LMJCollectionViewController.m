@@ -76,7 +76,10 @@
 #pragma mark - scrollDeleggate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset;
+    UIEdgeInsets contentInset = self.collectionView.contentInset;
+    contentInset.bottom -= self.collectionView.mj_footer.height;
+    self.collectionView.scrollIndicatorInsets = contentInset;
+    
     [self.view endEditing:YES];
 }
 

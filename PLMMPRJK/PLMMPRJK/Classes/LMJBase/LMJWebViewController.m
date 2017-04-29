@@ -59,7 +59,6 @@
             if ([newVal isKindOfClass:[NSString class]]) {
                 
                 weakself.title = newVal;
-                [weakself changeNavgationTitle:[weakself changeTitle:weakself.title]];
                 
             }
             
@@ -87,21 +86,10 @@
 
 
 #pragma mark - title
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return [self changeTitle:@""];
-}
 
 #pragma mark 自定义代码
 
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
-    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
-    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(17) range:NSMakeRange(0, title.length)];
-    
-    return title;
-}
+
 
 
 

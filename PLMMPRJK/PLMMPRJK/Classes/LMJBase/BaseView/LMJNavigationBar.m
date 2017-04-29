@@ -21,7 +21,7 @@
 
 #define kDefaultNavBarHeight 64.0
 
-#define kNavBarCenterY(H) ((self.height - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
+#define kNavBarCenterY(H) ((64.0 - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
 
 #define kViewMargin 5.0
 
@@ -61,11 +61,12 @@
         self.bottomBlackLineView.hidden = NO;
     }
     
-    self.leftView.frame = CGRectMake(0, kStatusBarHeight, self.leftView.width, self.leftView.height);
+    self.leftView.frame = CGRectMake(0, kNavBarCenterY(self.leftView.height), self.leftView.width, self.leftView.height);
     
-    self.rightView.frame = CGRectMake(self.width - self.rightView.width, kStatusBarHeight, self.rightView.width, self.rightView.height);
+    self.rightView.frame = CGRectMake(self.width - self.rightView.width, kNavBarCenterY(self.rightView.height), self.rightView.width, self.rightView.height);
     
-    self.titleView.frame = CGRectMake(0, kStatusBarHeight, self.width - MAX(self.leftView.width, self.rightView.width) * 2 - kViewMargin * 2, self.titleView.height);
+    self.titleView.frame = CGRectMake(0, kNavBarCenterY(self.titleView.height), MIN(self.width - MAX(self.leftView.width, self.rightView.width) * 2 - kViewMargin * 2, self.titleView.width), self.titleView.height);
+    
     self.titleView.centerX = self.width * 0.5;
     
     self.bottomBlackLineView.mj_y = self.height - 1;
@@ -97,7 +98,7 @@
 - (void)setTitle:(NSMutableAttributedString *)title
 {
     /**头部标题*/
-    UILabel *navTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 120, 44)];
+    UILabel *navTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.width * 0.4, 44)];
     
     navTitleLabel.numberOfLines=0;//可能出现多行的标题
     [navTitleLabel setAttributedText:title];
@@ -228,10 +229,10 @@
 // 设置导航条的背景图片
 -(void)setNavigationBack:(UIImage *)image
 {
-//    [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-//    self.backgroundColor = [UIColor clearColor];
-//    [self setBackIndicatorTransitionMaskImage:image ];
-//    [self setShadowImage:image];
+    //    [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    //    self.backgroundColor = [UIColor clearColor];
+    //    [self setBackIndicatorTransitionMaskImage:image ];
+    //    [self setShadowImage:image];
     
     [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
@@ -269,14 +270,14 @@
     }
     
     /** 是否显示底部黑线 */
-//    if ([self.dataSource respondsToSelector:@selector(lmjNavigationIsHideBottomLine:)]) {
-//        
-//        self.bottomBlackLineView.hidden = [self.dataSource lmjNavigationIsHideBottomLine:self];
-//        
-//    }else
-//    {
-//        self.bottomBlackLineView.hidden = NO;
-//    }
+    //    if ([self.dataSource respondsToSelector:@selector(lmjNavigationIsHideBottomLine:)]) {
+    //
+    //        self.bottomBlackLineView.hidden = [self.dataSource lmjNavigationIsHideBottomLine:self];
+    //
+    //    }else
+    //    {
+    //        self.bottomBlackLineView.hidden = NO;
+    //    }
     
     /** 背景图片 */
     if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarBackgroundImage:)]) {
@@ -301,16 +302,8 @@
     }else if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarTitle:)])
     {
         /**头部标题*/
-        UILabel *navTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 120, 44)];
         
-        navTitleLabel.numberOfLines=0;//可能出现多行的标题
-        [navTitleLabel setAttributedText:[self.dataSource lmjNavigationBarTitle:self]];
-        navTitleLabel.textAlignment = NSTextAlignmentCenter;
-        navTitleLabel.backgroundColor = [UIColor clearColor];
-        navTitleLabel.userInteractionEnabled = YES;
-        navTitleLabel.lineBreakMode = NSLineBreakByClipping;
-        
-        self.titleView = navTitleLabel;
+        self.title = [self.dataSource lmjNavigationBarTitle:self];
     }
     
     
@@ -323,7 +316,7 @@
         
     }else if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarLeftButtonImage:navigationBar:)])
     {
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kLeftRightViewSizeMinWidth, kSmallTouchSizeHeight)];
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kSmallTouchSizeHeight, kSmallTouchSizeHeight)];
         
         btn.titleLabel.font = CHINESE_SYSTEM(16);
         

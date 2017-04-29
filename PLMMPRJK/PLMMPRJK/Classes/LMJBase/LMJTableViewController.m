@@ -51,7 +51,9 @@
 #pragma mark - scrollDeleggate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    UIEdgeInsets contentInset = self.tableView.contentInset;
+    contentInset.bottom -= self.tableView.mj_footer.height;
+    self.tableView.scrollIndicatorInsets = contentInset;
     [self.view endEditing:YES];
 }
 
