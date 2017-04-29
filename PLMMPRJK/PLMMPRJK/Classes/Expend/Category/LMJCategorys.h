@@ -101,22 +101,13 @@
 #import "MKMapView+BetterMaps.h"
 #import "MKMapView+MoveLogo.h"
 #import "MKMapView+ZoomLevel.h"
-#import "GVUserDefaults+BBProperties.h"
-#import "UIImage+JMRoundedCorner.h"
-#import "UIView+RoundedCorner.h"
-#import "MBProgressHUD+MP.h"
-#import "NSString+Additions.h"
-#import "JRSwizzle.h"
-#import "SYSafeCategory.h"
-#import "UIImage+OuterCircle.h"
-#import "UITextField+Extension.h"
-#import "UIView+Empty.h"
 #import "CAAnimation+Blocks.h"
 #import "CAAnimation+EasingEquations.h"
 #import "CALayer+UIColor.h"
 #import "CAMediaTimingFunction+AdditionalEquations.h"
 #import "CAShapeLayer+UIBezierPath.h"
 #import "CATransaction+AnimateWithDuration.h"
+
 
 
 #endif /* LMJCategorys_h */

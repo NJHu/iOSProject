@@ -29,6 +29,7 @@
 #import "LMJControls.h"
 #import "LMJHelpers.h"
 #import "LMJCategorys.h"
+#import "LMJMyCategorys.h"
 
 
 

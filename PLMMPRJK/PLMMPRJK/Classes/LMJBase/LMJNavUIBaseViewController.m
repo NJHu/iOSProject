@@ -11,8 +11,7 @@
 
 @interface LMJNavUIBaseViewController ()
 
-/** <#digest#> */
-@property (weak, nonatomic) LMJNavigationBar *lmj_navgationBar;
+
 
 @end
 
@@ -79,13 +78,13 @@
 /** 背景图片 */
 //- (UIImage *)lmjNavigationBarBackgroundImage:(LMJNavigationBar *)navigationBar
 //{
-//    
+//
 //}
 
 /** 背景色 */
 //- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 //{
-//    
+//
 //}
 
 /** 是否显示底部黑线 */
@@ -104,27 +103,27 @@
 /** 导航条的左边的 view */
 //- (UIView *)lmjNavigationBarLeftView:(LMJNavigationBar *)navigationBar
 //{
-//    
+//
 //}
 /** 导航条右边的 view */
 //- (UIView *)lmjNavigationBarRightView:(LMJNavigationBar *)navigationBar
 //{
-//    
+//
 //}
 /** 导航条中间的 View */
 //- (UIView *)lmjNavigationBarTitleView:(LMJNavigationBar *)navigationBar
 //{
-//    
+//
 //}
 /** 导航条左边的按钮 */
 //- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 //{
-//    
+//
 //}
 /** 导航条右边的按钮 */
 //- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 //{
-//    
+//
 //}
 
 

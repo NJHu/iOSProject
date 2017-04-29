@@ -20,6 +20,7 @@
 #import "LMJHorizontalLayoutViewController.h"
 #import "LMJKeyboardHandleViewController.h"
 #import "LMJDownLoadFileViewController.h"
+#import "LMJMasonryViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -101,8 +102,12 @@
     
     item12.destVc = [LMJDownLoadFileViewController class];
     
+    LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"Masonry 布局实例" subTitle: nil];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    item13.destVc = [LMJMasonryViewController class];
+    
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }

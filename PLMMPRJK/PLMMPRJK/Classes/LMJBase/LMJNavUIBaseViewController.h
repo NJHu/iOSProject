@@ -29,5 +29,6 @@
 
 -(void)changeNavgationBarBackgroundColor:(UIColor *)backgroundColor;
 
-
+/** <#digest#> */
+@property (weak, nonatomic) LMJNavigationBar *lmj_navgationBar;
 @end
