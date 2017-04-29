@@ -151,7 +151,7 @@
     
     [leftButton setTitle:@"< 返回" forState:UIControlStateNormal];
     
-    leftButton.width = 60;
+    leftButton.lmj_width = 60;
     
     [leftButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
     
@@ -162,7 +162,7 @@
 {
     [rightButton setTitle:@"改变头图高度" forState:UIControlStateNormal];
     
-    rightButton.width = 120;
+    rightButton.lmj_width = 120;
     
     [rightButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
     

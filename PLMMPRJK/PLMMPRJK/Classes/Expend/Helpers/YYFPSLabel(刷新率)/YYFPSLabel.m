@@ -65,8 +65,8 @@
             
             [UIView animateWithDuration:0.2 animations:^{
                 
-                weakSelf.mj_x = (weakSelf.mj_x - Main_Screen_Width / 2) > 0 ? (Main_Screen_Width - weakSelf.mj_w - 20) : 20;
-                weakSelf.mj_y = weakSelf.mj_y > 80 ? weakSelf.mj_y : 80;
+                weakSelf.lmj_x = (weakSelf.lmj_x - Main_Screen_Width / 2) > 0 ? (Main_Screen_Width - weakSelf.lmj_width - 20) : 20;
+                weakSelf.lmj_y = weakSelf.lmj_y > 80 ? weakSelf.lmj_y : 80;
             }];
         }
         

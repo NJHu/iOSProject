@@ -127,7 +127,7 @@ static const CGFloat kButtonHeight=44;
             make.right.mas_equalTo(0);
             make.bottom.mas_equalTo(0);
             make.height.mas_equalTo(kButtonHeight);
-            make.left.mas_equalTo(self.leftButton.right);
+            make.left.mas_equalTo(self.leftButton.mas_right);
             make.width.mas_equalTo(self.leftButton);
         }];
     }
@@ -150,7 +150,7 @@ static const CGFloat kButtonHeight=44;
         self.seperateLineView.backgroundColor=[UIColor grayColor];
         [self.showView addSubview:self.seperateLineView];
         [self.seperateLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.leftButton.right).offset(0);
+            make.left.mas_equalTo(self.leftButton.mas_right).offset(0);
             make.height.mas_equalTo(kButtonHeight);
             make.width.mas_equalTo(0.3);
             make.bottom.mas_equalTo(0);

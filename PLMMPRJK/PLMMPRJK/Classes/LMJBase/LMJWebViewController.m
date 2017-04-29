@@ -105,9 +105,9 @@
     
     leftView.backgroundColor = [UIColor yellowColor];
     
-    self.backBtn.origin = CGPointZero;
+    self.backBtn.mj_origin = CGPointZero;
     
-    self.closeBtn.mj_x = leftView.mj_w - self.closeBtn.mj_w;
+    self.closeBtn.lmj_x = leftView.lmj_width - self.closeBtn.lmj_width;
     
     [leftView addSubview:self.backBtn];
     
@@ -138,7 +138,7 @@
         
         [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
         
-        btn.size = CGSizeMake(34, 44);
+        btn.lmj_size = CGSizeMake(34, 44);
         
         [btn addTarget:self action:@selector(leftButtonEvent:navigationBar:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -159,7 +159,7 @@
         
         [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         
-        btn.size = CGSizeMake(44, 44);
+        btn.lmj_size = CGSizeMake(44, 44);
         
         btn.hidden = YES;
         
@@ -346,11 +346,11 @@
         
         _progressView = progressView;
         
-        progressView.height = 1;
+        progressView.lmj_height = 1;
         
-        progressView.width = Main_Screen_Width;
+        progressView.lmj_width = Main_Screen_Width;
         
-        progressView.top = 64.0;
+        progressView.lmj_y = 64.0;
         progressView.tintColor = [UIColor greenColor];
         
         if ([self respondsToSelector:@selector(isNeedProgressIndicator)]) {

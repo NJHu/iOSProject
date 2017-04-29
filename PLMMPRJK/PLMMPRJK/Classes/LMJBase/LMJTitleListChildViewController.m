@@ -28,7 +28,7 @@
     UIEdgeInsets edgeInset = self.tableView.contentInset;
     
     edgeInset.top +=  64 + LMJTitlesListsParentViewControllerTitleHeight;
-    edgeInset.bottom += self.parentViewController.tabBarController.tabBar.mj_h;
+    edgeInset.bottom += self.parentViewController.tabBarController.tabBar.lmj_height;
     
     self.tableView.contentInset = edgeInset;
     
@@ -61,7 +61,7 @@
     UIEdgeInsets edgeInset = self.collectionView.contentInset;
     
     edgeInset.top +=  64 + LMJTitlesListsParentViewControllerTitleHeight;
-    edgeInset.bottom += self.parentViewController.tabBarController.tabBar.mj_h;
+    edgeInset.bottom += self.parentViewController.tabBarController.tabBar.lmj_height;
     
     self.collectionView.contentInset = edgeInset;
     

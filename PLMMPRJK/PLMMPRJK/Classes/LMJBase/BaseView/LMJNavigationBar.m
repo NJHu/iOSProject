@@ -61,15 +61,15 @@
         self.bottomBlackLineView.hidden = NO;
     }
     
-    self.leftView.frame = CGRectMake(0, kNavBarCenterY(self.leftView.height), self.leftView.width, self.leftView.height);
+    self.leftView.frame = CGRectMake(0, kNavBarCenterY(self.leftView.lmj_height), self.leftView.lmj_width, self.leftView.lmj_height);
     
-    self.rightView.frame = CGRectMake(self.width - self.rightView.width, kNavBarCenterY(self.rightView.height), self.rightView.width, self.rightView.height);
+    self.rightView.frame = CGRectMake(self.lmj_width - self.rightView.lmj_width, kNavBarCenterY(self.rightView.lmj_height), self.rightView.lmj_width, self.rightView.lmj_height);
     
-    self.titleView.frame = CGRectMake(0, kNavBarCenterY(self.titleView.height), MIN(self.width - MAX(self.leftView.width, self.rightView.width) * 2 - kViewMargin * 2, self.titleView.width), self.titleView.height);
+    self.titleView.frame = CGRectMake(0, kNavBarCenterY(self.titleView.lmj_height), MIN(self.lmj_width - MAX(self.leftView.lmj_width, self.rightView.lmj_width) * 2 - kViewMargin * 2, self.titleView.lmj_width), self.titleView.lmj_height);
     
-    self.titleView.centerX = self.width * 0.5;
+    self.titleView.lmj_x = (self.lmj_width * 0.5 - self.titleView.lmj_width * 0.5);
     
-    self.bottomBlackLineView.mj_y = self.height - 1;
+    self.bottomBlackLineView.lmj_y = self.lmj_height - 1;
 }
 
 
@@ -98,7 +98,7 @@
 - (void)setTitle:(NSMutableAttributedString *)title
 {
     /**头部标题*/
-    UILabel *navTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.width * 0.4, 44)];
+    UILabel *navTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.lmj_width * 0.4, 44)];
     
     navTitleLabel.numberOfLines=0;//可能出现多行的标题
     [navTitleLabel setAttributedText:title];
@@ -240,7 +240,7 @@
 //找查到Nav底部的黑线
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view
 {
-    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0)
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.width <= 1.0)
     {
         return (UIImageView *)view;
     }
@@ -262,11 +262,11 @@
     
     if ([self.dataSource respondsToSelector:@selector(lmjNavigationHeight:)]) {
         
-        self.size = CGSizeMake(kScreenWidth, [self.dataSource lmjNavigationHeight:self]);
+        self.lmj_size = CGSizeMake(kScreenWidth, [self.dataSource lmjNavigationHeight:self]);
         
     }else
     {
-        self.size = CGSizeMake(kScreenWidth, kDefaultNavBarHeight);
+        self.lmj_size = CGSizeMake(kScreenWidth, kDefaultNavBarHeight);
     }
     
     /** 是否显示底部黑线 */

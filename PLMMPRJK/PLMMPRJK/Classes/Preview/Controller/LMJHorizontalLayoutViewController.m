@@ -122,7 +122,7 @@
     
     [leftButton setTitle:@"< 返回" forState:UIControlStateNormal];
     
-    leftButton.width = 60;
+    leftButton.lmj_width = 60;
     
     [leftButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
     

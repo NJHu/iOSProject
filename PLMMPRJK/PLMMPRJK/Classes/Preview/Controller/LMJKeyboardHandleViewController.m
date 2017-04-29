@@ -133,7 +133,7 @@ static const CGFloat topViewHeigt=100;
         [UIView setAnimationBeginsFromCurrentState:YES];
         
         [UIView setAnimationCurve:[_curve intValue]];
-        self.myTopView.frame = CGRectMake(0, self.view.height - topViewHeigt, Main_Screen_Width, topViewHeigt);
+        self.myTopView.frame = CGRectMake(0, self.view.lmj_height - topViewHeigt, Main_Screen_Width, topViewHeigt);
     }];
     
 }
@@ -196,7 +196,7 @@ static const CGFloat topViewHeigt=100;
     
     [leftButton setTitle:@"< 返回" forState:UIControlStateNormal];
     
-    leftButton.width = 60;
+    leftButton.lmj_width = 60;
     
     [leftButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
     
@@ -208,7 +208,7 @@ static const CGFloat topViewHeigt=100;
     
     [rightButton setTitle:@"弹出键盘" forState:UIControlStateNormal];
     
-    rightButton.width = 100;
+    rightButton.lmj_width = 100;
     
     [rightButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
     

@@ -77,7 +77,7 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     UIEdgeInsets contentInset = self.collectionView.contentInset;
-    contentInset.bottom -= self.collectionView.mj_footer.height;
+    contentInset.bottom -= self.collectionView.mj_footer.lmj_height;
     self.collectionView.scrollIndicatorInsets = contentInset;
     
     [self.view endEditing:YES];

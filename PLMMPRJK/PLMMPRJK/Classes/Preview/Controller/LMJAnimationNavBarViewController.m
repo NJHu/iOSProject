@@ -143,7 +143,7 @@
     
     [btn sizeToFit];
     
-    btn.height = 44.0;
+    btn.lmj_height = 44.0;
     
     return nil;
 }

@@ -110,7 +110,7 @@ return [UIImage imageNamed:@"navigationButtonReturnClick"];
     
     rightButton.backgroundColor = [UIColor RandomColor];
     
-    rightButton.size = CGSizeMake(60, 44);
+    rightButton.lmj_size = CGSizeMake(60, 44);
     
     return nil;
 }

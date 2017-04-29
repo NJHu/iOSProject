@@ -198,7 +198,7 @@
 
 -(void)changeNavigationBarHeight:(CGFloat)height
 {
-    self.lmj_navgationBar.height = height;
+    self.lmj_navgationBar.lmj_height = height;
 }
 
 -(void)changeNavgationBarBackgroundColor:(UIColor *)backgroundColor

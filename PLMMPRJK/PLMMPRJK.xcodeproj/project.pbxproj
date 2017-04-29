@@ -425,6 +425,7 @@
 		58AFACB21EB4ADAB00822043 /* UIAlertView+LMJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAAEF1EB4ADAA00822043 /* UIAlertView+LMJBlock.m */; };
 		58AFACB31EB4ADAB00822043 /* UIButton+LMJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAAF11EB4ADAA00822043 /* UIButton+LMJBlock.m */; };
 		58AFACB51EB4ADAB00822043 /* MPBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAAF61EB4ADAA00822043 /* MPBlockView.m */; };
+		58AFACB91EB4CFD500822043 /* UIView+LMJNjHuFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACB81EB4CFD500822043 /* UIView+LMJNjHuFrame.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1289,6 +1290,8 @@
 		58AFAAF11EB4ADAA00822043 /* UIButton+LMJBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LMJBlock.m"; sourceTree = "<group>"; };
 		58AFAAF51EB4ADAA00822043 /* MPBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBlockView.h; sourceTree = "<group>"; };
 		58AFAAF61EB4ADAA00822043 /* MPBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBlockView.m; sourceTree = "<group>"; };
+		58AFACB71EB4CFD500822043 /* UIView+LMJNjHuFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LMJNjHuFrame.h"; sourceTree = "<group>"; };
+		58AFACB81EB4CFD500822043 /* UIView+LMJNjHuFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LMJNjHuFrame.m"; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1363,20 +1366,20 @@
 		58AFA6D61EB4ADA900822043 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				58AFA6D71EB4ADA900822043 /* Activity */,
 				58AFA6E31EB4ADA900822043 /* Expend */,
-				58AFA9FE1EB4ADA900822043 /* Home */,
+				58AFAA611EB4ADAA00822043 /* MyTool */,
+				58AFAAB81EB4ADAA00822043 /* Resource */,
 				58AFAA0A1EB4ADA900822043 /* LMJBase */,
+				58AFAA9E1EB4ADAA00822043 /* Public */,
+				58AFAAC41EB4ADAA00822043 /* Theory */,
+				58AFA9FE1EB4ADA900822043 /* Home */,
+				58AFA6D71EB4ADA900822043 /* Activity */,
 				58AFAA3B1EB4ADAA00822043 /* Logger */,
 				58AFAA491EB4ADAA00822043 /* Me */,
 				58AFAA551EB4ADAA00822043 /* Message */,
-				58AFAA611EB4ADAA00822043 /* MyTool */,
 				58AFAA6C1EB4ADAA00822043 /* New */,
 				58AFAA781EB4ADAA00822043 /* Preview */,
-				58AFAA9E1EB4ADAA00822043 /* Public */,
-				58AFAAB81EB4ADAA00822043 /* Resource */,
 				58AFAABE1EB4ADAA00822043 /* System */,
-				58AFAAC41EB4ADAA00822043 /* Theory */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2596,6 +2599,8 @@
 				58AFA8E11EB4ADA900822043 /* UITextField+Extension.m */,
 				58AFA8E21EB4ADA900822043 /* UIView+Empty.h */,
 				58AFA8E31EB4ADA900822043 /* UIView+Empty.m */,
+				58AFACB71EB4CFD500822043 /* UIView+LMJNjHuFrame.h */,
+				58AFACB81EB4CFD500822043 /* UIView+LMJNjHuFrame.m */,
 			);
 			path = MyCategory;
 			sourceTree = "<group>";
@@ -4111,6 +4116,7 @@
 				58AFAC101EB4ADAA00822043 /* UIResponder+FirstResponder.m in Sources */,
 				58AFAC151EB4ADAA00822043 /* UIScrollView+EmptyDataSet.m in Sources */,
 				58AFACA91EB4ADAB00822043 /* LMJNSThreadViewController.m in Sources */,
+				58AFACB91EB4CFD500822043 /* UIView+LMJNjHuFrame.m in Sources */,
 				58AFAC981EB4ADAB00822043 /* LMJExpandHeader.m in Sources */,
 				58AFABC21EB4ADAA00822043 /* UUInputAccessoryView.m in Sources */,
 				58AFAB5A1EB4ADAA00822043 /* CAAnimation+EasingEquations.m in Sources */,

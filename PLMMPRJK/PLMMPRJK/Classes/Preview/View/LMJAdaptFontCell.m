@@ -90,7 +90,7 @@ static const CGFloat KDateLabelFontSize=17;
 //        [self.myTextLabel sizeToFit];
         
         
-        dict[text] = @(self.myTextLabel.mj_y + AdaptedHeight(KTopSpace) + [self.myTextLabel.attributedText boundingRectWithSize:CGSizeMake(kScreenWidth - KLeftSpace * 2, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
+        dict[text] = @(self.myTextLabel.lmj_y + AdaptedHeight(KTopSpace) + [self.myTextLabel.attributedText boundingRectWithSize:CGSizeMake(kScreenWidth - KLeftSpace * 2, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
     }
 }
 

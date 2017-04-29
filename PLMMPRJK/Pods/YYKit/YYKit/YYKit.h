@@ -37,7 +37,7 @@ FOUNDATION_EXPORT const unsigned char YYKitVersionString[];
 #import <YYKit/UIControl+YYAdd.h>
 #import <YYKit/UIBarButtonItem+YYAdd.h>
 #import <YYKit/UIGestureRecognizer+YYAdd.h>
-#import <YYKit/UIView+YYAdd.h>
+//#import <YYKit/UIView+YYAdd.h>
 #import <YYKit/UIScrollView+YYAdd.h>
 #import <YYKit/UITableView+YYAdd.h>
 #import <YYKit/UITextField+YYAdd.h>
@@ -128,7 +128,7 @@ FOUNDATION_EXPORT const unsigned char YYKitVersionString[];
 #import "UIControl+YYAdd.h"
 #import "UIBarButtonItem+YYAdd.h"
 #import "UIGestureRecognizer+YYAdd.h"
-#import "UIView+YYAdd.h"
+//#import "UIView+YYAdd.h"
 #import "UIScrollView+YYAdd.h"
 #import "UITableView+YYAdd.h"
 #import "UITextField+YYAdd.h"

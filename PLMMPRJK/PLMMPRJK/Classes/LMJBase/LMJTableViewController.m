@@ -52,7 +52,7 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     UIEdgeInsets contentInset = self.tableView.contentInset;
-    contentInset.bottom -= self.tableView.mj_footer.height;
+    contentInset.bottom -= self.tableView.mj_footer.lmj_height;
     self.tableView.scrollIndicatorInsets = contentInset;
     [self.view endEditing:YES];
 }

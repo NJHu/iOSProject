@@ -26,7 +26,7 @@
     
     
     UIEdgeInsets edgeInsets = self.tableView.contentInset;
-    edgeInsets.bottom += self.tabBarController.tabBar.mj_h;
+    edgeInsets.bottom += self.tabBarController.tabBar.lmj_height;
     self.tableView.contentInset = edgeInsets;
     
     LMJWordArrowItem *item0 = [LMJWordArrowItem itemWithTitle:@"ViewController的生命周期" subTitle: nil];
