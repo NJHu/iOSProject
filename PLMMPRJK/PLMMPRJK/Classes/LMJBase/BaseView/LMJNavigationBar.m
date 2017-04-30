@@ -82,12 +82,25 @@
     
     _titleView = titleView;
     
-    if ([titleView isKindOfClass:[UILabel class]]) {
+    __block BOOL isHaveTapGes = NO;
+    
+    [titleView.gestureRecognizers enumerateObjectsUsingBlock:^(__kindof UIGestureRecognizer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if ([obj isKindOfClass:[UITapGestureRecognizer class]]) {
+            
+            isHaveTapGes = YES;
+            
+            *stop = YES;
+        }
+    }];
+    
+    if (!isHaveTapGes) {
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(titleClick:)];
         
         [titleView addGestureRecognizer:tap];
     }
+    
     
     [self layoutIfNeeded];
 }

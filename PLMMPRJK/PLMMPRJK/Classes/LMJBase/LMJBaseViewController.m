@@ -74,7 +74,7 @@
 - (void)dealloc
 {
     
-    LMJLog(@"%@", self.class);
+    NSLog(@"%@", self.class);
     
     [kNotificationCenter removeObserver:self];
     

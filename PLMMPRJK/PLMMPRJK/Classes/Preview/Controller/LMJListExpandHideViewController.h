@@ -8,6 +8,6 @@
 
 #import "LMJBaseViewController.h"
 
-@interface LMJListExpandHideViewController : LMJBaseViewController
+@interface LMJListExpandHideViewController : LMJTableViewController
 
 @end

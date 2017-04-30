@@ -100,7 +100,7 @@
 - (void)downloadFile
 {
     
-    LMJLogFunc;
+    NSLog(@"%s", __func__);
     
     /*
      1.NSURLRequestUseProtocolCachePolicy NSURLRequest                  默认的cache policy，使用Protocol协议定义。
@@ -125,12 +125,12 @@
     [request setValue:@"no-cache" forHTTPHeaderField:@"Cache-Control"];
     
     
-    LMJLog(@"%@", request);
+    NSLog(@"%@", request);
     
     [[[LMJRequestManager sharedManager] downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
         
         [SVProgressHUD showProgress:(downloadProgress.completedUnitCount) / (downloadProgress.totalUnitCount)];
-        LMJLog(@"%lf", ((float)downloadProgress.completedUnitCount) / (downloadProgress.totalUnitCount));
+        NSLog(@"%lf", ((float)downloadProgress.completedUnitCount) / (downloadProgress.totalUnitCount));
         
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
         
@@ -139,9 +139,9 @@
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         
         [SVProgressHUD dismiss];
-        LMJLog(@"%@", filePath);
-        LMJLog(@"%@", response);
-        LMJLog(@"%@", error);
+        NSLog(@"%@", filePath);
+        NSLog(@"%@", response);
+        NSLog(@"%@", error);
         
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         
@@ -152,7 +152,7 @@
             
         }
         
-        LMJLog(@"%@", lastModified);
+        NSLog(@"%@", lastModified);
         
         
     }] resume];

@@ -14,14 +14,14 @@
 - (void)connectDataBase:(id<LMJDataBaseConnectionProtocol>)dataBase withIndentifier:(NSString *)Indentifier
 {
     
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
     if ([dataBase respondsToSelector:@selector(start)]) {
         [dataBase start];
     }
     
     
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
 }
 

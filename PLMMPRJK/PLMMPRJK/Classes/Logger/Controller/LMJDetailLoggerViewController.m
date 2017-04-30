@@ -64,19 +64,19 @@
     switch (result)
     {
         case MFMailComposeResultCancelled:
-            LMJLog(@"Mail send canceled...");
+            NSLog(@"Mail send canceled...");
             [MBProgressHUD showError:@"Mail send canceled..." ToView:self.view];
             break;
         case MFMailComposeResultSaved:
-            LMJLog(@"Mail saved...");
+            NSLog(@"Mail saved...");
             [MBProgressHUD showError:@"Mail saved..." ToView:self.view];
             break;
         case MFMailComposeResultSent:
-            LMJLog(@"Mail sent...");
+            NSLog(@"Mail sent...");
             [MBProgressHUD showSuccess:@"发送邮件成功" ToView:self.view];
             break;
         case MFMailComposeResultFailed:
-            LMJLog(@"Mail send errored: %@...", [error localizedDescription]);
+            NSLog(@"Mail send errored: %@...", [error localizedDescription]);
             [MBProgressHUD showError:@"发送邮件失败" ToView:self.view];
             break;
         default:
@@ -129,7 +129,7 @@
 
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -139,12 +139,12 @@
 {
     
     [self sendMFMail];
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
 }
 
 - (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%@", sender);
+    NSLog(@"%@", sender);
 }
 
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar

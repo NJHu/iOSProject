@@ -102,7 +102,7 @@
     
     [MPUmengHelper getUserInfoForPlatform:type completion:^(UMSocialUserInfoResponse *result, NSError *error) {
         
-        LMJLog(@"%@", result);
+        NSLog(@"%@", result);
         
     }];
     
@@ -228,7 +228,7 @@
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     [self.navigationController popViewControllerAnimated:YES];
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
 }
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
@@ -239,7 +239,7 @@
 
 - (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%@", sender);
+    NSLog(@"%@", sender);
 }
 
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar

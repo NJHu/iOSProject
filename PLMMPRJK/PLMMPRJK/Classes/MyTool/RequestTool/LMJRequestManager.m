@@ -154,7 +154,7 @@
 #pragma mark - 打印返回日志
 - (void)LogResponse:(NSString *)urlString response:(LMJBaseResponse *)response
 {
-    LMJLog(@"[%@]---%@", urlString, response);
+    NSLog(@"[%@]---%@", urlString, response);
     
 }
 

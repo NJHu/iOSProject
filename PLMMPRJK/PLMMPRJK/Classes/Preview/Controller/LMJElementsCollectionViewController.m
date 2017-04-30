@@ -64,7 +64,7 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
     
-    LMJLog(@"%zd", indexPath.item);
+    NSLog(@"%zd", indexPath.item);
 }
 
 #pragma mark - LMJElementsFlowLayoutDelegate

@@ -119,12 +119,12 @@
 
 -(void)showErrorMessage:(NSString *)message
 {
-    LMJLog(@"当前信息,%@",message);
+    NSLog(@"当前信息,%@",message);
 }
 
 -(void)loadPage
 {
-    LMJLog(@"刷新当前的数据源");
+    NSLog(@"刷新当前的数据源");
 }
 
 
@@ -187,19 +187,19 @@
 
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
 }
 
 - (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%@", sender);
+    NSLog(@"%@", sender);
 }
 
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>A组</key>
+	<array>
+		<string>A - 中国</string>
+		<string>A1-南非</string>
+		<string>A2-墨西哥</string>
+		<string>A3-乌拉圭</string>
+		<string>A4-法国</string>
+	</array>
+	<key>B组</key>
+	<array>
+		<string>B1-阿根廷</string>
+		<string>B2-尼日利亚</string>
+		<string>B3-韩国</string>
+		<string>B4-希腊</string>
+	</array>
+	<key>C组</key>
+	<array>
+		<string>C1-英格兰</string>
+		<string>C2-美国</string>
+		<string>C3-阿尔及利亚</string>
+		<string>C4-斯洛文尼亚</string>
+	</array>
+	<key>D组</key>
+	<array>
+		<string>D1-德国</string>
+		<string>D2-澳大利亚</string>
+		<string>D3-塞尔维亚</string>
+		<string>D4-加纳</string>
+	</array>
+	<key>E组</key>
+	<array>
+		<string>E1-荷兰</string>
+		<string>E2-丹麦</string>
+		<string>E3-日本</string>
+		<string>E4-喀麦隆</string>
+	</array>
+	<key>F组</key>
+	<array>
+		<string>F1-意大利</string>
+		<string>F2-巴拉圭</string>
+		<string>F3-斯洛伐克</string>
+		<string>F4-新西兰</string>
+	</array>
+	<key>G组</key>
+	<array>
+		<string>G1-巴西</string>
+		<string>G2-朝鲜</string>
+		<string>G3-科特迪瓦</string>
+		<string>G4-葡萄牙</string>
+	</array>
+	<key>H组</key>
+	<array>
+		<string>H1-西班牙</string>
+		<string>H2-瑞士</string>
+		<string>H3-洪都拉斯</string>
+		<string>H4-智利</string>
+	</array>
+</dict>
+</plist>

@@ -10,27 +10,6 @@
 #define LMJMPTargetConfigMacros_h
 #ifdef __OBJC__
 
-/**
- *  调试模式======================================
- */
-#ifdef DEBUG
-
-
-#define LMJLog(fmt, ...) NSLog((@"=====Begin==========\n FILE: %@\n FUNC: %s\n LINE: %d\n " fmt), [NSString stringWithUTF8String:__FILE__].lastPathComponent, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-
-/**
- *  打印函数
- */
-#define LMJLogFunc LMJLog(@"\n")
-
-
-#else
-
-#define LMJLog(fmt, ...)
-#define LMJLogFunc
-
-#endif
-
 
 
 
@@ -38,11 +17,23 @@
 
 static const int ddLogLevel = DDLogLevelVerbose;
 
+//输出转换成DDLog
+#define NSLog(...) DDLogVerbose(__VA_ARGS__)
+
 #else
 
 static const int ddLogLevel = DDLogLevelWarning;
 
+//输出转换成DDLog
+#define NSLog(...) DDLogVerbose(__VA_ARGS__)
+
 #endif
+
+
+
+
+
+
 
 
 

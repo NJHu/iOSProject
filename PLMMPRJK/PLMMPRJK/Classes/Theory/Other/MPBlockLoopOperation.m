@@ -34,7 +34,7 @@
 -(void)startNoBlockShow:(NSString *)phone
 {
     _myPhone=phone;
-    LMJLog(@"当前的电话号码为：%@",_myPhone);
+    NSLog(@"当前的电话号码为：%@",_myPhone);
 }
 
 -(void)startWithAddBlock:(addBlockHandle)blockHandle;

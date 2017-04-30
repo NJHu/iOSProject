@@ -70,11 +70,11 @@
 {
     
     NSThread *thread=[NSThread currentThread];
-    LMJLog(@"loadAction是在线程%@中执行",thread.name);
+    NSLog(@"loadAction是在线程%@中执行",thread.name);
     
     //结合下面的cancel运用 进行强制退出线程的操作
     if ([[NSThread currentThread] isCancelled]) {
-        LMJLog(@"当前thread-exit被exit动作了");
+        NSLog(@"当前thread-exit被exit动作了");
         [NSThread exit];
     }
     
@@ -106,7 +106,7 @@
         }
     }
     
-    LMJLog(@"当前要加载的图片名称%@",name);
+    NSLog(@"当前要加载的图片名称%@",name);
     
     //回主线程去执行  有些UI相应 必须在主线程中更新
     [self performSelectorOnMainThread:@selector(updateImage) withObject:nil waitUntilDone:YES];
@@ -115,7 +115,7 @@
 -(void)updateImage
 {
     @autoreleasepool {
-        LMJLog(@"执行完成了");
+        NSLog(@"执行完成了");
     }
     
     //输出：执行方法updateImage是在主线程中
@@ -131,7 +131,7 @@
     for (int i=0; i<self.myThreadList.count; i++){
         NSThread *thread=self.myThreadList[i];
         if (![thread isCancelled]) {
-            LMJLog(@"当前thread-exit线程被cancel");
+            NSLog(@"当前thread-exit线程被cancel");
             [thread cancel];
             //cancel 只是一个标识 最下退出强制终止线程的操作是exit 如果单写cancel 线程还是会继续执行
         }}
@@ -147,19 +147,19 @@
 
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
 }
 
 - (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%@", sender);
+    NSLog(@"%@", sender);
 }
 
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar

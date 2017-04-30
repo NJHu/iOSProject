@@ -65,14 +65,14 @@
 
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
     LMJWeakSelf(self);
     [self.tableView configBlankPage:EaseBlankPageTypeMaterialScheduling hasData:self.dateArray.count > 0 hasError:YES reloadButtonBlock:^(id sender) {
@@ -84,7 +84,7 @@
 
 - (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%@", sender);
+    NSLog(@"%@", sender);
 }
 
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar

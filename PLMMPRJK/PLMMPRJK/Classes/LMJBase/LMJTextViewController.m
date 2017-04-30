@@ -73,7 +73,7 @@
 #pragma mark - LMJTextViewControllerDelegate
 - (void)textViewController:(LMJTextViewController *)textViewController inputViewDone:(id)inputView
 {
-    LMJLog(@"%@, %@", self.text_View_Fields, inputView);
+    NSLog(@"%@, %@", self.text_View_Fields, inputView);
 }
 
 #pragma mark - autoEmpty

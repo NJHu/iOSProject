@@ -87,13 +87,13 @@
 
 - (void)requestNoConnection:(LMJRequestBaseViewController *)requestBaseViewController
 {
-    LMJLog(@"没用网络连接");
+    NSLog(@"没用网络连接");
 }
 
 
 - (BOOL)request:(LMJRequestBaseViewController *)requestBaseViewController error:(NSError *)error
 {
-    LMJLog(@"%@", error);
+    NSLog(@"%@", error);
     
     return YES;
 }
@@ -143,10 +143,10 @@
             [MBProgressHUD showError:@"当前网络连接失败，请查看设置" ToView:self.view];
             break;
         case ReachableViaWiFi:
-            LMJLog(@"wifi上网2");
+            NSLog(@"wifi上网2");
             break;
         case ReachableViaWWAN:
-            LMJLog(@"手机上网2");
+            NSLog(@"手机上网2");
             break;
         default:
             break;

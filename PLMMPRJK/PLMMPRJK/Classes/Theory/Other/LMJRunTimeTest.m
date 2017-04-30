@@ -23,7 +23,7 @@
 
 + (void)showAddress
 {
-    LMJLog(@"北京");
+    NSLog(@"北京");
 }
 
 
@@ -67,7 +67,7 @@
             
             
             
-            LMJLog(@"%@", value);
+            NSLog(@"%@", value);
             
         }
         
@@ -108,7 +108,7 @@
         [aCoder encodeObject:value forKey:[NSString stringWithUTF8String:proName]];
         
         
-        LMJLog(@"%s", proName);
+        NSLog(@"%s", proName);
         
     }
     

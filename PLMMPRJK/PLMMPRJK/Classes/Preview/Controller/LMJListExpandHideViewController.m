@@ -7,8 +7,14 @@
 //
 
 #import "LMJListExpandHideViewController.h"
+#import "LMJGroup.h"
+#import "LMJTeam.h"
+#import "LMJListExpendHeaderView.h"
 
 @interface LMJListExpandHideViewController ()
+
+/** <#digest#> */
+@property (nonatomic, strong) NSMutableArray<LMJGroup *> *groups;
 
 @end
 
@@ -19,104 +25,127 @@
 }
 
 
-#pragma mark - LMJNavUIBaseViewControllerDataSource
-//- (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController
-//{
-//    return YES;
-//}
-
-
-
-#pragma mark - DataSource
-/**头部标题*/
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self changeTitle:self.title];
+    return self.groups.count;
 }
 
-/** 背景图片 */
-//- (UIImage *)lmjNavigationBarBackgroundImage:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
 
-/** 背景色 */
-//- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.groups[section].isOpened ? self.groups[section].teams.count : 0;
+}
 
-/** 是否隐藏底部黑线 */
-//- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
-//{
-//    return NO;
-//}
-
-/** 导航条的高度 */
-//- (CGFloat)lmjNavigationHeight:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return self.groups[section].name;
+}
 
 
-/** 导航条的左边的 view */
-//- (UIView *)lmjNavigationBarLeftView:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
-/** 导航条右边的 view */
-//- (UIView *)lmjNavigationBarRightView:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
-/** 导航条中间的 View */
-//- (UIView *)lmjNavigationBarTitleView:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *const ID = @"team";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    if (!cell) {
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
+        
+    }
+    
+    
+    cell.textLabel.text = self.groups[indexPath.section].teams[indexPath.row].sortNumber;
+    cell.detailTextLabel.text = self.groups[indexPath.section].teams[indexPath.row].name;
+    
+    return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    LMJListExpendHeaderView *headerView = [LMJListExpendHeaderView headerViewWithTableView:tableView];
+    
+    headerView.group = self.groups[section];
+    LMJWeakSelf(self);
+    [headerView setSelectGroup:^BOOL{
+        
+        weakself.groups[section].isOpened = !weakself.groups[section].isOpened;
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [weakself.tableView reloadData];
+            
+        });
+        
+        return weakself.groups[section].isOpened;
+    }];
+    
+    return headerView;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
+- (NSMutableArray<LMJGroup *> *)groups
+{
+    if (_groups == nil) {
+        
+        
+        _groups = [NSMutableArray array];
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"team_dictionary" ofType:@"plist"];
+        //        NSArray *dictArr = [NSArray arrayWithContentsOfFile:path];
+        NSDictionary *dictDict = [NSDictionary dictionaryWithContentsOfFile:path];
+        
+        [dictDict enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSArray<NSString *>  *obj, BOOL * _Nonnull stop) {
+            
+            LMJGroup *group = [LMJGroup new];
+            
+            group.isOpened = YES;
+            
+            group.name = key.copy;
+            
+            [obj enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                
+                LMJTeam *team = [LMJTeam new];
+                
+                team.sortNumber = [NSString stringWithFormat:@"%zd", idx];
+                team.name = [obj copy];
+                
+                [group.teams addObject:team];
+                
+            }];
+            
+            [_groups addObject:group];
+        }];
+        
+        
+        [_groups sortUsingComparator:^NSComparisonResult(LMJTeam * _Nonnull obj1, LMJTeam * _Nonnull obj2) {
+            
+            return [obj1.name compare:obj2.name] == NSOrderedAscending ? NSOrderedAscending : NSOrderedDescending;
+        }];
+    }
+    return _groups;
+}
+
+#pragma mark - LMJNavUIBaseViewControllerDataSource
+
 /** 导航条左边的按钮 */
-//- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
-/** 导航条右边的按钮 */
-//- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
+    
+    return [UIImage imageNamed:@"NavgationBar_blue_back"];
+}
 
-
-
-#pragma mark - Delegate
+#pragma mark - LMJNavUIBaseViewControllerDelegate
 /** 左边的按钮的点击 */
 -(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
-/** 右边的按钮的点击 */
--(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-/** 中间如果是 label 就会有点击 */
--(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-
-
-#pragma mark 自定义代码
-
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
-    
-    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(16) range:NSMakeRange(0, title.length)];
-    
-    return title;
-}
-
 
 @end

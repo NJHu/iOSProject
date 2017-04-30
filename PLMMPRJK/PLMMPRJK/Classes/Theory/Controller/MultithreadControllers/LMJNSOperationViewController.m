@@ -94,7 +94,7 @@
 
 -(void)runAction
 {
-    LMJLog(@"当前NSInvocationOperation执行的线程为：%@", [NSThread currentThread]);
+    NSLog(@"当前NSInvocationOperation执行的线程为：%@", [NSThread currentThread]);
     //输出：当前NSInvocationOperation执行的线程为：<NSThread: 0x600000071940>{number = 1, name = main}
     
     //说明
@@ -116,7 +116,7 @@
 
 -(void)runAsnysAction
 {
-    LMJLog(@"当前addAsnysOperationFormInvocation执行的线程为：%@", [NSThread currentThread]);
+    NSLog(@"当前addAsnysOperationFormInvocation执行的线程为：%@", [NSThread currentThread]);
     //输出：当前addAsnysOperationFormInvocation执行的线程为：<NSThread: 0x600000279040>{number = 8, name = (null)}
     
     //说明
@@ -131,19 +131,19 @@
     
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         // 在主线程
-        LMJLog(@"NSBlockOperation当前的线程：%@", [NSThread currentThread]);
+        NSLog(@"NSBlockOperation当前的线程：%@", [NSThread currentThread]);
         //输出：NSBlockOperation当前的线程：<NSThread: 0x60800007ecc0>{number = 1, name = main}
     }];
     
     // 添加额外的任务(部分在子线程执行)
     [op addExecutionBlock:^{
-        LMJLog(@"NSBlockOperation当前的线程2------%@", [NSThread currentThread]);
+        NSLog(@"NSBlockOperation当前的线程2------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        LMJLog(@"NSBlockOperation当前的线程3------%@", [NSThread currentThread]);
+        NSLog(@"NSBlockOperation当前的线程3------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        LMJLog(@"NSBlockOperation当前的线程4------%@", [NSThread currentThread]);
+        NSLog(@"NSBlockOperation当前的线程4------%@", [NSThread currentThread]);
     }];
     
     [op start];
@@ -165,18 +165,18 @@
     
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         // 在子线程
-        LMJLog(@"addAsnysOperationFormBlock当前的线程：%@", [NSThread currentThread]);
+        NSLog(@"addAsnysOperationFormBlock当前的线程：%@", [NSThread currentThread]);
     }];
     
     // 添加额外的任务（部分在新的子线程运行）
     [op addExecutionBlock:^{
-        LMJLog(@"addAsnysOperationFormBlock当前的线程2------%@", [NSThread currentThread]);
+        NSLog(@"addAsnysOperationFormBlock当前的线程2------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        LMJLog(@"addAsnysOperationFormBlock当前的线程3------%@", [NSThread currentThread]);
+        NSLog(@"addAsnysOperationFormBlock当前的线程3------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        LMJLog(@"addAsnysOperationFormBlock当前的线程4------%@", [NSThread currentThread]);
+        NSLog(@"addAsnysOperationFormBlock当前的线程4------%@", [NSThread currentThread]);
     }];
     
     [queue addOperation:op];
@@ -203,18 +203,18 @@
     
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         // 在子线程
-        LMJLog(@"addMaxConcurrentOperation当前的线程：%@", [NSThread currentThread]);
+        NSLog(@"addMaxConcurrentOperation当前的线程：%@", [NSThread currentThread]);
     }];
     
     // 添加额外的任务（部分在新的子线程运行）
     [op addExecutionBlock:^{
-        LMJLog(@"addMaxConcurrentOperation当前的线程2------%@", [NSThread currentThread]);
+        NSLog(@"addMaxConcurrentOperation当前的线程2------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        LMJLog(@"addMaxConcurrentOperation当前的线程3------%@", [NSThread currentThread]);
+        NSLog(@"addMaxConcurrentOperation当前的线程3------%@", [NSThread currentThread]);
     }];
     [op addExecutionBlock:^{
-        LMJLog(@"addMaxConcurrentOperation当前的线程4------%@", [NSThread currentThread]);
+        NSLog(@"addMaxConcurrentOperation当前的线程4------%@", [NSThread currentThread]);
     }];
     
     [queue addOperation:op];
@@ -255,10 +255,10 @@
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
     NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
-        LMJLog(@"addDependency1当前线程%@", [NSThread  currentThread]);
+        NSLog(@"addDependency1当前线程%@", [NSThread  currentThread]);
     }];
     NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
-        LMJLog(@"addDependency2当前线程%@", [NSThread  currentThread]);
+        NSLog(@"addDependency2当前线程%@", [NSThread  currentThread]);
     }];
     
     [op1 addDependency:op2];    // 让op1 依赖于 op2，则先执行op2，在执行op1
@@ -285,19 +285,19 @@
 
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
 }
 
 - (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%@", sender);
+    NSLog(@"%@", sender);
 }
 
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar

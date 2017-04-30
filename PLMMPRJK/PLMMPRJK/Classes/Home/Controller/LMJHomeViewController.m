@@ -145,12 +145,12 @@
     ac.gotoURL = @"http://www.baidu.com";
     
     [self.navigationController pushViewController:ac animated:YES];
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
 }
 /** 中间如果是 label 就会有点击 */
 -(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    LMJLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
 }
 
 

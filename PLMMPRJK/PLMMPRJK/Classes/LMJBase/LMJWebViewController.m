@@ -226,7 +226,7 @@
 // 1, 在发送请求之前，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    LMJLog(@"decidePolicyForNavigationAction   ====    %@", navigationAction);
+    NSLog(@"decidePolicyForNavigationAction   ====    %@", navigationAction);
     decisionHandler(WKNavigationActionPolicyAllow);
     
 }
@@ -234,7 +234,7 @@
 // 2开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
     
-    LMJLog(@"didStartProvisionalNavigation   ====    %@", navigation);
+    NSLog(@"didStartProvisionalNavigation   ====    %@", navigation);
     
 }
 
@@ -242,7 +242,7 @@
 // 4, 在收到响应后，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     
-    LMJLog(@"decidePolicyForNavigationResponse   ====    %@", navigationResponse);
+    NSLog(@"decidePolicyForNavigationResponse   ====    %@", navigationResponse);
     decisionHandler(WKNavigationResponsePolicyAllow);
     
 }
@@ -250,7 +250,7 @@
 // 5,内容开始返回时调用
 - (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
     
-    LMJLog(@"didCommitNavigation   ====    %@", navigation);
+    NSLog(@"didCommitNavigation   ====    %@", navigation);
 }
 
 // 3, 6, 加载 HTTPS 的链接，需要权限认证时调用  \  如果 HTTPS 是用的证书在信任列表中这不要此代理方法
@@ -274,14 +274,14 @@
 // 7页面加载完调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     
-    LMJLog(@"didFinishNavigation   ====    %@", navigation);
+    NSLog(@"didFinishNavigation   ====    %@", navigation);
     
 }
 
 // 8页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
     
-    LMJLog(@"didFailProvisionalNavigation   ====    %@\nerror   ====   %@", navigation, error);
+    NSLog(@"didFailProvisionalNavigation   ====    %@\nerror   ====   %@", navigation, error);
     
     [SVProgressHUD showErrorWithStatus:@"网页加载失败"];
 }
@@ -367,7 +367,7 @@
 
 - (void)dealloc
 {
-    LMJLog(@"LMJWebViewController -- dealloc");
+    NSLog(@"LMJWebViewController -- dealloc");
     
     [self.webView removeObserverBlocks];
     

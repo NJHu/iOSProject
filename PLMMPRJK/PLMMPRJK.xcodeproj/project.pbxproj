@@ -426,6 +426,10 @@
 		58AFACB31EB4ADAB00822043 /* UIButton+LMJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAAF11EB4ADAA00822043 /* UIButton+LMJBlock.m */; };
 		58AFACB51EB4ADAB00822043 /* MPBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAAF61EB4ADAA00822043 /* MPBlockView.m */; };
 		58AFACB91EB4CFD500822043 /* UIView+LMJNjHuFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACB81EB4CFD500822043 /* UIView+LMJNjHuFrame.m */; };
+		58AFACBB1EB5981000822043 /* team_dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AFACBA1EB5981000822043 /* team_dictionary.plist */; };
+		58AFACBE1EB5982C00822043 /* LMJTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACBD1EB5982C00822043 /* LMJTeam.m */; };
+		58AFACC11EB5983D00822043 /* LMJGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACC01EB5983D00822043 /* LMJGroup.m */; };
+		58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACC31EB5A22600822043 /* LMJListExpendHeaderView.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1292,6 +1296,13 @@
 		58AFAAF61EB4ADAA00822043 /* MPBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBlockView.m; sourceTree = "<group>"; };
 		58AFACB71EB4CFD500822043 /* UIView+LMJNjHuFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LMJNjHuFrame.h"; sourceTree = "<group>"; };
 		58AFACB81EB4CFD500822043 /* UIView+LMJNjHuFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LMJNjHuFrame.m"; sourceTree = "<group>"; };
+		58AFACBA1EB5981000822043 /* team_dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = team_dictionary.plist; sourceTree = "<group>"; };
+		58AFACBC1EB5982C00822043 /* LMJTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTeam.h; sourceTree = "<group>"; };
+		58AFACBD1EB5982C00822043 /* LMJTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTeam.m; sourceTree = "<group>"; };
+		58AFACBF1EB5983D00822043 /* LMJGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJGroup.h; sourceTree = "<group>"; };
+		58AFACC01EB5983D00822043 /* LMJGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJGroup.m; sourceTree = "<group>"; };
+		58AFACC21EB5A22600822043 /* LMJListExpendHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJListExpendHeaderView.h; sourceTree = "<group>"; };
+		58AFACC31EB5A22600822043 /* LMJListExpendHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJListExpendHeaderView.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3513,6 +3524,10 @@
 		58AFAA941EB4ADAA00822043 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				58AFACBC1EB5982C00822043 /* LMJTeam.h */,
+				58AFACBD1EB5982C00822043 /* LMJTeam.m */,
+				58AFACBF1EB5983D00822043 /* LMJGroup.h */,
+				58AFACC01EB5983D00822043 /* LMJGroup.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3520,6 +3535,7 @@
 		58AFAA961EB4ADAA00822043 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				58AFACBA1EB5981000822043 /* team_dictionary.plist */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -3536,6 +3552,8 @@
 			children = (
 				58AFAA9B1EB4ADAA00822043 /* LMJAdaptFontCell.h */,
 				58AFAA9C1EB4ADAA00822043 /* LMJAdaptFontCell.m */,
+				58AFACC21EB5A22600822043 /* LMJListExpendHeaderView.h */,
+				58AFACC31EB5A22600822043 /* LMJListExpendHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3949,6 +3967,7 @@
 				58AFAB5F1EB4ADAA00822043 /* addressData.plist in Resources */,
 				58AFABC01EB4ADAA00822043 /* UMSocialSDKResources.bundle in Resources */,
 				58AFAB651EB4ADAA00822043 /* blankpage_button_reload@2x.png in Resources */,
+				58AFACBB1EB5981000822043 /* team_dictionary.plist in Resources */,
 				588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */,
 				58AFAB9D1EB4ADAA00822043 /* IQKeyboardManager.bundle in Resources */,
 				58AFABBB1EB4ADAA00822043 /* README.txt in Resources */,
@@ -4046,6 +4065,7 @@
 				58AFABC31EB4ADAA00822043 /* GVUserDefaults+BBProperties.m in Sources */,
 				58AFAC491EB4ADAA00822043 /* UIWindow+Hierarchy.m in Sources */,
 				58AFAB501EB4ADAA00822043 /* NSURL+QueryDictionary.m in Sources */,
+				58AFACC11EB5983D00822043 /* LMJGroup.m in Sources */,
 				58AFAAFD1EB4ADAA00822043 /* NSFetchRequest+Extensions.m in Sources */,
 				58AFAC1C1EB4ADAA00822043 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				58AFAB771EB4ADAA00822043 /* MPFileManager.m in Sources */,
@@ -4332,6 +4352,7 @@
 				58AFAB341EB4ADAA00822043 /* NSObject+KVOBlocks.m in Sources */,
 				58AFAC601EB4ADAB00822043 /* LMJStaticTableViewController.m in Sources */,
 				58AFAB701EB4ADAA00822043 /* UIImage+compress.m in Sources */,
+				58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */,
 				58AFAB6B1EB4ADAA00822043 /* UIView+EaseBlankPage.m in Sources */,
 				58AFAC991EB4ADAB00822043 /* LMJExpandImageView.m in Sources */,
 				58AFAC771EB4ADAB00822043 /* LMJBaseRequest.m in Sources */,
@@ -4401,6 +4422,7 @@
 				58AFAC311EB4ADAA00822043 /* UIView+Recursion.m in Sources */,
 				58AFAC021EB4ADAA00822043 /* UILabel+AutoSize.m in Sources */,
 				58AFABFC1EB4ADAA00822043 /* UIImageView+BetterFace.m in Sources */,
+				58AFACBE1EB5982C00822043 /* LMJTeam.m in Sources */,
 				58AFAB3A1EB4ADAA00822043 /* NSMutableString+Ruby.m in Sources */,
 				58AFABDD1EB4ADAA00822043 /* UIButton+Submitting.m in Sources */,
 				58AFAB361EB4ADAA00822043 /* NSObject+Reflection.m in Sources */,
