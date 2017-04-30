@@ -7,6 +7,7 @@
 //
 
 #import "MPLKDBHelper.h"
+#import <LKDBHelper/LKDBHelper.h>
 
 @implementation MPLKDBHelper
 

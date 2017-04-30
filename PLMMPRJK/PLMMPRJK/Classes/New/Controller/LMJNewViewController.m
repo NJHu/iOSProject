@@ -21,6 +21,7 @@
 #import "LMJKeyboardHandleViewController.h"
 #import "LMJDownLoadFileViewController.h"
 #import "LMJMasonryViewController.h"
+#import "LMJLKDBViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -104,8 +105,12 @@
     
     item13.destVc = [LMJMasonryViewController class];
     
+    LMJWordArrowItem *item14 = [LMJWordArrowItem itemWithTitle:@"LKDB数据库" subTitle: nil];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    item14.destVc = [LMJLKDBViewController class];
+    
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }

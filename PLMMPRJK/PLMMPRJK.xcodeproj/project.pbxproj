@@ -430,6 +430,8 @@
 		58AFACBE1EB5982C00822043 /* LMJTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACBD1EB5982C00822043 /* LMJTeam.m */; };
 		58AFACC11EB5983D00822043 /* LMJGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACC01EB5983D00822043 /* LMJGroup.m */; };
 		58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACC31EB5A22600822043 /* LMJListExpendHeaderView.m */; };
+		58AFACD51EB60E9800822043 /* LMJLKDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */; };
+		58AFACDB1EB6127100822043 /* LMJLKDBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACDA1EB6127100822043 /* LMJLKDBPerson.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1303,6 +1305,10 @@
 		58AFACC01EB5983D00822043 /* LMJGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJGroup.m; sourceTree = "<group>"; };
 		58AFACC21EB5A22600822043 /* LMJListExpendHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJListExpendHeaderView.h; sourceTree = "<group>"; };
 		58AFACC31EB5A22600822043 /* LMJListExpendHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJListExpendHeaderView.m; sourceTree = "<group>"; };
+		58AFACD31EB60E9800822043 /* LMJLKDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLKDBViewController.h; sourceTree = "<group>"; };
+		58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLKDBViewController.m; sourceTree = "<group>"; };
+		58AFACD91EB6127100822043 /* LMJLKDBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLKDBPerson.h; sourceTree = "<group>"; };
+		58AFACDA1EB6127100822043 /* LMJLKDBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLKDBPerson.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1390,6 +1396,7 @@
 				58AFAA551EB4ADAA00822043 /* Message */,
 				58AFAA6C1EB4ADAA00822043 /* New */,
 				58AFAA781EB4ADAA00822043 /* Preview */,
+				58AFACC51EB60E3700822043 /* Preview2 */,
 				58AFAABE1EB4ADAA00822043 /* System */,
 			);
 			path = Classes;
@@ -3748,6 +3755,57 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		58AFACC51EB60E3700822043 /* Preview2 */ = {
+			isa = PBXGroup;
+			children = (
+				58AFACC61EB60E3700822043 /* Controller */,
+				58AFACC71EB60E3700822043 /* Model */,
+				58AFACC91EB60E3700822043 /* Other */,
+				58AFACCB1EB60E3700822043 /* Service */,
+				58AFACCD1EB60E3700822043 /* View */,
+			);
+			path = Preview2;
+			sourceTree = "<group>";
+		};
+		58AFACC61EB60E3700822043 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				58AFACD31EB60E9800822043 /* LMJLKDBViewController.h */,
+				58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		58AFACC71EB60E3700822043 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58AFACD91EB6127100822043 /* LMJLKDBPerson.h */,
+				58AFACDA1EB6127100822043 /* LMJLKDBPerson.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		58AFACC91EB60E3700822043 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		58AFACCB1EB60E3700822043 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		58AFACCD1EB60E3700822043 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		79F866E3BAD80F021129F8EF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -4171,6 +4229,7 @@
 				58AFABE41EB4ADAA00822043 /* UIControl+ActionBlocks.m in Sources */,
 				58AFAB331EB4ADAA00822043 /* NSObject+GCD.m in Sources */,
 				58AFAB1D1EB4ADAA00822043 /* NSDictionary+SafeAccess.m in Sources */,
+				58AFACD51EB60E9800822043 /* LMJLKDBViewController.m in Sources */,
 				58AFAC9A1EB4ADAB00822043 /* MPSolidColorButton.m in Sources */,
 				58AFAB741EB4ADAA00822043 /* FCUUID.m in Sources */,
 				58AFAC811EB4ADAB00822043 /* LMJAnimationNavBarViewController.m in Sources */,
@@ -4410,6 +4469,7 @@
 				58AFAB711EB4ADAA00822043 /* UIImage+Extensions.m in Sources */,
 				58AFAB231EB4ADAA00822043 /* NSHTTPCookieStorage+FreezeDry.m in Sources */,
 				58AFABEB1EB4ADAA00822043 /* UIImage+Alpha.m in Sources */,
+				58AFACDB1EB6127100822043 /* LMJLKDBPerson.m in Sources */,
 				58AFAC801EB4ADAB00822043 /* LMJAddressPickerViewController.m in Sources */,
 				58AFAC641EB4ADAB00822043 /* LMJTitlesListsParentViewController.m in Sources */,
 				58AFAB5B1EB4ADAA00822043 /* CALayer+UIColor.m in Sources */,

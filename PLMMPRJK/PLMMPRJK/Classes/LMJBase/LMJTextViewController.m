@@ -13,7 +13,7 @@
 
 @interface LMJTextViewController ()
 /** <#digest#> */
-@property (nonatomic, strong) NSArray *text_View_Fields;
+@property (nonatomic, strong) NSArray<UITextField *> *requiredTextFields;
 
 /** <#digest#> */
 @property (nonatomic, strong) IQKeyboardReturnKeyHandler *returnKeyHandler;
@@ -25,8 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
 }
 
 
@@ -35,6 +33,12 @@
     [super viewWillAppear:animated];
     
     [self initKeyboard];
+}
+
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -73,10 +77,11 @@
 #pragma mark - LMJTextViewControllerDelegate
 - (void)textViewController:(LMJTextViewController *)textViewController inputViewDone:(id)inputView
 {
-    NSLog(@"%@, %@", self.text_View_Fields, inputView);
+    NSLog(@"%@, %@", self.requiredTextFields, inputView);
 }
 
 #pragma mark - autoEmpty
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *current = [textField.text stringByReplacingCharactersInRange:range withString:string].trimmingWhitespaceAndNewlines;
@@ -110,7 +115,7 @@
 #pragma mark - 设置 btn的 enable
 - (void)checkIsEmpty:(BOOL)isEmpty textField:(UITextField *)textField
 {
-    if (LMJIsEmpty(self.text_View_Fields)) {
+    if (LMJIsEmpty(self.requiredTextFields)) {
         return;
     }
     
@@ -129,7 +134,7 @@
     
     if (!isEmpty) {
         
-        [self.text_View_Fields enumerateObjectsUsingBlock:^(UITextField *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.requiredTextFields enumerateObjectsUsingBlock:^(UITextField *obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
             if (obj != textField && LMJIsEmpty(obj.text.trimmingWhitespaceAndNewlines)) {
                 
@@ -162,7 +167,7 @@
     manager.shouldPlayInputClicks = YES;
     manager.shouldShowTextFieldPlaceholder = YES;
  
-    [self text_View_Fields];
+    [self requiredTextFields];
     [self returnKeyHandler];;
 }
 
@@ -181,18 +186,27 @@
 }
 
 
-- (NSArray *)text_View_Fields
+- (NSArray<UITextField *> *)requiredTextFields
 {
-    if(_text_View_Fields == nil)
+    if(_requiredTextFields == nil)
     {
-        _text_View_Fields = [self.view deepResponderViews];
+        NSArray *responsedInputViews = [self.view deepResponderViews];
         
-        [_text_View_Fields enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSMutableArray<UITextField *> *array = [NSMutableArray array];
+        
+        [responsedInputViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
             if ([obj isKindOfClass:[UITextField class]]) {
                 
                 UITextField *field = (UITextField *)obj;
                 field.delegate = self;
+                
+                if (field.isEmptyAutoEnable) {
+                    
+                    [array addObject:field];
+                    
+//                    [self checkIsEmpty:YES textField:field];
+                }
             }
             
             if ([obj isKindOfClass:[UITextView class]]) {
@@ -201,8 +215,12 @@
             }
             
         }];
+        
+        
+        _requiredTextFields = array;
+        
     }
-    return _text_View_Fields;
+    return _requiredTextFields;
 }
 
 
