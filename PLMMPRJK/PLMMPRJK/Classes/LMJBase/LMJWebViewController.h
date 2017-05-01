@@ -9,27 +9,27 @@
 #import "LMJBaseViewController.h"
 #import <WebKit/WebKit.h>
 
-
+@class LMJWebViewController;
 @protocol LMJWebViewControllerDelegate <NSObject>
 
-//@optional
-//// 左上边的返回按钮点击
-//- (void)backBtnClick:(UIButton *)backBtn webView:(WKWebView *)webView ;
-//
-////左上边的关闭按钮的点击
-//- (void)closeBtnClick:(UIButton *)closeBtn webView:(WKWebView *)webView;;
-//
+@optional
+// 左上边的返回按钮点击
+- (void)backBtnClick:(UIButton *)backBtn webView:(WKWebView *)webView ;
+
+//左上边的关闭按钮的点击
+- (void)closeBtnClick:(UIButton *)closeBtn webView:(WKWebView *)webView;
+
 @end
 
 
 @protocol LMJWebViewControllerDataSource <NSObject>
 
 @optional
-// 默认需要
-- (BOOL)isNeedProgressIndicator;
+// 默认需要, 是否需要进度条
+- (BOOL)webViewController:(LMJWebViewController *)webViewController webViewIsNeedProgressIndicator:(WKWebView *)webView;
 
-// 默认需要
-- (BOOL)isNeedAutoTitle;
+// 默认需要自动改变标题
+- (BOOL)webViewController:(LMJWebViewController *)webViewController webViewIsNeedAutoTitle:(WKWebView *)webView;
 
 @end
 

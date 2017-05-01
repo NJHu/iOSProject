@@ -52,7 +52,7 @@
     
     
     
-    if ([self isNeedAutoTitle]) {
+    if ([self webViewController:self webViewIsNeedAutoTitle:self.webView]) {
         
         [self.webView addObserverBlockForKeyPath:LMJKeyPath(self.webView, title) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
             
@@ -184,12 +184,14 @@
 
 
 #pragma mark - LMJWebViewControllerDelegate, LMJWebViewControllerDataSource
-- (BOOL)isNeedProgressIndicator
+// 默认需要, 是否需要进度条
+- (BOOL)webViewController:(LMJWebViewController *)webViewController webViewIsNeedProgressIndicator:(WKWebView *)webView
 {
     return YES;
 }
 
-- (BOOL)isNeedAutoTitle
+// 默认需要自动改变标题
+- (BOOL)webViewController:(LMJWebViewController *)webViewController webViewIsNeedAutoTitle:(WKWebView *)webView
 {
     return YES;
 }
@@ -353,9 +355,9 @@
         progressView.lmj_y = 64.0;
         progressView.tintColor = [UIColor greenColor];
         
-        if ([self respondsToSelector:@selector(isNeedProgressIndicator)]) {
+        if ([self respondsToSelector:@selector(webViewController:webViewIsNeedProgressIndicator:)]) {
             
-            if (![self isNeedProgressIndicator]) {
+            if (![self webViewController:self webViewIsNeedProgressIndicator:self.webView]) {
                 progressView.hidden = YES;
             }
             
