@@ -63,6 +63,6 @@ static NSString *const LMJThirdSDKQQRedirectURL = @"http://mobile.umeng.com/soci
 static NSString *const LMJThirdSDKMagicWindow = @"75Z6Q063T395YQ85QN27FDR7RAVIEKR7";
 
 
-static NSString *const LMJThirdSDKBaiduMapKey = @"";
+static NSString *const LMJThirdSDKBaiduMapKey = @"K4FQLr0hX8zGxsYdGVuFTAmpMNRCVLBF";
 
 #endif /* LMJConstants_h */

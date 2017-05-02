@@ -9,7 +9,8 @@
 //  UIView category that adds dragging capabilities
 
 
-@import UIKit;
+#import <UIKit/UIKit.h>
+
 
 @interface UIView (draggable)
 

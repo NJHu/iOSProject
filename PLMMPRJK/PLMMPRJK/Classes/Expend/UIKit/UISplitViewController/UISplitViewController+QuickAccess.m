@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 #import "UISplitViewController+QuickAccess.h"
 

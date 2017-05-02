@@ -8,7 +8,7 @@
 
 #ifndef LMJMPTargetConfigMacros_h
 #define LMJMPTargetConfigMacros_h
-#ifdef __OBJC__
+
 
 
 
@@ -32,13 +32,4 @@ static const int ddLogLevel = DDLogLevelWarning;
 
 
 
-
-
-
-
-
-
-
-
-#endif
 #endif /* LMJMPTargetConfigMacros_h */

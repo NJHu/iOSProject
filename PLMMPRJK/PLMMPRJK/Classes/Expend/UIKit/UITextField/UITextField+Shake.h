@@ -8,7 +8,7 @@
 //  https://github.com/andreamazz/UITextField-Shake
 //  UITextField category that adds shake animation
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, ShakeDirection) {
     ShakeDirectionHorizontal,

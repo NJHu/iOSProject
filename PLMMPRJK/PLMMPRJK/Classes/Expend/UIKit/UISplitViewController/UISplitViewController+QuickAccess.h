@@ -7,7 +7,7 @@
 //	See http://creativecommons.org/licenses/by-nc-sa/4.0/
 //  https://github.com/HiddenJester/UISplitViewController-QuickAccess
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 /*
  I often want the "left content view controller" or the "right content view controller".

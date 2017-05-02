@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 
-@import CoreLocation;
+#import <CoreLocation/CoreLocation.h>
 
 typedef enum {
     kPermissionTypeBluetoothLE,

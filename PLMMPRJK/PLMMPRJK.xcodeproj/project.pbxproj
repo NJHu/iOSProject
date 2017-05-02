@@ -431,7 +431,12 @@
 		58AFACC11EB5983D00822043 /* LMJGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACC01EB5983D00822043 /* LMJGroup.m */; };
 		58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACC31EB5A22600822043 /* LMJListExpendHeaderView.m */; };
 		58AFACD51EB60E9800822043 /* LMJLKDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */; };
-		58AFACDB1EB6127100822043 /* LMJLKDBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACDA1EB6127100822043 /* LMJLKDBPerson.m */; };
+		58AFACDB1EB6127100822043 /* LMJLKDBPerson.mm in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACDA1EB6127100822043 /* LMJLKDBPerson.mm */; };
+		58AFACEA1EB8AEED00822043 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AFACE91EB8AEED00822043 /* libssl.a */; };
+		58AFACEC1EB8AF0B00822043 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AFACEB1EB8AF0B00822043 /* libcrypto.a */; };
+		58AFACEF1EB8AFD400822043 /* LMJBaiduMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACEE1EB8AFD400822043 /* LMJBaiduMapViewController.m */; };
+		58AFACF21EB8D72100822043 /* LMJBaiduPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACF11EB8D72100822043 /* LMJBaiduPointAnnotation.m */; };
+		58AFACF51EB8D7F000822043 /* LMJCoordinateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1308,7 +1313,15 @@
 		58AFACD31EB60E9800822043 /* LMJLKDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLKDBViewController.h; sourceTree = "<group>"; };
 		58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLKDBViewController.m; sourceTree = "<group>"; };
 		58AFACD91EB6127100822043 /* LMJLKDBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLKDBPerson.h; sourceTree = "<group>"; };
-		58AFACDA1EB6127100822043 /* LMJLKDBPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLKDBPerson.m; sourceTree = "<group>"; };
+		58AFACDA1EB6127100822043 /* LMJLKDBPerson.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LMJLKDBPerson.mm; sourceTree = "<group>"; };
+		58AFACE91EB8AEED00822043 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = Pods/BaiduMapKit/BaiduMapKit/thirdlibs/libssl.a; sourceTree = "<group>"; };
+		58AFACEB1EB8AF0B00822043 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = Pods/BaiduMapKit/BaiduMapKit/thirdlibs/libcrypto.a; sourceTree = "<group>"; };
+		58AFACED1EB8AFD400822043 /* LMJBaiduMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBaiduMapViewController.h; sourceTree = "<group>"; };
+		58AFACEE1EB8AFD400822043 /* LMJBaiduMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBaiduMapViewController.m; sourceTree = "<group>"; };
+		58AFACF01EB8D72100822043 /* LMJBaiduPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBaiduPointAnnotation.h; sourceTree = "<group>"; };
+		58AFACF11EB8D72100822043 /* LMJBaiduPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBaiduPointAnnotation.m; sourceTree = "<group>"; };
+		58AFACF31EB8D7F000822043 /* LMJCoordinateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCoordinateModel.h; sourceTree = "<group>"; };
+		58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCoordinateModel.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1330,6 +1343,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58AFACEC1EB8AF0B00822043 /* libcrypto.a in Frameworks */,
+				58AFACEA1EB8AEED00822043 /* libssl.a in Frameworks */,
 				58AFABBA1EB4ADAA00822043 /* libWeChatSDK.a in Frameworks */,
 				58AFABAD1EB4ADAA00822043 /* libUMessage_Sdk_1.5.0.a in Frameworks */,
 				58AFABB91EB4ADAA00822043 /* libSocialWeChat.a in Frameworks */,
@@ -3772,6 +3787,8 @@
 			children = (
 				58AFACD31EB60E9800822043 /* LMJLKDBViewController.h */,
 				58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */,
+				58AFACED1EB8AFD400822043 /* LMJBaiduMapViewController.h */,
+				58AFACEE1EB8AFD400822043 /* LMJBaiduMapViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3780,7 +3797,11 @@
 			isa = PBXGroup;
 			children = (
 				58AFACD91EB6127100822043 /* LMJLKDBPerson.h */,
-				58AFACDA1EB6127100822043 /* LMJLKDBPerson.m */,
+				58AFACDA1EB6127100822043 /* LMJLKDBPerson.mm */,
+				58AFACF01EB8D72100822043 /* LMJBaiduPointAnnotation.h */,
+				58AFACF11EB8D72100822043 /* LMJBaiduPointAnnotation.m */,
+				58AFACF31EB8D7F000822043 /* LMJCoordinateModel.h */,
+				58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3818,6 +3839,8 @@
 		AE243CE87CE32DA5EDBEB4B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58AFACEB1EB8AF0B00822043 /* libcrypto.a */,
+				58AFACE91EB8AEED00822043 /* libssl.a */,
 				D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */,
 			);
 			name = Frameworks;
@@ -4295,6 +4318,7 @@
 				58AFABA61EB4ADAA00822043 /* QBAssetsCollectionViewController.m in Sources */,
 				58AFACB51EB4ADAB00822043 /* MPBlockView.m in Sources */,
 				58AFAB4D1EB4ADAA00822043 /* NSTimer+Addition.m in Sources */,
+				58AFACF51EB8D7F000822043 /* LMJCoordinateModel.m in Sources */,
 				58AFABF61EB4ADAA00822043 /* UIImage+PDF.m in Sources */,
 				58AFAB311EB4ADAA00822043 /* NSObject+Blocks.m in Sources */,
 				58AFABEC1EB4ADAA00822043 /* UIImage+animatedGIF.m in Sources */,
@@ -4360,6 +4384,7 @@
 				58AFAB8D1EB4ADAA00822043 /* iCarousel.m in Sources */,
 				58AFAC451EB4ADAA00822043 /* UIWebView+MetaParser.m in Sources */,
 				58AFAB2E1EB4ADAA00822043 /* NSObject+AppInfo.m in Sources */,
+				58AFACF21EB8D72100822043 /* LMJBaiduPointAnnotation.m in Sources */,
 				58AFAB4F1EB4ADAA00822043 /* NSURL+Param.m in Sources */,
 				58AFAC571EB4ADAA00822043 /* LMJSettingCell.m in Sources */,
 				58AFAC221EB4ADAA00822043 /* UITextField+Select.m in Sources */,
@@ -4453,6 +4478,7 @@
 				58AFAC1A1EB4ADAA00822043 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				58AFABF71EB4ADAA00822043 /* UIImage+RemoteSize.m in Sources */,
 				58AFABD91EB4ADAA00822043 /* UIButton+Block.m in Sources */,
+				58AFACEF1EB8AFD400822043 /* LMJBaiduMapViewController.m in Sources */,
 				58AFACAC1EB4ADAB00822043 /* LMJRunTimeTest+LMJMethod.m in Sources */,
 				58AFAB581EB4ADAA00822043 /* MKMapView+ZoomLevel.m in Sources */,
 				58AFABCC1EB4ADAA00822043 /* UIView+Empty.m in Sources */,
@@ -4469,7 +4495,7 @@
 				58AFAB711EB4ADAA00822043 /* UIImage+Extensions.m in Sources */,
 				58AFAB231EB4ADAA00822043 /* NSHTTPCookieStorage+FreezeDry.m in Sources */,
 				58AFABEB1EB4ADAA00822043 /* UIImage+Alpha.m in Sources */,
-				58AFACDB1EB6127100822043 /* LMJLKDBPerson.m in Sources */,
+				58AFACDB1EB6127100822043 /* LMJLKDBPerson.mm in Sources */,
 				58AFAC801EB4ADAB00822043 /* LMJAddressPickerViewController.m in Sources */,
 				58AFAC641EB4ADAB00822043 /* LMJTitlesListsParentViewController.m in Sources */,
 				58AFAB5B1EB4ADAA00822043 /* CALayer+UIColor.m in Sources */,
@@ -4649,6 +4675,7 @@
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/UMSocialUI",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = PLMMPRJK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -4677,6 +4704,7 @@
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/SocialLibraries/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit/thirdlibs",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -4788,6 +4816,7 @@
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/UMSocialUI",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = PLMMPRJK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -4816,6 +4845,7 @@
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/SocialLibraries/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/PLMMPRJK/Classes/Expend/Libs/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit/thirdlibs",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
