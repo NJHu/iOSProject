@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+UIKIT_EXTERN NSString *const LMJBaseResponseSystemErrorMsgKey;
+
+UIKIT_EXTERN NSString *const LMJBaseResponseCustomErrorMsgKey;
+
 @interface LMJBaseResponse : NSObject
 
 

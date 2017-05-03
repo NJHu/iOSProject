@@ -192,6 +192,7 @@
     }else
     {
         NSLog(@"检索失败");
+        [self addptAnnotations];
     }
     
     

@@ -11,7 +11,9 @@
 @implementation LMJBaseResponse
 
 
+NSString *const LMJBaseResponseSystemErrorMsgKey = @"LMJBaseResponseSystemErrorMsgKey";
 
+NSString *const LMJBaseResponseCustomErrorMsgKey = @"LMJBaseResponseCustomErrorMsgKey";
 
 
 

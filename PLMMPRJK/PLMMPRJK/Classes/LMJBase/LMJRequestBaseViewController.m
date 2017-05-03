@@ -72,7 +72,7 @@
         
         !showLoading ?: [self dismissLoading];
         
-        if (response.error && [self request:self error:response.error]) {
+        if (response.error && ![self request:self error:response.error]) {
             return;
         }
         
@@ -87,6 +87,7 @@
 
 - (void)requestNoConnection:(LMJRequestBaseViewController *)requestBaseViewController
 {
+    [self.view makeToast:@"没用网络连接" duration:0.5 position:CSToastPositionCenter];
     NSLog(@"没用网络连接");
 }
 
@@ -94,6 +95,8 @@
 - (BOOL)request:(LMJRequestBaseViewController *)requestBaseViewController error:(NSError *)error
 {
     NSLog(@"%@", error);
+    
+    [self.view makeToast: error.userInfo[LMJBaseResponseSystemErrorMsgKey] ?: error.userInfo[LMJBaseResponseCustomErrorMsgKey] duration:0.5 position:CSToastPositionCenter];
     
     return YES;
 }

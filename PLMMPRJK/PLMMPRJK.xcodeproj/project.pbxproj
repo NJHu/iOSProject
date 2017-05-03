@@ -439,6 +439,7 @@
 		58AFACF51EB8D7F000822043 /* LMJCoordinateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */; };
 		58AFAF031EB9B40B00822043 /* LMJAnnotationCustomPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */; };
 		58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */; };
+		58AFAF0D1EB9EC8200822043 /* LMJQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAF0C1EB9EC8200822043 /* LMJQRCodeViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1327,6 +1328,8 @@
 		58AFAF011EB9B40B00822043 /* LMJAnnotationCustomPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAnnotationCustomPopView.h; sourceTree = "<group>"; };
 		58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAnnotationCustomPopView.m; sourceTree = "<group>"; };
 		58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMJAnnotationCustomPopView.xib; sourceTree = "<group>"; };
+		58AFAF0B1EB9EC8200822043 /* LMJQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJQRCodeViewController.h; sourceTree = "<group>"; };
+		58AFAF0C1EB9EC8200822043 /* LMJQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJQRCodeViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3794,6 +3797,8 @@
 				58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */,
 				58AFACED1EB8AFD400822043 /* LMJBaiduMapViewController.h */,
 				58AFACEE1EB8AFD400822043 /* LMJBaiduMapViewController.m */,
+				58AFAF0B1EB9EC8200822043 /* LMJQRCodeViewController.h */,
+				58AFAF0C1EB9EC8200822043 /* LMJQRCodeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4226,6 +4231,7 @@
 				58AFABD61EB4ADAA00822043 /* UIBezierPath+SVG.m in Sources */,
 				58AFAC101EB4ADAA00822043 /* UIResponder+FirstResponder.m in Sources */,
 				58AFAC151EB4ADAA00822043 /* UIScrollView+EmptyDataSet.m in Sources */,
+				58AFAF0D1EB9EC8200822043 /* LMJQRCodeViewController.m in Sources */,
 				58AFACA91EB4ADAB00822043 /* LMJNSThreadViewController.m in Sources */,
 				58AFACB91EB4CFD500822043 /* UIView+LMJNjHuFrame.m in Sources */,
 				58AFAC981EB4ADAB00822043 /* LMJExpandHeader.m in Sources */,
