@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LMJAnnotationCustomPopView">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="293"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYA-qF-Aak">
+                    <rect key="frame" x="0.0" y="0.0" width="376" height="24"/>
+                    <color key="backgroundColor" red="0.074509803920000006" green="0.64705882349999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="bVg-dE-vbE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eC-9x-agt">
+                    <rect key="frame" x="0.0" y="34" width="376" height="16"/>
+                    <color key="backgroundColor" red="0.074509803920000006" green="0.64705882349999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpY-OL-5Wc">
+                    <rect key="frame" x="168" y="60" width="40" height="28"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="到这里"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="2eC-9x-agt" firstAttribute="top" secondItem="GYA-qF-Aak" secondAttribute="bottom" constant="10" id="4R5-BS-qKu"/>
+                <constraint firstItem="2eC-9x-agt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6bt-bI-58F"/>
+                <constraint firstAttribute="trailing" secondItem="GYA-qF-Aak" secondAttribute="trailing" id="EqK-48-mkr"/>
+                <constraint firstItem="mpY-OL-5Wc" firstAttribute="top" secondItem="2eC-9x-agt" secondAttribute="bottom" constant="10" id="LWo-wk-Xtc"/>
+                <constraint firstAttribute="trailing" secondItem="2eC-9x-agt" secondAttribute="trailing" id="Q2F-XX-liN"/>
+                <constraint firstItem="mpY-OL-5Wc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="e7j-UY-dMp"/>
+                <constraint firstItem="GYA-qF-Aak" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fd7-ZL-ogh"/>
+                <constraint firstItem="GYA-qF-Aak" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ui5-ZK-tkF"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="gotoButton" destination="mpY-OL-5Wc" id="r1i-DO-tp7"/>
+                <outlet property="subTitleLabel" destination="2eC-9x-agt" id="hyZ-bB-n6i"/>
+                <outlet property="titleLabel" destination="GYA-qF-Aak" id="RzC-Pw-tWC"/>
+            </connections>
+            <point key="canvasLocation" x="27" y="-30"/>
+        </view>
+    </objects>
+</document>

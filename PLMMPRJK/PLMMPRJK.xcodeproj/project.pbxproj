@@ -437,6 +437,8 @@
 		58AFACEF1EB8AFD400822043 /* LMJBaiduMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACEE1EB8AFD400822043 /* LMJBaiduMapViewController.m */; };
 		58AFACF21EB8D72100822043 /* LMJBaiduPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACF11EB8D72100822043 /* LMJBaiduPointAnnotation.m */; };
 		58AFACF51EB8D7F000822043 /* LMJCoordinateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */; };
+		58AFAF031EB9B40B00822043 /* LMJAnnotationCustomPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */; };
+		58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1322,6 +1324,9 @@
 		58AFACF11EB8D72100822043 /* LMJBaiduPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBaiduPointAnnotation.m; sourceTree = "<group>"; };
 		58AFACF31EB8D7F000822043 /* LMJCoordinateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCoordinateModel.h; sourceTree = "<group>"; };
 		58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCoordinateModel.m; sourceTree = "<group>"; };
+		58AFAF011EB9B40B00822043 /* LMJAnnotationCustomPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAnnotationCustomPopView.h; sourceTree = "<group>"; };
+		58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAnnotationCustomPopView.m; sourceTree = "<group>"; };
+		58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMJAnnotationCustomPopView.xib; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3212,32 +3217,32 @@
 			children = (
 				58AFAA0B1EB4ADA900822043 /* BaseModels */,
 				58AFAA121EB4ADA900822043 /* BaseView */,
-				58AFAA211EB4ADA900822043 /* LMJBaseViewController.h */,
-				58AFAA221EB4ADA900822043 /* LMJBaseViewController.m */,
-				58AFAA231EB4ADA900822043 /* LMJCollectionViewController.h */,
-				58AFAA241EB4ADA900822043 /* LMJCollectionViewController.m */,
 				58AFAA251EB4ADA900822043 /* LMJNavigationController.h */,
 				58AFAA261EB4ADA900822043 /* LMJNavigationController.m */,
 				58AFAA271EB4ADA900822043 /* LMJNavUIBaseViewController.h */,
 				58AFAA281EB4ADA900822043 /* LMJNavUIBaseViewController.m */,
-				58AFAA291EB4ADA900822043 /* LMJRefreshCollectionViewController.h */,
-				58AFAA2A1EB4ADA900822043 /* LMJRefreshCollectionViewController.m */,
-				58AFAA2B1EB4ADA900822043 /* LMJRefreshTableViewController.h */,
-				58AFAA2C1EB4ADA900822043 /* LMJRefreshTableViewController.m */,
-				58AFAA2D1EB4ADAA00822043 /* LMJRequestBaseViewController.h */,
-				58AFAA2E1EB4ADAA00822043 /* LMJRequestBaseViewController.m */,
-				58AFAA2F1EB4ADAA00822043 /* LMJStaticTableViewController.h */,
-				58AFAA301EB4ADAA00822043 /* LMJStaticTableViewController.m */,
-				58AFAA311EB4ADAA00822043 /* LMJTableViewController.h */,
-				58AFAA321EB4ADAA00822043 /* LMJTableViewController.m */,
 				58AFAA331EB4ADAA00822043 /* LMJTextViewController.h */,
 				58AFAA341EB4ADAA00822043 /* LMJTextViewController.m */,
-				58AFAA351EB4ADAA00822043 /* LMJTitleListChildViewController.h */,
-				58AFAA361EB4ADAA00822043 /* LMJTitleListChildViewController.m */,
-				58AFAA371EB4ADAA00822043 /* LMJTitlesListsParentViewController.h */,
-				58AFAA381EB4ADAA00822043 /* LMJTitlesListsParentViewController.m */,
+				58AFAA2D1EB4ADAA00822043 /* LMJRequestBaseViewController.h */,
+				58AFAA2E1EB4ADAA00822043 /* LMJRequestBaseViewController.m */,
+				58AFAA211EB4ADA900822043 /* LMJBaseViewController.h */,
+				58AFAA221EB4ADA900822043 /* LMJBaseViewController.m */,
+				58AFAA311EB4ADAA00822043 /* LMJTableViewController.h */,
+				58AFAA321EB4ADAA00822043 /* LMJTableViewController.m */,
+				58AFAA231EB4ADA900822043 /* LMJCollectionViewController.h */,
+				58AFAA241EB4ADA900822043 /* LMJCollectionViewController.m */,
 				58AFAA391EB4ADAA00822043 /* LMJWebViewController.h */,
 				58AFAA3A1EB4ADAA00822043 /* LMJWebViewController.m */,
+				58AFAA2B1EB4ADA900822043 /* LMJRefreshTableViewController.h */,
+				58AFAA2C1EB4ADA900822043 /* LMJRefreshTableViewController.m */,
+				58AFAA291EB4ADA900822043 /* LMJRefreshCollectionViewController.h */,
+				58AFAA2A1EB4ADA900822043 /* LMJRefreshCollectionViewController.m */,
+				58AFAA2F1EB4ADAA00822043 /* LMJStaticTableViewController.h */,
+				58AFAA301EB4ADAA00822043 /* LMJStaticTableViewController.m */,
+				58AFAA371EB4ADAA00822043 /* LMJTitlesListsParentViewController.h */,
+				58AFAA381EB4ADAA00822043 /* LMJTitlesListsParentViewController.m */,
+				58AFAA351EB4ADAA00822043 /* LMJTitleListChildViewController.h */,
+				58AFAA361EB4ADAA00822043 /* LMJTitleListChildViewController.m */,
 			);
 			path = LMJBase;
 			sourceTree = "<group>";
@@ -3823,6 +3828,9 @@
 		58AFACCD1EB60E3700822043 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				58AFAF011EB9B40B00822043 /* LMJAnnotationCustomPopView.h */,
+				58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */,
+				58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4053,6 +4061,7 @@
 				58AFAB9D1EB4ADAA00822043 /* IQKeyboardManager.bundle in Resources */,
 				58AFABBB1EB4ADAA00822043 /* README.txt in Resources */,
 				588AACFB1E9F2253005F2A89 /* wishPage_2.gif in Resources */,
+				58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4190,6 +4199,7 @@
 				58AFABEA1EB4ADAA00822043 /* UIFont-TTF.m in Sources */,
 				58AFACB01EB4ADAB00822043 /* MPBlockLoopOperation.m in Sources */,
 				58AFAC281EB4ADAA00822043 /* UIView+BlockGesture.m in Sources */,
+				58AFAF031EB9B40B00822043 /* LMJAnnotationCustomPopView.m in Sources */,
 				58AFAB5C1EB4ADAA00822043 /* CAMediaTimingFunction+AdditionalEquations.m in Sources */,
 				58AFAC401EB4ADAA00822043 /* UIWebView+Alert.m in Sources */,
 				58AFAC841EB4ADAB00822043 /* LMJElementsCollectionViewController.m in Sources */,

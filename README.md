@@ -8,13 +8,29 @@
 
 ## 已经完成的
 
-- 导航条自定义, 没有用系统的导航条UI
+
 - 启动导引, 启动广告
-- 友盟第三方登录, 友盟分享, 友盟推送
+
+- 导航条自定义, 没有用系统的导航条UI
+
+<img src="./images/home3.png" width="200" height="300">
+
 - 基础知识点
 
-![img-w150](./images/home4.png)
+<img src="./images/home1.png" width="200" height="300">
 
-![img-w150](./images/home3.png)
+- 友盟第三方登录, 友盟分享, 友盟推送
 
-![img-w150](./images/home1.png)
+<img src="./images/home4.png" width="200" height="300">
+
+- 各种功能 demo 
+
+<img src="./images/home2.png" width="200" height="300">
+
+<img src="./images/home5.png" width="200" height="300">
+
+
+
+
+
+

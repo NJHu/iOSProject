@@ -34,7 +34,7 @@
     [super viewWillAppear:animated];
     
     // 配置友盟统计
-    [MPUmengHelper beginLogPageViewName:self.title];
+    [MPUmengHelper beginLogPageViewName:self.title ?: self.navigationItem.title];
     
 }
 
@@ -52,7 +52,7 @@
     [super viewDidDisappear:animated];
     
     // 配置友盟统计
-    [MPUmengHelper endLogPageViewName:self.title];
+    [MPUmengHelper endLogPageViewName:self.title ?: self.navigationItem.title];
 
 }
 
@@ -74,7 +74,7 @@
 - (void)dealloc
 {
     
-    NSLog(@"%@", self.class);
+    NSLog(@"dealloc---%@", self.class);
     
     [kNotificationCenter removeObserver:self];
     

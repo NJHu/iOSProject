@@ -15,6 +15,9 @@
 
 
 /** <#digest#> */
+@property (assign, nonatomic) NSInteger selectedIndex; // 当前的索引
+
+/** <#digest#> */
 //@property (assign, nonatomic) NSInteger degree;
 
 
