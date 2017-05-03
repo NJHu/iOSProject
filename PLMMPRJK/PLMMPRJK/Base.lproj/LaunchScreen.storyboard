@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LanuchImage1" translatesAutoresizingMaskIntoConstraints="NO" id="rE1-gO-23d">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LanuchImage1.png" highlightedImage="LanuchImage1.png" translatesAutoresizingMaskIntoConstraints="NO" id="rE1-gO-23d">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LanuchImage1" width="16" height="16"/>
+        <image name="LanuchImage1.png" width="1080" height="1920"/>
     </resources>
 </document>

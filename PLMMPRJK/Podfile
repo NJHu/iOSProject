@@ -14,25 +14,38 @@ pod 'SDWebImage'
 #用于适配
 pod 'Masonry'
 #友盟统计
-pod 'BaiduMapKit' #百度地图SDK
 pod 'UMengAnalytics'
-#pod 'UMengSocial'  #友盟社会化分享及第三方登录
-#pod 'UMengUShare'
+#百度地图SDK
+pod 'BaiduMapKit'
+
+
 pod 'ActionSheetPicker-3.0'
+
 pod 'CYLTabBarController'
+
 pod 'RegexKitLite'
+
 pod 'SVProgressHUD'
+
 pod 'MWPhotoBrowser'
+
 pod 'YYKit'
+
 pod 'CocoaLumberjack'
+
 pod 'MagicWindowSDK'
+
 pod 'FMDB'
+
 pod 'FLEX', '~> 2.0', :configurations => ['Debug']
+
 pod 'ActionSheetPicker-3.0'
 pod 'XAspect'
+# 数据库
 pod 'LKDBHelper'
-#pod 'IQKeyboardManager', '~> 4.0.8'
-pod 'LBXScan','~> 1.1.1'
+
+# 二维码
+pod 'LBXScan'
 pod 'MBProgressHUD'
 pod 'MWPhotoBrowser'
 pod 'WebViewJavascriptBridge', '~> 5.0'

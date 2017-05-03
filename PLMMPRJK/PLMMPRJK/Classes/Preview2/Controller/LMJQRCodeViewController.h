@@ -7,7 +7,8 @@
 //
 
 #import "LMJBaseViewController.h"
+#import <LBXScanViewController.h>
 
-@interface LMJQRCodeViewController : LMJBaseViewController
+@interface LMJQRCodeViewController : LBXScanViewController
 
 @end
