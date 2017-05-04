@@ -1,0 +1,1 @@
+../../../HMQRCodeScanner/HMQRCodeScanner/QRCode/HMScannerMaskView.h

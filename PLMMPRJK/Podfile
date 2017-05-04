@@ -46,6 +46,9 @@ pod 'LKDBHelper'
 
 # 二维码
 pod 'LBXScan'
+pod 'HMQRCodeScanner'
+
+# 蒙版
 pod 'MBProgressHUD'
 pod 'MWPhotoBrowser'
 pod 'WebViewJavascriptBridge', '~> 5.0'

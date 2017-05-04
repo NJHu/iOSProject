@@ -28,6 +28,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - HMQRCodeScanner (1.0.6)
   - LBXScan (1.1.1):
     - ZXingObjC (~> 3.0)
   - LKDBHelper (2.4.1):
@@ -71,6 +72,7 @@ DEPENDENCIES:
   - CYLTabBarController
   - FLEX (~> 2.0)
   - FMDB
+  - HMQRCodeScanner
   - LBXScan
   - LKDBHelper
   - MagicWindowSDK
@@ -96,6 +98,7 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
   LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
   LKDBHelper: 531581fa6a7d0f14236cc028ce0d277bca73436a
   MagicWindowSDK: 96eef59392c2b488a8139275546103b9566fc5a7
@@ -113,6 +116,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: d1db6ff364e1c2c1bb60366e28fa1171f079ff33
+PODFILE CHECKSUM: 78a23e6cfb303177e6983280d35571979aaacd80
 
 COCOAPODS: 1.2.0
