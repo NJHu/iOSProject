@@ -65,4 +65,8 @@ static NSString *const LMJThirdSDKMagicWindow = @"75Z6Q063T395YQ85QN27FDR7RAVIEK
 
 static NSString *const LMJThirdSDKBaiduMapKey = @"K4FQLr0hX8zGxsYdGVuFTAmpMNRCVLBF";
 
+
+//最大的上传图片张数
+#define kupdateMaximumNumberOfImage 6
+
 #endif /* LMJConstants_h */

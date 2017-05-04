@@ -24,6 +24,7 @@
 #import "LMJLKDBViewController.h"
 #import "LMJBaiduMapViewController.h"
 #import "LMJQRCodeViewController.h"
+#import "LMJUpLoadImagesViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -119,8 +120,13 @@
     LMJWordArrowItem *item16 = [LMJWordArrowItem itemWithTitle:@"二维码" subTitle: nil];
     
     item16.destVc = [LMJQRCodeViewController class];
+
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    LMJWordArrowItem *item17 = [LMJWordArrowItem itemWithTitle:@"照片上传" subTitle: nil];
+    
+    item17.destVc = [LMJUpLoadImagesViewController class];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }

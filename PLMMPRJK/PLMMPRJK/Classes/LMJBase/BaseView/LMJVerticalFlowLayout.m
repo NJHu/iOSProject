@@ -7,6 +7,8 @@
 //
 
 #import "LMJVerticalFlowLayout.h"
+#define LMJXX(x) floorf(x)
+#define LMJXS(s) ceilf(s)
 
 static const NSInteger LMJ_Columns_ = 3;
 static const CGFloat LMJ_XMargin_ = 10;
@@ -73,6 +75,8 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     UICollectionViewLayoutAttributes *atrbs = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
     CGFloat w = 1.0 * (self.collectionView.frame.size.width - self.edgeInsets.left - self.edgeInsets.right - self.xMargin * (self.columns - 1)) / self.columns;
+    
+    w = LMJXX(w);
     
     // 高度由外界决定, 外界必须实现这个方法
     CGFloat h = [self.delegate waterflowLayout:self collectionView:self.collectionView heightForItemAtIndexPath:indexPath itemWidth:w];

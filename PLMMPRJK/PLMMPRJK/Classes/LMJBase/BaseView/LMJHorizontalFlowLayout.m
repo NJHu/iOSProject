@@ -8,6 +8,9 @@
 
 #import "LMJHorizontalFlowLayout.h"
 
+#define LMJXX(x) floorf(x)
+#define LMJXS(s) ceilf(s)
+
 static const NSInteger LMJ_Lines_ = 3;
 static const CGFloat LMJ_XMargin_ = 10;
 static const CGFloat LMJ_YMargin_ = 10;
@@ -73,6 +76,8 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
     UICollectionViewLayoutAttributes *atrbs = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
     CGFloat h = 1.0 * (self.collectionView.frame.size.height - self.edgeInsets.top - self.edgeInsets.bottom - self.yMargin * (self.lines - 1)) / self.lines;
+    
+    h = LMJXX(h);
     
     // 宽度由外界决定, 外界必须实现这个方法
     CGFloat w = [self.delegate waterflowLayout:self collectionView:self.collectionView widthForItemAtIndexPath:indexPath itemHeight:h];

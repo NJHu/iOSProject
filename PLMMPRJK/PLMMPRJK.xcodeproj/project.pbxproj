@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		583EB8AA1EBAC08400A945D3 /* LMJQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EB8A91EBAC08400A945D3 /* LMJQRCodeViewController.m */; };
 		583EB8AC1EBAC24900A945D3 /* WechatIMG10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 583EB8AB1EBAC24900A945D3 /* WechatIMG10.jpeg */; };
+		583EB8AF1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EB8AE1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m */; };
+		583EB8B21EBAEEB300A945D3 /* LMJUpLoadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EB8B11EBAEEB300A945D3 /* LMJUpLoadImageCell.m */; };
+		583EB8B51EBAF95100A945D3 /* MPUploadImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EB8B41EBAF95100A945D3 /* MPUploadImageHelper.m */; };
+		583EB8B81EBAFACD00A945D3 /* MPImageItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EB8B71EBAFACD00A945D3 /* MPImageItemModel.m */; };
 		588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB701E9CB84A005F2A89 /* Preview.xcassets */; };
 		588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB721E9CB858005F2A89 /* Public.xcassets */; };
 		588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF61E9F2253005F2A89 /* wishPage_1.gif */; };
@@ -471,6 +475,14 @@
 		583EB8A81EBAC08400A945D3 /* LMJQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJQRCodeViewController.h; sourceTree = "<group>"; };
 		583EB8A91EBAC08400A945D3 /* LMJQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJQRCodeViewController.m; sourceTree = "<group>"; };
 		583EB8AB1EBAC24900A945D3 /* WechatIMG10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG10.jpeg; sourceTree = "<group>"; };
+		583EB8AD1EBAD23000A945D3 /* LMJUpLoadImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJUpLoadImagesViewController.h; sourceTree = "<group>"; };
+		583EB8AE1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJUpLoadImagesViewController.m; sourceTree = "<group>"; };
+		583EB8B01EBAEEB300A945D3 /* LMJUpLoadImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJUpLoadImageCell.h; sourceTree = "<group>"; };
+		583EB8B11EBAEEB300A945D3 /* LMJUpLoadImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJUpLoadImageCell.m; sourceTree = "<group>"; };
+		583EB8B31EBAF95100A945D3 /* MPUploadImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUploadImageHelper.h; sourceTree = "<group>"; };
+		583EB8B41EBAF95100A945D3 /* MPUploadImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUploadImageHelper.m; sourceTree = "<group>"; };
+		583EB8B61EBAFACD00A945D3 /* MPImageItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPImageItemModel.h; sourceTree = "<group>"; };
+		583EB8B71EBAFACD00A945D3 /* MPImageItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPImageItemModel.m; sourceTree = "<group>"; };
 		588AAB701E9CB84A005F2A89 /* Preview.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Preview.xcassets; sourceTree = "<group>"; };
 		588AAB721E9CB858005F2A89 /* Public.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Public.xcassets; sourceTree = "<group>"; };
 		588AACF61E9F2253005F2A89 /* wishPage_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_1.gif; sourceTree = "<group>"; };
@@ -3802,6 +3814,8 @@
 				58AFACEE1EB8AFD400822043 /* LMJBaiduMapViewController.m */,
 				583EB8A81EBAC08400A945D3 /* LMJQRCodeViewController.h */,
 				583EB8A91EBAC08400A945D3 /* LMJQRCodeViewController.m */,
+				583EB8AD1EBAD23000A945D3 /* LMJUpLoadImagesViewController.h */,
+				583EB8AE1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3815,6 +3829,8 @@
 				58AFACF11EB8D72100822043 /* LMJBaiduPointAnnotation.m */,
 				58AFACF31EB8D7F000822043 /* LMJCoordinateModel.h */,
 				58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */,
+				583EB8B61EBAFACD00A945D3 /* MPImageItemModel.h */,
+				583EB8B71EBAFACD00A945D3 /* MPImageItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3822,6 +3838,8 @@
 		58AFACC91EB60E3700822043 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				583EB8B31EBAF95100A945D3 /* MPUploadImageHelper.h */,
+				583EB8B41EBAF95100A945D3 /* MPUploadImageHelper.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -3839,6 +3857,8 @@
 				58AFAF011EB9B40B00822043 /* LMJAnnotationCustomPopView.h */,
 				58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */,
 				58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */,
+				583EB8B01EBAEEB300A945D3 /* LMJUpLoadImageCell.h */,
+				583EB8B11EBAEEB300A945D3 /* LMJUpLoadImageCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4200,6 +4220,7 @@
 				58AFAB7B1EB4ADAA00822043 /* GCDTimer.m in Sources */,
 				58AFAC031EB4ADAA00822043 /* UILabel+ESAdjustableLabel.m in Sources */,
 				58AFAC171EB4ADAA00822043 /* UISearchBar+Blocks.m in Sources */,
+				583EB8B81EBAFACD00A945D3 /* MPImageItemModel.m in Sources */,
 				58AFACB21EB4ADAB00822043 /* UIAlertView+LMJBlock.m in Sources */,
 				58AFAB011EB4ADAA00822043 /* NSManagedObjectContext+Fetching.m in Sources */,
 				58AFAB631EB4ADAA00822043 /* WJYAlertInputTextView.m in Sources */,
@@ -4265,9 +4286,11 @@
 				58AFAB471EB4ADAA00822043 /* NSString+Score.m in Sources */,
 				58AFAC9E1EB4ADAB00822043 /* main.m in Sources */,
 				58AFAC2E1EB4ADAA00822043 /* UIView+Find.m in Sources */,
+				583EB8B21EBAEEB300A945D3 /* LMJUpLoadImageCell.m in Sources */,
 				58AFAC3E1EB4ADAA00822043 /* UIViewController+TopBarMessage.m in Sources */,
 				58AFAC971EB4ADAB00822043 /* MPTitleAndPromptCell.m in Sources */,
 				58AFAB551EB4ADAA00822043 /* NSUserDefaults+SafeAccess.m in Sources */,
+				583EB8AF1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m in Sources */,
 				58AFAB731EB4ADAA00822043 /* IFlyFaceResultKeys.m in Sources */,
 				58AFABE41EB4ADAA00822043 /* UIControl+ActionBlocks.m in Sources */,
 				58AFAB331EB4ADAA00822043 /* NSObject+GCD.m in Sources */,
@@ -4351,6 +4374,7 @@
 				58AFAC651EB4ADAB00822043 /* LMJWebViewController.m in Sources */,
 				58AFAC9F1EB4ADAB00822043 /* LMJBlockLoopViewController.m in Sources */,
 				58AFABF21EB4ADAA00822043 /* UIImage+FX.m in Sources */,
+				583EB8B51EBAF95100A945D3 /* MPUploadImageHelper.m in Sources */,
 				58AFAC631EB4ADAB00822043 /* LMJTitleListChildViewController.m in Sources */,
 				58AFABDB1EB4ADAA00822043 /* UIButton+Indicator.m in Sources */,
 				58AFAB6F1EB4ADAA00822043 /* IFlyFaceImage.m in Sources */,

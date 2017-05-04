@@ -61,7 +61,7 @@ static int const showtime = 3;
 - (void)setFilePath:(NSString *)filePath
 {
     _filePath = filePath;
-    _adView.image = [UIImage imageWithContentsOfFile:filePath];
+    _adView.image = [YYImage imageWithContentsOfFile:filePath];
 }
 
 - (void)pushToAd{

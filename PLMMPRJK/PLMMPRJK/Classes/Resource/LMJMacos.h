@@ -111,10 +111,7 @@
 #define LMJKeyPath(obj, key) @(((void)obj.key, #key))
 
 
-//上传图片相关
-#define kImageCollectionCell_Width floorf((Main_Screen_Width - 10*2- 10*3)/3)
-//最大的上传图片张数
-#define kupdateMaximumNumberOfImage 12
+
 
 
 

@@ -6,6 +6,8 @@
 //
 #import "LMJElementsFlowLayout.h"
 
+#define LMJXX(x) floorf(x)
+#define LMJXS(s) ceilf(s)
 
 static const CGFloat LMJ_XMargin_ = 10;
 static const CGFloat LMJ_YMargin_ = 10;
@@ -74,7 +76,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     // 原来的
     CGSize itemSize = [self.delegate waterflowLayout:self collectionView:self.collectionView sizeForItemAtIndexPath:indexPath];
     
-    CGFloat w = itemSize.width;
+    CGFloat w = LMJXX(itemSize.width);
     w = MIN(w, self.collectionView.frame.size.width);
     
     // 高度由外界决定, 外界必须实现这个方法

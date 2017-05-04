@@ -56,7 +56,7 @@
     
     cell.contentView.backgroundColor = [UIColor yellowColor];
     
-    
+    cell.contentView.clipsToBounds = YES;
     if (![cell.contentView viewWithTag:100]) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
         label.tag = 100;
