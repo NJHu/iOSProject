@@ -448,6 +448,9 @@
 		58CDBFB71EBB47EB00DBC8AA /* MPUploadImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB61EBB47EB00DBC8AA /* MPUploadImageHelper.m */; };
 		58CDBFBA1EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB91EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.m */; };
 		58CDBFBD1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFBC1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.m */; };
+		58D40EB61EBC7547004A4358 /* LMJListTimerCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EB51EBC7547004A4358 /* LMJListTimerCountDownViewController.m */; };
+		58D40EBC1EBC758E004A4358 /* LMJCountDownModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EBB1EBC758E004A4358 /* LMJCountDownModel.m */; };
+		58D40EBF1EBC799C004A4358 /* LMJCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EBE1EBC799C004A4358 /* LMJCountDownCell.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1352,6 +1355,12 @@
 		58CDBFB91EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJUpLoadProgressViewController.m; sourceTree = "<group>"; };
 		58CDBFBB1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJUploadImageProgressCell.h; sourceTree = "<group>"; };
 		58CDBFBC1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJUploadImageProgressCell.m; sourceTree = "<group>"; };
+		58D40EB41EBC7547004A4358 /* LMJListTimerCountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJListTimerCountDownViewController.h; sourceTree = "<group>"; };
+		58D40EB51EBC7547004A4358 /* LMJListTimerCountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJListTimerCountDownViewController.m; sourceTree = "<group>"; };
+		58D40EBA1EBC758E004A4358 /* LMJCountDownModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCountDownModel.h; sourceTree = "<group>"; };
+		58D40EBB1EBC758E004A4358 /* LMJCountDownModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCountDownModel.m; sourceTree = "<group>"; };
+		58D40EBD1EBC799C004A4358 /* LMJCountDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCountDownCell.h; sourceTree = "<group>"; };
+		58D40EBE1EBC799C004A4358 /* LMJCountDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCountDownCell.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3829,6 +3838,8 @@
 				583EB8AE1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m */,
 				58CDBFB81EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.h */,
 				58CDBFB91EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.m */,
+				58D40EB41EBC7547004A4358 /* LMJListTimerCountDownViewController.h */,
+				58D40EB51EBC7547004A4358 /* LMJListTimerCountDownViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3842,6 +3853,8 @@
 				58AFACF11EB8D72100822043 /* LMJBaiduPointAnnotation.m */,
 				58AFACF31EB8D7F000822043 /* LMJCoordinateModel.h */,
 				58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */,
+				58D40EBA1EBC758E004A4358 /* LMJCountDownModel.h */,
+				58D40EBB1EBC758E004A4358 /* LMJCountDownModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3872,6 +3885,8 @@
 				583EB8B11EBAEEB300A945D3 /* LMJUpLoadImageCell.m */,
 				58CDBFBB1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.h */,
 				58CDBFBC1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.m */,
+				58D40EBD1EBC799C004A4358 /* LMJCountDownCell.h */,
+				58D40EBE1EBC799C004A4358 /* LMJCountDownCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4224,6 +4239,8 @@
 				58AFAC481EB4ADAA00822043 /* WebView+Debug.m in Sources */,
 				58AFAC0C1EB4ADAA00822043 /* UINavigationItem+Lock.m in Sources */,
 				58AFAB1B1EB4ADAA00822043 /* NSDictionary+JSONString.m in Sources */,
+				58D40EBF1EBC799C004A4358 /* LMJCountDownCell.m in Sources */,
+				58D40EBC1EBC758E004A4358 /* LMJCountDownModel.m in Sources */,
 				58AFAC0D1EB4ADAA00822043 /* UINavigationItem+Margin.m in Sources */,
 				58AFAB1F1EB4ADAA00822043 /* NSDictionary+XML.m in Sources */,
 				58AFAB1E1EB4ADAA00822043 /* NSDictionary+URL.m in Sources */,
@@ -4529,6 +4546,7 @@
 				58AFAC011EB4ADAA00822043 /* UILabel+AutomaticWriting.m in Sources */,
 				58AFABF01EB4ADAA00822043 /* UIImage+Color.m in Sources */,
 				58AFAB7D1EB4ADAA00822043 /* introductoryPagesView.m in Sources */,
+				58D40EB61EBC7547004A4358 /* LMJListTimerCountDownViewController.m in Sources */,
 				58AFAC861EB4ADAB00822043 /* LMJKeyboardHandleViewController.m in Sources */,
 				58AFAC6C1EB4ADAB00822043 /* LMJMeViewController.m in Sources */,
 				58AFABC51EB4ADAA00822043 /* UIView+RoundedCorner.m in Sources */,

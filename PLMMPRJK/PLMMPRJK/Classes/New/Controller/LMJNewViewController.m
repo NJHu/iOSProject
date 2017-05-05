@@ -26,6 +26,7 @@
 #import "LMJQRCodeViewController.h"
 #import "LMJUpLoadImagesViewController.h"
 #import "LMJUpLoadProgressViewController.h"
+#import "LMJListTimerCountDownViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -132,7 +133,12 @@
     
     item18.destVc = [LMJUpLoadProgressViewController class];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    
+    LMJWordArrowItem *item19 = [LMJWordArrowItem itemWithTitle:@"列表倒计时" subTitle: nil];
+    
+    item19.destVc = [LMJListTimerCountDownViewController class];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }
