@@ -123,11 +123,12 @@
     LMJBaseResponse *response = [LMJBaseResponse new];
     
     if (responseObject) {
-        response.data = responseObject;
+        response.responseObject = responseObject;
     }
     
     if (error) {
         response.error = error;
+        response.statusCode = error.code;
     }
     
     
@@ -166,18 +167,23 @@
 //  fileName 图片对应名字,一般服务不会使用,因为服务端会直接根据你上传的图片随机产生一个唯一的图片名字
 //  mimeType 资源类型
 //  不确定参数类型 可以这个 octet-stream 类型, 二进制流
-- (void)upload:(NSString *)urlString parameters:(id)parameters data:(NSData *)data name:(NSString *)name progress:(void (^)(NSProgress *progress))progress completion:(void (^)(LMJBaseResponse *response))completion
+- (void)upload:(NSString *)urlString parameters:(id)parameters formDataBlock:(void(^)(id<AFMultipartFormData> formData))formDataBlock progress:(void (^)(NSProgress *progress))progress completion:(void (^)(LMJBaseResponse *response))completion
 {
     
     [self POST:urlString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
-        NSString *mineType = @"application/octet-stream";
+//        NSString *mineType = @"application/octet-stream";
         
-        [formData appendPartWithFileData:data name:name fileName:@"test" mimeType:mineType];
+//        [formData appendPartWithFileData:data name:name fileName:@"test" mimeType:mineType];
+        
+        !formDataBlock ?: formDataBlock(formData);
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
-        !progress ?: progress(uploadProgress);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            !progress ?: progress(uploadProgress);
+        });
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         

@@ -8,21 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class LMJBaseRequest;
+UIKIT_EXTERN NSString *const LMJBaseRequestURL;
+
 @class LMJBaseResponse;
-@protocol LMJBaseRequestDataSource <NSObject>
 
-@required
-- (NSDictionary *)requestParameters:(LMJBaseRequest *)request;
+@interface LMJBaseRequest : NSObject
 
-- (NSString *)requestURL:(LMJBaseRequest *)request;
 
-@end
+- (void)GET:(NSString *)URLString parameters:(id)parameters completion:(void(^)(LMJBaseResponse *response))completion;
 
-@interface LMJBaseRequest : NSObject<LMJBaseRequestDataSource>
 
-- (void)GET:(void(^)(LMJBaseResponse *response))completion;
+- (void)POST:(NSString *)URLString parameters:(id)parameters completion:(void(^)(LMJBaseResponse *response))completion;
 
-- (void)POST:(void(^)(LMJBaseResponse *response))completion;
 
 @end

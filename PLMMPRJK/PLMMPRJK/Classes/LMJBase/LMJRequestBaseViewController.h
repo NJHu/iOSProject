@@ -12,12 +12,6 @@
 @protocol LMJRequestBaseViewControllerDelegate <NSObject>
 
 @optional
-#pragma mark - 处理无网络连接的情况
-- (void)requestNoConnection:(LMJRequestBaseViewController *)requestBaseViewController;
-
-#pragma mark - 处理网络错误提示
-- (BOOL)request:(LMJRequestBaseViewController *)requestBaseViewController error:(NSError *)error;
-
 #pragma mark - 网络监听
 /*
  NotReachable = 0,
@@ -27,11 +21,9 @@
  ReachableVia3G = 4,
  ReachableVia4G = 5,
  */
-- (void)networkStatusChange:(NetworkStatus)networkStatus;
+- (void)networkStatus:(NetworkStatus)networkStatus inViewController:(LMJRequestBaseViewController *)inViewController;
 
 @end
-
-
 
 
 
@@ -41,14 +33,5 @@
 - (void)showLoading;
 
 - (void)dismissLoading;
-
-#pragma mark - 请求网络数据
-- (void)request:(LMJBaseRequest *)request completion:(void (^)(id responseData))completion;
-
-//在后台发请求数据， 不显示loading
-- (void)requestInBackgroud:(LMJBaseRequest *)request completion:(void (^)(id responseData))completion;
-
-- (void)request:(LMJBaseRequest *)request showLoading:(BOOL)showLoading completion:(void (^)(id responseData))completion;
-
 
 @end

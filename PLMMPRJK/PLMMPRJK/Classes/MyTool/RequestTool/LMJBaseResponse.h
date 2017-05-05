@@ -25,6 +25,6 @@ UIKIT_EXTERN NSString *const LMJBaseResponseCustomErrorMsgKey;
 @property (nonatomic, copy) NSMutableDictionary *headers;
 
 /** <#digest#> */
-@property (nonatomic, strong) id data;
+@property (nonatomic, strong) id responseObject;
 
 @end

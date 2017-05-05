@@ -19,7 +19,7 @@ NSString *const LMJBaseResponseCustomErrorMsgKey = @"LMJBaseResponseCustomErrorM
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%zd, %@, %@, %@", self.statusCode, self.error, self.headers, self.data];
+    return [NSString stringWithFormat:@"\n状态吗: %zd,\n错误: %@,\n响应头: %@,\n响应体: %@", self.statusCode, self.error, self.headers, self.responseObject];
 }
 
 @end

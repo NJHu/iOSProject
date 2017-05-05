@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 
 
+typedef enum : NSUInteger {
+    LMJRequestManagerStatusCodeSuccess,
+    LMJRequestManagerStatusCodeNoReachable,
+} LMJRequestManagerStatusCode;
 
 typedef LMJBaseResponse *(^ResponseFormat)(LMJBaseResponse *response);
 
@@ -39,7 +43,7 @@ typedef LMJBaseResponse *(^ResponseFormat)(LMJBaseResponse *response);
   data 对应的二进制数据
   name 服务端需要参数
  */
-- (void)upload:(NSString *)urlString parameters:(id)parameters data:(NSData *)data name:(NSString *)name progress:(void (^)(NSProgress *progress))progress completion:(void (^)(LMJBaseResponse *response))completion;
+- (void)upload:(NSString *)urlString parameters:(id)parameters formDataBlock:(void(^)(id<AFMultipartFormData> formData))formDataBlock progress:(void (^)(NSProgress *progress))progress completion:(void (^)(LMJBaseResponse *response))completion;
 
 
 @end

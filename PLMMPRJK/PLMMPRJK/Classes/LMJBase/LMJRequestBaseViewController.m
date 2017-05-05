@@ -36,70 +36,6 @@
     [MBProgressHUD hideHUDForView:self.view];
 }
 
-// 显示加载框
-- (void)request:(LMJBaseRequest *)request completion:(void (^)(id responseData))completion
-{
-    [self request:request showLoading:YES completion:completion];
-}
-
-//在后台发请求数据， 不显示loading
-- (void)requestInBackgroud:(LMJBaseRequest *)request completion:(void (^)(id responseData))completion
-{
-    [self request:request showLoading:NO completion:completion];
-}
-
-
-#pragma mark - 请求网络数据
-- (void)request:(LMJBaseRequest *)request showLoading:(BOOL)showLoading completion:(void (^)(id responseData))completion
-{
-    
-    if ([LMJRequestManager sharedManager].currentNetworkStatus == AFNetworkReachabilityStatusNotReachable) {
-        
-        [self requestNoConnection:self];
-        
-        return;
-    }
-    
-    
-    !showLoading ?: [self showLoading];
-    
-    LMJWeakSelf(self);
-    [request POST:^(LMJBaseResponse *response) {
-        
-        if (!weakself) {
-            return ;
-        }
-        
-        !showLoading ?: [self dismissLoading];
-        
-        if (response.error && ![self request:self error:response.error]) {
-            return;
-        }
-        
-        !completion ?: completion(response.data);
-        
-    }];
-    
-}
-
-
-
-
-- (void)requestNoConnection:(LMJRequestBaseViewController *)requestBaseViewController
-{
-    [self.view makeToast:@"没用网络连接" duration:0.5 position:CSToastPositionCenter];
-    NSLog(@"没用网络连接");
-}
-
-
-- (BOOL)request:(LMJRequestBaseViewController *)requestBaseViewController error:(NSError *)error
-{
-    NSLog(@"%@", error);
-    
-    [self.view makeToast: error.userInfo[LMJBaseResponseSystemErrorMsgKey] ?: error.userInfo[LMJBaseResponseCustomErrorMsgKey] duration:0.5 position:CSToastPositionCenter];
-    
-    return YES;
-}
 
 
 #pragma mark - 监听网络状态
@@ -114,7 +50,7 @@
         
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [weakself networkStatusChange:reachability.currentReachabilityStatus];
+                [weakself networkStatus:reachability.currentReachabilityStatus inViewController:weakself];
                 
             });
             
@@ -125,7 +61,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [weakself networkStatusChange:reachability.currentReachabilityStatus];
+                [weakself networkStatus:reachability.currentReachabilityStatus inViewController:weakself];
                 
             });
             
@@ -138,7 +74,8 @@
 }
 
 
-- (void)networkStatusChange:(NetworkStatus)networkStatus
+#pragma mark - LMJRequestBaseViewControllerDelegate
+- (void)networkStatus:(NetworkStatus)networkStatus inViewController:(LMJRequestBaseViewController *)inViewController
 {
     //判断网络状态
     switch (networkStatus) {
@@ -155,10 +92,7 @@
             break;
     }
     
-    
 }
-
-
 
 
 - (void)dealloc

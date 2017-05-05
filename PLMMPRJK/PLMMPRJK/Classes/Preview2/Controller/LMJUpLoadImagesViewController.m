@@ -10,6 +10,7 @@
 #import "LMJUpLoadImageCell.h"
 #import "MPUploadImageHelper.h"
 #import <MWPhotoBrowser.h>
+#import "LMJUploadImagesService.h"
 
 @interface LMJUpLoadImagesViewController ()<LMJElementsFlowLayoutDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, QBImagePickerControllerDelegate, MWPhotoBrowserDelegate>
 
@@ -262,8 +263,31 @@
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
+    LMJUploadImagesService *uploadService = [LMJUploadImagesService new];
+    uploadService.imagesArray = [self.uploadImageHelper.imagesArray valueForKey:@"image"];
+    
+    [uploadService uploadWithProgress:^(NSProgress *progress) {
+        
+        [MBProgressHUD showProgressToView:self.view Text:[NSString stringWithFormat:@"%.2f", (double)progress.completedUnitCount / progress.totalUnitCount]];
+        
+        
+    } completion:^(LMJBaseResponse *response) {
+        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+        
+
+        if (response.error) {
+            
+            [MBProgressHUD showError:@"上传错误" ToView: self.view];
+        }
+        
+        
+        
+    }];
     
     
 }
+
+
 
 @end

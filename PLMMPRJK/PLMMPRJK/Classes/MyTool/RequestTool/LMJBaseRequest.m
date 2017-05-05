@@ -8,30 +8,63 @@
 
 #import "LMJBaseRequest.h"
 
+NSString *const LMJBaseRequestURL = @"http://120.25.226.186:32812";
+
 @implementation LMJBaseRequest
 
-- (NSDictionary *)requestParameters:(LMJBaseRequest *)request
+
+- (void)GET:(NSString *)URLString parameters:(id)parameters completion:(void(^)(LMJBaseResponse *response))completion
 {
-    NSAssert(0, @"需要重写");
-    return nil;
+    if ([LMJRequestManager sharedManager].currentNetworkStatus == AFNetworkReachabilityStatusNotReachable) {
+        
+        LMJBaseResponse *response = [LMJBaseResponse new];
+        response.statusCode = LMJRequestManagerStatusCodeNoReachable;
+        response.error = [NSError errorWithDomain:NSNetServicesErrorDomain code:LMJRequestManagerStatusCodeNoReachable userInfo:@{LMJBaseResponseSystemErrorMsgKey : @"网络无法连接"}];
+        
+        completion(response);
+        
+        return;
+    }
+    
+    LMJWeakSelf(self);
+    [[LMJRequestManager sharedManager] GET:URLString parameters:parameters completion:^(LMJBaseResponse *response) {
+        
+        if (!weakself) {
+            return ;
+        }
+        
+        
+        !completion ?: completion(response);
+        
+    }];
+}
+
+- (void)POST:(NSString *)URLString parameters:(id)parameters completion:(void(^)(LMJBaseResponse *response))completion
+{
+    if ([LMJRequestManager sharedManager].currentNetworkStatus == AFNetworkReachabilityStatusNotReachable) {
+        
+        LMJBaseResponse *response = [LMJBaseResponse new];
+        response.statusCode = LMJRequestManagerStatusCodeNoReachable;
+        response.error = [NSError errorWithDomain:NSNetServicesErrorDomain code:LMJRequestManagerStatusCodeNoReachable userInfo:@{LMJBaseResponseSystemErrorMsgKey : @"网络无法连接"}];
+        
+        completion(response);
+        
+        return;
+    }
+    
+    LMJWeakSelf(self);
+    [[LMJRequestManager sharedManager] POST:URLString parameters:parameters completion:^(LMJBaseResponse *response) {
+        
+        if (!weakself) {
+            return ;
+        }
+        
+        
+        !completion ?: completion(response);
+        
+    }];
 }
 
 
-
-- (NSString *)requestURL:(LMJBaseRequest *)request
-{
-    NSAssert(0, @"需要重写");
-    return nil;
-}
-
-- (void)GET:(void (^)(LMJBaseResponse *))completion
-{
-    [[LMJRequestManager sharedManager] GET:[self requestURL:self] parameters:[self requestParameters:self] completion:completion];
-}
-
-- (void)POST:(void (^)(LMJBaseResponse *))completion
-{
-    [[LMJRequestManager sharedManager] POST:[self requestURL:self] parameters:[self requestParameters:self] completion:completion];
-}
 
 @end
