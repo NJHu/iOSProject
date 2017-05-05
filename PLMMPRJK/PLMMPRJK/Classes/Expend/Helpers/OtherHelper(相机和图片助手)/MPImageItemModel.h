@@ -30,6 +30,9 @@ typedef NS_ENUM(NSInteger, MPImageUploadState)
 @property (strong, nonatomic) NSURL *assetURL;
 //上传状态
 @property (assign, nonatomic) MPImageUploadState uploadState;
+
+/** <#digest#> */
+@property (assign, nonatomic) CGFloat uploadProgress;
 //服务端绑定图片[因为可修改图片上传时，会从服务端绑定一些图片上来，这部分是不用修改,还未启用]
 @property(nonatomic,copy)NSString *httpUrl;
 @property(nonatomic,copy)NSString *upServicePath;

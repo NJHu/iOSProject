@@ -53,4 +53,7 @@ pod 'MBProgressHUD'
 pod 'MWPhotoBrowser'
 pod 'WebViewJavascriptBridge', '~> 5.0'
 
+# 进度
+pod 'M13ProgressSuite'
+
 end

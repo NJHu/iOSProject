@@ -96,4 +96,31 @@
     return imageItem;
 }
 
+//- (void)setUploadState:(MPImageUploadState)uploadState
+//{
+//    _uploadState = uploadState;
+//    
+////    MPImageUploadStateInit = 0,
+////    MPImageUploadStateIng,
+////    MPImageUploadStateSuccess,
+////    MPImageUploadStateFail
+//    switch (uploadState) {
+//        case MPImageUploadStateInit:
+//            self.uploadProgress = 0;
+//            break;
+//        case MPImageUploadStateIng:
+//            
+//            break;
+//        case MPImageUploadStateSuccess:
+//            self.uploadProgress = 1;
+//            break;
+//        case MPImageUploadStateFail:
+//            
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//}
+
 @end

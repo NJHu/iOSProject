@@ -33,6 +33,7 @@ PODS:
     - ZXingObjC (~> 3.0)
   - LKDBHelper (2.4.1):
     - FMDB
+  - M13ProgressSuite (1.2.9)
   - MagicWindowSDK (3.90.170116):
     - MagicWindowSDK/WeChat (= 3.90.170116)
   - MagicWindowSDK/WeChat (3.90.170116)
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - HMQRCodeScanner
   - LBXScan
   - LKDBHelper
+  - M13ProgressSuite
   - MagicWindowSDK
   - Masonry
   - MBProgressHUD
@@ -101,6 +103,7 @@ SPEC CHECKSUMS:
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
   LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
   LKDBHelper: 531581fa6a7d0f14236cc028ce0d277bca73436a
+  M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
   MagicWindowSDK: 96eef59392c2b488a8139275546103b9566fc5a7
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
@@ -116,6 +119,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: 78a23e6cfb303177e6983280d35571979aaacd80
+PODFILE CHECKSUM: 96d8a3bcdbabd32bdd414f2f547fbae65ea9dd31
 
 COCOAPODS: 1.2.0

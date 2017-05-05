@@ -263,6 +263,11 @@
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
+    if (self.uploadImageHelper.imagesArray.count <= 0) {
+        [MBProgressHUD showAutoMessage:@"请选择照片进行上传" ToView:nil];
+        return;
+    }
+    
     LMJUploadImagesService *uploadService = [LMJUploadImagesService new];
     uploadService.imagesArray = [self.uploadImageHelper.imagesArray valueForKey:@"image"];
     
