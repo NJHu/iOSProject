@@ -57,13 +57,8 @@
 #pragma mark - setter
 - (void)setImageItem:(MPImageItemModel *)imageItem
 {
-    [_imageItem removeObserver:self forKeyPath:LMJKeyPath(_imageItem, thumbnailImage)];
+    [_imageItem removeObserverBlocks];
     
-    [_imageItem removeObserver:self forKeyPath:LMJKeyPath(_imageItem, uploadProgress)];
-    
-    [_imageItem removeObserver:self forKeyPath:LMJKeyPath(_imageItem, uploadState)];
-    
-
     _imageItem = imageItem;
     
     if (!imageItem) {
@@ -78,8 +73,6 @@
     }else
     {
         self.picImageView.image = imageItem.thumbnailImage;
-        
-        [self.imageItem addObserver:self forKeyPath:LMJKeyPath(self.imageItem, thumbnailImage) options:NSKeyValueObservingOptionNew context:nil];
         
         switch (imageItem.uploadState) {
             case MPImageUploadStateInit:
@@ -136,10 +129,65 @@
 {
     
     
+    LMJWeakSelf(self);
+    [self.imageItem addObserverBlockForKeyPath:LMJKeyPath(self.imageItem, thumbnailImage) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+        
+        weakself.picImageView.image = (UIImage *)newVal;
+    }];
     
-    [self.imageItem addObserver:self forKeyPath:LMJKeyPath(self.imageItem, uploadProgress) options:NSKeyValueObservingOptionNew context:nil];
+    [self.imageItem addObserverBlockForKeyPath:LMJKeyPath(self.imageItem, uploadState) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+        
+        
+        switch (weakself.imageItem.uploadState) {
+            case MPImageUploadStateInit:
+            {
+                weakself.picImageView.hidden = NO;
+                weakself.deleteButton.hidden = NO;
+                weakself.progressView.hidden = YES;
+                
+            }
+                break;
+            case MPImageUploadStateIng:
+            {
+                
+                weakself.picImageView.hidden = NO;
+                weakself.deleteButton.hidden = YES;
+                weakself.progressView.hidden = NO;
+                
+                [weakself.progressView setProgress:weakself.imageItem.uploadProgress animated:YES];
+                
+            }
+                break;
+            case MPImageUploadStateSuccess:
+            {
+                weakself.picImageView.hidden = NO;
+                weakself.deleteButton.hidden = YES;
+                weakself.progressView.hidden = YES;
+                
+                
+            }
+                break;
+            case MPImageUploadStateFail:
+            {
+                weakself.picImageView.hidden = NO;
+                weakself.deleteButton.hidden = NO;
+                weakself.progressView.hidden = YES;
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+    }];
     
-    [self.imageItem addObserver:self forKeyPath:LMJKeyPath(self.imageItem, uploadState) options:NSKeyValueObservingOptionNew context:nil];
+    
+    [self.imageItem addObserverBlockForKeyPath:LMJKeyPath(self.imageItem, uploadProgress) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+        
+        [weakself.progressView setProgress:[newVal doubleValue] animated:YES];
+        
+    }];
     
 }
 
@@ -208,7 +256,7 @@
 
 - (void)dealloc
 {
-    [_imageItem removeObserver:self forKeyPath:LMJKeyPath(_imageItem, thumbnailImage)];
+    [_imageItem removeObserverBlocks];
 }
 
 #pragma mark - action
