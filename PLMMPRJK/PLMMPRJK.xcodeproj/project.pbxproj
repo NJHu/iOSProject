@@ -18,6 +18,9 @@
 		588AACFB1E9F2253005F2A89 /* wishPage_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF71E9F2253005F2A89 /* wishPage_2.gif */; };
 		588AACFC1E9F2253005F2A89 /* wishPage_3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF81E9F2253005F2A89 /* wishPage_3.gif */; };
 		588AACFD1E9F2253005F2A89 /* wishPage_4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF91E9F2253005F2A89 /* wishPage_4.gif */; };
+		58A663691EBD8E1300222A1D /* LMJH5_OCViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */; };
+		58A6636C1EBD983100222A1D /* LMJOCJSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */; };
+		58A6636F1EBDAF5500222A1D /* LMJAlertViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636E1EBDAF5500222A1D /* LMJAlertViewsViewController.m */; };
 		58AFAAF81EB4ADAA00822043 /* LMJActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA6DA1EB4ADA900822043 /* LMJActivityViewController.m */; };
 		58AFAAFD1EB4ADAA00822043 /* NSFetchRequest+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA6E81EB4ADA900822043 /* NSFetchRequest+Extensions.m */; };
 		58AFAAFE1EB4ADAA00822043 /* NSManagedObject+DictionaryExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA6EB1EB4ADA900822043 /* NSManagedObject+DictionaryExport.m */; };
@@ -451,6 +454,7 @@
 		58D40EB61EBC7547004A4358 /* LMJListTimerCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EB51EBC7547004A4358 /* LMJListTimerCountDownViewController.m */; };
 		58D40EBC1EBC758E004A4358 /* LMJCountDownModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EBB1EBC758E004A4358 /* LMJCountDownModel.m */; };
 		58D40EBF1EBC799C004A4358 /* LMJCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EBE1EBC799C004A4358 /* LMJCountDownCell.m */; };
+		58D40EC21EBCC781004A4358 /* LMJH5_OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EC11EBCC781004A4358 /* LMJH5_OCViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -492,6 +496,11 @@
 		588AACF71E9F2253005F2A89 /* wishPage_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_2.gif; sourceTree = "<group>"; };
 		588AACF81E9F2253005F2A89 /* wishPage_3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_3.gif; sourceTree = "<group>"; };
 		588AACF91E9F2253005F2A89 /* wishPage_4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_4.gif; sourceTree = "<group>"; };
+		58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LMJH5_OCViewController.html; sourceTree = "<group>"; };
+		58A6636A1EBD983100222A1D /* LMJOCJSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJOCJSHelper.h; sourceTree = "<group>"; };
+		58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJOCJSHelper.m; sourceTree = "<group>"; };
+		58A6636D1EBDAF5500222A1D /* LMJAlertViewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAlertViewsViewController.h; sourceTree = "<group>"; };
+		58A6636E1EBDAF5500222A1D /* LMJAlertViewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAlertViewsViewController.m; sourceTree = "<group>"; };
 		58AFA6D91EB4ADA900822043 /* LMJActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJActivityViewController.h; sourceTree = "<group>"; };
 		58AFA6DA1EB4ADA900822043 /* LMJActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJActivityViewController.m; sourceTree = "<group>"; };
 		58AFA6E71EB4ADA900822043 /* NSFetchRequest+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+Extensions.h"; sourceTree = "<group>"; };
@@ -1361,6 +1370,8 @@
 		58D40EBB1EBC758E004A4358 /* LMJCountDownModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCountDownModel.m; sourceTree = "<group>"; };
 		58D40EBD1EBC799C004A4358 /* LMJCountDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCountDownCell.h; sourceTree = "<group>"; };
 		58D40EBE1EBC799C004A4358 /* LMJCountDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCountDownCell.m; sourceTree = "<group>"; };
+		58D40EC01EBCC781004A4358 /* LMJH5_OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJH5_OCViewController.h; sourceTree = "<group>"; };
+		58D40EC11EBCC781004A4358 /* LMJH5_OCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJH5_OCViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3840,6 +3851,10 @@
 				58CDBFB91EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.m */,
 				58D40EB41EBC7547004A4358 /* LMJListTimerCountDownViewController.h */,
 				58D40EB51EBC7547004A4358 /* LMJListTimerCountDownViewController.m */,
+				58D40EC01EBCC781004A4358 /* LMJH5_OCViewController.h */,
+				58D40EC11EBCC781004A4358 /* LMJH5_OCViewController.m */,
+				58A6636D1EBDAF5500222A1D /* LMJAlertViewsViewController.h */,
+				58A6636E1EBDAF5500222A1D /* LMJAlertViewsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3862,6 +3877,9 @@
 		58AFACC91EB60E3700822043 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */,
+				58A6636A1EBD983100222A1D /* LMJOCJSHelper.h */,
+				58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -4095,6 +4113,7 @@
 				588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */,
 				58AFABA91EB4ADAA00822043 /* QBImagePickerController.strings in Resources */,
 				58AFAB181EB4ADAA00822043 /* NSDateTimeAgo.bundle in Resources */,
+				58A663691EBD8E1300222A1D /* LMJH5_OCViewController.html in Resources */,
 				588AACFD1E9F2253005F2A89 /* wishPage_4.gif in Resources */,
 				588AACFC1E9F2253005F2A89 /* wishPage_3.gif in Resources */,
 				58AFABB61EB4ADAA00822043 /* WeiboSDK.bundle in Resources */,
@@ -4248,6 +4267,7 @@
 				58AFAC031EB4ADAA00822043 /* UILabel+ESAdjustableLabel.m in Sources */,
 				58AFAC171EB4ADAA00822043 /* UISearchBar+Blocks.m in Sources */,
 				58AFACB21EB4ADAB00822043 /* UIAlertView+LMJBlock.m in Sources */,
+				58A6636F1EBDAF5500222A1D /* LMJAlertViewsViewController.m in Sources */,
 				58AFAB011EB4ADAA00822043 /* NSManagedObjectContext+Fetching.m in Sources */,
 				58AFAB631EB4ADAA00822043 /* WJYAlertInputTextView.m in Sources */,
 				58AFAB5D1EB4ADAA00822043 /* CAShapeLayer+UIBezierPath.m in Sources */,
@@ -4277,6 +4297,7 @@
 				58AFABE81EB4ADAA00822043 /* UIFont+DynamicFontControl.m in Sources */,
 				58AFAB051EB4ADAA00822043 /* CLLocation+CH1903.m in Sources */,
 				58AFAC181EB4ADAA00822043 /* UISplitViewController+QuickAccess.m in Sources */,
+				58A6636C1EBD983100222A1D /* LMJOCJSHelper.m in Sources */,
 				58AFAC041EB4ADAA00822043 /* UILabel+SuggestSize.m in Sources */,
 				58AFAB8A1EB4ADAA00822043 /* MPUmengHelper.m in Sources */,
 				58AFABAB1EB4ADAA00822043 /* QBImagePickerThumbnailView.m in Sources */,
@@ -4387,6 +4408,7 @@
 				58AFAB0C1EB4ADAA00822043 /* NSData+Encrypt.m in Sources */,
 				58AFABF31EB4ADAA00822043 /* UIImage+GIF.m in Sources */,
 				58AFAC521EB4ADAA00822043 /* LMJAutoRefreshFooter.m in Sources */,
+				58D40EC21EBCC781004A4358 /* LMJH5_OCViewController.m in Sources */,
 				58AFABA61EB4ADAA00822043 /* QBAssetsCollectionViewController.m in Sources */,
 				58AFACB51EB4ADAB00822043 /* MPBlockView.m in Sources */,
 				58AFAB4D1EB4ADAA00822043 /* NSTimer+Addition.m in Sources */,

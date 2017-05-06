@@ -83,6 +83,15 @@ static NSString *const ID = @"cellSetting";
         self.accessoryType = UITableViewCellAccessoryNone;
     }
     
+    if (self.item.itemOperation || [self.item isKindOfClass:[LMJWordArrowItem class]]) {
+        
+        self.selectionStyle = UITableViewCellSelectionStyleDefault;
+        
+    }else
+    {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
 }
 
 - (void)layoutSubviews

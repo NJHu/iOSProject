@@ -19,6 +19,9 @@
 //左上边的关闭按钮的点击
 - (void)closeBtnClick:(UIButton *)closeBtn webView:(WKWebView *)webView;
 
+// 监听 self.webView.scrollView 的 contentSize 属性改变，从而对底部添加的自定义 View 进行位置调整
+- (void)webView:(WKWebView *)webView scrollView:(UIScrollView *)scrollView contentSize:(CGSize)contentSize;
+
 @end
 
 

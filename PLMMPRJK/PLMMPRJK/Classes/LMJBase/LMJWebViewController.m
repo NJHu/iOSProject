@@ -66,6 +66,12 @@
     }
     
     
+    [self.webView.scrollView addObserverBlockForKeyPath:LMJKeyPath(self.webView.scrollView, contentSize) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+        
+        [weakself webView:weakself.webView scrollView:weakself.webView.scrollView contentSize:weakself.webView.scrollView.contentSize];
+        
+    }];
+    
     
     
     if (self.gotoURL.length > 0) {
@@ -85,19 +91,8 @@
 }
 
 
-#pragma mark - title
-
-#pragma mark 自定义代码
-
-
-
-
-
-
-#pragma mark - 设置左上角的一个返回按钮和一个关闭按钮
-
 #pragma mark - LMJNavUIBaseViewControllerDataSource
-\
+#pragma mark - 设置左上角的一个返回按钮和一个关闭按钮
 /** 导航条的左边的 view */
 - (UIView *)lmjNavigationBarLeftView:(LMJNavigationBar *)navigationBar
 {
@@ -118,58 +113,6 @@
 
 
 
-#pragma mark - Delegate
-
-/** 中间如果是 label 就会有点击 */
--(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-
-
-
-
-- (UIButton *)backBtn
-{
-    if(_backBtn == nil)
-    {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
-        
-        [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
-        
-        btn.lmj_size = CGSizeMake(34, 44);
-        
-        [btn addTarget:self action:@selector(leftButtonEvent:navigationBar:) forControlEvents:UIControlEventTouchUpInside];
-        
-        _backBtn = btn;
-    }
-    return _backBtn;
-}
-
-- (UIButton *)closeBtn
-{
-    if(_closeBtn == nil)
-    {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-        [btn setTitle:@"关闭" forState:UIControlStateNormal];
-        
-        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        
-        [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-        
-        btn.lmj_size = CGSizeMake(44, 44);
-        
-        btn.hidden = YES;
-        
-        [btn addTarget:self action:@selector(left_close_button_event:) forControlEvents:UIControlEventTouchUpInside];
-        
-        _closeBtn = btn;
-    }
-    return _closeBtn;
-}
-
 - (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     [self backBtnClick:sender webView:self.webView];
@@ -183,7 +126,7 @@
 
 
 
-#pragma mark - LMJWebViewControllerDelegate, LMJWebViewControllerDataSource
+#pragma mark - LMJWebViewControllerDataSource
 // 默认需要, 是否需要进度条
 - (BOOL)webViewController:(LMJWebViewController *)webViewController webViewIsNeedProgressIndicator:(WKWebView *)webView
 {
@@ -196,6 +139,9 @@
     return YES;
 }
 
+
+#pragma mark - LMJWebViewControllerDelegate
+// 导航条左边的返回按钮的点击
 - (void)backBtnClick:(UIButton *)backBtn webView:(WKWebView *)webView
 {
     if (self.webView.canGoBack) {
@@ -210,6 +156,7 @@
     }
 }
 
+// 关闭按钮的点击
 - (void)closeBtnClick:(UIButton *)closeBtn webView:(WKWebView *)webView
 {
     // 判断两种情况: push 和 present
@@ -222,6 +169,11 @@
     }
 }
 
+// 监听 self.webView.scrollView 的 contentSize 属性改变，从而对底部添加的自定义 View 进行位置调整
+- (void)webView:(WKWebView *)webView scrollView:(UIScrollView *)scrollView contentSize:(CGSize)contentSize
+{
+    NSLog(@"%@\n%@\n%@", webView, scrollView, NSStringFromCGSize(contentSize));
+}
 
 #pragma mark - webDelegate
 
@@ -310,6 +262,11 @@
         // 播放视频
         config.allowsInlineMediaPlayback = YES;
 
+        // 交互对象设置
+//        LMJWeakSelf(self);
+//        config.userContentController = [[WKUserContentController alloc] init];
+//        [config.userContentController addScriptMessageHandler:weakself name:<#(nonnull NSString *)#>];
+        
         
         WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
         
@@ -317,6 +274,7 @@
         
         webView.navigationDelegate = self;
         webView.UIDelegate = self;
+//        webView.scrollView.delegate = self;
         
         webView.opaque = NO;
         webView.backgroundColor = [UIColor clearColor];
@@ -367,14 +325,58 @@
     return _progressView;
 }
 
+
+- (UIButton *)backBtn
+{
+    if(_backBtn == nil)
+    {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
+        
+        [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+        
+        btn.lmj_size = CGSizeMake(34, 44);
+        
+        [btn addTarget:self action:@selector(leftButtonEvent:navigationBar:) forControlEvents:UIControlEventTouchUpInside];
+        
+        _backBtn = btn;
+    }
+    return _backBtn;
+}
+
+- (UIButton *)closeBtn
+{
+    if(_closeBtn == nil)
+    {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        [btn setTitle:@"关闭" forState:UIControlStateNormal];
+        
+        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        
+        [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+        
+        btn.lmj_size = CGSizeMake(44, 44);
+        
+        btn.hidden = YES;
+        
+        [btn addTarget:self action:@selector(left_close_button_event:) forControlEvents:UIControlEventTouchUpInside];
+        
+        _closeBtn = btn;
+    }
+    return _closeBtn;
+}
+
 - (void)dealloc
 {
     NSLog(@"LMJWebViewController -- dealloc");
     
+    [self.webView.scrollView removeObserverBlocks];
     [self.webView removeObserverBlocks];
     
     self.webView.UIDelegate = nil;
     self.webView.navigationDelegate = nil;
+    self.webView.scrollView.delegate = nil;
 }
 
 
@@ -382,7 +384,37 @@
 
 
 
-
+// UIWebView 使用的权限认证方式，
+//- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+//    if ([navigationAction.request.URL.absoluteString containsString:@"https://"] && IOSVersion < 9.0 && !self.httpsAuth) {
+//        self.originRequest = navigationAction.request;
+//        self.httpsUrlConnection = [[NSURLConnection alloc] initWithRequest:self.originRequest delegate:self];
+//        [self.httpsUrlConnection start];
+//        decisionHandler(WKNavigationActionPolicyCancel);
+//        return;
+//    }
+//    decisionHandler(WKNavigationActionPolicyAllow);
+//}
+//
+//- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+//    if ([challenge previousFailureCount] == 0) {
+//        self.httpsAuth = YES;
+//        NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+//        [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+//    } else {
+//        [[challenge sender] cancelAuthenticationChallenge:challenge];
+//    }
+//}
+//
+//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+//    self.httpsAuth = YES;
+//    [self.webView loadRequest:self.originRequest];
+//    [self.httpsUrlConnection cancel];
+//}
+//
+//- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
+//    return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+//}
 
 
 
