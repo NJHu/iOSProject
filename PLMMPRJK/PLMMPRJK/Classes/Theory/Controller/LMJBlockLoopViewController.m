@@ -71,9 +71,10 @@
 //调用其它类的一些内存问题
 -(void)myBlockButtonAction
 {
+    LMJWeakSelf(self);
     //1：
     [MPBlockLoopOperation operateWithSuccessBlock:^{
-        [self showErrorMessage:@"成功执行完成"];
+        [weakself showErrorMessage:@"成功执行完成"];
     }];
     
     //这种不会出现block 因为MPBlockLoopOperation没在MPBlockLoopViewController的属性中,所以三者不会是一个闭圈
@@ -83,10 +84,10 @@
     [operation startNoBlockShow:@"12345677888"];
     
     //3：如果带有block 又引入self就要进行弱化对象operation，否则会出现内存释放的问题
-    LMJWeakSelf(self);
+    LMJWeakSelf(operation);
     [operation startWithAddBlock:^(NSString *name) {
         
-        [weakself showErrorMessage:operation.myAddress];
+        [weakself showErrorMessage:weakoperation.myAddress];
     }];
 }
 
