@@ -1,10 +1,5 @@
 # 各种功能 Demo
 
-### 感谢作者[wujunyang](https://github.com/wujunyang)在 GitHub 上[MobileProject](https://github.com/wujunyang/MobileProject)开源项目
-
-### [PLMMPrjk](https://github.com/NJHu/PLMMPrjk)开源项目大部分代码直接借鉴[MobileProject](https://github.com/wujunyang/MobileProject)学习.
-
-### 感谢作者[wujunyang](https://github.com/wujunyang)在 GitHub上细心解答.
 
 ## 已经完成的
 
@@ -28,11 +23,14 @@
 
 <img src="./images/home2.PNG" width="200" height="300">
 
+<img src="./images/home5.png" width="200" height="300">
 
-<img src="./images/home5.PNG" width="200" height="300">
-
-
-
+<img src="./images/home6.png" width="200" height="300">
 
 
 
+### 感谢作者[wujunyang](https://github.com/wujunyang)在 GitHub 上[MobileProject](https://github.com/wujunyang/MobileProject)开源项目
+
+### [PLMMPrjk](https://github.com/NJHu/PLMMPrjk)开源项目大部分代码直接借鉴[MobileProject](https://github.com/wujunyang/MobileProject)学习.
+
+### 感谢作者[wujunyang](https://github.com/wujunyang)在 GitHub上细心解答.

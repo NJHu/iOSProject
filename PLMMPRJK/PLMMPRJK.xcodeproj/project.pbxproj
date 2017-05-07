@@ -464,6 +464,7 @@
 		58FFE9B91EBEFBB500D50E4C /* LMJDragTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9B81EBEFBB500D50E4C /* LMJDragTableViewController.m */; };
 		58FFE9BC1EBF205300D50E4C /* LMJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9BB1EBF205300D50E4C /* LMJCalendarViewController.m */; };
 		58FFE9BF1EBF23F400D50E4C /* MPEventCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9BE1EBF23F400D50E4C /* MPEventCalendar.m */; };
+		58FFE9C21EBF61D500D50E4C /* LMJNavBarFadeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9C11EBF61D500D50E4C /* LMJNavBarFadeViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1399,6 +1400,8 @@
 		58FFE9BB1EBF205300D50E4C /* LMJCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCalendarViewController.m; sourceTree = "<group>"; };
 		58FFE9BD1EBF23F400D50E4C /* MPEventCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEventCalendar.h; sourceTree = "<group>"; };
 		58FFE9BE1EBF23F400D50E4C /* MPEventCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPEventCalendar.m; sourceTree = "<group>"; };
+		58FFE9C01EBF61D500D50E4C /* LMJNavBarFadeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNavBarFadeViewController.h; sourceTree = "<group>"; };
+		58FFE9C11EBF61D500D50E4C /* LMJNavBarFadeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNavBarFadeViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3833,6 +3836,8 @@
 				58FFE9AF1EBEE6D800D50E4C /* LMJTableSDWebImageViewController.m */,
 				58FFE9B71EBEFBB500D50E4C /* LMJDragTableViewController.h */,
 				58FFE9B81EBEFBB500D50E4C /* LMJDragTableViewController.m */,
+				58FFE9C01EBF61D500D50E4C /* LMJNavBarFadeViewController.h */,
+				58FFE9C11EBF61D500D50E4C /* LMJNavBarFadeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4288,6 +4293,7 @@
 				58AFAC161EB4ADAA00822043 /* UIScrollView+Pages.m in Sources */,
 				58AFAC051EB4ADAA00822043 /* UINavigationBar+Awesome.m in Sources */,
 				58AFAC961EB4ADAB00822043 /* MPMultitextCell.m in Sources */,
+				58FFE9C21EBF61D500D50E4C /* LMJNavBarFadeViewController.m in Sources */,
 				58FFE9A91EBEDD5C00D50E4C /* IFlyFaceImage.m in Sources */,
 				58AFABD21EB4ADAA00822043 /* UIBarButtonItem+Action.m in Sources */,
 				58AFAB151EB4ADAA00822043 /* NSDate+Reporting.m in Sources */,

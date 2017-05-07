@@ -16,78 +16,119 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self changeNavgationTitle:[self changeTitle:@"快看快看快看快看"]];
     
     
-    [UIView animateWithDuration:0.5 animations:^{
-        
-        [self changeNavigationBarHeight:100];
-        
-    }];
+    
+    
+    
 }
 
-#pragma mark 重写BaseViewController设置内容
 
-- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
+
+#pragma mark - LMJNavUIBaseViewControllerDataSource
+//- (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController
+//{
+//    return YES;
+//}
+
+- (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
 {
-    return [UIColor RandomColor];
+    return UIStatusBarStyleLightContent;
 }
 
-- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-}
-
-- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-}
-
-- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%@", sender);
-}
-
+/**头部标题*/
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
-    return [self changeTitle:@"新控制器"];
+    return [self changeTitle:@"预留"];
 }
 
-- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+/** 背景图片 */
+//- (UIImage *)lmjNavigationBarBackgroundImage:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+
+/** 背景色 */
+- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 {
-    [leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-    
-    return [UIImage imageNamed:@"navigationButtonReturnClick"];
+    return [UIColor redColor];
 }
 
-
-- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+/** 是否隐藏底部黑线 */
+- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
 {
-    rightButton.backgroundColor = [UIColor RandomColor];
-    
-    return nil;
+    return YES;
 }
 
+/** 导航条的高度 */
+- (CGFloat)lmjNavigationHeight:(LMJNavigationBar *)navigationBar
+{
+    return 128;
+}
+
+
+/** 导航条的左边的 view */
+//- (UIView *)lmjNavigationBarLeftView:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+/** 导航条右边的 view */
+//- (UIView *)lmjNavigationBarRightView:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+/** 导航条中间的 View */
+//- (UIView *)lmjNavigationBarTitleView:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+/** 导航条左边的按钮 */
+//- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+//{
+//    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
+//    
+//    return [UIImage imageNamed:@"NavgationBar_blue_back"];
+//}
+/** 导航条右边的按钮 */
+//- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+//{
+//
+//}
+
+
+
+#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+}
+/** 右边的按钮的点击 */
+-(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+}
+/** 中间如果是 label 就会有点击 */
+-(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+}
 
 
 #pragma mark 自定义代码
 
 -(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 {
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
-    
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
+
+    [title addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, title.length)];
+
     [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(18) range:NSMakeRange(0, title.length)];
-    
+
     return title;
 }
+
+
 
 
 @end
