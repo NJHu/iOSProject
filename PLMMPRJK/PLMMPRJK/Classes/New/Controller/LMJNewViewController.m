@@ -29,6 +29,8 @@
 #import "LMJListTimerCountDownViewController.h"
 #import "LMJH5_OCViewController.h"
 #import "LMJAlertViewsViewController.h"
+#import "LMJFillTableFormViewController.h"
+#import "LMJFaceRecognizeViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -148,7 +150,17 @@
     
     item21.destVc = [LMJAlertViewsViewController class];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    
+    LMJWordArrowItem *item22 = [LMJWordArrowItem itemWithTitle:@"常见表单类型" subTitle: nil];
+    
+    item22.destVc = [LMJFillTableFormViewController class];
+    
+    
+    LMJWordArrowItem *item23 = [LMJWordArrowItem itemWithTitle:@"人脸识别" subTitle: nil];
+    
+    item23.destVc = [LMJFaceRecognizeViewController class];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }
@@ -192,6 +204,7 @@
 {
     [leftButton setTitle:@"左边" forState: UIControlStateNormal];
     [leftButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
+    [leftButton setBackgroundColor:[UIColor RandomColor] forState:UIControlStateNormal];
     
     return nil;
 }

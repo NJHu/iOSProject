@@ -64,6 +64,7 @@ static NSString *const ID = @"cellSetting";
 {
     self.textLabel.text = self.item.title;
     self.detailTextLabel.text = self.item.subTitle;
+    self.imageView.image = self.item.image;
 }
 
 - (void)changeUI

@@ -25,7 +25,8 @@
 @property (nonatomic, strong) UIColor *subTitleColor;
 
 
-
+/** 左边的图片 */
+@property (nonatomic, strong) UIImage *image;
 
 /** 设置cell的高度, 默认50 */
 @property (assign, nonatomic) CGFloat cellHeight;

@@ -455,6 +455,9 @@
 		58D40EBC1EBC758E004A4358 /* LMJCountDownModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EBB1EBC758E004A4358 /* LMJCountDownModel.m */; };
 		58D40EBF1EBC799C004A4358 /* LMJCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EBE1EBC799C004A4358 /* LMJCountDownCell.m */; };
 		58D40EC21EBCC781004A4358 /* LMJH5_OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EC11EBCC781004A4358 /* LMJH5_OCViewController.m */; };
+		58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9001EBDC44100D50E4C /* LMJFillTableFormViewController.m */; };
+		58FFE9041EBEC69900D50E4C /* LMJFaceRecognizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9031EBEC69900D50E4C /* LMJFaceRecognizeViewController.m */; };
+		58FFE9071EBECCB800D50E4C /* LMJFaceDetectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9061EBECCB800D50E4C /* LMJFaceDetectorViewController.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1372,6 +1375,12 @@
 		58D40EBE1EBC799C004A4358 /* LMJCountDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCountDownCell.m; sourceTree = "<group>"; };
 		58D40EC01EBCC781004A4358 /* LMJH5_OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJH5_OCViewController.h; sourceTree = "<group>"; };
 		58D40EC11EBCC781004A4358 /* LMJH5_OCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJH5_OCViewController.m; sourceTree = "<group>"; };
+		58FFE8FF1EBDC44100D50E4C /* LMJFillTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFillTableFormViewController.h; sourceTree = "<group>"; };
+		58FFE9001EBDC44100D50E4C /* LMJFillTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFillTableFormViewController.m; sourceTree = "<group>"; };
+		58FFE9021EBEC69900D50E4C /* LMJFaceRecognizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFaceRecognizeViewController.h; sourceTree = "<group>"; };
+		58FFE9031EBEC69900D50E4C /* LMJFaceRecognizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFaceRecognizeViewController.m; sourceTree = "<group>"; };
+		58FFE9051EBECCB800D50E4C /* LMJFaceDetectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFaceDetectorViewController.h; sourceTree = "<group>"; };
+		58FFE9061EBECCB800D50E4C /* LMJFaceDetectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFaceDetectorViewController.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3855,6 +3864,12 @@
 				58D40EC11EBCC781004A4358 /* LMJH5_OCViewController.m */,
 				58A6636D1EBDAF5500222A1D /* LMJAlertViewsViewController.h */,
 				58A6636E1EBDAF5500222A1D /* LMJAlertViewsViewController.m */,
+				58FFE8FF1EBDC44100D50E4C /* LMJFillTableFormViewController.h */,
+				58FFE9001EBDC44100D50E4C /* LMJFillTableFormViewController.m */,
+				58FFE9021EBEC69900D50E4C /* LMJFaceRecognizeViewController.h */,
+				58FFE9031EBEC69900D50E4C /* LMJFaceRecognizeViewController.m */,
+				58FFE9051EBECCB800D50E4C /* LMJFaceDetectorViewController.h */,
+				58FFE9061EBECCB800D50E4C /* LMJFaceDetectorViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4219,6 +4234,7 @@
 				58AFAC561EB4ADAA00822043 /* LMJNormalRefreshHeader.m in Sources */,
 				58AFAB401EB4ADAA00822043 /* NSString+Hash.m in Sources */,
 				58AFACAB1EB4ADAB00822043 /* LMJOraceDataBase.m in Sources */,
+				58FFE9041EBEC69900D50E4C /* LMJFaceRecognizeViewController.m in Sources */,
 				58AFAC061EB4ADAA00822043 /* UINavigationController+BATransitions.m in Sources */,
 				58AFABF81EB4ADAA00822043 /* UIImage+Resize.m in Sources */,
 				58AFABC41EB4ADAA00822043 /* UIImage+JMRoundedCorner.m in Sources */,
@@ -4436,6 +4452,7 @@
 				58AFAB6D1EB4ADAA00822043 /* CaptureManager.m in Sources */,
 				58AFAB031EB4ADAA00822043 /* NSManagedObjectContext+ObjectClear.m in Sources */,
 				58AFAB571EB4ADAA00822043 /* MKMapView+MoveLogo.m in Sources */,
+				58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */,
 				58AFACA81EB4ADAB00822043 /* LMJNSOperationViewController.m in Sources */,
 				58AFABE01EB4ADAA00822043 /* UIColor+HEX.m in Sources */,
 				58AFAC8A1EB4ADAB00822043 /* LMJVerticalLayoutViewController.m in Sources */,
@@ -4502,6 +4519,7 @@
 				58AFAC7F1EB4ADAB00822043 /* LMJAdaptFontViewController.m in Sources */,
 				58AFAB2C1EB4ADAA00822043 /* NSNumber+Round.m in Sources */,
 				58AFAB081EB4ADAA00822043 /* NSArray+SafeAccess.m in Sources */,
+				58FFE9071EBECCB800D50E4C /* LMJFaceDetectorViewController.m in Sources */,
 				58AFAB881EB4ADAA00822043 /* UITapImageView.m in Sources */,
 				58AFAC671EB4ADAB00822043 /* LMJLoggerViewController.m in Sources */,
 				58AFAB821EB4ADAA00822043 /* MPLoggerFormatter.m in Sources */,
