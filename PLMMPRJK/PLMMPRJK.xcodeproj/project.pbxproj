@@ -462,6 +462,8 @@
 		58FFE9B31EBEE85700D50E4C /* LMJDownloadVideosService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9B21EBEE85700D50E4C /* LMJDownloadVideosService.m */; };
 		58FFE9B61EBEE91000D50E4C /* LMJXGMVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9B51EBEE91000D50E4C /* LMJXGMVideo.m */; };
 		58FFE9B91EBEFBB500D50E4C /* LMJDragTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9B81EBEFBB500D50E4C /* LMJDragTableViewController.m */; };
+		58FFE9BC1EBF205300D50E4C /* LMJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9BB1EBF205300D50E4C /* LMJCalendarViewController.m */; };
+		58FFE9BF1EBF23F400D50E4C /* MPEventCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9BE1EBF23F400D50E4C /* MPEventCalendar.m */; };
 		9D096A9EB3628B9B62899D89 /* libPods-PLMMPRJK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */; };
 		E7D0E05A1E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */; };
 		E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0E05B1E8B9DCB001E4585 /* Assets.xcassets */; };
@@ -1393,6 +1395,10 @@
 		58FFE9B51EBEE91000D50E4C /* LMJXGMVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJXGMVideo.m; sourceTree = "<group>"; };
 		58FFE9B71EBEFBB500D50E4C /* LMJDragTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDragTableViewController.h; sourceTree = "<group>"; };
 		58FFE9B81EBEFBB500D50E4C /* LMJDragTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDragTableViewController.m; sourceTree = "<group>"; };
+		58FFE9BA1EBF205300D50E4C /* LMJCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCalendarViewController.h; sourceTree = "<group>"; };
+		58FFE9BB1EBF205300D50E4C /* LMJCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCalendarViewController.m; sourceTree = "<group>"; };
+		58FFE9BD1EBF23F400D50E4C /* MPEventCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEventCalendar.h; sourceTree = "<group>"; };
+		58FFE9BE1EBF23F400D50E4C /* MPEventCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPEventCalendar.m; sourceTree = "<group>"; };
 		D2B5A00A7EA66C6B63CA6966 /* libPods-PLMMPRJK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLMMPRJK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78217981E99F38700258845 /* PLMMPRJK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLMMPRJK.entitlements; sourceTree = "<group>"; };
 		E7D0E0491E8B9DCA001E4585 /* PLMMPRJK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLMMPRJK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3551,6 +3557,8 @@
 				58AFAA911EB4ADAA00822043 /* LMJVerticalLayoutViewController.m */,
 				58AFAA921EB4ADAA00822043 /* LMJYYTextViewController.h */,
 				58AFAA931EB4ADAA00822043 /* LMJYYTextViewController.m */,
+				58FFE9BA1EBF205300D50E4C /* LMJCalendarViewController.h */,
+				58FFE9BB1EBF205300D50E4C /* LMJCalendarViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3569,6 +3577,8 @@
 		58AFAA961EB4ADAA00822043 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				58FFE9BD1EBF23F400D50E4C /* MPEventCalendar.h */,
+				58FFE9BE1EBF23F400D50E4C /* MPEventCalendar.m */,
 				58AFACBA1EB5981000822043 /* team_dictionary.plist */,
 			);
 			path = Other;
@@ -4478,6 +4488,7 @@
 				58AFACA51EB4ADAB00822043 /* LMJRunTimeViewController.m in Sources */,
 				58AFAB031EB4ADAA00822043 /* NSManagedObjectContext+ObjectClear.m in Sources */,
 				58AFAB571EB4ADAA00822043 /* MKMapView+MoveLogo.m in Sources */,
+				58FFE9BF1EBF23F400D50E4C /* MPEventCalendar.m in Sources */,
 				58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */,
 				58AFACA81EB4ADAB00822043 /* LMJNSOperationViewController.m in Sources */,
 				58AFABE01EB4ADAA00822043 /* UIColor+HEX.m in Sources */,
@@ -4602,6 +4613,7 @@
 				58AFAC591EB4ADAB00822043 /* LMJBaseViewController.m in Sources */,
 				58AFAB371EB4ADAA00822043 /* NSObject+Runtime.m in Sources */,
 				58AFAB2D1EB4ADAA00822043 /* NSObject+AddProperty.m in Sources */,
+				58FFE9BC1EBF205300D50E4C /* LMJCalendarViewController.m in Sources */,
 				58AFAB981EB4ADAA00822043 /* IQBarButtonItem.m in Sources */,
 				58AFAB4C1EB4ADAA00822043 /* NSString+XML.m in Sources */,
 				58AFAB3B1EB4ADAA00822043 /* NSString+Base64.m in Sources */,
