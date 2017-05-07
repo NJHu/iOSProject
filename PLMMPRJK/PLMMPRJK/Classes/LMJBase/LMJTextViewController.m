@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[IQKeyboardManager sharedManager] setEnable:YES];
 }
 
 

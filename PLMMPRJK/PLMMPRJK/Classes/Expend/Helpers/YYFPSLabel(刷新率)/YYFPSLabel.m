@@ -48,7 +48,7 @@
     [self addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithActionBlock:^(UIPanGestureRecognizer  *_Nonnull sender) {
         
         NSLog(@"%@", sender);
-        ;
+        
         // 获取手势的触摸点
         // CGPoint curP = [pan locationInView:self.imageView];
         

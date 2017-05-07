@@ -16,7 +16,7 @@ UIKIT_EXTERN NSString *const LMJBaseResponseCustomErrorMsgKey;
 
 
 /** <#digest#> */
-@property (nonatomic, copy) NSError *error;
+@property (nonatomic, strong) NSError *error;
 
 /** <#digest#> */
 @property (assign, nonatomic) NSInteger statusCode;

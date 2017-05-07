@@ -32,7 +32,7 @@ static char BlankPageViewKey;
         }
     }else{
         if (!self.blankPageView) {
-            self.blankPageView = [[EaseBlankPageView alloc] initWithFrame:self.bounds];
+            self.blankPageView = [[EaseBlankPageView alloc] initWithFrame:CGRectMake(0, 0, self.lmj_width, self.lmj_height)];
         }
         self.blankPageView.hidden = NO;
         [self addSubview:self.blankPageView];

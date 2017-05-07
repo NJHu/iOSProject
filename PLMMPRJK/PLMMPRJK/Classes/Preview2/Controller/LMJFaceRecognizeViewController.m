@@ -7,9 +7,10 @@
 //
 
 #import "LMJFaceRecognizeViewController.h"
-#import "LMJFaceDetectorViewController.h"
+#import "FaceStreamDetectorViewController.h"
 
-@interface LMJFaceRecognizeViewController ()
+
+@interface LMJFaceRecognizeViewController ()<FaceDetectorDelegate>
 
 /** <#digest#> */
 @property (weak, nonatomic) UIButton *yanZhengButton;
@@ -27,6 +28,9 @@
 
 @implementation LMJFaceRecognizeViewController
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -35,24 +39,58 @@
 }
 
 
+
 - (void)registFace
 {
-    LMJFaceDetectorViewController *faceDetectorVc = [[LMJFaceDetectorViewController alloc] init];
-    faceDetectorVc.faceDetectorType = LMJFaceDetectorViewControllerTypeRegist;
+    LMJWeakSelf(self);
+    FaceStreamDetectorViewController *faceDetectorVc = [[FaceStreamDetectorViewController alloc] init];
     
+    faceDetectorVc.faceDelegate = self;
+    
+    faceDetectorVc.isController = NSTypePaiZhao;
+    [faceDetectorVc setSendBlock:^(NSString *resultInfo){
+        
+        weakself.desLabel.text = resultInfo;
+        
+    }];
     
     [self.navigationController pushViewController:faceDetectorVc animated:YES];
+    
 }
 
 - (void)yanZheng
 {
-    LMJFaceDetectorViewController *faceDetectorVc = [[LMJFaceDetectorViewController alloc] init];
-    faceDetectorVc.faceDetectorType = LMJFaceDetectorViewControllerTypeYanZheng;
+    LMJWeakSelf(self);
+    FaceStreamDetectorViewController *faceDetectorVc = [[FaceStreamDetectorViewController alloc] init];
+    
+    faceDetectorVc.faceDelegate = self;
+    
+    faceDetectorVc.isController = NSTypeYanZhen;
+    
+    [faceDetectorVc setSendBlock:^(NSString *resultInfo){
+        
+        weakself.desLabel.text = resultInfo;
+        
+    }];
     
     [self.navigationController pushViewController:faceDetectorVc animated:YES];
     
 }
 
+
+#pragma mark - FaceDetectorDelegate
+
+-(void)sendFaceImage:(UIImage *)faceImage//上传图片成功
+{
+    self.imageView.image = faceImage;
+    
+    
+    
+}
+-(void)sendFaceImageError //上传图片失败
+{
+    self.imageView.image = nil;
+}
 
 
 #pragma mark - getter

@@ -31,6 +31,8 @@
 #import "LMJAlertViewsViewController.h"
 #import "LMJFillTableFormViewController.h"
 #import "LMJFaceRecognizeViewController.h"
+#import "LMJTableSDWebImageViewController.h"
+#import "LMJDragTableViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -159,8 +161,16 @@
     LMJWordArrowItem *item23 = [LMJWordArrowItem itemWithTitle:@"人脸识别" subTitle: nil];
     
     item23.destVc = [LMJFaceRecognizeViewController class];
+
+    LMJWordArrowItem *item24 = [LMJWordArrowItem itemWithTitle:@"列表加载图片" subTitle: @"SDWebImage"];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    item24.destVc = [LMJTableSDWebImageViewController class];
+    
+    LMJWordArrowItem *item25 = [LMJWordArrowItem itemWithTitle:@"列表拖拽" subTitle: @""];
+    
+    item25.destVc = [LMJDragTableViewController class];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, item25] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }

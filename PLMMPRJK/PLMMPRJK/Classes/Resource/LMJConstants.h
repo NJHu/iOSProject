@@ -62,9 +62,12 @@ static NSString *const LMJThirdSDKQQRedirectURL = @"http://mobile.umeng.com/soci
 
 static NSString *const LMJThirdSDKMagicWindow = @"75Z6Q063T395YQ85QN27FDR7RAVIEKR7";
 
-
+//百度地图
 static NSString *const LMJThirdSDKBaiduMapKey = @"K4FQLr0hX8zGxsYdGVuFTAmpMNRCVLBF";
 
+
+// 科大讯飞
+#define USER_APPID           @"56ce54a5"
 
 //最大的上传图片张数
 #define kupdateMaximumNumberOfImage 6
