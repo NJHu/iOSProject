@@ -78,11 +78,11 @@
 
 -(void)runMutableThreadAction
 {
-    for (int num=0; num<100000; num++) {
-        NSThread *thread=[[NSThread alloc]initWithTarget:self selector:@selector(runMutableAction) object:nil];
-        thread.name=[NSString stringWithFormat:@"thread-%d",num];
-        [thread start];
-    }
+//    for (int num=0; num<100000; num++) {
+//        NSThread *thread=[[NSThread alloc]initWithTarget:self selector:@selector(runMutableAction) object:nil];
+//        thread.name=[NSString stringWithFormat:@"thread-%d",num];
+//        [thread start];
+//    }
 }
 
 -(void)runMutableAction
