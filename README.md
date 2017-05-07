@@ -8,8 +8,6 @@
 
 - 导航条自定义, 没有用系统的导航条UI
 
-<img src="./images/home3.png" width="200" height="300">
-
 - 基础知识点
 
 <img src="./images/home1.png" width="200" height="300">
