@@ -80,11 +80,11 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-        UIImage *image = [UIImage imageWithData:data];
+        YYImage *image = [YYImage imageWithData:data];
         
         NSString *filePath = [self getFilePathWithImageName:imageName]; // 保存文件的名称
         
-        if ([UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES]) {// 保存成功
+        if ([image writeToFile:filePath atomically:YES]) {// 保存成功
             NSLog(@"保存成功");
             [self deleteOldImage];
             [kAdUserDefaults setValue:imageName forKey:adImageName];

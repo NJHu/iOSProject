@@ -26,7 +26,7 @@
         BBUserDefault.isNoFirstLaunch = YES;
     }
     
-    NSArray <NSString *> *imagesURLS = @[@"http://lxc66188.blog.163.com/blog/#m=0", @"http://image68.360doc.com/DownloadImg/2014/02/1107/39016758_8.gif", @"http://image68.360doc.com/DownloadImg/2014/02/1107/39016758_19.gif"];
+    NSArray <NSString *> *imagesURLS = @[@"http://img.zcool.cn/community/01822357bbc7ef0000018c1b0dd7da.gif", @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494930801&di=073a9246f1b571fac4ad6a5065801300&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0128f957d274250000012e7efe7de4.gif"];
     
     
     [AdvertiseHelper showAdvertiserView:imagesURLS];
