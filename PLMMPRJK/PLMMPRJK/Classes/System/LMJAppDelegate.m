@@ -9,7 +9,6 @@
 #import "LMJAppDelegate.h"
 #import "LMJAppDelegate+LMJCTool.h"
 
-
 @implementation LMJAppDelegate
 
 - (UIWindow *)window
