@@ -9,8 +9,11 @@
 #import "BSJTabBarController.h"
 #import "BSJEssenceViewController.h"
 #import "BSJNewViewController.h"
+#import "BSJPublishViewController.h"
 #import "BSJTrendViewController.h"
 #import "BSJMeViewController.h"
+#import "BSJTabBar.h"
+
 
 @interface BSJTabBarController ()<UITabBarControllerDelegate>
 
@@ -20,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
     
     self.tabBar.tintColor = [UIColor redColor];
     self.titlePositionAdjustment = UIOffsetMake(0, -3);
@@ -31,6 +36,21 @@
     self.delegate = self;
 }
 
+/**
+ *  利用 KVC 把系统的 tabBar 类型改为自定义类型。覆盖父类方法
+ */
+- (void)setUpTabBar {
+    
+    BSJTabBar *tabBar = [[BSJTabBar alloc] init];
+    
+    [tabBar setPublishBtnClick:^(BSJTabBar *tabBar, UIButton *publishBtn){
+        
+        NSLogFunc;
+        
+    }];
+    
+    [self setValue:tabBar forKeyPath:LMJKeyPath(self, tabBar)];
+}
 
 - (void)addChildViewControllers
 {
@@ -42,7 +62,7 @@
     
         LMJNavigationController *five = [[LMJNavigationController alloc] initWithRootViewController:[[BSJMeViewController alloc] init]];
     
-    self.viewControllers = @[two, one, four, five];
+    self.viewControllers = @[one, two, four, five];
     
 }
 

@@ -34,6 +34,7 @@
 		588B32C61EC4485600D00C1C /* SINDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32C51EC4485600D00C1C /* SINDiscoveryViewController.m */; };
 		588B32C91EC4486600D00C1C /* SINProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32C81EC4486600D00C1C /* SINProfileViewController.m */; };
 		588B32D51EC4755100D00C1C /* BSJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32D41EC4755100D00C1C /* BSJTabBar.m */; };
+		588B32D81EC48D6600D00C1C /* BSJPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32D71EC48D6600D00C1C /* BSJPublishViewController.m */; };
 		58A663691EBD8E1300222A1D /* LMJH5_OCViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */; };
 		58A6636C1EBD983100222A1D /* LMJOCJSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */; };
 		58A6636F1EBDAF5500222A1D /* LMJAlertViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636E1EBDAF5500222A1D /* LMJAlertViewsViewController.m */; };
@@ -553,6 +554,8 @@
 		588B32C81EC4486600D00C1C /* SINProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINProfileViewController.m; sourceTree = "<group>"; };
 		588B32D31EC4755100D00C1C /* BSJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTabBar.h; sourceTree = "<group>"; };
 		588B32D41EC4755100D00C1C /* BSJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTabBar.m; sourceTree = "<group>"; };
+		588B32D61EC48D6500D00C1C /* BSJPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJPublishViewController.h; sourceTree = "<group>"; };
+		588B32D71EC48D6600D00C1C /* BSJPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPublishViewController.m; sourceTree = "<group>"; };
 		58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LMJH5_OCViewController.html; sourceTree = "<group>"; };
 		58A6636A1EBD983100222A1D /* LMJOCJSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJOCJSHelper.h; sourceTree = "<group>"; };
 		58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJOCJSHelper.m; sourceTree = "<group>"; };
@@ -1736,6 +1739,8 @@
 				588B32AB1EC4425300D00C1C /* BSJEssenceViewController.m */,
 				588B32AD1EC4428100D00C1C /* BSJNewViewController.h */,
 				588B32AE1EC4428100D00C1C /* BSJNewViewController.m */,
+				588B32D61EC48D6500D00C1C /* BSJPublishViewController.h */,
+				588B32D71EC48D6600D00C1C /* BSJPublishViewController.m */,
 				588B32B31EC442D100D00C1C /* BSJTrendViewController.h */,
 				588B32B41EC442D100D00C1C /* BSJTrendViewController.m */,
 				588B32B61EC442E200D00C1C /* BSJMeViewController.h */,
@@ -1833,6 +1838,53 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		588B32D91EC493A700D00C1C /* WYNews */ = {
+			isa = PBXGroup;
+			children = (
+				588B32DA1EC493A700D00C1C /* Controller */,
+				588B32DD1EC493A700D00C1C /* Model */,
+				588B32DF1EC493A700D00C1C /* Other */,
+				588B32E11EC493A700D00C1C /* Service */,
+				588B32E31EC493A700D00C1C /* View */,
+			);
+			path = WYNews;
+			sourceTree = "<group>";
+		};
+		588B32DA1EC493A700D00C1C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		588B32DD1EC493A700D00C1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		588B32DF1EC493A700D00C1C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		588B32E11EC493A700D00C1C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		588B32E31EC493A700D00C1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		58AFA6D61EB4ADA900822043 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1856,6 +1908,7 @@
 				588B32351EC4309300D00C1C /* IM_HX */,
 				588B32411EC4309300D00C1C /* Music */,
 				588B32591EC4309300D00C1C /* Videos */,
+				588B32D91EC493A700D00C1C /* WYNews */,
 				58AFAABE1EB4ADAA00822043 /* System */,
 			);
 			path = Classes;
@@ -4970,6 +5023,7 @@
 				58AFAC601EB4ADAB00822043 /* LMJStaticTableViewController.m in Sources */,
 				58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */,
 				58AFAB6B1EB4ADAA00822043 /* UIView+EaseBlankPage.m in Sources */,
+				588B32D81EC48D6600D00C1C /* BSJPublishViewController.m in Sources */,
 				58AFAC991EB4ADAB00822043 /* LMJExpandImageView.m in Sources */,
 				58AFAC771EB4ADAB00822043 /* LMJBaseRequest.m in Sources */,
 				58AFACAD1EB4ADAB00822043 /* LMJRunTimeTest+LMJWork.m in Sources */,

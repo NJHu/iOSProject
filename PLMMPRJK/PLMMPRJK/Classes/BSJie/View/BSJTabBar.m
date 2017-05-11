@@ -15,29 +15,12 @@
 
 @implementation BSJTabBar
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    if (self = [super initWithFrame:frame]) {
-        [self setupUIOnce];
-    }
-    return self;
-}
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self setupUIOnce];
-}
-
-- (void)setupUIOnce
-{
-    
-    
-}
-
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    CGFloat itemWidth = self.lmj_width / (self.items.count + 1);
+    
     
     NSMutableArray<UIView *> *tabBarButtonMutableArray = [NSMutableArray array];
     
@@ -50,12 +33,19 @@
 
     [tabBarButtonMutableArray enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
+        obj.lmj_x = idx * itemWidth;
         
+        if (idx > 1) {
+            obj.lmj_x = (idx + 1) * itemWidth;
+        }
+        
+        if (idx == 2) {
+            self.publishBtn.center = (CGPoint){self.lmj_width * 0.5, self.lmj_height * 0.5};
+            self.publishBtn.lmj_size = CGSizeMake(itemWidth, self.lmj_height);
+        }
         
         
     }];
-    
-    
 }
 
 
@@ -82,5 +72,18 @@
     return _publishBtn;
 }
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    
+    if (CGRectContainsPoint(self.publishBtn.frame, point)) {
+        
+        return self.publishBtn;
+        
+    }
+    
+    return [super hitTest:point withEvent:event];
+        
+        
+}
 
 @end
