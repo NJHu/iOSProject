@@ -6,8 +6,8 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:zplantest.s3-website.cn-north-1.amazonaws.com.cn</string>
-		<string>applinks:www.zplantest.s3-website.cn-north-1.amazonaws.com.cn</string>
+		<string>applinks:zplan.s3.cn-north-1.amazonaws.com.cn</string>
+		<string>applinks:www.zplan.s3.cn-north-1.amazonaws.com.cn</string>
 		<string>applinks:zplantest.s3.cn-north-1.amazonaws.com.cn</string>
 		<string>applinks:www.zplantest.s3.cn-north-1.amazonaws.com.cn</string>
 	</array>
