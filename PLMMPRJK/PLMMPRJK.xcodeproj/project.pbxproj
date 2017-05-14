@@ -455,6 +455,14 @@
 		58AFACF51EB8D7F000822043 /* LMJCoordinateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */; };
 		58AFAF031EB9B40B00822043 /* LMJAnnotationCustomPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */; };
 		58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */; };
+		58B3CC5B1EC7F6CC00D3C02D /* LMJTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC5A1EC7F6CC00D3C02D /* LMJTopicViewController.m */; };
+		58B3CC5E1EC7F7BF00D3C02D /* BSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC5D1EC7F7BF00D3C02D /* BSJ.m */; };
+		58B3CC611EC7FFA800D3C02D /* BSJLanuchADService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC601EC7FFA800D3C02D /* BSJLanuchADService.m */; };
+		58B3CC641EC8052800D3C02D /* BSJRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC631EC8052800D3C02D /* BSJRecommendViewController.m */; };
+		58B3CC6C1EC809E500D3C02D /* BSJReommmendCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC6B1EC809E500D3C02D /* BSJReommmendCategoryCell.m */; };
+		58B3CC6E1EC809F300D3C02D /* BSJReommmendCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B3CC6D1EC809F300D3C02D /* BSJReommmendCategoryCell.xib */; };
+		58B3CC711EC80CCB00D3C02D /* BSJRecommendSevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC701EC80CCB00D3C02D /* BSJRecommendSevice.m */; };
+		58B3CC741EC80CFB00D3C02D /* BSJRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC731EC80CFB00D3C02D /* BSJRecommendCategory.m */; };
 		58CDBFB11EBB3D7400DBC8AA /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */; };
 		58CDBFB41EBB47E400DBC8AA /* MPImageItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB31EBB47E400DBC8AA /* MPImageItemModel.m */; };
 		58CDBFB71EBB47EB00DBC8AA /* MPUploadImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB61EBB47EB00DBC8AA /* MPUploadImageHelper.m */; };
@@ -1399,6 +1407,21 @@
 		58AFAF011EB9B40B00822043 /* LMJAnnotationCustomPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAnnotationCustomPopView.h; sourceTree = "<group>"; };
 		58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAnnotationCustomPopView.m; sourceTree = "<group>"; };
 		58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMJAnnotationCustomPopView.xib; sourceTree = "<group>"; };
+		58B3CC591EC7F6CC00D3C02D /* LMJTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTopicViewController.h; sourceTree = "<group>"; };
+		58B3CC5A1EC7F6CC00D3C02D /* LMJTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTopicViewController.m; sourceTree = "<group>"; };
+		58B3CC5C1EC7F77700D3C02D /* BSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSJ.h; sourceTree = "<group>"; };
+		58B3CC5D1EC7F7BF00D3C02D /* BSJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJ.m; sourceTree = "<group>"; };
+		58B3CC5F1EC7FFA800D3C02D /* BSJLanuchADService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLanuchADService.h; sourceTree = "<group>"; };
+		58B3CC601EC7FFA800D3C02D /* BSJLanuchADService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJLanuchADService.m; sourceTree = "<group>"; };
+		58B3CC621EC8052800D3C02D /* BSJRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJRecommendViewController.h; sourceTree = "<group>"; };
+		58B3CC631EC8052800D3C02D /* BSJRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendViewController.m; sourceTree = "<group>"; };
+		58B3CC6A1EC809E500D3C02D /* BSJReommmendCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJReommmendCategoryCell.h; sourceTree = "<group>"; };
+		58B3CC6B1EC809E500D3C02D /* BSJReommmendCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJReommmendCategoryCell.m; sourceTree = "<group>"; };
+		58B3CC6D1EC809F300D3C02D /* BSJReommmendCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJReommmendCategoryCell.xib; sourceTree = "<group>"; };
+		58B3CC6F1EC80CCB00D3C02D /* BSJRecommendSevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJRecommendSevice.h; sourceTree = "<group>"; };
+		58B3CC701EC80CCB00D3C02D /* BSJRecommendSevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendSevice.m; sourceTree = "<group>"; };
+		58B3CC721EC80CFB00D3C02D /* BSJRecommendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJRecommendCategory.h; sourceTree = "<group>"; };
+		58B3CC731EC80CFB00D3C02D /* BSJRecommendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendCategory.m; sourceTree = "<group>"; };
 		58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		58CDBFB21EBB47E400DBC8AA /* MPImageItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPImageItemModel.h; sourceTree = "<group>"; };
 		58CDBFB31EBB47E400DBC8AA /* MPImageItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPImageItemModel.m; sourceTree = "<group>"; };
@@ -1737,6 +1760,8 @@
 				588B329C1EC43CC900D00C1C /* BSJTabBarController.m */,
 				588B32AA1EC4425300D00C1C /* BSJEssenceViewController.h */,
 				588B32AB1EC4425300D00C1C /* BSJEssenceViewController.m */,
+				58B3CC591EC7F6CC00D3C02D /* LMJTopicViewController.h */,
+				58B3CC5A1EC7F6CC00D3C02D /* LMJTopicViewController.m */,
 				588B32AD1EC4428100D00C1C /* BSJNewViewController.h */,
 				588B32AE1EC4428100D00C1C /* BSJNewViewController.m */,
 				588B32D61EC48D6500D00C1C /* BSJPublishViewController.h */,
@@ -1745,6 +1770,8 @@
 				588B32B41EC442D100D00C1C /* BSJTrendViewController.m */,
 				588B32B61EC442E200D00C1C /* BSJMeViewController.h */,
 				588B32B71EC442E200D00C1C /* BSJMeViewController.m */,
+				58B3CC621EC8052800D3C02D /* BSJRecommendViewController.h */,
+				58B3CC631EC8052800D3C02D /* BSJRecommendViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1752,6 +1779,8 @@
 		588B327D1EC4312800D00C1C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				58B3CC721EC80CFB00D3C02D /* BSJRecommendCategory.h */,
+				58B3CC731EC80CFB00D3C02D /* BSJRecommendCategory.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1759,6 +1788,8 @@
 		588B327F1EC4312800D00C1C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				58B3CC5C1EC7F77700D3C02D /* BSJ.h */,
+				58B3CC5D1EC7F7BF00D3C02D /* BSJ.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1766,6 +1797,10 @@
 		588B32811EC4312800D00C1C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				58B3CC5F1EC7FFA800D3C02D /* BSJLanuchADService.h */,
+				58B3CC601EC7FFA800D3C02D /* BSJLanuchADService.m */,
+				58B3CC6F1EC80CCB00D3C02D /* BSJRecommendSevice.h */,
+				58B3CC701EC80CCB00D3C02D /* BSJRecommendSevice.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1775,6 +1810,9 @@
 			children = (
 				588B32D31EC4755100D00C1C /* BSJTabBar.h */,
 				588B32D41EC4755100D00C1C /* BSJTabBar.m */,
+				58B3CC6A1EC809E500D3C02D /* BSJReommmendCategoryCell.h */,
+				58B3CC6B1EC809E500D3C02D /* BSJReommmendCategoryCell.m */,
+				58B3CC6D1EC809F300D3C02D /* BSJReommmendCategoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4517,7 +4555,7 @@
 		E7D0E0411E8B9DCA001E4585 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = LMJ;
+				CLASSPREFIX = BSJ;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = GoMePrjk;
 				TargetAttributes = {
@@ -4595,6 +4633,7 @@
 				583EB8AC1EBAC24900A945D3 /* WechatIMG10.jpeg in Resources */,
 				58AFAB671EB4ADAA00822043 /* blankpage_image_loadFail@3x.png in Resources */,
 				58AFABBE1EB4ADAA00822043 /* UMSocialSDKPromptResources.bundle in Resources */,
+				58B3CC6E1EC809F300D3C02D /* BSJReommmendCategoryCell.xib in Resources */,
 				58AFAB5F1EB4ADAA00822043 /* addressData.plist in Resources */,
 				58AFABC01EB4ADAA00822043 /* UMSocialSDKResources.bundle in Resources */,
 				58AFAB651EB4ADAA00822043 /* blankpage_button_reload@2x.png in Resources */,
@@ -4735,6 +4774,7 @@
 				58AFAB461EB4ADAA00822043 /* NSString+Ruby.m in Sources */,
 				58AFAC481EB4ADAA00822043 /* WebView+Debug.m in Sources */,
 				58AFAC0C1EB4ADAA00822043 /* UINavigationItem+Lock.m in Sources */,
+				58B3CC6C1EC809E500D3C02D /* BSJReommmendCategoryCell.m in Sources */,
 				58AFAB1B1EB4ADAA00822043 /* NSDictionary+JSONString.m in Sources */,
 				58D40EBF1EBC799C004A4358 /* LMJCountDownCell.m in Sources */,
 				58D40EBC1EBC758E004A4358 /* LMJCountDownModel.m in Sources */,
@@ -4813,12 +4853,14 @@
 				58AFAB111EB4ADAA00822043 /* NSDate+CupertinoYankee.m in Sources */,
 				58AFAC461EB4ADAA00822043 /* UIWebView+Style.m in Sources */,
 				58AFAC1B1EB4ADAA00822043 /* UITableView+FDKeyedHeightCache.m in Sources */,
+				58B3CC611EC7FFA800D3C02D /* BSJLanuchADService.m in Sources */,
 				58AFABFB1EB4ADAA00822043 /* UIImageView+Addition.m in Sources */,
 				58AFAB131EB4ADAA00822043 /* NSDate+Formatter.m in Sources */,
 				58AFAB261EB4ADAA00822043 /* NSInvocation+Block.m in Sources */,
 				58AFABAA1EB4ADAA00822043 /* QBImagePickerGroupCell.m in Sources */,
 				58AFAB471EB4ADAA00822043 /* NSString+Score.m in Sources */,
 				58AFAC9E1EB4ADAB00822043 /* main.m in Sources */,
+				58B3CC641EC8052800D3C02D /* BSJRecommendViewController.m in Sources */,
 				58AFAC2E1EB4ADAA00822043 /* UIView+Find.m in Sources */,
 				583EB8B21EBAEEB300A945D3 /* LMJUpLoadImageCell.m in Sources */,
 				58AFAC3E1EB4ADAA00822043 /* UIViewController+TopBarMessage.m in Sources */,
@@ -4878,6 +4920,7 @@
 				58AFAC3B1EB4ADAA00822043 /* UIViewController+DDPopUpViewController.m in Sources */,
 				58CDBFB11EBB3D7400DBC8AA /* Foundation+Log.m in Sources */,
 				58AFAB8F1EB4ADAA00822043 /* IQNSArray+Sort.m in Sources */,
+				58B3CC741EC80CFB00D3C02D /* BSJRecommendCategory.m in Sources */,
 				58AFAB8C1EB4ADAA00822043 /* GVUserDefaults.m in Sources */,
 				58AFACA31EB4ADAB00822043 /* LMJMultithreadViewController.m in Sources */,
 				58AFAC5B1EB4ADAB00822043 /* LMJNavigationController.m in Sources */,
@@ -5019,9 +5062,11 @@
 				58AFAB561EB4ADAA00822043 /* MKMapView+BetterMaps.m in Sources */,
 				58AFAB941EB4ADAA00822043 /* IQUIWindow+Hierarchy.m in Sources */,
 				58AFAB7F1EB4ADAA00822043 /* MPLocationManager.m in Sources */,
+				58B3CC5B1EC7F6CC00D3C02D /* LMJTopicViewController.m in Sources */,
 				58AFAB341EB4ADAA00822043 /* NSObject+KVOBlocks.m in Sources */,
 				58AFAC601EB4ADAB00822043 /* LMJStaticTableViewController.m in Sources */,
 				58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */,
+				58B3CC711EC80CCB00D3C02D /* BSJRecommendSevice.m in Sources */,
 				58AFAB6B1EB4ADAA00822043 /* UIView+EaseBlankPage.m in Sources */,
 				588B32D81EC48D6600D00C1C /* BSJPublishViewController.m in Sources */,
 				58AFAC991EB4ADAB00822043 /* LMJExpandImageView.m in Sources */,
@@ -5029,6 +5074,7 @@
 				58AFACAD1EB4ADAB00822043 /* LMJRunTimeTest+LMJWork.m in Sources */,
 				58CDBFB41EBB47E400DBC8AA /* MPImageItemModel.m in Sources */,
 				58CDBFB71EBB47EB00DBC8AA /* MPUploadImageHelper.m in Sources */,
+				58B3CC5E1EC7F7BF00D3C02D /* BSJ.m in Sources */,
 				58AFAC851EB4ADAB00822043 /* LMJHorizontalLayoutViewController.m in Sources */,
 				58AFAB4B1EB4ADAA00822043 /* NSString+UUID.m in Sources */,
 				58AFAC241EB4ADAA00822043 /* UITextView+PinchZoom.m in Sources */,

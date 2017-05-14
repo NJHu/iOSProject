@@ -28,7 +28,22 @@
 {
     if(_titlesScrollView == nil)
     {
+        UIScrollView *titlesScrollView = [[UIScrollView alloc] init];
+        [self.view addSubview:titlesScrollView];
         
+        [titlesScrollView makeConstraints:^(MASConstraintMaker *make) {
+            make.top.offset(64);
+            make.height.equalTo(30);
+            make.left.offset(0);
+            
+        }];
+        
+        
+        titlesScrollView.alwaysBounceHorizontal = YES;
+        titlesScrollView.showsVerticalScrollIndicator = NO;
+        titlesScrollView.showsHorizontalScrollIndicator = NO;
+        titlesScrollView.backgroundColor = [UIColor whiteColor];
+        titlesScrollView.lmj_height = 30;
     }
     return _titlesScrollView;
 }

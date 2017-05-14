@@ -7,6 +7,7 @@
 //
 
 #import <CYLTabBarController/CYLTabBarController.h>
+#import "BSJ.h"
 
 @interface BSJTabBarController : CYLTabBarController
 

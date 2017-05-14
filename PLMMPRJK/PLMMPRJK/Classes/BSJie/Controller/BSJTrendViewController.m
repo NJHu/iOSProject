@@ -7,6 +7,8 @@
 //
 
 #import "BSJTrendViewController.h"
+#import "BSJRecommendViewController.h"
+
 
 @interface BSJTrendViewController ()
 
@@ -16,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +26,66 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+
+#pragma mark - LMJNavUIBaseViewControllerDataSource
+
+
+- (NSMutableAttributedString *)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
+{
+    return [self changeTitle:@"我的关注"];
 }
-*/
+
+
+/** 导航条左边的按钮 */
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [leftButton setImage:[UIImage imageNamed:@"MainTagSubIconClick"] forState:UIControlStateHighlighted];
+    return [UIImage imageNamed:@"MainTagSubIcon"];
+}
+/** 导航条右边的按钮 */
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [rightButton setImage:[UIImage imageNamed:@"nav_coin_icon_click"] forState:UIControlStateHighlighted];
+    return [UIImage imageNamed:@"nav_coin_icon"];
+}
+
+
+
+#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [self.navigationController pushViewController:[[BSJRecommendViewController alloc] init] animated:YES];
+}
+/** 右边的按钮的点击 */
+-(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+}
+/** 中间如果是 label 就会有点击 */
+-(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+}
+
+
+#pragma mark 自定义代码
+
+-(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
+{
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
+
+    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x032124) range:NSMakeRange(0, title.length)];
+
+    [title addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:NSMakeRange(0, title.length)];
+
+    return title;
+}
+
+
+
+
 
 @end

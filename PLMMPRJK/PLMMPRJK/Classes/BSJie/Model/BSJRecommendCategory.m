@@ -1,0 +1,19 @@
+//
+//  BSJRecommendCategory.m
+//  PLMMPRJK
+//
+//  Created by HuXuPeng on 2017/5/14.
+//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//
+
+#import "BSJRecommendCategory.h"
+
+@implementation BSJRecommendCategory
+
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName
+{
+    return @{@"ID" : @"id"};
+}
+
+@end

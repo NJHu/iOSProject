@@ -7,6 +7,7 @@
 //
 
 #import "LMJBaseViewController.h"
+#import "BSJ.h"
 
 @interface BSJEssenceViewController : LMJBaseViewController
 
