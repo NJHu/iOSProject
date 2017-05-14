@@ -29,6 +29,8 @@
     [self getCategorys];
     
     self.tableView.tableFooterView = [UIView new];
+    
+    [self endHeaderFooterRefreshing];
 }
 
 
@@ -47,11 +49,14 @@
         
         if (error) {
             [MBProgressHUD showError:error.userInfo[LMJBaseResponseCustomErrorMsgKey] ?: error.userInfo[LMJBaseResponseSystemErrorMsgKey] ToView:weakself.view];
+            return;
         }
         
         
         
         [weakself.leftTagTableView reloadData];
+        
+        [weakself.leftTagTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
         
     }];
     
@@ -61,7 +66,9 @@
 {
     LMJWeakSelf(self);
     
-    [weakself endHeaderFooterRefreshing];
+    
+    
+    
 }
 
 

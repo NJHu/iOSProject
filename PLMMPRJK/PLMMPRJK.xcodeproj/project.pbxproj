@@ -463,6 +463,16 @@
 		58B3CC6E1EC809F300D3C02D /* BSJReommmendCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B3CC6D1EC809F300D3C02D /* BSJReommmendCategoryCell.xib */; };
 		58B3CC711EC80CCB00D3C02D /* BSJRecommendSevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC701EC80CCB00D3C02D /* BSJRecommendSevice.m */; };
 		58B3CC741EC80CFB00D3C02D /* BSJRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC731EC80CFB00D3C02D /* BSJRecommendCategory.m */; };
+		58B3CC781EC819FB00D3C02D /* BSJRecommendUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC761EC819FB00D3C02D /* BSJRecommendUserCell.m */; };
+		58B3CC791EC819FB00D3C02D /* BSJRecommendUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B3CC771EC819FB00D3C02D /* BSJRecommendUserCell.xib */; };
+		58B3CC7C1EC81AD600D3C02D /* BSJRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC7B1EC81AD600D3C02D /* BSJRecommendUser.m */; };
+		58B3CC8D1EC835A300D3C02D /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC801EC835A300D3C02D /* TAAbstractDotView.m */; };
+		58B3CC8E1EC835A300D3C02D /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC821EC835A300D3C02D /* TAAnimatedDotView.m */; };
+		58B3CC8F1EC835A300D3C02D /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC841EC835A300D3C02D /* TADotView.m */; };
+		58B3CC901EC835A300D3C02D /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC861EC835A300D3C02D /* TAPageControl.m */; };
+		58B3CC911EC835A300D3C02D /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC881EC835A300D3C02D /* SDCollectionViewCell.m */; };
+		58B3CC921EC835A300D3C02D /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC8A1EC835A300D3C02D /* SDCycleScrollView.m */; };
+		58B3CC931EC835A300D3C02D /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC8C1EC835A300D3C02D /* UIView+SDExtension.m */; };
 		58CDBFB11EBB3D7400DBC8AA /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */; };
 		58CDBFB41EBB47E400DBC8AA /* MPImageItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB31EBB47E400DBC8AA /* MPImageItemModel.m */; };
 		58CDBFB71EBB47EB00DBC8AA /* MPUploadImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB61EBB47EB00DBC8AA /* MPUploadImageHelper.m */; };
@@ -1422,6 +1432,25 @@
 		58B3CC701EC80CCB00D3C02D /* BSJRecommendSevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendSevice.m; sourceTree = "<group>"; };
 		58B3CC721EC80CFB00D3C02D /* BSJRecommendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJRecommendCategory.h; sourceTree = "<group>"; };
 		58B3CC731EC80CFB00D3C02D /* BSJRecommendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendCategory.m; sourceTree = "<group>"; };
+		58B3CC751EC819FB00D3C02D /* BSJRecommendUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJRecommendUserCell.h; sourceTree = "<group>"; };
+		58B3CC761EC819FB00D3C02D /* BSJRecommendUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendUserCell.m; sourceTree = "<group>"; };
+		58B3CC771EC819FB00D3C02D /* BSJRecommendUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJRecommendUserCell.xib; sourceTree = "<group>"; };
+		58B3CC7A1EC81AD600D3C02D /* BSJRecommendUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJRecommendUser.h; sourceTree = "<group>"; };
+		58B3CC7B1EC81AD600D3C02D /* BSJRecommendUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendUser.m; sourceTree = "<group>"; };
+		58B3CC7F1EC835A300D3C02D /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		58B3CC801EC835A300D3C02D /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		58B3CC811EC835A300D3C02D /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		58B3CC821EC835A300D3C02D /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		58B3CC831EC835A300D3C02D /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		58B3CC841EC835A300D3C02D /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		58B3CC851EC835A300D3C02D /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		58B3CC861EC835A300D3C02D /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		58B3CC871EC835A300D3C02D /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		58B3CC881EC835A300D3C02D /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		58B3CC891EC835A300D3C02D /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		58B3CC8A1EC835A300D3C02D /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		58B3CC8B1EC835A300D3C02D /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		58B3CC8C1EC835A300D3C02D /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		58CDBFB21EBB47E400DBC8AA /* MPImageItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPImageItemModel.h; sourceTree = "<group>"; };
 		58CDBFB31EBB47E400DBC8AA /* MPImageItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPImageItemModel.m; sourceTree = "<group>"; };
@@ -1781,6 +1810,8 @@
 			children = (
 				58B3CC721EC80CFB00D3C02D /* BSJRecommendCategory.h */,
 				58B3CC731EC80CFB00D3C02D /* BSJRecommendCategory.m */,
+				58B3CC7A1EC81AD600D3C02D /* BSJRecommendUser.h */,
+				58B3CC7B1EC81AD600D3C02D /* BSJRecommendUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1813,6 +1844,9 @@
 				58B3CC6A1EC809E500D3C02D /* BSJReommmendCategoryCell.h */,
 				58B3CC6B1EC809E500D3C02D /* BSJReommmendCategoryCell.m */,
 				58B3CC6D1EC809F300D3C02D /* BSJReommmendCategoryCell.xib */,
+				58B3CC751EC819FB00D3C02D /* BSJRecommendUserCell.h */,
+				58B3CC761EC819FB00D3C02D /* BSJRecommendUserCell.m */,
+				58B3CC771EC819FB00D3C02D /* BSJRecommendUserCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2749,6 +2783,7 @@
 		58AFA83E1EB4ADA900822043 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				58B3CC7D1EC835A300D3C02D /* SDCycleScrollView */,
 				58AFA83F1EB4ADA900822043 /* GVUserDefaults */,
 				58AFA8421EB4ADA900822043 /* iCarousel */,
 				58AFA8451EB4ADA900822043 /* iflyMSC.framework */,
@@ -4352,6 +4387,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		58B3CC7D1EC835A300D3C02D /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				58B3CC7E1EC835A300D3C02D /* PageControl */,
+				58B3CC871EC835A300D3C02D /* SDCollectionViewCell.h */,
+				58B3CC881EC835A300D3C02D /* SDCollectionViewCell.m */,
+				58B3CC891EC835A300D3C02D /* SDCycleScrollView.h */,
+				58B3CC8A1EC835A300D3C02D /* SDCycleScrollView.m */,
+				58B3CC8B1EC835A300D3C02D /* UIView+SDExtension.h */,
+				58B3CC8C1EC835A300D3C02D /* UIView+SDExtension.m */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		58B3CC7E1EC835A300D3C02D /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				58B3CC7F1EC835A300D3C02D /* TAAbstractDotView.h */,
+				58B3CC801EC835A300D3C02D /* TAAbstractDotView.m */,
+				58B3CC811EC835A300D3C02D /* TAAnimatedDotView.h */,
+				58B3CC821EC835A300D3C02D /* TAAnimatedDotView.m */,
+				58B3CC831EC835A300D3C02D /* TADotView.h */,
+				58B3CC841EC835A300D3C02D /* TADotView.m */,
+				58B3CC851EC835A300D3C02D /* TAPageControl.h */,
+				58B3CC861EC835A300D3C02D /* TAPageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
 		58FFE9901EBEDD5C00D50E4C /* FaceManager(脸部识别) */ = {
 			isa = PBXGroup;
 			children = (
@@ -4626,6 +4690,7 @@
 				58AFABB61EB4ADAA00822043 /* WeiboSDK.bundle in Resources */,
 				58AFAB661EB4ADAA00822043 /* blankpage_image_loadFail@2x.png in Resources */,
 				588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */,
+				58B3CC791EC819FB00D3C02D /* BSJRecommendUserCell.xib in Resources */,
 				58AFAB681EB4ADAA00822043 /* blankpage_image_Sleep@2x.png in Resources */,
 				58AFABB31EB4ADAA00822043 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				58AFAB691EB4ADAA00822043 /* blankpage_image_Sleep@3x.png in Resources */,
@@ -4775,6 +4840,7 @@
 				58AFAC481EB4ADAA00822043 /* WebView+Debug.m in Sources */,
 				58AFAC0C1EB4ADAA00822043 /* UINavigationItem+Lock.m in Sources */,
 				58B3CC6C1EC809E500D3C02D /* BSJReommmendCategoryCell.m in Sources */,
+				58B3CC8D1EC835A300D3C02D /* TAAbstractDotView.m in Sources */,
 				58AFAB1B1EB4ADAA00822043 /* NSDictionary+JSONString.m in Sources */,
 				58D40EBF1EBC799C004A4358 /* LMJCountDownCell.m in Sources */,
 				58D40EBC1EBC758E004A4358 /* LMJCountDownModel.m in Sources */,
@@ -4861,6 +4927,7 @@
 				58AFAB471EB4ADAA00822043 /* NSString+Score.m in Sources */,
 				58AFAC9E1EB4ADAB00822043 /* main.m in Sources */,
 				58B3CC641EC8052800D3C02D /* BSJRecommendViewController.m in Sources */,
+				58B3CC8E1EC835A300D3C02D /* TAAnimatedDotView.m in Sources */,
 				58AFAC2E1EB4ADAA00822043 /* UIView+Find.m in Sources */,
 				583EB8B21EBAEEB300A945D3 /* LMJUpLoadImageCell.m in Sources */,
 				58AFAC3E1EB4ADAA00822043 /* UIViewController+TopBarMessage.m in Sources */,
@@ -4931,6 +4998,7 @@
 				588B32AF1EC4428100D00C1C /* BSJNewViewController.m in Sources */,
 				58AFAB761EB4ADAA00822043 /* UIDevice+FCUUID.m in Sources */,
 				58AFAB611EB4ADAA00822043 /* AdvertiseHelper.m in Sources */,
+				58B3CC8F1EC835A300D3C02D /* TADotView.m in Sources */,
 				58AFAC3D1EB4ADAA00822043 /* UIViewController+StoreKit.m in Sources */,
 				58AFABF91EB4ADAA00822043 /* UIImage+RoundedCorner.m in Sources */,
 				58AFAB9E1EB4ADAA00822043 /* JDStatusBarNotification.m in Sources */,
@@ -4944,12 +5012,14 @@
 				58AFACB51EB4ADAB00822043 /* MPBlockView.m in Sources */,
 				58AFAB4D1EB4ADAA00822043 /* NSTimer+Addition.m in Sources */,
 				58AFACF51EB8D7F000822043 /* LMJCoordinateModel.m in Sources */,
+				58B3CC931EC835A300D3C02D /* UIView+SDExtension.m in Sources */,
 				58AFABF61EB4ADAA00822043 /* UIImage+PDF.m in Sources */,
 				58AFAB311EB4ADAA00822043 /* NSObject+Blocks.m in Sources */,
 				58AFABEC1EB4ADAA00822043 /* UIImage+animatedGIF.m in Sources */,
 				58AFAB301EB4ADAA00822043 /* NSObject+AutoCoding.m in Sources */,
 				58AFAC871EB4ADAB00822043 /* LMJListExpandHideViewController.m in Sources */,
 				58AFAB001EB4ADAA00822043 /* NSManagedObjectContext+Extensions.m in Sources */,
+				58B3CC911EC835A300D3C02D /* SDCollectionViewCell.m in Sources */,
 				58AFAB801EB4ADAA00822043 /* MPLKDBHelper.m in Sources */,
 				58AFAB381EB4ADAA00822043 /* NSRunLoop+PerformBlock.m in Sources */,
 				58AFAC431EB4ADAA00822043 /* UIWebView+JS.m in Sources */,
@@ -4957,6 +5027,7 @@
 				58AFAC9F1EB4ADAB00822043 /* LMJBlockLoopViewController.m in Sources */,
 				58AFABF21EB4ADAA00822043 /* UIImage+FX.m in Sources */,
 				58AFAC631EB4ADAB00822043 /* LMJTitleListChildViewController.m in Sources */,
+				58B3CC7C1EC81AD600D3C02D /* BSJRecommendUser.m in Sources */,
 				58AFABDB1EB4ADAA00822043 /* UIButton+Indicator.m in Sources */,
 				588B329D1EC43CC900D00C1C /* BSJTabBarController.m in Sources */,
 				58AFACA21EB4ADAB00822043 /* LMJModalBlockViewController.m in Sources */,
@@ -4989,6 +5060,7 @@
 				58AFAC0A1EB4ADAA00822043 /* UINavigationController+StackManager.m in Sources */,
 				58AFAB781EB4ADAA00822043 /* GCDGroup.m in Sources */,
 				58AFACA01EB4ADAB00822043 /* LMJChildBlockViewController.m in Sources */,
+				58B3CC901EC835A300D3C02D /* TAPageControl.m in Sources */,
 				58AFAB091EB4ADAA00822043 /* NSBundle+AppIcon.m in Sources */,
 				58AFABD41EB4ADAA00822043 /* UIBezierPath+Length.m in Sources */,
 				58AFACB31EB4ADAB00822043 /* UIButton+LMJBlock.m in Sources */,
@@ -5109,12 +5181,14 @@
 				58AFAC011EB4ADAA00822043 /* UILabel+AutomaticWriting.m in Sources */,
 				58AFABF01EB4ADAA00822043 /* UIImage+Color.m in Sources */,
 				58AFAB7D1EB4ADAA00822043 /* introductoryPagesView.m in Sources */,
+				58B3CC781EC819FB00D3C02D /* BSJRecommendUserCell.m in Sources */,
 				58D40EB61EBC7547004A4358 /* LMJListTimerCountDownViewController.m in Sources */,
 				58AFAC861EB4ADAB00822043 /* LMJKeyboardHandleViewController.m in Sources */,
 				58AFAC6C1EB4ADAB00822043 /* LMJMeViewController.m in Sources */,
 				58AFABC51EB4ADAA00822043 /* UIView+RoundedCorner.m in Sources */,
 				58AFABA41EB4ADAA00822043 /* QBAssetsCollectionVideoIndicatorView.m in Sources */,
 				58AFAC1A1EB4ADAA00822043 /* UITableView+FDIndexPathHeightCache.m in Sources */,
+				58B3CC921EC835A300D3C02D /* SDCycleScrollView.m in Sources */,
 				58AFABF71EB4ADAA00822043 /* UIImage+RemoteSize.m in Sources */,
 				58AFABD91EB4ADAA00822043 /* UIButton+Block.m in Sources */,
 				58AFACEF1EB8AFD400822043 /* LMJBaiduMapViewController.m in Sources */,
