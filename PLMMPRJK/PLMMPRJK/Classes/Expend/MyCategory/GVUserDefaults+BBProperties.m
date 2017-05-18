@@ -15,4 +15,5 @@
 @dynamic role;
 @dynamic MBJsPatchTime;
 @dynamic isNoFirstLaunch;
+@dynamic isHaveBSJFirstLaunch;
 @end

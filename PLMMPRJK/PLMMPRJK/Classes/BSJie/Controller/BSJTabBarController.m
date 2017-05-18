@@ -13,6 +13,7 @@
 #import "BSJTrendViewController.h"
 #import "BSJMeViewController.h"
 #import "BSJTabBar.h"
+#import "BSJGuidePushView.h"
 
 
 @interface BSJTabBarController ()<UITabBarControllerDelegate>
@@ -34,6 +35,21 @@
     [self addChildViewControllers];
     
     self.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        if (!BBUserDefault.isHaveBSJFirstLaunch) {
+            
+            [kKeyWindow addSubview:[BSJGuidePushView guidePushView]];
+            BBUserDefault.isHaveBSJFirstLaunch = YES;
+        }
+        
+    });
 }
 
 /**

@@ -7,12 +7,11 @@
 //
 
 #import "BSJEssenceViewController.h"
+#import "ZJScrollPageView.h"
+#import "LMJTopicViewController.h"
 
-@interface BSJEssenceViewController ()
-
-/** <#digest#> */
-@property (weak, nonatomic) UIScrollView *titlesScrollView;
-
+@interface BSJEssenceViewController ()<ZJScrollPageViewDelegate>
+@property (nonatomic, weak) ZJScrollPageView *scrollPageView;
 @end
 
 @implementation BSJEssenceViewController
@@ -20,35 +19,85 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    1为全部，10为图片，29为段子，31为音频，41为视频
+    
+    LMJTopicViewController *words = [[LMJTopicViewController alloc] initWithTitle:@"段子"];
+    LMJTopicViewController *voice = [[LMJTopicViewController alloc] initWithTitle:@"音频"];
+    LMJTopicViewController *picture = [[LMJTopicViewController alloc] initWithTitle:@"图片"];
+    LMJTopicViewController *video = [[LMJTopicViewController alloc] initWithTitle:@"视频"];
+    
+    LMJTopicViewController *all = [[LMJTopicViewController alloc] initWithTitle:@"全部"];
+    
+    words.topicType = LMJTopicViewControllerTypeWords;
+    voice.topicType = LMJTopicViewControllerTypeVoice;
+    picture.topicType = LMJTopicViewControllerTypePicture;
+    video.topicType = LMJTopicViewControllerTypeVideo;
+    all.topicType = LMJTopicViewControllerTypeAll;
+    
+    [self addChildViewController:words];
+    [self addChildViewController:voice];
+    [self addChildViewController:picture];
+    [self addChildViewController:video];
+    [self addChildViewController:all];
+    
+    [self scrollPageView];
+}
+
+
+#pragma mark - getter
+
+- (ZJScrollPageView *)scrollPageView
+{
+    if(_scrollPageView == nil)
+    {
+        ZJSegmentStyle *style = [[ZJSegmentStyle alloc] init];
+        //显示滚动条
+        style.showLine = YES;
+        // 颜色渐变
+        style.gradualChangeTitleColor = YES;
+        
+        style.animatedContentViewWhenTitleClicked = NO;
+        
+        style.autoAdjustTitlesWidth = YES;
+        
+        ZJScrollPageView *scrollPageView = [[ZJScrollPageView alloc] initWithFrame:CGRectMake(0, 64, self.view.lmj_width, self.view.lmj_height - 64) segmentStyle:style titles:[self.childViewControllers valueForKey:@"title"] parentViewController:self delegate:self];
+        
+        [self.view addSubview:scrollPageView];
+        _scrollPageView = scrollPageView;
+        
+        scrollPageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        
+    }
+    return _scrollPageView;
+}
+
+
+#pragma mark - ZJScrollPageViewDelegate
+- (NSInteger)numberOfChildViewControllers {
+    
+    return self.childViewControllers.count;
     
 }
 
-
-- (UIScrollView *)titlesScrollView
-{
-    if(_titlesScrollView == nil)
-    {
-        UIScrollView *titlesScrollView = [[UIScrollView alloc] init];
-        [self.view addSubview:titlesScrollView];
+- (UIViewController<ZJScrollPageViewChildVcDelegate> *)childViewController:(UIViewController<ZJScrollPageViewChildVcDelegate> *)reuseViewController forIndex:(NSInteger)index {
+    
+    
+    UIViewController<ZJScrollPageViewChildVcDelegate> *childVc = reuseViewController;
+    
+    if (!childVc) {
         
-        [titlesScrollView makeConstraints:^(MASConstraintMaker *make) {
-            make.top.offset(64);
-            make.height.equalTo(30);
-            make.left.offset(0);
-            
-        }];
+        childVc = self.childViewControllers[index];
         
-        
-        titlesScrollView.alwaysBounceHorizontal = YES;
-        titlesScrollView.showsVerticalScrollIndicator = NO;
-        titlesScrollView.showsHorizontalScrollIndicator = NO;
-        titlesScrollView.backgroundColor = [UIColor whiteColor];
-        titlesScrollView.lmj_height = 30;
     }
-    return _titlesScrollView;
+    
+    return childVc;
 }
 
 
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods {
+    return NO;
+}
 
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource

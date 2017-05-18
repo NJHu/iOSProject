@@ -8,6 +8,7 @@
 
 #import "BSJTrendViewController.h"
 #import "BSJRecommendViewController.h"
+#import "BSJLoginRegisterViewController.h"
 
 
 @interface BSJTrendViewController ()
@@ -26,6 +27,7 @@
 
 - (IBAction)goToLoginRegister:(UIButton *)sender {
     
+    [self presentViewController:[[LMJNavigationController alloc] initWithRootViewController:[[BSJLoginRegisterViewController alloc] init]] animated:YES completion:nil];
 }
 
 

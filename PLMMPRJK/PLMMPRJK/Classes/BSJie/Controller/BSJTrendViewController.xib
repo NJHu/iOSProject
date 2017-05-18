@@ -30,8 +30,8 @@ LabelLabelLabelLabelLabelLabel</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvm-bL-cpA">
-                    <rect key="frame" x="86" y="309" width="243" height="48"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvm-bL-cpA">
+                    <rect key="frame" x="66" y="323" width="243" height="48"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="立即注册登录" backgroundImage="friendsTrend_login">
                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

@@ -9,6 +9,7 @@
 #import "BSJLoginRegisterViewController.h"
 
 @interface BSJLoginRegisterViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginViewLeftConstraint;
 
 @end
 
@@ -16,22 +17,77 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - LMJNavUIBaseViewControllerDataSource
+
+- (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
+{
+    return UIStatusBarStyleLightContent;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/**头部标题*/
+- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
+{
+    return nil;
 }
-*/
+
+
+/** 背景色 */
+- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
+{
+    return [UIColor clearColor];
+}
+
+/** 是否隐藏底部黑线 */
+- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
+{
+    return YES;
+}
+
+/** 导航条左边的按钮 */
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+    return [UIImage imageNamed:@"login_close_icon"];
+}
+/** 导航条右边的按钮 */
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [rightButton setTitle:@"立即注册" forState: UIControlStateNormal];
+    [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rightButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    rightButton.titleLabel.font = SYSTEMFONT(14);
+    
+    rightButton.lmj_width = 80;
+    
+    return nil;
+}
+
+
+
+#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+/** 右边的按钮的点击 */
+-(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    self.loginViewLeftConstraint.constant = self.loginViewLeftConstraint.constant < 0 ? 0 : -self.view.lmj_width;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        [self.view layoutIfNeeded];
+    }];
+    
+}
+
+
+
 
 @end

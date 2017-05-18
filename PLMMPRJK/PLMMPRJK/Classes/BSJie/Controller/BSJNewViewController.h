@@ -8,7 +8,8 @@
 
 #import "LMJBaseViewController.h"
 #import "BSJ.h"
+#import "BSJEssenceViewController.h"
 
-@interface BSJNewViewController : LMJBaseViewController
+@interface BSJNewViewController : BSJEssenceViewController
 
 @end

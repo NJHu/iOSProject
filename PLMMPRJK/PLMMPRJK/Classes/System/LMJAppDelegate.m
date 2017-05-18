@@ -48,6 +48,7 @@
         
     }
 
+    [NSClassFromString(@"BSJHlightedTextField") new];
     
     return YES;
 }
