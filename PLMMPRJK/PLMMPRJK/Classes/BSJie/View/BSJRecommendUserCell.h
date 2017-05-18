@@ -11,6 +11,8 @@
 @class BSJRecommendUser;
 @interface BSJRecommendUserCell : UITableViewCell
 
++ (instancetype)userCellWithTableView:(UITableView *)tableView;
+
 /** <#digest#> */
 @property (nonatomic, strong) BSJRecommendUser *user;
 

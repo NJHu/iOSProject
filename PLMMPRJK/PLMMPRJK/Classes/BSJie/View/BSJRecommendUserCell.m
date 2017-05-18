@@ -54,8 +54,7 @@ static NSString *const categoryID = @"user";
         self.fansCountLabel.text = [NSString stringWithFormat:@"粉丝: %.1f万", user.fans_count / 10000.0];
     }
     
-        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:user.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
-//    [self.headerImageView setHeaderImage:user.header];
+    [self.headerImageView sd_setImageWithURL:user.header placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     
 }
 

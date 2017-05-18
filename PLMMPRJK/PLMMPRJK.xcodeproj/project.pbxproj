@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE491ECD36870097D826 /* BSJTrendViewController.xib */; };
+		583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */; };
+		583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */; };
 		583EB8AA1EBAC08400A945D3 /* LMJQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EB8A91EBAC08400A945D3 /* LMJQRCodeViewController.m */; };
 		583EB8AC1EBAC24900A945D3 /* WechatIMG10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 583EB8AB1EBAC24900A945D3 /* WechatIMG10.jpeg */; };
 		583EB8AF1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EB8AE1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m */; };
@@ -526,6 +529,10 @@
 
 /* Begin PBXFileReference section */
 		23E10B7ADDCDC21B761F123C /* Pods-PLMMPRJK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLMMPRJK.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK.release.xcconfig"; sourceTree = "<group>"; };
+		583DFE491ECD36870097D826 /* BSJTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTrendViewController.xib; sourceTree = "<group>"; };
+		583DFE4B1ECD3A8E0097D826 /* BSJLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLoginRegisterViewController.h; sourceTree = "<group>"; };
+		583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJLoginRegisterViewController.m; sourceTree = "<group>"; };
+		583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		583EB8A81EBAC08400A945D3 /* LMJQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJQRCodeViewController.h; sourceTree = "<group>"; };
 		583EB8A91EBAC08400A945D3 /* LMJQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJQRCodeViewController.m; sourceTree = "<group>"; };
 		583EB8AB1EBAC24900A945D3 /* WechatIMG10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG10.jpeg; sourceTree = "<group>"; };
@@ -1424,7 +1431,7 @@
 		58B3CC5F1EC7FFA800D3C02D /* BSJLanuchADService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLanuchADService.h; sourceTree = "<group>"; };
 		58B3CC601EC7FFA800D3C02D /* BSJLanuchADService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJLanuchADService.m; sourceTree = "<group>"; };
 		58B3CC621EC8052800D3C02D /* BSJRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJRecommendViewController.h; sourceTree = "<group>"; };
-		58B3CC631EC8052800D3C02D /* BSJRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendViewController.m; sourceTree = "<group>"; };
+		58B3CC631EC8052800D3C02D /* BSJRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendViewController.m; sourceTree = "<group>"; tabWidth = 5; };
 		58B3CC6A1EC809E500D3C02D /* BSJReommmendCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJReommmendCategoryCell.h; sourceTree = "<group>"; };
 		58B3CC6B1EC809E500D3C02D /* BSJReommmendCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJReommmendCategoryCell.m; sourceTree = "<group>"; };
 		58B3CC6D1EC809F300D3C02D /* BSJReommmendCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJReommmendCategoryCell.xib; sourceTree = "<group>"; };
@@ -1797,10 +1804,14 @@
 				588B32D71EC48D6600D00C1C /* BSJPublishViewController.m */,
 				588B32B31EC442D100D00C1C /* BSJTrendViewController.h */,
 				588B32B41EC442D100D00C1C /* BSJTrendViewController.m */,
+				583DFE491ECD36870097D826 /* BSJTrendViewController.xib */,
 				588B32B61EC442E200D00C1C /* BSJMeViewController.h */,
 				588B32B71EC442E200D00C1C /* BSJMeViewController.m */,
 				58B3CC621EC8052800D3C02D /* BSJRecommendViewController.h */,
 				58B3CC631EC8052800D3C02D /* BSJRecommendViewController.m */,
+				583DFE4B1ECD3A8E0097D826 /* BSJLoginRegisterViewController.h */,
+				583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */,
+				583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4684,7 +4695,9 @@
 				588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */,
 				58AFABA91EB4ADAA00822043 /* QBImagePickerController.strings in Resources */,
 				58AFAB181EB4ADAA00822043 /* NSDateTimeAgo.bundle in Resources */,
+				583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */,
 				58A663691EBD8E1300222A1D /* LMJH5_OCViewController.html in Resources */,
+				583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */,
 				588AACFD1E9F2253005F2A89 /* wishPage_4.gif in Resources */,
 				588AACFC1E9F2253005F2A89 /* wishPage_3.gif in Resources */,
 				58AFABB61EB4ADAA00822043 /* WeiboSDK.bundle in Resources */,
@@ -5163,6 +5176,7 @@
 				58AFAB951EB4ADAA00822043 /* IQKeyboardManager.m in Sources */,
 				58AFAB161EB4ADAA00822043 /* NSDate+TimeAgo.m in Sources */,
 				58AFAC5F1EB4ADAB00822043 /* LMJRequestBaseViewController.m in Sources */,
+				583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */,
 				58AFABA11EB4ADAA00822043 /* QBAssetsCollectionCheckmarkView.m in Sources */,
 				58AFAB3C1EB4ADAA00822043 /* NSString+Contains.m in Sources */,
 				58AFAC301EB4ADAA00822043 /* UIView+Nib.m in Sources */,

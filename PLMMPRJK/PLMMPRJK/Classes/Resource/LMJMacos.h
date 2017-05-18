@@ -114,7 +114,10 @@
 
 
 
-
+#define LMJErrorReturn if (error) {\
+[MBProgressHUD showError:error.userInfo[LMJBaseResponseCustomErrorMsgKey] ?: error.userInfo[LMJBaseResponseSystemErrorMsgKey] ToView:weakself.view];\
+return;\
+}
 
 
 #endif /* LMJMacos_h */

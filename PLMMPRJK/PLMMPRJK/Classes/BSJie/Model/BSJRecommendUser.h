@@ -10,9 +10,19 @@
 
 @interface BSJRecommendUser : NSObject
 
-
+//"uid": "437",
+//"screen_name": "Gif小视频大叔",
+//"social_name": "",
+//"header": "http:%/%/img.spriteapp.cn%/profile%/large%/2015%/05%/09%/554e07de47786_mini.jpg",
+//"gender": "m",
+//"fans_count": "5533",
+//"introduction": "这个用户很懒，什么也没有留下！",
+//"plat_flag": 2,
+//"is_follow": 0,
+//"id": "437",
+//"tiezi_count": 0
 /** URL */
-@property (nonatomic, copy) NSString *header;
+@property (nonatomic, strong) NSURL *header;
 
 /** <#digest#> */
 @property (nonatomic, copy) NSString *uid;

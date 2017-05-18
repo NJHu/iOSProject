@@ -21,12 +21,12 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - action
+
+- (IBAction)goToLoginRegister:(UIButton *)sender {
+    
 }
-
-
 
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
@@ -77,7 +77,7 @@
 {
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
 
-    [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x032124) range:NSMakeRange(0, title.length)];
+    [title addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, title.length)];
 
     [title addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:NSMakeRange(0, title.length)];
 

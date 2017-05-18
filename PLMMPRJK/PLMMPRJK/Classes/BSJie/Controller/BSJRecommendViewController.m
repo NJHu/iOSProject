@@ -9,6 +9,9 @@
 #import "BSJRecommendViewController.h"
 #import "BSJRecommendSevice.h"
 #import "BSJReommmendCategoryCell.h"
+#import "BSJRecommendUserCell.h"
+
+#define BSJSelectedCategory (self.recommendSevice.recommendCategorys[self.leftTagTableView.indexPathForSelectedRow.row])
 
 @interface BSJRecommendViewController ()
 
@@ -26,47 +29,88 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.leftTagTableView.rowHeight = 44;
+    self.tableView.rowHeight = 70;
+    
     [self getCategorys];
     
     self.tableView.tableFooterView = [UIView new];
     
-    [self endHeaderFooterRefreshing];
+    self.title = @"推荐关注";
+    
+    self.leftTagTableView.scrollsToTop = NO;
 }
 
 
 - (void)getCategorys
 {
-    LMJWeakSelf(self);
-    [weakself showLoading];
-    [self.recommendSevice getRecommendCategorys:^(NSError *error) {
-        [weakself dismissLoading];
+    [self showLoading];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        [weakself.view configBlankPage:0 hasData:!error hasError:error reloadButtonBlock:^(id sender) {
+        LMJWeakSelf(self);
+        [self.recommendSevice getRecommendCategorys:^(NSError *error) {
+            [weakself dismissLoading];
             
-            [weakself getCategorys];
+            [weakself.view configBlankPage:0 hasData:!error hasError:error reloadButtonBlock:^(id sender) {
+                
+                [weakself getCategorys];
+                
+            }];
             
+            
+            LMJErrorReturn;
+            
+            
+            [weakself.leftTagTableView reloadData];
+            
+            [weakself.leftTagTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+            
+            [weakself tableView:weakself.leftTagTableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         }];
         
-        if (error) {
-            [MBProgressHUD showError:error.userInfo[LMJBaseResponseCustomErrorMsgKey] ?: error.userInfo[LMJBaseResponseSystemErrorMsgKey] ToView:weakself.view];
-            return;
-        }
-        
-        
-        
-        [weakself.leftTagTableView reloadData];
-        
-        [weakself.leftTagTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
-        
-    }];
+    });
+
     
 }
 
 - (void)loadMore:(BOOL)isMore
 {
+    if (self.recommendSevice.recommendCategorys.count == 0) {
+        [self endHeaderFooterRefreshing];
+        return;
+    }
+    
     LMJWeakSelf(self);
-    
-    
+    if (self.leftTagTableView.indexPathForSelectedRow.row == 0) {
+        
+        [self.recommendSevice getDefaultRecommendCategoryUserList:isMore completion:^(NSError *error) {
+            [self endHeaderFooterRefreshing];
+            
+            LMJErrorReturn;
+            
+            [self.tableView reloadData];
+            
+            [self checkData];
+        }];
+        
+    }else
+    {
+        
+        [self.recommendSevice getSelectedRecommendCategoryUserList:BSJSelectedCategory isMore:isMore completion:^(NSError *error) {
+            
+            [self endHeaderFooterRefreshing];
+            
+            LMJErrorReturn;
+            
+            
+            [self.tableView reloadData];
+            
+            
+            [self checkData];
+            
+        }];
+        
+    }
     
     
 }
@@ -75,10 +119,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.leftTagTableView) {
+        
         return self.recommendSevice.recommendCategorys.count;
-    }else if (tableView == self.tableView)
+        
+    }else if (tableView == self.tableView && self.recommendSevice.recommendCategorys.count)
     {
-        return 0;
+        return BSJSelectedCategory.users.count;
     }
     
     return 0;
@@ -100,12 +146,50 @@
     }else if (tableView == self.tableView)
     {
         
+        cell = [BSJRecommendUserCell userCellWithTableView:tableView];
+        
+        BSJRecommendUserCell *userCell = (BSJRecommendUserCell *)cell;
+        
+        userCell.user = BSJSelectedCategory.users[indexPath.row];
+        
     }
     
     return cell;
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (tableView == self.leftTagTableView) {
+    
+        
+        // 清除上一个数据
+        [self.tableView reloadData];
+        
+        [self endHeaderFooterRefreshing];
+        
+        [self checkData];
+        
+        if (BSJSelectedCategory.users.count == 0) {
+            [self.tableView.mj_header beginRefreshing];
+        }
+    }
+}
+
+
+- (void)checkData
+{
+    if (BSJSelectedCategory.page >= BSJSelectedCategory.totalPage) {
+        
+        self.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+        
+    }else
+    {
+        self.tableView.mj_footer.state = MJRefreshStateIdle;
+        
+    }
+}
 
 
 
@@ -124,7 +208,7 @@
         [leftTagTableView makeConstraints:^(MASConstraintMaker *make) {
             
             make.left.top.bottom.offset(0);
-            make.width.equalTo(AdaptedWidth(100));
+            make.width.equalTo(80);
         }];
         
         

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class BSJRecommendUser;
+
 @interface BSJRecommendCategory : NSObject
 
 
@@ -20,5 +22,13 @@
 /** <#digest#> */
 @property (assign, nonatomic) NSInteger count;
 
+/** <#digest#> */
+@property (nonatomic, strong) NSMutableArray<BSJRecommendUser *> *users;
+
+/** <#digest#> */
+@property (assign, nonatomic) NSInteger page;
+
+/** <#digest#> */
+@property (assign, nonatomic) NSInteger totalPage;
 
 @end
