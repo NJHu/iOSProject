@@ -35,6 +35,7 @@
 #import "LMJDragTableViewController.h"
 #import "LMJCalendarViewController.h"
 #import "LMJNavBarFadeViewController.h"
+#import "LMJFingerCheckViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -181,7 +182,13 @@
     
     item27.destVc = [LMJNavBarFadeViewController class];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, item25, item26, item27] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+//    LMJFingerCheckViewController
+    
+    LMJWordArrowItem *item28 = [LMJWordArrowItem itemWithTitle:@"指纹解锁" subTitle: @""];
+    
+    item28.destVc = [LMJFingerCheckViewController class];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }

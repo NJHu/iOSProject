@@ -476,6 +476,8 @@
 		58B3CC911EC835A300D3C02D /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC881EC835A300D3C02D /* SDCollectionViewCell.m */; };
 		58B3CC921EC835A300D3C02D /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC8A1EC835A300D3C02D /* SDCycleScrollView.m */; };
 		58B3CC931EC835A300D3C02D /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC8C1EC835A300D3C02D /* UIView+SDExtension.m */; };
+		58CC87841ED2E60E00D54800 /* LMJFingerCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */; };
+		58CC87881ED2E73200D54800 /* TDTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC87871ED2E73100D54800 /* TDTouchID.m */; };
 		58CDBFB11EBB3D7400DBC8AA /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */; };
 		58CDBFB41EBB47E400DBC8AA /* MPImageItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB31EBB47E400DBC8AA /* MPImageItemModel.m */; };
 		58CDBFB71EBB47EB00DBC8AA /* MPUploadImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB61EBB47EB00DBC8AA /* MPUploadImageHelper.m */; };
@@ -1474,6 +1476,10 @@
 		58B3CC8A1EC835A300D3C02D /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
 		58B3CC8B1EC835A300D3C02D /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		58B3CC8C1EC835A300D3C02D /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		58CC87821ED2E60E00D54800 /* LMJFingerCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFingerCheckViewController.h; sourceTree = "<group>"; };
+		58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFingerCheckViewController.m; sourceTree = "<group>"; };
+		58CC87861ED2E73100D54800 /* TDTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDTouchID.h; sourceTree = "<group>"; };
+		58CC87871ED2E73100D54800 /* TDTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTouchID.m; sourceTree = "<group>"; };
 		58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		58CDBFB21EBB47E400DBC8AA /* MPImageItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPImageItemModel.h; sourceTree = "<group>"; };
 		58CDBFB31EBB47E400DBC8AA /* MPImageItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPImageItemModel.m; sourceTree = "<group>"; };
@@ -1743,6 +1749,8 @@
 		588B324E1EC4309300D00C1C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				58CC87821ED2E60E00D54800 /* LMJFingerCheckViewController.h */,
+				58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2645,6 +2653,7 @@
 		58AFA7D11EB4ADA900822043 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				58CC87851ED2E73100D54800 /* TDTouchID */,
 				58FFE9901EBEDD5C00D50E4C /* FaceManager(脸部识别) */,
 				58AFA7D21EB4ADA900822043 /* AddressManager(三级联动) */,
 				58AFA7D61EB4ADA900822043 /* AdvertiseHelper(启动广告) */,
@@ -4489,6 +4498,15 @@
 			path = PageControl;
 			sourceTree = "<group>";
 		};
+		58CC87851ED2E73100D54800 /* TDTouchID */ = {
+			isa = PBXGroup;
+			children = (
+				58CC87861ED2E73100D54800 /* TDTouchID.h */,
+				58CC87871ED2E73100D54800 /* TDTouchID.m */,
+			);
+			path = TDTouchID;
+			sourceTree = "<group>";
+		};
 		58F1445C1ECDDD100053B2A2 /* ZJScrollPageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4922,6 +4940,7 @@
 				58AFAC961EB4ADAB00822043 /* MPMultitextCell.m in Sources */,
 				58FFE9C21EBF61D500D50E4C /* LMJNavBarFadeViewController.m in Sources */,
 				58FFE9A91EBEDD5C00D50E4C /* IFlyFaceImage.m in Sources */,
+				58CC87881ED2E73200D54800 /* TDTouchID.m in Sources */,
 				58AFABD21EB4ADAA00822043 /* UIBarButtonItem+Action.m in Sources */,
 				58AFAB151EB4ADAA00822043 /* NSDate+Reporting.m in Sources */,
 				58AFABDA1EB4ADAA00822043 /* UIButton+CountDown.m in Sources */,
@@ -5126,6 +5145,7 @@
 				58AFAB301EB4ADAA00822043 /* NSObject+AutoCoding.m in Sources */,
 				58AFAC871EB4ADAB00822043 /* LMJListExpandHideViewController.m in Sources */,
 				58AFAB001EB4ADAA00822043 /* NSManagedObjectContext+Extensions.m in Sources */,
+				58CC87841ED2E60E00D54800 /* LMJFingerCheckViewController.m in Sources */,
 				58B3CC911EC835A300D3C02D /* SDCollectionViewCell.m in Sources */,
 				58AFAB801EB4ADAA00822043 /* MPLKDBHelper.m in Sources */,
 				58AFAB381EB4ADAA00822043 /* NSRunLoop+PerformBlock.m in Sources */,
