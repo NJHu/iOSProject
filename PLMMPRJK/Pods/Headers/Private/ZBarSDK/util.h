@@ -1,0 +1,1 @@
+../../../ZBarSDK/zbar/qrcode/util.h

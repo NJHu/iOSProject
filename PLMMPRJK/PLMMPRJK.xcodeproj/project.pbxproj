@@ -499,6 +499,8 @@
 		58F144781ECDE7360053B2A2 /* BSJTopicService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144771ECDE7360053B2A2 /* BSJTopicService.m */; };
 		58F1447B1ECDE7630053B2A2 /* BSJTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1447A1ECDE7630053B2A2 /* BSJTopic.m */; };
 		58F1447E1ECDF22A0053B2A2 /* BSJTopicViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1447D1ECDF22A0053B2A2 /* BSJTopicViewModel.m */; };
+		58F144821ECE9C890053B2A2 /* BSJTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144801ECE9C890053B2A2 /* BSJTopicCell.m */; };
+		58F144831ECE9C890053B2A2 /* BSJTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F144811ECE9C890053B2A2 /* BSJTopicCell.xib */; };
 		58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9001EBDC44100D50E4C /* LMJFillTableFormViewController.m */; };
 		58FFE9041EBEC69900D50E4C /* LMJFaceRecognizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9031EBEC69900D50E4C /* LMJFaceRecognizeViewController.m */; };
 		58FFE98F1EBEDD1E00D50E4C /* FaceStreamDetectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE98E1EBEDD1E00D50E4C /* FaceStreamDetectorViewController.m */; };
@@ -1517,6 +1519,9 @@
 		58F1447A1ECDE7630053B2A2 /* BSJTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopic.m; sourceTree = "<group>"; };
 		58F1447C1ECDF22A0053B2A2 /* BSJTopicViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicViewModel.h; sourceTree = "<group>"; };
 		58F1447D1ECDF22A0053B2A2 /* BSJTopicViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicViewModel.m; sourceTree = "<group>"; };
+		58F1447F1ECE9C890053B2A2 /* BSJTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicCell.h; sourceTree = "<group>"; };
+		58F144801ECE9C890053B2A2 /* BSJTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicCell.m; sourceTree = "<group>"; };
+		58F144811ECE9C890053B2A2 /* BSJTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTopicCell.xib; sourceTree = "<group>"; };
 		58FFE8FF1EBDC44100D50E4C /* LMJFillTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFillTableFormViewController.h; sourceTree = "<group>"; };
 		58FFE9001EBDC44100D50E4C /* LMJFillTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFillTableFormViewController.m; sourceTree = "<group>"; };
 		58FFE9021EBEC69900D50E4C /* LMJFaceRecognizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFaceRecognizeViewController.h; sourceTree = "<group>"; };
@@ -1911,6 +1916,9 @@
 				58F144571ECDCF6A0053B2A2 /* BSJGuidePushView.h */,
 				58F144581ECDCF6A0053B2A2 /* BSJGuidePushView.m */,
 				58F1445A1ECDCF7B0053B2A2 /* BSJGuidePushView.xib */,
+				58F1447F1ECE9C890053B2A2 /* BSJTopicCell.h */,
+				58F144801ECE9C890053B2A2 /* BSJTopicCell.m */,
+				58F144811ECE9C890053B2A2 /* BSJTopicCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4801,6 +4809,7 @@
 				588B32BA1EC447CE00D00C1C /* BSJ.xcassets in Resources */,
 				588AACFB1E9F2253005F2A89 /* wishPage_2.gif in Resources */,
 				58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */,
+				58F144831ECE9C890053B2A2 /* BSJTopicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5158,6 +5167,7 @@
 				58AFABDF1EB4ADAA00822043 /* UIColor+Gradient.m in Sources */,
 				58AFAC0A1EB4ADAA00822043 /* UINavigationController+StackManager.m in Sources */,
 				58F144781ECDE7360053B2A2 /* BSJTopicService.m in Sources */,
+				58F144821ECE9C890053B2A2 /* BSJTopicCell.m in Sources */,
 				58AFAB781EB4ADAA00822043 /* GCDGroup.m in Sources */,
 				58AFACA01EB4ADAB00822043 /* LMJChildBlockViewController.m in Sources */,
 				58B3CC901EC835A300D3C02D /* TAPageControl.m in Sources */,

@@ -40,7 +40,8 @@
     [self addChildViewController:video];
     [self addChildViewController:all];
     
-    [self scrollPageView];
+    self.scrollPageView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+
 }
 
 

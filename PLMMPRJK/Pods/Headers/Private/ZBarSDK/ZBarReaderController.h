@@ -1,0 +1,1 @@
+../../../ZBarSDK/iphone/include/ZBarSDK/ZBarReaderController.h

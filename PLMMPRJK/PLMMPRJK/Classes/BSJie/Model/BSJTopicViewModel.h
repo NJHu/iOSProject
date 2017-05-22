@@ -16,4 +16,15 @@
 
 + (instancetype)viewModelWithTopic:(BSJTopic *)topic;
 
+
+/** 高度 */
+@property (assign, nonatomic) CGFloat cellHeight;
+
+/*
+ 
+ |-10-|-10-|-Header80-|-10-|-content-|-10-|-botBar44-|
+ */
+
+
+
 @end

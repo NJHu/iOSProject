@@ -177,7 +177,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return the file name
  */
-NSString * DDExtractFileNameWithoutExtension(const char *filePath, BOOL copy);
+NSString * __nullable DDExtractFileNameWithoutExtension(const char *filePath, BOOL copy);
 
 /**
  * The THIS_FILE macro gives you an NSString of the file name.
@@ -817,7 +817,7 @@ typedef NS_OPTIONS(NSInteger, DDLogMessageOptions){
                            flag:(DDLogFlag)flag
                         context:(NSInteger)context
                            file:(NSString *)file
-                       function:(NSString *__null_unspecified)function
+                       function:(NSString * __nullable)function
                            line:(NSUInteger)line
                             tag:(id __nullable)tag
                         options:(DDLogMessageOptions)options
@@ -836,7 +836,7 @@ typedef NS_OPTIONS(NSInteger, DDLogMessageOptions){
 @property (readonly, nonatomic) NSInteger context;
 @property (readonly, nonatomic) NSString *file;
 @property (readonly, nonatomic) NSString *fileName;
-@property (readonly, nonatomic) NSString *__null_unspecified function;
+@property (readonly, nonatomic) NSString * __nullable function;
 @property (readonly, nonatomic) NSUInteger line;
 @property (readonly, nonatomic) id __nullable tag;
 @property (readonly, nonatomic) DDLogMessageOptions options;

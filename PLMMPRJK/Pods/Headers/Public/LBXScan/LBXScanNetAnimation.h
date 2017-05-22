@@ -1,1 +1,1 @@
-../../../LBXScan/LBXScan/LBXScanNetAnimation.h
+../../../LBXScan/LBXScan/UI/LBXScanNetAnimation.h

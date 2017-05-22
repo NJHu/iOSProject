@@ -30,10 +30,10 @@
     NSInteger page = isMore ? (self.currentPage + 1) : 1;
     
     
-    parameters[@"a"] = typeA ?: @"";
+    parameters[@"a"] = typeA;
     parameters[@"c"] = @"data";
     parameters[@"type"] = @(topicType);
-    parameters[@"maxtime"] = isMore ? self.maxtime : @"";
+    parameters[@"maxtime"] = isMore ? self.maxtime : nil;
     parameters[@"per"] = @10;
     
     [self GET:BSJBaiSiJieHTTPAPI parameters:parameters completion:^(LMJBaseResponse *response) {
@@ -66,7 +66,9 @@
         [self.topicViewModels addObjectsFromArray:newTopicViewModels];
         
         
-        completion(nil, [response.responseObject[@"count"] integerValue], self.topicViewModels.count);
+        completion(nil, [response.responseObject[@"info"][@"count"] integerValue], self.topicViewModels.count);
+        
+
     }];
     
     

@@ -8,6 +8,7 @@
 
 #import "NSObject+LKModel.h"
 #import "LKDBHelper.h"
+#import <objc/runtime.h>
 
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
 #import <UIKit/UIKit.h>

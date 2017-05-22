@@ -1,0 +1,1 @@
+../../../ZBarSDK/iphone/debug.h

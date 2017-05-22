@@ -26,4 +26,5 @@
  */
 - (void)getTopicIsMore:(BOOL)isMore typeA:(NSString *)typeA topicType:(NSInteger)topicType completion:(void(^)(NSError *error, NSInteger totalCount, NSInteger currentCount))completion;
 
+
 @end

@@ -43,7 +43,7 @@
 
 @interface BMKLocationService : NSObject
 
-/// 当前用户位置，返回坐标为百度坐标
+/// 当前用户位置，返回坐标类型为当前设置的坐标类型
 @property (nonatomic, readonly) BMKUserLocation *userLocation;
 
 /// 定位服务Delegate,调用startUserLocationService定位成功后，用此Delegate来获取定位数据

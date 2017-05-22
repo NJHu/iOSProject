@@ -1,0 +1,1 @@
+../../../LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXParsedResult.h

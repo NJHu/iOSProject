@@ -1,0 +1,1 @@
+../../../ZBarSDK/zbar/image.h
