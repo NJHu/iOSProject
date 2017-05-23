@@ -25,7 +25,7 @@
     [touchIDButton setTitle:@"指纹解锁" forState:UIControlStateNormal];
     
     [touchIDButton addTarget:self action:@selector(touchVerification) forControlEvents:UIControlEventTouchDown];
-    touchIDButton.frame = CGRectMake((self.view.frame.size.width / 2) - 30, (self.view.frame.size.height / 2) - 30, 200, 60);
+    touchIDButton.frame = CGRectMake(10, (self.view.frame.size.height / 2) - 30, 200, 60);
     [self.view addSubview:touchIDButton];
 }
 
