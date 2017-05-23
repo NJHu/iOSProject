@@ -63,6 +63,9 @@
 /** 收藏的数量 */
 @property (assign, nonatomic) NSInteger love;
 
+/** 顶！d=====(￣▽￣*)b */
+@property (assign, nonatomic) NSInteger ding;
+
 /** 踩 */
 @property (assign, nonatomic) NSInteger cai;
 
@@ -80,6 +83,12 @@
 
 /** 审核通过的时间 */
 @property (nonatomic, copy) NSString *passtime;
+
+
+/** 图片的宽度 */
+@property (nonatomic, assign) CGFloat width;
+/** 图片的高度 */
+@property (assign, nonatomic) CGFloat height;
 
 
 

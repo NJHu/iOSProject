@@ -7,6 +7,7 @@
 //
 
 #import "BSJTopicCell.h"
+#import "BSJTopicPictureView.h"
 
 @interface BSJTopicCell ()
 
@@ -14,6 +15,11 @@
  头像
  */
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+
+/**
+ 是否是新浪会员
+ */
+@property (weak, nonatomic) IBOutlet UIImageView *isSinaVipImageView;
 
 /**
  昵称
@@ -38,6 +44,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *repostBtn;
 @property (weak, nonatomic) IBOutlet UIButton *commentBtn;
 
+
+/** 展示图片的控件 */
+@property (weak, nonatomic) BSJTopicPictureView *pictureView;
+
 @end
 
 @implementation BSJTopicCell
@@ -56,6 +66,7 @@
 {
     _topicViewModel = topicViewModel;
     
+    // Model
     [self.headerImageView sd_setImageWithURL:topicViewModel.topic.profile_image placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     
     self.screenNameLabel.text = topicViewModel.topic.name;
@@ -63,6 +74,20 @@
     self.creatTimeLabel.text = topicViewModel.topic.create_time;
     
     self.contentTextLabel.text = topicViewModel.topic.text;
+    
+    self.isSinaVipImageView.hidden = !topicViewModel.topic.isSina_v;
+    
+    
+    // ViewModel
+    [self.dingBtn setTitle:topicViewModel.zanCount forState:UIControlStateNormal];
+    [self.caiBtn setTitle:topicViewModel.caiCount forState:UIControlStateNormal];
+    [self.repostBtn setTitle:topicViewModel.repostCount forState:UIControlStateNormal];
+    [self.commentBtn setTitle:topicViewModel.commentCount forState:UIControlStateNormal];
+    
+    
+    self.pictureView.topicViewModel = topicViewModel;
+    
+    self.pictureView.frame = topicViewModel.pictureFrame;
 }
 
 
@@ -78,6 +103,24 @@
 }
 - (IBAction)commentButtonClick:(UIButton *)sender {
 }
+
+- (IBAction)topRightClick:(UIButton *)sender {
+}
+
+
+#pragma mark - getter
+
+- (BSJTopicPictureView *)pictureView
+{
+    if(_pictureView == nil)
+    {
+        BSJTopicPictureView *pictureView = [[BSJTopicPictureView alloc] init];
+        [self.contentView addSubview:pictureView];
+        _pictureView = pictureView;
+    }
+    return _pictureView;
+}
+
 
 + (instancetype)topicCellWithTableView:(UITableView *)tableView
 {

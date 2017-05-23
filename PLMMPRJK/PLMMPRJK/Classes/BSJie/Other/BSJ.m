@@ -11,3 +11,5 @@ NSString *const BSJUserSexFemaleStr = @"f";
 
 
 NSString *const BSJUserSexMaleStr = @"m";
+
+

@@ -40,3 +40,15 @@ UIKIT_EXTERN NSString *const BSJUserSexFemaleStr;
  *  用户的性别, 服务器返回字段
  */
 UIKIT_EXTERN NSString *const BSJUserSexMaleStr;
+
+
+
+
+
+
+
+
+
+
+
+

@@ -22,5 +22,6 @@
 #import "UIView+Empty.h"
 
 #import "UIView+LMJNjHuFrame.h"
+#import "UIImageView+FitNet.h"
 
 #endif /* LMJMyCategorys_h */

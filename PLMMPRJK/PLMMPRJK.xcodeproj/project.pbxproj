@@ -478,6 +478,8 @@
 		58B3CC931EC835A300D3C02D /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC8C1EC835A300D3C02D /* UIView+SDExtension.m */; };
 		58CC87841ED2E60E00D54800 /* LMJFingerCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */; };
 		58CC87881ED2E73200D54800 /* TDTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC87871ED2E73100D54800 /* TDTouchID.m */; };
+		58CC879F1ED4012F00D54800 /* BSJTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC879E1ED4012F00D54800 /* BSJTopicPictureView.m */; };
+		58CC87A21ED4041F00D54800 /* UIImageView+FitNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC87A11ED4041F00D54800 /* UIImageView+FitNet.m */; };
 		58CDBFB11EBB3D7400DBC8AA /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */; };
 		58CDBFB41EBB47E400DBC8AA /* MPImageItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB31EBB47E400DBC8AA /* MPImageItemModel.m */; };
 		58CDBFB71EBB47EB00DBC8AA /* MPUploadImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB61EBB47EB00DBC8AA /* MPUploadImageHelper.m */; };
@@ -1480,6 +1482,10 @@
 		58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFingerCheckViewController.m; sourceTree = "<group>"; };
 		58CC87861ED2E73100D54800 /* TDTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDTouchID.h; sourceTree = "<group>"; };
 		58CC87871ED2E73100D54800 /* TDTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTouchID.m; sourceTree = "<group>"; };
+		58CC879D1ED4012F00D54800 /* BSJTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicPictureView.h; sourceTree = "<group>"; };
+		58CC879E1ED4012F00D54800 /* BSJTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicPictureView.m; sourceTree = "<group>"; };
+		58CC87A01ED4041F00D54800 /* UIImageView+FitNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FitNet.h"; sourceTree = "<group>"; };
+		58CC87A11ED4041F00D54800 /* UIImageView+FitNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FitNet.m"; sourceTree = "<group>"; };
 		58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		58CDBFB21EBB47E400DBC8AA /* MPImageItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPImageItemModel.h; sourceTree = "<group>"; };
 		58CDBFB31EBB47E400DBC8AA /* MPImageItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPImageItemModel.m; sourceTree = "<group>"; };
@@ -1927,6 +1933,8 @@
 				58F1447F1ECE9C890053B2A2 /* BSJTopicCell.h */,
 				58F144801ECE9C890053B2A2 /* BSJTopicCell.m */,
 				58F144811ECE9C890053B2A2 /* BSJTopicCell.xib */,
+				58CC879D1ED4012F00D54800 /* BSJTopicPictureView.h */,
+				58CC879E1ED4012F00D54800 /* BSJTopicPictureView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3228,6 +3236,8 @@
 				58AFACB71EB4CFD500822043 /* UIView+LMJNjHuFrame.h */,
 				58AFACB81EB4CFD500822043 /* UIView+LMJNjHuFrame.m */,
 				58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */,
+				58CC87A01ED4041F00D54800 /* UIImageView+FitNet.h */,
+				58CC87A11ED4041F00D54800 /* UIImageView+FitNet.m */,
 			);
 			path = MyCategory;
 			sourceTree = "<group>";
@@ -4967,6 +4977,7 @@
 				58FFE9AB1EBEDD5C00D50E4C /* UIImage+Extensions.m in Sources */,
 				58AFAC0D1EB4ADAA00822043 /* UINavigationItem+Margin.m in Sources */,
 				58AFAB1F1EB4ADAA00822043 /* NSDictionary+XML.m in Sources */,
+				58CC879F1ED4012F00D54800 /* BSJTopicPictureView.m in Sources */,
 				58AFAB1E1EB4ADAA00822043 /* NSDictionary+URL.m in Sources */,
 				58AFAB7B1EB4ADAA00822043 /* GCDTimer.m in Sources */,
 				588B32C91EC4486600D00C1C /* SINProfileViewController.m in Sources */,
@@ -5009,6 +5020,7 @@
 				58AFAB051EB4ADAA00822043 /* CLLocation+CH1903.m in Sources */,
 				58AFAC181EB4ADAA00822043 /* UISplitViewController+QuickAccess.m in Sources */,
 				58A6636C1EBD983100222A1D /* LMJOCJSHelper.m in Sources */,
+				58CC87A21ED4041F00D54800 /* UIImageView+FitNet.m in Sources */,
 				58AFAC041EB4ADAA00822043 /* UILabel+SuggestSize.m in Sources */,
 				58AFAB8A1EB4ADAA00822043 /* MPUmengHelper.m in Sources */,
 				58AFABAB1EB4ADAA00822043 /* QBImagePickerThumbnailView.m in Sources */,
