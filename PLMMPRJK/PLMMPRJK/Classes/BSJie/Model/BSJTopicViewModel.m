@@ -31,7 +31,7 @@ const CGFloat BSJCellContentImageMaxHeight = 1000.0;
 /*
  超出最大高度后的高度
  */
-const CGFloat BSJCellContentImageBreakHeight = 250;
+#define BSJCellContentImageBreakHeight (Main_Screen_Width - BSJCellScreenMargin * 2 - BSJCellEdageMargin * 2);
 
 @implementation BSJTopicViewModel
 
@@ -97,6 +97,7 @@ const CGFloat BSJCellContentImageBreakHeight = 250;
     
     self.commentCount = [self countFormat:self.topic.comment];
     
+    self.playLength = [NSString stringWithFormat:@"%02zd:%02zd", (NSInteger)(self.topic.playfcount / 1000.0) / 60, (NSInteger)(self.topic.playfcount / 1000.0) % 60];
 }
 
 

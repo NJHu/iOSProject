@@ -8,6 +8,8 @@
 
 #import "BSJTopicCell.h"
 #import "BSJTopicPictureView.h"
+#import "BSJTopicVoiceView.h"
+#import "BSJTopicVideoView.h"
 
 @interface BSJTopicCell ()
 
@@ -48,6 +50,12 @@
 /** 展示图片的控件 */
 @property (weak, nonatomic) BSJTopicPictureView *pictureView;
 
+/** 展示声音 */
+@property (weak, nonatomic) BSJTopicVoiceView *voiceView;
+
+/** 展示视频 */
+@property (weak, nonatomic)  BSJTopicVideoView *videoView;
+
 @end
 
 @implementation BSJTopicCell
@@ -85,9 +93,43 @@
     [self.commentBtn setTitle:topicViewModel.commentCount forState:UIControlStateNormal];
     
     
-    self.pictureView.topicViewModel = topicViewModel;
+
     
-    self.pictureView.frame = topicViewModel.pictureFrame;
+    
+    if (topicViewModel.topic.type == BSJTopicViewControllerTypePicture) {
+        
+        self.pictureView.topicViewModel = topicViewModel;
+        self.pictureView.frame = topicViewModel.pictureFrame;
+        
+        _pictureView.hidden = NO;
+        _voiceView.hidden = YES;
+        _videoView.hidden = YES;
+        
+    }else if (topicViewModel.topic.type == BSJTopicViewControllerTypeVoice)
+    {
+        self.voiceView.frame = topicViewModel.pictureFrame;
+        self.voiceView.topicViewModel = topicViewModel;
+        
+        _pictureView.hidden = YES;
+        _voiceView.hidden = NO;
+        _videoView.hidden = YES;
+        
+    }else if (topicViewModel.topic.type == BSJTopicViewControllerTypeWord)
+    {
+        _pictureView.hidden = YES;
+        _voiceView.hidden = YES;
+        _videoView.hidden = YES;
+        
+    }else if (topicViewModel.topic.type == BSJTopicViewControllerTypeVideo)
+    {
+        self.videoView.frame = topicViewModel.pictureFrame;
+        self.videoView.topicViewModel = topicViewModel;
+        
+        _pictureView.hidden = YES;
+        _voiceView.hidden = YES;
+        _videoView.hidden = NO;
+    }
+    
 }
 
 
@@ -121,6 +163,29 @@
     return _pictureView;
 }
 
+- (BSJTopicVoiceView *)voiceView
+{
+    if(_voiceView == nil)
+    {
+        BSJTopicVoiceView *voiceView = [[BSJTopicVoiceView alloc] init];
+        [self.contentView addSubview:voiceView];
+        _voiceView = voiceView;
+    }
+    return _voiceView;
+}
+
+
+- (BSJTopicVideoView *)videoView
+{
+    if(_videoView == nil)
+    {
+        BSJTopicVideoView *videoView = [[BSJTopicVideoView alloc] init];
+        [self.contentView addSubview:videoView];
+        _videoView = videoView;
+        
+    }
+    return _videoView;
+}
 
 + (instancetype)topicCellWithTableView:(UITableView *)tableView
 {

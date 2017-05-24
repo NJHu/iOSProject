@@ -476,6 +476,8 @@
 		58B3CC911EC835A300D3C02D /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC881EC835A300D3C02D /* SDCollectionViewCell.m */; };
 		58B3CC921EC835A300D3C02D /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC8A1EC835A300D3C02D /* SDCycleScrollView.m */; };
 		58B3CC931EC835A300D3C02D /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC8C1EC835A300D3C02D /* UIView+SDExtension.m */; };
+		58CC5EE41ED5CD350012ED83 /* BSJTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC5EE31ED5CD350012ED83 /* BSJTopicVoiceView.m */; };
+		58CC5EE71ED5D5030012ED83 /* BSJTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC5EE61ED5D5030012ED83 /* BSJTopicVideoView.m */; };
 		58CC87841ED2E60E00D54800 /* LMJFingerCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */; };
 		58CC87881ED2E73200D54800 /* TDTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC87871ED2E73100D54800 /* TDTouchID.m */; };
 		58CC879F1ED4012F00D54800 /* BSJTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CC879E1ED4012F00D54800 /* BSJTopicPictureView.m */; };
@@ -1478,6 +1480,10 @@
 		58B3CC8A1EC835A300D3C02D /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
 		58B3CC8B1EC835A300D3C02D /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		58B3CC8C1EC835A300D3C02D /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		58CC5EE21ED5CD350012ED83 /* BSJTopicVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicVoiceView.h; sourceTree = "<group>"; };
+		58CC5EE31ED5CD350012ED83 /* BSJTopicVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicVoiceView.m; sourceTree = "<group>"; };
+		58CC5EE51ED5D5030012ED83 /* BSJTopicVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicVideoView.h; sourceTree = "<group>"; };
+		58CC5EE61ED5D5030012ED83 /* BSJTopicVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicVideoView.m; sourceTree = "<group>"; };
 		58CC87821ED2E60E00D54800 /* LMJFingerCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFingerCheckViewController.h; sourceTree = "<group>"; };
 		58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFingerCheckViewController.m; sourceTree = "<group>"; };
 		58CC87861ED2E73100D54800 /* TDTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDTouchID.h; sourceTree = "<group>"; };
@@ -1935,6 +1941,10 @@
 				58F144811ECE9C890053B2A2 /* BSJTopicCell.xib */,
 				58CC879D1ED4012F00D54800 /* BSJTopicPictureView.h */,
 				58CC879E1ED4012F00D54800 /* BSJTopicPictureView.m */,
+				58CC5EE21ED5CD350012ED83 /* BSJTopicVoiceView.h */,
+				58CC5EE31ED5CD350012ED83 /* BSJTopicVoiceView.m */,
+				58CC5EE51ED5D5030012ED83 /* BSJTopicVideoView.h */,
+				58CC5EE61ED5D5030012ED83 /* BSJTopicVideoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5135,6 +5145,7 @@
 				58AFAC3C1EB4ADAA00822043 /* UIViewController+MJPopupViewController.m in Sources */,
 				588B32AF1EC4428100D00C1C /* BSJNewViewController.m in Sources */,
 				58AFAB761EB4ADAA00822043 /* UIDevice+FCUUID.m in Sources */,
+				58CC5EE71ED5D5030012ED83 /* BSJTopicVideoView.m in Sources */,
 				58AFAB611EB4ADAA00822043 /* AdvertiseHelper.m in Sources */,
 				58B3CC8F1EC835A300D3C02D /* TADotView.m in Sources */,
 				58AFAC3D1EB4ADAA00822043 /* UIViewController+StoreKit.m in Sources */,
@@ -5351,6 +5362,7 @@
 				58AFABA71EB4ADAA00822043 /* QBAssetsCollectionViewLayout.m in Sources */,
 				58AFABE11EB4ADAA00822043 /* UIColor+Modify.m in Sources */,
 				58AFAC7A1EB4ADAB00822043 /* LMJNewViewController.m in Sources */,
+				58CC5EE41ED5CD350012ED83 /* BSJTopicVoiceView.m in Sources */,
 				58AFAC371EB4ADAA00822043 /* UIViewController+BackButtonHandler.m in Sources */,
 				58AFABE91EB4ADAA00822043 /* UIFont+WDCustomLoader.m in Sources */,
 				58AFAB901EB4ADAA00822043 /* IQUIScrollView+Additions.m in Sources */,

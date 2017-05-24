@@ -26,8 +26,10 @@
 /** 高度 */
 @property (assign, nonatomic, readonly) CGFloat cellHeight;
 
-/** <#digest#> */
+/** 下载图片 的进度 */
 @property (assign, nonatomic) CGFloat downloadPictureProgress;
+
+
 
 /*
  
@@ -46,5 +48,7 @@
 /** <#digest#> */
 @property (nonatomic, copy) NSString *commentCount;
 
+/** 播放时长 00 : 00 */
+@property (nonatomic, copy) NSString *playLength;
 
 @end

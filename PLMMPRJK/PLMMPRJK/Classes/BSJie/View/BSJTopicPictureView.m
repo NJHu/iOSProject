@@ -244,7 +244,7 @@
         [btn makeConstraints:^(MASConstraintMaker *make) {
             
             make.bottom.left.right.offset(0);
-            make.height.equalTo(44);
+            make.height.equalTo(34);
             
         }];
         
