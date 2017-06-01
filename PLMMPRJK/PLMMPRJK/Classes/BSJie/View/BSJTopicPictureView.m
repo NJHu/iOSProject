@@ -9,6 +9,7 @@
 #import "BSJTopicPictureView.h"
 #import "BSJTopicViewModel.h"
 #import <M13ProgressViewRing.h>
+#import "BSJPictureShowViewController.h"
 
 
 
@@ -163,6 +164,26 @@
             make.edges.equalTo(self).insets(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
         
+        pictureImageView.userInteractionEnabled = YES;
+        
+        LMJWeakSelf(self);
+        [pictureImageView addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            
+            BSJPictureShowViewController *showPicVc = [[BSJPictureShowViewController alloc] init];
+            showPicVc.topicViewModel = weakself.topicViewModel;
+//            @property (nonatomic,retain) UIViewController *popUpViewController;
+//            @property (nonatomic,assign) CGPoint popUpOffset;               //相对于弹出位置的偏移
+//            @property (nonatomic,assign) CGSize popUpViewSize;              //弹出视图的大小
+//            @property (nonatomic,assign) DDPopUpPosition popUpPosition;     //弹出视图的位置
+//            @property (nonatomic,assign) BOOL dismissWhenTouchBackground;   //是否允许点击背景dismiss
+//            @property (nonatomic,copy) DismissCallback dismissCallback;
+            
+            
+            showPicVc.popUpViewSize = Main_Screen_Bounds.size;
+            
+            [weakself.viewController showPopUpViewController:showPicVc animationType:DDPopUpAnimationTypeFade];
+            
+        }];
         
     }
     return _pictureImageView;

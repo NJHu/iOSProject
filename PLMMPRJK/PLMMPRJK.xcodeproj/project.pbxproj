@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5824592A1EE056410004A5BF /* BSJPictureShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582459291EE056410004A5BF /* BSJPictureShowViewController.m */; };
 		583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE491ECD36870097D826 /* BSJTrendViewController.xib */; };
 		583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */; };
 		583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */; };
@@ -551,6 +552,8 @@
 
 /* Begin PBXFileReference section */
 		23E10B7ADDCDC21B761F123C /* Pods-PLMMPRJK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLMMPRJK.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK.release.xcconfig"; sourceTree = "<group>"; };
+		582459281EE056410004A5BF /* BSJPictureShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJPictureShowViewController.h; sourceTree = "<group>"; };
+		582459291EE056410004A5BF /* BSJPictureShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPictureShowViewController.m; sourceTree = "<group>"; };
 		583DFE491ECD36870097D826 /* BSJTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTrendViewController.xib; sourceTree = "<group>"; };
 		583DFE4B1ECD3A8E0097D826 /* BSJLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLoginRegisterViewController.h; sourceTree = "<group>"; };
 		583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJLoginRegisterViewController.m; sourceTree = "<group>"; };
@@ -1879,6 +1882,8 @@
 				583DFE4B1ECD3A8E0097D826 /* BSJLoginRegisterViewController.h */,
 				583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */,
 				583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */,
+				582459281EE056410004A5BF /* BSJPictureShowViewController.h */,
+				582459291EE056410004A5BF /* BSJPictureShowViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -5052,6 +5057,7 @@
 				58AFAC9C1EB4ADAB00822043 /* LMJAppDelegate+LMJCTool.m in Sources */,
 				58AFAC5A1EB4ADAB00822043 /* LMJCollectionViewController.m in Sources */,
 				58AFAB791EB4ADAA00822043 /* GCDQueue.m in Sources */,
+				5824592A1EE056410004A5BF /* BSJPictureShowViewController.m in Sources */,
 				58AFAC231EB4ADAA00822043 /* UITextField+Shake.m in Sources */,
 				58AFAB321EB4ADAA00822043 /* NSObject+EasyCopy.m in Sources */,
 				58AFAB2F1EB4ADAA00822043 /* NSObject+AssociatedObject.m in Sources */,
