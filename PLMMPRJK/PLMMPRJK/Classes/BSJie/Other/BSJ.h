@@ -16,8 +16,8 @@ typedef enum : NSUInteger {
 
 
 typedef enum : NSUInteger {
-    BSJUserSexFemale = 1,
-    BSJUserSexMale = 0,
+    BSJUserSexFemale = 1, //女
+    BSJUserSexMale = 0, // 男
 } BSJUserSex;
 
 

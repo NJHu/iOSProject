@@ -114,7 +114,7 @@
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
         // 4, 处理大图, 必须是当前的模型
-        if (!image || error || !self.topicViewModel.isBigPicture || self.topicViewModel.topic.isGif  || self.topicViewModel != topicViewModel) {
+        if (!image || error || !self.topicViewModel.isBigPicture || self.topicViewModel != topicViewModel) {
             
             return ;
             

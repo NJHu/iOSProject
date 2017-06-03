@@ -1,23 +1,14 @@
 //
-//  BSJTopic.m
+//  BSJTopicTopComent.m
 //  PLMMPRJK
 //
-//  Created by HuXuPeng on 2017/5/18.
+//  Created by HuXuPeng on 2017/6/3.
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import "BSJTopic.h"
+#import "BSJTopicTopComent.h"
 
-@interface BSJTopic ()
-
-@end
-
-@implementation BSJTopic
-
-
-
-
-
+@implementation BSJTopicTopComent
 
 
 
@@ -28,7 +19,7 @@
  */
 + (NSDictionary *)mj_objectClassInArray
 {
-    return @{@"topCmts" : [BSJTopicTopComent class]};
+    return @{};
 }
 
 /**
@@ -40,21 +31,7 @@
 {
     return @{
              @"ID" : @"id",
-             
-             @"smallPicture" : @"image0",
-             
-             @"middlePicture" : @"image2",
-             
-             @"largePicture" : @"image1",
-             
              @"voiceUrl" : @"voiceuri",
-             
-             @"videoUrl" : @"videouri",
-             
-             @"gif" : @"is_gif",
-             
-             @"topCmts" : @"top_cmt",
-             
              };
 }
 
@@ -66,5 +43,6 @@
 {
     return @[];
 }
+
 
 @end

@@ -22,19 +22,7 @@
     //    AFNetworkReachabilityStatusNotReachable     = 0,
     //    AFNetworkReachabilityStatusReachableViaWWAN = 1,
     //    AFNetworkReachabilityStatusReachableViaWiFi = 2,
-    self.image = placeholder;
     
-    UIImage *originImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:originImageURL.absoluteString];
-    
-    if (originImage) {
-        
-        self.image = originImage;
-        !progressBlock ?: progressBlock(1, 1);
-        !completedBlock ?: completedBlock(originImage, nil, 0, originImageURL);
-        
-    }else
-    {
-        
         AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
         
         if (mgr.isReachableViaWiFi) {
@@ -59,29 +47,14 @@
             
         }else
         {
-            UIImage *thumbnailImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:thumbImageURL.absoluteString];
-            
-            if (thumbnailImage) {
-                
-                self.image = thumbnailImage;
-                
-                !progressBlock ?: progressBlock(1, 1);
-                !completedBlock ?: completedBlock(thumbnailImage, nil, 0, thumbImageURL);
-            }else
-            {
-                
-                self.image = placeholder;
-                
-                
-            }
-            
+             [self sd_setImageWithURL:thumbImageURL placeholderImage:placeholder options:options  progress:progressBlock completed:completedBlock];
             
         }
         
         
         
         
-    }
+
     
     
     

@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "BSJTopic.h"
 #import "BSJ.h"
+#import "BSJTopicTopComent.h"
 
 @interface BSJTopicViewModel : NSObject
 
-/** <#digest#> */
+/** 模型 */
 @property (nonatomic, strong) BSJTopic *topic;
 
 + (instancetype)viewModelWithTopic:(BSJTopic *)topic;
@@ -29,6 +30,16 @@
 /** 下载图片 的进度 */
 @property (assign, nonatomic) CGFloat downloadPictureProgress;
 
+/** 创建时间的格式化 */
+@property (nonatomic, copy) NSString *creatTime;
+
+/** 评论的布局文字 */
+@property (nonatomic, strong) YYTextLayout *topCmtLayout;
+
+
+
+/** <#digest#> */
+@property (nonatomic, copy) void(^topCmtClick)(BSJUser *user, BSJTopicTopComent *topCmt);
 
 
 /*
@@ -50,5 +61,7 @@
 
 /** 播放时长 00 : 00 */
 @property (nonatomic, copy) NSString *playLength;
+
+
 
 @end

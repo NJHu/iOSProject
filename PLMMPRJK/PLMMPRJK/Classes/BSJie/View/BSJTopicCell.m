@@ -47,6 +47,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *commentBtn;
 
 
+/**
+ 热门评论的父控件 view
+ */
+@property (weak, nonatomic) IBOutlet UIView *cmtContainerView;
+
 /** 展示图片的控件 */
 @property (weak, nonatomic) BSJTopicPictureView *pictureView;
 
@@ -55,6 +60,12 @@
 
 /** 展示视频 */
 @property (weak, nonatomic)  BSJTopicVideoView *videoView;
+
+/**
+ 热门评论的 Label
+ */
+@property (weak, nonatomic) IBOutlet YYLabel *topCmtContentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topCmtHeightConstraint;
 
 @end
 
@@ -79,7 +90,7 @@
     
     self.screenNameLabel.text = topicViewModel.topic.name;
     
-    self.creatTimeLabel.text = topicViewModel.topic.create_time;
+    self.creatTimeLabel.text = topicViewModel.creatTime;
     
     self.contentTextLabel.text = topicViewModel.topic.text;
     
@@ -130,6 +141,24 @@
         _videoView.hidden = NO;
     }
     
+    
+    // 热门评论
+    if (topicViewModel.topic.topCmts.count) {
+        
+        self.cmtContainerView.hidden = NO;
+        self.topCmtContentView.textLayout = topicViewModel.topCmtLayout;
+        self.topCmtHeightConstraint.constant = topicViewModel.topCmtLayout.textBoundingSize.height;
+        self.topicViewModel.topCmtClick = ^(BSJUser *user, BSJTopicTopComent *topCmt) {
+          
+            NSLog(@"%@,   %@", user.username, topCmt.content);
+            
+        };
+        
+    }else
+    {
+        self.cmtContainerView.hidden = YES;
+    }
+    
 }
 
 
@@ -142,6 +171,8 @@
 }
 
 - (IBAction)repostButtonClick:(UIButton *)sender {
+    
+    [MPUmengHelper shareTitle:self.topicViewModel.topic.name subTitle:self.topicViewModel.topic.text thumbImage:self.topicViewModel.topic.profile_image.absoluteString shareURL:self.topicViewModel.topic.weixin_url];
 }
 - (IBAction)commentButtonClick:(UIButton *)sender {
 }

@@ -100,6 +100,7 @@
         
         self.pictureImageView.lmj_centerY = Main_Screen_Height * 0.5;
     }
+    
 }
 
 - (UIImageView *)pictureImageView

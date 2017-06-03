@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "LMJTopicViewController.h"
+#import "BSJTopicTopComent.h"
+#import "BSJUser.h"
 
 @interface BSJTopic : NSObject
 
@@ -27,7 +29,7 @@
 @property (assign, nonatomic, getter=isSina_v) BOOL sina_v;
 
 /** 帖子的创建时间 */
-@property (assign, nonatomic) NSTimeInterval created_at;
+@property (assign, nonatomic) NSString *created_at;
 
 /** 帖子的文本内容 */
 @property (nonatomic, copy) NSString *text;
@@ -56,6 +58,8 @@
 /** 视频的长度 */
 @property (assign, nonatomic) NSTimeInterval videotime;
 
+/** 分享的 Url */
+@property (nonatomic, copy) NSString *weixin_url;
 
 /** 是不是 gif 图 */
 @property (assign, nonatomic, getter=isGif) BOOL gif;
@@ -91,7 +95,8 @@
 @property (assign, nonatomic) CGFloat height;
 
 
-
+/** 热门评论 */
+@property (nonatomic, strong) NSMutableArray<BSJTopicTopComent *> *topCmts;
 
 
 @end

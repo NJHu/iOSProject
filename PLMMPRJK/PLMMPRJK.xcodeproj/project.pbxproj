@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5824592A1EE056410004A5BF /* BSJPictureShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582459291EE056410004A5BF /* BSJPictureShowViewController.m */; };
+		58245AD91EE2AB470004A5BF /* LMJDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245AD81EE2AB470004A5BF /* LMJDynamicViewController.m */; };
+		58245ADC1EE2B0470004A5BF /* BSJTopicTopComent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245ADB1EE2B0470004A5BF /* BSJTopicTopComent.m */; };
+		58245ADF1EE2B0570004A5BF /* BSJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245ADE1EE2B0570004A5BF /* BSJUser.m */; };
 		583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE491ECD36870097D826 /* BSJTrendViewController.xib */; };
 		583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */; };
 		583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */; };
@@ -554,6 +557,12 @@
 		23E10B7ADDCDC21B761F123C /* Pods-PLMMPRJK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLMMPRJK.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK.release.xcconfig"; sourceTree = "<group>"; };
 		582459281EE056410004A5BF /* BSJPictureShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJPictureShowViewController.h; sourceTree = "<group>"; };
 		582459291EE056410004A5BF /* BSJPictureShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPictureShowViewController.m; sourceTree = "<group>"; };
+		58245AD71EE2AB470004A5BF /* LMJDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDynamicViewController.h; sourceTree = "<group>"; };
+		58245AD81EE2AB470004A5BF /* LMJDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDynamicViewController.m; sourceTree = "<group>"; };
+		58245ADA1EE2B0470004A5BF /* BSJTopicTopComent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicTopComent.h; sourceTree = "<group>"; };
+		58245ADB1EE2B0470004A5BF /* BSJTopicTopComent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicTopComent.m; sourceTree = "<group>"; };
+		58245ADD1EE2B0570004A5BF /* BSJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJUser.h; sourceTree = "<group>"; };
+		58245ADE1EE2B0570004A5BF /* BSJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJUser.m; sourceTree = "<group>"; };
 		583DFE491ECD36870097D826 /* BSJTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTrendViewController.xib; sourceTree = "<group>"; };
 		583DFE4B1ECD3A8E0097D826 /* BSJLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLoginRegisterViewController.h; sourceTree = "<group>"; };
 		583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJLoginRegisterViewController.m; sourceTree = "<group>"; };
@@ -1766,6 +1775,8 @@
 			children = (
 				58CC87821ED2E60E00D54800 /* LMJFingerCheckViewController.h */,
 				58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */,
+				58245AD71EE2AB470004A5BF /* LMJDynamicViewController.h */,
+				58245AD81EE2AB470004A5BF /* LMJDynamicViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1897,6 +1908,10 @@
 				58B3CC7B1EC81AD600D3C02D /* BSJRecommendUser.m */,
 				58F144791ECDE7630053B2A2 /* BSJTopic.h */,
 				58F1447A1ECDE7630053B2A2 /* BSJTopic.m */,
+				58245ADA1EE2B0470004A5BF /* BSJTopicTopComent.h */,
+				58245ADB1EE2B0470004A5BF /* BSJTopicTopComent.m */,
+				58245ADD1EE2B0570004A5BF /* BSJUser.h */,
+				58245ADE1EE2B0570004A5BF /* BSJUser.m */,
 				58F1447C1ECDF22A0053B2A2 /* BSJTopicViewModel.h */,
 				58F1447D1ECDF22A0053B2A2 /* BSJTopicViewModel.m */,
 			);
@@ -5034,6 +5049,7 @@
 				58AFABE81EB4ADAA00822043 /* UIFont+DynamicFontControl.m in Sources */,
 				58AFAB051EB4ADAA00822043 /* CLLocation+CH1903.m in Sources */,
 				58AFAC181EB4ADAA00822043 /* UISplitViewController+QuickAccess.m in Sources */,
+				58245ADF1EE2B0570004A5BF /* BSJUser.m in Sources */,
 				58A6636C1EBD983100222A1D /* LMJOCJSHelper.m in Sources */,
 				58CC87A21ED4041F00D54800 /* UIImageView+FitNet.m in Sources */,
 				58AFAC041EB4ADAA00822043 /* UILabel+SuggestSize.m in Sources */,
@@ -5090,6 +5106,7 @@
 				58AFAB331EB4ADAA00822043 /* NSObject+GCD.m in Sources */,
 				58AFAB1D1EB4ADAA00822043 /* NSDictionary+SafeAccess.m in Sources */,
 				58AFACD51EB60E9800822043 /* LMJLKDBViewController.m in Sources */,
+				58245ADC1EE2B0470004A5BF /* BSJTopicTopComent.m in Sources */,
 				58AFAC9A1EB4ADAB00822043 /* MPSolidColorButton.m in Sources */,
 				58AFAB741EB4ADAA00822043 /* FCUUID.m in Sources */,
 				58AFAC811EB4ADAB00822043 /* LMJAnimationNavBarViewController.m in Sources */,
@@ -5172,6 +5189,7 @@
 				58AFAB311EB4ADAA00822043 /* NSObject+Blocks.m in Sources */,
 				58AFABEC1EB4ADAA00822043 /* UIImage+animatedGIF.m in Sources */,
 				58AFAB301EB4ADAA00822043 /* NSObject+AutoCoding.m in Sources */,
+				58245AD91EE2AB470004A5BF /* LMJDynamicViewController.m in Sources */,
 				58AFAC871EB4ADAB00822043 /* LMJListExpandHideViewController.m in Sources */,
 				58AFAB001EB4ADAA00822043 /* NSManagedObjectContext+Extensions.m in Sources */,
 				58CC87841ED2E60E00D54800 /* LMJFingerCheckViewController.m in Sources */,
