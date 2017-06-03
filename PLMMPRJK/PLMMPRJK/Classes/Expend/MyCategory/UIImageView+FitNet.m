@@ -25,7 +25,7 @@
     
         AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
         
-        if (mgr.isReachableViaWiFi) {
+        if (mgr.isReachableViaWiFi || [[SDWebImageManager sharedManager] diskImageExistsForURL:originImageURL]) {
             
             [self sd_setImageWithURL:originImageURL placeholderImage:placeholder options:options progress:progressBlock completed:completedBlock];
             
