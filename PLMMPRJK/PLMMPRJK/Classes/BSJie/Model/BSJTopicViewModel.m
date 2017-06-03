@@ -69,7 +69,7 @@ const CGFloat BSJCellContentImageMaxHeight = 1000.0;
     
     
     // 2计算图片的高度, 不是段子就用图片
-    if (topic.type != BSJTopicViewControllerTypeWord) {
+    if (topic.type != BSJTopicTypeWords) {
       
         CGFloat pictureHeight = contentTextWidth * topic.height / topic.width;
         

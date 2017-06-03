@@ -11,6 +11,7 @@
 		58245AD91EE2AB470004A5BF /* LMJDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245AD81EE2AB470004A5BF /* LMJDynamicViewController.m */; };
 		58245ADC1EE2B0470004A5BF /* BSJTopicTopComent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245ADB1EE2B0470004A5BF /* BSJTopicTopComent.m */; };
 		58245ADF1EE2B0570004A5BF /* BSJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245ADE1EE2B0570004A5BF /* BSJUser.m */; };
+		58245AE21EE2DF650004A5BF /* BSJCommentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245AE11EE2DF650004A5BF /* BSJCommentPageViewController.m */; };
 		583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE491ECD36870097D826 /* BSJTrendViewController.xib */; };
 		583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */; };
 		583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */; };
@@ -462,7 +463,7 @@
 		58AFACF51EB8D7F000822043 /* LMJCoordinateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACF41EB8D7F000822043 /* LMJCoordinateModel.m */; };
 		58AFAF031EB9B40B00822043 /* LMJAnnotationCustomPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */; };
 		58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */; };
-		58B3CC5B1EC7F6CC00D3C02D /* LMJTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC5A1EC7F6CC00D3C02D /* LMJTopicViewController.m */; };
+		58B3CC5B1EC7F6CC00D3C02D /* BSJTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC5A1EC7F6CC00D3C02D /* BSJTopicViewController.m */; };
 		58B3CC5E1EC7F7BF00D3C02D /* BSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC5D1EC7F7BF00D3C02D /* BSJ.m */; };
 		58B3CC611EC7FFA800D3C02D /* BSJLanuchADService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC601EC7FFA800D3C02D /* BSJLanuchADService.m */; };
 		58B3CC641EC8052800D3C02D /* BSJRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B3CC631EC8052800D3C02D /* BSJRecommendViewController.m */; };
@@ -563,6 +564,8 @@
 		58245ADB1EE2B0470004A5BF /* BSJTopicTopComent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicTopComent.m; sourceTree = "<group>"; };
 		58245ADD1EE2B0570004A5BF /* BSJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJUser.h; sourceTree = "<group>"; };
 		58245ADE1EE2B0570004A5BF /* BSJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJUser.m; sourceTree = "<group>"; };
+		58245AE01EE2DF650004A5BF /* BSJCommentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJCommentPageViewController.h; sourceTree = "<group>"; };
+		58245AE11EE2DF650004A5BF /* BSJCommentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJCommentPageViewController.m; sourceTree = "<group>"; };
 		583DFE491ECD36870097D826 /* BSJTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTrendViewController.xib; sourceTree = "<group>"; };
 		583DFE4B1ECD3A8E0097D826 /* BSJLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLoginRegisterViewController.h; sourceTree = "<group>"; };
 		583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJLoginRegisterViewController.m; sourceTree = "<group>"; };
@@ -1458,8 +1461,8 @@
 		58AFAF011EB9B40B00822043 /* LMJAnnotationCustomPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAnnotationCustomPopView.h; sourceTree = "<group>"; };
 		58AFAF021EB9B40B00822043 /* LMJAnnotationCustomPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAnnotationCustomPopView.m; sourceTree = "<group>"; };
 		58AFAF041EB9B41900822043 /* LMJAnnotationCustomPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMJAnnotationCustomPopView.xib; sourceTree = "<group>"; };
-		58B3CC591EC7F6CC00D3C02D /* LMJTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTopicViewController.h; sourceTree = "<group>"; };
-		58B3CC5A1EC7F6CC00D3C02D /* LMJTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTopicViewController.m; sourceTree = "<group>"; };
+		58B3CC591EC7F6CC00D3C02D /* BSJTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicViewController.h; sourceTree = "<group>"; };
+		58B3CC5A1EC7F6CC00D3C02D /* BSJTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicViewController.m; sourceTree = "<group>"; };
 		58B3CC5C1EC7F77700D3C02D /* BSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSJ.h; sourceTree = "<group>"; };
 		58B3CC5D1EC7F7BF00D3C02D /* BSJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJ.m; sourceTree = "<group>"; };
 		58B3CC5F1EC7FFA800D3C02D /* BSJLanuchADService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLanuchADService.h; sourceTree = "<group>"; };
@@ -1877,8 +1880,8 @@
 				588B329C1EC43CC900D00C1C /* BSJTabBarController.m */,
 				588B32AA1EC4425300D00C1C /* BSJEssenceViewController.h */,
 				588B32AB1EC4425300D00C1C /* BSJEssenceViewController.m */,
-				58B3CC591EC7F6CC00D3C02D /* LMJTopicViewController.h */,
-				58B3CC5A1EC7F6CC00D3C02D /* LMJTopicViewController.m */,
+				58B3CC591EC7F6CC00D3C02D /* BSJTopicViewController.h */,
+				58B3CC5A1EC7F6CC00D3C02D /* BSJTopicViewController.m */,
 				588B32AD1EC4428100D00C1C /* BSJNewViewController.h */,
 				588B32AE1EC4428100D00C1C /* BSJNewViewController.m */,
 				588B32D61EC48D6500D00C1C /* BSJPublishViewController.h */,
@@ -1895,6 +1898,8 @@
 				583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */,
 				582459281EE056410004A5BF /* BSJPictureShowViewController.h */,
 				582459291EE056410004A5BF /* BSJPictureShowViewController.m */,
+				58245AE01EE2DF650004A5BF /* BSJCommentPageViewController.h */,
+				58245AE11EE2DF650004A5BF /* BSJCommentPageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -5312,7 +5317,7 @@
 				58AFAB561EB4ADAA00822043 /* MKMapView+BetterMaps.m in Sources */,
 				58AFAB941EB4ADAA00822043 /* IQUIWindow+Hierarchy.m in Sources */,
 				58AFAB7F1EB4ADAA00822043 /* MPLocationManager.m in Sources */,
-				58B3CC5B1EC7F6CC00D3C02D /* LMJTopicViewController.m in Sources */,
+				58B3CC5B1EC7F6CC00D3C02D /* BSJTopicViewController.m in Sources */,
 				58AFAB341EB4ADAA00822043 /* NSObject+KVOBlocks.m in Sources */,
 				58AFAC601EB4ADAB00822043 /* LMJStaticTableViewController.m in Sources */,
 				58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */,
@@ -5345,6 +5350,7 @@
 				58AFABA11EB4ADAA00822043 /* QBAssetsCollectionCheckmarkView.m in Sources */,
 				58AFAB3C1EB4ADAA00822043 /* NSString+Contains.m in Sources */,
 				58AFAC301EB4ADAA00822043 /* UIView+Nib.m in Sources */,
+				58245AE21EE2DF650004A5BF /* BSJCommentPageViewController.m in Sources */,
 				58CDBFBD1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.m in Sources */,
 				58AFAC591EB4ADAB00822043 /* LMJBaseViewController.m in Sources */,
 				58AFAB371EB4ADAA00822043 /* NSObject+Runtime.m in Sources */,

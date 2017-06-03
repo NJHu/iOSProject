@@ -4,14 +4,14 @@
  */
 typedef enum : NSUInteger {
     
-    BSJTopicViewControllerTypeAll = 1,
-    BSJTopicViewControllerTypePicture = 10,
+    //    1为全部，10为图片，29为段子，31为音频，41为视频
+    BSJTopicTypeAll = 1,
+    BSJTopicTypePicture = 10,
+    BSJTopicTypeWords = 29,
+    BSJTopicTypeVoice = 31,
+    BSJTopicTypeVideo = 41,
     
-    BSJTopicViewControllerTypeWord = 29,
-    BSJTopicViewControllerTypeVoice = 31,
-    
-    BSJTopicViewControllerTypeVideo = 41,
-} BSJTopicViewControllerType;
+} BSJTopicType;
 
 
 

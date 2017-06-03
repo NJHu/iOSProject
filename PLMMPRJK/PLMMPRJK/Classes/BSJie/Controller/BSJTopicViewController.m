@@ -1,19 +1,20 @@
 //
-//  LMJTopicViewController.m
+//  BSJTopicViewController.m
 //  PLMMPRJK
 //
 //  Created by HuXuPeng on 2017/5/14.
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import "LMJTopicViewController.h"
+#import "BSJTopicViewController.h"
 #import "ZJScrollPageView.h"
 #import "BSJTopicService.h"
 #import "BSJTopicViewModel.h"
 #import "BSJTopic.h"
 #import "BSJTopicCell.h"
+#import "BSJCommentPageViewController.h"
 
-@interface LMJTopicViewController ()<ZJScrollPageViewChildVcDelegate>
+@interface BSJTopicViewController ()<ZJScrollPageViewChildVcDelegate>
 
 /** <#digest#> */
 @property (nonatomic, strong) BSJTopicService *topicService;
@@ -22,7 +23,7 @@
 
 @end
 
-@implementation LMJTopicViewController
+@implementation BSJTopicViewController
 
 - (void)viewDidLoad {
     

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BSJUser.h"
-#import "LMJTopicViewController.h"
+#import "BSJTopicViewController.h"
 
 @interface BSJTopicTopComent : NSObject
 
@@ -40,7 +40,7 @@
 @property (nonatomic, copy) NSString *total_cmt_like_count;
 
 /** <#digest#> */
-@property (nonatomic, assign) LMJTopicViewControllerType cmt_type;
+@property (nonatomic, assign) BSJTopicType cmt_type;
 
 
 /** <#digest#> */

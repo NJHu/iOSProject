@@ -8,7 +8,7 @@
 
 #import "BSJEssenceViewController.h"
 #import "ZJScrollPageView.h"
-#import "LMJTopicViewController.h"
+#import "BSJTopicViewController.h"
 
 @interface BSJEssenceViewController ()<ZJScrollPageViewDelegate>
 @property (nonatomic, weak) ZJScrollPageView *scrollPageView;
@@ -21,18 +21,18 @@
     
 //    1为全部，10为图片，29为段子，31为音频，41为视频
     
-    LMJTopicViewController *words = [[LMJTopicViewController alloc] initWithTitle:@"段子"];
-    LMJTopicViewController *voice = [[LMJTopicViewController alloc] initWithTitle:@"音频"];
-    LMJTopicViewController *picture = [[LMJTopicViewController alloc] initWithTitle:@"图片"];
-    LMJTopicViewController *video = [[LMJTopicViewController alloc] initWithTitle:@"视频"];
+    BSJTopicViewController *words = [[BSJTopicViewController alloc] initWithTitle:@"段子"];
+    BSJTopicViewController *voice = [[BSJTopicViewController alloc] initWithTitle:@"音频"];
+    BSJTopicViewController *picture = [[BSJTopicViewController alloc] initWithTitle:@"图片"];
+    BSJTopicViewController *video = [[BSJTopicViewController alloc] initWithTitle:@"视频"];
     
-    LMJTopicViewController *all = [[LMJTopicViewController alloc] initWithTitle:@"全部"];
+    BSJTopicViewController *all = [[BSJTopicViewController alloc] initWithTitle:@"全部"];
     
-    words.topicType = LMJTopicViewControllerTypeWords;
-    voice.topicType = LMJTopicViewControllerTypeVoice;
-    picture.topicType = LMJTopicViewControllerTypePicture;
-    video.topicType = LMJTopicViewControllerTypeVideo;
-    all.topicType = LMJTopicViewControllerTypeAll;
+    words.topicType = BSJTopicTypeWords;
+    voice.topicType = BSJTopicTypeVoice;
+    picture.topicType = BSJTopicTypePicture;
+    video.topicType = BSJTopicTypeVideo;
+    all.topicType = BSJTopicTypeAll;
     
     [self addChildViewController:words];
     [self addChildViewController:voice];

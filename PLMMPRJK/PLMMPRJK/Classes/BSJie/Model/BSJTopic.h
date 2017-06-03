@@ -7,14 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LMJTopicViewController.h"
+#import "BSJTopicViewController.h"
 #import "BSJTopicTopComent.h"
 #import "BSJUser.h"
+
+
+
+
+
 
 @interface BSJTopic : NSObject
 
 /** 帖子的类型 */
-@property (nonatomic, assign) LMJTopicViewControllerType type;
+@property (nonatomic, assign) BSJTopicType type;
 
 /** 用户 ID */
 @property (nonatomic, copy) NSString *ID;

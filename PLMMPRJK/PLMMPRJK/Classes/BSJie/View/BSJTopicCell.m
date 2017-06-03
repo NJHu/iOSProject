@@ -107,7 +107,7 @@
 
     
     
-    if (topicViewModel.topic.type == BSJTopicViewControllerTypePicture) {
+    if (topicViewModel.topic.type == BSJTopicTypePicture) {
         
         self.pictureView.topicViewModel = topicViewModel;
         self.pictureView.frame = topicViewModel.pictureFrame;
@@ -116,7 +116,7 @@
         _voiceView.hidden = YES;
         _videoView.hidden = YES;
         
-    }else if (topicViewModel.topic.type == BSJTopicViewControllerTypeVoice)
+    }else if (topicViewModel.topic.type == BSJTopicTypeVoice)
     {
         self.voiceView.frame = topicViewModel.pictureFrame;
         self.voiceView.topicViewModel = topicViewModel;
@@ -125,13 +125,13 @@
         _voiceView.hidden = NO;
         _videoView.hidden = YES;
         
-    }else if (topicViewModel.topic.type == BSJTopicViewControllerTypeWord)
+    }else if (topicViewModel.topic.type == BSJTopicTypeWords)
     {
         _pictureView.hidden = YES;
         _voiceView.hidden = YES;
         _videoView.hidden = YES;
         
-    }else if (topicViewModel.topic.type == BSJTopicViewControllerTypeVideo)
+    }else if (topicViewModel.topic.type == BSJTopicTypeVideo)
     {
         self.videoView.frame = topicViewModel.pictureFrame;
         self.videoView.topicViewModel = topicViewModel;
