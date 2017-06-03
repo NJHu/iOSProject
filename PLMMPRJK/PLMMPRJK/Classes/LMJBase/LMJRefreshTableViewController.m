@@ -56,9 +56,11 @@
 // 结束刷新
 - (void)endHeaderFooterRefreshing
 {
+    NSLog(@"tableview----------------endHeaderFooterRefreshing");
     // 结束刷新状态
     ![self.tableView.mj_header isRefreshing] ?: [self.tableView.mj_header endRefreshing];
     ![self.tableView.mj_footer isRefreshing] ?: [self.tableView.mj_footer endRefreshing];
+    
 }
 
 // 子类需要调用调用

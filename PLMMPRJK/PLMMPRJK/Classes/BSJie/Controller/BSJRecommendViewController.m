@@ -39,6 +39,22 @@
     self.title = @"推荐关注";
     
     self.leftTagTableView.scrollsToTop = NO;
+    
+//    [self.tableView.mj_header addObserverBlockForKeyPath:@"state" block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+//        
+//        //    /** 普通闲置状态 */
+//        //    MJRefreshStateIdle = 1,
+//        //    /** 松开就可以进行刷新的状态 */
+//        //    MJRefreshStatePulling = 2,
+//        //    /** 正在刷新中的状态 */
+//        //    MJRefreshStateRefreshing = 3,
+//        //    /** 即将刷新的状态 */
+//        //    MJRefreshStateWillRefresh = 4,
+//        //    /** 所有数据加载完毕，没有更多的数据了 */
+//        //    MJRefreshStateNoMoreData = 5
+//        NSLog(@"oldVal------%@, newVal -------%@", oldVal, newVal);
+//        
+//    }];
 }
 
 
@@ -60,7 +76,7 @@
             
             LMJErrorReturn;
             
-            
+            NSLog(@"2020202020202020200202020202002020020202020");
             [weakself.leftTagTableView reloadData];
             
             [weakself.leftTagTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
@@ -76,36 +92,59 @@
 - (void)loadMore:(BOOL)isMore
 {
     if (self.recommendSevice.recommendCategorys.count == 0) {
+        NSLog(@"8888888888888888888888888888888888888888");
         [self endHeaderFooterRefreshing];
         return;
     }
     
+    
+    BSJRecommendCategory *selectedCategory = BSJSelectedCategory;
+    
+    NSLog(@"13131313131313131313131313131313");
     LMJWeakSelf(self);
     if (self.leftTagTableView.indexPathForSelectedRow.row == 0) {
         
+        NSLog(@"141414141414141414414141441414144141441");
         [self.recommendSevice getDefaultRecommendCategoryUserList:isMore completion:^(NSError *error) {
+            
+            NSLog(@"181818181881818818188181881811881818188181818818181");
+            if (selectedCategory != BSJSelectedCategory) return;
+            
+            NSLog(@"3333333333333333333333333");
             [self endHeaderFooterRefreshing];
             
             LMJErrorReturn;
             
+            
+            NSLog(@"66666666666666666666666666666666");
             [self.tableView reloadData];
             
+            
+            NSLog(@"17171717177171717717177171717717171717717177171");
             [self checkData];
         }];
         
     }else
     {
         
+        NSLog(@"12121212121212121212121212121212121212121");
         [self.recommendSevice getSelectedRecommendCategoryUserList:BSJSelectedCategory isMore:isMore completion:^(NSError *error) {
             
+            NSLog(@"1000000000000000000000000000000000");
+            if (selectedCategory != BSJSelectedCategory) return;
+            
+            
+            NSLog(@"4444444444444444444444444444");
             [self endHeaderFooterRefreshing];
             
             LMJErrorReturn;
             
             
+            NSLog(@"5555555555555555555555555");
             [self.tableView reloadData];
             
             
+            NSLog(@"151515151515151515515151551515");
             [self checkData];
             
         }];
@@ -127,6 +166,7 @@
         return BSJSelectedCategory.users.count;
     }
     
+    NSLog(@"9999999999999999999999");
     return 0;
 }
 
@@ -162,16 +202,21 @@
 {
     
     if (tableView == self.leftTagTableView) {
-    
+        
+        NSLog(@"11111111111111111111, %@", indexPath);
+        [self endHeaderFooterRefreshing];
+        self.tableView.mj_header.state = MJRefreshStateIdle;
         
         // 清除上一个数据
+        NSLog(@"7777777777777777777777777777777777777");
         [self.tableView reloadData];
+    
         
-        [self endHeaderFooterRefreshing];
-        
+        NSLog(@"1616161616161616616166161616616616161661");
         [self checkData];
         
         if (BSJSelectedCategory.users.count == 0) {
+            NSLog(@"222222222222222222222222222, %@", indexPath);
             [self.tableView.mj_header beginRefreshing];
         }
     }

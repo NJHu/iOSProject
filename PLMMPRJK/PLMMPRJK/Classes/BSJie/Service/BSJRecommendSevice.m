@@ -118,6 +118,9 @@
     [self GET:BSJBaiSiJieHTTPAPI parameters:parameters completion:^(LMJBaseResponse *response) {
         
         if (response.error) {
+            
+            NSLog(@"%@", response.error);
+            
             completion(response.error);
             return ;
         }

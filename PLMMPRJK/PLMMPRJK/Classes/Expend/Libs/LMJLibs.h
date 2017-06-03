@@ -24,7 +24,7 @@
 #import <MWPhotoBrowser.h>
 #import <RegexKitLite.h>
 #import <MWApi.h>
-#import <MJRefresh.h>
+#import "MJRefresh.h"
 #import <ActionSheetPicker.h>
 #import <CYLTabBarController.h>
 #import <DACircularProgressView.h>
