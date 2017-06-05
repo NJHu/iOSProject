@@ -43,6 +43,10 @@
 		588B32C91EC4486600D00C1C /* SINProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32C81EC4486600D00C1C /* SINProfileViewController.m */; };
 		588B32D51EC4755100D00C1C /* BSJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32D41EC4755100D00C1C /* BSJTabBar.m */; };
 		588B32D81EC48D6600D00C1C /* BSJPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32D71EC48D6600D00C1C /* BSJPublishViewController.m */; };
+		589375911EE3F0FB00BE0990 /* BSJTopicCmtCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893758F1EE3F0FB00BE0990 /* BSJTopicCmtCell.m */; };
+		589375921EE3F0FB00BE0990 /* BSJTopicCmtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */; };
+		589375951EE3FB4200BE0990 /* BSJComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 589375941EE3FB4200BE0990 /* BSJComment.m */; };
+		589375981EE3FB9400BE0990 /* BSJTopicCmtService.m in Sources */ = {isa = PBXBuildFile; fileRef = 589375971EE3FB9400BE0990 /* BSJTopicCmtService.m */; };
 		58A663691EBD8E1300222A1D /* LMJH5_OCViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */; };
 		58A6636C1EBD983100222A1D /* LMJOCJSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */; };
 		58A6636F1EBDAF5500222A1D /* LMJAlertViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636E1EBDAF5500222A1D /* LMJAlertViewsViewController.m */; };
@@ -618,6 +622,13 @@
 		588B32D41EC4755100D00C1C /* BSJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTabBar.m; sourceTree = "<group>"; };
 		588B32D61EC48D6500D00C1C /* BSJPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJPublishViewController.h; sourceTree = "<group>"; };
 		588B32D71EC48D6600D00C1C /* BSJPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPublishViewController.m; sourceTree = "<group>"; };
+		5893758E1EE3F0FB00BE0990 /* BSJTopicCmtCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicCmtCell.h; sourceTree = "<group>"; };
+		5893758F1EE3F0FB00BE0990 /* BSJTopicCmtCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicCmtCell.m; sourceTree = "<group>"; };
+		589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTopicCmtCell.xib; sourceTree = "<group>"; };
+		589375931EE3FB4200BE0990 /* BSJComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJComment.h; sourceTree = "<group>"; };
+		589375941EE3FB4200BE0990 /* BSJComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJComment.m; sourceTree = "<group>"; };
+		589375961EE3FB9400BE0990 /* BSJTopicCmtService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicCmtService.h; sourceTree = "<group>"; };
+		589375971EE3FB9400BE0990 /* BSJTopicCmtService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicCmtService.m; sourceTree = "<group>"; };
 		58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LMJH5_OCViewController.html; sourceTree = "<group>"; };
 		58A6636A1EBD983100222A1D /* LMJOCJSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJOCJSHelper.h; sourceTree = "<group>"; };
 		58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJOCJSHelper.m; sourceTree = "<group>"; };
@@ -1919,6 +1930,8 @@
 				58245ADE1EE2B0570004A5BF /* BSJUser.m */,
 				58F1447C1ECDF22A0053B2A2 /* BSJTopicViewModel.h */,
 				58F1447D1ECDF22A0053B2A2 /* BSJTopicViewModel.m */,
+				589375931EE3FB4200BE0990 /* BSJComment.h */,
+				589375941EE3FB4200BE0990 /* BSJComment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1941,6 +1954,8 @@
 				58B3CC701EC80CCB00D3C02D /* BSJRecommendSevice.m */,
 				58F144761ECDE7360053B2A2 /* BSJTopicService.h */,
 				58F144771ECDE7360053B2A2 /* BSJTopicService.m */,
+				589375961EE3FB9400BE0990 /* BSJTopicCmtService.h */,
+				589375971EE3FB9400BE0990 /* BSJTopicCmtService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1970,6 +1985,9 @@
 				58CC5EE31ED5CD350012ED83 /* BSJTopicVoiceView.m */,
 				58CC5EE51ED5D5030012ED83 /* BSJTopicVideoView.h */,
 				58CC5EE61ED5D5030012ED83 /* BSJTopicVideoView.m */,
+				5893758E1EE3F0FB00BE0990 /* BSJTopicCmtCell.h */,
+				5893758F1EE3F0FB00BE0990 /* BSJTopicCmtCell.m */,
+				589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4872,6 +4890,7 @@
 				588B32BA1EC447CE00D00C1C /* BSJ.xcassets in Resources */,
 				588AACFB1E9F2253005F2A89 /* wishPage_2.gif in Resources */,
 				58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */,
+				589375921EE3F0FB00BE0990 /* BSJTopicCmtCell.xib in Resources */,
 				58F144831ECE9C890053B2A2 /* BSJTopicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5100,6 +5119,7 @@
 				58AFAC9E1EB4ADAB00822043 /* main.m in Sources */,
 				58B3CC641EC8052800D3C02D /* BSJRecommendViewController.m in Sources */,
 				58B3CC8E1EC835A300D3C02D /* TAAnimatedDotView.m in Sources */,
+				589375911EE3F0FB00BE0990 /* BSJTopicCmtCell.m in Sources */,
 				58AFAC2E1EB4ADAA00822043 /* UIView+Find.m in Sources */,
 				583EB8B21EBAEEB300A945D3 /* LMJUpLoadImageCell.m in Sources */,
 				58AFAC3E1EB4ADAA00822043 /* UIViewController+TopBarMessage.m in Sources */,
@@ -5221,6 +5241,7 @@
 				58FFE9BF1EBF23F400D50E4C /* MPEventCalendar.m in Sources */,
 				58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */,
 				58AFACA81EB4ADAB00822043 /* LMJNSOperationViewController.m in Sources */,
+				589375981EE3FB9400BE0990 /* BSJTopicCmtService.m in Sources */,
 				58AFABE01EB4ADAA00822043 /* UIColor+HEX.m in Sources */,
 				58AFAC8A1EB4ADAB00822043 /* LMJVerticalLayoutViewController.m in Sources */,
 				58AFACA71EB4ADAB00822043 /* LMJLockViewController.m in Sources */,
@@ -5381,6 +5402,7 @@
 				58F144701ECDDD100053B2A2 /* ZJCollectionView.m in Sources */,
 				58AFACAC1EB4ADAB00822043 /* LMJRunTimeTest+LMJMethod.m in Sources */,
 				588B32A91EC43D4500D00C1C /* VIDTabBarController.m in Sources */,
+				589375951EE3FB4200BE0990 /* BSJComment.m in Sources */,
 				588B32A61EC43D3200D00C1C /* MUSTabBarController.m in Sources */,
 				58AFAB581EB4ADAA00822043 /* MKMapView+ZoomLevel.m in Sources */,
 				58AFABCC1EB4ADAA00822043 /* UIView+Empty.m in Sources */,

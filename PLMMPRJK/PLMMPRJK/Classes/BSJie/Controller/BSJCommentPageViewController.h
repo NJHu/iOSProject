@@ -10,10 +10,11 @@
 #import "BSJTopic.h"
 #import "BSJ.h"
 #import "BSJTopicCell.h"
+#import "BSJTopicViewModel.h"
 
 @interface BSJCommentPageViewController : LMJRefreshTableViewController
 
 /** <#digest#> */
-@property (nonatomic, strong) BSJTopic *topic;
+@property (nonatomic, strong) BSJTopicViewModel *topicViewModel;
 
 @end

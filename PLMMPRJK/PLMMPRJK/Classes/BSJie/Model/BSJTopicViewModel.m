@@ -267,6 +267,8 @@ const CGFloat BSJCellContentImageMaxHeight = 1000.0;
         return self.topic.create_time;
     }
     
+
+    
 }
 
 

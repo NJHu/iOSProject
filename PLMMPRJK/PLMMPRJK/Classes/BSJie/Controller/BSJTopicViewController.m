@@ -78,12 +78,22 @@
     return self.topicService.topicViewModels[indexPath.row].cellHeight;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    BSJCommentPageViewController *cmtVc = [[BSJCommentPageViewController alloc] init];
+    cmtVc.topicViewModel = self.topicService.topicViewModels[indexPath.row];
+    
+    [self.navigationController pushViewController:cmtVc animated:YES];
+    
+}
 
 #pragma mark - getter
 
 - (NSString *)areaType
 {
-    
+
     if ([self.parentViewController isMemberOfClass:NSClassFromString(@"BSJEssenceViewController")]) {
         return @"list";
     }
