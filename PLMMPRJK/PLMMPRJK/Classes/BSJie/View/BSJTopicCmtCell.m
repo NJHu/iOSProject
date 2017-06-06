@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sexButton;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *cmtContentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *zanLabel;
 
 @end
 
@@ -50,6 +51,7 @@
 
 - (void)setupUIOnce
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     
 }
 
@@ -100,7 +102,7 @@
     
     self.cmtContentLabel.text = cmt.content;
     
-    
+    self.zanLabel.text = cmt.like_count;
     
 }
 

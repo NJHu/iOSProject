@@ -127,12 +127,12 @@
     {
         if (indexPath.section == 1) {
             
-            cmtCell.cmt = self.topicCmtService.latestCmts[indexPath.row];
+            cmtCell.cmt = self.topicCmtService.hotCmts[indexPath.row];
         }
         
         if (indexPath.section == 2) {
             
-            cmtCell.cmt = self.topicCmtService.hotCmts[indexPath.row];
+            cmtCell.cmt = self.topicCmtService.latestCmts[indexPath.row];
         }
     }
     
@@ -143,12 +143,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 44;
+    return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 88;
+    return 0;
 }
 
 

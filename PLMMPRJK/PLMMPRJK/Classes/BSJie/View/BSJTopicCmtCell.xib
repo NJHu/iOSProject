@@ -50,10 +50,9 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qiv-Y6-yAk">
-                        <rect key="frame" x="315.5" y="45" width="15" height="17"/>
+                        <rect key="frame" x="316.5" y="45" width="13.5" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="SCj-pD-JWh"/>
-                            <constraint firstAttribute="width" constant="15" id="VOs-oj-6QN"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,8 +67,8 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eot-0s-NSF">
-                        <rect key="frame" x="70" y="50" width="235.5" height="52.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eot-0s-NSF">
+                        <rect key="frame" x="70" y="50" width="241.5" height="53"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -83,11 +82,11 @@
                     <constraint firstItem="NNZ-ON-9Wu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Hff-FW-e1E"/>
                     <constraint firstItem="X66-6o-hoz" firstAttribute="centerY" secondItem="NNZ-ON-9Wu" secondAttribute="centerY" id="U5B-Ko-tb3"/>
                     <constraint firstItem="X66-6o-hoz" firstAttribute="leading" secondItem="4Zi-cy-M0q" secondAttribute="trailing" constant="5" id="VYe-C8-fJg"/>
-                    <constraint firstItem="Qiv-Y6-yAk" firstAttribute="leading" secondItem="eot-0s-NSF" secondAttribute="trailing" constant="10" id="X6e-mU-2Qa"/>
                     <constraint firstItem="4Zi-cy-M0q" firstAttribute="top" secondItem="NNZ-ON-9Wu" secondAttribute="top" id="a2E-7x-3gy"/>
                     <constraint firstItem="Qiv-Y6-yAk" firstAttribute="top" secondItem="XvU-Qo-A4U" secondAttribute="bottom" constant="10" id="m3b-bL-QP6"/>
                     <constraint firstItem="XvU-Qo-A4U" firstAttribute="top" secondItem="NNZ-ON-9Wu" secondAttribute="top" constant="5" id="mW1-41-E3m"/>
                     <constraint firstItem="4Zi-cy-M0q" firstAttribute="leading" secondItem="NNZ-ON-9Wu" secondAttribute="trailing" constant="5" id="nLG-ka-lN4"/>
+                    <constraint firstItem="Qiv-Y6-yAk" firstAttribute="leading" secondItem="eot-0s-NSF" secondAttribute="trailing" constant="5" id="nYg-mf-HIR"/>
                     <constraint firstItem="eot-0s-NSF" firstAttribute="top" secondItem="NNZ-ON-9Wu" secondAttribute="bottom" constant="-10" id="q3b-PS-p9J"/>
                     <constraint firstItem="NNZ-ON-9Wu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="r0V-tK-jX7"/>
                 </constraints>
@@ -97,6 +96,7 @@
                 <outlet property="headerImageView" destination="NNZ-ON-9Wu" id="TUE-Hd-i0e"/>
                 <outlet property="sexButton" destination="4Zi-cy-M0q" id="k3a-lC-rCp"/>
                 <outlet property="userName" destination="X66-6o-hoz" id="iBL-Pd-aP1"/>
+                <outlet property="zanLabel" destination="Qiv-Y6-yAk" id="xik-M5-UMa"/>
             </connections>
             <point key="canvasLocation" x="-41.5" y="74.5"/>
         </tableViewCell>
