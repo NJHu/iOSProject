@@ -47,6 +47,9 @@
 		589375921EE3F0FB00BE0990 /* BSJTopicCmtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */; };
 		589375951EE3FB4200BE0990 /* BSJComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 589375941EE3FB4200BE0990 /* BSJComment.m */; };
 		589375981EE3FB9400BE0990 /* BSJTopicCmtService.m in Sources */ = {isa = PBXBuildFile; fileRef = 589375971EE3FB9400BE0990 /* BSJTopicCmtService.m */; };
+		589FCFA31EED1619008FFB28 /* BSJCommentPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589FCFA21EED1619008FFB28 /* BSJCommentPageViewController.xib */; };
+		589FCFA61EED2145008FFB28 /* MenuPopOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FCFA51EED2145008FFB28 /* MenuPopOverView.m */; };
+		589FCFA91EED2CE3008FFB28 /* LMJCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FCFA81EED2CE3008FFB28 /* LMJCommentHeaderView.m */; };
 		58A663691EBD8E1300222A1D /* LMJH5_OCViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */; };
 		58A6636C1EBD983100222A1D /* LMJOCJSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */; };
 		58A6636F1EBDAF5500222A1D /* LMJAlertViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636E1EBDAF5500222A1D /* LMJAlertViewsViewController.m */; };
@@ -629,6 +632,11 @@
 		589375941EE3FB4200BE0990 /* BSJComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJComment.m; sourceTree = "<group>"; };
 		589375961EE3FB9400BE0990 /* BSJTopicCmtService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicCmtService.h; sourceTree = "<group>"; };
 		589375971EE3FB9400BE0990 /* BSJTopicCmtService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicCmtService.m; sourceTree = "<group>"; };
+		589FCFA21EED1619008FFB28 /* BSJCommentPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJCommentPageViewController.xib; sourceTree = "<group>"; };
+		589FCFA41EED2145008FFB28 /* MenuPopOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuPopOverView.h; sourceTree = "<group>"; };
+		589FCFA51EED2145008FFB28 /* MenuPopOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuPopOverView.m; sourceTree = "<group>"; };
+		589FCFA71EED2CE3008FFB28 /* LMJCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCommentHeaderView.h; sourceTree = "<group>"; };
+		589FCFA81EED2CE3008FFB28 /* LMJCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCommentHeaderView.m; sourceTree = "<group>"; };
 		58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LMJH5_OCViewController.html; sourceTree = "<group>"; };
 		58A6636A1EBD983100222A1D /* LMJOCJSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJOCJSHelper.h; sourceTree = "<group>"; };
 		58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJOCJSHelper.m; sourceTree = "<group>"; };
@@ -1911,6 +1919,7 @@
 				582459291EE056410004A5BF /* BSJPictureShowViewController.m */,
 				58245AE01EE2DF650004A5BF /* BSJCommentPageViewController.h */,
 				58245AE11EE2DF650004A5BF /* BSJCommentPageViewController.m */,
+				589FCFA21EED1619008FFB28 /* BSJCommentPageViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1941,6 +1950,10 @@
 			children = (
 				58B3CC5C1EC7F77700D3C02D /* BSJ.h */,
 				58B3CC5D1EC7F7BF00D3C02D /* BSJ.m */,
+				589FCFA41EED2145008FFB28 /* MenuPopOverView.h */,
+				589FCFA51EED2145008FFB28 /* MenuPopOverView.m */,
+				589FCFA71EED2CE3008FFB28 /* LMJCommentHeaderView.h */,
+				589FCFA81EED2CE3008FFB28 /* LMJCommentHeaderView.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -4867,6 +4880,7 @@
 				583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */,
 				588AACFD1E9F2253005F2A89 /* wishPage_4.gif in Resources */,
 				588AACFC1E9F2253005F2A89 /* wishPage_3.gif in Resources */,
+				589FCFA31EED1619008FFB28 /* BSJCommentPageViewController.xib in Resources */,
 				58AFABB61EB4ADAA00822043 /* WeiboSDK.bundle in Resources */,
 				58AFAB661EB4ADAA00822043 /* blankpage_image_loadFail@2x.png in Resources */,
 				588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */,
@@ -5225,6 +5239,7 @@
 				58AFAC651EB4ADAB00822043 /* LMJWebViewController.m in Sources */,
 				58AFAC9F1EB4ADAB00822043 /* LMJBlockLoopViewController.m in Sources */,
 				58AFABF21EB4ADAA00822043 /* UIImage+FX.m in Sources */,
+				589FCFA61EED2145008FFB28 /* MenuPopOverView.m in Sources */,
 				58AFAC631EB4ADAB00822043 /* LMJTitleListChildViewController.m in Sources */,
 				58B3CC7C1EC81AD600D3C02D /* BSJRecommendUser.m in Sources */,
 				58AFABDB1EB4ADAA00822043 /* UIButton+Indicator.m in Sources */,
@@ -5242,6 +5257,7 @@
 				58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */,
 				58AFACA81EB4ADAB00822043 /* LMJNSOperationViewController.m in Sources */,
 				589375981EE3FB9400BE0990 /* BSJTopicCmtService.m in Sources */,
+				589FCFA91EED2CE3008FFB28 /* LMJCommentHeaderView.m in Sources */,
 				58AFABE01EB4ADAA00822043 /* UIColor+HEX.m in Sources */,
 				58AFAC8A1EB4ADAB00822043 /* LMJVerticalLayoutViewController.m in Sources */,
 				58AFACA71EB4ADAB00822043 /* LMJLockViewController.m in Sources */,

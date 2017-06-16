@@ -371,12 +371,12 @@
 {
     NSLog(@"LMJWebViewController -- dealloc");
     
-    [self.webView.scrollView removeObserverBlocks];
-    [self.webView removeObserverBlocks];
+    [_webView.scrollView removeObserverBlocks];
+    [_webView removeObserverBlocks];
     
-    self.webView.UIDelegate = nil;
-    self.webView.navigationDelegate = nil;
-    self.webView.scrollView.delegate = nil;
+    _webView.UIDelegate = nil;
+    _webView.navigationDelegate = nil;
+    _webView.scrollView.delegate = nil;
 }
 
 

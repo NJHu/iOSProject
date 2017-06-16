@@ -35,7 +35,7 @@
 @property (nonatomic, copy) NSString *voicetime;
 
 /** 语音评论url */
-@property (nonatomic, copy) NSString *voiceurl;
+@property (nonatomic, strong) NSURL *voiceurl;
 
 @end
 

@@ -2,7 +2,7 @@
 //  BSJCommentPageViewController.m
 //  PLMMPRJK
 //
-//  Created by HuXuPeng on 2017/6/3.
+//  Created by HuXuPeng on 2017/6/11.
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
@@ -10,14 +10,22 @@
 #import "BSJTopicTopComent.h"
 #import "BSJTopicCmtService.h"
 #import "BSJTopicCmtCell.h"
+#import "MenuPopOverView.h"
+#import "LMJCommentHeaderView.h"
 
-@interface BSJCommentPageViewController ()
+@interface BSJCommentPageViewController ()<MenuPopOverViewDelegate>
 /** <#digest#> */
 @property (nonatomic, strong) BSJTopicViewModel *c_topicViewModel;
 
 
 /** <#digest#> */
 @property (nonatomic, strong) BSJTopicCmtService *topicCmtService;
+
+/** <#digest#> */
+@property (weak, nonatomic) IBOutlet UIView *cmtToolBar;
+
+/** 弹出的单利menuVC */
+@property (weak, nonatomic) UIMenuController *menu;
 
 @end
 
@@ -34,7 +42,7 @@
     self.navigationItem.title = @"评论";
     
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-
+    
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100;
     
@@ -42,6 +50,12 @@
 }
 
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    [self.view bringSubviewToFront:self.cmtToolBar];
+}
 
 - (void)setupHeader
 {
@@ -53,7 +67,7 @@
     header.lmj_height = self.c_topicViewModel.cellHeight;
     
     self.tableView.tableHeaderView = header;
-
+    
     
 }
 
@@ -80,13 +94,17 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (self.topicCmtService.hotCmts.count) {
+        
         return 2;
+        
     } else if(self.topicCmtService.latestCmts.count) {
+        
         return 1;
+        
     }
     
     
-        return 0;
+    return 0;
     
 }
 
@@ -100,11 +118,12 @@
         
     }else if ([self numberOfSectionsInTableView:tableView] == 2)
     {
-        if (section == 1) {
+        if (section == 0) {
             return self.topicCmtService.hotCmts.count;
         }
         
-        if (section == 2) {
+        if (section == 1) {
+            
             return self.topicCmtService.latestCmts.count;
         }
     }
@@ -119,45 +138,112 @@
 {
     BSJTopicCmtCell *cmtCell = [BSJTopicCmtCell cmtCellWithTableView:tableView];
     
-    if ([self numberOfSectionsInTableView:tableView] == 1) {
-        
-        cmtCell.cmt = self.topicCmtService.latestCmts[indexPath.row];
-        
-    }else if ([self numberOfSectionsInTableView:tableView] == 2)
-    {
-        if (indexPath.section == 1) {
-            
-            cmtCell.cmt = self.topicCmtService.hotCmts[indexPath.row];
-        }
-        
-        if (indexPath.section == 2) {
-            
-            cmtCell.cmt = self.topicCmtService.latestCmts[indexPath.row];
-        }
-    }
+    cmtCell.cmt = [self commentWithIndexPath:indexPath];
     
     
     return cmtCell;
 }
 
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+- (BSJComment *)commentWithIndexPath:(NSIndexPath *)indexPath
 {
-    return 10;
+    // 判断有几组
+    switch ([self numberOfSectionsInTableView:self.tableView]) {
+        case 1:
+            return self.topicCmtService.latestCmts[indexPath.row];
+            
+            break;
+        case 2:
+            
+            if(indexPath.section == 0) return self.topicCmtService.hotCmts[indexPath.row];
+            if(indexPath.section == 1) return self.topicCmtService.latestCmts[indexPath.row];
+            
+            break;
+    }
+    
+    return nil;
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 0;
+    return 34;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    LMJCommentHeaderView *headerView = [LMJCommentHeaderView commentHeaderViewWithTableView:tableView];
+    
+    // 判断有几组
+    switch ([self numberOfSectionsInTableView:self.tableView]) {
+        case 1:
+            headerView.title = @"最新评论";
+            
+            break;
+        case 2:
+            if(section == 0) headerView.title = @"最热评论";
+            if(section == 1) headerView.title = @"最新评论";
+            break;
+    }
+    return headerView;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [super scrollViewWillBeginDragging:scrollView];
+    
+    [self.menu setMenuVisible:NO animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    // 注意要让cell成为第一响应者
+    [cell becomeFirstResponder];
+    
+    [self.menu setTargetRect:CGRectMake(0, cell.lmj_height/2, cell.lmj_width, cell.lmj_height/2) inView:cell];
+    
+    [self.menu setMenuVisible:!self.menu.isMenuVisible animated:YES];
+    
+}
+
+#pragma mark - MenuPopOverViewDelegate
+- (void)ding:(UIMenuController *)menu
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    BSJComment *comment = [self commentWithIndexPath:indexPath];
+    
+    NSLog(@"%@", comment.content);
+    
+}
+
+- (void)repley:(UIMenuController *)menu
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    BSJComment *comment = [self commentWithIndexPath:indexPath];
+    
+    NSLog(@"%@", comment.content);
+    
+}
+
+- (void)jubao:(UIMenuController *)menu
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    BSJComment *comment = [self commentWithIndexPath:indexPath];
+    
+    NSLog(@"%@", comment.content);
+    
+}
 
 #pragma mark - setter
 - (void)setTopicViewModel:(BSJTopicViewModel *)topicViewModel
 {
     _topicViewModel = topicViewModel;
     
-
+    
     BSJTopic *topic = [BSJTopic mj_objectWithKeyValues:topicViewModel.topic.mj_keyValues];
     
     topic.topCmts = nil;
@@ -184,6 +270,21 @@
         _topicCmtService = [[BSJTopicCmtService alloc] init];
     }
     return _topicCmtService;
+}
+
+- (UIMenuController *)menu
+{
+    if(_menu == nil)
+    {
+        _menu = [UIMenuController sharedMenuController];
+        
+        UIMenuItem *item0 = [[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
+        UIMenuItem *item1 = [[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(repley:)];
+        UIMenuItem *item2= [[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(jubao:)];
+        
+        _menu.menuItems = @[item0, item1, item2];
+    }
+    return _menu;
 }
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *cmtContentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *zanLabel;
+@property (weak, nonatomic) IBOutlet UIButton *voiceCmtButton;
 
 @end
 
@@ -104,6 +105,7 @@
     
     self.zanLabel.text = cmt.like_count;
     
+    self.voiceCmtButton.hidden = !cmt.voiceurl.absoluteString.length;
 }
 
 - (void)layoutSubviews
@@ -118,7 +120,22 @@
     
 }
 
+
+#pragma mark - UIMenuViewController
+- (BOOL) canBecomeFirstResponder{
+    
+    return YES;
+    
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    return NO;
+}
+
 - (IBAction)dingClick:(id)sender {
+    
+    NSLog(@"%s", __func__);
 }
 
 @end
