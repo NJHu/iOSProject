@@ -1,0 +1,1 @@
+../../../ZBarSDK/zbar/error.h

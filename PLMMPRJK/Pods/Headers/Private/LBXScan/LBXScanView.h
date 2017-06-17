@@ -1,1 +1,1 @@
-../../../LBXScan/LBXScan/LBXScanView.h
+../../../LBXScan/LBXScan/UI/LBXScanView.h

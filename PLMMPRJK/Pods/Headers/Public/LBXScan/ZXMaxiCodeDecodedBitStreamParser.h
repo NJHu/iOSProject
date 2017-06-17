@@ -1,0 +1,1 @@
+../../../LBXScan/LBXScan/LBXZXing/ZXingObjc/maxicode/decoder/ZXMaxiCodeDecodedBitStreamParser.h

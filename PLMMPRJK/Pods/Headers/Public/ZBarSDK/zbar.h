@@ -1,0 +1,1 @@
+../../../ZBarSDK/include/zbar.h

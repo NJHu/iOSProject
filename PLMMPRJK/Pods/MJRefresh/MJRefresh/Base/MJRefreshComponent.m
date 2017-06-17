@@ -226,6 +226,7 @@
 #pragma mark - 内部方法
 - (void)executeRefreshingCallback
 {
+    NSLog(@"executeRefreshingCallbackexecuteRefreshingCallbackexecuteRefreshingCallbackexecuteRefreshingCallback");
     dispatch_async(dispatch_get_main_queue(), ^{
         if (self.refreshingBlock) {
             self.refreshingBlock();

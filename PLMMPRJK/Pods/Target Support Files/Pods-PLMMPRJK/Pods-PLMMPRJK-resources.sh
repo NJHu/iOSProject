@@ -79,18 +79,28 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"
   install_resource "HMQRCodeScanner/HMQRCodeScanner/QRCode/HMScanner.bundle"
+  install_resource "LBXScan/LBXScan/UI/CodeScan.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "$PODS_CONFIGURATION_BUILD_DIR/MWPhotoBrowser/MWPhotoBrowser.bundle"
   install_resource "MagicWindowSDK/MagicWindowSDK/MagicWindowSDK/MagicWindow.bundle"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "ZBarSDK/iphone/res/zbar-back.png"
+  install_resource "ZBarSDK/iphone/res/zbar-help.html"
+  install_resource "ZBarSDK/iphone/res/zbar-helpicons.png"
+  install_resource "ZBarSDK/iphone/res/zbar-samples.png"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"
   install_resource "HMQRCodeScanner/HMQRCodeScanner/QRCode/HMScanner.bundle"
+  install_resource "LBXScan/LBXScan/UI/CodeScan.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "$PODS_CONFIGURATION_BUILD_DIR/MWPhotoBrowser/MWPhotoBrowser.bundle"
   install_resource "MagicWindowSDK/MagicWindowSDK/MagicWindowSDK/MagicWindow.bundle"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "ZBarSDK/iphone/res/zbar-back.png"
+  install_resource "ZBarSDK/iphone/res/zbar-help.html"
+  install_resource "ZBarSDK/iphone/res/zbar-helpicons.png"
+  install_resource "ZBarSDK/iphone/res/zbar-samples.png"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

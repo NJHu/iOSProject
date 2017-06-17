@@ -261,7 +261,9 @@
     // 自己设置内边距
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    UIScrollView *contentScrollView = [[UIScrollView alloc] initWithFrame:Main_Screen_Bounds];
+    UIScrollView *contentScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    contentScrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
     [self.view insertSubview:contentScrollView atIndex:0];
     self.contentScrollView = contentScrollView;
     contentScrollView.delegate = self;

@@ -1,0 +1,1 @@
+../../../LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXCode39Reader.h

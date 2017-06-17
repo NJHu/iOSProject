@@ -34,7 +34,7 @@
     NSInteger       _pageSize;
 
 }
-///检索关键字，必选。最长45个字符
+///检索关键字,可选。最长45个字符
 @property (nonatomic, strong) NSString *keyword;
 ///标签，可选，空格分隔的多字符串，最长45个字符，样例：美食 小吃
 @property (nonatomic, strong) NSString *tags;

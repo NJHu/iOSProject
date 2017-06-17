@@ -7,13 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <FMDB/FMDatabase.h>
-#import <FMDB/FMDatabaseQueue.h>
-
+#import <FMDB/FMDB.h>
 #import "LKDBUtils.h"
-
 #import "LKDB+Mapping.h"
-
 #import "NSObject+LKDBHelper.h"
 #import "NSObject+LKModel.h"
 

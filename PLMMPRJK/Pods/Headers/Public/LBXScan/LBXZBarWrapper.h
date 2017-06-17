@@ -1,0 +1,1 @@
+../../../LBXScan/LBXScan/LBXZBar/LBXZBarWrapper.h
