@@ -9,6 +9,6 @@
 #import "LMJBaseViewController.h"
 #import "BSJ.h"
 
-@interface BSJMeViewController : LMJBaseViewController
+@interface BSJMeViewController : LMJCollectionViewController
 
 @end

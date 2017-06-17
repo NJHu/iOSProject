@@ -7,6 +7,7 @@
 //
 
 #import "BSJPublishViewController.h"
+#import "BSJPublishWordViewController.h"
 
 @interface BSJPublishViewController ()
 /** <#digest#> */
@@ -14,6 +15,10 @@
 
 /** <#digest#> */
 @property (nonatomic, strong) NSMutableArray<UIButton *> *publishButtons;
+
+/** <#digest#> */
+@property (weak, nonatomic) UIButton *closeButton;
+
 @end
 
 @implementation BSJPublishViewController
@@ -28,17 +33,14 @@
     self.view.backgroundColor = [UIColor clearColor];
     self.view.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"shareBottomBackground"].CGImage);
     
-//    [UIView animateWithDuration:<#(NSTimeInterval)#> delay:<#(NSTimeInterval)#> usingSpringWithDamping:<#(CGFloat)#> initialSpringVelocity:<#(CGFloat)#> options:<#(UIViewAnimationOptions)#> animations:<#^(void)animations#> completion:<#^(BOOL finished)completion#>];
-    
-//    [self publishButtons];
+    [self closeButton];
     [self sloganImageView];
     [self publishButtons];
 }
 
 - (void)publish:(UIButton *)btn
 {
-    [self dismissPopUpViewController:DDPopUpAnimationTypeNone];
-    
+    [self presentViewController:[[LMJNavigationController alloc] initWithRootViewController:[[BSJPublishWordViewController alloc] init]] animated:YES completion:nil];
 }
 
 
@@ -138,7 +140,6 @@
                 
             }];
             
-            
         }];
         
         
@@ -167,8 +168,36 @@
     return _publishButtons;
 }
 
+- (UIButton *)closeButton
+{
+    if(_closeButton == nil)
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.view addSubview:btn];
+        _closeButton = btn;
+        
+        [btn setTitle:@"Close" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        btn.backgroundColor = [UIColor greenColor];
+        
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.right.top.offset(0);
+            make.size.equalTo(CGSizeMake(100, 44));
+            
+        }];
+        
+        [btn addTarget:self action:@selector(closePage) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    return _closeButton;
+}
 
-
+- (void)closePage
+{
+    [self dismissPopUpViewController:DDPopUpAnimationTypeNone];
+    
+}
 /*
 app_slogan.png
 
