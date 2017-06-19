@@ -46,6 +46,8 @@
 		588B32C91EC4486600D00C1C /* SINProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32C81EC4486600D00C1C /* SINProfileViewController.m */; };
 		588B32D51EC4755100D00C1C /* BSJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32D41EC4755100D00C1C /* BSJTabBar.m */; };
 		588B32D81EC48D6600D00C1C /* BSJPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32D71EC48D6600D00C1C /* BSJPublishViewController.m */; };
+		588E9C361EF7BC9A006F599B /* Sina.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588E9C351EF7BC9A006F599B /* Sina.xcassets */; };
+		588E9C391EF7BD52006F599B /* SINTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E9C381EF7BD52006F599B /* SINTabBar.m */; };
 		589375911EE3F0FB00BE0990 /* BSJTopicCmtCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893758F1EE3F0FB00BE0990 /* BSJTopicCmtCell.m */; };
 		589375921EE3F0FB00BE0990 /* BSJTopicCmtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */; };
 		589375951EE3FB4200BE0990 /* BSJComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 589375941EE3FB4200BE0990 /* BSJComment.m */; };
@@ -635,6 +637,9 @@
 		588B32D41EC4755100D00C1C /* BSJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTabBar.m; sourceTree = "<group>"; };
 		588B32D61EC48D6500D00C1C /* BSJPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJPublishViewController.h; sourceTree = "<group>"; };
 		588B32D71EC48D6600D00C1C /* BSJPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPublishViewController.m; sourceTree = "<group>"; };
+		588E9C351EF7BC9A006F599B /* Sina.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sina.xcassets; sourceTree = "<group>"; };
+		588E9C371EF7BD52006F599B /* SINTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINTabBar.h; sourceTree = "<group>"; };
+		588E9C381EF7BD52006F599B /* SINTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINTabBar.m; sourceTree = "<group>"; };
 		5893758E1EE3F0FB00BE0990 /* BSJTopicCmtCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicCmtCell.h; sourceTree = "<group>"; };
 		5893758F1EE3F0FB00BE0990 /* BSJTopicCmtCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicCmtCell.m; sourceTree = "<group>"; };
 		589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTopicCmtCell.xib; sourceTree = "<group>"; };
@@ -2083,6 +2088,8 @@
 		588B328F1EC4312800D00C1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				588E9C371EF7BD52006F599B /* SINTabBar.h */,
+				588E9C381EF7BD52006F599B /* SINTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4743,6 +4750,7 @@
 				588AAB701E9CB84A005F2A89 /* Preview.xcassets */,
 				588AAB721E9CB858005F2A89 /* Public.xcassets */,
 				588B32B91EC447CE00D00C1C /* BSJ.xcassets */,
+				588E9C351EF7BC9A006F599B /* Sina.xcassets */,
 				588AACF51E9F2253005F2A89 /* PLMMPRIKImages */,
 				E7D0E0601E8B9DCB001E4585 /* Info.plist */,
 				E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */,
@@ -4833,7 +4841,7 @@
 		E7D0E0411E8B9DCA001E4585 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = BSJ;
+				CLASSPREFIX = SIN;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = GoMePrjk;
 				TargetAttributes = {
@@ -4907,6 +4915,7 @@
 				58AFABB61EB4ADAA00822043 /* WeiboSDK.bundle in Resources */,
 				58AFAB661EB4ADAA00822043 /* blankpage_image_loadFail@2x.png in Resources */,
 				588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */,
+				588E9C361EF7BC9A006F599B /* Sina.xcassets in Resources */,
 				58B3CC791EC819FB00D3C02D /* BSJRecommendUserCell.xib in Resources */,
 				58AFAB681EB4ADAA00822043 /* blankpage_image_Sleep@2x.png in Resources */,
 				58AFABB31EB4ADAA00822043 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -5034,6 +5043,7 @@
 				58AFAC0E1EB4ADAA00822043 /* UIPopoverController+iPhone.m in Sources */,
 				58AFAB061EB4ADAA00822043 /* CLLocationManager+Blocks.m in Sources */,
 				58AFAC5E1EB4ADAB00822043 /* LMJRefreshTableViewController.m in Sources */,
+				588E9C391EF7BD52006F599B /* SINTabBar.m in Sources */,
 				58AFABED1EB4ADAA00822043 /* UIImage+BetterFace.m in Sources */,
 				58AFAC891EB4ADAB00822043 /* LMJNoNavBarViewController.m in Sources */,
 				58AFABCF1EB4ADAA00822043 /* UIApplication+KeyboardFrame.m in Sources */,
