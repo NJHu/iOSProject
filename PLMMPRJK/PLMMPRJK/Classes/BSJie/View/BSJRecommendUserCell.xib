@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="user" rowHeight="90" id="QFB-f4-Z7O" customClass="BSJRecommendUserCell">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="145"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QFB-f4-Z7O" id="tYu-iq-rnH">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="144.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="waQ-t5-Hud">
+                        <rect key="frame" x="10" y="47" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="KCV-WL-buv"/>
+                            <constraint firstAttribute="width" constant="50" id="z0U-sI-gSR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cy5-gn-uGx">
+                        <rect key="frame" x="70" y="47" width="192" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkp-Pq-TEa">
+                        <rect key="frame" x="70" y="80" width="36" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2g-jm-oUm">
+                        <rect key="frame" x="272" y="59" width="51" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="SwP-QB-J2C"/>
+                            <constraint firstAttribute="width" constant="51" id="vfH-Ak-L3N"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="+ 关注" backgroundImage="FollowBtnBg">
+                            <color key="titleColor" red="0.87843137250000003" green="0.14901960780000001" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <state key="highlighted" backgroundImage="FollowBtnClickBg"/>
+                        <connections>
+                            <action selector="clickAttention:" destination="QFB-f4-Z7O" eventType="touchUpInside" id="GZK-iP-wVz"/>
+                        </connections>
+                    </button>
+                    <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-ZQ-qgb" userLabel="分割线">
+                        <rect key="frame" x="0.0" y="143" width="343" height="1"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="aMk-sf-1VK"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wkp-Pq-TEa" firstAttribute="bottom" secondItem="waQ-t5-Hud" secondAttribute="bottom" id="21I-nh-1zb"/>
+                    <constraint firstItem="B2g-jm-oUm" firstAttribute="leading" secondItem="cy5-gn-uGx" secondAttribute="trailing" constant="10" id="7KB-Ik-qEF"/>
+                    <constraint firstItem="A2X-ZQ-qgb" firstAttribute="leading" secondItem="tYu-iq-rnH" secondAttribute="leading" id="8kv-C7-LNh"/>
+                    <constraint firstItem="waQ-t5-Hud" firstAttribute="leading" secondItem="tYu-iq-rnH" secondAttribute="leading" constant="10" id="A93-aA-kgl"/>
+                    <constraint firstItem="B2g-jm-oUm" firstAttribute="centerY" secondItem="waQ-t5-Hud" secondAttribute="centerY" id="AML-Lr-gTx"/>
+                    <constraint firstItem="waQ-t5-Hud" firstAttribute="centerY" secondItem="tYu-iq-rnH" secondAttribute="centerY" id="QfW-OT-3L8"/>
+                    <constraint firstAttribute="bottom" secondItem="A2X-ZQ-qgb" secondAttribute="bottom" id="WVu-iV-Nad"/>
+                    <constraint firstItem="cy5-gn-uGx" firstAttribute="leading" secondItem="waQ-t5-Hud" secondAttribute="trailing" constant="10" id="hK3-9S-IJb"/>
+                    <constraint firstItem="cy5-gn-uGx" firstAttribute="top" secondItem="waQ-t5-Hud" secondAttribute="top" id="sA2-aD-jSO"/>
+                    <constraint firstAttribute="trailing" secondItem="A2X-ZQ-qgb" secondAttribute="trailing" id="wkq-cD-XtN"/>
+                    <constraint firstAttribute="trailing" secondItem="B2g-jm-oUm" secondAttribute="trailing" constant="20" id="wpq-yY-Au9"/>
+                    <constraint firstItem="wkp-Pq-TEa" firstAttribute="leading" secondItem="cy5-gn-uGx" secondAttribute="leading" id="ywi-LZ-elt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="fansCountLabel" destination="wkp-Pq-TEa" id="8hP-vb-2Gh"/>
+                <outlet property="headerImageView" destination="waQ-t5-Hud" id="Gts-qA-9fW"/>
+                <outlet property="screenNameLabel" destination="cy5-gn-uGx" id="baf-rj-wYI"/>
+            </connections>
+            <point key="canvasLocation" x="359.5" y="276.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="FollowBtnBg" width="51" height="25"/>
+        <image name="FollowBtnClickBg" width="51" height="25"/>
+    </resources>
+</document>

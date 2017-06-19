@@ -8,6 +8,7 @@
 
 #import "BMKGeneralDelegate.h"
 #import <UIKit/UIKit.h>
+#import "BMKTypes.h"
 
 enum EN_PERMISSION_STATUS
 {
@@ -24,6 +25,19 @@ typedef enum {
 
 ///主引擎类
 @interface BMKMapManager : NSObject
+
+/**
+ *百度地图SDK所有接口均支持百度坐标（BD09LL）和国测局坐标（GCJ02），用此方法设置您使用的坐标类型.
+ *默认是BD09LL（BMK_COORDTYPE_BD09LL）坐标.
+ *如果需要使用GCJ02坐标，需要设置CoordinateType为：BMK_COORDTYPE_COMMON.
+ */
++ (BOOL)setCoordinateTypeUsedInBaiduMapSDK:(BMK_COORD_TYPE) coorType;
+
+/**
+ *获取百度地图SDK当前使用的经纬度类型
+ *@return 经纬度类型
+ */
++ (BMK_COORD_TYPE)getCoordinateTypeUsedInBaiduMapSDK;
 
 /**
  *是否开启打印某模块的log，默认不打印log

@@ -100,7 +100,27 @@
 
 - (void)setState:(MJRefreshState)state
 {
-    MJRefreshCheckState
+//    MJRefreshCheckState
+    
+    MJRefreshState oldState = self.state;
+    
+    if (state == oldState) return;
+    
+    [super setState:state];
+    
+//    /** 普通闲置状态 */
+//    MJRefreshStateIdle = 1,
+//    /** 松开就可以进行刷新的状态 */
+//    MJRefreshStatePulling,
+//    /** 正在刷新中的状态 */
+//    MJRefreshStateRefreshing,
+//    /** 即将刷新的状态 */
+//    MJRefreshStateWillRefresh,
+//    /** 所有数据加载完毕，没有更多的数据了 */
+//    MJRefreshStateNoMoreData
+    
+    NSLog(@"cur-----------%zd", state);
+    NSLog(@"old--------------%zd", oldState);
     
     // 根据状态做事情
     if (state == MJRefreshStateIdle) {
@@ -142,6 +162,7 @@
 - (void)endRefreshing
 {
     dispatch_async(dispatch_get_main_queue(), ^{
+    
         self.state = MJRefreshStateIdle;
     });
 }

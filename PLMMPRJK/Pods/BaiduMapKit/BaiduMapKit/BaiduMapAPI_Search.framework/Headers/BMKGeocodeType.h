@@ -24,6 +24,8 @@
 @property (nonatomic, strong) NSString* businessCircle;
 ///结合当前位置POI的语义化结果描述
 @property (nonatomic, strong) NSString* sematicDescription;
+///城市编码
+@property (nonatomic, strong) NSString* cityCode;
 ///地址坐标
 @property (nonatomic) CLLocationCoordinate2D location;
 ///地址周边POI信息，成员类型为BMKPoiInfo

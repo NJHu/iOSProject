@@ -25,7 +25,7 @@ int main(int argc, char * argv[]) {
             
         } @finally {
             
-            [[NSRunLoop currentRunLoop] runUntilDate:[NSDate distantFuture]];
+//            [[NSRunLoop currentRunLoop] runUntilDate:[NSDate distantFuture]];
             
         }
         

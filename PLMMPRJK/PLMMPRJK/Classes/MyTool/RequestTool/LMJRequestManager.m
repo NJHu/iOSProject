@@ -156,7 +156,7 @@
 - (void)LogResponse:(NSString *)urlString response:(LMJBaseResponse *)response
 {
     NSLog(@"[%@]---%@", urlString, response);
-    
+
 }
 
 
@@ -218,6 +218,13 @@
     
     
     [self.reachabilityManager startMonitoring];
+    
+    //自定义处理数据
+    self.responseFormat = ^LMJBaseResponse *(LMJBaseResponse *response) {
+        
+
+        return response;
+    };
     
 }
 

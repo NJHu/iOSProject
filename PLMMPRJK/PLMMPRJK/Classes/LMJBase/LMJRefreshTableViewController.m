@@ -23,6 +23,7 @@
         
         [weakself loadIsMore:NO];
     }];
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
     
     
     self.tableView.mj_footer = [LMJAutoRefreshFooter footerWithRefreshingBlock:^{
@@ -30,7 +31,8 @@
         [weakself loadIsMore:YES];
         
     }];
-    
+    self.tableView.mj_footer.automaticallyChangeAlpha = YES;
+    self.tableView.mj_footer.automaticallyHidden = YES;
     
     
     [self.tableView.mj_header beginRefreshing];
@@ -54,9 +56,11 @@
 // 结束刷新
 - (void)endHeaderFooterRefreshing
 {
+    NSLog(@"tableview----------------endHeaderFooterRefreshing");
     // 结束刷新状态
     ![self.tableView.mj_header isRefreshing] ?: [self.tableView.mj_header endRefreshing];
     ![self.tableView.mj_footer isRefreshing] ?: [self.tableView.mj_footer endRefreshing];
+    
 }
 
 // 子类需要调用调用

@@ -28,7 +28,9 @@
 #pragma mark - 加载框
 - (void)showLoading
 {
-    [MBProgressHUD showLoadToView:self.view];
+//    [MBProgressHUD showLoadToView:self.view];
+    
+    [MBProgressHUD showProgressToView:self.view Text:@"加载中..."];
 }
 
 - (void)dismissLoading
@@ -97,7 +99,9 @@
 
 - (void)dealloc
 {
-    [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+    if ([self isViewLoaded]) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+    }
     [_reachHost stopNotifier];
     _reachHost = nil;
 }

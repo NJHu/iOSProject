@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BSJTrendViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="ikM-FQ-A56"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_cry_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Rau-kt-kIf">
+                    <rect key="frame" x="163.5" y="150" width="48" height="48"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCP-dM-tA9">
+                    <rect key="frame" x="10" y="218" width="355" height="61"/>
+                    <string key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel
+LabelLabelLabelLabelLabelLabel</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvm-bL-cpA">
+                    <rect key="frame" x="66" y="323" width="243" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="立即注册登录" backgroundImage="friendsTrend_login">
+                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="friendsTrend_login_click">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="goToLoginRegister:" destination="-1" eventType="touchUpInside" id="J8E-bH-J4c"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Xvm-bL-cpA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TT9-Dm-tD0"/>
+                <constraint firstItem="xCP-dM-tA9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ePA-Ov-ndX"/>
+                <constraint firstAttribute="trailing" secondItem="xCP-dM-tA9" secondAttribute="trailing" constant="10" id="hMG-Hf-cAZ"/>
+                <constraint firstItem="Xvm-bL-cpA" firstAttribute="top" secondItem="xCP-dM-tA9" secondAttribute="bottom" constant="44" id="jv9-ti-ErF"/>
+                <constraint firstItem="Rau-kt-kIf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="nh5-2L-DKK"/>
+                <constraint firstItem="Rau-kt-kIf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="src-nl-EXa"/>
+                <constraint firstItem="xCP-dM-tA9" firstAttribute="top" secondItem="Rau-kt-kIf" secondAttribute="bottom" constant="20" id="wFu-BW-P3p"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="friendsTrend_login" width="243" height="48"/>
+        <image name="friendsTrend_login_click" width="243" height="48"/>
+        <image name="header_cry_icon" width="48" height="48"/>
+    </resources>
+</document>

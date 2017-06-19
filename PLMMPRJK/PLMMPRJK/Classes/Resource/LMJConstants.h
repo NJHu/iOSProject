@@ -31,10 +31,10 @@ static NSString *const LMJThirdSDKUMessageAppMasterSecret = @"ntljqfii29nachyuqp
 
 
 // 种子计划
-//static NSString *const LMJThirdSDKWeChatAppKey = @"wxf510029cc41f5123";
+static NSString *const LMJThirdSDKWeChatAppKey = @"wxf510029cc41f5123";
 
 // UM 微信
-static NSString *const LMJThirdSDKWeChatAppKey = @"wxdc1e388c3822c80b";
+//static NSString *const LMJThirdSDKWeChatAppKey = @"wxdc1e388c3822c80b";
 
 
 static NSString *const LMJThirdSDKWeChatAppSecret = @"3baf1193c85774b3fd9d18447d76cab0";

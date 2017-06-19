@@ -1,1 +1,1 @@
-../../../LBXScan/LBXScan/LBXZXCaptureDelegate.h
+../../../LBXScan/LBXScan/LBXZXing/LBXZXCaptureDelegate.h

@@ -503,7 +503,7 @@
     [_progressLayer setPath:path.CGPath];
     
     //Update label
-    _percentageLabel.text = [_percentageFormatter stringFromNumber:[NSNumber numberWithFloat:(float)self.progress]];
+    _percentageLabel.text = [[_percentageFormatter stringFromNumber:[NSNumber numberWithFloat:(float)self.progress]] stringByReplacingOccurrencesOfString:@"-" withString:@""];
 }
 
 - (void)drawIcon

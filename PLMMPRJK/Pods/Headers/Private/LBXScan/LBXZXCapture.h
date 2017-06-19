@@ -1,1 +1,1 @@
-../../../LBXScan/LBXScan/LBXZXCapture.h
+../../../LBXScan/LBXScan/LBXZXing/LBXZXCapture.h

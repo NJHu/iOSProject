@@ -1,0 +1,1 @@
+../../../ZBarSDK/zbar/event.h

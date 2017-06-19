@@ -95,15 +95,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///异步插入数据 async insert array ， completed 也是在子线程直接回调的
 + (void)insertArrayByAsyncToDB:(NSArray *)models;
-+ (void)insertArrayByAsyncToDB:(NSArray *)models completed:(void (^)(BOOL allInserted))completedBlock;
++ (void)insertArrayByAsyncToDB:(NSArray *)models completed:(void (^ _Nullable)(BOOL allInserted))completedBlock;
 
 ///begin translate for insert models  开始事务插入数组
 + (void)insertToDBWithArray:(NSArray *)models
-                     filter:(void (^)(id model, BOOL inserted, BOOL * _Nullable rollback))filter;
+                     filter:(void (^ _Nullable)(id model, BOOL inserted, BOOL * _Nullable rollback))filter;
 
 + (void)insertToDBWithArray:(NSArray *)models
-                     filter:(void (^)(id model, BOOL inserted, BOOL * _Nullable rollback))filter
-                  completed:(void (^)(BOOL allInserted))completedBlock;
+                     filter:(void (^ _Nullable)(id model, BOOL inserted, BOOL * _Nullable rollback))filter
+                  completed:(void (^ _Nullable)(BOOL allInserted))completedBlock;
 
 @end
 

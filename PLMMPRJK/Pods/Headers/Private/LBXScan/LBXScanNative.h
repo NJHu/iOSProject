@@ -1,1 +1,1 @@
-../../../LBXScan/LBXScan/LBXScanNative.h
+../../../LBXScan/LBXScan/LBXNative/LBXScanNative.h

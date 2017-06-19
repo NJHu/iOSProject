@@ -51,16 +51,22 @@ typedef enum
 /**
  *调起百度地图客户端步行导航页面(不支持调起web地图)
  *客户端v8.8以后支持
- *@param para 调起步行导航时传入得参数
+ *@param para 调起步行导航时传入参数
  */
 + (BMKOpenErrorCode)openBaiduMapWalkNavigation:(BMKNaviPara*)para;
 
 /**
  *调起百度地图客户端骑行导航页面(不支持调起web地图)
  *客户端v8.8以后支持
- *@param para 调起骑行导航时传入得参数
+ *@param para 调起骑行导航时传入参数
  */
 + (BMKOpenErrorCode)openBaiduMapRideNavigation:(BMKNaviPara*)para;
+/**
+ *调起百度地图AR步行导航
+ *百度地图客户端v9.7.5以后支持AR步行导航，低于此版本，默认调用步行导航；注：客户端版本低于8.6.9，不支持步行导航。
+ *@param para 调起AR步行导航时传入参数 
+ */
++ (BMKOpenErrorCode)openBaiduMapwalkARNavigation:(BMKNaviPara*)para;
 
 @end
 

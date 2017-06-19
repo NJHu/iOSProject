@@ -21,4 +21,7 @@
 
 #pragma mark --是否是第一次启动APP程序
 @property (nonatomic,assign) BOOL isNoFirstLaunch;
+
+/** <#digest#> */
+@property (assign, nonatomic) BOOL isHaveBSJFirstLaunch;
 @end
