@@ -9,7 +9,7 @@
 #import <CYLTabBarController/CYLTabBarController.h>
 #import <CYLTabBar.h>
 
-@interface SINTabBar : CYLTabBar
+@interface SINTabBar : UITabBar
 
 /** <#digest#> */
 @property (nonatomic, copy) void(^publishBtnClick)(SINTabBar *tabBar, UIButton *publishBtn);

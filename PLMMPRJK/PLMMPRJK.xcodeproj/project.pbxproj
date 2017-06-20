@@ -12,6 +12,9 @@
 		58245ADC1EE2B0470004A5BF /* BSJTopicTopComent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245ADB1EE2B0470004A5BF /* BSJTopicTopComent.m */; };
 		58245ADF1EE2B0570004A5BF /* BSJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245ADE1EE2B0570004A5BF /* BSJUser.m */; };
 		58245AE21EE2DF650004A5BF /* BSJCommentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245AE11EE2DF650004A5BF /* BSJCommentPageViewController.m */; };
+		582F96B71EF8EBF900766666 /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96B61EF8EBF900766666 /* SINUserManager.m */; };
+		582F96C11EF908A800766666 /* SINUnLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96C01EF908A800766666 /* SINUnLoginRegisterView.m */; };
+		582F96C61EF923A200766666 /* SINHomeCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96C51EF923A200766666 /* SINHomeCategoryViewController.m */; };
 		583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE491ECD36870097D826 /* BSJTrendViewController.xib */; };
 		583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */; };
 		583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */; };
@@ -48,6 +51,9 @@
 		588B32D81EC48D6600D00C1C /* BSJPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32D71EC48D6600D00C1C /* BSJPublishViewController.m */; };
 		588E9C361EF7BC9A006F599B /* Sina.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588E9C351EF7BC9A006F599B /* Sina.xcassets */; };
 		588E9C391EF7BD52006F599B /* SINTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E9C381EF7BD52006F599B /* SINTabBar.m */; };
+		588E9C3C1EF7D1A4006F599B /* LMJCoreAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E9C3B1EF7D1A4006F599B /* LMJCoreAnimationViewController.m */; };
+		588E9C3F1EF7D1D1006F599B /* LMJDrawRectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E9C3E1EF7D1D1006F599B /* LMJDrawRectViewController.m */; };
+		588E9C421EF7D1F4006F599B /* LMJCA3DTransformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E9C411EF7D1F4006F599B /* LMJCA3DTransformViewController.m */; };
 		589375911EE3F0FB00BE0990 /* BSJTopicCmtCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893758F1EE3F0FB00BE0990 /* BSJTopicCmtCell.m */; };
 		589375921EE3F0FB00BE0990 /* BSJTopicCmtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */; };
 		589375951EE3FB4200BE0990 /* BSJComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 589375941EE3FB4200BE0990 /* BSJComment.m */; };
@@ -580,6 +586,13 @@
 		58245ADE1EE2B0570004A5BF /* BSJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJUser.m; sourceTree = "<group>"; };
 		58245AE01EE2DF650004A5BF /* BSJCommentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJCommentPageViewController.h; sourceTree = "<group>"; };
 		58245AE11EE2DF650004A5BF /* BSJCommentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJCommentPageViewController.m; sourceTree = "<group>"; };
+		582F96B51EF8EBF900766666 /* SINUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINUserManager.h; sourceTree = "<group>"; };
+		582F96B61EF8EBF900766666 /* SINUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUserManager.m; sourceTree = "<group>"; };
+		582F96BE1EF907AC00766666 /* SIN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIN.h; sourceTree = "<group>"; };
+		582F96BF1EF908A800766666 /* SINUnLoginRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINUnLoginRegisterView.h; sourceTree = "<group>"; };
+		582F96C01EF908A800766666 /* SINUnLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUnLoginRegisterView.m; sourceTree = "<group>"; };
+		582F96C41EF923A200766666 /* SINHomeCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINHomeCategoryViewController.h; sourceTree = "<group>"; };
+		582F96C51EF923A200766666 /* SINHomeCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINHomeCategoryViewController.m; sourceTree = "<group>"; };
 		583DFE491ECD36870097D826 /* BSJTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTrendViewController.xib; sourceTree = "<group>"; };
 		583DFE4B1ECD3A8E0097D826 /* BSJLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLoginRegisterViewController.h; sourceTree = "<group>"; };
 		583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJLoginRegisterViewController.m; sourceTree = "<group>"; };
@@ -640,6 +653,12 @@
 		588E9C351EF7BC9A006F599B /* Sina.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sina.xcassets; sourceTree = "<group>"; };
 		588E9C371EF7BD52006F599B /* SINTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINTabBar.h; sourceTree = "<group>"; };
 		588E9C381EF7BD52006F599B /* SINTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINTabBar.m; sourceTree = "<group>"; };
+		588E9C3A1EF7D1A4006F599B /* LMJCoreAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCoreAnimationViewController.h; sourceTree = "<group>"; };
+		588E9C3B1EF7D1A4006F599B /* LMJCoreAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCoreAnimationViewController.m; sourceTree = "<group>"; };
+		588E9C3D1EF7D1D1006F599B /* LMJDrawRectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDrawRectViewController.h; sourceTree = "<group>"; };
+		588E9C3E1EF7D1D1006F599B /* LMJDrawRectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDrawRectViewController.m; sourceTree = "<group>"; };
+		588E9C401EF7D1F4006F599B /* LMJCA3DTransformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCA3DTransformViewController.h; sourceTree = "<group>"; };
+		588E9C411EF7D1F4006F599B /* LMJCA3DTransformViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCA3DTransformViewController.m; sourceTree = "<group>"; };
 		5893758E1EE3F0FB00BE0990 /* BSJTopicCmtCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicCmtCell.h; sourceTree = "<group>"; };
 		5893758F1EE3F0FB00BE0990 /* BSJTopicCmtCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicCmtCell.m; sourceTree = "<group>"; };
 		589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTopicCmtCell.xib; sourceTree = "<group>"; };
@@ -1689,6 +1708,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		582F96B41EF8EBDD00766666 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				582F96BE1EF907AC00766666 /* SIN.h */,
+				582F96B51EF8EBF900766666 /* SINUserManager.h */,
+				582F96B61EF8EBF900766666 /* SINUserManager.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		588AACF51E9F2253005F2A89 /* PLMMPRIKImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -1818,6 +1847,12 @@
 				58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */,
 				58245AD71EE2AB470004A5BF /* LMJDynamicViewController.h */,
 				58245AD81EE2AB470004A5BF /* LMJDynamicViewController.m */,
+				588E9C3A1EF7D1A4006F599B /* LMJCoreAnimationViewController.h */,
+				588E9C3B1EF7D1A4006F599B /* LMJCoreAnimationViewController.m */,
+				588E9C3D1EF7D1D1006F599B /* LMJDrawRectViewController.h */,
+				588E9C3E1EF7D1D1006F599B /* LMJDrawRectViewController.m */,
+				588E9C401EF7D1F4006F599B /* LMJCA3DTransformViewController.h */,
+				588E9C411EF7D1F4006F599B /* LMJCA3DTransformViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2036,6 +2071,7 @@
 		588B32851EC4312800D00C1C /* Sina */ = {
 			isa = PBXGroup;
 			children = (
+				582F96B41EF8EBDD00766666 /* Tools */,
 				588B32861EC4312800D00C1C /* Controller */,
 				588B32891EC4312800D00C1C /* Model */,
 				588B328B1EC4312800D00C1C /* Other */,
@@ -2074,6 +2110,8 @@
 		588B328B1EC4312800D00C1C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				582F96C41EF923A200766666 /* SINHomeCategoryViewController.h */,
+				582F96C51EF923A200766666 /* SINHomeCategoryViewController.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -2090,6 +2128,8 @@
 			children = (
 				588E9C371EF7BD52006F599B /* SINTabBar.h */,
 				588E9C381EF7BD52006F599B /* SINTabBar.m */,
+				582F96BF1EF908A800766666 /* SINUnLoginRegisterView.h */,
+				582F96C01EF908A800766666 /* SINUnLoginRegisterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5042,6 +5082,7 @@
 				58AFAB771EB4ADAA00822043 /* MPFileManager.m in Sources */,
 				58AFAC0E1EB4ADAA00822043 /* UIPopoverController+iPhone.m in Sources */,
 				58AFAB061EB4ADAA00822043 /* CLLocationManager+Blocks.m in Sources */,
+				582F96B71EF8EBF900766666 /* SINUserManager.m in Sources */,
 				58AFAC5E1EB4ADAB00822043 /* LMJRefreshTableViewController.m in Sources */,
 				588E9C391EF7BD52006F599B /* SINTabBar.m in Sources */,
 				58AFABED1EB4ADAA00822043 /* UIImage+BetterFace.m in Sources */,
@@ -5201,6 +5242,7 @@
 				58AFAB351EB4ADAA00822043 /* NSObject+MKBlockTimer.m in Sources */,
 				58AFAB521EB4ADAA00822043 /* NSMutableURLRequest+Upload.m in Sources */,
 				58AFAC791EB4ADAB00822043 /* LMJRequestManager.m in Sources */,
+				588E9C3F1EF7D1D1006F599B /* LMJDrawRectViewController.m in Sources */,
 				58AFAB7A1EB4ADAA00822043 /* GCDSemaphore.m in Sources */,
 				58AFAB491EB4ADAA00822043 /* NSString+Trims.m in Sources */,
 				58AFABE61EB4ADAA00822043 /* UIDevice+Hardware.m in Sources */,
@@ -5243,6 +5285,7 @@
 				58AFAC3C1EB4ADAA00822043 /* UIViewController+MJPopupViewController.m in Sources */,
 				588B32AF1EC4428100D00C1C /* BSJNewViewController.m in Sources */,
 				58AFAB761EB4ADAA00822043 /* UIDevice+FCUUID.m in Sources */,
+				588E9C421EF7D1F4006F599B /* LMJCA3DTransformViewController.m in Sources */,
 				58CC5EE71ED5D5030012ED83 /* BSJTopicVideoView.m in Sources */,
 				58AFAB611EB4ADAA00822043 /* AdvertiseHelper.m in Sources */,
 				58B3CC8F1EC835A300D3C02D /* TADotView.m in Sources */,
@@ -5280,6 +5323,7 @@
 				58B3CC7C1EC81AD600D3C02D /* BSJRecommendUser.m in Sources */,
 				58AFABDB1EB4ADAA00822043 /* UIButton+Indicator.m in Sources */,
 				588B329D1EC43CC900D00C1C /* BSJTabBarController.m in Sources */,
+				582F96C61EF923A200766666 /* SINHomeCategoryViewController.m in Sources */,
 				58AFACA21EB4ADAB00822043 /* LMJModalBlockViewController.m in Sources */,
 				588B32B51EC442D100D00C1C /* BSJTrendViewController.m in Sources */,
 				58F144711ECDDD100053B2A2 /* ZJContentView.m in Sources */,
@@ -5387,7 +5431,9 @@
 				588B32D51EC4755100D00C1C /* BSJTabBar.m in Sources */,
 				58AFABC81EB4ADAA00822043 /* JRSwizzle.m in Sources */,
 				58AFAC9D1EB4ADAB00822043 /* LMJAppDelegate.m in Sources */,
+				582F96C11EF908A800766666 /* SINUnLoginRegisterView.m in Sources */,
 				58AFAB931EB4ADAA00822043 /* IQUIViewController+Additions.m in Sources */,
+				588E9C3C1EF7D1A4006F599B /* LMJCoreAnimationViewController.m in Sources */,
 				58AFAB561EB4ADAA00822043 /* MKMapView+BetterMaps.m in Sources */,
 				58AFAB941EB4ADAA00822043 /* IQUIWindow+Hierarchy.m in Sources */,
 				58AFAB7F1EB4ADAA00822043 /* MPLocationManager.m in Sources */,

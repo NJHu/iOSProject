@@ -24,6 +24,7 @@
     [super viewDidLoad];
     
     self.tabBar.tintColor = [UIColor orangeColor];
+    self.tabBar.unselectedItemTintColor = [UIColor darkTextColor];
     self.titlePositionAdjustment = UIOffsetMake(0, -3);
    
     [self addTabarItems];
@@ -99,8 +100,8 @@
     
     self.tabBarItemsAttributes = @[
                                    firstTabBarItemsAttributes,
-                                   thirdTabBarItemsAttributes,
                                    secondTabBarItemsAttributes,
+                                   thirdTabBarItemsAttributes,
                                    fourthTabBarItemsAttributes
                                    ];
     
