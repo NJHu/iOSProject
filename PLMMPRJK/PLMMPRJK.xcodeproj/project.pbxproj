@@ -15,6 +15,15 @@
 		582F96B71EF8EBF900766666 /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96B61EF8EBF900766666 /* SINUserManager.m */; };
 		582F96C11EF908A800766666 /* SINUnLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96C01EF908A800766666 /* SINUnLoginRegisterView.m */; };
 		582F96C61EF923A200766666 /* SINHomeCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96C51EF923A200766666 /* SINHomeCategoryViewController.m */; };
+		582F96C91EFA45CD00766666 /* SINStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96C81EFA45CD00766666 /* SINStatus.m */; };
+		582F96CC1EFA46F600766666 /* SINDictURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96CB1EFA46F600766666 /* SINDictURL.m */; };
+		582F96CF1EFA486F00766666 /* SINUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96CE1EFA486F00766666 /* SINUser.m */; };
+		582F96D21EFA55D400766666 /* SINStatusViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96D11EFA55D400766666 /* SINStatusViewModel.m */; };
+		582F96D51EFA560200766666 /* SINStatusListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96D41EFA560200766666 /* SINStatusListService.m */; };
+		582F96D81EFA5A3000766666 /* NSDecimalNumber+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96D71EFA5A3000766666 /* NSDecimalNumber+Addtion.m */; };
+		582F96DB1EFA72D500766666 /* SINStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96DA1EFA72D500766666 /* SINStatusCell.m */; };
+		582F96DE1EFA974300766666 /* SINStatusToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96DD1EFA974300766666 /* SINStatusToolBarView.m */; };
+		582F96E01EFA975900766666 /* SINStatusToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582F96DF1EFA975900766666 /* SINStatusToolBarView.xib */; };
 		583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE491ECD36870097D826 /* BSJTrendViewController.xib */; };
 		583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */; };
 		583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */; };
@@ -593,6 +602,23 @@
 		582F96C01EF908A800766666 /* SINUnLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUnLoginRegisterView.m; sourceTree = "<group>"; };
 		582F96C41EF923A200766666 /* SINHomeCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINHomeCategoryViewController.h; sourceTree = "<group>"; };
 		582F96C51EF923A200766666 /* SINHomeCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINHomeCategoryViewController.m; sourceTree = "<group>"; };
+		582F96C71EFA45CD00766666 /* SINStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatus.h; sourceTree = "<group>"; };
+		582F96C81EFA45CD00766666 /* SINStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatus.m; sourceTree = "<group>"; };
+		582F96CA1EFA46F600766666 /* SINDictURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINDictURL.h; sourceTree = "<group>"; };
+		582F96CB1EFA46F600766666 /* SINDictURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINDictURL.m; sourceTree = "<group>"; };
+		582F96CD1EFA486F00766666 /* SINUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINUser.h; sourceTree = "<group>"; };
+		582F96CE1EFA486F00766666 /* SINUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUser.m; sourceTree = "<group>"; };
+		582F96D01EFA55D400766666 /* SINStatusViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusViewModel.h; sourceTree = "<group>"; };
+		582F96D11EFA55D400766666 /* SINStatusViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusViewModel.m; sourceTree = "<group>"; };
+		582F96D31EFA560200766666 /* SINStatusListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusListService.h; sourceTree = "<group>"; };
+		582F96D41EFA560200766666 /* SINStatusListService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListService.m; sourceTree = "<group>"; };
+		582F96D61EFA5A3000766666 /* NSDecimalNumber+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Addtion.h"; sourceTree = "<group>"; };
+		582F96D71EFA5A3000766666 /* NSDecimalNumber+Addtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Addtion.m"; sourceTree = "<group>"; };
+		582F96D91EFA72D500766666 /* SINStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusCell.h; sourceTree = "<group>"; };
+		582F96DA1EFA72D500766666 /* SINStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusCell.m; sourceTree = "<group>"; };
+		582F96DC1EFA974300766666 /* SINStatusToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusToolBarView.h; sourceTree = "<group>"; };
+		582F96DD1EFA974300766666 /* SINStatusToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusToolBarView.m; sourceTree = "<group>"; };
+		582F96DF1EFA975900766666 /* SINStatusToolBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SINStatusToolBarView.xib; sourceTree = "<group>"; };
 		583DFE491ECD36870097D826 /* BSJTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTrendViewController.xib; sourceTree = "<group>"; };
 		583DFE4B1ECD3A8E0097D826 /* BSJLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLoginRegisterViewController.h; sourceTree = "<group>"; };
 		583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJLoginRegisterViewController.m; sourceTree = "<group>"; };
@@ -2103,6 +2129,14 @@
 		588B32891EC4312800D00C1C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				582F96C71EFA45CD00766666 /* SINStatus.h */,
+				582F96C81EFA45CD00766666 /* SINStatus.m */,
+				582F96CA1EFA46F600766666 /* SINDictURL.h */,
+				582F96CB1EFA46F600766666 /* SINDictURL.m */,
+				582F96CD1EFA486F00766666 /* SINUser.h */,
+				582F96CE1EFA486F00766666 /* SINUser.m */,
+				582F96D01EFA55D400766666 /* SINStatusViewModel.h */,
+				582F96D11EFA55D400766666 /* SINStatusViewModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2119,6 +2153,8 @@
 		588B328D1EC4312800D00C1C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				582F96D31EFA560200766666 /* SINStatusListService.h */,
+				582F96D41EFA560200766666 /* SINStatusListService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -2130,6 +2166,11 @@
 				588E9C381EF7BD52006F599B /* SINTabBar.m */,
 				582F96BF1EF908A800766666 /* SINUnLoginRegisterView.h */,
 				582F96C01EF908A800766666 /* SINUnLoginRegisterView.m */,
+				582F96D91EFA72D500766666 /* SINStatusCell.h */,
+				582F96DA1EFA72D500766666 /* SINStatusCell.m */,
+				582F96DC1EFA974300766666 /* SINStatusToolBarView.h */,
+				582F96DD1EFA974300766666 /* SINStatusToolBarView.m */,
+				582F96DF1EFA975900766666 /* SINStatusToolBarView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2555,6 +2596,8 @@
 		58AFA7501EB4ADA900822043 /* NSNumber */ = {
 			isa = PBXGroup;
 			children = (
+				582F96D61EFA5A3000766666 /* NSDecimalNumber+Addtion.h */,
+				582F96D71EFA5A3000766666 /* NSDecimalNumber+Addtion.m */,
 				58AFA7511EB4ADA900822043 /* NSDecimalNumber+CalculatingByString.h */,
 				58AFA7521EB4ADA900822043 /* NSDecimalNumber+CalculatingByString.m */,
 				58AFA7531EB4ADA900822043 /* NSDecimalNumber+Extensions.h */,
@@ -4978,6 +5021,7 @@
 				588AACFB1E9F2253005F2A89 /* wishPage_2.gif in Resources */,
 				58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */,
 				589375921EE3F0FB00BE0990 /* BSJTopicCmtCell.xib in Resources */,
+				582F96E01EFA975900766666 /* SINStatusToolBarView.xib in Resources */,
 				58F144831ECE9C890053B2A2 /* BSJTopicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5083,6 +5127,7 @@
 				58AFAC0E1EB4ADAA00822043 /* UIPopoverController+iPhone.m in Sources */,
 				58AFAB061EB4ADAA00822043 /* CLLocationManager+Blocks.m in Sources */,
 				582F96B71EF8EBF900766666 /* SINUserManager.m in Sources */,
+				582F96DB1EFA72D500766666 /* SINStatusCell.m in Sources */,
 				58AFAC5E1EB4ADAB00822043 /* LMJRefreshTableViewController.m in Sources */,
 				588E9C391EF7BD52006F599B /* SINTabBar.m in Sources */,
 				58AFABED1EB4ADAA00822043 /* UIImage+BetterFace.m in Sources */,
@@ -5110,6 +5155,7 @@
 				58AFAB2A1EB4ADAA00822043 /* NSNumber+CGFloat.m in Sources */,
 				58AFABFD1EB4ADAA00822043 /* UIImageView+FaceAwareFill.m in Sources */,
 				58AFAB411EB4ADAA00822043 /* NSString+Matcher.m in Sources */,
+				582F96C91EFA45CD00766666 /* SINStatus.m in Sources */,
 				58AFAB461EB4ADAA00822043 /* NSString+Ruby.m in Sources */,
 				58AFAC481EB4ADAA00822043 /* WebView+Debug.m in Sources */,
 				58AFAC0C1EB4ADAA00822043 /* UINavigationItem+Lock.m in Sources */,
@@ -5127,6 +5173,7 @@
 				588B32C91EC4486600D00C1C /* SINProfileViewController.m in Sources */,
 				58AFAC031EB4ADAA00822043 /* UILabel+ESAdjustableLabel.m in Sources */,
 				58FFE9A81EBEDD5C00D50E4C /* CalculatorTools.m in Sources */,
+				582F96D51EFA560200766666 /* SINStatusListService.m in Sources */,
 				58AFAC171EB4ADAA00822043 /* UISearchBar+Blocks.m in Sources */,
 				58AFACB21EB4ADAB00822043 /* UIAlertView+LMJBlock.m in Sources */,
 				58A6636F1EBDAF5500222A1D /* LMJAlertViewsViewController.m in Sources */,
@@ -5146,6 +5193,7 @@
 				58AFAC511EB4ADAA00822043 /* LMJWordItem.m in Sources */,
 				58F1447E1ECDF22A0053B2A2 /* BSJTopicViewModel.m in Sources */,
 				58AFABD71EB4ADAA00822043 /* UIBezierPath+Symbol.m in Sources */,
+				582F96CF1EFA486F00766666 /* SINUser.m in Sources */,
 				58AFAAFE1EB4ADAA00822043 /* NSManagedObject+DictionaryExport.m in Sources */,
 				58CDBFBA1EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.m in Sources */,
 				58AFAC111EB4ADAA00822043 /* UIResponder+UIAdapt.m in Sources */,
@@ -5324,6 +5372,7 @@
 				58AFABDB1EB4ADAA00822043 /* UIButton+Indicator.m in Sources */,
 				588B329D1EC43CC900D00C1C /* BSJTabBarController.m in Sources */,
 				582F96C61EF923A200766666 /* SINHomeCategoryViewController.m in Sources */,
+				582F96D21EFA55D400766666 /* SINStatusViewModel.m in Sources */,
 				58AFACA21EB4ADAB00822043 /* LMJModalBlockViewController.m in Sources */,
 				588B32B51EC442D100D00C1C /* BSJTrendViewController.m in Sources */,
 				58F144711ECDDD100053B2A2 /* ZJContentView.m in Sources */,
@@ -5350,6 +5399,7 @@
 				58AFAB531EB4ADAA00822043 /* NSURLRequest+ParamsFromDictionary.m in Sources */,
 				58AFAC2A1EB4ADAA00822043 /* UIView+CustomBorder.m in Sources */,
 				588B32C01EC4483300D00C1C /* SINMessageViewController.m in Sources */,
+				582F96CC1EFA46F600766666 /* SINDictURL.m in Sources */,
 				58AFABC71EB4ADAA00822043 /* NSString+Additions.m in Sources */,
 				58DE9A101EF3D102001A3CD4 /* BSJWordToolBar.m in Sources */,
 				58AFABA31EB4ADAA00822043 /* QBAssetsCollectionOverlayView.m in Sources */,
@@ -5377,6 +5427,7 @@
 				58AFAC341EB4ADAA00822043 /* UIView+Toast.m in Sources */,
 				58AFAC881EB4ADAB00822043 /* LMJMasonryViewController.m in Sources */,
 				58AFABCB1EB4ADAA00822043 /* UITextField+Extension.m in Sources */,
+				582F96D81EFA5A3000766666 /* NSDecimalNumber+Addtion.m in Sources */,
 				58AFAB621EB4ADAA00822043 /* AdvertiseView.m in Sources */,
 				58AFAC2B1EB4ADAA00822043 /* UIView+Debug.m in Sources */,
 				58AFAB6A1EB4ADAA00822043 /* EaseBlankPageView.m in Sources */,
@@ -5487,6 +5538,7 @@
 				58AFABD11EB4ADAA00822043 /* UIApplication+Permissions.m in Sources */,
 				58AFAC011EB4ADAA00822043 /* UILabel+AutomaticWriting.m in Sources */,
 				58AFABF01EB4ADAA00822043 /* UIImage+Color.m in Sources */,
+				582F96DE1EFA974300766666 /* SINStatusToolBarView.m in Sources */,
 				58AFAB7D1EB4ADAA00822043 /* introductoryPagesView.m in Sources */,
 				58B3CC781EC819FB00D3C02D /* BSJRecommendUserCell.m in Sources */,
 				58D40EB61EBC7547004A4358 /* LMJListTimerCountDownViewController.m in Sources */,

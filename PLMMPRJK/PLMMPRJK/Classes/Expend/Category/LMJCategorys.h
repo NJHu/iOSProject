@@ -54,6 +54,7 @@
 #import "NSNotificationCenter+MainThread.h"
 #import "NSDecimalNumber+CalculatingByString.h"
 #import "NSDecimalNumber+Extensions.h"
+#import "NSDecimalNumber+Addtion.h"
 #import "NSNumber+CGFloat.h"
 #import "NSNumber+RomanNumerals.h"
 #import "NSNumber+Round.h"

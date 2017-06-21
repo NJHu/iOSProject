@@ -34,7 +34,7 @@
     [MPUmengHelper getUserInfoForPlatform:UMSocialPlatformType_Sina completion:^(UMSocialUserInfoResponse *result, NSError *error) {
         
         if (error) {
-            
+            NSLog(@"%@", error);
             completion(error);
             
             return ;

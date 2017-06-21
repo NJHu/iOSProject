@@ -8,10 +8,16 @@
 
 #import "SINHomeViewController.h"
 #import "SINHomeCategoryViewController.h"
+#import "SINStatusListService.h"
+#import "SINStatusViewModel.h"
+#import "SINStatusCell.h"
 
 @interface SINHomeViewController ()
 /** <#digest#> */
 @property (weak, nonatomic) SINUnLoginRegisterView *unLoginRegisterView;
+
+/** <#digest#> */
+@property (nonatomic, strong) SINStatusListService *statusListService;
 @end
 
 @implementation SINHomeViewController
@@ -21,6 +27,11 @@
     self.navigationItem.title = @"首页";
     
     
+    UIEdgeInsets edgeInset = self.tableView.contentInset;
+    edgeInset.bottom += self.tabBarController.tabBar.lmj_height;
+    self.tableView.contentInset = edgeInset;
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -40,16 +51,54 @@
 
 - (void)loadMore:(BOOL)isMore
 {
+    LMJWeakSelf(self);
     if (![SINUserManager sharedManager].isLogined) {
         [self endHeaderFooterRefreshing];
         return;
     }
     
-    
+    [self.statusListService getStatusList:!isMore complation:^(NSError *error, BOOL isEnd) {
+        
+        [weakself endHeaderFooterRefreshing];
+        
+        LMJErrorReturn;
+        
+        [weakself.tableView reloadData];
+        
+        [weakself.tableView.mj_footer setState:isEnd ? MJRefreshStateNoMoreData : MJRefreshStateIdle];
+        
+    }];
     
     
 }
 
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.statusListService.statusViewModels.count;
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SINStatusCell *statusCell = [SINStatusCell statusCellWithTableView:tableView];
+    
+    statusCell.statusViewModel = self.statusListService.statusViewModels[indexPath.row];
+    
+    return statusCell;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.statusListService.statusViewModels[indexPath.row].cellHeight;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
 /**头部标题*/
@@ -129,11 +178,11 @@
 -(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 {
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
-
+    
     [title addAttribute:NSForegroundColorAttributeName value:RGB(253, 108, 7) range:NSMakeRange(0, title.length)];
-
+    
     [title addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:NSMakeRange(0, title.length)];
-
+    
     return title;
 }
 
@@ -192,5 +241,14 @@
     }];
 }
 
+
+- (SINStatusListService *)statusListService
+{
+    if(_statusListService == nil)
+    {
+        _statusListService = [[SINStatusListService alloc] init];
+    }
+    return _statusListService;
+}
 
 @end
