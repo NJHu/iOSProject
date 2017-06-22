@@ -12,6 +12,7 @@
 #import "SINDictURL.h"
 #import "SINUser.h"
 #import "SINStatusToolBarView.h"
+#import "SINStatusPicsView.h"
 
 @interface SINStatusCell ()
 
@@ -40,6 +41,9 @@
 @property (weak, nonatomic) SINStatusToolBarView *bottomToolBarView;
 /** 底部的分割线 */
 @property (weak, nonatomic)  UIView *sepLineView;
+
+/** 展示图片的 View */
+@property (weak, nonatomic) SINStatusPicsView *statusPicsView;
 
 @end
 
@@ -72,6 +76,15 @@ static const CGFloat margin = 10.0;
     
     self.created_atTimeLabel.text = statusViewModel.sin_creatTime;
     self.sourceCreatLabel.text = statusViewModel.sin_source;
+    
+    // 先设置 View 的尺寸, 再刷新数据
+    [self.statusPicsView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(statusViewModel.sin_statusPicsViewModel.picsViewSize);
+    }];
+    
+    [self layoutIfNeeded];
+    
+    self.statusPicsView.statusViewModel = statusViewModel;
 }
 
 
@@ -290,6 +303,28 @@ static const CGFloat margin = 10.0;
         }];
     }
     return _sourceCreatLabel;
+}
+
+
+- (SINStatusPicsView *)statusPicsView
+{
+    if(_statusPicsView == nil)
+    {
+        SINStatusPicsView *statusPicsView = [[SINStatusPicsView alloc] init];
+        [self.contentView addSubview:statusPicsView];
+        _statusPicsView = statusPicsView;
+        
+        [statusPicsView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.top.mas_equalTo(self.textPostLabel.mas_bottom).offset(margin);
+            make.left.mas_equalTo(self.textPostLabel.mas_left);
+            
+            make.size.equalTo(CGSizeMake(66, 66));
+            
+        }];
+        
+    }
+    return _statusPicsView;
 }
 
 #pragma mark - base

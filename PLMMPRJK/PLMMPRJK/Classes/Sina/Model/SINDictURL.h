@@ -13,4 +13,15 @@
 /** <#digest#> */
 @property (nonatomic, strong) NSURL *thumbnail_pic;
 
+/** <#digest#> */
+@property (nonatomic, strong) NSURL *bmiddle_pic;
+
+/** <#digest#> */
+@property (nonatomic, strong) NSURL *original_pic;
+
+
+
+/** <#digest#> */
+@property (nonatomic, assign) CGSize picSize;
+
 @end

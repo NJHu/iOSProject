@@ -53,7 +53,7 @@
 {
     LMJWeakSelf(self);
     if (![SINUserManager sharedManager].isLogined) {
-        [self endHeaderFooterRefreshing];
+        [weakself endHeaderFooterRefreshing];
         return;
     }
     
@@ -204,7 +204,7 @@
         }];
         
         
-        [self.view addSubview:unLoginRegisterView];
+        [weakself.view addSubview:unLoginRegisterView];
         _unLoginRegisterView = unLoginRegisterView;
         
         
@@ -220,24 +220,25 @@
 
 - (void)gotoLogin
 {
+    LMJWeakSelf(self);
     [[SINUserManager sharedManager] sinaLogin:^(NSError *error) {
         
         if (error) {
             
-            [self.view makeToast:error.domain];
+            [weakself.view makeToast:error.domain];
             
             return ;
         }
         
-        self.tableView.hidden = NO;
-        self.unLoginRegisterView.hidden = YES;
+        weakself.tableView.hidden = NO;
+        weakself.unLoginRegisterView.hidden = YES;
         
-        self.lmj_navgationBar.leftView.hidden = YES;
-        self.lmj_navgationBar.rightView.hidden = YES;
+        weakself.lmj_navgationBar.leftView.hidden = YES;
+        weakself.lmj_navgationBar.rightView.hidden = YES;
         
-        [self changeTitle:[SINUserManager sharedManager].name];
+        [weakself changeTitle:[SINUserManager sharedManager].name];
         
-        [self.tableView.mj_header beginRefreshing];
+        [weakself.tableView.mj_header beginRefreshing];
     }];
 }
 

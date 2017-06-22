@@ -124,7 +124,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
 
 - (CGSize)collectionViewContentSize
 {
-    CGFloat maxColH = [self.lmj_ColumnsHeightArray[0] doubleValue];
+    CGFloat maxColH = [self.lmj_ColumnsHeightArray.firstObject doubleValue];
     
     for (NSInteger i = 1; i < self.lmj_ColumnsHeightArray.count; i++)
     {

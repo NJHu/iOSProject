@@ -9,7 +9,7 @@
 #import "SINStatusListService.h"
 #import "NSDecimalNumber+Extensions.h"
 #import "NSDecimalNumber+CalculatingByString.h"
-
+#import "SINDictURL.h"
 
 @interface SINStatusListService ()
 
@@ -64,30 +64,71 @@
         
         NSMutableArray<SINStatus *> *statuses = [SINStatus mj_objectArrayWithKeyValuesArray:responObj[@"statuses"]];
         
-        NSMutableArray<SINStatusViewModel *> *statusViewModels = [NSMutableArray array];
+
+    // 下载图片, 才能知道尺寸
+//                completion(nil, (SNCompare(@(self.statusViewModels.count), responObj[@"total_number"])) != LMJXY);
         
+        dispatch_group_t downLoadImageGroup = dispatch_group_create();
+    
         [statuses enumerateObjectsUsingBlock:^(SINStatus * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
-            [statusViewModels addObject:[SINStatusViewModel statusModelWithStatus:obj]];
-        }];
-        
-        
-        if (isFresh) {
+            if (!obj.thumbnail_pic.absoluteString.length) {
+                return ;
+            }
             
-            [self.statusViewModels insertObjects:statusViewModels atIndex:0];
-            
-        }else
-        {
-            [self.statusViewModels addObjectsFromArray:statusViewModels];
-        }
-        
+            dispatch_group_enter(downLoadImageGroup);
+            [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:obj.thumbnail_pic options:SDWebImageDownloaderUseNSURLCache progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                
 
-        completion(nil, (SNCompare(@(self.statusViewModels.count), responObj[@"total_number"])) != LMJXY);
+                if (!error && image && finished) {
+                    
+                    [obj.pic_urls enumerateObjectsUsingBlock:^(SINDictURL * _Nonnull imageDict, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        imageDict.picSize = image.size;
+                        
+                    }];
+                    
+                }
+                
+                dispatch_group_leave(downLoadImageGroup);
+            }];
+            
+            
+        }];
+
+        
+        
+        
+        dispatch_group_notify(downLoadImageGroup, dispatch_get_main_queue(), ^{
+            
+            NSMutableArray<SINStatusViewModel *> *statusViewModels = [NSMutableArray array];
+            
+            [statuses enumerateObjectsUsingBlock:^(SINStatus * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                
+                [statusViewModels addObject:[SINStatusViewModel statusModelWithStatus:obj]];
+            }];
+            
+            
+            if (isFresh) {
+                
+                [self.statusViewModels insertObjects:statusViewModels atIndex:0];
+                
+            }else
+            {
+                [self.statusViewModels addObjectsFromArray:statusViewModels];
+            }
+            
+            
+            completion(nil, (SNCompare(@(self.statusViewModels.count), responObj[@"total_number"])) != LMJXY);
+            
+        });
+        
         
     }];
     
     
     
+
     
 }
 

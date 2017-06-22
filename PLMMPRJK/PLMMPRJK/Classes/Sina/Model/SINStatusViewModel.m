@@ -8,7 +8,7 @@
 
 #import "SINStatusViewModel.h"
 #import "SINStatus.h"
-
+#import "SINDictURL.h"
 #import "SINUser.h"
 
 static const CGFloat margin = 10.0;
@@ -35,7 +35,7 @@ static const CGFloat margin = 10.0;
 {
     if (_cellHeight == 0) {
         
-//        10 + 50 + 10 + text + pics + tooBar + 10
+        //        10 + 50 + 10 + text + pics + tooBar + 10
         
         const CGFloat headerHeight = margin + 50;
         _cellHeight += headerHeight;
@@ -45,8 +45,11 @@ static const CGFloat margin = 10.0;
         
         _cellHeight += margin;
         
-//        _cellHeight += pics
-//        _cellHeight += margin
+        // 图片内容
+        if (self.status.pic_urls.count) {
+            _cellHeight += self.sin_statusPicsViewModel.picsViewSize.height;
+            _cellHeight += margin;
+        }
         
         
         _cellHeight += 32.5; // tooBar
@@ -61,47 +64,47 @@ static const CGFloat margin = 10.0;
     if(_sin_textPostLayout == nil && !LMJIsEmpty(self.status.text))
     {
         
-//        LMJWeakSelf(self);
+        //        LMJWeakSelf(self);
         NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithString:self.status.text];
         CGSize textSize = CGSizeMake(Main_Screen_Width - 2 * margin, INFINITY);
         
         /*
-        [self.status.text enumerateObjectsUsingBlock:^(BSJTopicTopComent * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            NSMutableAttributedString *oneCmt = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@: %@", idx ? @"\n" : @"",obj.user.username, obj.content]];
-            
-            oneCmt.lineSpacing = 4.0;
-            oneCmt.font = [UIFont systemFontOfSize:13];
-            oneCmt.color = [UIColor darkGrayColor];
-            oneCmt.backgroundColor = [UIColor redColor];
-            
-            NSRange highRange = NSMakeRange(0, obj.user.username.length + 1);
-            
-            [oneCmt setTextHighlightRange:highRange color:[UIColor blueColor] backgroundColor:[UIColor yellowColor] userInfo:nil tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
-                
-                
-                !weakself.topCmtClick ?: weakself.topCmtClick(obj.user, obj);
-                
-            } longPressAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
-                
-                
-                
-                
-            }];
-            
-            
-            [cmtsM appendAttributedString:oneCmt];
-            
-            
-        }];
-        */
+         [self.status.text enumerateObjectsUsingBlock:^(BSJTopicTopComent * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+         
+         NSMutableAttributedString *oneCmt = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@: %@", idx ? @"\n" : @"",obj.user.username, obj.content]];
+         
+         oneCmt.lineSpacing = 4.0;
+         oneCmt.font = [UIFont systemFontOfSize:13];
+         oneCmt.color = [UIColor darkGrayColor];
+         oneCmt.backgroundColor = [UIColor redColor];
+         
+         NSRange highRange = NSMakeRange(0, obj.user.username.length + 1);
+         
+         [oneCmt setTextHighlightRange:highRange color:[UIColor blueColor] backgroundColor:[UIColor yellowColor] userInfo:nil tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+         
+         
+         !weakself.topCmtClick ?: weakself.topCmtClick(obj.user, obj);
+         
+         } longPressAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+         
+         
+         
+         
+         }];
+         
+         
+         [cmtsM appendAttributedString:oneCmt];
+         
+         
+         }];
+         */
         
         
         postTextM.lineSpacing = 4.0;
         postTextM.font = [UIFont systemFontOfSize:AdaptedWidth(15)];
         postTextM.color = [UIColor blackColor];
         postTextM.backgroundColor = [UIColor redColor];
-//        cmtsM.paragraphSpacing = 7.0;
+        //        cmtsM.paragraphSpacing = 7.0;
         
         
         YYTextLayout *sin_textPostLayout = [YYTextLayout layoutWithContainerSize:textSize text:postTextM];
@@ -124,7 +127,7 @@ static const CGFloat margin = 10.0;
          vipImage_lmj = UIImage(named: "common_icon_membership_level\(user.mbrank)")
          }
          */
-    _sin_mbrankImage = [UIImage imageNamed:[NSString stringWithFormat:@"common_icon_membership_level%@", self.status.user.mbrank]];
+        _sin_mbrankImage = [UIImage imageNamed:[NSString stringWithFormat:@"common_icon_membership_level%@", self.status.user.mbrank]];
     }
     return _sin_mbrankImage;
 }
@@ -245,8 +248,161 @@ static const CGFloat margin = 10.0;
         return [fmt stringFromDate:creatDate];
     }
     
+}
+
+- (NSString *)sin_cmtCount
+{
+    if(_sin_cmtCount == nil)
+    {
+        
+        
+        _sin_cmtCount = [self countFormat: self.status.comments_count];
+        
+        if (SNCompare(_sin_cmtCount, @"0") == LMJDD) {
+            
+            _sin_cmtCount = @"评论";
+        }
+        
+    }
+    return _sin_cmtCount;
+}
+
+
+- (NSString *)sin_dingCount
+{
+    if(_sin_dingCount == nil)
+    {
+        _sin_dingCount = [self countFormat:self.status.attitudes_count];
+        
+        if (SNCompare(_sin_dingCount, @"0") == LMJDD) {
+            
+            _sin_dingCount = @"顶";
+        }
+    }
+    return _sin_dingCount;
+}
+
+
+- (NSString *)sin_repostCount
+{
+    if(_sin_repostCount == nil)
+    {
+        _sin_repostCount = [self countFormat:self.status.reposts_count];
+        
+        if (SNCompare(_sin_repostCount, @"0") == LMJDD) {
+            
+            _sin_repostCount = @"顶";
+        }
+    }
+    return _sin_repostCount;
+}
+
+- (NSString *)countFormat:(NSInteger)count
+{
     
+    if (count > 1000) {
+        return [NSString stringWithFormat:@"%0.1f千", count / 1000.0];
+    }
+    
+    return [NSString stringWithFormat:@"%zd", count];
     
 }
 
+- (SINStatusPicsViewModel)sin_statusPicsViewModel
+{
+    if (_sin_statusPicsViewModel.cols == 0 && self.status.pic_urls.count) {
+        
+        CGSize picsViewSize = CGSizeZero;
+        NSInteger cols = 0;
+        NSInteger lines = 0;
+        CGFloat itemWidth = 0;
+        CGFloat itemHeight = 0;
+        
+        CGFloat maxWidth = Main_Screen_Width - 2 * margin;
+        CGFloat maxHeight = 200;
+        CGFloat itemMargin = 5;
+        
+        if (self.status.pic_urls.count == 0) {
+            
+            
+        }else if (self.status.pic_urls.count == 1) {
+            
+            CGSize imageSize = self.status.pic_urls.firstObject.picSize;
+            
+            if (imageSize.width <= maxWidth) {
+                
+                picsViewSize.width = imageSize.width;
+                
+            }else
+            {
+                picsViewSize.width = maxWidth;
+            }
+            
+            if (picsViewSize.width < maxHeight) {
+                picsViewSize.width = maxHeight;
+            }
+            
+            
+            CGFloat imageShowHeight = picsViewSize.width * imageSize.height / imageSize.width;
+            
+            if (imageShowHeight > maxHeight) {
+                imageShowHeight = maxHeight;
+            }
+            
+            picsViewSize.height = imageShowHeight;
+            
+            cols = 1;
+            lines = 1;
+            itemWidth = picsViewSize.width;
+            itemHeight = picsViewSize.height;
+            
+            
+        }else if (self.status.pic_urls.count == 4) {
+            
+            itemWidth = (maxWidth - 2 * itemMargin) / 3.0;
+            itemHeight = itemWidth;
+            cols = 2;
+            lines = 2;
+            
+            picsViewSize = CGSizeMake(2 * itemWidth + itemMargin, 2 * itemWidth + itemMargin);
+            
+            
+            
+        }else
+        {
+            itemWidth = (Main_Screen_Width - 2 * margin - 2 * itemMargin) / 3.0;
+            itemHeight = itemWidth;
+            cols = 3;
+            lines = (self.status.pic_urls.count + 2) / 3;
+            
+            
+            picsViewSize = CGSizeMake(maxWidth, (itemHeight + itemMargin) * lines - itemMargin);
+            
+        }
+        
+        
+        _sin_statusPicsViewModel = SINStatusPicsViewModelMake(picsViewSize, cols, lines, itemWidth, itemHeight);
+    }
+    
+    
+    return _sin_statusPicsViewModel;
+}
+
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
