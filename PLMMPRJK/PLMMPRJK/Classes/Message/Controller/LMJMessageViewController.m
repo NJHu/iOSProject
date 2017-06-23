@@ -31,13 +31,13 @@
     self.tableView.contentInset = edgeInsets;
     
     
-    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"BSJ" subTitle: nil];
+    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"BSJ" subTitle: @"百思不得姐"];
     [item0 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[BSJTabBarController alloc] init] animated:YES completion:nil];
     }];
     
     
-    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"SIN" subTitle: nil];
+    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"SIN" subTitle: @"新浪微博"];
     [item1 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[SINTabBarController alloc] init] animated:YES completion:nil];
     }];
