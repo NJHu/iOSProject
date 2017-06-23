@@ -1,3 +1,5 @@
+### 感谢作者[wujunyang](https://github.com/wujunyang)在 GitHub 上[MobileProject](https://github.com/wujunyang/MobileProject)开源项目
+
 # 各种功能 Demo
 
 
@@ -24,10 +26,19 @@
 
 <img src="./images/home6.png" width="320" height="480">
 
+# 综合项目
+<img src="./images/Pros.png" width="320" height="480">
 
 
-### 感谢作者[wujunyang](https://github.com/wujunyang)在 GitHub 上[MobileProject](https://github.com/wujunyang/MobileProject)开源项目
+### 百思不得姐
+<img src="./images/BSJ1.png" width="320" height="480">
+<img src="./images/BSJ3.png" width="320" height="480">
+<img src="./images/BSJ4.png" width="320" height="480">
+<img src="./images/BSJ0.png" width="320" height="480">
 
-### [PLMMPrjk](https://github.com/NJHu/PLMMPrjk)开源项目大部分代码直接借鉴[MobileProject](https://github.com/wujunyang/MobileProject)学习.
+### 新浪微博
+<img src="./images/SIN0.png" width="320" height="480">
 
-### 感谢作者[wujunyang](https://github.com/wujunyang)在 GitHub上细心解答.
+
+
+

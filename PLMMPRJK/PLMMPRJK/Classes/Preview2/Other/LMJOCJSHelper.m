@@ -40,7 +40,7 @@ NSString *const LMJOCJSHelperScriptMessageHandlerName1_ = @"OCJSHelper1";
                         NSString *functionName = dict[@"functionName"];
                         
                         
-                        NSString *js = [functionName stringByAppendingFormat:@"(\'%@\')", @"OC里边得到 DeviceID: 9213876827468372"];
+                        NSString *js = [functionName stringByAppendingFormat:@"('%@')", @"OC里边得到 DeviceID: 9213876827468372"];
                         
                         [self.webView evaluateJavaScript:js completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
                             
