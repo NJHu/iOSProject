@@ -72,7 +72,7 @@
     
         [statuses enumerateObjectsUsingBlock:^(SINStatus * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
-            if (!obj.thumbnail_pic.absoluteString.length) {
+            if (!obj.thumbnail_pic.absoluteString.length || obj.pic_urls.count > 1) {
                 return ;
             }
             

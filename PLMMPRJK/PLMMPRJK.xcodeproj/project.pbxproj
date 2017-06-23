@@ -25,6 +25,9 @@
 		582F96DE1EFA974300766666 /* SINStatusToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96DD1EFA974300766666 /* SINStatusToolBarView.m */; };
 		582F96E01EFA975900766666 /* SINStatusToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582F96DF1EFA975900766666 /* SINStatusToolBarView.xib */; };
 		582F96E31EFB6E7900766666 /* SINStatusPicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96E21EFB6E7900766666 /* SINStatusPicsView.m */; };
+		582F96E91EFD143A00766666 /* SINBroswerAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96E81EFD143A00766666 /* SINBroswerAnimator.m */; };
+		582F96EC1EFD26F400766666 /* SINBroswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96EB1EFD26F400766666 /* SINBroswerViewController.m */; };
+		582F96EF1EFD2A8200766666 /* SINBroswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96EE1EFD2A8200766666 /* SINBroswerCell.m */; };
 		583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE491ECD36870097D826 /* BSJTrendViewController.xib */; };
 		583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */; };
 		583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583DFE4D1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib */; };
@@ -622,6 +625,12 @@
 		582F96DF1EFA975900766666 /* SINStatusToolBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SINStatusToolBarView.xib; sourceTree = "<group>"; };
 		582F96E11EFB6E7900766666 /* SINStatusPicsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusPicsView.h; sourceTree = "<group>"; };
 		582F96E21EFB6E7900766666 /* SINStatusPicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusPicsView.m; sourceTree = "<group>"; };
+		582F96E71EFD143A00766666 /* SINBroswerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINBroswerAnimator.h; sourceTree = "<group>"; };
+		582F96E81EFD143A00766666 /* SINBroswerAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINBroswerAnimator.m; sourceTree = "<group>"; };
+		582F96EA1EFD26F400766666 /* SINBroswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINBroswerViewController.h; sourceTree = "<group>"; };
+		582F96EB1EFD26F400766666 /* SINBroswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINBroswerViewController.m; sourceTree = "<group>"; };
+		582F96ED1EFD2A8200766666 /* SINBroswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINBroswerCell.h; sourceTree = "<group>"; };
+		582F96EE1EFD2A8200766666 /* SINBroswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINBroswerCell.m; sourceTree = "<group>"; };
 		583DFE491ECD36870097D826 /* BSJTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTrendViewController.xib; sourceTree = "<group>"; };
 		583DFE4B1ECD3A8E0097D826 /* BSJLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLoginRegisterViewController.h; sourceTree = "<group>"; };
 		583DFE4C1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJLoginRegisterViewController.m; sourceTree = "<group>"; };
@@ -1747,6 +1756,19 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		582F96E61EFD11A800766666 /* AnimatorBroswer */ = {
+			isa = PBXGroup;
+			children = (
+				582F96E71EFD143A00766666 /* SINBroswerAnimator.h */,
+				582F96E81EFD143A00766666 /* SINBroswerAnimator.m */,
+				582F96EA1EFD26F400766666 /* SINBroswerViewController.h */,
+				582F96EB1EFD26F400766666 /* SINBroswerViewController.m */,
+				582F96ED1EFD2A8200766666 /* SINBroswerCell.h */,
+				582F96EE1EFD2A8200766666 /* SINBroswerCell.m */,
+			);
+			path = AnimatorBroswer;
+			sourceTree = "<group>";
+		};
 		588AACF51E9F2253005F2A89 /* PLMMPRIKImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -2100,6 +2122,7 @@
 		588B32851EC4312800D00C1C /* Sina */ = {
 			isa = PBXGroup;
 			children = (
+				582F96E61EFD11A800766666 /* AnimatorBroswer */,
 				582F96B41EF8EBDD00766666 /* Tools */,
 				588B32861EC4312800D00C1C /* Controller */,
 				588B32891EC4312800D00C1C /* Model */,
@@ -5336,6 +5359,7 @@
 				58AFAC271EB4ADAA00822043 /* UIView+Animation.m in Sources */,
 				58AFAC121EB4ADAA00822043 /* UIScreen+Frame.m in Sources */,
 				58AFAC3C1EB4ADAA00822043 /* UIViewController+MJPopupViewController.m in Sources */,
+				582F96E91EFD143A00766666 /* SINBroswerAnimator.m in Sources */,
 				588B32AF1EC4428100D00C1C /* BSJNewViewController.m in Sources */,
 				58AFAB761EB4ADAA00822043 /* UIDevice+FCUUID.m in Sources */,
 				588E9C421EF7D1F4006F599B /* LMJCA3DTransformViewController.m in Sources */,
@@ -5390,6 +5414,7 @@
 				58FFE9BF1EBF23F400D50E4C /* MPEventCalendar.m in Sources */,
 				58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */,
 				58AFACA81EB4ADAB00822043 /* LMJNSOperationViewController.m in Sources */,
+				582F96EF1EFD2A8200766666 /* SINBroswerCell.m in Sources */,
 				589375981EE3FB9400BE0990 /* BSJTopicCmtService.m in Sources */,
 				589FCFA91EED2CE3008FFB28 /* LMJCommentHeaderView.m in Sources */,
 				58AFABE01EB4ADAA00822043 /* UIColor+HEX.m in Sources */,
@@ -5420,6 +5445,7 @@
 				58AFABD41EB4ADAA00822043 /* UIBezierPath+Length.m in Sources */,
 				58AFACB31EB4ADAB00822043 /* UIButton+LMJBlock.m in Sources */,
 				58AFAB1A1EB4ADAA00822043 /* NSDictionary+Block.m in Sources */,
+				582F96EC1EFD26F400766666 /* SINBroswerViewController.m in Sources */,
 				58AFAB4E1EB4ADAA00822043 /* NSTimer+Blocks.m in Sources */,
 				58AFAB041EB4ADAA00822043 /* NSPersistentStoreCoordinator+Custom.m in Sources */,
 				58AFAC951EB4ADAB00822043 /* MPIconAndTitleCell.m in Sources */,

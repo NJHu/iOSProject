@@ -9,11 +9,19 @@
 #import "SINStatusPicsView.h"
 #import "SINStatusViewModel.h"
 #import "SINDictURL.h"
+#import "SINBroswerViewController.h"
+#import "SINBroswerAnimator.h"
 
-@interface SINStatusPicsView ()<UICollectionViewDelegate, UICollectionViewDataSource, LMJVerticalFlowLayoutDelegate>
+@interface SINStatusPicsView ()<UICollectionViewDelegate, UICollectionViewDataSource, LMJVerticalFlowLayoutDelegate, SINBroswerAnimatorPresentDelegate>
 
 /** <#digest#> */
 @property (weak, nonatomic) UICollectionView *collectionView;
+
+/** <#digest#> */
+@property (nonatomic, strong) SINBroswerAnimator *broswerAnimator;
+
+/** <#digest#> */
+@property (nonatomic, strong) NSIndexPath *lastSelectedIndexPath;
 
 @end
 
@@ -37,7 +45,6 @@
     [self.collectionView reloadData];
 }
 
-
 #pragma mark - <UICollectionViewDelegate, UICollectionViewDataSource,
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -52,10 +59,85 @@
     cell.contentView.layer.contentMode = UIViewContentModeScaleAspectFill;
     cell.contentView.layer.masksToBounds = YES;
     
-    [cell.contentView.layer setImageURL:self.statusViewModel.status.pic_urls[indexPath.item].bmiddle_pic];
+    [cell.contentView.layer setImageWithURL:self.statusViewModel.status.pic_urls[indexPath.item].bmiddle_pic options:YYWebImageOptionProgressive];
     
     
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 不能用
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    
+    self.lastSelectedIndexPath = indexPath;
+    
+    
+    SINBroswerViewController *broswerViewController = [[SINBroswerViewController alloc] init];
+    broswerViewController.imageUrls = self.statusViewModel.status.pic_urls;
+    broswerViewController.startIndexPath = indexPath;
+    
+    broswerViewController.transitioningDelegate = self.broswerAnimator;
+    broswerViewController.modalPresentationStyle = UIModalPresentationCustom;
+    
+    self.broswerAnimator.dismissDelegate = broswerViewController;
+    
+    [self.viewController presentViewController:broswerViewController animated:YES completion:nil];
+    
+}
+
+
+
+#pragma mark - SINBroswerAnimatorPresentDelegate
+
+- (CGRect)startRectWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator withCurrentIndexPath:(NSIndexPath *)currentIndexPath
+{
+    UICollectionViewCell *currentCell = [self.collectionView cellForItemAtIndexPath:currentIndexPath];
+
+   return [currentCell convertRect:currentCell.contentView.frame toView:kKeyWindow];
+    
+}
+
+- (CGRect)endRectWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator withStartIndexPath:(NSIndexPath *)startIndexPath
+{
+    UICollectionViewCell *currentCell = [self.collectionView cellForItemAtIndexPath:startIndexPath];
+    
+    UIImage *image = [UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(currentCell.contentView.layer.contents)];
+    
+    CGFloat imageViewY = 0;
+    
+    CGFloat imageWidth = image.size.width;
+    CGFloat imageHeight = image.size.height;
+    
+    
+    CGFloat fitWidth = Main_Screen_Width;
+    CGFloat fitHeight = fitWidth * imageHeight / imageWidth;
+    
+    if (fitHeight < Main_Screen_Height) {
+        
+        imageViewY = (Main_Screen_Height - fitHeight) * 0.5;
+    }
+    
+    return CGRectMake(0, imageViewY, fitWidth, fitHeight);
+    
+    
+}
+
+- (NSIndexPath *)startIndexPathWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator
+{
+    return self.lastSelectedIndexPath;
+}
+
+- (UIImageView *)startImageViewWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator
+{
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
+    
+    [imageView sd_setImageWithURL:self.statusViewModel.status.pic_urls[self.lastSelectedIndexPath.item].bmiddle_pic placeholderImage:nil];
+    
+    
+    return imageView;
 }
 
 
@@ -134,6 +216,16 @@
         
     }
     return _collectionView;
+}
+
+- (SINBroswerAnimator *)broswerAnimator
+{
+    if(_broswerAnimator == nil)
+    {
+        _broswerAnimator = [[SINBroswerAnimator alloc] init];
+        _broswerAnimator.presentDelegate = self;
+    }
+    return _broswerAnimator;
 }
 
 
