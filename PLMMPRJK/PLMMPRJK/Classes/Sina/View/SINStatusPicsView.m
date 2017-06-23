@@ -31,7 +31,7 @@
 
 - (void)setupUIOnce
 {
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
+    [self.collectionView registerClass:[SINStatusPicsViewCell class] forCellWithReuseIdentifier:NSStringFromClass([SINStatusPicsViewCell class])];
     
     self.backgroundColor = [UIColor RandomColor];
     self.collectionView.backgroundColor = [UIColor RandomColor];
@@ -54,13 +54,13 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
+    SINStatusPicsViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SINStatusPicsViewCell class]) forIndexPath:indexPath];
     
     cell.contentView.layer.contentMode = UIViewContentModeScaleAspectFill;
     cell.contentView.layer.masksToBounds = YES;
     
-    [cell.contentView.layer setImageWithURL:self.statusViewModel.status.pic_urls[indexPath.item].bmiddle_pic options:YYWebImageOptionProgressive];
     
+    [cell.imageView sd_setImageWithURL:self.statusViewModel.status.pic_urls[indexPath.item].bmiddle_pic placeholderImage:[UIImage imageNamed:@"empty_picture"]];
     
     return cell;
 }
@@ -100,9 +100,9 @@
 
 - (CGRect)endRectWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator withStartIndexPath:(NSIndexPath *)startIndexPath
 {
-    UICollectionViewCell *currentCell = [self.collectionView cellForItemAtIndexPath:startIndexPath];
+    SINStatusPicsViewCell *currentCell = (SINStatusPicsViewCell *)[self.collectionView cellForItemAtIndexPath:startIndexPath];
     
-    UIImage *image = [UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(currentCell.contentView.layer.contents)];
+    UIImage *image = currentCell.imageView.image;
     
     CGFloat imageViewY = 0;
     
@@ -254,3 +254,45 @@
 
 
 @end
+
+
+
+
+
+
+
+
+
+@implementation SINStatusPicsViewCell
+
+
+- (UIImageView *)imageView
+{
+    if(_imageView == nil)
+    {
+        
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self.contentView addSubview:imageView];
+        _imageView = imageView;
+        
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.edges.insets(UIEdgeInsetsZero);
+            
+        }];
+        
+    }
+    return _imageView;
+}
+
+@end
+
+
+
+
+
+
+
+

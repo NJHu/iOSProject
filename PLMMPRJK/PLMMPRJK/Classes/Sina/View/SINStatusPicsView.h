@@ -19,3 +19,12 @@
 
 
 @end
+
+
+
+@interface SINStatusPicsViewCell : UICollectionViewCell
+
+/** <#digest#> */
+@property (weak, nonatomic) UIImageView *imageView;
+
+@end
