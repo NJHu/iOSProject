@@ -1,5 +1,3 @@
-### 感谢作者[wujunyang](https://github.com/wujunyang)在 GitHub 上[MobileProject](https://github.com/wujunyang/MobileProject)开源项目
-
 # 各种功能 Demo
 
 - 启动导引, 启动广告
