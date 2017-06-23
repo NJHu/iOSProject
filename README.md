@@ -16,7 +16,7 @@
 
 ## 小功能 demo 
 
-<img src="./images/home256.PNG" width="600" height="400">
+<img src="./images/home256.png" width="600" height="400">
 
 
 ## 百思不得姐
