@@ -64,38 +64,66 @@
         
         NSMutableArray<SINStatus *> *statuses = [SINStatus mj_objectArrayWithKeyValuesArray:responObj[@"statuses"]];
         
-
-    // 下载图片, 才能知道尺寸
-//                completion(nil, (SNCompare(@(self.statusViewModels.count), responObj[@"total_number"])) != LMJXY);
+        
+        // 下载图片, 才能知道尺寸
+        //                completion(nil, (SNCompare(@(self.statusViewModels.count), responObj[@"total_number"])) != LMJXY);
         
         dispatch_group_t downLoadImageGroup = dispatch_group_create();
-    
+        
         [statuses enumerateObjectsUsingBlock:^(SINStatus * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
             if (!obj.thumbnail_pic.absoluteString.length || obj.pic_urls.count > 1) {
-                return ;
+                
+            }else
+            {
+                // 自己的图片
+                dispatch_group_enter(downLoadImageGroup);
+                [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:obj.thumbnail_pic options:SDWebImageDownloaderUseNSURLCache progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                    
+                    
+                    if (!error && image && finished) {
+                        
+                        [obj.pic_urls enumerateObjectsUsingBlock:^(SINDictURL * _Nonnull imageDict, NSUInteger idx, BOOL * _Nonnull stop) {
+                            
+                            imageDict.picSize = image.size;
+                            
+                        }];
+                        
+                    }
+                    dispatch_group_leave(downLoadImageGroup);
+                }];
             }
             
-            dispatch_group_enter(downLoadImageGroup);
-            [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:obj.thumbnail_pic options:SDWebImageDownloaderUseNSURLCache progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+            
+            
+            
+            
+            // 转发微博的图片
+            if (!obj.retweeted_status.thumbnail_pic.absoluteString.length || obj.retweeted_status.pic_urls.count > 1) {
                 
-
-                if (!error && image && finished) {
+            }else
+            {
+                dispatch_group_enter(downLoadImageGroup);
+                [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:obj.retweeted_status.thumbnail_pic options:SDWebImageDownloaderUseNSURLCache progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
                     
-                    [obj.pic_urls enumerateObjectsUsingBlock:^(SINDictURL * _Nonnull imageDict, NSUInteger idx, BOOL * _Nonnull stop) {
-                        
-                        imageDict.picSize = image.size;
-                        
-                    }];
                     
-                }
-                
-                dispatch_group_leave(downLoadImageGroup);
-            }];
+                    if (!error && image && finished) {
+                        
+                        [obj.retweeted_status.pic_urls enumerateObjectsUsingBlock:^(SINDictURL * _Nonnull imageDict, NSUInteger idx, BOOL * _Nonnull stop) {
+                            
+                            imageDict.picSize = image.size;
+                            
+                        }];
+                        
+                    }
+                    dispatch_group_leave(downLoadImageGroup);
+                }];
+            }
+            
             
             
         }];
-
+        
         
         
         
@@ -128,7 +156,7 @@
     
     
     
-
+    
     
 }
 

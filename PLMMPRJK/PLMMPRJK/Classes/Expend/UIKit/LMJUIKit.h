@@ -107,12 +107,6 @@
 
 #import "UISplitViewController+QuickAccess.h"
 
-#import "UITableView+iOS7Style.h"
-
-#import "UITableView+FDIndexPathHeightCache.h"
-#import "UITableView+FDKeyedHeightCache.h"
-#import "UITableView+FDTemplateLayoutCell.h"
-#import "UITableView+FDTemplateLayoutCellDebug.h"
 
 #import "UITableViewCell+NIB.h"
 #import "UITableViewCell+TS_delaysContentTouches.h"

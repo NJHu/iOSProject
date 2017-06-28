@@ -13,6 +13,7 @@
 #import "SINUser.h"
 #import "SINStatusToolBarView.h"
 #import "SINStatusPicsView.h"
+#import "SINStatusRetweetView.h"
 
 @interface SINStatusCell ()
 
@@ -44,6 +45,10 @@
 
 /** 展示图片的 View */
 @property (weak, nonatomic) SINStatusPicsView *statusPicsView;
+
+
+/** <#digest#> */
+@property (weak, nonatomic) SINStatusRetweetView *reweetView;
 
 @end
 
@@ -85,6 +90,24 @@ static const CGFloat margin = 10.0;
     [self layoutIfNeeded];
     
     self.statusPicsView.statusViewModel = statusViewModel;
+    
+    if (statusViewModel.sin_retweetStatusViewModel) {
+        
+        self.reweetView.hidden = NO;
+        
+        self.reweetView.retweetStatusViewModel = statusViewModel.sin_retweetStatusViewModel;
+        
+        [self.reweetView mas_updateConstraints:^(MASConstraintMaker *make) {
+
+            make.bottom.equalTo(self.reweetView.statusPicsView.mas_bottom).offset(statusViewModel.sin_retweetStatusViewModel.status.pic_urls.count ? margin : 0);
+            
+        }];
+        
+        
+    }else
+    {
+        self.reweetView.hidden = YES;
+    }
 }
 
 
@@ -325,6 +348,26 @@ static const CGFloat margin = 10.0;
         
     }
     return _statusPicsView;
+}
+
+- (SINStatusRetweetView *)reweetView
+{
+    if(_reweetView == nil)
+    {
+        SINStatusRetweetView *reweetView = [[SINStatusRetweetView alloc] init];
+        [self.contentView addSubview:reweetView];
+        _reweetView = reweetView;
+        
+        [reweetView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.right.offset(0);
+            make.top.mas_equalTo(self.textPostLabel.mas_bottom).offset(margin);
+            make.bottom.equalTo(reweetView.statusPicsView.mas_bottom).offset(margin);
+            
+        }];
+        
+    }
+    return _reweetView;
 }
 
 #pragma mark - base

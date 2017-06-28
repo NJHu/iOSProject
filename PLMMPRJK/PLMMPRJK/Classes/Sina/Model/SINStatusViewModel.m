@@ -28,7 +28,17 @@ static const CGFloat margin = 10.0;
 {
     _status = status;
     
+}
+
+
+- (SINStatusViewModel *)sin_retweetStatusViewModel
+{
+    if (!_sin_retweetStatusViewModel && self.status.retweeted_status.text.length) {
+        
+        _sin_retweetStatusViewModel = [SINStatusViewModel statusModelWithStatus:self.status.retweeted_status];
+    }
     
+    return _sin_retweetStatusViewModel;
 }
 
 - (CGFloat)cellHeight
@@ -50,11 +60,35 @@ static const CGFloat margin = 10.0;
             _cellHeight += self.sin_statusPicsViewModel.picsViewSize.height;
             _cellHeight += margin;
         }
+        // 转发
+        if (self.sin_retweetStatusViewModel) {
+            
+            _cellHeight += margin;
+            
+            _cellHeight += self.sin_retweetStatusViewModel.sin_textPostLayout.textBoundingSize.height;
+            
+            _cellHeight += margin;
+            
+            if (self.sin_retweetStatusViewModel.status.pic_urls.count) {
+                _cellHeight += self.sin_retweetStatusViewModel.sin_statusPicsViewModel.picsViewSize.height;
+                
+                _cellHeight += margin;
+                
+            }
+
+            
+            _cellHeight += margin;
+            
+        }
         
         
         _cellHeight += 32.5; // tooBar
         _cellHeight += margin;
+        
+    NSLog(@"H------>>>>%f", _cellHeight);
     }
+    
+    NSLog(@"HHH------>>>>%f", _cellHeight);
     return _cellHeight;
 }
 

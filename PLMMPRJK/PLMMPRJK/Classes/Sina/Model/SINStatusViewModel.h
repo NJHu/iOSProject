@@ -70,6 +70,9 @@ SINStatusPicsViewModelMake(CGSize picsViewSize, NSInteger cols, NSInteger lines,
 @property (nonatomic, assign) SINStatusPicsViewModel sin_statusPicsViewModel;
 
 /** <#digest#> */
+@property (nonatomic, strong) SINStatusViewModel *sin_retweetStatusViewModel;
+
+/** <#digest#> */
 @property (nonatomic, strong) SINStatus *status;
 
 + (instancetype)statusModelWithStatus:(SINStatus *)status;
