@@ -69,6 +69,9 @@
         //                completion(nil, (SNCompare(@(self.statusViewModels.count), responObj[@"total_number"])) != LMJXY);
         
         dispatch_group_t downLoadImageGroup = dispatch_group_create();
+       __block BOOL downLoadImageGroupSucceed = YES;
+        
+        
         
         [statuses enumerateObjectsUsingBlock:^(SINStatus * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
@@ -89,7 +92,11 @@
                             
                         }];
                         
+                    }else
+                    {
+                        downLoadImageGroupSucceed = NO;
                     }
+                    
                     dispatch_group_leave(downLoadImageGroup);
                 }];
             }
@@ -115,7 +122,11 @@
                             
                         }];
                         
+                    }else
+                    {
+                        downLoadImageGroupSucceed = NO;
                     }
+                    
                     dispatch_group_leave(downLoadImageGroup);
                 }];
             }
@@ -128,6 +139,13 @@
         
         
         dispatch_group_notify(downLoadImageGroup, dispatch_get_main_queue(), ^{
+            
+            if (!downLoadImageGroupSucceed) {
+                
+                completion([NSError errorWithDomain:NSCocoaErrorDomain code:random() userInfo:@{LMJBaseResponseCustomErrorMsgKey : @"图片加载失败"}], NO);
+                
+                return ;
+            }
             
             NSMutableArray<SINStatusViewModel *> *statusViewModels = [NSMutableArray array];
             
