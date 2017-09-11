@@ -29,6 +29,9 @@ pod 'SVProgressHUD'
 
 pod 'MWPhotoBrowser'
 
+# 表情键盘
+pod 'HMEmoticon'
+
 pod 'YYKit'
 
 pod 'CocoaLumberjack'

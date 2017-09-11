@@ -91,30 +91,18 @@ static const CGFloat margin = 10.0;
     
     self.statusPicsView.statusViewModel = statusViewModel;
     
-    if (statusViewModel.sin_retweetStatusViewModel) {
-        
-        self.reweetView.hidden = NO;
-        
-        self.reweetView.retweetStatusViewModel = statusViewModel.sin_retweetStatusViewModel;
-        
-        [self.reweetView mas_updateConstraints:^(MASConstraintMaker *make) {
-
-            make.bottom.equalTo(self.reweetView.statusPicsView.mas_bottom).offset(statusViewModel.sin_retweetStatusViewModel.status.pic_urls.count ? margin : 0);
-            
-        }];
-        
-        
-    }else
-    {
-        self.reweetView.hidden = YES;
-    }
+    self.reweetView.hidden = !statusViewModel.sin_retweetStatusViewModel;
+    
+    self.reweetView.retweetStatusViewModel = statusViewModel.sin_retweetStatusViewModel;
+    
+    
 }
 
 
 - (void)setupUIOnce
 {
     self.contentView.backgroundColor = [UIColor whiteColor];
-
+    
 }
 
 
@@ -182,8 +170,8 @@ static const CGFloat margin = 10.0;
         
         
         avatarVipImageView.layer.cornerRadius = 8;
-//        avatarVipImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-//        avatarVipImageView.layer.borderWidth = 1;
+        //        avatarVipImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+        //        avatarVipImageView.layer.borderWidth = 1;
         avatarVipImageView.contentMode = UIViewContentModeScaleToFill;;
         avatarVipImageView.backgroundColor = [UIColor whiteColor];
         

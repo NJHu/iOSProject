@@ -59,6 +59,12 @@ static const CGFloat margin = 10.0;
     
     self.statusPicsView.statusViewModel = retweetStatusViewModel;
     
+    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+        
+        make.bottom.equalTo(self.statusPicsView.mas_bottom).offset(retweetStatusViewModel.status.pic_urls.count ? margin : 0);
+        
+    }];
+    
 }
 
 

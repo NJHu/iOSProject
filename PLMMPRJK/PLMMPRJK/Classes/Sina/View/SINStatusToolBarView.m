@@ -35,15 +35,18 @@
 }
 
 - (IBAction)repostClick:(UIButton *)sender {
+    NSLog(@"%s", __func__);
 }
 
 
 - (IBAction)dingClick:(UIButton *)sender {
+    NSLog(@"%s", __func__);
+    
 }
 
 - (IBAction)cmtClick:(UIButton *)sender {
     
-    
+    NSLog(@"%s", __func__);
     
 }
 
