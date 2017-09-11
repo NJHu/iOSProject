@@ -135,7 +135,7 @@ static const CGFloat margin = 10.0;
         
         
         postTextM.lineSpacing = 4.0;
-        postTextM.font = [UIFont systemFontOfSize:15];
+        postTextM.font = [UIFont systemFontOfSize:AdaptedWidth(15)];
         postTextM.color = [UIColor blackColor];
         postTextM.backgroundColor = [UIColor redColor];
         //        cmtsM.paragraphSpacing = 7.0;
