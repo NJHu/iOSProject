@@ -81,6 +81,7 @@ static const CGFloat margin = 10.0;
         
         textPostLabel.numberOfLines = 0;
         textPostLabel.textAlignment = NSTextAlignmentLeft;
+        textPostLabel.preferredMaxLayoutWidth = Main_Screen_Width - 2 * margin;
         
         [textPostLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             

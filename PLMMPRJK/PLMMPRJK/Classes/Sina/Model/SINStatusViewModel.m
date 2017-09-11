@@ -10,6 +10,7 @@
 #import "SINStatus.h"
 #import "SINDictURL.h"
 #import "SINUser.h"
+#import <HMEmoticonManager.h>
 
 static const CGFloat margin = 10.0;
 
@@ -99,39 +100,10 @@ static const CGFloat margin = 10.0;
     {
         
         //        LMJWeakSelf(self);
-        NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithString:self.status.text];
+        NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithAttributedString:[[HMEmoticonManager sharedManager] emoticonStringWithString:self.status.text font:[UIFont systemFontOfSize:AdaptedWidth(15)] textColor:UIColor.blackColor]];
+        
         CGSize textSize = CGSizeMake(Main_Screen_Width - 2 * margin, INFINITY);
         
-        /*
-         [self.status.text enumerateObjectsUsingBlock:^(BSJTopicTopComent * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-         
-         NSMutableAttributedString *oneCmt = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@: %@", idx ? @"\n" : @"",obj.user.username, obj.content]];
-         
-         oneCmt.lineSpacing = 4.0;
-         oneCmt.font = [UIFont systemFontOfSize:13];
-         oneCmt.color = [UIColor darkGrayColor];
-         oneCmt.backgroundColor = [UIColor redColor];
-         
-         NSRange highRange = NSMakeRange(0, obj.user.username.length + 1);
-         
-         [oneCmt setTextHighlightRange:highRange color:[UIColor blueColor] backgroundColor:[UIColor yellowColor] userInfo:nil tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
-         
-         
-         !weakself.topCmtClick ?: weakself.topCmtClick(obj.user, obj);
-         
-         } longPressAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
-         
-         
-         
-         
-         }];
-         
-         
-         [cmtsM appendAttributedString:oneCmt];
-         
-         
-         }];
-         */
         
         
         postTextM.lineSpacing = 4.0;
