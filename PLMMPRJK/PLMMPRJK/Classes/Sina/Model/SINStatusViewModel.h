@@ -42,6 +42,11 @@ SINStatusPicsViewModelMake(CGSize picsViewSize, NSInteger cols, NSInteger lines,
 /** <#digest#> */
 @property (nonatomic, assign) CGFloat cellHeight;
 
+
+/** <#digest#> */
+@property (nonatomic, assign) CGFloat postTextHeight;
+
+
 /** <#digest#> */
 @property (nonatomic, strong) UIImage *sin_verified_typeImage;
 
@@ -49,7 +54,7 @@ SINStatusPicsViewModelMake(CGSize picsViewSize, NSInteger cols, NSInteger lines,
 @property (nonatomic, strong) UIImage *sin_mbrankImage;
 
 /** <#digest#> */
-@property (nonatomic, strong) YYTextLayout *sin_textPostLayout;
+@property (nonatomic, strong) NSMutableAttributedString *sin_textPost;
 
 
 @property (nonatomic, copy) NSString *sin_source;

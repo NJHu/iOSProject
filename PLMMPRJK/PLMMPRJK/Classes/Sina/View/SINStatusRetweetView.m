@@ -9,11 +9,12 @@
 #import "SINStatusRetweetView.h"
 #import "SINStatusPicsView.h"
 #import "SINStatusViewModel.h"
+#import <KILabel.h>
 
 @interface SINStatusRetweetView ()
 
 /** <#digest#> */
-@property (weak, nonatomic) YYLabel *retweetContentLabel;
+@property (weak, nonatomic) KILabel *retweetContentLabel;
 
 
 
@@ -42,11 +43,11 @@ static const CGFloat margin = 10.0;
 {
     _retweetStatusViewModel = retweetStatusViewModel;
     
-    self.retweetContentLabel.textLayout = retweetStatusViewModel.sin_textPostLayout;
+    self.retweetContentLabel.attributedText = retweetStatusViewModel.sin_textPost;
     
     [self.retweetContentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         
-        make.height.equalTo(retweetStatusViewModel.sin_textPostLayout.textBoundingSize.height);
+        make.height.equalTo(retweetStatusViewModel.postTextHeight);
         
     }];
     
@@ -71,11 +72,11 @@ static const CGFloat margin = 10.0;
 
 #pragma mark - getter
 
-- (YYLabel *)retweetContentLabel
+- (KILabel *)retweetContentLabel
 {
     if(_retweetContentLabel == nil)
     {
-        YYLabel *textPostLabel = [[YYLabel alloc] init];
+        KILabel *textPostLabel = [[KILabel alloc] init];
         [self addSubview:textPostLabel];
         _retweetContentLabel = textPostLabel;
         
@@ -91,6 +92,38 @@ static const CGFloat margin = 10.0;
             make.top.offset(margin);
             make.height.equalTo(20);
         }];
+        
+        
+        
+        [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeUserHandle];
+        [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeHashtag];
+        [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeURL];
+        
+        textPostLabel.userHandleLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
+            
+            NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
+            
+        };
+        
+        
+        textPostLabel.userHandleLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
+            
+            NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
+            
+        };
+        
+        textPostLabel.hashtagLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
+            
+            NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
+            
+        };
+        
+        
+        textPostLabel.urlLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
+            
+            NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
+            
+        };
         
     }
     return _retweetContentLabel;

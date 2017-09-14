@@ -30,6 +30,7 @@ PODS:
   - FMDB/standard (2.6.2)
   - HMEmoticon (1.0.12)
   - HMQRCodeScanner (1.0.6)
+  - KILabel (1.0.1)
   - LBXScan (2.0):
     - LBXScan/All (= 2.0)
   - LBXScan/All (2.0):
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - FMDB
   - HMEmoticon
   - HMQRCodeScanner
+  - KILabel
   - LBXScan
   - LKDBHelper
   - M13ProgressSuite
@@ -104,6 +106,7 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HMEmoticon: 7cac18c01b74a2eaf833e2083c0238cb3c29b6a8
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
+  KILabel: 4797807cdc0b4992dad8bf91175ddc973c3b569b
   LBXScan: 458f4b7a6688504a1415dc4a0f9822100e099f66
   LKDBHelper: ab67373b32f47463bf5f838d730f225824f4492a
   M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
@@ -122,6 +125,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
 
-PODFILE CHECKSUM: fa901363815285e8a294a9bbb67faeb872471d17
+PODFILE CHECKSUM: fa25105b1150091a6600c8cb342a7e0a32d9590e
 
 COCOAPODS: 1.2.0

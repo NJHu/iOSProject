@@ -31,6 +31,7 @@ pod 'MWPhotoBrowser'
 
 # 表情键盘
 pod 'HMEmoticon'
+pod 'KILabel'
 
 pod 'YYKit'
 

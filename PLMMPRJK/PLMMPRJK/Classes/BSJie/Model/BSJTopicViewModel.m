@@ -60,6 +60,8 @@ const CGFloat BSJCellContentImageMaxHeight = 1000.0;
     // 1, 计算文字的高度
     const CGFloat contentTextWidth = Main_Screen_Width - BSJCellScreenMargin * 2 - BSJCellEdageMargin * 2;
     
+    
+    
     CGSize aSize = CGSizeMake(contentTextWidth, INFINITY);
     CGFloat contentTextHeight = [topic.text boundingRectWithSize:aSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : AdaptedFontSize(16)} context:nil].size.height;
     

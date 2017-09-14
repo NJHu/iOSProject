@@ -11,6 +11,7 @@
 #import "SINDictURL.h"
 #import "SINUser.h"
 #import <HMEmoticonManager.h>
+#import <UIImage+HMEmoticon.h>
 
 static const CGFloat margin = 10.0;
 
@@ -52,7 +53,8 @@ static const CGFloat margin = 10.0;
         _cellHeight += headerHeight;
         
         _cellHeight += margin;
-        _cellHeight += self.sin_textPostLayout.textBoundingSize.height;
+        
+        _cellHeight += self.postTextHeight;
         
         _cellHeight += margin;
         
@@ -66,7 +68,7 @@ static const CGFloat margin = 10.0;
             
             _cellHeight += margin;
             
-            _cellHeight += self.sin_retweetStatusViewModel.sin_textPostLayout.textBoundingSize.height;
+            _cellHeight += self.sin_retweetStatusViewModel.postTextHeight;
             
             _cellHeight += margin;
             
@@ -94,34 +96,40 @@ static const CGFloat margin = 10.0;
 }
 
 
-- (YYTextLayout *)sin_textPostLayout
+- (NSMutableAttributedString *)sin_textPost
 {
-    if(_sin_textPostLayout == nil && !LMJIsEmpty(self.status.text))
+    if(_sin_textPost == nil && !LMJIsEmpty(self.status.text))
     {
         
         //        LMJWeakSelf(self);
-        NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithString:self.status.text];
-        
-        CGSize textSize = CGSizeMake(Main_Screen_Width - 2 * margin, INFINITY);
-        
+        NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithAttributedString:[[HMEmoticonManager sharedManager] emoticonStringWithString:self.status.text font:[UIFont systemFontOfSize:AdaptedWidth(15)] textColor:UIColor.redColor]];
         
         
         postTextM.lineSpacing = 4.0;
         postTextM.font = [UIFont systemFontOfSize:AdaptedWidth(15)];
         postTextM.color = [UIColor blackColor];
-        postTextM.backgroundColor = [UIColor redColor];
-        //        cmtsM.paragraphSpacing = 7.0;
+        postTextM.backgroundColor = [UIColor clearColor];
+        postTextM.paragraphSpacing = 7.0;
         
-        
-        
-        
-        YYTextLayout *sin_textPostLayout = [YYTextLayout layoutWithContainerSize:textSize text:postTextM];
-        
-        _sin_textPostLayout = sin_textPostLayout;
+        _sin_textPost = postTextM;
         
         
     }
-    return _sin_textPostLayout;
+    return _sin_textPost;
+}
+
+
+- (CGFloat)postTextHeight
+{
+    if(_postTextHeight == 0)
+    {
+        
+        CGSize textSize = CGSizeMake(Main_Screen_Width - 2 * margin, INFINITY);
+        
+        _postTextHeight = ceilf([self.sin_textPost boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
+        
+    }
+    return _postTextHeight;
 }
 
 - (UIImage *)sin_mbrankImage

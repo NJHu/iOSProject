@@ -15,6 +15,7 @@
 #import "SINStatusPicsView.h"
 #import "SINStatusRetweetView.h"
 #import <HMEmoticonManager.h>
+#import <KILabel.h>
 
 @interface SINStatusCell ()
 
@@ -37,7 +38,7 @@
 @property (weak, nonatomic)  UILabel *sourceCreatLabel;
 
 /** 说的内容 */
-@property (weak, nonatomic) YYLabel *textPostLabel;
+@property (weak, nonatomic) KILabel *textPostLabel;
 
 /** 底部的工具条 */
 @property (weak, nonatomic) SINStatusToolBarView *bottomToolBarView;
@@ -69,11 +70,11 @@ static const CGFloat margin = 10.0;
     
     self.screen_nameLabel.text = statusViewModel.status.user.screen_name;
     self.mbrankImageView.image = statusViewModel.sin_mbrankImage;
-    self.textPostLabel.textLayout = statusViewModel.sin_textPostLayout;
+    self.textPostLabel.attributedText = statusViewModel.sin_textPost;
     
     [self.textPostLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         
-        make.height.equalTo(statusViewModel.sin_textPostLayout.textBoundingSize.height);
+        make.height.equalTo(statusViewModel.postTextHeight);
         
     }];
     
@@ -250,11 +251,11 @@ static const CGFloat margin = 10.0;
     return _sepLineView;
 }
 
-- (YYLabel *)textPostLabel
+- (KILabel *)textPostLabel
 {
     if(_textPostLabel == nil)
     {
-        YYLabel *textPostLabel = [[YYLabel alloc] init];
+        KILabel *textPostLabel = [[KILabel alloc] init];
         [self.contentView addSubview:textPostLabel];
         _textPostLabel = textPostLabel;
         
@@ -270,6 +271,52 @@ static const CGFloat margin = 10.0;
             make.top.equalTo(self.profile_image_urlImageView.mas_bottom).offset(margin);
             make.height.equalTo(20);
         }];
+        
+//        /**
+//         *  Usernames starting with "@" token
+//         */
+//        KILinkTypeUserHandle,
+//        
+//        /**
+//         *  Hashtags starting with "#" token
+//         */
+//        KILinkTypeHashtag,
+//        
+//        /**
+//         *  URLs, http etc
+//         */
+//        KILinkTypeURL,
+        
+        [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeUserHandle];
+        [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeHashtag];
+        [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeURL];
+        
+        textPostLabel.userHandleLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
+            
+            NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
+            
+        };
+        
+        
+        textPostLabel.userHandleLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
+            
+            NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
+            
+        };
+        
+        textPostLabel.hashtagLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
+            
+            NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
+            
+        };
+        
+        
+        textPostLabel.urlLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
+            
+            NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
+            
+        };
+        
         
     }
     return _textPostLabel;
