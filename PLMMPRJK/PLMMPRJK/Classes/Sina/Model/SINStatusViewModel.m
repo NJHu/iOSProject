@@ -100,7 +100,7 @@ static const CGFloat margin = 10.0;
     {
         
         //        LMJWeakSelf(self);
-        NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithAttributedString:[[HMEmoticonManager sharedManager] emoticonStringWithString:self.status.text font:[UIFont systemFontOfSize:AdaptedWidth(15)] textColor:UIColor.blackColor]];
+        NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithString:self.status.text];
         
         CGSize textSize = CGSizeMake(Main_Screen_Width - 2 * margin, INFINITY);
         
@@ -111,6 +111,8 @@ static const CGFloat margin = 10.0;
         postTextM.color = [UIColor blackColor];
         postTextM.backgroundColor = [UIColor redColor];
         //        cmtsM.paragraphSpacing = 7.0;
+        
+        
         
         
         YYTextLayout *sin_textPostLayout = [YYTextLayout layoutWithContainerSize:textSize text:postTextM];

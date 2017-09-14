@@ -55,7 +55,6 @@ static const CGFloat margin = 10.0;
         make.size.equalTo(retweetStatusViewModel.sin_statusPicsViewModel.picsViewSize);
     }];
     
-    [self layoutIfNeeded];
     
     self.statusPicsView.statusViewModel = retweetStatusViewModel;
     
@@ -65,6 +64,7 @@ static const CGFloat margin = 10.0;
         
     }];
     
+    [self layoutIfNeeded];
 }
 
 
@@ -82,6 +82,7 @@ static const CGFloat margin = 10.0;
         textPostLabel.numberOfLines = 0;
         textPostLabel.textAlignment = NSTextAlignmentLeft;
         textPostLabel.preferredMaxLayoutWidth = Main_Screen_Width - 2 * margin;
+        textPostLabel.backgroundColor = [UIColor RandomColor];
         
         [textPostLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             
