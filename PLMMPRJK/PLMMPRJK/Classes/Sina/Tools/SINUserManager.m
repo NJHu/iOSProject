@@ -7,6 +7,7 @@
 //
 
 #import "SINUserManager.h"
+#import <HMEmoticonManager.h>
 
 @interface SINUserManager ()
 
@@ -53,7 +54,9 @@
         self.expiration = result.expiration;
         self.accessToken = result.accessToken;
         self.iconurl = result.iconurl;
-        self.name = result.name;
+        
+        [HMEmoticonManager sharedManager].userIdentifier = self.name;
+
         
         [self saveToFile];
         
