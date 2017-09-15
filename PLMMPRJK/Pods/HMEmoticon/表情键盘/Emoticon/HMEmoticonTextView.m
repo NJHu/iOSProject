@@ -55,6 +55,8 @@
     [super setText:text];
     
     [self textChanged];
+    
+    [self insertText:@""];
 }
 
 - (UIColor *)textColor {
@@ -67,7 +69,24 @@
     [super setAttributedText:attributedText];
     
     [self textChanged];
+    
+    [self insertText:@""];
 }
+
+- (void)deleteBackward
+{
+    [super deleteBackward];
+    
+    [self insertText:@""];
+}
+
+- (void)replaceRange:(UITextRange *)range withText:(NSString *)text
+{
+    [super replaceRange:range withText:text];
+    
+    [self insertText:@""];
+}
+
 
 #pragma mark - 构造函数
 - (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {

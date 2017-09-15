@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initKeyboard];
+    
 }
 
 
@@ -33,7 +33,7 @@
 {
     [super viewWillAppear:animated];
     
-    
+    [self initKeyboard];
 }
 
 

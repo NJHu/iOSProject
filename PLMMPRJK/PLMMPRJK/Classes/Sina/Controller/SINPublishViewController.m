@@ -23,24 +23,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.lightGrayColor;
+    self.view.backgroundColor = UIColor.groupTableViewBackgroundColor;
     
     [self.postTextView becomeFirstResponder];
     
-    IQKeyboardManager.sharedManager.enable = NO;
+    
+    [(UIButton *)self.lmj_navgationBar.rightView setEnabled:NO];
+    
     
 }
 
-
-- (UIReturnKeyType)textViewControllerLastReturnKeyType:(LMJTextViewController *)textViewController
+- (void)viewWillAppear:(BOOL)animated
 {
-    return UIReturnKeySend;
+    [super viewWillAppear:animated];
+    
+    IQKeyboardManager.sharedManager.enable = NO;
 }
 
-- (BOOL)textViewControllerEnableAutoToolbar:(LMJTextViewController *)textViewController
+
+#pragma mark - textviewdelegate
+
+- (void)textViewDidChange:(HMEmoticonTextView *)textView
 {
-    return NO;
+    [(UIButton *)self.lmj_navgationBar.rightView setEnabled:textView.emoticonText.length >= 20];
+    
 }
+
 
 
 #pragma mark - getter
@@ -65,7 +73,9 @@
         
         [postTextView mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.edges.equalTo(UIEdgeInsetsMake([self lmjNavigationHeight:self.lmj_navgationBar], 0, 0, 0));
+            make.top.offset([self lmjNavigationHeight:self.lmj_navgationBar]);
+            make.left.right.offset(0);
+            make.height.equalTo(self.view).multipliedBy(0.4);
         }];
         
         
@@ -74,7 +84,21 @@
 }
 
 
+
+
 #pragma mark - LMJNavUIBaseViewControllerDataSource
+
+- (UIReturnKeyType)textViewControllerLastReturnKeyType:(LMJTextViewController *)textViewController
+{
+    return UIReturnKeySend;
+}
+
+- (BOOL)textViewControllerEnableAutoToolbar:(LMJTextViewController *)textViewController
+{
+    return NO;
+}
+
+
 
 /** 导航条左边的按钮 */
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
@@ -92,6 +116,7 @@
     [rightButton setTitle:@"发布" forState:UIControlStateNormal];
     [rightButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     [rightButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [rightButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     
     return nil;
 }
