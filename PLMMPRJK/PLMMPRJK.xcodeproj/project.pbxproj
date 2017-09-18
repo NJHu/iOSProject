@@ -40,6 +40,11 @@
 		584CEA871EF3A54B00EAEFBA /* BSJMeSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEA861EF3A54B00EAEFBA /* BSJMeSquare.m */; };
 		584CEA8B1EF3A61F00EAEFBA /* BSJMeSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEA891EF3A61F00EAEFBA /* BSJMeSquareCell.m */; };
 		584CEA8C1EF3A61F00EAEFBA /* BSJMeSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 584CEA8A1EF3A61F00EAEFBA /* BSJMeSquareCell.xib */; };
+		5855298F1F6B798800CCA4DF /* SINPublishToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855298E1F6B798800CCA4DF /* SINPublishToolBar.m */; };
+		585529911F6B799900CCA4DF /* SINPublishToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585529901F6B799900CCA4DF /* SINPublishToolBar.xib */; };
+		585529971F6BB55200CCA4DF /* SINPostStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 585529961F6BB55200CCA4DF /* SINPostStatusService.m */; };
+		5855299A1F6BC9CB00CCA4DF /* SINSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585529991F6BC9CB00CCA4DF /* SINSQLiteManager.m */; };
+		5855299D1F6BDA3600CCA4DF /* SINStatusListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855299C1F6BDA3600CCA4DF /* SINStatusListDAL.m */; };
 		588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB701E9CB84A005F2A89 /* Preview.xcassets */; };
 		588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB721E9CB858005F2A89 /* Public.xcassets */; };
 		588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF61E9F2253005F2A89 /* wishPage_1.gif */; };
@@ -647,6 +652,15 @@
 		584CEA881EF3A61F00EAEFBA /* BSJMeSquareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJMeSquareCell.h; sourceTree = "<group>"; };
 		584CEA891EF3A61F00EAEFBA /* BSJMeSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJMeSquareCell.m; sourceTree = "<group>"; };
 		584CEA8A1EF3A61F00EAEFBA /* BSJMeSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJMeSquareCell.xib; sourceTree = "<group>"; };
+		5855298D1F6B798800CCA4DF /* SINPublishToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINPublishToolBar.h; sourceTree = "<group>"; };
+		5855298E1F6B798800CCA4DF /* SINPublishToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINPublishToolBar.m; sourceTree = "<group>"; };
+		585529901F6B799900CCA4DF /* SINPublishToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SINPublishToolBar.xib; sourceTree = "<group>"; };
+		585529951F6BB55200CCA4DF /* SINPostStatusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINPostStatusService.h; sourceTree = "<group>"; };
+		585529961F6BB55200CCA4DF /* SINPostStatusService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINPostStatusService.m; sourceTree = "<group>"; };
+		585529981F6BC9CB00CCA4DF /* SINSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINSQLiteManager.h; sourceTree = "<group>"; };
+		585529991F6BC9CB00CCA4DF /* SINSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINSQLiteManager.m; sourceTree = "<group>"; };
+		5855299B1F6BDA3600CCA4DF /* SINStatusListDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusListDAL.h; sourceTree = "<group>"; };
+		5855299C1F6BDA3600CCA4DF /* SINStatusListDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListDAL.m; sourceTree = "<group>"; };
 		588AAB701E9CB84A005F2A89 /* Preview.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Preview.xcassets; sourceTree = "<group>"; };
 		588AAB721E9CB858005F2A89 /* Public.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Public.xcassets; sourceTree = "<group>"; };
 		588AACF61E9F2253005F2A89 /* wishPage_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_1.gif; sourceTree = "<group>"; };
@@ -1740,6 +1754,10 @@
 				582F96BE1EF907AC00766666 /* SIN.h */,
 				582F96B51EF8EBF900766666 /* SINUserManager.h */,
 				582F96B61EF8EBF900766666 /* SINUserManager.m */,
+				585529981F6BC9CB00CCA4DF /* SINSQLiteManager.h */,
+				585529991F6BC9CB00CCA4DF /* SINSQLiteManager.m */,
+				5855299B1F6BDA3600CCA4DF /* SINStatusListDAL.h */,
+				5855299C1F6BDA3600CCA4DF /* SINStatusListDAL.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -2167,6 +2185,8 @@
 		588B328D1EC4312800D00C1C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				585529951F6BB55200CCA4DF /* SINPostStatusService.h */,
+				585529961F6BB55200CCA4DF /* SINPostStatusService.m */,
 				582F96D31EFA560200766666 /* SINStatusListService.h */,
 				582F96D41EFA560200766666 /* SINStatusListService.m */,
 			);
@@ -2189,6 +2209,9 @@
 				582F96E21EFB6E7900766666 /* SINStatusPicsView.m */,
 				5811FA5E1F039609000F49D6 /* SINStatusRetweetView.h */,
 				5811FA5F1F039609000F49D6 /* SINStatusRetweetView.m */,
+				5855298D1F6B798800CCA4DF /* SINPublishToolBar.h */,
+				5855298E1F6B798800CCA4DF /* SINPublishToolBar.m */,
+				585529901F6B799900CCA4DF /* SINPublishToolBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4984,6 +5007,7 @@
 				583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */,
 				58A663691EBD8E1300222A1D /* LMJH5_OCViewController.html in Resources */,
 				583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */,
+				585529911F6B799900CCA4DF /* SINPublishToolBar.xib in Resources */,
 				588AACFD1E9F2253005F2A89 /* wishPage_4.gif in Resources */,
 				588AACFC1E9F2253005F2A89 /* wishPage_3.gif in Resources */,
 				589FCFA31EED1619008FFB28 /* BSJCommentPageViewController.xib in Resources */,
@@ -5145,6 +5169,7 @@
 				58AFAB9A1EB4ADAA00822043 /* IQTitleBarButtonItem.m in Sources */,
 				58AFAB2A1EB4ADAA00822043 /* NSNumber+CGFloat.m in Sources */,
 				58AFABFD1EB4ADAA00822043 /* UIImageView+FaceAwareFill.m in Sources */,
+				5855298F1F6B798800CCA4DF /* SINPublishToolBar.m in Sources */,
 				58AFAB411EB4ADAA00822043 /* NSString+Matcher.m in Sources */,
 				582F96C91EFA45CD00766666 /* SINStatus.m in Sources */,
 				58AFAB461EB4ADAA00822043 /* NSString+Ruby.m in Sources */,
@@ -5332,6 +5357,7 @@
 				588B32B81EC442E200D00C1C /* BSJMeViewController.m in Sources */,
 				58AFABC61EB4ADAA00822043 /* MBProgressHUD+MP.m in Sources */,
 				58AFAB0C1EB4ADAA00822043 /* NSData+Encrypt.m in Sources */,
+				585529971F6BB55200CCA4DF /* SINPostStatusService.m in Sources */,
 				58AFABF31EB4ADAA00822043 /* UIImage+GIF.m in Sources */,
 				58AFAC521EB4ADAA00822043 /* LMJAutoRefreshFooter.m in Sources */,
 				58D40EC21EBCC781004A4358 /* LMJH5_OCViewController.m in Sources */,
@@ -5371,6 +5397,7 @@
 				58AFACA51EB4ADAB00822043 /* LMJRunTimeViewController.m in Sources */,
 				58AFAB031EB4ADAA00822043 /* NSManagedObjectContext+ObjectClear.m in Sources */,
 				58AFAB571EB4ADAA00822043 /* MKMapView+MoveLogo.m in Sources */,
+				5855299D1F6BDA3600CCA4DF /* SINStatusListDAL.m in Sources */,
 				58FFE9BF1EBF23F400D50E4C /* MPEventCalendar.m in Sources */,
 				58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */,
 				58AFACA81EB4ADAB00822043 /* LMJNSOperationViewController.m in Sources */,
@@ -5525,6 +5552,7 @@
 				58AFAB4C1EB4ADAA00822043 /* NSString+XML.m in Sources */,
 				588B32BD1EC4481700D00C1C /* SINHomeViewController.m in Sources */,
 				58AFAB3B1EB4ADAA00822043 /* NSString+Base64.m in Sources */,
+				5855299A1F6BC9CB00CCA4DF /* SINSQLiteManager.m in Sources */,
 				58AFABA81EB4ADAA00822043 /* QBImagePickerController.m in Sources */,
 				58AFAB0B1EB4ADAA00822043 /* NSData+Base64.m in Sources */,
 				58AFABD11EB4ADAA00822043 /* UIApplication+Permissions.m in Sources */,

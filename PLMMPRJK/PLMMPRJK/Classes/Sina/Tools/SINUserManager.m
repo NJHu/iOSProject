@@ -22,7 +22,7 @@
         return NO;
     }
     
-    if (self.expiration && [self.expiration compare:[NSDate date]] != NSOrderedDescending) {
+    if (!self.expiration || [self.expiration compare:[NSDate date]] != NSOrderedDescending) {
         return NO;
     }
     
@@ -54,6 +54,7 @@
         self.expiration = result.expiration;
         self.accessToken = result.accessToken;
         self.iconurl = result.iconurl;
+        self.uid = result.uid;
         
         [HMEmoticonManager sharedManager].userIdentifier = self.name;
 
@@ -80,7 +81,7 @@
         _expiration = [decoder decodeObjectForKey:LMJKeyPath(self, expiration)];
         _accessToken = [decoder decodeObjectForKey:LMJKeyPath(self, accessToken)];
         _iconurl = [decoder decodeObjectForKey:LMJKeyPath(self, iconurl)];
-        
+        _uid = [decoder decodeObjectForKey:LMJKeyPath(self, uid)];
         
     } 
     return self; 
@@ -93,6 +94,7 @@
     [encoder encodeObject:self.expiration forKey:LMJKeyPath(self, expiration)];
     [encoder encodeObject:self.accessToken forKey:LMJKeyPath(self, accessToken)];
     [encoder encodeObject:self.iconurl forKey:LMJKeyPath(self, iconurl)];
+    [encoder encodeObject:self.uid forKey:LMJKeyPath(self, uid)];
     
 }
 

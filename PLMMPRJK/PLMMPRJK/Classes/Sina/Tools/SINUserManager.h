@@ -27,6 +27,9 @@
 /** 头像 */
 @property (nonatomic, copy) NSString *iconurl;
 
+/** <#digest#> */
+@property (nonatomic, copy) NSString *uid;
+
 
 // 归档
 - (void)saveToFile;

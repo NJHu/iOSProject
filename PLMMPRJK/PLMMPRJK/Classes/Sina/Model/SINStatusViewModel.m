@@ -335,7 +335,6 @@ static const CGFloat margin = 10.0;
         CGFloat itemHeight = 0;
         
         CGFloat maxWidth = Main_Screen_Width - 2 * margin;
-        CGFloat maxHeight = 200;
         CGFloat itemMargin = 5;
         
         if (self.status.pic_urls.count == 0) {
@@ -343,34 +342,13 @@ static const CGFloat margin = 10.0;
             
         }else if (self.status.pic_urls.count == 1) {
             
-            CGSize imageSize = self.status.pic_urls.firstObject.picSize;
-            
-            if (imageSize.width <= maxWidth) {
-                
-                picsViewSize.width = imageSize.width;
-                
-            }else
-            {
-                picsViewSize.width = maxWidth;
-            }
-            
-            if (picsViewSize.width < maxHeight) {
-                picsViewSize.width = maxHeight;
-            }
+            itemWidth = (Main_Screen_Width - 2 * margin - 2 * itemMargin) / 3.0;
+            itemHeight = itemWidth;
+            cols = 3;
+            lines = (self.status.pic_urls.count + 2) / 3;
             
             
-            CGFloat imageShowHeight = picsViewSize.width * imageSize.height / imageSize.width;
-            
-            if (imageShowHeight > maxHeight) {
-                imageShowHeight = maxHeight;
-            }
-            
-            picsViewSize.height = imageShowHeight;
-            
-            cols = 1;
-            lines = 1;
-            itemWidth = picsViewSize.width;
-            itemHeight = picsViewSize.height;
+            picsViewSize = CGSizeMake(maxWidth, (itemHeight + itemMargin) * lines - itemMargin);
             
             
         }else if (self.status.pic_urls.count == 4) {
