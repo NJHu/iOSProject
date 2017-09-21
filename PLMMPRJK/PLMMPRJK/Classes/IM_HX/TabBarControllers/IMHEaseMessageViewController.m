@@ -44,6 +44,7 @@
 - (UIReturnKeyType)textViewControllerLastReturnKeyType:(LMJTextViewController *)textViewController
 {
     return UIReturnKeySend;
+    
 }
 
 - (NSArray<UITextField *> *)requiredTextFields{
