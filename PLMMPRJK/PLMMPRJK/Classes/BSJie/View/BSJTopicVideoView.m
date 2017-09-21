@@ -10,6 +10,9 @@
 #import "BSJTopicViewModel.h"
 #import <M13ProgressViewRing.h>
 
+#import "NJVideoPlayViewController.h"
+#import "NJAVPlayerViewController.h"
+
 @interface BSJTopicVideoView ()
 /** <#digest#> */
 @property (weak, nonatomic) UIImageView *pictureImageView;
@@ -211,8 +214,40 @@
             
         }];
         
+        [btn addTarget:self action:@selector(playVideo:) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     return _voicePlayButton;
+}
+
+
+
+
+
+//#define NJPlayer
+
+- (void)playVideo:(UIButton *)btn
+{
+    
+#ifdef NJPlayer
+    
+    NJVideoPlayViewController *videoVc = [[NJVideoPlayViewController alloc] init];
+    videoVc.videoUrl = self.topicViewModel.topic.videoUrl.absoluteString;
+    
+    
+    
+    [self.viewController presentViewController:videoVc animated:NO completion:nil];
+    
+#else
+    
+    NJAVPlayerViewController *videoVc = [[NJAVPlayerViewController alloc] init];
+    videoVc.videoUrl = self.topicViewModel.topic.videoUrl.absoluteString;
+    
+    
+    [self.viewController presentViewController:videoVc animated:NO completion:nil];
+    
+#endif
+    
 }
 
 

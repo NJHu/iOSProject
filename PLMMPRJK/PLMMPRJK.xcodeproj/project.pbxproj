@@ -149,6 +149,11 @@
 		58552F321F72521000CCA4DF /* PSTGridLayoutRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F241F72521000CCA4DF /* PSTGridLayoutRow.m */; };
 		58552F331F72521000CCA4DF /* PSTGridLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F261F72521000CCA4DF /* PSTGridLayoutSection.m */; };
 		58552F361F7269D300CCA4DF /* IMHEaseMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F351F7269D300CCA4DF /* IMHEaseMessageViewController.m */; };
+		58552F3C1F73B3CD00CCA4DF /* NJPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 58552F381F73B3CC00CCA4DF /* NJPlayer.bundle */; };
+		58552F3D1F73B3CD00CCA4DF /* NJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F3A1F73B3CC00CCA4DF /* NJPlayerView.m */; };
+		58552F3E1F73B3CD00CCA4DF /* NJPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58552F3B1F73B3CC00CCA4DF /* NJPlayerView.xib */; };
+		58552F411F73B51B00CCA4DF /* NJVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F401F73B51B00CCA4DF /* NJVideoPlayViewController.m */; };
+		58552F441F73C3AE00CCA4DF /* NJAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F431F73C3AE00CCA4DF /* NJAVPlayerViewController.m */; };
 		588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB701E9CB84A005F2A89 /* Preview.xcassets */; };
 		588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB721E9CB858005F2A89 /* Public.xcassets */; };
 		588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF61E9F2253005F2A89 /* wishPage_1.gif */; };
@@ -990,6 +995,14 @@
 		58552F261F72521000CCA4DF /* PSTGridLayoutSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutSection.m; sourceTree = "<group>"; };
 		58552F341F7269D300CCA4DF /* IMHEaseMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMHEaseMessageViewController.h; sourceTree = "<group>"; };
 		58552F351F7269D300CCA4DF /* IMHEaseMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMHEaseMessageViewController.m; sourceTree = "<group>"; };
+		58552F381F73B3CC00CCA4DF /* NJPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NJPlayer.bundle; sourceTree = "<group>"; };
+		58552F391F73B3CC00CCA4DF /* NJPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJPlayerView.h; sourceTree = "<group>"; };
+		58552F3A1F73B3CC00CCA4DF /* NJPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJPlayerView.m; sourceTree = "<group>"; };
+		58552F3B1F73B3CC00CCA4DF /* NJPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJPlayerView.xib; sourceTree = "<group>"; };
+		58552F3F1F73B51B00CCA4DF /* NJVideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJVideoPlayViewController.h; sourceTree = "<group>"; };
+		58552F401F73B51B00CCA4DF /* NJVideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJVideoPlayViewController.m; sourceTree = "<group>"; };
+		58552F421F73C3AE00CCA4DF /* NJAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJAVPlayerViewController.h; sourceTree = "<group>"; };
+		58552F431F73C3AE00CCA4DF /* NJAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJAVPlayerViewController.m; sourceTree = "<group>"; };
 		588AAB701E9CB84A005F2A89 /* Preview.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Preview.xcassets; sourceTree = "<group>"; };
 		588AAB721E9CB858005F2A89 /* Public.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Public.xcassets; sourceTree = "<group>"; };
 		588AACF61E9F2253005F2A89 /* wishPage_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_1.gif; sourceTree = "<group>"; };
@@ -2574,6 +2587,21 @@
 			path = PSTCollectionView;
 			sourceTree = "<group>";
 		};
+		58552F371F73B3CC00CCA4DF /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				58552F381F73B3CC00CCA4DF /* NJPlayer.bundle */,
+				58552F391F73B3CC00CCA4DF /* NJPlayerView.h */,
+				58552F3A1F73B3CC00CCA4DF /* NJPlayerView.m */,
+				58552F3B1F73B3CC00CCA4DF /* NJPlayerView.xib */,
+				58552F3F1F73B51B00CCA4DF /* NJVideoPlayViewController.h */,
+				58552F401F73B51B00CCA4DF /* NJVideoPlayViewController.m */,
+				58552F421F73C3AE00CCA4DF /* NJAVPlayerViewController.h */,
+				58552F431F73C3AE00CCA4DF /* NJAVPlayerViewController.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		588AACF51E9F2253005F2A89 /* PLMMPRIKImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -2799,6 +2827,7 @@
 		588B32791EC4312800D00C1C /* BSJie */ = {
 			isa = PBXGroup;
 			children = (
+				58552F371F73B3CC00CCA4DF /* Player */,
 				588B327A1EC4312800D00C1C /* Controller */,
 				588B327D1EC4312800D00C1C /* Model */,
 				588B327F1EC4312800D00C1C /* Other */,
@@ -5851,6 +5880,7 @@
 				583DFE4A1ECD36870097D826 /* BSJTrendViewController.xib in Resources */,
 				58A663691EBD8E1300222A1D /* LMJH5_OCViewController.html in Resources */,
 				583DFE4F1ECD3A8E0097D826 /* BSJLoginRegisterViewController.xib in Resources */,
+				58552F3E1F73B3CD00CCA4DF /* NJPlayerView.xib in Resources */,
 				585529911F6B799900CCA4DF /* SINPublishToolBar.xib in Resources */,
 				588AACFD1E9F2253005F2A89 /* wishPage_4.gif in Resources */,
 				588AACFC1E9F2253005F2A89 /* wishPage_3.gif in Resources */,
@@ -5882,6 +5912,7 @@
 				588B32BA1EC447CE00D00C1C /* BSJ.xcassets in Resources */,
 				588AACFB1E9F2253005F2A89 /* wishPage_2.gif in Resources */,
 				58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */,
+				58552F3C1F73B3CD00CCA4DF /* NJPlayer.bundle in Resources */,
 				589375921EE3F0FB00BE0990 /* BSJTopicCmtCell.xib in Resources */,
 				582F96E01EFA975900766666 /* SINStatusToolBarView.xib in Resources */,
 				58F144831ECE9C890053B2A2 /* BSJTopicCell.xib in Resources */,
@@ -6461,6 +6492,7 @@
 				583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */,
 				58552EAD1F724E3600CCA4DF /* UIViewController+DismissKeyboard.m in Sources */,
 				58AFABA11EB4ADAA00822043 /* QBAssetsCollectionCheckmarkView.m in Sources */,
+				58552F441F73C3AE00CCA4DF /* NJAVPlayerViewController.m in Sources */,
 				58AFAB3C1EB4ADAA00822043 /* NSString+Contains.m in Sources */,
 				58AFAC301EB4ADAA00822043 /* UIView+Nib.m in Sources */,
 				58552EFF1F72515200CCA4DF /* EMSDWebImageManager.m in Sources */,
@@ -6508,6 +6540,7 @@
 				58AFABCC1EB4ADAA00822043 /* UIView+Empty.m in Sources */,
 				58AFAB0A1EB4ADAA00822043 /* NSData+APNSToken.m in Sources */,
 				58AFAB1C1EB4ADAA00822043 /* NSDictionary+Merge.m in Sources */,
+				58552F3D1F73B3CD00CCA4DF /* NJPlayerView.m in Sources */,
 				58AFABE51EB4ADAA00822043 /* UIControl+Block.m in Sources */,
 				58AFABE71EB4ADAA00822043 /* UIDevice+PasscodeStatus.m in Sources */,
 				58F1446E1ECDDD100053B2A2 /* UIView+ZJFrame.m in Sources */,
@@ -6547,6 +6580,7 @@
 				58AFAB241EB4ADAA00822043 /* NSIndexPath+Offset.m in Sources */,
 				58552F061F72515200CCA4DF /* UIImage+EMWebP.m in Sources */,
 				58AFAAF81EB4ADAA00822043 /* LMJActivityViewController.m in Sources */,
+				58552F411F73B51B00CCA4DF /* NJVideoPlayViewController.m in Sources */,
 				58552EC71F724E3600CCA4DF /* EaseBubbleView+Video.m in Sources */,
 				582F96E31EFB6E7900766666 /* SINStatusPicsView.m in Sources */,
 				58AFAB191EB4ADAA00822043 /* NSDateFormatter+Make.m in Sources */,
