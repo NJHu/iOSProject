@@ -8,6 +8,7 @@
 
 #ifndef LMJHelpers_h
 #define LMJHelpers_h
+#ifdef __OBJC__
 
 
 #import "AddressPickerView.h"
@@ -56,5 +57,5 @@
 
 
 
-
+#endif
 #endif /* LMJTools_h */

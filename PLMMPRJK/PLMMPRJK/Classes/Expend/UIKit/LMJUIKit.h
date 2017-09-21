@@ -8,6 +8,7 @@
 
 #ifndef LMJUIKit_h
 #define LMJUIKit_h
+#ifdef __OBJC__
 
 
 #import "UIAlertView+Block.h"
@@ -160,5 +161,5 @@
 #import "UIWindow+Hierarchy.h"
 
 
-
+#endif
 #endif /* LMJUIKit_h */

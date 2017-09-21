@@ -44,7 +44,7 @@
     
     
     
-    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"IM_HX" subTitle: nil];
+    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"IM_HX" subTitle: @"环信聊天"];
     [item2 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[IMHTabBarController alloc] init] animated:YES completion:nil];
     }];
@@ -65,7 +65,11 @@
 
     
     
+<<<<<<< HEAD
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1] andHeaderTitle:nil footerTitle:nil];
+=======
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4] andHeaderTitle:nil footerTitle:nil];
+>>>>>>> dev
     
     [self.sections addObject:section0];
     

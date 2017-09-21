@@ -9,7 +9,7 @@
 
 #ifndef PLMMPRJK_pch
 #define PLMMPRJK_pch
-
+#ifdef __OBJC__
 
 #import <UIKit/UIKit.h>
 
@@ -54,5 +54,6 @@
 
 
 
+#endif /* PLMMPRJK_pch */
 #endif /* PLMMPRJK_pch */
 

@@ -8,6 +8,7 @@
 
 #ifndef LMJTools_h
 #define LMJTools_h
+#ifdef __OBJC__
 
 
 #import "LMJGuideManager.h"
@@ -17,3 +18,4 @@
 #import "LMJRequestManager.h"
 
 #endif /* LMJTools_h */
+#endif

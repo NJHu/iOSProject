@@ -7,7 +7,7 @@
 //
 
 #import "LMJAppDelegate.h"
-#import "LMJAppDelegate+LMJCTool.h"
+#import "IMHAppDelegate.h"
 
 @implementation LMJAppDelegate
 
@@ -47,8 +47,9 @@
         }];
         
     }
-
-    [NSClassFromString(@"BSJHlightedTextField") new];
+    
+    
+    
     
     return YES;
 }
@@ -142,6 +143,7 @@
     
     
     
+    
     return result;
 }
 
@@ -156,6 +158,10 @@
                         stringByReplacingOccurrencesOfString: @" " withString: @""];
     
     NSLog(@"%@", string);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[EMClient sharedClient] bindDeviceToken:deviceToken];
+    });
 }
 
 
@@ -310,6 +316,22 @@
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
+}
+
+- (void)setLaunchOptions:(NSDictionary *)launchOptions
+{
+    _launchOptions = launchOptions;
+    
+    //配置DDLog
+    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
+    [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
+    
+    
+    
+    // 友盟
+    [MPUmengHelper UMAnalyticStart];
+    [MPUmengHelper UMSocialStart];
+    [MPUmengHelper UMPushStart:launchOptions];
 }
 
 @end

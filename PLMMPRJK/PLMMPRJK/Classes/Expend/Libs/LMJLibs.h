@@ -8,6 +8,7 @@
 
 #ifndef LMJLibs_h
 #define LMJLibs_h
+#ifdef __OBJC__
 
 //引入Masonry两个宏 便于写布局代码
 #define MAS_SHORTHAND
@@ -96,4 +97,5 @@
 
 
 
+#endif /* LMJLibs_h */
 #endif /* LMJLibs_h */

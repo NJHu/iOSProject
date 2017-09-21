@@ -9,7 +9,7 @@
 #ifndef LMJCategorys_h
 #define LMJCategorys_h
 
-
+#ifdef __OBJC__
 #import "NSFetchRequest+Extensions.h"
 #import "NSManagedObject+DictionaryExport.h"
 #import "NSManagedObject+Extensions.h"
@@ -110,5 +110,5 @@
 #import "CATransaction+AnimateWithDuration.h"
 
 
-
+#endif
 #endif /* LMJCategorys_h */

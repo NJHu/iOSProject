@@ -13,6 +13,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+/** <#digest#> */
+@property (nonatomic, strong) NSDictionary *launchOptions;
+
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
 - (void)saveContext;
