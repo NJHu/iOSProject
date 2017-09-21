@@ -45,8 +45,6 @@
 		585529971F6BB55200CCA4DF /* SINPostStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 585529961F6BB55200CCA4DF /* SINPostStatusService.m */; };
 		5855299A1F6BC9CB00CCA4DF /* SINSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585529991F6BC9CB00CCA4DF /* SINSQLiteManager.m */; };
 		5855299D1F6BDA3600CCA4DF /* SINStatusListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855299C1F6BDA3600CCA4DF /* SINStatusListDAL.m */; };
-<<<<<<< HEAD
-=======
 		585529A41F711C7700CCA4DF /* WXIM.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585529A31F711C7700CCA4DF /* WXIM.xcassets */; };
 		585529A81F71200000CCA4DF /* IMHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 585529A71F71200000CCA4DF /* IMHAppDelegate.m */; };
 		585529AC1F71FAFE00CCA4DF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585529AB1F71FAFE00CCA4DF /* AudioToolbox.framework */; };
@@ -151,7 +149,6 @@
 		58552F321F72521000CCA4DF /* PSTGridLayoutRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F241F72521000CCA4DF /* PSTGridLayoutRow.m */; };
 		58552F331F72521000CCA4DF /* PSTGridLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F261F72521000CCA4DF /* PSTGridLayoutSection.m */; };
 		58552F361F7269D300CCA4DF /* IMHEaseMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F351F7269D300CCA4DF /* IMHEaseMessageViewController.m */; };
->>>>>>> dev
 		588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB701E9CB84A005F2A89 /* Preview.xcassets */; };
 		588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB721E9CB858005F2A89 /* Public.xcassets */; };
 		588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF61E9F2253005F2A89 /* wishPage_1.gif */; };
@@ -781,8 +778,6 @@
 		585529991F6BC9CB00CCA4DF /* SINSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINSQLiteManager.m; sourceTree = "<group>"; };
 		5855299B1F6BDA3600CCA4DF /* SINStatusListDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusListDAL.h; sourceTree = "<group>"; };
 		5855299C1F6BDA3600CCA4DF /* SINStatusListDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListDAL.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
 		585529A31F711C7700CCA4DF /* WXIM.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WXIM.xcassets; sourceTree = "<group>"; };
 		585529A61F71200000CCA4DF /* IMHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMHAppDelegate.h; sourceTree = "<group>"; };
 		585529A71F71200000CCA4DF /* IMHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMHAppDelegate.m; sourceTree = "<group>"; };
@@ -995,7 +990,6 @@
 		58552F261F72521000CCA4DF /* PSTGridLayoutSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutSection.m; sourceTree = "<group>"; };
 		58552F341F7269D300CCA4DF /* IMHEaseMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMHEaseMessageViewController.h; sourceTree = "<group>"; };
 		58552F351F7269D300CCA4DF /* IMHEaseMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMHEaseMessageViewController.m; sourceTree = "<group>"; };
->>>>>>> dev
 		588AAB701E9CB84A005F2A89 /* Preview.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Preview.xcassets; sourceTree = "<group>"; };
 		588AAB721E9CB858005F2A89 /* Public.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Public.xcassets; sourceTree = "<group>"; };
 		588AACF61E9F2253005F2A89 /* wishPage_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_1.gif; sourceTree = "<group>"; };
@@ -2116,8 +2110,6 @@
 			path = AnimatorBroswer;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
 		585529A51F711F7E00CCA4DF /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -2582,7 +2574,6 @@
 			path = PSTCollectionView;
 			sourceTree = "<group>";
 		};
->>>>>>> dev
 		588AACF51E9F2253005F2A89 /* PLMMPRIKImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -5666,10 +5657,7 @@
 				588AAB721E9CB858005F2A89 /* Public.xcassets */,
 				588B32B91EC447CE00D00C1C /* BSJ.xcassets */,
 				588E9C351EF7BC9A006F599B /* Sina.xcassets */,
-<<<<<<< HEAD
-=======
 				585529A31F711C7700CCA4DF /* WXIM.xcassets */,
->>>>>>> dev
 				588AACF51E9F2253005F2A89 /* PLMMPRIKImages */,
 				E7D0E0601E8B9DCB001E4585 /* Info.plist */,
 				E7D0E0581E8B9DCB001E4585 /* PLMMPRJK.xcdatamodeld */,
@@ -5761,11 +5749,7 @@
 		E7D0E0411E8B9DCA001E4585 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-<<<<<<< HEAD
-				CLASSPREFIX = SIN;
-=======
 				CLASSPREFIX = IMH;
->>>>>>> dev
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = GoMePrjk;
 				TargetAttributes = {
@@ -6011,10 +5995,7 @@
 				582F96B71EF8EBF900766666 /* SINUserManager.m in Sources */,
 				582F96DB1EFA72D500766666 /* SINStatusCell.m in Sources */,
 				58AFAC5E1EB4ADAB00822043 /* LMJRefreshTableViewController.m in Sources */,
-<<<<<<< HEAD
-=======
 				585529BA1F72076E00CCA4DF /* IMHContractsViewController.m in Sources */,
->>>>>>> dev
 				588E9C391EF7BD52006F599B /* SINTabBar.m in Sources */,
 				58AFABED1EB4ADAA00822043 /* UIImage+BetterFace.m in Sources */,
 				58AFAC891EB4ADAB00822043 /* LMJNoNavBarViewController.m in Sources */,
@@ -6301,10 +6282,7 @@
 				588B329D1EC43CC900D00C1C /* BSJTabBarController.m in Sources */,
 				582F96C61EF923A200766666 /* SINHomeCategoryViewController.m in Sources */,
 				582F96D21EFA55D400766666 /* SINStatusViewModel.m in Sources */,
-<<<<<<< HEAD
-=======
 				58552EAE1F724E3600CCA4DF /* UIViewController+HUD.m in Sources */,
->>>>>>> dev
 				58AFACA21EB4ADAB00822043 /* LMJModalBlockViewController.m in Sources */,
 				588B32B51EC442D100D00C1C /* BSJTrendViewController.m in Sources */,
 				58F144711ECDDD100053B2A2 /* ZJContentView.m in Sources */,
@@ -6316,18 +6294,12 @@
 				58AFAB031EB4ADAA00822043 /* NSManagedObjectContext+ObjectClear.m in Sources */,
 				58AFAB571EB4ADAA00822043 /* MKMapView+MoveLogo.m in Sources */,
 				5855299D1F6BDA3600CCA4DF /* SINStatusListDAL.m in Sources */,
-<<<<<<< HEAD
-=======
 				58552EC11F724E3600CCA4DF /* EaseMessageTimeCell.m in Sources */,
->>>>>>> dev
 				58FFE9BF1EBF23F400D50E4C /* MPEventCalendar.m in Sources */,
 				58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */,
 				58AFACA81EB4ADAB00822043 /* LMJNSOperationViewController.m in Sources */,
 				582F96EF1EFD2A8200766666 /* SINBroswerCell.m in Sources */,
-<<<<<<< HEAD
-=======
 				58552EB71F724E3600CCA4DF /* EaseConversationListViewController.m in Sources */,
->>>>>>> dev
 				589375981EE3FB9400BE0990 /* BSJTopicCmtService.m in Sources */,
 				589FCFA91EED2CE3008FFB28 /* LMJCommentHeaderView.m in Sources */,
 				58AFABE01EB4ADAA00822043 /* UIColor+HEX.m in Sources */,
@@ -6363,10 +6335,7 @@
 				58AFABD41EB4ADAA00822043 /* UIBezierPath+Length.m in Sources */,
 				58AFACB31EB4ADAB00822043 /* UIButton+LMJBlock.m in Sources */,
 				58AFAB1A1EB4ADAA00822043 /* NSDictionary+Block.m in Sources */,
-<<<<<<< HEAD
-=======
 				58552F2B1F72521000CCA4DF /* PSTCollectionViewData.m in Sources */,
->>>>>>> dev
 				582F96EC1EFD26F400766666 /* SINBroswerViewController.m in Sources */,
 				58AFAB4E1EB4ADAA00822043 /* NSTimer+Blocks.m in Sources */,
 				58AFAB041EB4ADAA00822043 /* NSPersistentStoreCoordinator+Custom.m in Sources */,
@@ -6513,10 +6482,7 @@
 				58AFAC011EB4ADAA00822043 /* UILabel+AutomaticWriting.m in Sources */,
 				58552F001F72515200CCA4DF /* EMSDWebImagePrefetcher.m in Sources */,
 				58AFABF01EB4ADAA00822043 /* UIImage+Color.m in Sources */,
-<<<<<<< HEAD
-=======
 				58552F041F72515200CCA4DF /* UIImage+EMGIF.m in Sources */,
->>>>>>> dev
 				582F96DE1EFA974300766666 /* SINStatusToolBarView.m in Sources */,
 				58AFAB7D1EB4ADAA00822043 /* introductoryPagesView.m in Sources */,
 				58B3CC781EC819FB00D3C02D /* BSJRecommendUserCell.m in Sources */,
@@ -6581,10 +6547,7 @@
 				58AFAB241EB4ADAA00822043 /* NSIndexPath+Offset.m in Sources */,
 				58552F061F72515200CCA4DF /* UIImage+EMWebP.m in Sources */,
 				58AFAAF81EB4ADAA00822043 /* LMJActivityViewController.m in Sources */,
-<<<<<<< HEAD
-=======
 				58552EC71F724E3600CCA4DF /* EaseBubbleView+Video.m in Sources */,
->>>>>>> dev
 				582F96E31EFB6E7900766666 /* SINStatusPicsView.m in Sources */,
 				58AFAB191EB4ADAA00822043 /* NSDateFormatter+Make.m in Sources */,
 			);

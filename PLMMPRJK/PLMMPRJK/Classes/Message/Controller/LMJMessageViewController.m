@@ -65,11 +65,7 @@
 
     
     
-<<<<<<< HEAD
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1] andHeaderTitle:nil footerTitle:nil];
-=======
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4] andHeaderTitle:nil footerTitle:nil];
->>>>>>> dev
     
     [self.sections addObject:section0];
     

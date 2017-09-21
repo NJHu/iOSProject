@@ -20,8 +20,6 @@
     UIEdgeInsets insets = self.tableView.contentInset;
     insets.top += self.lmj_navgationBar.lmj_height;
     self.tableView.contentInset = insets;
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -44,7 +42,6 @@
 - (UIReturnKeyType)textViewControllerLastReturnKeyType:(LMJTextViewController *)textViewController
 {
     return UIReturnKeySend;
-    
 }
 
 - (NSArray<UITextField *> *)requiredTextFields{
