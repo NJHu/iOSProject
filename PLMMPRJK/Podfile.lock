@@ -28,7 +28,9 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - HMEmoticon (1.0.12)
   - HMQRCodeScanner (1.0.6)
+  - KILabel (1.0.1)
   - LBXScan (2.0):
     - LBXScan/All (= 2.0)
   - LBXScan/All (2.0):
@@ -73,7 +75,9 @@ DEPENDENCIES:
   - CYLTabBarController
   - FLEX (~> 2.0)
   - FMDB
+  - HMEmoticon
   - HMQRCodeScanner
+  - KILabel
   - LBXScan
   - LKDBHelper
   - M13ProgressSuite
@@ -100,7 +104,9 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  HMEmoticon: 7cac18c01b74a2eaf833e2083c0238cb3c29b6a8
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
+  KILabel: 4797807cdc0b4992dad8bf91175ddc973c3b569b
   LBXScan: 458f4b7a6688504a1415dc4a0f9822100e099f66
   LKDBHelper: ab67373b32f47463bf5f838d730f225824f4492a
   M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
@@ -119,6 +125,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
 
-PODFILE CHECKSUM: 96d8a3bcdbabd32bdd414f2f547fbae65ea9dd31
+PODFILE CHECKSUM: aab1e01c73bc6f5f1010012110dd24393f5311d6
 
 COCOAPODS: 1.2.0

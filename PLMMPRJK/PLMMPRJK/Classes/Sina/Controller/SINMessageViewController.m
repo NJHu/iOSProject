@@ -10,28 +10,78 @@
 
 @interface SINMessageViewController ()
 
+/** <#digest#> */
+@property (weak, nonatomic) SINUnLoginRegisterView *unLoginRegisterView;
+
 @end
 
 @implementation SINMessageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([SINUserManager sharedManager].isLogined) {
+//        self.tableView.hidden = NO;
+        self.unLoginRegisterView.hidden = YES;
+    }else
+    {
+//        self.tableView.hidden = YES;
+        self.unLoginRegisterView.hidden = NO;
+//        [self endHeaderFooterRefreshing];
+    }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+#pragma mark - getter
+
+- (SINUnLoginRegisterView *)unLoginRegisterView
+{
+    if(_unLoginRegisterView == nil)
+    {
+        LMJWeakSelf(self);
+        SINUnLoginRegisterView *unLoginRegisterView = [SINUnLoginRegisterView unLoginRegisterViewWithType:SINUnLoginRegisterViewTypeMsgPage registClick:^{
+            
+            [weakself gotoLogin];
+            
+        } loginClick:^{
+            
+            [weakself gotoLogin];
+            
+        }];
+        
+        
+        [self.view addSubview:unLoginRegisterView];
+        _unLoginRegisterView = unLoginRegisterView;
+        
+        
+        [unLoginRegisterView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.edges.offset(0);
+        }];
+        
+    }
+    return _unLoginRegisterView;
 }
-*/
+
+- (void)gotoLogin
+{
+    [[SINUserManager sharedManager] sinaLogin:^(NSError *error) {
+        
+        if (!error) {
+            
+            self.unLoginRegisterView.hidden = YES;
+        }
+        
+    }];
+    
+}
+
 
 @end

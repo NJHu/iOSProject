@@ -11,6 +11,6 @@
 @interface BSJWordToolBar : UIView
 
 /** <#digest#> */
-@property (nonatomic, strong) NSMutableArray *tagTitles;
+@property (nonatomic, strong) NSMutableArray<NSString *> *tagTitles;
 
 @end

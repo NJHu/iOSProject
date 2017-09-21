@@ -7,7 +7,8 @@
 //
 
 #import "LMJBaseViewController.h"
+#import "SIN.h"
 
-@interface SINPublishViewController : LMJBaseViewController
+@interface SINPublishViewController : LMJCollectionViewController
 
 @end

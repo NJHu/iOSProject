@@ -6,6 +6,17 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>种子计划</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>MKDirectionsRequest</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.apple.maps.directionsrequest</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -172,6 +183,21 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array>
+		<string>MKDirectionsModeBike</string>
+		<string>MKDirectionsModeBus</string>
+		<string>MKDirectionsModeCar</string>
+		<string>MKDirectionsModeFerry</string>
+		<string>MKDirectionsModeOther</string>
+		<string>MKDirectionsModePedestrian</string>
+		<string>MKDirectionsModePlane</string>
+		<string>MKDirectionsModeRideShare</string>
+		<string>MKDirectionsModeStreetCar</string>
+		<string>MKDirectionsModeSubway</string>
+		<string>MKDirectionsModeTaxi</string>
+		<string>MKDirectionsModeTrain</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -327,11 +353,20 @@
 	<string>需要访问您的相册</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+		<string>external-accessory</string>
+		<string>fetch</string>
+		<string>location</string>
+		<string>newsstand-content</string>
 		<string>remote-notification</string>
+		<string>voip</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>gamekit</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

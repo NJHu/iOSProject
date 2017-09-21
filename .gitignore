@@ -21,11 +21,18 @@ xcuserdata/
 *.moved-aside
 *.xcuserstate
 
+## 自己忽略的
+
+
+
+
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
 *.dSYM.zip
 *.dSYM
+*.libbaiduNaviSDK.a
+
 
 # CocoaPods
 #
@@ -58,3 +65,5 @@ fastlane/screenshots
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate

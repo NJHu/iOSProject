@@ -7,6 +7,7 @@
 //
 
 #import "LMJBaseViewController.h"
+#import "SIN.h"
 
 @interface SINDiscoveryViewController : LMJBaseViewController
 

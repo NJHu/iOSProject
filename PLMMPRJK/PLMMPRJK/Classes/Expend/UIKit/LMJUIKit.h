@@ -8,6 +8,7 @@
 
 #ifndef LMJUIKit_h
 #define LMJUIKit_h
+#ifdef __OBJC__
 
 
 #import "UIAlertView+Block.h"
@@ -107,12 +108,6 @@
 
 #import "UISplitViewController+QuickAccess.h"
 
-#import "UITableView+iOS7Style.h"
-
-#import "UITableView+FDIndexPathHeightCache.h"
-#import "UITableView+FDKeyedHeightCache.h"
-#import "UITableView+FDTemplateLayoutCell.h"
-#import "UITableView+FDTemplateLayoutCellDebug.h"
 
 #import "UITableViewCell+NIB.h"
 #import "UITableViewCell+TS_delaysContentTouches.h"
@@ -166,5 +161,5 @@
 #import "UIWindow+Hierarchy.h"
 
 
-
+#endif
 #endif /* LMJUIKit_h */

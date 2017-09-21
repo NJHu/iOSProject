@@ -8,6 +8,7 @@
 
 #ifndef LMJControls_h
 #define LMJControls_h
+#ifdef __OBJC__
 
 
 
@@ -20,3 +21,4 @@
 
 
 #endif /* LMJControls_h */
+#endif

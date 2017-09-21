@@ -1,0 +1,18 @@
+/************************************************************
+ *  * Hyphenate CONFIDENTIAL
+ * __________________
+ * Copyright (C) 2016 Hyphenate Inc. All rights reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Hyphenate Inc.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Hyphenate Inc.
+ */
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#endif

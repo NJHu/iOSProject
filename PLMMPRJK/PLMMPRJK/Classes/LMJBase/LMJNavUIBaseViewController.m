@@ -72,7 +72,7 @@
 /**头部标题*/
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
-    return [self changeTitle:self.navigationItem.title ?: self.title];
+    return [self changeTitle:self.title ?: self.navigationItem.title];
 }
 
 /** 背景图片 */

@@ -9,7 +9,7 @@
 #ifndef LMJCategorys_h
 #define LMJCategorys_h
 
-
+#ifdef __OBJC__
 #import "NSFetchRequest+Extensions.h"
 #import "NSManagedObject+DictionaryExport.h"
 #import "NSManagedObject+Extensions.h"
@@ -54,6 +54,7 @@
 #import "NSNotificationCenter+MainThread.h"
 #import "NSDecimalNumber+CalculatingByString.h"
 #import "NSDecimalNumber+Extensions.h"
+#import "NSDecimalNumber+Addtion.h"
 #import "NSNumber+CGFloat.h"
 #import "NSNumber+RomanNumerals.h"
 #import "NSNumber+Round.h"
@@ -109,5 +110,5 @@
 #import "CATransaction+AnimateWithDuration.h"
 
 
-
+#endif
 #endif /* LMJCategorys_h */

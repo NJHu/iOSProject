@@ -20,6 +20,8 @@
 /** <#digest#> */
 @property (strong, nonatomic) UIButton *addTagButton;
 
+/** <#digest#> */
+@property (nonatomic, strong) NSMutableArray<UIView *> *tagLabels;
 
 @end
 
@@ -51,16 +53,88 @@ static CGFloat tagHeight = 25;
     [self tagsView];
     
     self.backgroundColor = [UIColor greenColor];
+    
+    self.tagTitles = [NSMutableArray arrayWithArray:@[@"段子", @"糗事"]];
 }
 
+
+
+
+#pragma mark - setter
+- (void)setTagTitles:(NSMutableArray<NSString *> *)tagTitles
+{
+    _tagTitles = tagTitles;
+    
+    
+    [self.tagLabels removeAllObjects];
+    [self.tagsView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    [tagTitles enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        UILabel *tagLabel = [[UILabel alloc] init];
+        [self.tagsView addSubview:tagLabel];
+        [self.tagLabels addObject:tagLabel];
+        tagLabel.text = obj.copy;
+        tagLabel.lmj_size = CGSizeMake(tagWidth, tagHeight);
+        tagLabel.backgroundColor = [UIColor blueColor];
+        tagLabel.textColor = [UIColor whiteColor];
+        tagLabel.font = [UIFont systemFontOfSize:14];
+        tagLabel.textAlignment = NSTextAlignmentCenter;
+        
+    }];
+    
+    
+    [self.tagsView addSubview:self.addTagButton];
+    [self.tagLabels addObject:self.addTagButton];
+    
+    [self layoutIfNeeded];
+    
+    
+}
+
+
+#pragma mark - 计算
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
+    CGFloat colMargin = 10;
+    CGFloat lineMargin = 10;
+    CGFloat tagViewWidth = self.tagsView.lmj_width;
+    
+    
+    __block UIView *lastView = nil;
+    [self.tagLabels enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        
+        if (idx == 0) {
+            
+            obj.lmj_origin = CGPointMake(0, 0);
+            
+        }else
+        {
+            CGFloat leftWidth = tagViewWidth - CGRectGetMaxX(lastView.frame) - colMargin;
+            
+            if (leftWidth >= obj.lmj_width) {
+                
+                obj.lmj_origin = CGPointMake(CGRectGetMaxX(lastView.frame) + colMargin, lastView.lmj_y);
+                
+            }else
+            {
+                obj.lmj_origin = CGPointMake(0, CGRectGetMaxY(lastView.frame) + lineMargin);
+            }
+            
+        }
+        
+        lastView = obj;
+        
+    }];
+    
+    self.tagsView.lmj_height = CGRectGetMaxY(self.tagLabels.lastObject.frame) + 35;
+    
+    self.lmj_height = self.tagsView.lmj_height + self.toolBar.lmj_height;
     
 }
-
-
 
 
 
@@ -115,12 +189,25 @@ static CGFloat tagHeight = 25;
     {
         
         UIButton *addTagButton = [[UIButton alloc] init];
-        addTagButton.lmj_size = CGSizeMake(40, 25);
+        _addTagButton = addTagButton;
+        
+        addTagButton.lmj_size = CGSizeMake(tagWidth, tagHeight);
         [addTagButton setImage:[UIImage imageNamed:@"tag_add_icon"] forState:UIControlStateNormal];
         [addTagButton addTarget:self action:@selector(addMoreTags:) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return _addTagButton;
+}
+
+- (NSMutableArray<UIView *> *)tagLabels
+{
+    if (!_tagLabels) {
+        
+        _tagLabels = [NSMutableArray array];
+        
+    }
+    
+    return _tagLabels;
 }
 
 #pragma mark - action

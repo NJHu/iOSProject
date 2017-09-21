@@ -31,20 +31,20 @@
     self.tableView.contentInset = edgeInsets;
     
     
-    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"BSJ" subTitle: nil];
+    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"BSJ" subTitle: @"百思不得姐"];
     [item0 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[BSJTabBarController alloc] init] animated:YES completion:nil];
     }];
     
     
-    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"SIN" subTitle: nil];
+    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"SIN" subTitle: @"新浪微博"];
     [item1 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[SINTabBarController alloc] init] animated:YES completion:nil];
     }];
     
     
     
-    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"IM_HX" subTitle: nil];
+    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"IM_HX" subTitle: @"环信聊天"];
     [item2 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[IMHTabBarController alloc] init] animated:YES completion:nil];
     }];
@@ -65,7 +65,7 @@
 
     
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0] andHeaderTitle:nil footerTitle:nil];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4] andHeaderTitle:nil footerTitle:nil];
     
     [self.sections addObject:section0];
     

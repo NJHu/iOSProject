@@ -27,7 +27,9 @@
     [self.subviews enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
             [tabBarButtonMutableArray addObject:obj];
+            obj.lmj_size = CGSizeMake(itemWidth, self.lmj_height);
         }
+        
     }];
     
 
@@ -46,6 +48,8 @@
         
         
     }];
+    
+    [self bringSubviewToFront:self.publishBtn];
 }
 
 
@@ -72,18 +76,27 @@
     return _publishBtn;
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
-{
-    
-    if (CGRectContainsPoint(self.publishBtn.frame, point)) {
-        
-        return self.publishBtn;
-        
-    }
-    
-    return [super hitTest:point withEvent:event];
-        
-        
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+//{
+//    
+//    if ([self pointInside:point withEvent:event] &&  CGRectContainsPoint(self.publishBtn.frame, point)) {
+//        
+//        return self.publishBtn;
+//        
+//    }
+//    
+//    return [super hitTest:point withEvent:event];
+//        
+//        
+//}
+
 
 @end
+
+
+
+
+
+
+
+

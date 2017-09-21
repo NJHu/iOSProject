@@ -18,6 +18,9 @@ pod 'UMengAnalytics'
 #百度地图SDK
 pod 'BaiduMapKit'
 
+#包含实时语音版本 SDK（Hyphenate），引用时 #import <Hyphenate/Hyphenate.h>
+#pod 'Hyphenate'
+
 
 pod 'ActionSheetPicker-3.0'
 
@@ -28,6 +31,10 @@ pod 'RegexKitLite'
 pod 'SVProgressHUD'
 
 pod 'MWPhotoBrowser'
+
+# 表情键盘
+pod 'HMEmoticon'
+pod 'KILabel'
 
 pod 'YYKit'
 

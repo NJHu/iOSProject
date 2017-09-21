@@ -7,7 +7,8 @@
 //
 
 #import "LMJBaseViewController.h"
+#import "SIN.h"
 
-@interface SINHomeViewController : LMJBaseViewController
+@interface SINHomeViewController : LMJRefreshTableViewController
 
 @end
