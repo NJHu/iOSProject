@@ -12,6 +12,7 @@
 
 #import "NJVideoPlayViewController.h"
 #import "NJAVPlayerViewController.h"
+#import "NJVitamioViewController.h"
 
 @interface BSJTopicVideoView ()
 /** <#digest#> */
@@ -224,29 +225,39 @@
 
 
 
-//#define NJPlayer
-
 - (void)playVideo:(UIButton *)btn
 {
     
-#ifdef NJPlayer
+    static NSInteger NJPlayer = 3;
+
+    switch (NJPlayer) {
+        case 1:
+        {
+            NJVideoPlayViewController *videoVc = [[NJVideoPlayViewController alloc] init];
+            videoVc.videoUrl = self.topicViewModel.topic.videoUrl.absoluteString;
+            
+            [self.viewController presentViewController:videoVc animated:NO completion:nil];
+        }
+            break;
+        case 2:
+        {
+            NJAVPlayerViewController *videoVc = [[NJAVPlayerViewController alloc] init];
+            videoVc.videoUrl = self.topicViewModel.topic.videoUrl.absoluteString;
+            
+            [self.viewController presentViewController:videoVc animated:NO completion:nil];
+        }
+            break;
+        case 3:
+        {
+
+                NJVitamioViewController *videoVc = [[NJVitamioViewController alloc] init];
+                videoVc.videoUrl = self.topicViewModel.topic.videoUrl.absoluteString;
+                [self.viewController presentViewController:videoVc animated:NO completion:nil];
+        }
+            break;
+            
+    }
     
-    NJVideoPlayViewController *videoVc = [[NJVideoPlayViewController alloc] init];
-    videoVc.videoUrl = self.topicViewModel.topic.videoUrl.absoluteString;
-    
-    
-    
-    [self.viewController presentViewController:videoVc animated:NO completion:nil];
-    
-#else
-    
-    NJAVPlayerViewController *videoVc = [[NJAVPlayerViewController alloc] init];
-    videoVc.videoUrl = self.topicViewModel.topic.videoUrl.absoluteString;
-    
-    
-    [self.viewController presentViewController:videoVc animated:NO completion:nil];
-    
-#endif
     
 }
 

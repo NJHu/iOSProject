@@ -7,6 +7,10 @@
 //
 
 #import "VIDTabBarController.h"
+#import "VIDLocalViewController.h"
+#import "VIDNetListViewController.h"
+#import "VIDTableViewController.h"
+#import "VIDCollectionViewController.h"
 
 @interface VIDTabBarController ()
 
@@ -16,22 +20,71 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tabBar.tintColor = RGB(25, 179, 10);
+    self.tabBar.unselectedItemTintColor = RGB(103, 107, 112);
+    self.titlePositionAdjustment = UIOffsetMake(0, -10);
+    [self addTabarItems];
+    [self addChildViewControllers];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (void)addChildViewControllers
+{
+    LMJNavigationController *one = [[LMJNavigationController alloc] initWithRootViewController:[[VIDNetListViewController alloc] init]];
+    
+    LMJNavigationController *two = [[LMJNavigationController alloc] initWithRootViewController:[[VIDTableViewController alloc] init]];
+    
+    LMJNavigationController *four = [[LMJNavigationController alloc] initWithRootViewController:[[VIDCollectionViewController alloc] init]];
+    
+    LMJNavigationController *five = [[LMJNavigationController alloc] initWithRootViewController:[[VIDLocalViewController alloc] init]];
+    
+    self.viewControllers = @[one, two, four, five];
+    
 }
 
 /*
-#pragma mark - Navigation
+ 
+ tabbar_home
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)addTabarItems
+{
+    
+    
+    NSDictionary *firstTabBarItemsAttributes = @{
+                                                 CYLTabBarItemTitle : @"列表视频",
+                                                
+                                                 };
+    
+    NSDictionary *secondTabBarItemsAttributes = @{
+                                                  CYLTabBarItemTitle : @"Table视频",
+                                                  };
+    NSDictionary *thirdTabBarItemsAttributes = @{
+                                                 CYLTabBarItemTitle : @"Collection视频",
+                                                 };
+    
+    NSDictionary *fourthTabBarItemsAttributes = @{
+                                                  CYLTabBarItemTitle : @"Local下载",
+                                                  };
+    
+    self.tabBarItemsAttributes = @[
+                                   firstTabBarItemsAttributes,
+                                   secondTabBarItemsAttributes,
+                                   thirdTabBarItemsAttributes,
+                                   fourthTabBarItemsAttributes
+                                   ];
+    
 }
-*/
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    return YES;
+}
+
+
+
 
 @end

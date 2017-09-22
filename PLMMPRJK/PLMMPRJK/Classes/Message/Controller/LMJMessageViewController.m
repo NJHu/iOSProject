@@ -58,7 +58,7 @@
     
     
     
-    LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"Videos" subTitle: nil];
+    LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"Videos" subTitle: @"列表视频"];
     [item4 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[VIDTabBarController alloc] init] animated:YES completion:nil];
     }];
