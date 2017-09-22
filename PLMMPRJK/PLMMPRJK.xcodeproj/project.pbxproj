@@ -190,6 +190,11 @@
 		58552FFE1F74BA4700CCA4DF /* VIDCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552FFD1F74BA4700CCA4DF /* VIDCollectionViewController.m */; };
 		585530011F74BA5A00CCA4DF /* VIDLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585530001F74BA5A00CCA4DF /* VIDLocalViewController.m */; };
 		585530041F74D59F00CCA4DF /* VIDMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585530031F74D59F00CCA4DF /* VIDMoviePlayerViewController.m */; };
+		585530201F74FD2B00CCA4DF /* VIDTableViewVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855301E1F74FD2B00CCA4DF /* VIDTableViewVideoCell.m */; };
+		585530211F74FD2B00CCA4DF /* VIDTableViewVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5855301F1F74FD2B00CCA4DF /* VIDTableViewVideoCell.xib */; };
+		585530271F74FED300CCA4DF /* videoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 585530221F74FED300CCA4DF /* videoData.json */; };
+		585530281F74FED300CCA4DF /* ZFVideoResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 585530231F74FED300CCA4DF /* ZFVideoResolution.m */; };
+		585530291F74FED300CCA4DF /* ZFVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 585530251F74FED300CCA4DF /* ZFVideoModel.m */; };
 		588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB701E9CB84A005F2A89 /* Preview.xcassets */; };
 		588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB721E9CB858005F2A89 /* Public.xcassets */; };
 		588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF61E9F2253005F2A89 /* wishPage_1.gif */; };
@@ -1105,6 +1110,14 @@
 		585530001F74BA5A00CCA4DF /* VIDLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDLocalViewController.m; sourceTree = "<group>"; };
 		585530021F74D59F00CCA4DF /* VIDMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDMoviePlayerViewController.h; sourceTree = "<group>"; };
 		585530031F74D59F00CCA4DF /* VIDMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDMoviePlayerViewController.m; sourceTree = "<group>"; };
+		5855301D1F74FD2B00CCA4DF /* VIDTableViewVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDTableViewVideoCell.h; sourceTree = "<group>"; };
+		5855301E1F74FD2B00CCA4DF /* VIDTableViewVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDTableViewVideoCell.m; sourceTree = "<group>"; };
+		5855301F1F74FD2B00CCA4DF /* VIDTableViewVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIDTableViewVideoCell.xib; sourceTree = "<group>"; };
+		585530221F74FED300CCA4DF /* videoData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoData.json; sourceTree = "<group>"; };
+		585530231F74FED300CCA4DF /* ZFVideoResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFVideoResolution.m; sourceTree = "<group>"; };
+		585530241F74FED300CCA4DF /* ZFVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFVideoModel.h; sourceTree = "<group>"; };
+		585530251F74FED300CCA4DF /* ZFVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFVideoModel.m; sourceTree = "<group>"; };
+		585530261F74FED300CCA4DF /* ZFVideoResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFVideoResolution.h; sourceTree = "<group>"; };
 		588AAB701E9CB84A005F2A89 /* Preview.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Preview.xcassets; sourceTree = "<group>"; };
 		588AAB721E9CB858005F2A89 /* Public.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Public.xcassets; sourceTree = "<group>"; };
 		588AACF61E9F2253005F2A89 /* wishPage_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_1.gif; sourceTree = "<group>"; };
@@ -3017,6 +3030,11 @@
 		588B325D1EC4309300D00C1C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				585530221F74FED300CCA4DF /* videoData.json */,
+				585530261F74FED300CCA4DF /* ZFVideoResolution.h */,
+				585530231F74FED300CCA4DF /* ZFVideoResolution.m */,
+				585530241F74FED300CCA4DF /* ZFVideoModel.h */,
+				585530251F74FED300CCA4DF /* ZFVideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3038,6 +3056,9 @@
 		588B32631EC4309300D00C1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5855301D1F74FD2B00CCA4DF /* VIDTableViewVideoCell.h */,
+				5855301E1F74FD2B00CCA4DF /* VIDTableViewVideoCell.m */,
+				5855301F1F74FD2B00CCA4DF /* VIDTableViewVideoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6131,6 +6152,7 @@
 				58AFABBE1EB4ADAA00822043 /* UMSocialSDKPromptResources.bundle in Resources */,
 				58B3CC6E1EC809F300D3C02D /* BSJReommmendCategoryCell.xib in Resources */,
 				585529A41F711C7700CCA4DF /* WXIM.xcassets in Resources */,
+				585530271F74FED300CCA4DF /* videoData.json in Resources */,
 				58AFAB5F1EB4ADAA00822043 /* addressData.plist in Resources */,
 				58AFABC01EB4ADAA00822043 /* UMSocialSDKResources.bundle in Resources */,
 				58AFAB651EB4ADAA00822043 /* blankpage_button_reload@2x.png in Resources */,
@@ -6139,6 +6161,7 @@
 				58552F921F74B42B00CCA4DF /* NJPlayerView.xib in Resources */,
 				588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */,
 				58AFAB9D1EB4ADAA00822043 /* IQKeyboardManager.bundle in Resources */,
+				585530211F74FD2B00CCA4DF /* VIDTableViewVideoCell.xib in Resources */,
 				58AFABBB1EB4ADAA00822043 /* README.txt in Resources */,
 				588B32BA1EC447CE00D00C1C /* BSJ.xcassets in Resources */,
 				588AACFB1E9F2253005F2A89 /* wishPage_2.gif in Resources */,
@@ -6246,6 +6269,7 @@
 				588B32A01EC43CFE00D00C1C /* SINTabBarController.m in Sources */,
 				58552F311F72521000CCA4DF /* PSTGridLayoutItem.m in Sources */,
 				58AFAC531EB4ADAA00822043 /* LMJElementsFlowLayout.m in Sources */,
+				585530281F74FED300CCA4DF /* ZFVideoResolution.m in Sources */,
 				58AFABC31EB4ADAA00822043 /* GVUserDefaults+BBProperties.m in Sources */,
 				58AFAC491EB4ADAA00822043 /* UIWindow+Hierarchy.m in Sources */,
 				58FFE9AD1EBEDD5C00D50E4C /* IFlyFaceResultKeys.m in Sources */,
@@ -6267,6 +6291,7 @@
 				58AFAC161EB4ADAA00822043 /* UIScrollView+Pages.m in Sources */,
 				58AFAC051EB4ADAA00822043 /* UINavigationBar+Awesome.m in Sources */,
 				58AFAC961EB4ADAB00822043 /* MPMultitextCell.m in Sources */,
+				585530291F74FED300CCA4DF /* ZFVideoModel.m in Sources */,
 				584CEA8B1EF3A61F00EAEFBA /* BSJMeSquareCell.m in Sources */,
 				58FFE9C21EBF61D500D50E4C /* LMJNavBarFadeViewController.m in Sources */,
 				58FFE9A91EBEDD5C00D50E4C /* IFlyFaceImage.m in Sources */,
@@ -6570,6 +6595,7 @@
 				58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */,
 				58AFACA81EB4ADAB00822043 /* LMJNSOperationViewController.m in Sources */,
 				582F96EF1EFD2A8200766666 /* SINBroswerCell.m in Sources */,
+				585530201F74FD2B00CCA4DF /* VIDTableViewVideoCell.m in Sources */,
 				58552EB71F724E3600CCA4DF /* EaseConversationListViewController.m in Sources */,
 				589375981EE3FB9400BE0990 /* BSJTopicCmtService.m in Sources */,
 				589FCFA91EED2CE3008FFB28 /* LMJCommentHeaderView.m in Sources */,
