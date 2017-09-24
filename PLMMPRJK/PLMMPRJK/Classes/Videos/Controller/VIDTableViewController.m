@@ -31,6 +31,10 @@
     self.tableView.rowHeight = 300.0f;
     
     self.navigationItem.title = @"TableView列表视频";
+    
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += 49;
+    self.tableView.contentInset = insets;
 }
 
 

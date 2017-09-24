@@ -16,22 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    LMJWordArrowItem *item = [LMJWordArrowItem itemWithTitle:@"1" subTitle:@"1.1"];
+    LMJWordArrowItem *item1 = [LMJWordArrowItem itemWithTitle:@"1" subTitle:@"1.2"];
+    
+    LMJWordArrowItem *item2 = [LMJWordArrowItem itemWithTitle:@"2" subTitle:@"2.1"];
+    LMJWordArrowItem *item3 = [LMJWordArrowItem itemWithTitle:@"2" subTitle:@"2.2"];
+    
+    
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item, item1] andHeaderTitle:@"第一组header" footerTitle:@"第1组Footer"];
+    
+    LMJItemSection *section1 = [LMJItemSection sectionWithItems:@[item2, item3] andHeaderTitle:@"第2组header" footerTitle:@"第2组Footer"];
+    
+    [self.sections addObject:section0];
+    [self.sections addObject:section1];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

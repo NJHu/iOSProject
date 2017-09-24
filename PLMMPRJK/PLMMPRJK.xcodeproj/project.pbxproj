@@ -195,6 +195,8 @@
 		585530271F74FED300CCA4DF /* videoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 585530221F74FED300CCA4DF /* videoData.json */; };
 		585530281F74FED300CCA4DF /* ZFVideoResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 585530231F74FED300CCA4DF /* ZFVideoResolution.m */; };
 		585530291F74FED300CCA4DF /* ZFVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 585530251F74FED300CCA4DF /* ZFVideoModel.m */; };
+		5855302D1F76729E00CCA4DF /* VIDCollectionViewVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855302B1F76729E00CCA4DF /* VIDCollectionViewVideoCell.m */; };
+		5855302E1F76729F00CCA4DF /* VIDCollectionViewVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5855302C1F76729E00CCA4DF /* VIDCollectionViewVideoCell.xib */; };
 		588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB701E9CB84A005F2A89 /* Preview.xcassets */; };
 		588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB721E9CB858005F2A89 /* Public.xcassets */; };
 		588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF61E9F2253005F2A89 /* wishPage_1.gif */; };
@@ -1118,6 +1120,9 @@
 		585530241F74FED300CCA4DF /* ZFVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFVideoModel.h; sourceTree = "<group>"; };
 		585530251F74FED300CCA4DF /* ZFVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFVideoModel.m; sourceTree = "<group>"; };
 		585530261F74FED300CCA4DF /* ZFVideoResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFVideoResolution.h; sourceTree = "<group>"; };
+		5855302A1F76729E00CCA4DF /* VIDCollectionViewVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDCollectionViewVideoCell.h; sourceTree = "<group>"; };
+		5855302B1F76729E00CCA4DF /* VIDCollectionViewVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDCollectionViewVideoCell.m; sourceTree = "<group>"; };
+		5855302C1F76729E00CCA4DF /* VIDCollectionViewVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIDCollectionViewVideoCell.xib; sourceTree = "<group>"; };
 		588AAB701E9CB84A005F2A89 /* Preview.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Preview.xcassets; sourceTree = "<group>"; };
 		588AAB721E9CB858005F2A89 /* Public.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Public.xcassets; sourceTree = "<group>"; };
 		588AACF61E9F2253005F2A89 /* wishPage_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_1.gif; sourceTree = "<group>"; };
@@ -3059,6 +3064,9 @@
 				5855301D1F74FD2B00CCA4DF /* VIDTableViewVideoCell.h */,
 				5855301E1F74FD2B00CCA4DF /* VIDTableViewVideoCell.m */,
 				5855301F1F74FD2B00CCA4DF /* VIDTableViewVideoCell.xib */,
+				5855302A1F76729E00CCA4DF /* VIDCollectionViewVideoCell.h */,
+				5855302B1F76729E00CCA4DF /* VIDCollectionViewVideoCell.m */,
+				5855302C1F76729E00CCA4DF /* VIDCollectionViewVideoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6035,7 +6043,7 @@
 					E7D0E0481E8B9DCA001E4585 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EH8D228RS6;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
 								enabled = 0;
@@ -6123,6 +6131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5855302E1F76729F00CCA4DF /* VIDCollectionViewVideoCell.xib in Resources */,
 				588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */,
 				58552ED31F724E3600CCA4DF /* EaseUIResource.bundle in Resources */,
 				58AFABA91EB4ADAA00822043 /* QBImagePickerController.strings in Resources */,
@@ -6542,6 +6551,7 @@
 				58552F2E1F72521000CCA4DF /* PSTCollectionViewLayout.m in Sources */,
 				58AFAB0C1EB4ADAA00822043 /* NSData+Encrypt.m in Sources */,
 				585529971F6BB55200CCA4DF /* SINPostStatusService.m in Sources */,
+				5855302D1F76729E00CCA4DF /* VIDCollectionViewVideoCell.m in Sources */,
 				58AFABF31EB4ADAA00822043 /* UIImage+GIF.m in Sources */,
 				58AFAC521EB4ADAA00822043 /* LMJAutoRefreshFooter.m in Sources */,
 				58552EC81F724E3600CCA4DF /* EaseBubbleView+Voice.m in Sources */,
@@ -7000,7 +7010,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = PLMMPRJK/PLMMPRJK.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = EH8D228RS6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7136,8 +7146,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagle.zplan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cfae780d-2374-4314-b91c-762d4e2d1495";
-				PROVISIONING_PROFILE_SPECIFIER = dev_zplan_pro20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -7149,8 +7159,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = PLMMPRJK/PLMMPRJK.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = EH8D228RS6;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7286,8 +7296,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eagle.zplan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2868cf5d-4299-42ff-aee9-7eed065d588d";
-				PROVISIONING_PROFILE_SPECIFIER = dis_adhoc_pro_20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
