@@ -38,6 +38,7 @@
 		583E45911F7A4A740069B8BB /* ZFHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 583E458D1F7A4A740069B8BB /* ZFHttpRequest.m */; };
 		583E45DE1F7A4C440069B8BB /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 583E45DD1F7A4C440069B8BB /* libxml2.tbd */; };
 		583E45E01F7A4C510069B8BB /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 583E45DF1F7A4C510069B8BB /* libxml2.2.tbd */; };
+		583E45E31F7A63D00069B8BB /* MUSHomeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583E45E21F7A63D00069B8BB /* MUSHomeListViewController.m */; };
 		583EB8AA1EBAC08400A945D3 /* LMJQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EB8A91EBAC08400A945D3 /* LMJQRCodeViewController.m */; };
 		583EB8AC1EBAC24900A945D3 /* WechatIMG10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 583EB8AB1EBAC24900A945D3 /* WechatIMG10.jpeg */; };
 		583EB8AF1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EB8AE1EBAD23000A945D3 /* LMJUpLoadImagesViewController.m */; };
@@ -216,7 +217,6 @@
 		588B329D1EC43CC900D00C1C /* BSJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B329C1EC43CC900D00C1C /* BSJTabBarController.m */; };
 		588B32A01EC43CFE00D00C1C /* SINTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B329F1EC43CFE00D00C1C /* SINTabBarController.m */; };
 		588B32A31EC43D1B00D00C1C /* IMHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32A21EC43D1B00D00C1C /* IMHTabBarController.m */; };
-		588B32A61EC43D3200D00C1C /* MUSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32A51EC43D3200D00C1C /* MUSTabBarController.m */; };
 		588B32A91EC43D4500D00C1C /* VIDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32A81EC43D4500D00C1C /* VIDTabBarController.m */; };
 		588B32AC1EC4425300D00C1C /* BSJEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32AB1EC4425300D00C1C /* BSJEssenceViewController.m */; };
 		588B32AF1EC4428100D00C1C /* BSJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B32AE1EC4428100D00C1C /* BSJNewViewController.m */; };
@@ -823,6 +823,8 @@
 		583E458D1F7A4A740069B8BB /* ZFHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFHttpRequest.m; sourceTree = "<group>"; };
 		583E45DD1F7A4C440069B8BB /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		583E45DF1F7A4C510069B8BB /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		583E45E11F7A63D00069B8BB /* MUSHomeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSHomeListViewController.h; sourceTree = "<group>"; };
+		583E45E21F7A63D00069B8BB /* MUSHomeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSHomeListViewController.m; sourceTree = "<group>"; };
 		583EB8A81EBAC08400A945D3 /* LMJQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJQRCodeViewController.h; sourceTree = "<group>"; };
 		583EB8A91EBAC08400A945D3 /* LMJQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJQRCodeViewController.m; sourceTree = "<group>"; };
 		583EB8AB1EBAC24900A945D3 /* WechatIMG10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG10.jpeg; sourceTree = "<group>"; };
@@ -1161,8 +1163,6 @@
 		588B329F1EC43CFE00D00C1C /* SINTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINTabBarController.m; sourceTree = "<group>"; };
 		588B32A11EC43D1B00D00C1C /* IMHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMHTabBarController.h; sourceTree = "<group>"; };
 		588B32A21EC43D1B00D00C1C /* IMHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMHTabBarController.m; sourceTree = "<group>"; };
-		588B32A41EC43D3200D00C1C /* MUSTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSTabBarController.h; sourceTree = "<group>"; };
-		588B32A51EC43D3200D00C1C /* MUSTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSTabBarController.m; sourceTree = "<group>"; };
 		588B32A71EC43D4500D00C1C /* VIDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDTabBarController.h; sourceTree = "<group>"; };
 		588B32A81EC43D4500D00C1C /* VIDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDTabBarController.m; sourceTree = "<group>"; };
 		588B32AA1EC4425300D00C1C /* BSJEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJEssenceViewController.h; sourceTree = "<group>"; };
@@ -2954,8 +2954,8 @@
 		588B32421EC4309300D00C1C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				588B32A41EC43D3200D00C1C /* MUSTabBarController.h */,
-				588B32A51EC43D3200D00C1C /* MUSTabBarController.m */,
+				583E45E11F7A63D00069B8BB /* MUSHomeListViewController.h */,
+				583E45E21F7A63D00069B8BB /* MUSHomeListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -6779,6 +6779,7 @@
 				58AFAB561EB4ADAA00822043 /* MKMapView+BetterMaps.m in Sources */,
 				58AFAB941EB4ADAA00822043 /* IQUIWindow+Hierarchy.m in Sources */,
 				58552F2C1F72521000CCA4DF /* PSTCollectionViewFlowLayout.m in Sources */,
+				583E45E31F7A63D00069B8BB /* MUSHomeListViewController.m in Sources */,
 				58552ED21F724E3600CCA4DF /* EaseConversationCell.m in Sources */,
 				58AFAB7F1EB4ADAA00822043 /* MPLocationManager.m in Sources */,
 				58B3CC5B1EC7F6CC00D3C02D /* BSJTopicViewController.m in Sources */,
@@ -6871,7 +6872,6 @@
 				58AFACAC1EB4ADAB00822043 /* LMJRunTimeTest+LMJMethod.m in Sources */,
 				588B32A91EC43D4500D00C1C /* VIDTabBarController.m in Sources */,
 				589375951EE3FB4200BE0990 /* BSJComment.m in Sources */,
-				588B32A61EC43D3200D00C1C /* MUSTabBarController.m in Sources */,
 				58AFAB581EB4ADAA00822043 /* MKMapView+ZoomLevel.m in Sources */,
 				58552F361F7269D300CCA4DF /* IMHEaseMessageViewController.m in Sources */,
 				58AFABCC1EB4ADAA00822043 /* UIView+Empty.m in Sources */,

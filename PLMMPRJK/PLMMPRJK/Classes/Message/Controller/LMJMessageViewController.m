@@ -10,7 +10,7 @@
 #import "BSJTabBarController.h"
 #import "SINTabBarController.h"
 #import "IMHTabBarController.h"
-#import "MUSTabBarController.h"
+#import "MUSHomeListViewController.h"
 #import "VIDTabBarController.h"
 
 @interface LMJMessageViewController ()
@@ -51,9 +51,9 @@
     
     
     
-    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"Musics" subTitle: nil];
+    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"Musics" subTitle: @"QQ音乐"];
     [item3 setItemOperation:^(NSIndexPath *indexPath){
-        [weakself presentViewController:[[MUSTabBarController alloc] init] animated:YES completion:nil];
+        [weakself presentViewController:[[LMJNavigationController alloc] initWithRootViewController:[[MUSHomeListViewController alloc] init]] animated:YES completion:nil];
     }];
     
     
