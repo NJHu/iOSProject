@@ -8,6 +8,7 @@
 
 #import "LMJNavUIBaseViewController.h"
 
+
 @interface VIDMoviePlayerViewController : LMJBaseViewController
 
 /** <#digest#> */

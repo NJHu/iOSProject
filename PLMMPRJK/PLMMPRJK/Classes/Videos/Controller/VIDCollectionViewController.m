@@ -11,6 +11,7 @@
 #import "ZFVideoModel.h"
 #import "VIDCollectionViewVideoCell.h"
 
+
 @interface VIDCollectionViewController ()<LMJVerticalFlowLayoutDelegate, ZFPlayerDelegate>
 
 /** <#digest#> */

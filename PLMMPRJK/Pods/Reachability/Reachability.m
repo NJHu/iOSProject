@@ -33,7 +33,7 @@
 #import <arpa/inet.h>
 #import <ifaddrs.h>
 #import <netdb.h>
-#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+
 
 NSString *const kReachabilityChangedNotification = @"kReachabilityChangedNotification";
 
@@ -88,12 +88,12 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 
 #pragma mark - Class Constructor Methods
 
-+(instancetype)reachabilityWithHostName:(NSString*)hostname
++(Reachability*)reachabilityWithHostName:(NSString*)hostname
 {
     return [Reachability reachabilityWithHostname:hostname];
 }
 
-+(instancetype)reachabilityWithHostname:(NSString*)hostname
++(Reachability*)reachabilityWithHostname:(NSString*)hostname
 {
     SCNetworkReachabilityRef ref = SCNetworkReachabilityCreateWithName(NULL, [hostname UTF8String]);
     if (ref) 
@@ -106,7 +106,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     return nil;
 }
 
-+(instancetype)reachabilityWithAddress:(void *)hostAddress
++(Reachability *)reachabilityWithAddress:(void *)hostAddress
 {
     SCNetworkReachabilityRef ref = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr*)hostAddress);
     if (ref) 
@@ -119,8 +119,8 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     return nil;
 }
 
-+(instancetype)reachabilityForInternetConnection
-{
++(Reachability *)reachabilityForInternetConnection 
+{   
     struct sockaddr_in zeroAddress;
     bzero(&zeroAddress, sizeof(zeroAddress));
     zeroAddress.sin_len = sizeof(zeroAddress);
@@ -129,7 +129,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     return [self reachabilityWithAddress:&zeroAddress];
 }
 
-+(instancetype)reachabilityForLocalWiFi
++(Reachability*)reachabilityForLocalWiFi
 {
     struct sockaddr_in localWifiAddress;
     bzero(&localWifiAddress, sizeof(localWifiAddress));
@@ -144,7 +144,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 
 // Initialization methods
 
--(instancetype)initWithReachabilityRef:(SCNetworkReachabilityRef)ref
+-(Reachability *)initWithReachabilityRef:(SCNetworkReachabilityRef)ref 
 {
     self = [super init];
     if (self != nil) 
@@ -172,8 +172,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     }
 
 	self.reachableBlock          = nil;
-    self.unreachableBlock        = nil;
-    self.reachabilityBlock       = nil;
+	self.unreachableBlock        = nil;
     self.reachabilitySerialQueue = nil;
 }
 
@@ -285,54 +284,6 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     
     return [self isReachableWithFlags:flags];
 }
-/**
- *  @author zhangchun, 15-11-27 23:11:42
- *
- *  get china's netStatus
- *
- *  @return NetWorkStatus
- */
-
--(NetworkStatus)currentViaWWANType
-{
-    SCNetworkReachabilityFlags flags = 0;
-    NetworkStatus workStatus = ReachableVia2G;
-    if(SCNetworkReachabilityGetFlags(self.reachabilityRef, &flags))
-    {
-        // Check we're REACHABLE
-        if(flags & kSCNetworkReachabilityFlagsReachable)
-        {
-            // Now, check we're on WWAN
-            if(flags & kSCNetworkReachabilityFlagsIsWWAN)
-            {
-                if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-                    CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
-                    NSString *currentRadioAccessTechnology = info.currentRadioAccessTechnology;
-                    if (currentRadioAccessTechnology) {
-                        if ([currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyLTE]) {
-                            workStatus = ReachableVia4G;
-                            
-                        } else if ([currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyEdge] || [currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyGPRS]) {
-                            workStatus = ReachableVia2G;
-                            
-                        } else {
-                            workStatus = ReachableVia3G;
-                        }
-                    }
-                }
-                
-                if ((flags & kSCNetworkReachabilityFlagsTransientConnection) == kSCNetworkReachabilityFlagsTransientConnection) {
-                    if((flags & kSCNetworkReachabilityFlagsConnectionRequired) == kSCNetworkReachabilityFlagsConnectionRequired) {
-                        workStatus = ReachableVia2G;
-                        
-                    }
-                }
-
-            }
-        }
-    }
-    return workStatus;
-}
 
 -(BOOL)isReachableViaWWAN 
 {
@@ -379,9 +330,6 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     
     return NO;
 }
-
-
-
 
 
 // WWAN may be available, but not active until a connection has been established.
@@ -432,8 +380,6 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 }
 
 
-
-
 #pragma mark - reachability status stuff
 
 -(NetworkStatus)currentReachabilityStatus
@@ -444,9 +390,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
             return ReachableViaWiFi;
         
 #if	TARGET_OS_IPHONE
-        
-        return  [self currentViaWWANType];
-        //return ReachableViaWWAN;
+        return ReachableViaWWAN;
 #endif
     }
     
@@ -504,11 +448,6 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
         {
             self.unreachableBlock(self);
         }
-    }
-    
-    if(self.reachabilityBlock)
-    {
-        self.reachabilityBlock(self, flags);
     }
     
     // this makes sure the change notification happens on the MAIN THREAD

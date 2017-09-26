@@ -7,6 +7,10 @@
 //
 
 #import "VIDLocalViewController.h"
+#import "VIDVideoDownloadedCell.h"
+#import "VIDVideoDownloadingCell.h"
+
+
 
 @interface VIDLocalViewController ()
 
@@ -17,21 +21,107 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += 49;
+    self.tableView.contentInset = insets;
     
-    LMJWordArrowItem *item = [LMJWordArrowItem itemWithTitle:@"1" subTitle:@"1.1"];
-    LMJWordArrowItem *item1 = [LMJWordArrowItem itemWithTitle:@"1" subTitle:@"1.2"];
-    
-    LMJWordArrowItem *item2 = [LMJWordArrowItem itemWithTitle:@"2" subTitle:@"2.1"];
-    LMJWordArrowItem *item3 = [LMJWordArrowItem itemWithTitle:@"2" subTitle:@"2.2"];
-    
-    
-    
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item, item1] andHeaderTitle:@"第一组header" footerTitle:@"第1组Footer"];
-    
-    LMJItemSection *section1 = [LMJItemSection sectionWithItems:@[item2, item3] andHeaderTitle:@"第2组header" footerTitle:@"第2组Footer"];
-    
-    [self.sections addObject:section0];
-    [self.sections addObject:section1];
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [VIDVideoDownloadedCell videoCellWithTableView:tableView];
+}
+
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return section == 0 ? @"下载完成" : @"下载中ing";
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+- (nullable NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewRowAction *action0 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Default" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        
+        NSLog(@"%@, %@", action, indexPath);
+    }];
+    
+    UIVisualEffect *backgroundEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    action0.backgroundEffect = backgroundEffect;
+    
+    
+    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Destructive" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        
+        NSLog(@"%@, %@", action, indexPath);
+    }];
+    
+    UITableViewRowAction *action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Normal" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        
+        NSLog(@"%@, %@", action, indexPath);
+    }];
+    
+    
+    return @[action0, action1, action2];
+}
+
+#pragma mark - LMJNavUIBaseViewControllerDataSource
+
+/** 导航条左边的按钮 */
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [leftButton setTitle:@"全部开始" forState:UIControlStateNormal];
+    
+    return nil;
+}
+/** 导航条右边的按钮 */
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [rightButton setTitle:@"全部暂停" forState:UIControlStateNormal];
+    return nil;
+}
+
+
+
+#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+}
+/** 右边的按钮的点击 */
+-(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    
+    
+}
+
+
+
 
 @end

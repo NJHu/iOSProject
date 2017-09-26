@@ -15,6 +15,19 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - ASIHTTPRequest (1.8.2):
+    - ASIHTTPRequest/ASIWebPageRequest (= 1.8.2)
+    - ASIHTTPRequest/CloudFiles (= 1.8.2)
+    - ASIHTTPRequest/Core (= 1.8.2)
+    - ASIHTTPRequest/S3 (= 1.8.2)
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/CloudFiles (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/Core (1.8.2):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.2):
+    - ASIHTTPRequest/Core
   - BaiduMapKit (3.3.1)
   - CocoaLumberjack (3.2.0):
     - CocoaLumberjack/Default (= 3.2.0)
@@ -49,6 +62,7 @@ PODS:
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
     - SDWebImage (!= 3.7.2, ~> 3.7)
+  - Reachability (3.2)
   - RegexKitLite (4.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -70,6 +84,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - AFNetworking
+  - ASIHTTPRequest
   - BaiduMapKit
   - CocoaLumberjack
   - CYLTabBarController
@@ -98,6 +113,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   BaiduMapKit: 9e8ff80bbcfb8f96b4a58b2844d728590dac90ca
   CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
   CYLTabBarController: 2de9a4c26f50d33574398becf8e7b0aaed794240
@@ -116,6 +132,7 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
@@ -125,6 +142,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
 
-PODFILE CHECKSUM: aab1e01c73bc6f5f1010012110dd24393f5311d6
+PODFILE CHECKSUM: ad44c4f4d6637520347b4947d416144d28dd7a05
 
 COCOAPODS: 1.2.0

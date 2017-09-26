@@ -8,6 +8,6 @@
 
 #import "LMJStaticTableViewController.h"
 
-@interface VIDLocalViewController : LMJStaticTableViewController
+@interface VIDLocalViewController : LMJTableViewController
 
 @end

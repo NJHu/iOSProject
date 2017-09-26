@@ -7,6 +7,8 @@ target 'PLMMPRJK' do
 
 #网络请求
 pod "AFNetworking"
+pod 'ASIHTTPRequest'
+
 #字典转模型
 pod 'MJExtension'
 pod 'MJRefresh'

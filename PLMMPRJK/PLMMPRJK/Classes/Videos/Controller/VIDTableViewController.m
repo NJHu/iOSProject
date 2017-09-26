@@ -10,6 +10,7 @@
 #import "VIDTableViewVideoCell.h"
 #import "ZFPlayer.h"
 
+
 @interface VIDTableViewController ()<ZFPlayerDelegate>
 
 /** <#digest#> */
