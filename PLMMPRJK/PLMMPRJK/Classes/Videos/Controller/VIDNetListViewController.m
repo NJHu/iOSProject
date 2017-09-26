@@ -8,6 +8,7 @@
 
 #import "VIDNetListViewController.h"
 #import "VIDMoviePlayerViewController.h"
+#import "ZFDownloadManager.h"
 
 
 @interface VIDNetListViewController ()

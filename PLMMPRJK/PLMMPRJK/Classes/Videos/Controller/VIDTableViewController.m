@@ -9,6 +9,7 @@
 #import "VIDTableViewController.h"
 #import "VIDTableViewVideoCell.h"
 #import "ZFPlayer.h"
+#import "ZFDownloadManager.h"
 
 
 @interface VIDTableViewController ()<ZFPlayerDelegate>
@@ -152,8 +153,11 @@
 #pragma mark - ZFPlayerDelegate
 
 - (void)zf_playerDownload:(NSString *)url {
-    // 此处是截取的下载地址，可以自己根据服务器的视频名称来赋值
-//    NSString *name = [url lastPathComponent];
+    //     此处是截取的下载地址，可以自己根据服务器的视频名称来赋值
+    NSString *name = [url lastPathComponent];
+    [[ZFDownloadManager sharedDownloadManager] downFileUrl:url filename:name fileimage:nil];
+    // 设置最多同时下载个数（默认是3）
+    [ZFDownloadManager sharedDownloadManager].maxCount = 4;
 
 }
 

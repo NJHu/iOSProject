@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0hc-gM-YZQ">
-                        <rect key="frame" x="10" y="49.5" width="276" height="4"/>
+                        <rect key="frame" x="10" y="48.5" width="276" height="4"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="4" id="VK9-c0-Ois"/>
                         </constraints>
@@ -38,33 +38,36 @@
                         </constraints>
                         <state key="normal" image="ScanDetailMusicIcon"/>
                         <state key="selected" image="ScanDetailMusicStopIcon"/>
+                        <connections>
+                            <action selector="clickDownloadBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bxg-X8-Qpx"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxY-8A-VCx">
-                        <rect key="frame" x="10" y="58.5" width="31" height="14.5"/>
+                        <rect key="frame" x="10" y="57.5" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-Sd-a2o">
-                        <rect key="frame" x="44" y="59" width="4.5" height="15"/>
+                        <rect key="frame" x="44" y="58" width="4.5" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrz-zW-rH9">
-                        <rect key="frame" x="51.5" y="58.5" width="31" height="14.5"/>
+                        <rect key="frame" x="51.5" y="57.5" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cx3-G2-sTs">
-                        <rect key="frame" x="92.5" y="58.5" width="31" height="14.5"/>
+                        <rect key="frame" x="92.5" y="57.5" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzp-bd-MUK">
-                        <rect key="frame" x="265" y="58.5" width="31" height="14.5"/>
+                        <rect key="frame" x="265" y="57.5" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

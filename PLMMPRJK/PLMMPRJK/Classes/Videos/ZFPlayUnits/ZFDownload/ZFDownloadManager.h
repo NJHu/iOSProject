@@ -39,11 +39,11 @@
 /** 设置最大的并发下载个数 */
 @property (nonatomic, assign) NSInteger              maxCount;
 /** 已下载完成的文件列表（文件对象） */
-@property (atomic, strong, readonly) NSMutableArray  *finishedlist;
+@property (atomic, strong, readonly) NSMutableArray<ZFFileModel *>  *finishedlist;
 /** 正在下载的文件列表(ASIHttpRequest对象) */
-@property (atomic, strong, readonly) NSMutableArray  *downinglist;
+@property (atomic, strong, readonly) NSMutableArray<ZFHttpRequest *>  *downinglist;
 /** 未下载完成的临时文件数组（文件对象) */
-@property (atomic, strong, readonly) NSMutableArray  *filelist;
+@property (atomic, strong, readonly) NSMutableArray<ZFFileModel *>  *filelist;
 /** 下载文件的模型 */
 @property (nonatomic, strong, readonly) ZFFileModel  *fileInfo;
 

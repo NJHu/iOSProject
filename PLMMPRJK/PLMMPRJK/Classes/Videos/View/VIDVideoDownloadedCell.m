@@ -80,5 +80,13 @@
     
 }
 
+- (void)setFileInfo:(ZFFileModel *)fileInfo
+{
+    _fileInfo = fileInfo;
+    NSString *totalSize = [ZFCommonHelper getFileSizeString:fileInfo.fileSize];
+    self.fileNameLabel.text = fileInfo.fileName;
+    self.fileSizeLabel.text = totalSize;
+}
+
 
 @end

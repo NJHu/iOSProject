@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZFDownloadManager.h"
 
 @interface VIDVideoDownloadingCell : UITableViewCell
 
 + (instancetype)videoCellWithTableView:(UITableView *)tableView;
 
+
 /** <#digest#> */
-@property (nonatomic, copy) NSString *url;
+@property (nonatomic, strong) ZFFileModel *fileInfo;
+
+/** <#digest#> */
+@property (weak, nonatomic) ZFHttpRequest *request;
+
+/** <#digest#> */
+@property (nonatomic, copy) void(^startOrStopClick)();
 
 @end
