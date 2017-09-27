@@ -7,9 +7,13 @@
 //
 
 #import "MUSHomeListViewController.h"
+#import "MUSMusic.h"
+#import "MUSMusicCell.h"
+#import "MUSAnimationTool.h"
 
 @interface MUSHomeListViewController ()
-
+/** <#digest#> */
+@property (nonatomic, strong) NSMutableArray<MUSMusic *> *musics;
 @end
 
 @implementation MUSHomeListViewController
@@ -18,9 +22,55 @@
     [super viewDidLoad];
 
     self.navigationItem.title = @"音乐";
+    
+    self.tableView.backgroundView = [UIImageView imageViewWithImageNamed:@"QQListBack"];
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.musics.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LMJSettingCell *cell = [MUSMusicCell cellWithTableView:tableView andCellStyle:UITableViewCellStyleSubtitle];
+    
+    cell.imageView.image = [UIImage imageNamed:self.musics[indexPath.row].icon];
+    
+    cell.textLabel.text = self.musics[indexPath.row].name;
+    
+    cell.detailTextLabel.text = self.musics[indexPath.row].singer;
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [MUSAnimationTool animate:cell type:MUSAnimationTypeTranslation];
+    [MUSAnimationTool animate:cell type:MUSAnimationTypeRotation];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
+#pragma mark - getter
+
+- (NSMutableArray<MUSMusic *> *)musics
+{
+    if(_musics == nil)
+    {
+        _musics = [MUSMusic mj_objectArrayWithFilename:@"Musics.plist"];
+    }
+    return _musics;
+}
 
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource

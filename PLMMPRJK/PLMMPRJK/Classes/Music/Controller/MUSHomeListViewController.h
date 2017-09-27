@@ -8,6 +8,6 @@
 
 #import "LMJStaticTableViewController.h"
 
-@interface MUSHomeListViewController : LMJStaticTableViewController
+@interface MUSHomeListViewController : LMJTableViewController
 
 @end
