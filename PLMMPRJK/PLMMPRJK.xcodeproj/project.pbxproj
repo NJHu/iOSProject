@@ -292,6 +292,8 @@
 		58AF02E81F7B6D31001F31C5 /* Musics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AF02BF1F7B6D31001F31C5 /* Musics.plist */; };
 		58AF02EB1F7B717C001F31C5 /* MUSMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AF02EA1F7B717C001F31C5 /* MUSMusicCell.m */; };
 		58AF02EE1F7B737B001F31C5 /* MUSAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AF02ED1F7B737B001F31C5 /* MUSAnimationTool.m */; };
+		58AF02F21F7C948D001F31C5 /* NeteaseMusicAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AF02F11F7C948D001F31C5 /* NeteaseMusicAPI.m */; };
+		58AF02F51F7C9663001F31C5 /* MUSPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AF02F41F7C9663001F31C5 /* MUSPlayingViewController.m */; };
 		58AFAAF81EB4ADAA00822043 /* LMJActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA6DA1EB4ADA900822043 /* LMJActivityViewController.m */; };
 		58AFAAFD1EB4ADAA00822043 /* NSFetchRequest+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA6E81EB4ADA900822043 /* NSFetchRequest+Extensions.m */; };
 		58AFAAFE1EB4ADAA00822043 /* NSManagedObject+DictionaryExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA6EB1EB4ADA900822043 /* NSManagedObject+DictionaryExport.m */; };
@@ -1313,6 +1315,10 @@
 		58AF02EA1F7B717C001F31C5 /* MUSMusicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSMusicCell.m; sourceTree = "<group>"; };
 		58AF02EC1F7B737B001F31C5 /* MUSAnimationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSAnimationTool.h; sourceTree = "<group>"; };
 		58AF02ED1F7B737B001F31C5 /* MUSAnimationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSAnimationTool.m; sourceTree = "<group>"; };
+		58AF02F01F7C948D001F31C5 /* NeteaseMusicAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeteaseMusicAPI.h; sourceTree = "<group>"; };
+		58AF02F11F7C948D001F31C5 /* NeteaseMusicAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeteaseMusicAPI.m; sourceTree = "<group>"; };
+		58AF02F31F7C9663001F31C5 /* MUSPlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSPlayingViewController.h; sourceTree = "<group>"; };
+		58AF02F41F7C9663001F31C5 /* MUSPlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSPlayingViewController.m; sourceTree = "<group>"; };
 		58AFA6D91EB4ADA900822043 /* LMJActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJActivityViewController.h; sourceTree = "<group>"; };
 		58AFA6DA1EB4ADA900822043 /* LMJActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJActivityViewController.m; sourceTree = "<group>"; };
 		58AFA6E71EB4ADA900822043 /* NSFetchRequest+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+Extensions.h"; sourceTree = "<group>"; };
@@ -3056,6 +3062,8 @@
 			children = (
 				583E45E11F7A63D00069B8BB /* MUSHomeListViewController.h */,
 				583E45E21F7A63D00069B8BB /* MUSHomeListViewController.m */,
+				58AF02F31F7C9663001F31C5 /* MUSPlayingViewController.h */,
+				58AF02F41F7C9663001F31C5 /* MUSPlayingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3085,6 +3093,8 @@
 		588B32491EC4309300D00C1C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				58AF02F01F7C948D001F31C5 /* NeteaseMusicAPI.h */,
+				58AF02F11F7C948D001F31C5 /* NeteaseMusicAPI.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -6851,6 +6861,7 @@
 				58AFAB801EB4ADAA00822043 /* MPLKDBHelper.m in Sources */,
 				58AFAB381EB4ADAA00822043 /* NSRunLoop+PerformBlock.m in Sources */,
 				58552F331F72521000CCA4DF /* PSTGridLayoutSection.m in Sources */,
+				58AF02F21F7C948D001F31C5 /* NeteaseMusicAPI.m in Sources */,
 				58AFAC431EB4ADAA00822043 /* UIWebView+JS.m in Sources */,
 				58AFAC651EB4ADAB00822043 /* LMJWebViewController.m in Sources */,
 				58AFAC9F1EB4ADAB00822043 /* LMJBlockLoopViewController.m in Sources */,
@@ -6938,6 +6949,7 @@
 				58AFAC341EB4ADAA00822043 /* UIView+Toast.m in Sources */,
 				58AFAC881EB4ADAB00822043 /* LMJMasonryViewController.m in Sources */,
 				58AF02EE1F7B737B001F31C5 /* MUSAnimationTool.m in Sources */,
+				58AF02F51F7C9663001F31C5 /* MUSPlayingViewController.m in Sources */,
 				58AFABCB1EB4ADAA00822043 /* UITextField+Extension.m in Sources */,
 				582F96D81EFA5A3000766666 /* NSDecimalNumber+Addtion.m in Sources */,
 				58AFAB621EB4ADAA00822043 /* AdvertiseView.m in Sources */,
