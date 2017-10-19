@@ -7,73 +7,533 @@
 //
 
 #import "MUSPlayingViewController.h"
-#import "MUSMusic.h"
-#import "MUSMusicOperationTool.h"
 
-@interface MUSPlayingViewController ()
+#import "QQMusicOperationTool.h"
+#import "CALayer+MUSAmi.h"
+#import "MUSLrcTableViewController.h"
+#import "QQLrcDataTool.h"
+#import "QQLrcLabel.h"
+#import "QQTimeTool.h"
 
+@interface MUSPlayingViewController ()<UIScrollViewDelegate>
 
-/** 旋转的 头像 */
-@property (weak, nonatomic) IBOutlet UIImageView *centerSingerRoundView;
+// *************************** 改变一次 ********************************
 
-/** 背景图片 */
-@property (weak, nonatomic) IBOutlet UIImageView *backSingerView;
+/** 背景图片*/
+@property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 
-/** 实时播放时间 */
-@property (weak, nonatomic) IBOutlet UILabel *currentTimeLabel;
+/** 歌曲名称*/
+//@property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
 
-/** 歌曲总时间的 */
+/** 歌手名称*/
+//@property (weak, nonatomic) IBOutlet UILabel *singerNameLabel;
+
+/** 前景图片*/
+@property (weak, nonatomic) IBOutlet UIImageView *foreImageView;
+
+/** 总时长*/
 @property (weak, nonatomic) IBOutlet UILabel *totalTimeLabel;
 
-/** 进度 */
+/** 播放 或 暂停 按钮*/
+@property (weak, nonatomic) IBOutlet UIButton *playOrPauseBtn;
+
+
+// *************************** 改变多次 ********************************
+
+/**  已经播放时长*/
+@property (weak, nonatomic) IBOutlet UILabel *costTimeLabel;
+
+/** 进度条*/
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
 
-/** 上一曲 */
-@property (weak, nonatomic) IBOutlet UIButton *preMusicBtn;
+/** 单行歌词*/
+@property (weak, nonatomic) IBOutlet QQLrcLabel *lrcLabel;
 
-/** 下一曲 */
-@property (weak, nonatomic) IBOutlet UIButton *nextMusicBtn;
 
-/** 播放 */
-@property (weak, nonatomic) IBOutlet UIButton *playBtn;
 
-/** 刷新的歌词 */
-@property (weak, nonatomic) IBOutlet UILabel *lrcLabel;
+// *************************** 其他控件或数据 ********************************
 
-@property (weak, nonatomic) IBOutlet UIView *centerContainerView;
+/** 歌词的背景视图*/
+@property (weak, nonatomic) IBOutlet UIScrollView *lrcBackView;
+
+
+/** 歌词控制器*/
+@property (nonatomic, strong) MUSLrcTableViewController *lrcTVC;
+
+/** 定时器*/
+@property (nonatomic, weak) NSTimer *timer;
+
+/** 歌词定时器*/
+@property (nonatomic, weak) CADisplayLink *displayLink;
+
+/** 进度条手势*/
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
 
 
 @end
 
 @implementation MUSPlayingViewController
 
+#pragma mark --------------------------
+#pragma mark 懒加载
+
+/** 歌词控制器*/
+- (MUSLrcTableViewController *)lrcTVC{
+    
+    if (_lrcTVC == nil) {
+        
+        _lrcTVC = [[MUSLrcTableViewController alloc] init];
+    }
+    return _lrcTVC;
+}
+
+
+#pragma mark --------------------------
+#pragma mark 初始
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+    [self setUpViewOnce];
     
-    [self setupDataOnce];
+    // 监听播放完毕后的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextMusic:) name:kPlayFinishNotificationName object:nil];
+    
+    // 给进度条添加一个手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sliderTap:)];
+    self.tap = tap;
+    [self.progressSlider addGestureRecognizer:tap];
 }
 
-- (void)setupDataOnce
-{
-   self.backSingerView.image = self.centerSingerRoundView.image = [UIImage imageNamed:self.music.icon];
-    [self changeNavgationTitle:[self changeTitle:[self.music.name stringByAppendingFormat:@"\n%@", self.music.singer]]];
+- (void)dealloc{
+    
+    //NSLog(@"移除监听");
+    
+    // 移除监听
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)viewWillLayoutSubviews{
+    
+    [self setUpFrame];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [self setUpDataOnce];
+    
+    [self addTimer];
+    
+    [self addDisplayLink];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [self removeTimer];
+    
+    [self removeDisplayLind];
+}
+
+/** 加载界面上需要手动添加的控件*/
+- (void)setUpViewOnce{
+    
+    [self addLrcView];
+    
+    [self setUpSlider];
+}
+
+/** 设置子控件的 frame*/
+- (void)setUpFrame{
+    
+    [self setUpForeImageView];
+    
+    [self setUpLrcViewFrame];
+}
+
+/** 设置图片圆角*/
+- (void) setUpForeImageView {
+    
+    self.foreImageView.layer.cornerRadius = self.foreImageView.lmj_width * 0.5;
+    self.foreImageView.layer.masksToBounds = YES;
+}
+
+/** 添加歌词视图*/
+- (void)addLrcView{
+    
+    // 歌词视图
+    
+    [self.lrcBackView addSubview:self.lrcTVC.view];
+    
+    // 歌词的背景视图
+    self.lrcBackView.showsHorizontalScrollIndicator = NO;
+    self.lrcBackView.pagingEnabled = YES;
+    self.lrcBackView.delegate = self;
+}
+
+/** 设置歌词视图的 frame*/
+- (void)setUpLrcViewFrame{
+    
+    // 歌词视图
+    self.lrcTVC.view.frame = CGRectMake(kScreenWidth, 0, kScreenWidth, self.lrcBackView.lmj_height);
+    
+    // 歌词背景视图
+    self.lrcBackView.contentSize = CGSizeMake(self.lrcBackView.lmj_width * 2, 0);
+}
+
+/** 更改进度条显示样式*/
+- (void)setUpSlider{
+    
+    [self.progressSlider setThumbImage:[UIImage imageNamed:@"player_slider_playback_thumb"] forState:UIControlStateNormal];
+}
+
+#pragma mark --------------------------
+#pragma mark 动画处理
+
+/** 处理透明度*/
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGFloat alpha = 1 - 1.0 * scrollView.contentOffset.x / self.lrcBackView.lmj_width;
+    
+    self.foreImageView.alpha = alpha;
+    self.lrcLabel.alpha = alpha;
+}
+
+/** 添加旋转动画*/
+- (void)addRotationAnimation{
+    
+    // 1.移除之前的动画
+    NSString *key = @"rotation";
+    [self.foreImageView.layer removeAnimationForKey:key];
+    
+    // 2.重新添加动画
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    animation.fromValue = 0;
+    animation.toValue = @(M_PI * 2);
+    animation.duration = 30;
+    animation.repeatCount = MAXFLOAT;
+    
+    // 设置播放完成之后不移除
+    animation.removedOnCompletion = NO;
+    
+    // 添加动画
+    [self.foreImageView.layer addAnimation:animation forKey:key];
+}
+
+/** 暂停旋转动画*/
+- (void)pauseRotationAnimation{
+    
+    [self.foreImageView.layer pauseAnimate];
+}
+
+/** 恢复旋转动画*/
+- (void)resumeRotationAnimatioin{
+    
+    [self.foreImageView.layer resumeAnimate];
+}
+
+
+#pragma mark --------------------------
+#pragma mark 按钮点击事件
+/** 暂停 或 播放*/
+- (IBAction)playOrPauseMusic:(UIButton *)sender {
+    
+    sender.selected = !sender.selected;
+    
+    if (sender.selected) {
+        [[QQMusicOperationTool shareInstance] playCurrentMusic];
+        [self resumeRotationAnimatioin];
+        
+    }else{
+        [[QQMusicOperationTool shareInstance] pauseCurrentMusic];
+        [self pauseRotationAnimation];
+    }
+}
+
+/** 上一首*/
+- (IBAction)preMusic:(UIButton *)sender {
+    
+    [[QQMusicOperationTool shareInstance] preMusic];
+    
+    [self setUpDataOnce];
+}
+
+/** 下一首*/
+- (IBAction)nextMusic:(UIButton *)sender {
+    
+    self.progressSlider.value = 0.0;
+    self.costTimeLabel.text = @"00:00";
+    
+    [[QQMusicOperationTool shareInstance] nextMusic];
+    
+    [self setUpDataOnce];
+}
+
+/** 点击了关闭按钮*/
+- (IBAction)closeButtonDidClicked:(UIButton *)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+#pragma mark --------------------------
+#pragma mark 进度条监听
+- (IBAction)sliderDidTouchDown:(UISlider *)sender {
+    
+    [self.progressSlider removeGestureRecognizer:self.tap];
+    
+    // 移除定时器
+    [self removeTimer];
+}
+
+- (IBAction)sliderDidTouchUp:(UISlider *)sender {
+    
+    [self.progressSlider addGestureRecognizer:self.tap];
+    
+    // 控制当前的播放进度
+    
+    // 1.添加定时器
+    [self addTimer];
+    
+    // 2.计算当前时间
+    // 2.1 总时长
+    NSTimeInterval totalTime = [[QQMusicOperationTool shareInstance] getNewMusicMessageModel].totalTime;
+    
+    // 2.2. 当前时间
+    NSTimeInterval currentTime = sender.value * totalTime;
+    
+    // 3.设置当前播放进度
+    [[QQMusicOperationTool shareInstance] seekTo:currentTime];
+    
+    if (sender.value >= 1.0) {
+        
+        [self nextMusic:nil];
+    }
+}
+
+- (IBAction)sliderDidValueChange:(UISlider *)sender {
+    
+    // 设置 已经播放时长
+    
+    // 1.计算总时长
+    NSTimeInterval totalTime = [[QQMusicOperationTool shareInstance] getNewMusicMessageModel].totalTime;
+    
+    // 2.当前时间
+    NSTimeInterval currentTime = sender.value * totalTime;
+    
+    // 3.设置 已经播放时长
+    self.costTimeLabel.text = [QQTimeTool getFormatTime:currentTime];
+    
+    //NSLog(@"%lf", sender.value);
+}
+
+/** 进度条手势操作*/
+- (void)sliderTap:(UITapGestureRecognizer *)sender{
+    
+    // 1.获取手势在进度条上的位置
+    CGPoint point = [sender locationInView:self.progressSlider];
+    
+    // 2.当前的位置x, 与进度条的总长度构成的一个比例, 就可以当做当前进度条的值
+    CGFloat scale = 1.0 * point.x / self.progressSlider.lmj_width;
+    
+    // 3.设置进图条的值
+    self.progressSlider.value = scale;
+    
+    // 4. 总时长
+    NSTimeInterval totalTime = [[QQMusicOperationTool shareInstance] getNewMusicMessageModel].totalTime;
+    
+    // 5. 当前时间
+    NSTimeInterval currentTime = self.progressSlider.value * totalTime;
+    
+    // 6.设置当前播放进度
+    [[QQMusicOperationTool shareInstance] seekTo:currentTime];
+    
+    [self addTimer];
     
 }
 
 
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
+
+#pragma mark --------------------------
+#pragma mark 界面数据变化
+
+/** 当切换歌曲的时候, 更新 一次 界面数据*/
+- (void)setUpDataOnce{
     
-    self.centerSingerRoundView.layer.cornerRadius = self.centerSingerRoundView.mj_w * 0.5;
-    self.centerSingerRoundView.layer.masksToBounds = YES;
+    // 获取最新数据
+    QQMusicMessageModel *musicMessageModel = [[QQMusicOperationTool shareInstance] getNewMusicMessageModel];
+    
+    // 背景图片
+    NSString *imageName = musicMessageModel.musicM.icon;
+    self.backImageView.image = [UIImage imageNamed:imageName];
+    
+    // 前景图片
+    self.foreImageView.image = [UIImage imageNamed:imageName];
+    
+    // 歌曲名称
+//    self.songNameLabel.text = musicMessageModel.musicM.name;
+//    
+//    // 歌手名称
+//    self.singerNameLabel.text = musicMessageModel.musicM.singer;
+    
+    [self changeNavgationTitle:[self changeTitle:[musicMessageModel.musicM.name stringByAppendingFormat:@"\n%@", musicMessageModel.musicM.singer]]];
+    
+    // 总时长
+    self.totalTimeLabel.text = musicMessageModel.totalTimeFormat;
+    
+    // 开启旋转动画
+    [self addRotationAnimation];
+    
+    if (musicMessageModel.isPlaying) {
+        [self resumeRotationAnimatioin];
+    }else{
+        [self pauseRotationAnimation];
+    }
+    
+    // 获取歌词数据
+    // 1.获取歌词数据源
+    NSArray<QQLrcModel *> *lrcMs = [QQLrcDataTool getLrcData:musicMessageModel.musicM.lrcname];
+    //    NSLog(@"%@", lrcMs);
+    
+    // 2.将数据源交给控制器来展示
+    self.lrcTVC.datasource = lrcMs;
 }
+
+/** 当切换歌曲的时候, 更新 多次 界面数据*/
+- (void)setUpDataTimes{
+    
+    // 获取最新数据
+    QQMusicMessageModel *musicMessageModel = [[QQMusicOperationTool shareInstance] getNewMusicMessageModel];
+    
+    self.costTimeLabel.text = musicMessageModel.costTimeFormat;
+    self.progressSlider.value = 1.0 * musicMessageModel.costTime / musicMessageModel.totalTime;
+    
+    // 播放或者暂停按钮 待定
+    self.playOrPauseBtn.selected = musicMessageModel.isPlaying;
+}
+
+
+/** 更新歌词*/
+- (void)updateLrc{
+    
+    // 1.获取当前音乐的数据
+    QQMusicMessageModel *musicMessageModel = [[QQMusicOperationTool shareInstance] getNewMusicMessageModel];
+    
+    // 2.获取当前歌词所在的行
+    [QQLrcDataTool getRow:musicMessageModel.costTime andLrcs:self.lrcTVC.datasource completion:^(NSInteger row, QQLrcModel *lrc) {
+        
+        // 3.把数据传递给歌词控制器管理
+        self.lrcTVC.scrollRow = row;
+        
+        // 4.设置单行歌词
+        self.lrcLabel.text = lrc.lrcStr;
+        
+        // 5.跟新歌词进度
+        CGFloat progress = (musicMessageModel.costTime - lrc.beginTime) / (lrc.endTime - lrc.beginTime);
+        self.lrcLabel.progress = progress;
+        
+        // 6.把歌词的播放进度传递给 歌词控制器
+        self.lrcTVC.progress = progress;
+        
+    }];
+    
+    // 7.设置锁屏信息
+    // 前台不更新, 进入后台之后才更新
+    UIApplicationState state =  [UIApplication sharedApplication].applicationState;
+    if (state & UIApplicationStateBackground) {
+        
+        [[QQMusicOperationTool shareInstance] setUpLockMessage];
+    }
+}
+
+#pragma mark --------------------------
+#pragma mark 定时器
+
+/** 添加定时器*/
+- (void)addTimer{
+    
+    if (self.timer == nil) {
+        
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setUpDataTimes) userInfo:nil repeats:YES];
+        self.timer = timer;
+        // 添加到 runloop
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    }
+}
+
+/** 移除定时器*/
+- (void)removeTimer{
+    
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+/** 定时更新 歌词面板信息*/
+- (void)addDisplayLink{
+    
+    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateLrc)];
+    self.displayLink = displayLink;
+    
+    // 添加到 runloop
+    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+}
+
+/** 移除 歌词面板信息 定时器*/
+- (void)removeDisplayLind{
+    
+    [self.displayLink invalidate];
+    self.displayLink = nil;
+}
+
+
+#pragma mark --------------------------
+#pragma mark 远程处理事件
+
+/** 摇一摇*/
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    
+    // 下一首歌曲
+    [self nextMusic:nil];
+}
+
+
+/** 锁屏状态下接收的远程事件处理*/
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event{
+    
+    UIEventSubtype type = event.subtype;
+    switch (type) {
+        case UIEventSubtypeRemoteControlPlay:{
+            //NSLog(@"播放");
+            [[QQMusicOperationTool shareInstance] playCurrentMusic];
+            break;
+        }
+            
+        case UIEventSubtypeRemoteControlPause:{
+            //NSLog(@"暂停");
+            [[QQMusicOperationTool shareInstance] pauseCurrentMusic];
+            break;
+        }
+            
+        case UIEventSubtypeRemoteControlNextTrack:{
+            //NSLog(@"下一首");
+            [[QQMusicOperationTool shareInstance] nextMusic];
+            break;
+        }
+            
+        case UIEventSubtypeRemoteControlPreviousTrack:{
+            //NSLog(@"上一首");
+            [[QQMusicOperationTool shareInstance] preMusic];
+            break;
+        }
+        default:{
+            //NSLog(@"暂不处理");
+            break;
+        }
+    }
+}
+
 
 
 
@@ -144,8 +604,6 @@
 {
     
 }
-
-
 
 
 

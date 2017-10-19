@@ -1,17 +1,17 @@
 //
-//  MUSLrcDataTool.m
-//  PLMMPRJK
+//  QQLrcDataTool.m
+//  QQMusic
 //
-//  Created by HuXuPeng on 2017/10/19.
-//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//  Created by Apple on 16/5/18.
+//  Copyright © 2016年 KeenLeung. All rights reserved.
 //
 
-#import "MUSLrcDataTool.h"
-#import "MUSTimeTool.h"
+#import "QQLrcDataTool.h"
+#import "QQTimeTool.h"
 
-@implementation MUSLrcDataTool
+@implementation QQLrcDataTool
 
-+ (NSArray<MUSLrc *> *)getLrcData:(NSString *)filename{
++ (NSArray<QQLrcModel *> *)getLrcData:(NSString *)filename{
     
     // 1.文件路径
     NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:nil];
@@ -34,7 +34,7 @@
     NSArray *lrcStrArray = [lrcContent componentsSeparatedByString:@"\n"];
     
     // 歌词数组
-    __block NSMutableArray<MUSLrc *> *lrcMs = [NSMutableArray array];
+    __block NSMutableArray<QQLrcModel *> *lrcMs = [NSMutableArray array];
     
     // 3.2处理歌词字符串数字, 把字符串转成歌词对象
     [lrcStrArray enumerateObjectsUsingBlock:^(NSString *lrcStr, NSUInteger index, BOOL * _Nonnull stop) {
@@ -49,7 +49,7 @@
         BOOL isNoUseData = [lrcStr containsString:@"[ti:"] || [lrcStr containsString:@"[ar:"] || [lrcStr containsString:@"[al:"];
         if (!isNoUseData) {
             
-            MUSLrc *lrcModel = [[MUSLrc alloc] init];
+            QQLrcModel *lrcModel = [[QQLrcModel alloc] init];
             [lrcMs addObject:lrcModel];
             
             // 解析 [00:00.89]传奇
@@ -63,7 +63,7 @@
             if (timeAndContent.count == 2) {
                 
                 NSString *time = timeAndContent[0];
-                lrcModel.beginTime = [MUSTimeTool getTimeInterval:time];
+                lrcModel.beginTime = [QQTimeTool getTimeInterval:time];
                 
                 NSString *content = timeAndContent[1];
                 lrcModel.lrcStr = content;
@@ -73,7 +73,7 @@
     
     // 修改模型的结束时间
     NSInteger count = lrcMs.count;
-    [lrcMs enumerateObjectsUsingBlock:^(MUSLrc *lrcModel, NSUInteger idx, BOOL * _Nonnull stop) {
+    [lrcMs enumerateObjectsUsingBlock:^(QQLrcModel *lrcModel, NSUInteger idx, BOOL * _Nonnull stop) {
         
         if (idx != count - 1) {
             
@@ -84,12 +84,12 @@
     return lrcMs;
 }
 
-+ (void)getRow:(NSTimeInterval)currentTime andLrcs:(NSArray<MUSLrc *> *)lrcMs completion:(void (^)(NSInteger row, MUSLrc *lrcModel))completion{
++ (void)getRow:(NSTimeInterval)currentTime andLrcs:(NSArray<QQLrcModel *> *)lrcMs completion:(void (^)(NSInteger row, QQLrcModel *lrcModel))completion{
     
     __block NSInteger row = 0;
-    __block MUSLrc *lrcModel = [[MUSLrc alloc] init];
+    __block QQLrcModel *lrcModel = [[QQLrcModel alloc] init];
     
-    [lrcMs enumerateObjectsUsingBlock:^(MUSLrc *lrc, NSUInteger idx, BOOL * _Nonnull stop) {
+    [lrcMs enumerateObjectsUsingBlock:^(QQLrcModel *lrc, NSUInteger idx, BOOL * _Nonnull stop) {
         
         if (currentTime >= lrc.beginTime && currentTime <= lrc.endTime) {
             

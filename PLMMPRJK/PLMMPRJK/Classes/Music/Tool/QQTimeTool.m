@@ -1,15 +1,14 @@
 //
-//  MUSTimeTool.m
-//  PLMMPRJK
+//  QQTimeTool.m
+//  QQMusic
 //
-//  Created by HuXuPeng on 2017/10/19.
-//  Copyright © 2017年 GoMePrjk. All rights reserved.
-//
+//  Created by Apple on 16/5/18.
+//  Copyright © 2016年 KeenLeung. All rights reserved.
+//  时间处理工具
 
-#import "MUSTimeTool.h"
+#import "QQTimeTool.h"
 
-@implementation MUSTimeTool
-
+@implementation QQTimeTool
 
 + (NSString *)getFormatTime:(NSTimeInterval)time{
     
@@ -19,7 +18,7 @@
     NSInteger min = time / 60;
     NSInteger second = time - min * 60;
     
-    NSString *result = [NSString stringWithFormat:@"%02ld:%02ld",(long)min,(long)second];
+    NSString *result = [NSString stringWithFormat:@"%02d:%02d",min,second];
     
     return result;
 }
@@ -34,12 +33,11 @@
         NSTimeInterval min = [minAndSec[0] doubleValue];
         // 秒数
         NSTimeInterval sec = [minAndSec[1] doubleValue];
-        
+
         return min * 60 + sec;
     }
-    
+
     return 0;
 }
-
 
 @end

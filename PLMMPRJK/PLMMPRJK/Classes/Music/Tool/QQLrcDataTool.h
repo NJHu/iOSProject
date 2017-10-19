@@ -1,15 +1,15 @@
 //
-//  MUSLrcDataTool.h
-//  PLMMPRJK
+//  QQLrcDataTool.h
+//  QQMusic
 //
-//  Created by HuXuPeng on 2017/10/19.
-//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//  Created by Apple on 16/5/18.
+//  Copyright © 2016年 KeenLeung. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "MUSLrc.h"
+#import "QQLrcModel.h"
 
-@interface MUSLrcDataTool : NSObject
+@interface QQLrcDataTool : NSObject
 
 /**
  *  根据歌词文件名获取歌词数据
@@ -18,7 +18,7 @@
  *
  *  @return 歌词对象数组 NSArray<QQLrcModel *>
  */
-+ (NSArray<MUSLrc *> *)getLrcData:(NSString *)filename;
++ (NSArray<QQLrcModel *> *)getLrcData:(NSString *)filename;
 
 
 /**
@@ -28,6 +28,6 @@
  *  @param lrcMs       歌词信息 NSArray<QQLrcModel *>
  *  @param completion  获取信息后要执行的操作
  */
-+ (void)getRow:(NSTimeInterval)currentTime andLrcs:(NSArray<MUSLrc *> *)lrcMs completion:(void (^)(NSInteger row, MUSLrc *lrcModel))completion;
++ (void)getRow:(NSTimeInterval)currentTime andLrcs:(NSArray<QQLrcModel *> *)lrcMs completion:(void (^)(NSInteger row, QQLrcModel *lrcModel))completion;
 
 @end

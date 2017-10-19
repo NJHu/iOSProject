@@ -1,5 +1,5 @@
 //
-//  CALayer+MUSAni.h
+//  CALayer+MUSAmi.h
 //  PLMMPRJK
 //
 //  Created by HuXuPeng on 2017/10/19.
@@ -8,7 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface CALayer (MUSAni)
+@interface CALayer (MUSAmi)
 
 
 /**
@@ -20,5 +20,4 @@
  *  恢复动画
  */
 - (void)resumeAnimate;
-
 @end

@@ -1,14 +1,14 @@
 //
-//  MUSImageTool.m
-//  PLMMPRJK
+//  QQImageTool.m
+//  QQMusic
 //
-//  Created by HuXuPeng on 2017/10/19.
-//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//  Created by Apple on 16/5/19.
+//  Copyright © 2016年 KeenLeung. All rights reserved.
 //
 
-#import "MUSImageTool.h"
+#import "QQImageTool.h"
 
-@implementation MUSImageTool
+@implementation QQImageTool
 
 + (UIImage *)getNewImage:(UIImage *)sourceImage andLrcStr:(NSString *)lrcStr{
     

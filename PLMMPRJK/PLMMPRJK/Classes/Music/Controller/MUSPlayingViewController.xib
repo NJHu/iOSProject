@@ -13,16 +13,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUSPlayingViewController">
             <connections>
-                <outlet property="backSingerView" destination="Gqd-2t-D5X" id="Xzz-SS-OKf"/>
-                <outlet property="centerContainerView" destination="Dch-qt-eS3" id="MOv-e1-h8H"/>
-                <outlet property="centerSingerRoundView" destination="XqS-Ch-9Wq" id="Zl5-JH-tin"/>
-                <outlet property="currentTimeLabel" destination="i4C-hC-iwv" id="btL-KU-mbb"/>
-                <outlet property="lrcLabel" destination="21n-AR-kMk" id="71W-af-iYc"/>
-                <outlet property="nextMusicBtn" destination="q8N-2J-36a" id="uAf-wT-E2r"/>
-                <outlet property="playBtn" destination="a5q-Oj-iMY" id="yjo-gc-Wkd"/>
-                <outlet property="preMusicBtn" destination="qGM-SW-dBb" id="DYS-b3-AI7"/>
-                <outlet property="progressSlider" destination="7H7-qm-FvG" id="H6y-lD-Ax2"/>
-                <outlet property="totalTimeLabel" destination="R6B-sa-4Iv" id="n8Q-o7-Bdg"/>
+                <outlet property="backImageView" destination="Gqd-2t-D5X" id="5Q8-4H-fE0"/>
+                <outlet property="costTimeLabel" destination="i4C-hC-iwv" id="W4L-Mj-bKk"/>
+                <outlet property="foreImageView" destination="XqS-Ch-9Wq" id="uTb-8u-fex"/>
+                <outlet property="lrcBackView" destination="ST3-6G-2Jk" id="9FB-2z-Hhm"/>
+                <outlet property="lrcLabel" destination="21n-AR-kMk" id="iI1-D4-hCS"/>
+                <outlet property="playOrPauseBtn" destination="a5q-Oj-iMY" id="C0i-cp-bQC"/>
+                <outlet property="progressSlider" destination="7H7-qm-FvG" id="jXc-Ze-cft"/>
+                <outlet property="totalTimeLabel" destination="R6B-sa-4Iv" id="pQZ-6O-7a7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uI8-fg-ghc"/>
             </connections>
         </placeholder>
@@ -47,21 +45,28 @@
                                 <constraint firstAttribute="width" secondItem="XqS-Ch-9Wq" secondAttribute="height" id="ybq-Cd-bEl"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21n-AR-kMk">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21n-AR-kMk" customClass="QQLrcLabel">
                             <rect key="frame" x="171" y="361" width="33" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ST3-6G-2Jk">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="387"/>
+                        </scrollView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="XqS-Ch-9Wq" firstAttribute="width" secondItem="Dch-qt-eS3" secondAttribute="width" multiplier="0.8" id="68q-Qs-QdN"/>
                         <constraint firstItem="XqS-Ch-9Wq" firstAttribute="centerX" secondItem="Dch-qt-eS3" secondAttribute="centerX" id="6nR-NG-U7a"/>
+                        <constraint firstAttribute="trailing" secondItem="ST3-6G-2Jk" secondAttribute="trailing" id="9DU-Qq-CSC"/>
+                        <constraint firstItem="ST3-6G-2Jk" firstAttribute="leading" secondItem="Dch-qt-eS3" secondAttribute="leading" id="E99-e3-Tpu"/>
                         <constraint firstItem="21n-AR-kMk" firstAttribute="centerX" secondItem="Dch-qt-eS3" secondAttribute="centerX" id="Usx-n9-MNf"/>
+                        <constraint firstItem="ST3-6G-2Jk" firstAttribute="top" secondItem="Dch-qt-eS3" secondAttribute="top" id="Uzx-BU-2i2"/>
                         <constraint firstAttribute="bottom" secondItem="21n-AR-kMk" secondAttribute="bottom" constant="10" id="ZnT-Dk-kE1"/>
                         <constraint firstItem="XqS-Ch-9Wq" firstAttribute="width" secondItem="XqS-Ch-9Wq" secondAttribute="height" id="Zo4-KW-vYm"/>
                         <constraint firstItem="XqS-Ch-9Wq" firstAttribute="centerY" secondItem="Dch-qt-eS3" secondAttribute="centerY" constant="-30" id="h9T-gg-dzn"/>
+                        <constraint firstAttribute="bottom" secondItem="ST3-6G-2Jk" secondAttribute="bottom" id="lKl-Mt-0sQ"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kA1-Pz-AlE">
@@ -89,6 +94,11 @@
                         </label>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7H7-qm-FvG">
                             <rect key="frame" x="58" y="5.5" width="254" height="31"/>
+                            <connections>
+                                <action selector="sliderDidTouchDown:" destination="-1" eventType="touchDown" id="bRf-BW-eUA"/>
+                                <action selector="sliderDidTouchUp:" destination="-1" eventType="touchUpInside" id="B20-w4-hwb"/>
+                                <action selector="sliderDidValueChange:" destination="-1" eventType="valueChanged" id="NiY-WL-2IH"/>
+                            </connections>
                         </slider>
                     </subviews>
                     <color key="backgroundColor" red="0.98039215690000003" green="0.38726128469999999" blue="0.58634440099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,6 +126,9 @@
                                         <constraint firstAttribute="width" constant="64" id="pRi-hC-xfm"/>
                                     </constraints>
                                     <state key="normal" image="player_btn_pre_normal"/>
+                                    <connections>
+                                        <action selector="preMusic:" destination="-1" eventType="touchUpInside" id="c8x-M8-Rkg"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -131,6 +144,9 @@
                                     <rect key="frame" x="30.5" y="28" width="64" height="64"/>
                                     <state key="normal" image="player_btn_play_normal"/>
                                     <state key="selected" image="player_btn_pause_normal"/>
+                                    <connections>
+                                        <action selector="playOrPauseMusic:" destination="-1" eventType="touchUpInside" id="w6n-T3-cwK"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -149,6 +165,9 @@
                                         <constraint firstAttribute="width" constant="64" id="eNy-We-bqi"/>
                                     </constraints>
                                     <state key="normal" image="player_btn_next_normal"/>
+                                    <connections>
+                                        <action selector="nextMusic:" destination="-1" eventType="touchUpInside" id="fP1-le-Iyg"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

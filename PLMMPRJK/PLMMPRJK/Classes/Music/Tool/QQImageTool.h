@@ -1,14 +1,14 @@
 //
-//  MUSImageTool.h
-//  PLMMPRJK
+//  QQImageTool.h
+//  QQMusic
 //
-//  Created by HuXuPeng on 2017/10/19.
-//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//  Created by Apple on 16/5/19.
+//  Copyright © 2016年 KeenLeung. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface MUSImageTool : NSObject
+@interface QQImageTool : NSObject
 
 /**
  *  重新绘制锁屏歌曲图片

@@ -1,14 +1,14 @@
 //
-//  MUSTimeTool.h
-//  PLMMPRJK
+//  QQTimeTool.h
+//  QQMusic
 //
-//  Created by HuXuPeng on 2017/10/19.
-//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//  Created by Apple on 16/5/18.
+//  Copyright © 2016年 KeenLeung. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface MUSTimeTool : NSObject
+@interface QQTimeTool : NSObject
 
 /** 格式化时间  time 123 -> 03:12*/
 + (NSString *)getFormatTime:(NSTimeInterval)time;

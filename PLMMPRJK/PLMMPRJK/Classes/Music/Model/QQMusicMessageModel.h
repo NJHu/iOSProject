@@ -1,18 +1,18 @@
 //
-//  MUSMusicMessage.h
-//  PLMMPRJK
+//  QQMusicMessageModel.h
+//  QQMusic
 //
-//  Created by HuXuPeng on 2017/10/19.
-//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//  Created by Apple on 16/5/18.
+//  Copyright © 2016年 KeenLeung. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "MUSMusic.h"
+#import "QQMusicModel.h"
 
-@interface MUSMusicMessage : NSObject
+@interface QQMusicMessageModel : NSObject
 
 /** 音乐数据*/
-@property (nonatomic, strong) MUSMusic *music;
+@property (nonatomic, strong) QQMusicModel *musicM;
 
 /** 当前播放时长*/
 @property (nonatomic, assign) NSTimeInterval costTime;
@@ -30,6 +30,5 @@
 
 /** 歌曲总时长 字符串格式*/
 @property (nonatomic, strong) NSString *totalTimeFormat;
-
 
 @end

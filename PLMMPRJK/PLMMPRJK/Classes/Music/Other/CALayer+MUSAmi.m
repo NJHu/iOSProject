@@ -1,14 +1,14 @@
 //
-//  CALayer+MUSAni.m
+//  CALayer+MUSAmi.m
 //  PLMMPRJK
 //
 //  Created by HuXuPeng on 2017/10/19.
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import "CALayer+MUSAni.h"
+#import "CALayer+MUSAmi.h"
 
-@implementation CALayer (MUSAni)
+@implementation CALayer (MUSAmi)
 
 
 - (void)pauseAnimate{

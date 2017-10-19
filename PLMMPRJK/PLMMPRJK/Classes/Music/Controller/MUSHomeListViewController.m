@@ -8,11 +8,11 @@
 
 #import "MUSHomeListViewController.h"
 #import "MUSPlayingViewController.h"
-#import "MUSMusic.h"
 #import "MUSMusicCell.h"
+#import "QQMusicOperationTool.h"
 #import "MUSAnimationTool.h"
 #import "NeteaseMusicAPI.h"
-#import "MUSMusicOperationTool.h"
+
 
 @interface MUSHomeListViewController ()<UISearchBarDelegate>
 
@@ -31,18 +31,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return MUSMusicOperationTool.shareInstance.musics.count;
+    return QQMusicOperationTool.shareInstance.musicMList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LMJSettingCell *cell = [MUSMusicCell cellWithTableView:tableView andCellStyle:UITableViewCellStyleSubtitle];
     
-    cell.imageView.image = [UIImage imageNamed:MUSMusicOperationTool.shareInstance.musics[indexPath.row].icon];
+    cell.imageView.image = [UIImage imageNamed:QQMusicOperationTool.shareInstance.musicMList[indexPath.row].icon];
     
-    cell.textLabel.text = MUSMusicOperationTool.shareInstance.musics[indexPath.row].name;
+    cell.textLabel.text = QQMusicOperationTool.shareInstance.musicMList[indexPath.row].name;
     
-    cell.detailTextLabel.text = MUSMusicOperationTool.shareInstance.musics[indexPath.row].singer;
+    cell.detailTextLabel.text = QQMusicOperationTool.shareInstance.musicMList[indexPath.row].singer;
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -62,7 +62,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     MUSPlayingViewController *playVc = [[MUSPlayingViewController alloc] init];
-    playVc.music = MUSMusicOperationTool.shareInstance.musics[indexPath.row];
+    [QQMusicOperationTool.shareInstance playMusic:QQMusicOperationTool.shareInstance.musicMList[indexPath.row]];
     [self.navigationController pushViewController:playVc animated:YES];
 }
 

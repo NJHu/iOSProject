@@ -1,22 +1,23 @@
 //
-//  MUSMusicOperationTool.m
-//  PLMMPRJK
+//  QQMusicOperationTool.m
+//  QQMusic
 //
-//  Created by HuXuPeng on 2017/10/19.
-//  Copyright © 2017年 GoMePrjk. All rights reserved.
-//
+//  Created by Apple on 16/5/18.
+//  Copyright © 2016年 KeenLeung. All rights reserved.
+//  负责的音乐播放的业务逻辑, 比如, 顺序播放, 随机播放等等
 
-#import "MUSMusicOperationTool.h"
+#import "QQMusicOperationTool.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import "MUSLrcDataTool.h"
-#import "MUSImageTool.h"
-#import "MUSMusicMessage.h"
-#import "MUSMusic.h"
+#import "QQLrcDataTool.h"
+#import "QQImageTool.h"
 
-@interface MUSMusicOperationTool ()
+@interface QQMusicOperationTool()
+
+#pragma mark --------------------------
+#pragma mark 属性
 
 /** 音乐播放工具*/
-@property (nonatomic, strong) MUSMusicTool *musicTool;
+@property (nonatomic, strong) QQMusicTool *tool;
 
 /** 锁屏 所需的图片参数设置*/
 @property (nonatomic, strong) MPMediaItemArtwork *artwork;
@@ -26,77 +27,104 @@
 
 @end
 
-@implementation MUSMusicOperationTool
+@implementation QQMusicOperationTool
 
+#pragma mark --------------------------
+#pragma mark 单例
 
+static QQMusicOperationTool *_instance = nil;
 
-- (MUSMusicMessage *)musicMessage
-{
++ (instancetype)shareInstance {
     
-    // 跟新数据
-    _musicMessage.music = self.musics[self.index];
-    
-    // 已经播放的时长
-    _musicMessage.costTime = self.musicTool.audioPlayer.currentTime;
-    
-    // 总时长
-    _musicMessage.totalTime = self.musicTool.audioPlayer.duration;
-    
-    // 播放状态
-    _musicMessage.playing = self.musicTool.audioPlayer.playing;
-    
-    return _musicMessage;
+    QQMusicOperationTool *instance = [[QQMusicOperationTool alloc] init];
+    return instance;
 }
 
++ (instancetype)allocWithZone:(struct _NSZone *)zone{
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        _instance = [[super allocWithZone:zone] init];
+        _instance.tool = [[QQMusicTool alloc] init];
+        _instance.musicMessageModel = [[QQMusicMessageModel alloc] init];
+        _instance.lrcRow = -1;
+    });
+    
+    return _instance;
+}
+
+#pragma mark --------------------------
+#pragma mark set 方法
 
 /** 重写 index 的 set方法,防止越界*/
 - (void)setIndex:(NSInteger)index{
     _index = index;
     
     if (index < 0) {
-        _index = self.musics.count - 1;
+        _index = self.musicMList.count - 1;
         
-    }else if(index > self.musics.count - 1) {
+    }else if(index > self.musicMList.count - 1) {
         _index = 0;
     }
 }
 
+#pragma mark --------------------------
+#pragma mark get 方法
+
+/** 获取最新信息*/
+- (QQMusicMessageModel *)getNewMusicMessageModel{
+    
+    // 跟新数据
+    self.musicMessageModel.musicM = self.musicMList[self.index];
+    
+    // 已经播放的时长
+    self.musicMessageModel.costTime = self.tool.player.currentTime;
+    
+    // 总时长
+    self.musicMessageModel.totalTime = self.tool.player.duration;
+    
+    // 播放状态
+    self.musicMessageModel.playing = self.tool.player.playing;
+    
+    return self.musicMessageModel;
+}
 
 
 #pragma mark --------------------------
 #pragma mark 单首音乐的操作
 
-- (void)playMusic:(MUSMusic *)music{
+- (void)playMusic:(QQMusicModel *)music{
     
     NSString *fileName = music.filename;
-    [self.musicTool playMusic:[[NSBundle mainBundle] URLForResource:fileName withExtension:nil]];
+    [self.tool playMusic:fileName];
     
-    if (self.musics == nil || self.musics.count <= 1) {
+    if (self.musicMList == nil || self.musicMList.count <= 1) {
         NSLog(@"没有播放列表, 只能播放一首歌");
         return;
     }
     
     // 记录当前播放歌曲的索引
-    self.index = [self.musics indexOfObject:music];
+    self.index = [self.musicMList indexOfObject:music];
 }
 
 - (void)playCurrentMusic{
     
-    [self.musicTool continuePlay];
+    [self.tool resumeCurrentMusic];
 }
 
 - (void)pauseCurrentMusic{
     
-    [self.musicTool pause];
+    [self.tool pauseCurrentMusic];
 }
 
 - (void)nextMusic{
     
     self.index += 1;
     
-    if (self.musics) {
+    if (self.musicMList) {
         
-        MUSMusic *music = self.musics[self.index];
+        QQMusicModel *music = self.musicMList[self.index];
         [self playMusic:music];
     }
 }
@@ -105,16 +133,16 @@
     
     self.index -= 1;
     
-    if (self.musics) {
+    if (self.musicMList) {
         
-        MUSMusic *music = self.musics[self.index];
+        QQMusicModel *music = self.musicMList[self.index];
         [self playMusic:music];
     }
 }
 
 - (void)seekTo:(NSTimeInterval)timeInteval{
     
-    [self.musicTool moveToTime:timeInteval];
+    [self.tool seekTo:timeInteval];
 }
 
 #pragma mark --------------------------
@@ -123,7 +151,7 @@
     
     //NSLog(@"设置了锁屏信息");
     
-    MUSMusicMessage *musicMessageModel = [self musicMessage];
+    QQMusicMessageModel *musicMessageModel = [self getNewMusicMessageModel];
     
     // 展示锁屏信息
     
@@ -132,23 +160,23 @@
     
     // 1.0 当前正在播放的歌曲信息
     // 获取当前播放歌曲的所有歌词信息
-    NSArray *lrcMs = [MUSLrcDataTool getLrcData:musicMessageModel.music.lrcname];
+    NSArray *lrcMs = [QQLrcDataTool getLrcData:musicMessageModel.musicM.lrcname];
     // 获取当前播放的歌词模型
-    __block MUSLrc *lrcM = nil;
+    __block QQLrcModel *lrcM = nil;
     __block NSInteger currentLrcRow = 0;
-    [MUSLrcDataTool getRow:musicMessageModel.costTime andLrcs:lrcMs completion:^(NSInteger row, MUSLrc *lrcModel) {
+    [QQLrcDataTool getRow:musicMessageModel.costTime andLrcs:lrcMs completion:^(NSInteger row, QQLrcModel *lrcModel) {
         
         currentLrcRow = row;
         lrcM = lrcModel;
     }];
     
     // 1.1 字典信息
-    NSString *songName = musicMessageModel.music.name;
-    NSString *singerName = musicMessageModel.music.singer;
+    NSString *songName = musicMessageModel.musicM.name;
+    NSString *singerName = musicMessageModel.musicM.singer;
     NSTimeInterval costTime = musicMessageModel.costTime;
     NSTimeInterval totalTime = musicMessageModel.totalTime;
     
-    NSString *icon = musicMessageModel.music.icon;
+    NSString *icon = musicMessageModel.musicM.icon;
     if (icon) {
         
         UIImage *image = [UIImage imageNamed:icon];
@@ -159,7 +187,7 @@
                 
                 //NSLog(@"绘制了新图片");
                 // 重新绘制图片
-                UIImage *newImage = [MUSImageTool getNewImage:image andLrcStr:lrcM.lrcStr];
+                UIImage *newImage = [QQImageTool getNewImage:image andLrcStr:lrcM.lrcStr];
                 
                 self.artwork = [[MPMediaItemArtwork alloc] initWithImage:newImage];
                 
@@ -202,70 +230,25 @@
 
 
 
-
-
-
-
-- (NSMutableArray<MUSMusic *> *)musics
+- (NSArray *)musicMList
 {
-    if(_musics == nil)
+    if(_musicMList == nil)
     {
-        _musics = [MUSMusic mj_objectArrayWithFilename:@"Musics.plist"];
+        _musicMList = [QQMusicModel mj_objectArrayWithFile:@"Musics.plist"];
     }
-    return _musics;
+    return _musicMList;
 }
 
 
 
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _musicTool = [[MUSMusicTool alloc] init];
-        _musicMessage = [[MUSMusicMessage alloc] init];
-        _lrcRow = -1;
-    }
-    return self;
-}
-
-
-
-#pragma mark - instance
-
-static id _instance = nil;
-+ (instancetype)shareInstance
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-            _instance = [[self alloc] init];
-        
-        
-    });
-    
-    return _instance;
-}
-
-+ (instancetype)allocWithZone:(struct _NSZone *)zone
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _instance = [super allocWithZone:zone];
-    });
-    
-    return _instance;
-}
-
-- (id)copyWithZone:(NSZone *)zone
-{
-    return _instance;
-}
-
-- (id)mutableCopyWithZone:(NSZone *)zone
-{
-    return _instance;
-}
 
 
 @end
+
+
+
+
+
+
+
+
