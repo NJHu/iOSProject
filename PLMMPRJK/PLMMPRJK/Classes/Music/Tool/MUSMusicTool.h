@@ -1,5 +1,5 @@
 //
-//  MUSAudioPlayer.h
+//  MUSMusicTool.h
 //  PLMMPRJK
 //
 //  Created by HuXuPeng on 2017/9/27.
@@ -8,19 +8,23 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-@class MUSAudioPlayer;
+@class MUSMusicTool;
 
-@protocol MUSAudioPlayerDelegate <NSObject>
+@protocol MUSMusicToolDelegate <NSObject>
 
-- (void)audioPlayerDidFinishPlay:(MUSAudioPlayer *)audioPlayer;
+- (void)audioPlayerDidFinishPlay:(MUSMusicTool *)audioPlayer;
+
 
 @end
 
-@interface MUSAudioPlayer : NSObject
+@interface MUSMusicTool : NSObject
 
 
 /** <#digest#> */
-@property (weak, nonatomic) id<MUSAudioPlayerDelegate> delegate;
+@property (weak, nonatomic) id<MUSMusicToolDelegate> delegate;
+
+/** <#digest#> */
+@property (nonatomic, strong, readonly) AVAudioPlayer *audioPlayer;
 
 /** <#digest#> */
 @property (nonatomic, strong, readonly) NSURL *contentsOfURL;

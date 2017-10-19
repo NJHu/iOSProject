@@ -12,7 +12,4 @@
 
 @interface MUSPlayingViewController : LMJBaseViewController
 
-/** <#digest#> */
-@property (nonatomic, strong) MUSMusic *music;
-
 @end

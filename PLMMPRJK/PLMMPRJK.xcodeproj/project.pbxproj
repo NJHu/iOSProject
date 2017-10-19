@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580993811F988C970034D17B /* MUSPlayingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 580993801F988C970034D17B /* MUSPlayingViewController.xib */; };
+		580993841F9896710034D17B /* MUSLrcDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 580993831F9896710034D17B /* MUSLrcDataTool.m */; };
+		580993871F9897EA0034D17B /* MUSImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 580993861F9897EA0034D17B /* MUSImageTool.m */; };
 		5811FA601F039609000F49D6 /* SINStatusRetweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5811FA5F1F039609000F49D6 /* SINStatusRetweetView.m */; };
 		5824592A1EE056410004A5BF /* BSJPictureShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582459291EE056410004A5BF /* BSJPictureShowViewController.m */; };
 		58245AD91EE2AB470004A5BF /* LMJDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245AD81EE2AB470004A5BF /* LMJDynamicViewController.m */; };
@@ -245,8 +248,13 @@
 		58A663691EBD8E1300222A1D /* LMJH5_OCViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 58A663681EBD8E1300222A1D /* LMJH5_OCViewController.html */; };
 		58A6636C1EBD983100222A1D /* LMJOCJSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */; };
 		58A6636F1EBDAF5500222A1D /* LMJAlertViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A6636E1EBDAF5500222A1D /* LMJAlertViewsViewController.m */; };
-		58AF02891F7B4163001F31C5 /* MUSAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AF02881F7B4163001F31C5 /* MUSAudioTool.m */; };
-		58AF028D1F7B55A0001F31C5 /* MUSAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AF028C1F7B55A0001F31C5 /* MUSAudioPlayer.m */; };
+		58AE3DFB1F98569700BF526D /* MUSAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE3DF81F98569700BF526D /* MUSAudioTool.m */; };
+		58AE3DFC1F98569700BF526D /* MUSMusicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE3DFA1F98569700BF526D /* MUSMusicTool.m */; };
+		58AE3DFF1F9856CC00BF526D /* MUSMusicOperationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE3DFE1F9856CC00BF526D /* MUSMusicOperationTool.m */; };
+		58AE3E021F98572D00BF526D /* MUSMusicMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE3E011F98572D00BF526D /* MUSMusicMessage.m */; };
+		58AE3E051F986F9F00BF526D /* MUSTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE3E041F986F9F00BF526D /* MUSTimeTool.m */; };
+		58AE3E081F98703D00BF526D /* MUSLrc.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE3E071F98703D00BF526D /* MUSLrc.m */; };
+		58AE3E0B1F9870DC00BF526D /* CALayer+MUSAni.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE3E0A1F9870DC00BF526D /* CALayer+MUSAni.m */; };
 		58AF02901F7B6BAD001F31C5 /* MUSMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AF028F1F7B6BAD001F31C5 /* MUSMusic.m */; };
 		58AF02921F7B6CF5001F31C5 /* QQMusic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58AF02911F7B6CF5001F31C5 /* QQMusic.xcassets */; };
 		58AF02C01F7B6D31001F31C5 /* bb@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58AF02951F7B6D31001F31C5 /* bb@2x.jpg */; };
@@ -813,6 +821,11 @@
 
 /* Begin PBXFileReference section */
 		23E10B7ADDCDC21B761F123C /* Pods-PLMMPRJK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLMMPRJK.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLMMPRJK/Pods-PLMMPRJK.release.xcconfig"; sourceTree = "<group>"; };
+		580993801F988C970034D17B /* MUSPlayingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUSPlayingViewController.xib; sourceTree = "<group>"; };
+		580993821F9896710034D17B /* MUSLrcDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSLrcDataTool.h; sourceTree = "<group>"; };
+		580993831F9896710034D17B /* MUSLrcDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSLrcDataTool.m; sourceTree = "<group>"; };
+		580993851F9897EA0034D17B /* MUSImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSImageTool.h; sourceTree = "<group>"; };
+		580993861F9897EA0034D17B /* MUSImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSImageTool.m; sourceTree = "<group>"; };
 		5811FA5E1F039609000F49D6 /* SINStatusRetweetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusRetweetView.h; sourceTree = "<group>"; };
 		5811FA5F1F039609000F49D6 /* SINStatusRetweetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusRetweetView.m; sourceTree = "<group>"; };
 		582459281EE056410004A5BF /* BSJPictureShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJPictureShowViewController.h; sourceTree = "<group>"; };
@@ -1263,10 +1276,20 @@
 		58A6636B1EBD983100222A1D /* LMJOCJSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJOCJSHelper.m; sourceTree = "<group>"; };
 		58A6636D1EBDAF5500222A1D /* LMJAlertViewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAlertViewsViewController.h; sourceTree = "<group>"; };
 		58A6636E1EBDAF5500222A1D /* LMJAlertViewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAlertViewsViewController.m; sourceTree = "<group>"; };
-		58AF02871F7B4163001F31C5 /* MUSAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSAudioTool.h; sourceTree = "<group>"; };
-		58AF02881F7B4163001F31C5 /* MUSAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSAudioTool.m; sourceTree = "<group>"; };
-		58AF028B1F7B55A0001F31C5 /* MUSAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSAudioPlayer.h; sourceTree = "<group>"; };
-		58AF028C1F7B55A0001F31C5 /* MUSAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSAudioPlayer.m; sourceTree = "<group>"; };
+		58AE3DF71F98569700BF526D /* MUSAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSAudioTool.h; sourceTree = "<group>"; };
+		58AE3DF81F98569700BF526D /* MUSAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSAudioTool.m; sourceTree = "<group>"; };
+		58AE3DF91F98569700BF526D /* MUSMusicTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSMusicTool.h; sourceTree = "<group>"; };
+		58AE3DFA1F98569700BF526D /* MUSMusicTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSMusicTool.m; sourceTree = "<group>"; };
+		58AE3DFD1F9856CB00BF526D /* MUSMusicOperationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSMusicOperationTool.h; sourceTree = "<group>"; };
+		58AE3DFE1F9856CC00BF526D /* MUSMusicOperationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSMusicOperationTool.m; sourceTree = "<group>"; };
+		58AE3E001F98572D00BF526D /* MUSMusicMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSMusicMessage.h; sourceTree = "<group>"; };
+		58AE3E011F98572D00BF526D /* MUSMusicMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSMusicMessage.m; sourceTree = "<group>"; };
+		58AE3E031F986F9F00BF526D /* MUSTimeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSTimeTool.h; sourceTree = "<group>"; };
+		58AE3E041F986F9F00BF526D /* MUSTimeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSTimeTool.m; sourceTree = "<group>"; };
+		58AE3E061F98703D00BF526D /* MUSLrc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSLrc.h; sourceTree = "<group>"; };
+		58AE3E071F98703D00BF526D /* MUSLrc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSLrc.m; sourceTree = "<group>"; };
+		58AE3E091F9870DC00BF526D /* CALayer+MUSAni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+MUSAni.h"; sourceTree = "<group>"; };
+		58AE3E0A1F9870DC00BF526D /* CALayer+MUSAni.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+MUSAni.m"; sourceTree = "<group>"; };
 		58AF028E1F7B6BAD001F31C5 /* MUSMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSMusic.h; sourceTree = "<group>"; };
 		58AF028F1F7B6BAD001F31C5 /* MUSMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSMusic.m; sourceTree = "<group>"; };
 		58AF02911F7B6CF5001F31C5 /* QQMusic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QQMusic.xcassets; sourceTree = "<group>"; };
@@ -3047,6 +3070,7 @@
 		588B32411EC4309300D00C1C /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				58AE3DF61F98568400BF526D /* Tool */,
 				58AF02931F7B6D31001F31C5 /* QQResources */,
 				588B32421EC4309300D00C1C /* Controller */,
 				588B32451EC4309300D00C1C /* Model */,
@@ -3064,6 +3088,7 @@
 				583E45E21F7A63D00069B8BB /* MUSHomeListViewController.m */,
 				58AF02F31F7C9663001F31C5 /* MUSPlayingViewController.h */,
 				58AF02F41F7C9663001F31C5 /* MUSPlayingViewController.m */,
+				580993801F988C970034D17B /* MUSPlayingViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3073,6 +3098,10 @@
 			children = (
 				58AF028E1F7B6BAD001F31C5 /* MUSMusic.h */,
 				58AF028F1F7B6BAD001F31C5 /* MUSMusic.m */,
+				58AE3E001F98572D00BF526D /* MUSMusicMessage.h */,
+				58AE3E011F98572D00BF526D /* MUSMusicMessage.m */,
+				58AE3E061F98703D00BF526D /* MUSLrc.h */,
+				58AE3E071F98703D00BF526D /* MUSLrc.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3080,12 +3109,16 @@
 		588B32471EC4309300D00C1C /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				58AF02871F7B4163001F31C5 /* MUSAudioTool.h */,
-				58AF02881F7B4163001F31C5 /* MUSAudioTool.m */,
-				58AF028B1F7B55A0001F31C5 /* MUSAudioPlayer.h */,
-				58AF028C1F7B55A0001F31C5 /* MUSAudioPlayer.m */,
 				58AF02EC1F7B737B001F31C5 /* MUSAnimationTool.h */,
 				58AF02ED1F7B737B001F31C5 /* MUSAnimationTool.m */,
+				58AE3E031F986F9F00BF526D /* MUSTimeTool.h */,
+				58AE3E041F986F9F00BF526D /* MUSTimeTool.m */,
+				58AE3E091F9870DC00BF526D /* CALayer+MUSAni.h */,
+				58AE3E0A1F9870DC00BF526D /* CALayer+MUSAni.m */,
+				580993821F9896710034D17B /* MUSLrcDataTool.h */,
+				580993831F9896710034D17B /* MUSLrcDataTool.m */,
+				580993851F9897EA0034D17B /* MUSImageTool.h */,
+				580993861F9897EA0034D17B /* MUSImageTool.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -3512,6 +3545,19 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		58AE3DF61F98568400BF526D /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				58AE3DF71F98569700BF526D /* MUSAudioTool.h */,
+				58AE3DF81F98569700BF526D /* MUSAudioTool.m */,
+				58AE3DF91F98569700BF526D /* MUSMusicTool.h */,
+				58AE3DFA1F98569700BF526D /* MUSMusicTool.m */,
+				58AE3DFD1F9856CB00BF526D /* MUSMusicOperationTool.h */,
+				58AE3DFE1F9856CC00BF526D /* MUSMusicOperationTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		58AF02931F7B6D31001F31C5 /* QQResources */ = {
@@ -6397,6 +6443,7 @@
 				58AF02C41F7B6D31001F31C5 /* eason@2x.jpg in Resources */,
 				58B3CC791EC819FB00D3C02D /* BSJRecommendUserCell.xib in Resources */,
 				58552F901F74B42B00CCA4DF /* NJPlayer.bundle in Resources */,
+				580993811F988C970034D17B /* MUSPlayingViewController.xib in Resources */,
 				58AFAB681EB4ADAA00822043 /* blankpage_image_Sleep@2x.png in Resources */,
 				58AFABB31EB4ADAA00822043 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				585529B41F72021B00CCA4DF /* IMHLoginViewController.xib in Resources */,
@@ -6552,7 +6599,6 @@
 				58AFABC41EB4ADAA00822043 /* UIImage+JMRoundedCorner.m in Sources */,
 				58AFAB9C1EB4ADAA00822043 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				58AFABD51EB4ADAA00822043 /* UIBezierPath+LxThroughPointsBezier.m in Sources */,
-				58AF028D1F7B55A0001F31C5 /* MUSAudioPlayer.m in Sources */,
 				58552EB91F724E3600CCA4DF /* EaseMessageViewController.m in Sources */,
 				588B32A01EC43CFE00D00C1C /* SINTabBarController.m in Sources */,
 				58552F311F72521000CCA4DF /* PSTGridLayoutItem.m in Sources */,
@@ -6584,6 +6630,7 @@
 				584CEA8B1EF3A61F00EAEFBA /* BSJMeSquareCell.m in Sources */,
 				58FFE9C21EBF61D500D50E4C /* LMJNavBarFadeViewController.m in Sources */,
 				58FFE9A91EBEDD5C00D50E4C /* IFlyFaceImage.m in Sources */,
+				58AE3DFB1F98569700BF526D /* MUSAudioTool.m in Sources */,
 				58CC87881ED2E73200D54800 /* TDTouchID.m in Sources */,
 				58AFABD21EB4ADAA00822043 /* UIBarButtonItem+Action.m in Sources */,
 				58AFAB151EB4ADAA00822043 /* NSDate+Reporting.m in Sources */,
@@ -6631,6 +6678,7 @@
 				58AFACB21EB4ADAB00822043 /* UIAlertView+LMJBlock.m in Sources */,
 				58552F2A1F72521000CCA4DF /* PSTCollectionViewController.m in Sources */,
 				58A6636F1EBDAF5500222A1D /* LMJAlertViewsViewController.m in Sources */,
+				58AE3E051F986F9F00BF526D /* MUSTimeTool.m in Sources */,
 				58AFAB011EB4ADAA00822043 /* NSManagedObjectContext+Fetching.m in Sources */,
 				58AFAB631EB4ADAA00822043 /* WJYAlertInputTextView.m in Sources */,
 				58AFAB5D1EB4ADAA00822043 /* CAShapeLayer+UIBezierPath.m in Sources */,
@@ -6687,6 +6735,7 @@
 				58552ED11F724E3600CCA4DF /* EaseRecordView.m in Sources */,
 				58AFACA91EB4ADAB00822043 /* LMJNSThreadViewController.m in Sources */,
 				58AFACB91EB4CFD500822043 /* UIView+LMJNjHuFrame.m in Sources */,
+				580993871F9897EA0034D17B /* MUSImageTool.m in Sources */,
 				58AF02901F7B6BAD001F31C5 /* MUSMusic.m in Sources */,
 				58AFAC981EB4ADAB00822043 /* LMJExpandHeader.m in Sources */,
 				58AFABC21EB4ADAA00822043 /* UUInputAccessoryView.m in Sources */,
@@ -6695,6 +6744,7 @@
 				58552F551F749EAC00CCA4DF /* CHANGELOG.md in Sources */,
 				58AFAB451EB4ADAA00822043 /* NSString+RemoveEmoji.m in Sources */,
 				588B32C61EC4485600D00C1C /* SINDiscoveryViewController.m in Sources */,
+				58AE3E021F98572D00BF526D /* MUSMusicMessage.m in Sources */,
 				58AFAB7C1EB4ADAA00822043 /* introductoryPagesHelper.m in Sources */,
 				58552EBF1F724E3600CCA4DF /* EaseCustomMessageCell.m in Sources */,
 				58AFAC911EB4ADAB00822043 /* LMJTabBarController.m in Sources */,
@@ -6848,7 +6898,9 @@
 				58AFACF51EB8D7F000822043 /* LMJCoordinateModel.m in Sources */,
 				58B3CC931EC835A300D3C02D /* UIView+SDExtension.m in Sources */,
 				58AFABF61EB4ADAA00822043 /* UIImage+PDF.m in Sources */,
+				580993841F9896710034D17B /* MUSLrcDataTool.m in Sources */,
 				58552EAF1F724E3600CCA4DF /* EaseChineseToPinyin.m in Sources */,
+				58AE3E081F98703D00BF526D /* MUSLrc.m in Sources */,
 				58AFAB311EB4ADAA00822043 /* NSObject+Blocks.m in Sources */,
 				58AFABEC1EB4ADAA00822043 /* UIImage+animatedGIF.m in Sources */,
 				58AFAB301EB4ADAA00822043 /* NSObject+AutoCoding.m in Sources */,
@@ -7000,6 +7052,7 @@
 				58AFAC821EB4ADAB00822043 /* LMJBlankPageViewController.m in Sources */,
 				58FFE98F1EBEDD1E00D50E4C /* FaceStreamDetectorViewController.m in Sources */,
 				58AFAC611EB4ADAB00822043 /* LMJTableViewController.m in Sources */,
+				58AE3E0B1F9870DC00BF526D /* CALayer+MUSAni.m in Sources */,
 				58AFAB281EB4ADAA00822043 /* NSDecimalNumber+CalculatingByString.m in Sources */,
 				58AFAB391EB4ADAA00822043 /* NSSet+Block.m in Sources */,
 				58AFAC711EB4ADAB00822043 /* LMJMessageViewController.m in Sources */,
@@ -7028,7 +7081,6 @@
 				58AFAC601EB4ADAB00822043 /* LMJStaticTableViewController.m in Sources */,
 				58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */,
 				58B3CC711EC80CCB00D3C02D /* BSJRecommendSevice.m in Sources */,
-				58AF02891F7B4163001F31C5 /* MUSAudioTool.m in Sources */,
 				58AFAB6B1EB4ADAA00822043 /* UIView+EaseBlankPage.m in Sources */,
 				585529B31F72021B00CCA4DF /* IMHLoginViewController.m in Sources */,
 				588B32D81EC48D6600D00C1C /* BSJPublishViewController.m in Sources */,
@@ -7062,6 +7114,7 @@
 				58AFABCA1EB4ADAA00822043 /* UIImage+OuterCircle.m in Sources */,
 				58AFAB951EB4ADAA00822043 /* IQKeyboardManager.m in Sources */,
 				58AFAB161EB4ADAA00822043 /* NSDate+TimeAgo.m in Sources */,
+				58AE3DFC1F98569700BF526D /* MUSMusicTool.m in Sources */,
 				58552EB01F724E3600CCA4DF /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				58552EFB1F72515200CCA4DF /* EMSDWebImageCompat.m in Sources */,
 				58AFAC5F1EB4ADAB00822043 /* LMJRequestBaseViewController.m in Sources */,
@@ -7080,6 +7133,7 @@
 				58AFAB371EB4ADAA00822043 /* NSObject+Runtime.m in Sources */,
 				58552FEB1F74B5C900CCA4DF /* UINavigationController+ZFPlayerRotation.m in Sources */,
 				58F144721ECDDD100053B2A2 /* ZJScrollPageView.m in Sources */,
+				58AE3DFF1F9856CC00BF526D /* MUSMusicOperationTool.m in Sources */,
 				58AFAB2D1EB4ADAA00822043 /* NSObject+AddProperty.m in Sources */,
 				58FFE9BC1EBF205300D50E4C /* LMJCalendarViewController.m in Sources */,
 				58AFAB981EB4ADAA00822043 /* IQBarButtonItem.m in Sources */,

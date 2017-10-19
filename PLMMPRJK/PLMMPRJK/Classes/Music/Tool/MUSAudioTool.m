@@ -21,6 +21,8 @@
     player.enableRate = YES;
     [player prepareToPlay];
     
+    
+    
     return player;
 }
 
@@ -61,15 +63,23 @@
 
 + (void)initialize
 {
-    
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    
-    ///后台播放
-    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
-    
-    ///激活会话
-    [session setActive:YES error:nil];
-    
+//    // 1.获取音频会话
+//    AVAudioSession *session = [AVAudioSession sharedInstance];
+//    
+//    // 2.设置音频会话类别
+//    NSError *error = nil;
+//    [session setCategory:AVAudioSessionCategoryPlayback error:&error];
+//    if (error) {
+//        NSLog(@"%@", error);
+//        return ;
+//    }
+//    
+//    // 3.激活会话
+//    [session setActive:YES error:&error];
+//    if (error) {
+//        NSLog(@"%@", error);
+//        return ;
+//    }
     
     
 }

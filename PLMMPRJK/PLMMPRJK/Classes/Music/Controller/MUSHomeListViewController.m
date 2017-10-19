@@ -12,10 +12,10 @@
 #import "MUSMusicCell.h"
 #import "MUSAnimationTool.h"
 #import "NeteaseMusicAPI.h"
+#import "MUSMusicOperationTool.h"
 
 @interface MUSHomeListViewController ()<UISearchBarDelegate>
-/** <#digest#> */
-@property (nonatomic, strong) NSMutableArray<MUSMusic *> *musics;
+
 @end
 
 @implementation MUSHomeListViewController
@@ -31,18 +31,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.musics.count;
+    return MUSMusicOperationTool.shareInstance.musics.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LMJSettingCell *cell = [MUSMusicCell cellWithTableView:tableView andCellStyle:UITableViewCellStyleSubtitle];
     
-    cell.imageView.image = [UIImage imageNamed:self.musics[indexPath.row].icon];
+    cell.imageView.image = [UIImage imageNamed:MUSMusicOperationTool.shareInstance.musics[indexPath.row].icon];
     
-    cell.textLabel.text = self.musics[indexPath.row].name;
+    cell.textLabel.text = MUSMusicOperationTool.shareInstance.musics[indexPath.row].name;
     
-    cell.detailTextLabel.text = self.musics[indexPath.row].singer;
+    cell.detailTextLabel.text = MUSMusicOperationTool.shareInstance.musics[indexPath.row].singer;
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -62,7 +62,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     MUSPlayingViewController *playVc = [[MUSPlayingViewController alloc] init];
-    playVc.music = self.musics[indexPath.row];
+    playVc.music = MUSMusicOperationTool.shareInstance.musics[indexPath.row];
     [self.navigationController pushViewController:playVc animated:YES];
 }
 
@@ -92,14 +92,6 @@
 
 #pragma mark - getter
 
-- (NSMutableArray<MUSMusic *> *)musics
-{
-    if(_musics == nil)
-    {
-        _musics = [MUSMusic mj_objectArrayWithFilename:@"Musics.plist"];
-    }
-    return _musics;
-}
 
 #pragma mark - 最后一个输入框点击键盘上的完成按钮时调用
 - (void)textViewController:(LMJTextViewController *)textViewController inputViewDone:(id)inputView
