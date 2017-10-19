@@ -54,9 +54,9 @@
 /** 导航条右边的按钮 */
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    [rightButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
+//    [rightButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
     
-    return [UIImage imageNamed:@"NavgationBar_blue_back"];
+    return [UIImage imageNamed:@"main_tab_more"];
 }
 
 
