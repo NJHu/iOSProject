@@ -171,7 +171,6 @@
 		58552F321F72521000CCA4DF /* PSTGridLayoutRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F241F72521000CCA4DF /* PSTGridLayoutRow.m */; };
 		58552F331F72521000CCA4DF /* PSTGridLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F261F72521000CCA4DF /* PSTGridLayoutSection.m */; };
 		58552F361F7269D300CCA4DF /* IMHEaseMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F351F7269D300CCA4DF /* IMHEaseMessageViewController.m */; };
-		58552F551F749EAC00CCA4DF /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 58552F461F749EAC00CCA4DF /* CHANGELOG.md */; };
 		58552F561F749EAC00CCA4DF /* libffmpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58552F511F749EAC00CCA4DF /* libffmpeg.a */; };
 		58552F571F749EAC00CCA4DF /* libopenssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58552F521F749EAC00CCA4DF /* libopenssl.a */; };
 		58552F581F749EAC00CCA4DF /* libVitamio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58552F531F749EAC00CCA4DF /* libVitamio.a */; };
@@ -6753,7 +6752,6 @@
 				58AFABC21EB4ADAA00822043 /* UUInputAccessoryView.m in Sources */,
 				583E45911F7A4A740069B8BB /* ZFHttpRequest.m in Sources */,
 				58AFAB5A1EB4ADAA00822043 /* CAAnimation+EasingEquations.m in Sources */,
-				58552F551F749EAC00CCA4DF /* CHANGELOG.md in Sources */,
 				58AFAB451EB4ADAA00822043 /* NSString+RemoveEmoji.m in Sources */,
 				588B32C61EC4485600D00C1C /* SINDiscoveryViewController.m in Sources */,
 				58AFAB7C1EB4ADAA00822043 /* introductoryPagesHelper.m in Sources */,
