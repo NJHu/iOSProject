@@ -32,12 +32,6 @@
 @property (nonatomic, strong) NSString *icon;
 
 
-#pragma mark --------------------------
-#pragma mark 自定义构造方法
-
-+ (instancetype)modelWithDict: (NSDictionary *)dict;
-
-- (instancetype)initWithDict: (NSDictionary *)dict;
 
 
 @end

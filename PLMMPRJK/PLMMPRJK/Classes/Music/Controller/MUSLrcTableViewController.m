@@ -35,8 +35,8 @@
     self.oldScrollRow = -1;
 }
 
-- (void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
     
     // 增加内边距
     CGFloat insetH = self.tableView.lmj_height * 0.5;
@@ -97,6 +97,13 @@
     // 取出模型
     QQLrcModel *lrcModel = self.datasource[indexPath.row];
     cell.lrcModel = lrcModel;
+    
+    if (indexPath.row == self.scrollRow) {
+        cell.progress = self.progress;
+    }else
+    {
+        cell.progress = 0;
+    }
     
     return cell;
 }

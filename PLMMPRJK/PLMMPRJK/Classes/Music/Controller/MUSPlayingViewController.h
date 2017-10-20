@@ -8,8 +8,6 @@
 
 #import "LMJBaseViewController.h"
 
-@class MUSMusic;
-
 @interface MUSPlayingViewController : LMJBaseViewController
 
 @end

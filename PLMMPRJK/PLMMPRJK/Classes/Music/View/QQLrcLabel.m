@@ -15,6 +15,10 @@
     
     _progress = progress;
     
+    if (_progress >= 0.97) {
+        _progress = 0;
+    }
+    
     [self setNeedsDisplay];
 }
 

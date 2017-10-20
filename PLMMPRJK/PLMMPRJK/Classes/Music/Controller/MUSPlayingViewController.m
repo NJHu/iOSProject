@@ -83,6 +83,7 @@
     if (_lrcTVC == nil) {
         
         _lrcTVC = [[MUSLrcTableViewController alloc] init];
+        [self addChildViewController:_lrcTVC];
     }
     return _lrcTVC;
 }
@@ -113,8 +114,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)viewWillLayoutSubviews{
-    
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
     [self setUpFrame];
 }
 
@@ -506,25 +507,29 @@
     switch (type) {
         case UIEventSubtypeRemoteControlPlay:{
             //NSLog(@"播放");
-            [[QQMusicOperationTool shareInstance] playCurrentMusic];
+//            [[QQMusicOperationTool shareInstance] playCurrentMusic];
+            [self playOrPauseMusic:nil];
             break;
         }
             
         case UIEventSubtypeRemoteControlPause:{
             //NSLog(@"暂停");
-            [[QQMusicOperationTool shareInstance] pauseCurrentMusic];
+//            [[QQMusicOperationTool shareInstance] pauseCurrentMusic];
+            [self playOrPauseMusic:nil];
             break;
         }
             
         case UIEventSubtypeRemoteControlNextTrack:{
             //NSLog(@"下一首");
-            [[QQMusicOperationTool shareInstance] nextMusic];
+//            [[QQMusicOperationTool shareInstance] nextMusic];
+            [self nextMusic:nil];
             break;
         }
             
         case UIEventSubtypeRemoteControlPreviousTrack:{
             //NSLog(@"上一首");
-            [[QQMusicOperationTool shareInstance] preMusic];
+//            [[QQMusicOperationTool shareInstance] preMusic];
+            [self preMusic:nil];
             break;
         }
         default:{

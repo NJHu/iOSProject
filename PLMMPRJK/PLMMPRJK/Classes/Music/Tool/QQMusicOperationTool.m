@@ -32,26 +32,46 @@
 #pragma mark --------------------------
 #pragma mark 单例
 
-static QQMusicOperationTool *_instance = nil;
-
-+ (instancetype)shareInstance {
-    
-    QQMusicOperationTool *instance = [[QQMusicOperationTool alloc] init];
-    return instance;
-}
-
-+ (instancetype)allocWithZone:(struct _NSZone *)zone{
-    
+static id _instance = nil;
++ (instancetype)shareInstance
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
-        _instance = [[super allocWithZone:zone] init];
-        _instance.tool = [[QQMusicTool alloc] init];
-        _instance.musicMessageModel = [[QQMusicMessageModel alloc] init];
-        _instance.lrcRow = -1;
+            _instance = [[self alloc] init];
     });
     
     return _instance;
+}
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    
+    return _instance;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
+
+- (id)mutableCopyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _tool = [[QQMusicTool alloc] init];
+        _musicMessageModel = [[QQMusicMessageModel alloc] init];
+        _lrcRow = -1;
+    }
+    return self;
 }
 
 #pragma mark --------------------------
@@ -234,7 +254,7 @@ static QQMusicOperationTool *_instance = nil;
 {
     if(_musicMList == nil)
     {
-        _musicMList = [QQMusicModel mj_objectArrayWithFile:@"Musics.plist"];
+        _musicMList = [QQMusicModel mj_objectArrayWithFilename:@"Musics.plist"];
     }
     return _musicMList;
 }

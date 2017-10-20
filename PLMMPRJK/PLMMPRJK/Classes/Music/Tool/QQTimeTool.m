@@ -18,7 +18,7 @@
     NSInteger min = time / 60;
     NSInteger second = time - min * 60;
     
-    NSString *result = [NSString stringWithFormat:@"%02d:%02d",min,second];
+    NSString *result = [NSString stringWithFormat:@"%02ld:%02ld",(long)min,(long)second];
     
     return result;
 }

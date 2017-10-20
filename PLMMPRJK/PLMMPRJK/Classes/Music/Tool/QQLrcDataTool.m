@@ -98,8 +98,8 @@
             *stop = YES;
         }
     }];
-    
     completion(row, lrcModel);
+    
 }
 
 @end
