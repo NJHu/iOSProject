@@ -254,7 +254,6 @@
 		588E9C391EF7BD52006F599B /* SINTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E9C381EF7BD52006F599B /* SINTabBar.m */; };
 		588E9C3C1EF7D1A4006F599B /* LMJCoreAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E9C3B1EF7D1A4006F599B /* LMJCoreAnimationViewController.m */; };
 		588E9C3F1EF7D1D1006F599B /* LMJDrawRectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E9C3E1EF7D1D1006F599B /* LMJDrawRectViewController.m */; };
-		588E9C421EF7D1F4006F599B /* LMJCA3DTransformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E9C411EF7D1F4006F599B /* LMJCA3DTransformViewController.m */; };
 		589375911EE3F0FB00BE0990 /* BSJTopicCmtCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893758F1EE3F0FB00BE0990 /* BSJTopicCmtCell.m */; };
 		589375921EE3F0FB00BE0990 /* BSJTopicCmtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */; };
 		589375951EE3FB4200BE0990 /* BSJComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 589375941EE3FB4200BE0990 /* BSJComment.m */; };
@@ -756,6 +755,8 @@
 		58DE9A0D1EF3BDC9001A3CD4 /* BSJPublishWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE9A0C1EF3BDC9001A3CD4 /* BSJPublishWordViewController.m */; };
 		58DE9A101EF3D102001A3CD4 /* BSJWordToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE9A0F1EF3D102001A3CD4 /* BSJWordToolBar.m */; };
 		58DFA6651F9D935E0029B6DB /* WPFDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA6641F9D935E0029B6DB /* WPFDemoController.m */; };
+		58DFA66C1F9DCC370029B6DB /* LMJCALayerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA66B1F9DCC370029B6DB /* LMJCALayerBaseViewController.m */; };
+		58DFA66F1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA66E1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m */; };
 		58F144561ECD9D990053B2A2 /* BSJHlightedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144551ECD9D990053B2A2 /* BSJHlightedTextField.m */; };
 		58F144591ECDCF6A0053B2A2 /* BSJGuidePushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144581ECDCF6A0053B2A2 /* BSJGuidePushView.m */; };
 		58F1445B1ECDCF7B0053B2A2 /* BSJGuidePushView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F1445A1ECDCF7B0053B2A2 /* BSJGuidePushView.xib */; };
@@ -1301,8 +1302,6 @@
 		588E9C3B1EF7D1A4006F599B /* LMJCoreAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCoreAnimationViewController.m; sourceTree = "<group>"; };
 		588E9C3D1EF7D1D1006F599B /* LMJDrawRectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDrawRectViewController.h; sourceTree = "<group>"; };
 		588E9C3E1EF7D1D1006F599B /* LMJDrawRectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDrawRectViewController.m; sourceTree = "<group>"; };
-		588E9C401EF7D1F4006F599B /* LMJCA3DTransformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCA3DTransformViewController.h; sourceTree = "<group>"; };
-		588E9C411EF7D1F4006F599B /* LMJCA3DTransformViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCA3DTransformViewController.m; sourceTree = "<group>"; };
 		5893758E1EE3F0FB00BE0990 /* BSJTopicCmtCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicCmtCell.h; sourceTree = "<group>"; };
 		5893758F1EE3F0FB00BE0990 /* BSJTopicCmtCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJTopicCmtCell.m; sourceTree = "<group>"; };
 		589375901EE3F0FB00BE0990 /* BSJTopicCmtCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJTopicCmtCell.xib; sourceTree = "<group>"; };
@@ -2261,6 +2260,10 @@
 		58DE9A0F1EF3D102001A3CD4 /* BSJWordToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJWordToolBar.m; sourceTree = "<group>"; };
 		58DFA6631F9D935E0029B6DB /* WPFDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFDemoController.h; sourceTree = "<group>"; };
 		58DFA6641F9D935E0029B6DB /* WPFDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFDemoController.m; sourceTree = "<group>"; };
+		58DFA66A1F9DCC370029B6DB /* LMJCALayerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCALayerBaseViewController.h; sourceTree = "<group>"; };
+		58DFA66B1F9DCC370029B6DB /* LMJCALayerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCALayerBaseViewController.m; sourceTree = "<group>"; };
+		58DFA66D1F9DCC530029B6DB /* LMJCALayerYSDHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCALayerYSDHViewController.h; sourceTree = "<group>"; };
+		58DFA66E1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCALayerYSDHViewController.m; sourceTree = "<group>"; };
 		58F144541ECD9D990053B2A2 /* BSJHlightedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJHlightedTextField.h; sourceTree = "<group>"; };
 		58F144551ECD9D990053B2A2 /* BSJHlightedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJHlightedTextField.m; sourceTree = "<group>"; };
 		58F144571ECDCF6A0053B2A2 /* BSJGuidePushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJGuidePushView.h; sourceTree = "<group>"; };
@@ -3193,10 +3196,9 @@
 				58DFA6641F9D935E0029B6DB /* WPFDemoController.m */,
 				588E9C3A1EF7D1A4006F599B /* LMJCoreAnimationViewController.h */,
 				588E9C3B1EF7D1A4006F599B /* LMJCoreAnimationViewController.m */,
+				58DFA6691F9DCB6A0029B6DB /* CoreAnimationControllers */,
 				588E9C3D1EF7D1D1006F599B /* LMJDrawRectViewController.h */,
 				588E9C3E1EF7D1D1006F599B /* LMJDrawRectViewController.m */,
-				588E9C401EF7D1F4006F599B /* LMJCA3DTransformViewController.h */,
-				588E9C411EF7D1F4006F599B /* LMJCA3DTransformViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -6115,6 +6117,17 @@
 			path = TDTouchID;
 			sourceTree = "<group>";
 		};
+		58DFA6691F9DCB6A0029B6DB /* CoreAnimationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				58DFA66A1F9DCC370029B6DB /* LMJCALayerBaseViewController.h */,
+				58DFA66B1F9DCC370029B6DB /* LMJCALayerBaseViewController.m */,
+				58DFA66D1F9DCC530029B6DB /* LMJCALayerYSDHViewController.h */,
+				58DFA66E1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m */,
+			);
+			path = CoreAnimationControllers;
+			sourceTree = "<group>";
+		};
 		58F1445C1ECDDD100053B2A2 /* ZJScrollPageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -6363,7 +6376,7 @@
 		E7D0E0411E8B9DCA001E4585 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = MUS;
+				CLASSPREFIX = LMJ;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = GoMePrjk;
 				TargetAttributes = {
@@ -6695,6 +6708,7 @@
 				58AFAC1E1EB4ADAA00822043 /* UITableViewCell+NIB.m in Sources */,
 				58AFAB9A1EB4ADAA00822043 /* IQTitleBarButtonItem.m in Sources */,
 				58AFAB2A1EB4ADAA00822043 /* NSNumber+CGFloat.m in Sources */,
+				58DFA66C1F9DCC370029B6DB /* LMJCALayerBaseViewController.m in Sources */,
 				58AFABFD1EB4ADAA00822043 /* UIImageView+FaceAwareFill.m in Sources */,
 				5855298F1F6B798800CCA4DF /* SINPublishToolBar.m in Sources */,
 				58AFAB411EB4ADAA00822043 /* NSString+Matcher.m in Sources */,
@@ -6920,7 +6934,6 @@
 				582F96E91EFD143A00766666 /* SINBroswerAnimator.m in Sources */,
 				588B32AF1EC4428100D00C1C /* BSJNewViewController.m in Sources */,
 				58AFAB761EB4ADAA00822043 /* UIDevice+FCUUID.m in Sources */,
-				588E9C421EF7D1F4006F599B /* LMJCA3DTransformViewController.m in Sources */,
 				58CC5EE71ED5D5030012ED83 /* BSJTopicVideoView.m in Sources */,
 				58AFAB611EB4ADAA00822043 /* AdvertiseHelper.m in Sources */,
 				58552F931F74B42B00CCA4DF /* NJVideoPlayViewController.m in Sources */,
@@ -7254,6 +7267,7 @@
 				58552EBD1F724E3600CCA4DF /* EaseUserCell.m in Sources */,
 				58AFAC4F1EB4ADAA00822043 /* LMJItemSection.m in Sources */,
 				58AFAB8B1EB4ADAA00822043 /* YYFPSLabel.m in Sources */,
+				58DFA66F1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m in Sources */,
 				58AFAC501EB4ADAA00822043 /* LMJWordArrowItem.m in Sources */,
 				580993B31F98AB010034D17B /* MUSAnimationTool.m in Sources */,
 				58AFAC311EB4ADAA00822043 /* UIView+Recursion.m in Sources */,

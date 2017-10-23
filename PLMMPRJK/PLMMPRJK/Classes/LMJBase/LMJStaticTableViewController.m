@@ -74,7 +74,7 @@ const UIEdgeInsets tableViewDefaultLayoutMargins = {8, 8, 8, 8};
         if(arrowItem.destVc)
         {
             UIViewController *vc = [[arrowItem.destVc alloc] init];
-            vc.title = arrowItem.title;
+            vc.navigationItem.title = arrowItem.title;
             
             [self.navigationController pushViewController:vc animated:YES];
         }

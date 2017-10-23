@@ -8,6 +8,6 @@
 
 #import "LMJBaseViewController.h"
 
-@interface LMJCoreAnimationViewController : LMJBaseViewController
+@interface LMJCoreAnimationViewController : LMJStaticTableViewController
 
 @end
