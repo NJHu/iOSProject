@@ -6,8 +6,8 @@
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import "LMJBaseViewController.h"
+#import "LMJCALayerViewController.h"
 
-@interface LMJCALayerBaseViewController : LMJBaseViewController
+@interface LMJCALayerBaseViewController : LMJCALayerViewController
 
 @end

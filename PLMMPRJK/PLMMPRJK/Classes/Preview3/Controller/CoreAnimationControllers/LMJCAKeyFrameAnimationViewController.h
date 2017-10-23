@@ -1,5 +1,5 @@
 //
-//  LMJCALayerYSDHViewController.h
+//  LMJCAKeyFrameAnimationViewController.h
 //  PLMMPRJK
 //
 //  Created by HuXuPeng on 2017/10/23.
@@ -8,6 +8,12 @@
 
 #import "LMJCALayerViewController.h"
 
-@interface LMJCALayerYSDHViewController : LMJCALayerViewController
+@interface LMJCAKeyFrameAnimationViewController : LMJCALayerViewController
+
+@end
+
+
+
+@interface DrawView : UIView
 
 @end

@@ -1,5 +1,5 @@
 //
-//  LMJCALayerYSDHViewController.h
+//  LMJZDTPViewController.h
 //  PLMMPRJK
 //
 //  Created by HuXuPeng on 2017/10/23.
@@ -8,6 +8,6 @@
 
 #import "LMJCALayerViewController.h"
 
-@interface LMJCALayerYSDHViewController : LMJCALayerViewController
+@interface LMJZDTPViewController : LMJCALayerViewController
 
 @end

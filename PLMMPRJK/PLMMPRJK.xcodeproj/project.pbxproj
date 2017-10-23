@@ -23,6 +23,14 @@
 		580993B01F98AAC60034D17B /* QQLrcLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 580993AD1F98AAC60034D17B /* QQLrcLabel.m */; };
 		580993B31F98AB010034D17B /* MUSAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 580993B21F98AB010034D17B /* MUSAnimationTool.m */; };
 		5811FA601F039609000F49D6 /* SINStatusRetweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5811FA5F1F039609000F49D6 /* SINStatusRetweetView.m */; };
+		5815C4901F9DF08E00C817F2 /* LMJCAAnimationGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5815C48F1F9DF08E00C817F2 /* LMJCAAnimationGroupViewController.m */; };
+		5815C4961F9DF24900C817F2 /* LMJZDTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5815C4941F9DF24900C817F2 /* LMJZDTPViewController.m */; };
+		5815C4971F9DF24900C817F2 /* LMJZDTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5815C4951F9DF24900C817F2 /* LMJZDTPViewController.xib */; };
+		5815C4981F9DF5B200C817F2 /* 钟表.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DFA6851F9DEF8F0029B6DB /* 钟表.png */; };
+		5815C4991F9DF5B200C817F2 /* CATransition1.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DFA6861F9DEF8F0029B6DB /* CATransition1.png */; };
+		5815C49A1F9DF5B200C817F2 /* CATransition2.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DFA6871F9DEF8F0029B6DB /* CATransition2.png */; };
+		5815C49B1F9DF5B200C817F2 /* CATransition3.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DFA6881F9DEF8F0029B6DB /* CATransition3.png */; };
+		5815C49C1F9DF5B200C817F2 /* 小新.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5815C4911F9DF23100C817F2 /* 小新.jpg */; };
 		5824592A1EE056410004A5BF /* BSJPictureShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582459291EE056410004A5BF /* BSJPictureShowViewController.m */; };
 		58245AD91EE2AB470004A5BF /* LMJDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245AD81EE2AB470004A5BF /* LMJDynamicViewController.m */; };
 		58245ADC1EE2B0470004A5BF /* BSJTopicTopComent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245ADB1EE2B0470004A5BF /* BSJTopicTopComent.m */; };
@@ -758,6 +766,11 @@
 		58DFA66C1F9DCC370029B6DB /* LMJCALayerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA66B1F9DCC370029B6DB /* LMJCALayerBaseViewController.m */; };
 		58DFA66F1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA66E1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m */; };
 		58DFA6731F9DD3D00029B6DB /* LMJDrawBaseLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA6721F9DD3D00029B6DB /* LMJDrawBaseLineViewController.m */; };
+		58DFA6761F9DE2FD0029B6DB /* LMJCALayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA6751F9DE2FD0029B6DB /* LMJCALayerViewController.m */; };
+		58DFA6791F9DE6770029B6DB /* LMJCAClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA6781F9DE6770029B6DB /* LMJCAClockViewController.m */; };
+		58DFA67E1F9DE8EF0029B6DB /* LMJCABasicAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA67D1F9DE8EF0029B6DB /* LMJCABasicAnimationViewController.m */; };
+		58DFA6811F9DEA950029B6DB /* LMJCAKeyFrameAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA6801F9DEA950029B6DB /* LMJCAKeyFrameAnimationViewController.m */; };
+		58DFA6841F9DEE540029B6DB /* LMJCATransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA6831F9DEE540029B6DB /* LMJCATransitionViewController.m */; };
 		58F144561ECD9D990053B2A2 /* BSJHlightedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144551ECD9D990053B2A2 /* BSJHlightedTextField.m */; };
 		58F144591ECDCF6A0053B2A2 /* BSJGuidePushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144581ECDCF6A0053B2A2 /* BSJGuidePushView.m */; };
 		58F1445B1ECDCF7B0053B2A2 /* BSJGuidePushView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F1445A1ECDCF7B0053B2A2 /* BSJGuidePushView.xib */; };
@@ -862,6 +875,12 @@
 		580993B21F98AB010034D17B /* MUSAnimationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSAnimationTool.m; sourceTree = "<group>"; };
 		5811FA5E1F039609000F49D6 /* SINStatusRetweetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusRetweetView.h; sourceTree = "<group>"; };
 		5811FA5F1F039609000F49D6 /* SINStatusRetweetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusRetweetView.m; sourceTree = "<group>"; };
+		5815C48E1F9DF08E00C817F2 /* LMJCAAnimationGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCAAnimationGroupViewController.h; sourceTree = "<group>"; };
+		5815C48F1F9DF08E00C817F2 /* LMJCAAnimationGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCAAnimationGroupViewController.m; sourceTree = "<group>"; };
+		5815C4911F9DF23100C817F2 /* 小新.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "小新.jpg"; sourceTree = "<group>"; };
+		5815C4931F9DF24900C817F2 /* LMJZDTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJZDTPViewController.h; sourceTree = "<group>"; };
+		5815C4941F9DF24900C817F2 /* LMJZDTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJZDTPViewController.m; sourceTree = "<group>"; };
+		5815C4951F9DF24900C817F2 /* LMJZDTPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMJZDTPViewController.xib; sourceTree = "<group>"; };
 		582459281EE056410004A5BF /* BSJPictureShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJPictureShowViewController.h; sourceTree = "<group>"; };
 		582459291EE056410004A5BF /* BSJPictureShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPictureShowViewController.m; sourceTree = "<group>"; };
 		58245AD71EE2AB470004A5BF /* LMJDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDynamicViewController.h; sourceTree = "<group>"; };
@@ -2267,6 +2286,20 @@
 		58DFA66E1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCALayerYSDHViewController.m; sourceTree = "<group>"; };
 		58DFA6711F9DD3D00029B6DB /* LMJDrawBaseLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDrawBaseLineViewController.h; sourceTree = "<group>"; };
 		58DFA6721F9DD3D00029B6DB /* LMJDrawBaseLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDrawBaseLineViewController.m; sourceTree = "<group>"; };
+		58DFA6741F9DE2FD0029B6DB /* LMJCALayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCALayerViewController.h; sourceTree = "<group>"; };
+		58DFA6751F9DE2FD0029B6DB /* LMJCALayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCALayerViewController.m; sourceTree = "<group>"; };
+		58DFA6771F9DE6770029B6DB /* LMJCAClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCAClockViewController.h; sourceTree = "<group>"; };
+		58DFA6781F9DE6770029B6DB /* LMJCAClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCAClockViewController.m; sourceTree = "<group>"; };
+		58DFA67C1F9DE8EF0029B6DB /* LMJCABasicAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCABasicAnimationViewController.h; sourceTree = "<group>"; };
+		58DFA67D1F9DE8EF0029B6DB /* LMJCABasicAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCABasicAnimationViewController.m; sourceTree = "<group>"; };
+		58DFA67F1F9DEA950029B6DB /* LMJCAKeyFrameAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCAKeyFrameAnimationViewController.h; sourceTree = "<group>"; };
+		58DFA6801F9DEA950029B6DB /* LMJCAKeyFrameAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCAKeyFrameAnimationViewController.m; sourceTree = "<group>"; };
+		58DFA6821F9DEE540029B6DB /* LMJCATransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCATransitionViewController.h; sourceTree = "<group>"; };
+		58DFA6831F9DEE540029B6DB /* LMJCATransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCATransitionViewController.m; sourceTree = "<group>"; };
+		58DFA6851F9DEF8F0029B6DB /* 钟表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "钟表.png"; sourceTree = "<group>"; };
+		58DFA6861F9DEF8F0029B6DB /* CATransition1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CATransition1.png; sourceTree = "<group>"; };
+		58DFA6871F9DEF8F0029B6DB /* CATransition2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CATransition2.png; sourceTree = "<group>"; };
+		58DFA6881F9DEF8F0029B6DB /* CATransition3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CATransition3.png; sourceTree = "<group>"; };
 		58F144541ECD9D990053B2A2 /* BSJHlightedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJHlightedTextField.h; sourceTree = "<group>"; };
 		58F144551ECD9D990053B2A2 /* BSJHlightedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJHlightedTextField.m; sourceTree = "<group>"; };
 		58F144571ECDCF6A0053B2A2 /* BSJGuidePushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJGuidePushView.h; sourceTree = "<group>"; };
@@ -3217,6 +3250,11 @@
 		588B32531EC4309300D00C1C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				58DFA6851F9DEF8F0029B6DB /* 钟表.png */,
+				58DFA6861F9DEF8F0029B6DB /* CATransition1.png */,
+				58DFA6871F9DEF8F0029B6DB /* CATransition2.png */,
+				58DFA6881F9DEF8F0029B6DB /* CATransition3.png */,
+				5815C4911F9DF23100C817F2 /* 小新.jpg */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -6124,10 +6162,25 @@
 		58DFA6691F9DCB6A0029B6DB /* CoreAnimationControllers */ = {
 			isa = PBXGroup;
 			children = (
+				58DFA6741F9DE2FD0029B6DB /* LMJCALayerViewController.h */,
+				58DFA6751F9DE2FD0029B6DB /* LMJCALayerViewController.m */,
 				58DFA66A1F9DCC370029B6DB /* LMJCALayerBaseViewController.h */,
 				58DFA66B1F9DCC370029B6DB /* LMJCALayerBaseViewController.m */,
 				58DFA66D1F9DCC530029B6DB /* LMJCALayerYSDHViewController.h */,
 				58DFA66E1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m */,
+				58DFA6771F9DE6770029B6DB /* LMJCAClockViewController.h */,
+				58DFA6781F9DE6770029B6DB /* LMJCAClockViewController.m */,
+				58DFA67C1F9DE8EF0029B6DB /* LMJCABasicAnimationViewController.h */,
+				58DFA67D1F9DE8EF0029B6DB /* LMJCABasicAnimationViewController.m */,
+				58DFA67F1F9DEA950029B6DB /* LMJCAKeyFrameAnimationViewController.h */,
+				58DFA6801F9DEA950029B6DB /* LMJCAKeyFrameAnimationViewController.m */,
+				58DFA6821F9DEE540029B6DB /* LMJCATransitionViewController.h */,
+				58DFA6831F9DEE540029B6DB /* LMJCATransitionViewController.m */,
+				5815C48E1F9DF08E00C817F2 /* LMJCAAnimationGroupViewController.h */,
+				5815C48F1F9DF08E00C817F2 /* LMJCAAnimationGroupViewController.m */,
+				5815C4931F9DF24900C817F2 /* LMJZDTPViewController.h */,
+				5815C4941F9DF24900C817F2 /* LMJZDTPViewController.m */,
+				5815C4951F9DF24900C817F2 /* LMJZDTPViewController.xib */,
 			);
 			path = CoreAnimationControllers;
 			sourceTree = "<group>";
@@ -6488,6 +6541,7 @@
 				588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */,
 				58552ED31F724E3600CCA4DF /* EaseUIResource.bundle in Resources */,
 				58AFABA91EB4ADAA00822043 /* QBImagePickerController.strings in Resources */,
+				5815C4971F9DF24900C817F2 /* LMJZDTPViewController.xib in Resources */,
 				58AF02E01F7B6D31001F31C5 /* 1201111234.mp3 in Resources */,
 				58AFAB181EB4ADAA00822043 /* NSDateTimeAgo.bundle in Resources */,
 				58AF02E61F7B6D31001F31C5 /* 309769.mp3 in Resources */,
@@ -6503,11 +6557,13 @@
 				588AACFD1E9F2253005F2A89 /* wishPage_4.gif in Resources */,
 				58AF02D01F7B6D31001F31C5 /* wf@2x.jpg in Resources */,
 				588AACFC1E9F2253005F2A89 /* wishPage_3.gif in Resources */,
+				5815C49C1F9DF5B200C817F2 /* 小新.jpg in Resources */,
 				586CCF411F79E5F800BB81FB /* VIDVideoDownloadingCell.xib in Resources */,
 				589FCFA31EED1619008FFB28 /* BSJCommentPageViewController.xib in Resources */,
 				58AF02C21F7B6D31001F31C5 /* dzq@2x.jpg in Resources */,
 				58AFABB61EB4ADAA00822043 /* WeiboSDK.bundle in Resources */,
 				58AFAB661EB4ADAA00822043 /* blankpage_image_loadFail@2x.png in Resources */,
+				5815C49A1F9DF5B200C817F2 /* CATransition2.png in Resources */,
 				588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */,
 				58AF02E41F7B6D31001F31C5 /* 235319.mp3 in Resources */,
 				58AF02C81F7B6D31001F31C5 /* jj@2x.jpg in Resources */,
@@ -6515,6 +6571,7 @@
 				588E9C361EF7BC9A006F599B /* Sina.xcassets in Resources */,
 				58AF02C41F7B6D31001F31C5 /* eason@2x.jpg in Resources */,
 				58B3CC791EC819FB00D3C02D /* BSJRecommendUserCell.xib in Resources */,
+				5815C4981F9DF5B200C817F2 /* 钟表.png in Resources */,
 				580993AF1F98AAC60034D17B /* QQLrcCell.xib in Resources */,
 				58552F901F74B42B00CCA4DF /* NJPlayer.bundle in Resources */,
 				580993811F988C970034D17B /* MUSPlayingViewController.xib in Resources */,
@@ -6569,8 +6626,10 @@
 				58AF02CD1F7B6D31001F31C5 /* lkq_icon@2x.jpg in Resources */,
 				58AF02D21F7B6D31001F31C5 /* zxy@2x.jpg in Resources */,
 				588B32BA1EC447CE00D00C1C /* BSJ.xcassets in Resources */,
+				5815C49B1F9DF5B200C817F2 /* CATransition3.png in Resources */,
 				588AACFB1E9F2253005F2A89 /* wishPage_2.gif in Resources */,
 				58AF02CE1F7B6D31001F31C5 /* nanquan@2x.jpg in Resources */,
+				5815C4991F9DF5B200C817F2 /* CATransition1.png in Resources */,
 				58552F591F749EAC00CCA4DF /* LICENSE in Resources */,
 				58AF02C61F7B6D31001F31C5 /* jay@2x.jpg in Resources */,
 				58AFAF051EB9B41900822043 /* LMJAnnotationCustomPopView.xib in Resources */,
@@ -6670,6 +6729,7 @@
 				58FFE9041EBEC69900D50E4C /* LMJFaceRecognizeViewController.m in Sources */,
 				58AFAC061EB4ADAA00822043 /* UINavigationController+BATransitions.m in Sources */,
 				58AFABF81EB4ADAA00822043 /* UIImage+Resize.m in Sources */,
+				58DFA6761F9DE2FD0029B6DB /* LMJCALayerViewController.m in Sources */,
 				58AFABC41EB4ADAA00822043 /* UIImage+JMRoundedCorner.m in Sources */,
 				58AFAB9C1EB4ADAA00822043 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				58AFABD51EB4ADAA00822043 /* UIBezierPath+LxThroughPointsBezier.m in Sources */,
@@ -6701,6 +6761,7 @@
 				58AFAC051EB4ADAA00822043 /* UINavigationBar+Awesome.m in Sources */,
 				58AFAC961EB4ADAB00822043 /* MPMultitextCell.m in Sources */,
 				585530291F74FED300CCA4DF /* ZFVideoModel.m in Sources */,
+				58DFA67E1F9DE8EF0029B6DB /* LMJCABasicAnimationViewController.m in Sources */,
 				584CEA8B1EF3A61F00EAEFBA /* BSJMeSquareCell.m in Sources */,
 				58FFE9C21EBF61D500D50E4C /* LMJNavBarFadeViewController.m in Sources */,
 				58FFE9A91EBEDD5C00D50E4C /* IFlyFaceImage.m in Sources */,
@@ -6734,6 +6795,7 @@
 				58B3CC8D1EC835A300D3C02D /* TAAbstractDotView.m in Sources */,
 				58AFAB1B1EB4ADAA00822043 /* NSDictionary+JSONString.m in Sources */,
 				58D40EBF1EBC799C004A4358 /* LMJCountDownCell.m in Sources */,
+				58DFA6841F9DEE540029B6DB /* LMJCATransitionViewController.m in Sources */,
 				58D40EBC1EBC758E004A4358 /* LMJCountDownModel.m in Sources */,
 				58FFE9AB1EBEDD5C00D50E4C /* UIImage+Extensions.m in Sources */,
 				58AFAC0D1EB4ADAA00822043 /* UINavigationItem+Margin.m in Sources */,
@@ -7092,6 +7154,7 @@
 				58AFAB4F1EB4ADAA00822043 /* NSURL+Param.m in Sources */,
 				58AFAC571EB4ADAA00822043 /* LMJSettingCell.m in Sources */,
 				58DFA6731F9DD3D00029B6DB /* LMJDrawBaseLineViewController.m in Sources */,
+				58DFA6791F9DE6770029B6DB /* LMJCAClockViewController.m in Sources */,
 				58AFAC221EB4ADAA00822043 /* UITextField+Select.m in Sources */,
 				58AFAC081EB4ADAA00822043 /* UINavigationController+JZExtension.m in Sources */,
 				58AFAC0B1EB4ADAA00822043 /* UINavigationItem+Loading.m in Sources */,
@@ -7146,6 +7209,7 @@
 				580993A81F98A9200034D17B /* QQMusicModel.m in Sources */,
 				58552FE91F74B5C900CCA4DF /* UIAlertController+ZFPlayerRotation.m in Sources */,
 				58AFAB931EB4ADAA00822043 /* IQUIViewController+Additions.m in Sources */,
+				58DFA6811F9DEA950029B6DB /* LMJCAKeyFrameAnimationViewController.m in Sources */,
 				586D90501F9A00C9000CE5A0 /* WPFBaseView.m in Sources */,
 				588E9C3C1EF7D1A4006F599B /* LMJCoreAnimationViewController.m in Sources */,
 				58AFAB561EB4ADAA00822043 /* MKMapView+BetterMaps.m in Sources */,
@@ -7181,6 +7245,7 @@
 				58AFAC3F1EB4ADAA00822043 /* UIViewController+Visible.m in Sources */,
 				58AFAB971EB4ADAA00822043 /* IQTextView.m in Sources */,
 				58552F091F72515200CCA4DF /* UIView+EMWebCacheOperation.m in Sources */,
+				5815C4961F9DF24900C817F2 /* LMJZDTPViewController.m in Sources */,
 				58DE9A0D1EF3BDC9001A3CD4 /* BSJPublishWordViewController.m in Sources */,
 				58AFAB441EB4ADAA00822043 /* NSString+RegexCategory.m in Sources */,
 				585529A81F71200000CCA4DF /* IMHAppDelegate.m in Sources */,
@@ -7230,6 +7295,7 @@
 				58AFAB7D1EB4ADAA00822043 /* introductoryPagesView.m in Sources */,
 				58552FF11F74B5C900CCA4DF /* ZFBrightnessView.m in Sources */,
 				58B3CC781EC819FB00D3C02D /* BSJRecommendUserCell.m in Sources */,
+				5815C4901F9DF08E00C817F2 /* LMJCAAnimationGroupViewController.m in Sources */,
 				58D40EB61EBC7547004A4358 /* LMJListTimerCountDownViewController.m in Sources */,
 				586D904F1F9A00C9000CE5A0 /* WPFAttachmentView.m in Sources */,
 				58AFAC861EB4ADAB00822043 /* LMJKeyboardHandleViewController.m in Sources */,
