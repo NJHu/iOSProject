@@ -4,7 +4,7 @@
 
 - 综合项目
 ---
-PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a 文件过大, 请自行下载环信 SDK 添加
+PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a 文件过大, 请下载[环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip) 添加
 ---
 
 <img src="./images/zhxm.png" width="1200" height="400">
