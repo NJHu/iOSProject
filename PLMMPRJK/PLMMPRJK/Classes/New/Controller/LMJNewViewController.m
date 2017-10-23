@@ -199,7 +199,7 @@
     
     item30.destVc = [LMJCoreAnimationViewController class];
     
-    LMJWordArrowItem *item31 = [LMJWordArrowItem itemWithTitle:@"绘图 Drawrect " subTitle: @""];
+    LMJWordArrowItem *item31 = [LMJWordArrowItem itemWithTitle:@"绘图 Quartz2D " subTitle: @"Draw Rect"];
     
     item31.destVc = [LMJDrawRectViewController class];
     
