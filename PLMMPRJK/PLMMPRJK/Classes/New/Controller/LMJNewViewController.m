@@ -37,6 +37,9 @@
 #import "LMJNavBarFadeViewController.h"
 #import "LMJFingerCheckViewController.h"
 #import "LMJDynamicViewController.h"
+#import "LMJCoreAnimationViewController.h"
+#import "LMJDrawRectViewController.h"
+#import "LMJCA3DTransformViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -192,7 +195,19 @@
     
     item29.destVc = [LMJDynamicViewController class];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, item25, item26, item27, item28, item29] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    LMJWordArrowItem *item30 = [LMJWordArrowItem itemWithTitle:@"核心动画" subTitle: @""];
+    
+    item30.destVc = [LMJCoreAnimationViewController class];
+    
+    LMJWordArrowItem *item31 = [LMJWordArrowItem itemWithTitle:@"绘图 Drawrect " subTitle: @""];
+    
+    item31.destVc = [LMJDrawRectViewController class];
+    
+    LMJWordArrowItem *item32 = [LMJWordArrowItem itemWithTitle:@"CA3D动画" subTitle: @""];
+    
+    item32.destVc = [LMJDrawRectViewController class];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, item25, item26, item27, item28, item29, item30, item31, item32] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }

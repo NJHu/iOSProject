@@ -222,6 +222,12 @@
 		586CCF3C1F79E40600BB81FB /* VIDVideoDownloadedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586CCF3A1F79E40600BB81FB /* VIDVideoDownloadedCell.xib */; };
 		586CCF401F79E5F800BB81FB /* VIDVideoDownloadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 586CCF3E1F79E5F800BB81FB /* VIDVideoDownloadingCell.m */; };
 		586CCF411F79E5F800BB81FB /* VIDVideoDownloadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586CCF3F1F79E5F800BB81FB /* VIDVideoDownloadingCell.xib */; };
+		586D904F1F9A00C9000CE5A0 /* WPFAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D90441F9A00C9000CE5A0 /* WPFAttachmentView.m */; };
+		586D90501F9A00C9000CE5A0 /* WPFBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D90461F9A00C9000CE5A0 /* WPFBaseView.m */; };
+		586D90511F9A00C9000CE5A0 /* WPFCollisionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D90481F9A00C9000CE5A0 /* WPFCollisionView.m */; };
+		586D90521F9A00C9000CE5A0 /* WPFPushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D904A1F9A00C9000CE5A0 /* WPFPushView.m */; };
+		586D90531F9A00C9000CE5A0 /* WPFSnapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D904C1F9A00C9000CE5A0 /* WPFSnapView.m */; };
+		586D90541F9A00C9000CE5A0 /* WPFSpringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D904E1F9A00C9000CE5A0 /* WPFSpringView.m */; };
 		588AAB711E9CB84A005F2A89 /* Preview.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB701E9CB84A005F2A89 /* Preview.xcassets */; };
 		588AAB731E9CB858005F2A89 /* Public.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588AAB721E9CB858005F2A89 /* Public.xcassets */; };
 		588AACFA1E9F2253005F2A89 /* wishPage_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 588AACF61E9F2253005F2A89 /* wishPage_1.gif */; };
@@ -749,6 +755,7 @@
 		58D40EC21EBCC781004A4358 /* LMJH5_OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EC11EBCC781004A4358 /* LMJH5_OCViewController.m */; };
 		58DE9A0D1EF3BDC9001A3CD4 /* BSJPublishWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE9A0C1EF3BDC9001A3CD4 /* BSJPublishWordViewController.m */; };
 		58DE9A101EF3D102001A3CD4 /* BSJWordToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE9A0F1EF3D102001A3CD4 /* BSJWordToolBar.m */; };
+		58DFA6651F9D935E0029B6DB /* WPFDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA6641F9D935E0029B6DB /* WPFDemoController.m */; };
 		58F144561ECD9D990053B2A2 /* BSJHlightedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144551ECD9D990053B2A2 /* BSJHlightedTextField.m */; };
 		58F144591ECDCF6A0053B2A2 /* BSJGuidePushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144581ECDCF6A0053B2A2 /* BSJGuidePushView.m */; };
 		58F1445B1ECDCF7B0053B2A2 /* BSJGuidePushView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F1445A1ECDCF7B0053B2A2 /* BSJGuidePushView.xib */; };
@@ -1238,6 +1245,18 @@
 		586CCF3D1F79E5F800BB81FB /* VIDVideoDownloadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDVideoDownloadingCell.h; sourceTree = "<group>"; };
 		586CCF3E1F79E5F800BB81FB /* VIDVideoDownloadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDVideoDownloadingCell.m; sourceTree = "<group>"; };
 		586CCF3F1F79E5F800BB81FB /* VIDVideoDownloadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIDVideoDownloadingCell.xib; sourceTree = "<group>"; };
+		586D90431F9A00C9000CE5A0 /* WPFAttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFAttachmentView.h; sourceTree = "<group>"; };
+		586D90441F9A00C9000CE5A0 /* WPFAttachmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFAttachmentView.m; sourceTree = "<group>"; };
+		586D90451F9A00C9000CE5A0 /* WPFBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFBaseView.h; sourceTree = "<group>"; };
+		586D90461F9A00C9000CE5A0 /* WPFBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFBaseView.m; sourceTree = "<group>"; };
+		586D90471F9A00C9000CE5A0 /* WPFCollisionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFCollisionView.h; sourceTree = "<group>"; };
+		586D90481F9A00C9000CE5A0 /* WPFCollisionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFCollisionView.m; sourceTree = "<group>"; };
+		586D90491F9A00C9000CE5A0 /* WPFPushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFPushView.h; sourceTree = "<group>"; };
+		586D904A1F9A00C9000CE5A0 /* WPFPushView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFPushView.m; sourceTree = "<group>"; };
+		586D904B1F9A00C9000CE5A0 /* WPFSnapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFSnapView.h; sourceTree = "<group>"; };
+		586D904C1F9A00C9000CE5A0 /* WPFSnapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFSnapView.m; sourceTree = "<group>"; };
+		586D904D1F9A00C9000CE5A0 /* WPFSpringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFSpringView.h; sourceTree = "<group>"; };
+		586D904E1F9A00C9000CE5A0 /* WPFSpringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFSpringView.m; sourceTree = "<group>"; };
 		588AAB701E9CB84A005F2A89 /* Preview.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Preview.xcassets; sourceTree = "<group>"; };
 		588AAB721E9CB858005F2A89 /* Public.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Public.xcassets; sourceTree = "<group>"; };
 		588AACF61E9F2253005F2A89 /* wishPage_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPage_1.gif; sourceTree = "<group>"; };
@@ -2240,6 +2259,8 @@
 		58DE9A0C1EF3BDC9001A3CD4 /* BSJPublishWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPublishWordViewController.m; sourceTree = "<group>"; };
 		58DE9A0E1EF3D102001A3CD4 /* BSJWordToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJWordToolBar.h; sourceTree = "<group>"; };
 		58DE9A0F1EF3D102001A3CD4 /* BSJWordToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJWordToolBar.m; sourceTree = "<group>"; };
+		58DFA6631F9D935E0029B6DB /* WPFDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFDemoController.h; sourceTree = "<group>"; };
+		58DFA6641F9D935E0029B6DB /* WPFDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFDemoController.m; sourceTree = "<group>"; };
 		58F144541ECD9D990053B2A2 /* BSJHlightedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJHlightedTextField.h; sourceTree = "<group>"; };
 		58F144551ECD9D990053B2A2 /* BSJHlightedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJHlightedTextField.m; sourceTree = "<group>"; };
 		58F144571ECDCF6A0053B2A2 /* BSJGuidePushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJGuidePushView.h; sourceTree = "<group>"; };
@@ -3168,6 +3189,8 @@
 				58CC87831ED2E60E00D54800 /* LMJFingerCheckViewController.m */,
 				58245AD71EE2AB470004A5BF /* LMJDynamicViewController.h */,
 				58245AD81EE2AB470004A5BF /* LMJDynamicViewController.m */,
+				58DFA6631F9D935E0029B6DB /* WPFDemoController.h */,
+				58DFA6641F9D935E0029B6DB /* WPFDemoController.m */,
 				588E9C3A1EF7D1A4006F599B /* LMJCoreAnimationViewController.h */,
 				588E9C3B1EF7D1A4006F599B /* LMJCoreAnimationViewController.m */,
 				588E9C3D1EF7D1D1006F599B /* LMJDrawRectViewController.h */,
@@ -3202,6 +3225,18 @@
 		588B32571EC4309300D00C1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				586D90431F9A00C9000CE5A0 /* WPFAttachmentView.h */,
+				586D90441F9A00C9000CE5A0 /* WPFAttachmentView.m */,
+				586D90451F9A00C9000CE5A0 /* WPFBaseView.h */,
+				586D90461F9A00C9000CE5A0 /* WPFBaseView.m */,
+				586D90471F9A00C9000CE5A0 /* WPFCollisionView.h */,
+				586D90481F9A00C9000CE5A0 /* WPFCollisionView.m */,
+				586D90491F9A00C9000CE5A0 /* WPFPushView.h */,
+				586D904A1F9A00C9000CE5A0 /* WPFPushView.m */,
+				586D904B1F9A00C9000CE5A0 /* WPFSnapView.h */,
+				586D904C1F9A00C9000CE5A0 /* WPFSnapView.m */,
+				586D904D1F9A00C9000CE5A0 /* WPFSpringView.h */,
+				586D904E1F9A00C9000CE5A0 /* WPFSpringView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6865,6 +6900,7 @@
 				58AFAC4A1EB4ADAA00822043 /* LMJHomeViewController.m in Sources */,
 				58AFAC3B1EB4ADAA00822043 /* UIViewController+DDPopUpViewController.m in Sources */,
 				58552EAA1F724E3600CCA4DF /* NSDate+Category.m in Sources */,
+				58DFA6651F9D935E0029B6DB /* WPFDemoController.m in Sources */,
 				58CDBFB11EBB3D7400DBC8AA /* Foundation+Log.m in Sources */,
 				58552F031F72515200CCA4DF /* UIButton+EMWebCache.m in Sources */,
 				58AFAB8F1EB4ADAA00822043 /* IQNSArray+Sort.m in Sources */,
@@ -6928,6 +6964,7 @@
 				58AFAC9F1EB4ADAB00822043 /* LMJBlockLoopViewController.m in Sources */,
 				58AFABF21EB4ADAA00822043 /* UIImage+FX.m in Sources */,
 				58552F011F72515200CCA4DF /* MKAnnotationView+EMWebCache.m in Sources */,
+				586D90521F9A00C9000CE5A0 /* WPFPushView.m in Sources */,
 				58552F051F72515200CCA4DF /* UIImage+EMMultiFormat.m in Sources */,
 				589FCFA61EED2145008FFB28 /* MenuPopOverView.m in Sources */,
 				58AFAC631EB4ADAB00822043 /* LMJTitleListChildViewController.m in Sources */,
@@ -6974,6 +7011,7 @@
 				588B32C01EC4483300D00C1C /* SINMessageViewController.m in Sources */,
 				582F96CC1EFA46F600766666 /* SINDictURL.m in Sources */,
 				58AFABC71EB4ADAA00822043 /* NSString+Additions.m in Sources */,
+				586D90511F9A00C9000CE5A0 /* WPFCollisionView.m in Sources */,
 				58DE9A101EF3D102001A3CD4 /* BSJWordToolBar.m in Sources */,
 				58AFABA31EB4ADAA00822043 /* QBAssetsCollectionOverlayView.m in Sources */,
 				58552E661F724E3600CCA4DF /* wav.mm in Sources */,
@@ -7081,6 +7119,7 @@
 				580993A81F98A9200034D17B /* QQMusicModel.m in Sources */,
 				58552FE91F74B5C900CCA4DF /* UIAlertController+ZFPlayerRotation.m in Sources */,
 				58AFAB931EB4ADAA00822043 /* IQUIViewController+Additions.m in Sources */,
+				586D90501F9A00C9000CE5A0 /* WPFBaseView.m in Sources */,
 				588E9C3C1EF7D1A4006F599B /* LMJCoreAnimationViewController.m in Sources */,
 				58AFAB561EB4ADAA00822043 /* MKMapView+BetterMaps.m in Sources */,
 				58AFAB941EB4ADAA00822043 /* IQUIWindow+Hierarchy.m in Sources */,
@@ -7106,6 +7145,7 @@
 				58552FED1F74B5C900CCA4DF /* UIView+CustomControlView.m in Sources */,
 				58552E651F724E3600CCA4DF /* amrFileCodec.mm in Sources */,
 				58B3CC5E1EC7F7BF00D3C02D /* BSJ.m in Sources */,
+				586D90541F9A00C9000CE5A0 /* WPFSpringView.m in Sources */,
 				58AFAC851EB4ADAB00822043 /* LMJHorizontalLayoutViewController.m in Sources */,
 				58552EB81F724E3600CCA4DF /* EaseLocationViewController.m in Sources */,
 				58AFAB4B1EB4ADAA00822043 /* NSString+UUID.m in Sources */,
@@ -7164,6 +7204,7 @@
 				58552FF11F74B5C900CCA4DF /* ZFBrightnessView.m in Sources */,
 				58B3CC781EC819FB00D3C02D /* BSJRecommendUserCell.m in Sources */,
 				58D40EB61EBC7547004A4358 /* LMJListTimerCountDownViewController.m in Sources */,
+				586D904F1F9A00C9000CE5A0 /* WPFAttachmentView.m in Sources */,
 				58AFAC861EB4ADAB00822043 /* LMJKeyboardHandleViewController.m in Sources */,
 				58AFAC6C1EB4ADAB00822043 /* LMJMeViewController.m in Sources */,
 				58AFABC51EB4ADAA00822043 /* UIView+RoundedCorner.m in Sources */,
@@ -7219,6 +7260,7 @@
 				58F144561ECD9D990053B2A2 /* BSJHlightedTextField.m in Sources */,
 				58AFAC021EB4ADAA00822043 /* UILabel+AutoSize.m in Sources */,
 				58AFABFC1EB4ADAA00822043 /* UIImageView+BetterFace.m in Sources */,
+				586D90531F9A00C9000CE5A0 /* WPFSnapView.m in Sources */,
 				58AFACBE1EB5982C00822043 /* LMJTeam.m in Sources */,
 				58552E631F724E3600CCA4DF /* EMCDDeviceManager+Remind.m in Sources */,
 				58AFAB3A1EB4ADAA00822043 /* NSMutableString+Ruby.m in Sources */,

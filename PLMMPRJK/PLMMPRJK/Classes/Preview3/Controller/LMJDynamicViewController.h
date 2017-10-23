@@ -8,6 +8,6 @@
 
 #import "LMJBaseViewController.h"
 
-@interface LMJDynamicViewController : LMJBaseViewController
+@interface LMJDynamicViewController : LMJTableViewController
 
 @end
