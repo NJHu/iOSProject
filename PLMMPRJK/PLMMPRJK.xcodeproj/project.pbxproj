@@ -757,6 +757,7 @@
 		58DFA6651F9D935E0029B6DB /* WPFDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA6641F9D935E0029B6DB /* WPFDemoController.m */; };
 		58DFA66C1F9DCC370029B6DB /* LMJCALayerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA66B1F9DCC370029B6DB /* LMJCALayerBaseViewController.m */; };
 		58DFA66F1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA66E1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m */; };
+		58DFA6731F9DD3D00029B6DB /* LMJDrawBaseLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DFA6721F9DD3D00029B6DB /* LMJDrawBaseLineViewController.m */; };
 		58F144561ECD9D990053B2A2 /* BSJHlightedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144551ECD9D990053B2A2 /* BSJHlightedTextField.m */; };
 		58F144591ECDCF6A0053B2A2 /* BSJGuidePushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F144581ECDCF6A0053B2A2 /* BSJGuidePushView.m */; };
 		58F1445B1ECDCF7B0053B2A2 /* BSJGuidePushView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F1445A1ECDCF7B0053B2A2 /* BSJGuidePushView.xib */; };
@@ -2264,6 +2265,8 @@
 		58DFA66B1F9DCC370029B6DB /* LMJCALayerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCALayerBaseViewController.m; sourceTree = "<group>"; };
 		58DFA66D1F9DCC530029B6DB /* LMJCALayerYSDHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCALayerYSDHViewController.h; sourceTree = "<group>"; };
 		58DFA66E1F9DCC530029B6DB /* LMJCALayerYSDHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCALayerYSDHViewController.m; sourceTree = "<group>"; };
+		58DFA6711F9DD3D00029B6DB /* LMJDrawBaseLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDrawBaseLineViewController.h; sourceTree = "<group>"; };
+		58DFA6721F9DD3D00029B6DB /* LMJDrawBaseLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDrawBaseLineViewController.m; sourceTree = "<group>"; };
 		58F144541ECD9D990053B2A2 /* BSJHlightedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJHlightedTextField.h; sourceTree = "<group>"; };
 		58F144551ECD9D990053B2A2 /* BSJHlightedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJHlightedTextField.m; sourceTree = "<group>"; };
 		58F144571ECDCF6A0053B2A2 /* BSJGuidePushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJGuidePushView.h; sourceTree = "<group>"; };
@@ -3199,6 +3202,7 @@
 				58DFA6691F9DCB6A0029B6DB /* CoreAnimationControllers */,
 				588E9C3D1EF7D1D1006F599B /* LMJDrawRectViewController.h */,
 				588E9C3E1EF7D1D1006F599B /* LMJDrawRectViewController.m */,
+				58DFA6701F9DD3B50029B6DB /* CoreGraphics */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -6128,6 +6132,15 @@
 			path = CoreAnimationControllers;
 			sourceTree = "<group>";
 		};
+		58DFA6701F9DD3B50029B6DB /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				58DFA6711F9DD3D00029B6DB /* LMJDrawBaseLineViewController.h */,
+				58DFA6721F9DD3D00029B6DB /* LMJDrawBaseLineViewController.m */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
 		58F1445C1ECDDD100053B2A2 /* ZJScrollPageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -7078,6 +7091,7 @@
 				58AFACF21EB8D72100822043 /* LMJBaiduPointAnnotation.m in Sources */,
 				58AFAB4F1EB4ADAA00822043 /* NSURL+Param.m in Sources */,
 				58AFAC571EB4ADAA00822043 /* LMJSettingCell.m in Sources */,
+				58DFA6731F9DD3D00029B6DB /* LMJDrawBaseLineViewController.m in Sources */,
 				58AFAC221EB4ADAA00822043 /* UITextField+Select.m in Sources */,
 				58AFAC081EB4ADAA00822043 /* UINavigationController+JZExtension.m in Sources */,
 				58AFAC0B1EB4ADAA00822043 /* UINavigationItem+Loading.m in Sources */,
