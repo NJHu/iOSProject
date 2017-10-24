@@ -15,6 +15,11 @@
 #import "LMJCATransitionViewController.h"
 #import "LMJCAAnimationGroupViewController.h"
 #import "LMJZDTPViewController.h"
+#import "LMJYinLZDTViewController.h"
+#import "LMJHDZSQViewController.h"
+#import "LMJLZDHDTViewController.h"
+#import "LMJLZDHDTSViewController.h"
+#import "LMJDYViewController.h"
 
 
 @interface LMJCoreAnimationViewController ()
@@ -56,7 +61,22 @@
     LMJWordArrowItem *item8 = [LMJWordArrowItem itemWithTitle:@"折叠图片" subTitle:nil];
     item8.destVc = [LMJZDTPViewController class];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item2, item3, item4, item5, item6, item7, item8] andHeaderTitle:nil footerTitle:nil];
+    LMJWordArrowItem *item9 = [LMJWordArrowItem itemWithTitle:@"音量震动条" subTitle:nil];
+    item9.destVc = [LMJYinLZDTViewController class];
+    
+    LMJWordArrowItem *item10 = [LMJWordArrowItem itemWithTitle:@"活动指示器" subTitle:nil];
+    item10.destVc = [LMJHDZSQViewController class];
+    
+    LMJWordArrowItem *item11 = [LMJWordArrowItem itemWithTitle:@"粒子动画单条" subTitle:nil];
+    item11.destVc = [LMJLZDHDTViewController class];
+    
+    LMJWordArrowItem *item12 = [LMJWordArrowItem itemWithTitle:@"粒子动画多条" subTitle:nil];
+    item12.destVc = [LMJLZDHDTSViewController class];
+    
+    LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"倒影" subTitle:nil];
+    item13.destVc = [LMJDYViewController class];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13] andHeaderTitle:nil footerTitle:nil];
     
     [self.sections addObject:section0];
 }
