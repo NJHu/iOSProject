@@ -778,6 +778,12 @@
 		58CDBFB71EBB47EB00DBC8AA /* MPUploadImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB61EBB47EB00DBC8AA /* MPUploadImageHelper.m */; };
 		58CDBFBA1EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFB91EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.m */; };
 		58CDBFBD1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CDBFBC1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.m */; };
+		58D1473F1F9F10BE00B550BD /* LMJDrawBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D1473D1F9F10BE00B550BD /* LMJDrawBoardViewController.m */; };
+		58D147401F9F10BE00B550BD /* LMJDrawBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D1473E1F9F10BE00B550BD /* LMJDrawBoardViewController.xib */; };
+		58D147471F9F10D200B550BD /* LMJBezierPathCP.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D147421F9F10D200B550BD /* LMJBezierPathCP.m */; };
+		58D147481F9F10D200B550BD /* LMJDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D147441F9F10D200B550BD /* LMJDrawingView.m */; };
+		58D147491F9F10D200B550BD /* LMJHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D147461F9F10D200B550BD /* LMJHandleView.m */; };
+		58D1474C1F9F14CC00B550BD /* LMJFingerLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D1474B1F9F14CC00B550BD /* LMJFingerLockViewController.m */; };
 		58D40EB61EBC7547004A4358 /* LMJListTimerCountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EB51EBC7547004A4358 /* LMJListTimerCountDownViewController.m */; };
 		58D40EBC1EBC758E004A4358 /* LMJCountDownModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EBB1EBC758E004A4358 /* LMJCountDownModel.m */; };
 		58D40EBF1EBC799C004A4358 /* LMJCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D40EBE1EBC799C004A4358 /* LMJCountDownCell.m */; };
@@ -810,6 +816,10 @@
 		58F144831ECE9C890053B2A2 /* BSJTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F144811ECE9C890053B2A2 /* BSJTopicCell.xib */; };
 		58F2A0791F9EE7D100EA8656 /* LMJClipImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2A0781F9EE7D100EA8656 /* LMJClipImageViewController.m */; };
 		58F2A07C1F9EE9A000EA8656 /* LMJScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2A07B1F9EE9A000EA8656 /* LMJScreenShotViewController.m */; };
+		58F2A0801F9EEBFE00EA8656 /* LMJPicClipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2A07E1F9EEBFE00EA8656 /* LMJPicClipViewController.m */; };
+		58F2A0811F9EEBFE00EA8656 /* LMJPicClipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F2A07F1F9EEBFE00EA8656 /* LMJPicClipViewController.xib */; };
+		58F2A0851F9EEE5200EA8656 /* LMJDotRemoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2A0831F9EEE5200EA8656 /* LMJDotRemoveViewController.m */; };
+		58F2A0861F9EEE5200EA8656 /* LMJDotRemoveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F2A0841F9EEE5200EA8656 /* LMJDotRemoveViewController.xib */; };
 		58FFE9011EBDC44100D50E4C /* LMJFillTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9001EBDC44100D50E4C /* LMJFillTableFormViewController.m */; };
 		58FFE9041EBEC69900D50E4C /* LMJFaceRecognizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE9031EBEC69900D50E4C /* LMJFaceRecognizeViewController.m */; };
 		58FFE98F1EBEDD1E00D50E4C /* FaceStreamDetectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FFE98E1EBEDD1E00D50E4C /* FaceStreamDetectorViewController.m */; };
@@ -2326,6 +2336,17 @@
 		58CDBFB91EBC2D6500DBC8AA /* LMJUpLoadProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJUpLoadProgressViewController.m; sourceTree = "<group>"; };
 		58CDBFBB1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJUploadImageProgressCell.h; sourceTree = "<group>"; };
 		58CDBFBC1EBC4B0D00DBC8AA /* LMJUploadImageProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJUploadImageProgressCell.m; sourceTree = "<group>"; };
+		58D1473C1F9F10BE00B550BD /* LMJDrawBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDrawBoardViewController.h; sourceTree = "<group>"; };
+		58D1473D1F9F10BE00B550BD /* LMJDrawBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDrawBoardViewController.m; sourceTree = "<group>"; };
+		58D1473E1F9F10BE00B550BD /* LMJDrawBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMJDrawBoardViewController.xib; sourceTree = "<group>"; };
+		58D147411F9F10D200B550BD /* LMJBezierPathCP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBezierPathCP.h; sourceTree = "<group>"; };
+		58D147421F9F10D200B550BD /* LMJBezierPathCP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBezierPathCP.m; sourceTree = "<group>"; };
+		58D147431F9F10D200B550BD /* LMJDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDrawingView.h; sourceTree = "<group>"; };
+		58D147441F9F10D200B550BD /* LMJDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDrawingView.m; sourceTree = "<group>"; };
+		58D147451F9F10D200B550BD /* LMJHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHandleView.h; sourceTree = "<group>"; };
+		58D147461F9F10D200B550BD /* LMJHandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHandleView.m; sourceTree = "<group>"; };
+		58D1474A1F9F14CC00B550BD /* LMJFingerLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFingerLockViewController.h; sourceTree = "<group>"; };
+		58D1474B1F9F14CC00B550BD /* LMJFingerLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFingerLockViewController.m; sourceTree = "<group>"; };
 		58D40EB41EBC7547004A4358 /* LMJListTimerCountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJListTimerCountDownViewController.h; sourceTree = "<group>"; };
 		58D40EB51EBC7547004A4358 /* LMJListTimerCountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJListTimerCountDownViewController.m; sourceTree = "<group>"; };
 		58D40EBA1EBC758E004A4358 /* LMJCountDownModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCountDownModel.h; sourceTree = "<group>"; };
@@ -2393,6 +2414,12 @@
 		58F2A0781F9EE7D100EA8656 /* LMJClipImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJClipImageViewController.m; sourceTree = "<group>"; };
 		58F2A07A1F9EE9A000EA8656 /* LMJScreenShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScreenShotViewController.h; sourceTree = "<group>"; };
 		58F2A07B1F9EE9A000EA8656 /* LMJScreenShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScreenShotViewController.m; sourceTree = "<group>"; };
+		58F2A07D1F9EEBFE00EA8656 /* LMJPicClipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJPicClipViewController.h; sourceTree = "<group>"; };
+		58F2A07E1F9EEBFE00EA8656 /* LMJPicClipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJPicClipViewController.m; sourceTree = "<group>"; };
+		58F2A07F1F9EEBFE00EA8656 /* LMJPicClipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMJPicClipViewController.xib; sourceTree = "<group>"; };
+		58F2A0821F9EEE5200EA8656 /* LMJDotRemoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDotRemoveViewController.h; sourceTree = "<group>"; };
+		58F2A0831F9EEE5200EA8656 /* LMJDotRemoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDotRemoveViewController.m; sourceTree = "<group>"; };
+		58F2A0841F9EEE5200EA8656 /* LMJDotRemoveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMJDotRemoveViewController.xib; sourceTree = "<group>"; };
 		58FFE8FF1EBDC44100D50E4C /* LMJFillTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFillTableFormViewController.h; sourceTree = "<group>"; };
 		58FFE9001EBDC44100D50E4C /* LMJFillTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFillTableFormViewController.m; sourceTree = "<group>"; };
 		58FFE9021EBEC69900D50E4C /* LMJFaceRecognizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFaceRecognizeViewController.h; sourceTree = "<group>"; };
@@ -3333,6 +3360,12 @@
 		588B32571EC4309300D00C1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				58D147411F9F10D200B550BD /* LMJBezierPathCP.h */,
+				58D147421F9F10D200B550BD /* LMJBezierPathCP.m */,
+				58D147431F9F10D200B550BD /* LMJDrawingView.h */,
+				58D147441F9F10D200B550BD /* LMJDrawingView.m */,
+				58D147451F9F10D200B550BD /* LMJHandleView.h */,
+				58D147461F9F10D200B550BD /* LMJHandleView.m */,
 				586D90431F9A00C9000CE5A0 /* WPFAttachmentView.h */,
 				586D90441F9A00C9000CE5A0 /* WPFAttachmentView.m */,
 				586D90451F9A00C9000CE5A0 /* WPFBaseView.h */,
@@ -6291,6 +6324,17 @@
 				58F2A0781F9EE7D100EA8656 /* LMJClipImageViewController.m */,
 				58F2A07A1F9EE9A000EA8656 /* LMJScreenShotViewController.h */,
 				58F2A07B1F9EE9A000EA8656 /* LMJScreenShotViewController.m */,
+				58F2A07D1F9EEBFE00EA8656 /* LMJPicClipViewController.h */,
+				58F2A07E1F9EEBFE00EA8656 /* LMJPicClipViewController.m */,
+				58F2A07F1F9EEBFE00EA8656 /* LMJPicClipViewController.xib */,
+				58F2A0821F9EEE5200EA8656 /* LMJDotRemoveViewController.h */,
+				58F2A0831F9EEE5200EA8656 /* LMJDotRemoveViewController.m */,
+				58F2A0841F9EEE5200EA8656 /* LMJDotRemoveViewController.xib */,
+				58D1473C1F9F10BE00B550BD /* LMJDrawBoardViewController.h */,
+				58D1473D1F9F10BE00B550BD /* LMJDrawBoardViewController.m */,
+				58D1473E1F9F10BE00B550BD /* LMJDrawBoardViewController.xib */,
+				58D1474A1F9F14CC00B550BD /* LMJFingerLockViewController.h */,
+				58D1474B1F9F14CC00B550BD /* LMJFingerLockViewController.m */,
 			);
 			path = CoreGraphics;
 			sourceTree = "<group>";
@@ -6671,12 +6715,14 @@
 				58AF02C81F7B6D31001F31C5 /* jj@2x.jpg in Resources */,
 				58AF02C91F7B6D31001F31C5 /* jj_icon@2x.png in Resources */,
 				5815C4C31F9EDA8D00C817F2 /* LMJDrawProgressViewController.xib in Resources */,
+				58F2A0861F9EEE5200EA8656 /* LMJDotRemoveViewController.xib in Resources */,
 				588E9C361EF7BC9A006F599B /* Sina.xcassets in Resources */,
 				58AF02C41F7B6D31001F31C5 /* eason@2x.jpg in Resources */,
 				58B3CC791EC819FB00D3C02D /* BSJRecommendUserCell.xib in Resources */,
 				5815C4981F9DF5B200C817F2 /* 钟表.png in Resources */,
 				580993AF1F98AAC60034D17B /* QQLrcCell.xib in Resources */,
 				58552F901F74B42B00CCA4DF /* NJPlayer.bundle in Resources */,
+				58F2A0811F9EEBFE00EA8656 /* LMJPicClipViewController.xib in Resources */,
 				580993811F988C970034D17B /* MUSPlayingViewController.xib in Resources */,
 				58AFAB681EB4ADAA00822043 /* blankpage_image_Sleep@2x.png in Resources */,
 				58AFABB31EB4ADAA00822043 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -6685,6 +6731,7 @@
 				58AF02D41F7B6D31001F31C5 /* 10405520.lrc in Resources */,
 				58AFAB691EB4ADAA00822043 /* blankpage_image_Sleep@3x.png in Resources */,
 				58AF02E31F7B6D31001F31C5 /* 14945107.mp3 in Resources */,
+				58D147401F9F10BE00B550BD /* LMJDrawBoardViewController.xib in Resources */,
 				E7D0E05C1E8B9DCB001E4585 /* Assets.xcassets in Resources */,
 				58AF02E21F7B6D31001F31C5 /* 12309111.mp3 in Resources */,
 				583EB8AC1EBAC24900A945D3 /* WechatIMG10.jpeg in Resources */,
@@ -6898,9 +6945,11 @@
 				582F96C91EFA45CD00766666 /* SINStatus.m in Sources */,
 				58AFAB461EB4ADAA00822043 /* NSString+Ruby.m in Sources */,
 				58AFAC481EB4ADAA00822043 /* WebView+Debug.m in Sources */,
+				58D147481F9F10D200B550BD /* LMJDrawingView.m in Sources */,
 				58AFAC0C1EB4ADAA00822043 /* UINavigationItem+Lock.m in Sources */,
 				58552EB51F724E3600CCA4DF /* EaseEmotionManager.m in Sources */,
 				58B3CC6C1EC809E500D3C02D /* BSJReommmendCategoryCell.m in Sources */,
+				58F2A0851F9EEE5200EA8656 /* LMJDotRemoveViewController.m in Sources */,
 				58B3CC8D1EC835A300D3C02D /* TAAbstractDotView.m in Sources */,
 				58AFAB1B1EB4ADAA00822043 /* NSDictionary+JSONString.m in Sources */,
 				5815C4D81F9EE36800C817F2 /* LMJShangXiaWenZhanViewController.m in Sources */,
@@ -6983,6 +7032,7 @@
 				58AFAC151EB4ADAA00822043 /* UIScrollView+EmptyDataSet.m in Sources */,
 				583EB8AA1EBAC08400A945D3 /* LMJQRCodeViewController.m in Sources */,
 				58552ED11F724E3600CCA4DF /* EaseRecordView.m in Sources */,
+				58D1473F1F9F10BE00B550BD /* LMJDrawBoardViewController.m in Sources */,
 				58AFACA91EB4ADAB00822043 /* LMJNSThreadViewController.m in Sources */,
 				58AFACB91EB4CFD500822043 /* UIView+LMJNjHuFrame.m in Sources */,
 				58AFAC981EB4ADAB00822043 /* LMJExpandHeader.m in Sources */,
@@ -7345,6 +7395,7 @@
 				58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */,
 				580993A41F98A90D0034D17B /* QQLrcModel.m in Sources */,
 				58B3CC711EC80CCB00D3C02D /* BSJRecommendSevice.m in Sources */,
+				58D147471F9F10D200B550BD /* LMJBezierPathCP.m in Sources */,
 				58AFAB6B1EB4ADAA00822043 /* UIView+EaseBlankPage.m in Sources */,
 				585529B31F72021B00CCA4DF /* IMHLoginViewController.m in Sources */,
 				588B32D81EC48D6600D00C1C /* BSJPublishViewController.m in Sources */,
@@ -7356,6 +7407,7 @@
 				58CDBFB71EBB47EB00DBC8AA /* MPUploadImageHelper.m in Sources */,
 				58552FED1F74B5C900CCA4DF /* UIView+CustomControlView.m in Sources */,
 				58552E651F724E3600CCA4DF /* amrFileCodec.mm in Sources */,
+				58F2A0801F9EEBFE00EA8656 /* LMJPicClipViewController.m in Sources */,
 				58B3CC5E1EC7F7BF00D3C02D /* BSJ.m in Sources */,
 				586D90541F9A00C9000CE5A0 /* WPFSpringView.m in Sources */,
 				58AFAC851EB4ADAB00822043 /* LMJHorizontalLayoutViewController.m in Sources */,
@@ -7386,6 +7438,7 @@
 				58AFAC5F1EB4ADAB00822043 /* LMJRequestBaseViewController.m in Sources */,
 				583DFE4E1ECD3A8E0097D826 /* BSJLoginRegisterViewController.m in Sources */,
 				58552F8F1F74B42B00CCA4DF /* NJAVPlayerViewController.m in Sources */,
+				58D1474C1F9F14CC00B550BD /* LMJFingerLockViewController.m in Sources */,
 				58552EAD1F724E3600CCA4DF /* UIViewController+DismissKeyboard.m in Sources */,
 				58AFABA11EB4ADAA00822043 /* QBAssetsCollectionCheckmarkView.m in Sources */,
 				58AFAB3C1EB4ADAA00822043 /* NSString+Contains.m in Sources */,
@@ -7465,6 +7518,7 @@
 				58AFAC641EB4ADAB00822043 /* LMJTitlesListsParentViewController.m in Sources */,
 				58AFAB5B1EB4ADAA00822043 /* CALayer+UIColor.m in Sources */,
 				58AFAC211EB4ADAA00822043 /* UITextField+History.m in Sources */,
+				58D147491F9F10D200B550BD /* LMJHandleView.m in Sources */,
 				58AFAB251EB4ADAA00822043 /* NSInvocation+Bb.m in Sources */,
 				58AFAC1F1EB4ADAA00822043 /* UITableViewCell+TS_delaysContentTouches.m in Sources */,
 				58552EBD1F724E3600CCA4DF /* EaseUserCell.m in Sources */,
