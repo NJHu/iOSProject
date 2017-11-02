@@ -23,7 +23,7 @@ PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework
 <img src="./images/sp.png" width="1200" height="400">
 
 ## 即时通讯
-<img src="./images/wx.png" width="800" height="400">
+<img src="./images/wx.png" width="1600" height="500">
 
 
 
