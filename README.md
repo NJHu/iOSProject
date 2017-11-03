@@ -12,7 +12,7 @@
 <img src="./images/home2.png" width="1600" height="450">
 
 ## 百思不得姐
-<img src="./images/bs1.png" width="1600" height="450"><br>
+<img src="./images/bs1.png" width="1200" height="450"><br>
 <img src="./images/bs2.png" width="800" height="450">
 
 ## 新浪微博
