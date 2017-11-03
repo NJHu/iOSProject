@@ -1,7 +1,7 @@
-<font color=red size=20 face="加粗">报错原因</font><br>
-<font color=red size=12 face="黑体"> 
-PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a 文件过大, 请下载[环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip) 添加 
-</font>
+## 报错原因
+### PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/<br>Hyphenate.a 文件过大
+###请下载 [环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip) 添加 
+
 
 <br>
 <br>
@@ -40,6 +40,6 @@ PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework
 <img src="./images/wx.png" width="1600" height="450
 ">
 
-
+## 联系方式 64hp@163.com 欢迎交流
 
 
