@@ -1,6 +1,6 @@
 ## 报错原因
 ### PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/<br>Hyphenate.a 文件过大
-###请下载 [环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip) 添加 
+### 请下载 [环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip) 添加 
 
 
 <br>
