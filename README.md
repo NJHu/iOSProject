@@ -13,7 +13,7 @@
 
 ## 百思不得姐
 <img src="./images/bs1.png" width="1200" height="450"><br>
-<img src="./images/bs2.png" width="800" height="450">
+<img src="./images/bs2.png" width="450" height="450">
 
 ## 新浪微博
 <img src="./images/wb.png" width="1200" height="450">
@@ -23,7 +23,7 @@
 
 ## 视频列表
 <img src="./images/sp1.png" width="1600" height="450"><br>
-<img src="./images/sp2.png" width="800" height="450">
+<img src="./images/sp2.png" width="450" height="450">
 
 ## 即时通讯
 <img src="./images/wx.png" width="1600" height="450
