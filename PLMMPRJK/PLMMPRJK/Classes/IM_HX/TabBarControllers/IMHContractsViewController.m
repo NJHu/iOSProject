@@ -66,10 +66,10 @@
 }
 
 /** 导航条的高度 */
-- (CGFloat)lmjNavigationHeight:(LMJNavigationBar *)navigationBar
-{
-    return 64;
-}
+//- (CGFloat)lmjNavigationHeight:(LMJNavigationBar *)navigationBar
+//{
+//    return 64;
+//}
 
 
 /** 导航条的左边的 view */

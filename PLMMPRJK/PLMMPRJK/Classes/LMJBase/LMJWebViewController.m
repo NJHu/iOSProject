@@ -287,6 +287,12 @@
         
         if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
             webView.scrollView.contentInset  = UIEdgeInsetsMake(64.0, 0, 0, 0);
+            
+            if ([self respondsToSelector:@selector(lmjNavigationHeight:)]) {
+                
+                self.webView.scrollView.contentInset = UIEdgeInsetsMake([self lmjNavigationHeight:nil], 0, 0, 0);
+            }
+            
             webView.scrollView.scrollIndicatorInsets = webView.scrollView.contentInset;
         }
         
@@ -310,7 +316,7 @@
         
         progressView.lmj_width = Main_Screen_Width;
         
-        progressView.lmj_y = 64.0;
+        progressView.lmj_y = self.lmj_navgationBar.lmj_height;
         progressView.tintColor = [UIColor greenColor];
         
         if ([self respondsToSelector:@selector(webViewController:webViewIsNeedProgressIndicator:)]) {

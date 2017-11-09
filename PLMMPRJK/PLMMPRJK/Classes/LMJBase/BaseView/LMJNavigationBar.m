@@ -19,9 +19,9 @@
 
 #define kRightMargin 0.0
 
-#define kDefaultNavBarHeight 64.0
+//#define kDefaultNavBarHeight 64.0
 
-#define kNavBarCenterY(H) ((kDefaultNavBarHeight - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
+#define kNavBarCenterY(H) ((self.frame.size.height - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
 
 #define kViewMargin 5.0
 
@@ -50,6 +50,14 @@
 {
     [super layoutSubviews];
     
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if ([obj isKindOfClass:NSClassFromString(@"_UIBarBackground")] || [obj isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")] ) {
+            
+            obj.lmj_height = self.lmj_height;
+        }
+        
+    }];
     
     /** 是否显示底部条 */
     if ([self.dataSource respondsToSelector:@selector(lmjNavigationIsHideBottomLine:)]) {
@@ -242,18 +250,18 @@
 // 设置导航条的背景图片
 -(void)setNavigationBack:(UIImage *)image
 {
-    //    [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    //    self.backgroundColor = [UIColor clearColor];
-    //    [self setBackIndicatorTransitionMaskImage:image ];
-    //    [self setShadowImage:image];
-    
+//        [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+//        self.backgroundColor = [UIColor colorWithPatternImage:image];
+//        [self setBackIndicatorTransitionMaskImage:image ];
+//        [self setShadowImage:image];
+//
     [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 //找查到Nav底部的黑线
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view
 {
-    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.width <= 1.0)
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0)
     {
         return (UIImageView *)view;
     }
@@ -279,7 +287,8 @@
         
     }else
     {
-        self.lmj_size = CGSizeMake(kScreenWidth, kDefaultNavBarHeight);
+//        self.lmj_size = CGSizeMake(kScreenWidth, kDefaultNavBarHeight);
+        [self.dataSource lmjNavigationHeight:self];
     }
     
     /** 是否显示底部黑线 */

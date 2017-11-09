@@ -3,6 +3,15 @@
     {
       "extent" : "full-screen",
       "idiom" : "iphone",
+      "subtype" : "2436h",
+      "filename" : "LanuchImage2@3x.png",
+      "minimum-system-version" : "11.0",
+      "orientation" : "portrait",
+      "scale" : "3x"
+    },
+    {
+      "extent" : "full-screen",
+      "idiom" : "iphone",
       "subtype" : "736h",
       "filename" : "LanuchImage1@3x.png",
       "minimum-system-version" : "8.0",

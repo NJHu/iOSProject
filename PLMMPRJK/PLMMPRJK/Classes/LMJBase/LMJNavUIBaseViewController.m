@@ -83,10 +83,10 @@
 //}
 
 /** 背景色 */
-//- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
+- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
+{
+    return [UIColor whiteColor];
+}
 
 /** 是否显示底部黑线 */
 //- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
@@ -97,7 +97,7 @@
 /** 导航条的高度 */
 - (CGFloat)lmjNavigationHeight:(LMJNavigationBar *)navigationBar
 {
-    return 64.0;
+    return [UIApplication sharedApplication].statusBarFrame.size.height < 21.0 ? 64.0 : 88.0;
 }
 
 
