@@ -58,6 +58,7 @@
 		58245ADC1EE2B0470004A5BF /* BSJTopicTopComent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245ADB1EE2B0470004A5BF /* BSJTopicTopComent.m */; };
 		58245ADF1EE2B0570004A5BF /* BSJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245ADE1EE2B0570004A5BF /* BSJUser.m */; };
 		58245AE21EE2DF650004A5BF /* BSJCommentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58245AE11EE2DF650004A5BF /* BSJCommentPageViewController.m */; };
+		5825A6741FDA3D5D00F5D4E2 /* UIScrollView+LMJAdjustiOS11.m in Sources */ = {isa = PBXBuildFile; fileRef = 5825A6731FDA3D5D00F5D4E2 /* UIScrollView+LMJAdjustiOS11.m */; };
 		582F96B71EF8EBF900766666 /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96B61EF8EBF900766666 /* SINUserManager.m */; };
 		582F96C11EF908A800766666 /* SINUnLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96C01EF908A800766666 /* SINUnLoginRegisterView.m */; };
 		582F96C61EF923A200766666 /* SINHomeCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F96C51EF923A200766666 /* SINHomeCategoryViewController.m */; };
@@ -961,6 +962,8 @@
 		58245ADE1EE2B0570004A5BF /* BSJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJUser.m; sourceTree = "<group>"; };
 		58245AE01EE2DF650004A5BF /* BSJCommentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJCommentPageViewController.h; sourceTree = "<group>"; };
 		58245AE11EE2DF650004A5BF /* BSJCommentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJCommentPageViewController.m; sourceTree = "<group>"; };
+		5825A6721FDA3D5D00F5D4E2 /* UIScrollView+LMJAdjustiOS11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LMJAdjustiOS11.h"; sourceTree = "<group>"; };
+		5825A6731FDA3D5D00F5D4E2 /* UIScrollView+LMJAdjustiOS11.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LMJAdjustiOS11.m"; sourceTree = "<group>"; };
 		582F96B51EF8EBF900766666 /* SINUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINUserManager.h; sourceTree = "<group>"; };
 		582F96B61EF8EBF900766666 /* SINUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUserManager.m; sourceTree = "<group>"; };
 		582F96BE1EF907AC00766666 /* SIN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIN.h; sourceTree = "<group>"; };
@@ -5005,6 +5008,8 @@
 				58CDBFB01EBB3D7400DBC8AA /* Foundation+Log.m */,
 				58CC87A01ED4041F00D54800 /* UIImageView+FitNet.h */,
 				58CC87A11ED4041F00D54800 /* UIImageView+FitNet.m */,
+				5825A6721FDA3D5D00F5D4E2 /* UIScrollView+LMJAdjustiOS11.h */,
+				5825A6731FDA3D5D00F5D4E2 /* UIScrollView+LMJAdjustiOS11.m */,
 			);
 			path = MyCategory;
 			sourceTree = "<group>";
@@ -7385,6 +7390,7 @@
 				588E9C3C1EF7D1A4006F599B /* LMJCoreAnimationViewController.m in Sources */,
 				58AFAB561EB4ADAA00822043 /* MKMapView+BetterMaps.m in Sources */,
 				58AFAB941EB4ADAA00822043 /* IQUIWindow+Hierarchy.m in Sources */,
+				5825A6741FDA3D5D00F5D4E2 /* UIScrollView+LMJAdjustiOS11.m in Sources */,
 				58552F2C1F72521000CCA4DF /* PSTCollectionViewFlowLayout.m in Sources */,
 				583E45E31F7A63D00069B8BB /* MUSHomeListViewController.m in Sources */,
 				58552ED21F724E3600CCA4DF /* EaseConversationCell.m in Sources */,
