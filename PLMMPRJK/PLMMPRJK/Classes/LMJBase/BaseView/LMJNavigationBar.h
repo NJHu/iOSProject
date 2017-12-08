@@ -56,7 +56,7 @@
 @interface LMJNavigationBar : UINavigationBar
 
 /** 底部的黑线 */
-@property (weak, nonatomic, readonly) UIImageView *bottomBlackLineView;
+@property (weak, nonatomic) UIImageView *bottomBlackLineView;
 
 /** <#digest#> */
 @property (weak, nonatomic) UIView *titleView;

@@ -204,7 +204,10 @@
 
 - (UIImageView *)bottomBlackLineView
 {
-    return [self findHairlineImageViewUnder:self];
+    if (!_bottomBlackLineView) {
+        _bottomBlackLineView = [self findHairlineImageViewUnder:self];
+    }
+    return _bottomBlackLineView;
 }
 
 
@@ -261,17 +264,15 @@
 //找查到Nav底部的黑线
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view
 {
-    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0)
-    {
-        return (UIImageView *)view;
+    UIView *barBackgroundView = nil;
+    /*iOS 10.0+为`_barBackgroundView`,小于iOS10.0这个属性名称为`_UIBarBackground`.*/
+    if ([UIDevice systemVersion]<10.0) {
+        barBackgroundView = [self valueForKey:@"_backgroundView"];
+    }else{
+        barBackgroundView = [self valueForKey:@"_barBackgroundView"];
     }
-    for (UIView *subview in view.subviews) {
-        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
-        if (imageView) {
-            return imageView;
-        }
-    }
-    return nil;
+    UIImageView *navigationbarLineView = [barBackgroundView valueForKey:@"_shadowView"];
+    return navigationbarLineView;
 }
 
 

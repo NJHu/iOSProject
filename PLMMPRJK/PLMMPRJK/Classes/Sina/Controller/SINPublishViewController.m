@@ -441,7 +441,7 @@
     
     [faweibo appendString:@"\n"];
     
-    [faweibo appendAttributedString:[[NSAttributedString alloc] initWithString:[SINUserManager sharedManager].name attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:10], NSForegroundColorAttributeName : [UIColor redColor]}]];
+    [faweibo appendAttributedString:[[NSAttributedString alloc] initWithString:[SINUserManager sharedManager].name ?: @"" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:10], NSForegroundColorAttributeName : [UIColor redColor]}]];
     
     return faweibo;
 }
