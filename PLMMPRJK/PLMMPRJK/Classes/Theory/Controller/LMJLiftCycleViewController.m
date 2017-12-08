@@ -31,7 +31,7 @@
     
     
     
-    UIView *oneView = [[UIView alloc] initWithFrame:CGRectMake(100, 64, 100, 100)];
+    UIView *oneView = [[UIView alloc] initWithFrame:CGRectMake(100, self.lmj_navgationBar.lmj_height, 100, 100)];
     
     [self.view addSubview:oneView];
     

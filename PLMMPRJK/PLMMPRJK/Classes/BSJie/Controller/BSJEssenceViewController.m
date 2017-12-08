@@ -61,7 +61,7 @@
         
         style.autoAdjustTitlesWidth = YES;
         
-        ZJScrollPageView *scrollPageView = [[ZJScrollPageView alloc] initWithFrame:CGRectMake(0, 64, self.view.lmj_width, self.view.lmj_height - 64) segmentStyle:style titles:[self.childViewControllers valueForKey:@"title"] parentViewController:self delegate:self];
+        ZJScrollPageView *scrollPageView = [[ZJScrollPageView alloc] initWithFrame:CGRectMake(0, self.lmj_navgationBar.lmj_height, self.view.lmj_width, self.view.lmj_height - self.lmj_navgationBar.lmj_height) segmentStyle:style titles:[self.childViewControllers valueForKey:@"title"] parentViewController:self delegate:self];
         
         [self.view addSubview:scrollPageView];
         _scrollPageView = scrollPageView;

@@ -19,8 +19,6 @@
 
 #define kRightMargin 0.0
 
-//#define kDefaultNavBarHeight 64.0
-
 #define kNavBarCenterY(H) ((self.frame.size.height - kStatusBarHeight - H) * 0.5 + kStatusBarHeight)
 
 #define kViewMargin 5.0

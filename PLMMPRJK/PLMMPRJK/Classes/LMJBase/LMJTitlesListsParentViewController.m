@@ -62,7 +62,7 @@
     self.titlesView = titlesView;
     
     titlesView.lmj_x = 0;
-    titlesView.lmj_y = 64;
+    titlesView.lmj_y = self.lmj_navgationBar.lmj_height;
     
     titlesView.lmj_width = self.view.lmj_width;
     titlesView.lmj_height = LMJTitlesViewInEssenceHeight;

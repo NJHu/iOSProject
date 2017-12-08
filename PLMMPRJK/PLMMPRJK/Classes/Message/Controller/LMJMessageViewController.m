@@ -84,7 +84,7 @@
         btn.backgroundColor = [UIColor redColor];
         btn.userInteractionEnabled = YES;
         [btn sizeToFit];
-        [btn setFrame:CGRectMake(20, 64, btn.lmj_width, 30)];
+        [btn setFrame:CGRectMake(20, 100, btn.lmj_width, 30)];
         
         LMJWeakSelf(self);
         [btn addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
