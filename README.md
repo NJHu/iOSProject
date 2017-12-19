@@ -1,15 +1,10 @@
-<p style="font-size: 20px; color: red">觉得不错的转发和点赞哦! 感谢大家支持! </p>
-<br>
-<br>
-<p style="color: red; font-size: 30px">报错原因</p>
-<p style="font-size: 20px; color: red">PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a</p>
-<p style="font-size: 25px; color: red; font-weight: bold;">路径下</p>
-<p style="color: green; font-size: 25px; font-weight: bold;">Hyphenate.a&nbsp文件过大</p>
 
-<label style="font-size: 30px; color: red;">请下载</label>[<label style="font-size: 35px">环信即时通讯SDK</label>](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip)<label style="font-size: 30px; color: red;">添加</label>
+## 报错原因
+### PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a路径下文件过大
 
-<br>
----
+###请下载[环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip)添加
+
+### 欢迎大家转发和点赞哦!感谢大家支持!
 
 # 综合项目截图
 
