@@ -1,3 +1,5 @@
+<html>
+<body>
 <p style="font-size: 20px; color: red">觉得不错的转发和点赞哦! 感谢大家支持! </p>
     
   <div class="js-toggler-container js-social-container starring-container on">    
@@ -26,6 +28,8 @@
 <label style="font-size: 30px; color: red;">请下载</label>[<label style="font-size: 35px">环信即时通讯SDK</label>](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip)<label style="font-size: 30px; color: red;">添加</label>
 
 <br>
+</body>
+</html>
 ---
 
 # 综合项目截图
