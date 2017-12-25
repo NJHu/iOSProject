@@ -97,7 +97,7 @@
 /** 导航条的高度 */
 - (CGFloat)lmjNavigationHeight:(LMJNavigationBar *)navigationBar
 {
-    return [UIApplication sharedApplication].statusBarFrame.size.height < 21.0 ? 64.0 : 88.0;
+    return [UIApplication sharedApplication].statusBarFrame.size.height + 44.0;
 }
 
 
@@ -204,7 +204,7 @@
 
 -(void)changeNavgationBarBackgroundColor:(UIColor *)backgroundColor
 {
-    self.lmj_navgationBar.lmjBackgroundColor = backgroundColor;
+    self.lmj_navgationBar.backgroundColor = backgroundColor;
 }
 
 

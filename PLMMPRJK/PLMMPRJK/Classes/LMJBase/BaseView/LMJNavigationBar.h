@@ -53,10 +53,10 @@
 @end
 
 
-@interface LMJNavigationBar : UINavigationBar
+@interface LMJNavigationBar : UIView
 
 /** 底部的黑线 */
-@property (weak, nonatomic) UIImageView *bottomBlackLineView;
+@property (weak, nonatomic) UIView *bottomBlackLineView;
 
 /** <#digest#> */
 @property (weak, nonatomic) UIView *titleView;
@@ -75,9 +75,6 @@
 
 /** <#digest#> */
 @property (weak, nonatomic) id<LMJNavigationBarDelegate> lmjDelegate;
-
-/** <#digest#> */
-@property (weak, nonatomic) UIColor *lmjBackgroundColor;
 
 /** <#digest#> */
 @property (weak, nonatomic) UIImage *backgroundImage;

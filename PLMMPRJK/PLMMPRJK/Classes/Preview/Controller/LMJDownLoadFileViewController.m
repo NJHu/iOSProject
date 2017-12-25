@@ -78,8 +78,9 @@
             
             //        for (NSInteger i = 0; i < 1000; i++) {
             
-            
-            weakself.addressArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            if (data.length) {
+                weakself.addressArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            }
             
             
             //        }
@@ -126,7 +127,6 @@
     
     
     NSLog(@"%@", request);
-    
     [[[LMJRequestManager sharedManager] downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
         
         [SVProgressHUD showProgress:(downloadProgress.completedUnitCount) / (downloadProgress.totalUnitCount)];
@@ -138,6 +138,7 @@
         
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         
+    
         [SVProgressHUD dismiss];
         NSLog(@"%@", filePath);
         NSLog(@"%@", response);

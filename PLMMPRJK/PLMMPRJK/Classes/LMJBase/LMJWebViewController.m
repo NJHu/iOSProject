@@ -290,7 +290,7 @@
             
             if ([self respondsToSelector:@selector(lmjNavigationHeight:)]) {
                 
-                self.webView.scrollView.contentInset = UIEdgeInsetsMake([self lmjNavigationHeight:nil], 0, 0, 0);
+                webView.scrollView.contentInset = UIEdgeInsetsMake([self lmjNavigationHeight:nil], 0, 0, 0);
             }
             
             webView.scrollView.scrollIndicatorInsets = webView.scrollView.contentInset;

@@ -11,6 +11,8 @@
 
 #define kStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 
+#define kDefaultNavBarHeight ([UIApplication sharedApplication].statusBarFrame.size.height + 44.0)
+
 #define kSmallTouchSizeHeight 44.0
 
 #define kLeftRightViewSizeMinWidth 60.0
@@ -48,34 +50,18 @@
 {
     [super layoutSubviews];
     
-    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
-        if ([obj isKindOfClass:NSClassFromString(@"_UIBarBackground")] || [obj isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")] ) {
-            
-            obj.lmj_height = self.lmj_height;
-        }
-        
-    }];
+    [self.superview bringSubviewToFront:self];
     
-    /** 是否显示底部条 */
-    if ([self.dataSource respondsToSelector:@selector(lmjNavigationIsHideBottomLine:)]) {
-        
-        self.bottomBlackLineView.hidden = [self.dataSource lmjNavigationIsHideBottomLine:self];
-        
-    }else
-    {
-        self.bottomBlackLineView.hidden = NO;
-    }
+    self.leftView.frame = CGRectMake(0, kStatusBarHeight, self.leftView.lmj_width, self.leftView.lmj_height);
     
-    self.leftView.frame = CGRectMake(0, kNavBarCenterY(self.leftView.lmj_height), self.leftView.lmj_width, self.leftView.lmj_height);
+    self.rightView.frame = CGRectMake(self.lmj_width - self.rightView.lmj_width, kStatusBarHeight, self.rightView.lmj_width, self.rightView.lmj_height);
     
-    self.rightView.frame = CGRectMake(self.lmj_width - self.rightView.lmj_width, kNavBarCenterY(self.rightView.lmj_height), self.rightView.lmj_width, self.rightView.lmj_height);
-    
-    self.titleView.frame = CGRectMake(0, kNavBarCenterY(self.titleView.lmj_height), MIN(self.lmj_width - MAX(self.leftView.lmj_width, self.rightView.lmj_width) * 2 - kViewMargin * 2, self.titleView.lmj_width), self.titleView.lmj_height);
+    self.titleView.frame = CGRectMake(0, kStatusBarHeight, MIN(self.lmj_width - MAX(self.leftView.lmj_width, self.rightView.lmj_width) * 2 - kViewMargin * 2, self.titleView.lmj_width), self.titleView.lmj_height);
     
     self.titleView.lmj_x = (self.lmj_width * 0.5 - self.titleView.lmj_width * 0.5);
     
-    self.bottomBlackLineView.lmj_y = self.lmj_height - 1;
+    self.bottomBlackLineView.frame = CGRectMake(0, self.lmj_height, self.lmj_width, 0.5);
+
 }
 
 
@@ -151,21 +137,11 @@
 }
 
 
-
-
-- (void)setLmjBackgroundColor:(UIColor *)lmjBackgroundColor
-{
-    _lmjBackgroundColor = lmjBackgroundColor;
-    
-    [self setBackgroundImage:[UIImage imageWithColor:lmjBackgroundColor]];
-}
-
 - (void)setBackgroundImage:(UIImage *)backgroundImage
 {
     _backgroundImage = backgroundImage;
     
-    [self setNavigationBack:backgroundImage];
-    
+    self.layer.contents = (id)backgroundImage.CGImage;
 }
 
 
@@ -200,15 +176,18 @@
 
 #pragma mark - getter
 
-- (UIImageView *)bottomBlackLineView
+- (UIView *)bottomBlackLineView
 {
-    if (!_bottomBlackLineView) {
-        _bottomBlackLineView = [self findHairlineImageViewUnder:self];
+    if(!_bottomBlackLineView)
+    {
+        CGFloat height = 0.5;
+        UIView *bottomBlackLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height , self.frame.size.width, height)];
+        [self addSubview:bottomBlackLineView];
+        _bottomBlackLineView = bottomBlackLineView;
+        bottomBlackLineView.backgroundColor = [UIColor lightGrayColor];
     }
     return _bottomBlackLineView;
 }
-
-
 
 #pragma mark - event
 
@@ -248,33 +227,6 @@
 
 #pragma mark - custom
 
-// 设置导航条的背景图片
--(void)setNavigationBack:(UIImage *)image
-{
-//        [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-//        self.backgroundColor = [UIColor colorWithPatternImage:image];
-//        [self setBackIndicatorTransitionMaskImage:image ];
-//        [self setShadowImage:image];
-//
-    [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-}
-
-//找查到Nav底部的黑线
-- (UIImageView *)findHairlineImageViewUnder:(UIView *)view
-{
-    UIView *barBackgroundView = nil;
-    /*iOS 10.0+为`_barBackgroundView`,小于iOS10.0这个属性名称为`_UIBarBackground`.*/
-    if ([UIDevice systemVersion]<10.0) {
-        barBackgroundView = [self valueForKey:@"_backgroundView"];
-    }else{
-        barBackgroundView = [self valueForKey:@"_barBackgroundView"];
-    }
-    UIImageView *navigationbarLineView = [barBackgroundView valueForKey:@"_shadowView"];
-    return navigationbarLineView;
-}
-
-
-
 - (void)setupDataSourceUI
 {
     
@@ -286,19 +238,17 @@
         
     }else
     {
-//        self.lmj_size = CGSizeMake(kScreenWidth, kDefaultNavBarHeight);
-        [self.dataSource lmjNavigationHeight:self];
+        self.lmj_size = CGSizeMake(kScreenWidth, kDefaultNavBarHeight);
     }
     
     /** 是否显示底部黑线 */
-    //    if ([self.dataSource respondsToSelector:@selector(lmjNavigationIsHideBottomLine:)]) {
-    //
-    //        self.bottomBlackLineView.hidden = [self.dataSource lmjNavigationIsHideBottomLine:self];
-    //
-    //    }else
-    //    {
-    //        self.bottomBlackLineView.hidden = NO;
-    //    }
+        if ([self.dataSource respondsToSelector:@selector(lmjNavigationIsHideBottomLine:)]) {
+    
+            if ([self.dataSource lmjNavigationIsHideBottomLine:self]) {
+                self.bottomBlackLineView.hidden = YES;
+            }
+    
+        }
     
     /** 背景图片 */
     if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarBackgroundImage:)]) {
@@ -308,8 +258,7 @@
     
     /** 背景色 */
     if ([self.dataSource respondsToSelector:@selector(lmjNavigationBackgroundColor:)]) {
-        
-        self.lmjBackgroundColor = [self.dataSource lmjNavigationBackgroundColor:self];
+        self.backgroundColor = [self.dataSource lmjNavigationBackgroundColor:self];
     }
     
     
@@ -318,19 +267,15 @@
         
         self.titleView = [self.dataSource lmjNavigationBarTitleView:self];
         
-        
-        
     }else if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarTitle:)])
     {
         /**头部标题*/
-        
         self.title = [self.dataSource lmjNavigationBarTitle:self];
     }
     
     
     /** 导航条的左边的 view */
     /** 导航条左边的按钮 */
-    
     if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarLeftView:)]) {
         
         self.leftView = [self.dataSource lmjNavigationBarLeftView:self];
@@ -376,11 +321,8 @@
 
 - (void)setupLMJNavigationBarUIOnce
 {
-    self.translucent = YES;
+    self.backgroundColor = [UIColor whiteColor];
 }
-
-
-
 
 
 @end

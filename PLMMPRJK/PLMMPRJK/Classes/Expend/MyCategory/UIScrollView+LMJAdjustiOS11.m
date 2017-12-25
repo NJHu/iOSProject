@@ -10,18 +10,14 @@
 
 @implementation UIScrollView (LMJAdjustiOS11)
 
+
 + (void)load {
     
-    method_exchangeImplementations(class_getInstanceMethod(self, @selector(setDelegate:)), class_getInstanceMethod(self, @selector(set_swDelegate:)));
-}
-
-- (void)set_swDelegate:(id<UIScrollViewDelegate>)delegate
-{
-    [self set_swDelegate:delegate];
-    
-    if (@available(iOS 11.0, *)) {
-        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    // AppDelegate 进行全局设置
+    if (@available(iOS 11.0, *)){
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     }
+    
 }
 
 @end

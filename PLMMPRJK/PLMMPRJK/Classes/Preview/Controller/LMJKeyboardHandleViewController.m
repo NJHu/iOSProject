@@ -241,7 +241,7 @@ static const CGFloat topViewHeigt=100;
 
 -(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 {
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle];
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
     
     [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
     
