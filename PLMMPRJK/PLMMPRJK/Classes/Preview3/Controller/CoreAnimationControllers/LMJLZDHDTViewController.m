@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     self.fd_interactivePopDisabled = YES;
+    self.title = @"手指移动画线";
     
 }
 - (IBAction)startAni:(UIButton *)sender {

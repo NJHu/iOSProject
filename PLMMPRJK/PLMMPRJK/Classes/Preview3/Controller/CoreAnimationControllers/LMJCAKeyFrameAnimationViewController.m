@@ -18,6 +18,8 @@
 - (void)loadView
 {
     self.view = [[DrawView alloc] init];
+    
+    self.title = @"手指移动画线";
 }
 
 - (void)viewDidLoad {

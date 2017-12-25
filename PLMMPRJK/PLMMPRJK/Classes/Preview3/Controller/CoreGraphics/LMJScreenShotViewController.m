@@ -20,7 +20,11 @@
     
     // 生成一张新的图片
     
-    UIImage *image =  [LMJScreenShotViewController imageWithCaputureView:self.view];
+    UIImage *image =  [LMJScreenShotViewController imageWithCaputureView:kKeyWindow];
+    
+    UIImageView *imv = [[UIImageView alloc] initWithImage:image];
+    [self.view addSubview:imv];
+    imv.frame = CGRectMake(0, 80, 300, 500);
     
     // image转data
     // compressionQuality： 图片质量 1:最高质量
