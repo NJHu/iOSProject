@@ -56,7 +56,7 @@
     
     self.rightView.frame = CGRectMake(self.lmj_width - self.rightView.lmj_width, kStatusBarHeight, self.rightView.lmj_width, self.rightView.lmj_height);
     
-    self.titleView.frame = CGRectMake(0, kStatusBarHeight, MIN(self.lmj_width - MAX(self.leftView.lmj_width, self.rightView.lmj_width) * 2 - kViewMargin * 2, self.titleView.lmj_width), self.titleView.lmj_height);
+    self.titleView.frame = CGRectMake(0, kStatusBarHeight + (44.0 - self.titleView.lmj_height) * 0.5, MIN(self.lmj_width - MAX(self.leftView.lmj_width, self.rightView.lmj_width) * 2 - kViewMargin * 2, self.titleView.lmj_width), self.titleView.lmj_height);
     
     self.titleView.lmj_x = (self.lmj_width * 0.5 - self.titleView.lmj_width * 0.5);
     

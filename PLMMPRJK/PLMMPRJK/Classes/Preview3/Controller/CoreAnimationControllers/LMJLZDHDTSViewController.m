@@ -18,7 +18,8 @@
     [super viewDidLoad];
     
     self.fd_interactivePopDisabled = YES;
-    self.title = @"手指移动画线";
+//    self.title = @"手指移动画线";
+    [MBProgressHUD showAutoMessage:@"手指移动画线"];
 }
 
 

@@ -291,6 +291,10 @@
             if ([self respondsToSelector:@selector(lmjNavigationHeight:)]) {
                 
                 webView.scrollView.contentInset = UIEdgeInsetsMake([self lmjNavigationHeight:nil], 0, 0, 0);
+                // AppDelegate 进行全局设置
+                if (@available(iOS 11.0, *)){
+                    webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+                }
             }
             
             webView.scrollView.scrollIndicatorInsets = webView.scrollView.contentInset;

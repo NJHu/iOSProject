@@ -26,7 +26,8 @@
 // 如果快速把两个控件拼接成一个完整图片
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"拖拽顶部图片";
+//    self.title = @"拖拽顶部图片";
+    [MBProgressHUD showAutoMessage:@"拖拽顶部图片"];
     // Do any additional setup after loading the view, typically from a nib.
     // 通过设置contentsRect可以设置图片显示的尺寸，取值0~1
     _topView.layer.contentsRect = CGRectMake(0, 0, 1, 0.5);

@@ -21,8 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"移动手指拖拽";
+    [MBProgressHUD showAutoMessage:@"手指拖拽截图"];
     
     // 给控制器的view添加一个pan手势
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
