@@ -1,11 +1,12 @@
 
-## 报错原因
-### PLMMPRJK/PLMMPRJK/Classes/IM_HX/<br>EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a路径下文件过大无法添加
-### 请下载[环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip)添加
+## 报错原因处理方法
+### PLMMPRJK/PLMMPRJK/Classes/IM_HX/<br>EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a<br>路径下文件过大无法上传Git
+<img src="./images/jywj.png" width="63%">
+<br>
+<br>
+<br>
 
-### 欢迎大家转发和点赞哦!感谢大家支持!
-
-# 综合项目截图
+# 综合项目截图 欢迎大家转发和点赞哦! 感谢大家支持!
 ## 首页功能列表
 <img src="./images/gn1.png" width="32%">|
 <img src="./images/gn2.png" width="32%">|
@@ -108,3 +109,5 @@
 <br>
 <br>
 <br>
+
+### 如有问题请联系<64hp@163.com>, 感谢支持!
