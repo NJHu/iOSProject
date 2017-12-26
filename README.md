@@ -1,11 +1,3 @@
-
-## 报错原因处理方法
-### PLMMPRJK/PLMMPRJK/Classes/IM_HX/<br>EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a<br>路径下文件过大无法上传Git
-<img src="./images/jywj.png" width="63%">
-<br>
-<br>
-<br>
-
 # 综合项目截图 欢迎大家转发和点赞哦! 感谢大家支持!
 ## 首页功能列表
 <img src="./images/gn1.png" width="32%">|
@@ -28,8 +20,15 @@
 <br>
 <br>
 <br>
+## 报错原因处理方法
+### PLMMPRJK/PLMMPRJK/Classes/IM_HX/<br>EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a<br>路径下文件过大无法上传Git
+<img src="./images/jywj.png" width="100%">
 <br>
 <br>
+<br>
+
+## Demos 综合案例
+<img src="./images/demos.png" width="32%">|
 
 ## 百思不得姐
 <img src="./images/bsj/bsqb.png" width="32%">|
