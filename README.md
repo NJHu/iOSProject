@@ -1,7 +1,6 @@
-<img src="./images/qun.jpg" width="20%">
-PLMMPrjk
+<img src="./images/qun.jpg" width="20%"/><br>
+PLMMPrjk<br>
 ===
-
 - 集合所有案例于一身的Demo
 
 GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ PR is welcome，or [feedback](mailto:64hp@163.com)
