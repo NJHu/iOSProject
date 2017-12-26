@@ -1,8 +1,8 @@
 
-## <label style="color: red;">报错原因</label>
-### PLMMPRJK/PLMMPRJK/Classes/IM_HX/<br><label style="color: red;">EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a路径下文件过大无法添加</label>
+## <font color=red>报错原因</font>
+### PLMMPRJK/PLMMPRJK/Classes/IM_HX/<br><font color=red>EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a路径下文件过大无法添加</font>
 
-### <labe style="color: blue">请下载[环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip)添加</label>
+### <font color=blue>请下载[环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip)添加</font>
 
 ### 欢迎大家转发和点赞哦!感谢大家支持!
 
