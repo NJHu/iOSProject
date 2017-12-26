@@ -69,7 +69,7 @@
     LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"绘图" subTitle:nil];
     item13.destVc = NSClassFromString(@"LMJDrawBoardViewController");
     
-    LMJWordArrowItem *item14 = [LMJWordArrowItem itemWithTitle:@"指纹解锁" subTitle:nil];
+    LMJWordArrowItem *item14 = [LMJWordArrowItem itemWithTitle:@"九宫格解锁" subTitle:nil];
     item14.destVc = NSClassFromString(@"LMJFingerLockViewController");
     
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14] andHeaderTitle:nil footerTitle:nil];

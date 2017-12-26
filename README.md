@@ -1,8 +1,8 @@
 
-## 报错原因
-### PLMMPRJK/PLMMPRJK/Classes/IM_HX/EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a路径下文件过大
+## <label style="color: red;">报错原因</label>
+### PLMMPRJK/PLMMPRJK/Classes/IM_HX/<br><label style="color: red;">EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a路径下文件过大无法添加</label>
 
-### 请下载[环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip)添加
+### <labe style="color: blue">请下载[环信即时通讯SDK](http://downloads.easemob.com/downloads/ios-easemob-sdk_2.3.3.zip)添加</label>
 
 ### 欢迎大家转发和点赞哦!感谢大家支持!
 
