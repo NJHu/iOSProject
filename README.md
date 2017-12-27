@@ -2,11 +2,11 @@
 PLMMPrjk
 ===
 
-<img src="./images/gn1.png" width="13%">
-<img src="./images/demos.png" width="13%">
-<img src="./images/bsj/bsqb.png" width="13%">
-<img src="./images/wb/wb2.png" width="13%">
-<img src="./images/qqmusic/mus2.png" width="13%">
+<img src="./images/gn1.png" width="13%">|
+<img src="./images/demos.png" width="13%">|
+<img src="./images/bsj/bsqb.png" width="13%">|
+<img src="./images/wb/wb2.png" width="13%">|
+<img src="./images/qqmusic/mus2.png" width="13%">|
 <img src="./images/sp/tap.png" width="13%">
 
 ===
