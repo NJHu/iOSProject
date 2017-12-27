@@ -1,7 +1,12 @@
-<img src="./images/qun.jpg" width="20%"/><br>
-PLMMPrjk<br>
+<img src="./images/qun.jpg" width="18%"/><br>
+PLMMPrjk
 ===
-- 集合所有案例于一身的Demo
+<img src="./images/gn1.png" width="13%">
+<img src="./images/demos.png" width="13%">
+<img src="./images/bsj/bsqb.png" width="13%">
+<img src="./images/wb/wb2.png" width="13%">
+<img src="./images/qqmusic/mus2.png" width="13%">
+<img src="./images/sp/tap.png" width="13%">
 
 GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ PR is welcome，or [feedback](mailto:64hp@163.com)
 
