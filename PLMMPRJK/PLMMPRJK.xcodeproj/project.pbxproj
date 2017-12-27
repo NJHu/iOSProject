@@ -6598,7 +6598,6 @@
 				TargetAttributes = {
 					E7D0E0481E8B9DCA001E4585 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = EH8D228RS6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
