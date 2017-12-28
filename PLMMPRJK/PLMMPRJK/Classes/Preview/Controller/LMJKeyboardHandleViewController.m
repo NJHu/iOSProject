@@ -50,29 +50,11 @@ static const CGFloat topViewHeigt=100;
 //    IQAutoToolbarByPosition,
 //    [IQKeyboardManager sharedManager].toolbarManageBehaviour = IQAutoToolbarBySubviews;
  
-    [MBProgressHUD showAutoMessage:@"点击右上角弹出键盘"];
-    UILabel *showKeyboardLabel = [[UILabel alloc] init];
-    showKeyboardLabel.textColor = [UIColor blackColor];
-    showKeyboardLabel.font = [UIFont boldSystemFontOfSize:20];
-    showKeyboardLabel.text = @"点我弹出键盘";
-    showKeyboardLabel.userInteractionEnabled = YES;
-    [self.view addSubview:showKeyboardLabel];
+    [MBProgressHUD showAutoMessage:@"点击右上角弹出隐藏视图键盘"];
     
-    [showKeyboardLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.centerX.offset(0);
-        make.top.offset(100);
-    }];
-    
-    [showKeyboardLabel addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-       [self.myTextField becomeFirstResponder];
-    }];
-    
-//    [self textView];
-////
-//    [self textView0];
-//    
-//    [self textView1];
+    [self textView];
+    [self textView0];
+    [self textView1];
     
     self.myTopView=[[UIView alloc]init];
     self.myTopView.frame=CGRectMake(0, Main_Screen_Height, Main_Screen_Width, topViewHeigt);
