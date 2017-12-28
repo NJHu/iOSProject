@@ -23,8 +23,6 @@
     
     // Do any additional setup after loading the view.
     self.showRefreshHeader = YES;
-    //首次进入加载数据
-    [self tableViewDidTriggerHeaderRefresh];
     
     UIEdgeInsets insets = self.tableView.contentInset;
     insets.top += self.lmj_navgationBar.lmj_height;
@@ -33,7 +31,11 @@
     
 }
 
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //首次进入加载数据
+    [self tableViewDidTriggerHeaderRefresh];
+}
 
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource

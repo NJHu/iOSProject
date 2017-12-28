@@ -26,7 +26,11 @@
     self.tableView.contentInset = insets;
 }
 
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self tableViewDidTriggerHeaderRefresh];
+}
 
 
 
