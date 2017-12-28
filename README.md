@@ -14,9 +14,15 @@ PLMMPrjk
 GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ PR is welcome，or [feedback](mailto:64hp@163.com)
 
 
-## Contents
-- [开始使用](#Getting_Started)
+# <font color=red>Error: </font> [<font color=red>报错原因以及处理方法</font>](#errorHandle)
+```
+ld: framework not found Hyphenate
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+```
 
+## Contents
+
+- [综合项目截图](#Getting_Started)
 - [首页功能列表](#homeList)
 	- [首页功能列表子列表](#homeChildList)
 - [首页基础知识和分享登录](#homeBaseShareLogin)
@@ -51,7 +57,7 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 <br>
 <br>
 <br>
-## <a id="errorHandle"></a> 报错原因处理方法
+## <a id="errorHandle"></a> 报错原因以及处理方法
 ### PLMMPRJK/PLMMPRJK/Classes/IM_HX/<br>EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a<br>路径下文件过大无法上传Git
 <img src="./images/jywj.png" width="100%">
 <br>
