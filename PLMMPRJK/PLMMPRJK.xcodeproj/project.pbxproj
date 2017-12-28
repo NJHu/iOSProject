@@ -464,10 +464,6 @@
 		58AFAB7D1EB4ADAA00822043 /* introductoryPagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA8181EB4ADA900822043 /* introductoryPagesView.m */; };
 		58AFAB7E1EB4ADAA00822043 /* CLLocation+MPLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA81B1EB4ADA900822043 /* CLLocation+MPLocation.m */; };
 		58AFAB7F1EB4ADAA00822043 /* MPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA81D1EB4ADA900822043 /* MPLocationManager.m */; };
-		58AFAB801EB4ADAA00822043 /* MPLKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA8201EB4ADA900822043 /* MPLKDBHelper.m */; };
-		58AFAB811EB4ADAA00822043 /* NSObject+PrintSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA8221EB4ADA900822043 /* NSObject+PrintSQL.m */; };
-		58AFAB821EB4ADAA00822043 /* MPLoggerFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA8261EB4ADA900822043 /* MPLoggerFormatter.m */; };
-		58AFAB831EB4ADAA00822043 /* MyFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA8281EB4ADA900822043 /* MyFileLogger.m */; };
 		58AFAB841EB4ADAA00822043 /* LMJMagicWindowHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA82B1EB4ADA900822043 /* LMJMagicWindowHelper.m */; };
 		58AFAB851EB4ADAA00822043 /* cameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA82E1EB4ADA900822043 /* cameraHelper.m */; };
 		58AFAB861EB4ADAA00822043 /* dateTimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFA8301EB4ADA900822043 /* dateTimeHelper.m */; };
@@ -684,8 +680,6 @@
 		58AFAC631EB4ADAB00822043 /* LMJTitleListChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAA361EB4ADAA00822043 /* LMJTitleListChildViewController.m */; };
 		58AFAC641EB4ADAB00822043 /* LMJTitlesListsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAA381EB4ADAA00822043 /* LMJTitlesListsParentViewController.m */; };
 		58AFAC651EB4ADAB00822043 /* LMJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAA3A1EB4ADAA00822043 /* LMJWebViewController.m */; };
-		58AFAC661EB4ADAB00822043 /* LMJDetailLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAA3E1EB4ADAA00822043 /* LMJDetailLoggerViewController.m */; };
-		58AFAC671EB4ADAB00822043 /* LMJLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAA401EB4ADAA00822043 /* LMJLoggerViewController.m */; };
 		58AFAC6C1EB4ADAB00822043 /* LMJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAA4C1EB4ADAA00822043 /* LMJMeViewController.m */; };
 		58AFAC711EB4ADAB00822043 /* LMJMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAA581EB4ADAA00822043 /* LMJMessageViewController.m */; };
 		58AFAC761EB4ADAB00822043 /* LMJGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFAA631EB4ADAA00822043 /* LMJGuideManager.m */; };
@@ -741,8 +735,6 @@
 		58AFACBE1EB5982C00822043 /* LMJTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACBD1EB5982C00822043 /* LMJTeam.m */; };
 		58AFACC11EB5983D00822043 /* LMJGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACC01EB5983D00822043 /* LMJGroup.m */; };
 		58AFACC41EB5A22600822043 /* LMJListExpendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACC31EB5A22600822043 /* LMJListExpendHeaderView.m */; };
-		58AFACD51EB60E9800822043 /* LMJLKDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */; };
-		58AFACDB1EB6127100822043 /* LMJLKDBPerson.mm in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACDA1EB6127100822043 /* LMJLKDBPerson.mm */; };
 		58AFACEA1EB8AEED00822043 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AFACE91EB8AEED00822043 /* libssl.a */; };
 		58AFACEC1EB8AF0B00822043 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AFACEB1EB8AF0B00822043 /* libcrypto.a */; };
 		58AFACEF1EB8AFD400822043 /* LMJBaiduMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFACEE1EB8AFD400822043 /* LMJBaiduMapViewController.m */; };
@@ -1703,15 +1695,7 @@
 		58AFA81B1EB4ADA900822043 /* CLLocation+MPLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+MPLocation.m"; sourceTree = "<group>"; };
 		58AFA81C1EB4ADA900822043 /* MPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPLocationManager.h; sourceTree = "<group>"; };
 		58AFA81D1EB4ADA900822043 /* MPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPLocationManager.m; sourceTree = "<group>"; };
-		58AFA81F1EB4ADA900822043 /* MPLKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPLKDBHelper.h; sourceTree = "<group>"; };
-		58AFA8201EB4ADA900822043 /* MPLKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPLKDBHelper.m; sourceTree = "<group>"; };
-		58AFA8211EB4ADA900822043 /* NSObject+PrintSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PrintSQL.h"; sourceTree = "<group>"; };
-		58AFA8221EB4ADA900822043 /* NSObject+PrintSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PrintSQL.m"; sourceTree = "<group>"; };
 		58AFA8231EB4ADA900822043 /* LMJHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHelpers.h; sourceTree = "<group>"; };
-		58AFA8251EB4ADA900822043 /* MPLoggerFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPLoggerFormatter.h; sourceTree = "<group>"; };
-		58AFA8261EB4ADA900822043 /* MPLoggerFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPLoggerFormatter.m; sourceTree = "<group>"; };
-		58AFA8271EB4ADA900822043 /* MyFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFileLogger.h; sourceTree = "<group>"; };
-		58AFA8281EB4ADA900822043 /* MyFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFileLogger.m; sourceTree = "<group>"; };
 		58AFA82A1EB4ADA900822043 /* LMJMagicWindowHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJMagicWindowHelper.h; sourceTree = "<group>"; };
 		58AFA82B1EB4ADA900822043 /* LMJMagicWindowHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJMagicWindowHelper.m; sourceTree = "<group>"; };
 		58AFA82D1EB4ADA900822043 /* cameraHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraHelper.h; sourceTree = "<group>"; };
@@ -2149,10 +2133,6 @@
 		58AFAA381EB4ADAA00822043 /* LMJTitlesListsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTitlesListsParentViewController.m; sourceTree = "<group>"; };
 		58AFAA391EB4ADAA00822043 /* LMJWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJWebViewController.h; sourceTree = "<group>"; };
 		58AFAA3A1EB4ADAA00822043 /* LMJWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJWebViewController.m; sourceTree = "<group>"; };
-		58AFAA3D1EB4ADAA00822043 /* LMJDetailLoggerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDetailLoggerViewController.h; sourceTree = "<group>"; };
-		58AFAA3E1EB4ADAA00822043 /* LMJDetailLoggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDetailLoggerViewController.m; sourceTree = "<group>"; };
-		58AFAA3F1EB4ADAA00822043 /* LMJLoggerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLoggerViewController.h; sourceTree = "<group>"; };
-		58AFAA401EB4ADAA00822043 /* LMJLoggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLoggerViewController.m; sourceTree = "<group>"; };
 		58AFAA4B1EB4ADAA00822043 /* LMJMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJMeViewController.h; sourceTree = "<group>"; };
 		58AFAA4C1EB4ADAA00822043 /* LMJMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJMeViewController.m; sourceTree = "<group>"; };
 		58AFAA571EB4ADAA00822043 /* LMJMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJMessageViewController.h; sourceTree = "<group>"; };
@@ -2269,10 +2249,6 @@
 		58AFACC01EB5983D00822043 /* LMJGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJGroup.m; sourceTree = "<group>"; };
 		58AFACC21EB5A22600822043 /* LMJListExpendHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJListExpendHeaderView.h; sourceTree = "<group>"; };
 		58AFACC31EB5A22600822043 /* LMJListExpendHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJListExpendHeaderView.m; sourceTree = "<group>"; };
-		58AFACD31EB60E9800822043 /* LMJLKDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLKDBViewController.h; sourceTree = "<group>"; };
-		58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLKDBViewController.m; sourceTree = "<group>"; };
-		58AFACD91EB6127100822043 /* LMJLKDBPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLKDBPerson.h; sourceTree = "<group>"; };
-		58AFACDA1EB6127100822043 /* LMJLKDBPerson.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LMJLKDBPerson.mm; sourceTree = "<group>"; };
 		58AFACE91EB8AEED00822043 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = Pods/BaiduMapKit/BaiduMapKit/thirdlibs/libssl.a; sourceTree = "<group>"; };
 		58AFACEB1EB8AF0B00822043 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = Pods/BaiduMapKit/BaiduMapKit/thirdlibs/libcrypto.a; sourceTree = "<group>"; };
 		58AFACED1EB8AFD400822043 /* LMJBaiduMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBaiduMapViewController.h; sourceTree = "<group>"; };
@@ -4452,9 +4428,7 @@
 				58AFA80A1EB4ADA900822043 /* GCDHelper */,
 				58AFA8141EB4ADA900822043 /* IntroductoryPages(引导页) */,
 				58AFA8191EB4ADA900822043 /* LcationManager(位置定位) */,
-				58AFA81E1EB4ADA900822043 /* LKDBHelper(数据库) */,
 				58AFA8231EB4ADA900822043 /* LMJHelpers.h */,
-				58AFA8241EB4ADA900822043 /* Logger(日志) */,
 				58AFA8291EB4ADA900822043 /* MagicWinHelper(魔窗助手) */,
 				58AFA82C1EB4ADA900822043 /* OtherHelper(相机和图片助手) */,
 				58AFA8381EB4ADA900822043 /* UmengHelper(友盟) */,
@@ -4569,28 +4543,6 @@
 				58AFA81D1EB4ADA900822043 /* MPLocationManager.m */,
 			);
 			path = "LcationManager(位置定位)";
-			sourceTree = "<group>";
-		};
-		58AFA81E1EB4ADA900822043 /* LKDBHelper(数据库) */ = {
-			isa = PBXGroup;
-			children = (
-				58AFA81F1EB4ADA900822043 /* MPLKDBHelper.h */,
-				58AFA8201EB4ADA900822043 /* MPLKDBHelper.m */,
-				58AFA8211EB4ADA900822043 /* NSObject+PrintSQL.h */,
-				58AFA8221EB4ADA900822043 /* NSObject+PrintSQL.m */,
-			);
-			path = "LKDBHelper(数据库)";
-			sourceTree = "<group>";
-		};
-		58AFA8241EB4ADA900822043 /* Logger(日志) */ = {
-			isa = PBXGroup;
-			children = (
-				58AFA8251EB4ADA900822043 /* MPLoggerFormatter.h */,
-				58AFA8261EB4ADA900822043 /* MPLoggerFormatter.m */,
-				58AFA8271EB4ADA900822043 /* MyFileLogger.h */,
-				58AFA8281EB4ADA900822043 /* MyFileLogger.m */,
-			);
-			path = "Logger(日志)";
 			sourceTree = "<group>";
 		};
 		58AFA8291EB4ADA900822043 /* MagicWinHelper(魔窗助手) */ = {
@@ -5641,10 +5593,6 @@
 		58AFAA3C1EB4ADAA00822043 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				58AFAA3D1EB4ADAA00822043 /* LMJDetailLoggerViewController.h */,
-				58AFAA3E1EB4ADAA00822043 /* LMJDetailLoggerViewController.m */,
-				58AFAA3F1EB4ADAA00822043 /* LMJLoggerViewController.h */,
-				58AFAA401EB4ADAA00822043 /* LMJLoggerViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -6137,8 +6085,6 @@
 		58AFACC61EB60E3700822043 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				58AFACD31EB60E9800822043 /* LMJLKDBViewController.h */,
-				58AFACD41EB60E9800822043 /* LMJLKDBViewController.m */,
 				58AFACED1EB8AFD400822043 /* LMJBaiduMapViewController.h */,
 				58AFACEE1EB8AFD400822043 /* LMJBaiduMapViewController.m */,
 				583EB8A81EBAC08400A945D3 /* LMJQRCodeViewController.h */,
@@ -6172,8 +6118,6 @@
 		58AFACC71EB60E3700822043 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				58AFACD91EB6127100822043 /* LMJLKDBPerson.h */,
-				58AFACDA1EB6127100822043 /* LMJLKDBPerson.mm */,
 				58AFACF01EB8D72100822043 /* LMJBaiduPointAnnotation.h */,
 				58AFACF11EB8D72100822043 /* LMJBaiduPointAnnotation.m */,
 				58AFACF31EB8D7F000822043 /* LMJCoordinateModel.h */,
@@ -6874,7 +6818,6 @@
 				58AFABD01EB4ADAA00822043 /* UIApplication+NetworkActivityIndicator.m in Sources */,
 				58552EBC1F724E3600CCA4DF /* EaseViewController.m in Sources */,
 				58AFAB2B1EB4ADAA00822043 /* NSNumber+RomanNumerals.m in Sources */,
-				58AFAB831EB4ADAA00822043 /* MyFileLogger.m in Sources */,
 				58AFAC321EB4ADAA00822043 /* UIView+Screenshot.m in Sources */,
 				58552F821F74B3F000CCA4DF /* NJVitamioViewController.m in Sources */,
 				58AFAB121EB4ADAA00822043 /* NSDate+Extension.m in Sources */,
@@ -7017,7 +6960,6 @@
 				583E458E1F7A4A740069B8BB /* ZFCommonHelper.m in Sources */,
 				58AFABA01EB4ADAA00822043 /* JDStatusBarView.m in Sources */,
 				58AFABD31EB4ADAA00822043 /* UIBezierPath+BasicShapes.m in Sources */,
-				58AFAB811EB4ADAA00822043 /* NSObject+PrintSQL.m in Sources */,
 				58AFABFF1EB4ADAA00822043 /* UIImageView+Letters.m in Sources */,
 				58AFAC441EB4ADAA00822043 /* UIWebView+Load.m in Sources */,
 				58AFABAC1EB4ADAA00822043 /* UIPlaceHolderTextView.m in Sources */,
@@ -7098,7 +7040,6 @@
 				58552EBA1F724E3600CCA4DF /* EaseRefreshTableViewController.m in Sources */,
 				58AFAB331EB4ADAA00822043 /* NSObject+GCD.m in Sources */,
 				58AFAB1D1EB4ADAA00822043 /* NSDictionary+SafeAccess.m in Sources */,
-				58AFACD51EB60E9800822043 /* LMJLKDBViewController.m in Sources */,
 				58552EA81F724E3600CCA4DF /* EaseMessageModel.m in Sources */,
 				58F2A0791F9EE7D100EA8656 /* LMJClipImageViewController.m in Sources */,
 				58245ADC1EE2B0470004A5BF /* BSJTopicTopComent.m in Sources */,
@@ -7213,7 +7154,6 @@
 				58552F281F72521000CCA4DF /* PSTCollectionView.m in Sources */,
 				58CC87841ED2E60E00D54800 /* LMJFingerCheckViewController.m in Sources */,
 				58B3CC911EC835A300D3C02D /* SDCollectionViewCell.m in Sources */,
-				58AFAB801EB4ADAA00822043 /* MPLKDBHelper.m in Sources */,
 				58AFAB381EB4ADAA00822043 /* NSRunLoop+PerformBlock.m in Sources */,
 				58552F331F72521000CCA4DF /* PSTGridLayoutSection.m in Sources */,
 				58AF02F21F7C948D001F31C5 /* NeteaseMusicAPI.m in Sources */,
@@ -7275,7 +7215,6 @@
 				58DE9A101EF3D102001A3CD4 /* BSJWordToolBar.m in Sources */,
 				58AFABA31EB4ADAA00822043 /* QBAssetsCollectionOverlayView.m in Sources */,
 				58552E661F724E3600CCA4DF /* wav.mm in Sources */,
-				58AFAC661EB4ADAB00822043 /* LMJDetailLoggerViewController.m in Sources */,
 				58552F081F72515200CCA4DF /* UIImageView+EMWebCache.m in Sources */,
 				58AFABDF1EB4ADAA00822043 /* UIColor+Gradient.m in Sources */,
 				58AFAC0A1EB4ADAA00822043 /* UINavigationController+StackManager.m in Sources */,
@@ -7354,9 +7293,7 @@
 				58AFAB881EB4ADAA00822043 /* UITapImageView.m in Sources */,
 				580993991F98A87B0034D17B /* QQTimeTool.m in Sources */,
 				58552ECA1F724E3600CCA4DF /* EaseChatToolbar.m in Sources */,
-				58AFAC671EB4ADAB00822043 /* LMJLoggerViewController.m in Sources */,
 				585530041F74D59F00CCA4DF /* VIDMoviePlayerViewController.m in Sources */,
-				58AFAB821EB4ADAA00822043 /* MPLoggerFormatter.m in Sources */,
 				58AFAB7E1EB4ADAA00822043 /* CLLocation+MPLocation.m in Sources */,
 				58AFAC141EB4ADAA00822043 /* UIScrollView+APParallaxHeader.m in Sources */,
 				58AFAB871EB4ADAA00822043 /* imageCompressHelper.m in Sources */,
@@ -7517,7 +7454,6 @@
 				58AFAB231EB4ADAA00822043 /* NSHTTPCookieStorage+FreezeDry.m in Sources */,
 				58AFABEB1EB4ADAA00822043 /* UIImage+Alpha.m in Sources */,
 				58552FF41F74B5C900CCA4DF /* ZFPlayerModel.m in Sources */,
-				58AFACDB1EB6127100822043 /* LMJLKDBPerson.mm in Sources */,
 				58AFAC801EB4ADAB00822043 /* LMJAddressPickerViewController.m in Sources */,
 				58552EC41F724E3600CCA4DF /* EaseBubbleView+Image.m in Sources */,
 				58AFAC641EB4ADAB00822043 /* LMJTitlesListsParentViewController.m in Sources */,
@@ -7741,7 +7677,6 @@
 					"-ObjC",
 					"-l\"AFNetworking\"",
 					"-l\"ActionSheetPicker-3.0\"",
-					"-l\"CocoaLumberjack\"",
 					"-l\"DACircularProgress\"",
 					"-l\"MBProgressHUD\"",
 					"-l\"MJExtension\"",
@@ -7891,7 +7826,6 @@
 					"-ObjC",
 					"-l\"AFNetworking\"",
 					"-l\"ActionSheetPicker-3.0\"",
-					"-l\"CocoaLumberjack\"",
 					"-l\"DACircularProgress\"",
 					"-l\"MBProgressHUD\"",
 					"-l\"MJExtension\"",

@@ -29,15 +29,8 @@ PODS:
   - ASIHTTPRequest/S3 (1.8.2):
     - ASIHTTPRequest/Core
   - BaiduMapKit (3.3.1)
-  - CocoaLumberjack (3.2.0):
-    - CocoaLumberjack/Default (= 3.2.0)
-    - CocoaLumberjack/Extensions (= 3.2.0)
-  - CocoaLumberjack/Default (3.2.0)
-  - CocoaLumberjack/Extensions (3.2.0):
-    - CocoaLumberjack/Default
   - CYLTabBarController (1.10.0)
   - DACircularProgress (2.3.1)
-  - FLEX (2.4.0)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -48,8 +41,6 @@ PODS:
     - LBXScan/All (= 2.0)
   - LBXScan/All (2.0):
     - ZBarSDK (~> 1.3.1)
-  - LKDBHelper (2.4.2):
-    - FMDB
   - M13ProgressSuite (1.2.9)
   - MagicWindowSDK (3.90.170517):
     - MagicWindowSDK/WeChat (= 3.90.170517)
@@ -70,12 +61,6 @@ PODS:
   - SVProgressHUD (2.1.2)
   - UMengAnalytics (4.2.4)
   - WebViewJavascriptBridge (5.2.0)
-  - XAspect (1.0.5):
-    - XAspect/Core (= 1.0.5)
-    - XAspect/Macros (= 1.0.5)
-  - XAspect/Core (1.0.5):
-    - XAspect/Macros
-  - XAspect/Macros (1.0.5)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -86,15 +71,12 @@ DEPENDENCIES:
   - AFNetworking
   - ASIHTTPRequest
   - BaiduMapKit
-  - CocoaLumberjack
   - CYLTabBarController
-  - FLEX (~> 2.0)
   - FMDB
   - HMEmoticon
   - HMQRCodeScanner
   - KILabel
   - LBXScan
-  - LKDBHelper
   - M13ProgressSuite
   - MagicWindowSDK
   - Masonry
@@ -107,7 +89,6 @@ DEPENDENCIES:
   - SVProgressHUD
   - UMengAnalytics
   - WebViewJavascriptBridge (~> 5.0)
-  - XAspect
   - YYKit
 
 SPEC CHECKSUMS:
@@ -115,16 +96,13 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   BaiduMapKit: 9e8ff80bbcfb8f96b4a58b2844d728590dac90ca
-  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
   CYLTabBarController: 2de9a4c26f50d33574398becf8e7b0aaed794240
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
-  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HMEmoticon: 7cac18c01b74a2eaf833e2083c0238cb3c29b6a8
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
   KILabel: 4797807cdc0b4992dad8bf91175ddc973c3b569b
   LBXScan: 458f4b7a6688504a1415dc4a0f9822100e099f66
-  LKDBHelper: ab67373b32f47463bf5f838d730f225824f4492a
   M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
   MagicWindowSDK: 78d72d92b6d04e6638f42d9a730fc98659a54963
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -138,10 +116,9 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   WebViewJavascriptBridge: a00b2d61252aec5207e3263d46fd0fd3cfaf7895
-  XAspect: db50bf487f92dbb8557a7a5365556966c8493af8
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
 
-PODFILE CHECKSUM: ad44c4f4d6637520347b4947d416144d28dd7a05
+PODFILE CHECKSUM: 62a9b8bbb89460e942937d0ae4a6c7478609c8d5
 
 COCOAPODS: 1.2.0

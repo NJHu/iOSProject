@@ -7,7 +7,6 @@
 //
 
 #import "LMJNewViewController.h"
-#import "LMJLoggerViewController.h"
 #import "LMJAddressPickerViewController.h"
 #import "LMJNoNavBarViewController.h"
 #import "LMJAdaptFontViewController.h"
@@ -21,7 +20,6 @@
 #import "LMJKeyboardHandleViewController.h"
 #import "LMJDownLoadFileViewController.h"
 #import "LMJMasonryViewController.h"
-#import "LMJLKDBViewController.h"
 #import "LMJBaiduMapViewController.h"
 #import "LMJQRCodeViewController.h"
 #import "LMJUpLoadImagesViewController.h"
@@ -62,8 +60,8 @@
     edgeInsets.bottom += self.tabBarController.tabBar.lmj_height;
     self.tableView.contentInset = edgeInsets;
     
-    LMJWordArrowItem *item0 = [LMJWordArrowItem itemWithTitle:@"日志记录" subTitle: nil];
-    item0.destVc = [LMJLoggerViewController class];
+//    LMJWordArrowItem *item0 = [LMJWordArrowItem itemWithTitle:@"占位" subTitle: nil];
+//    item0.destVc = [LMJLoggerViewController class];
     
     
     LMJWordArrowItem *item1 = [LMJWordArrowItem itemWithTitle:@"省市区三级联动" subTitle: nil];
@@ -123,9 +121,9 @@
     
     item13.destVc = [LMJMasonryViewController class];
     
-    LMJWordArrowItem *item14 = [LMJWordArrowItem itemWithTitle:@"LKDB数据库" subTitle: nil];
+//    LMJWordArrowItem *item14 = [LMJWordArrowItem itemWithTitle:@"LKDB数据库" subTitle: nil];
     
-    item14.destVc = [LMJLKDBViewController class];
+//    item14.destVc = [LMJLKDBViewController class];
     
     LMJWordArrowItem *item15 = [LMJWordArrowItem itemWithTitle:@"百度地图" subTitle: nil];
     
@@ -204,7 +202,7 @@
     item31.destVc = [LMJDrawRectViewController class];
     
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, item25, item26, item27, item28, item29, item30, item31] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, item25, item26, item27, item28, item29, item30, item31] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
     
     [self.sections addObject:section0];
 }

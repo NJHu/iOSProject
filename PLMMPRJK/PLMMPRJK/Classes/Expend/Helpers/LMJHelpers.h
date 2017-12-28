@@ -39,10 +39,7 @@
 #import "introductoryPagesView.h"
 #import "CLLocation+MPLocation.h"
 #import "MPLocationManager.h"
-#import "MPLKDBHelper.h"
-#import "NSObject+PrintSQL.h"
-#import "MPLoggerFormatter.h"
-#import "MyFileLogger.h"
+
 #import "cameraHelper.h"
 #import "dateTimeHelper.h"
 #import "imageCompressHelper.h"

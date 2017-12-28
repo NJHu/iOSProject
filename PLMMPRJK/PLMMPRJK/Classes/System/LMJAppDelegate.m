@@ -322,12 +322,6 @@
 {
     _launchOptions = launchOptions;
     
-    //配置DDLog
-    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
-    [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
-    
-    
-    
     // 友盟
     [MPUmengHelper UMAnalyticStart];
     [MPUmengHelper UMSocialStart];
