@@ -247,7 +247,7 @@
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
     [leftButton setTitle:@"左边" forState: UIControlStateNormal];
-    [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [leftButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [leftButton setBackgroundColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
     return nil;
@@ -256,9 +256,9 @@
 
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    rightButton.backgroundColor = [UIColor lightGrayColor];
+    rightButton.backgroundColor = [UIColor redColor];
     [rightButton setTitle:@"右边" forState:UIControlStateNormal];
-    [rightButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [rightButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [rightButton setBackgroundColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
     return nil;
