@@ -240,15 +240,15 @@
 
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
-    return [self changeTitle:@"预演列表"];
+    return [self changeTitle:@"自定义导航栏 View"];
 }
 
 
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
     [leftButton setTitle:@"左边" forState: UIControlStateNormal];
-    [leftButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
-    [leftButton setBackgroundColor:[UIColor RandomColor] forState:UIControlStateNormal];
+    [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [leftButton setBackgroundColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
     return nil;
 }
@@ -256,7 +256,10 @@
 
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    rightButton.backgroundColor = [UIColor RandomColor];
+    rightButton.backgroundColor = [UIColor lightGrayColor];
+    [rightButton setTitle:@"右边" forState:UIControlStateNormal];
+    [rightButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [rightButton setBackgroundColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
     return nil;
 }
@@ -271,7 +274,7 @@
     
     [title addAttribute:NSForegroundColorAttributeName value:HEXCOLOR(0x333333) range:NSMakeRange(0, title.length)];
     
-    [title addAttribute:NSFontAttributeName value:CHINESE_SYSTEM(18) range:NSMakeRange(0, title.length)];
+    [title addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:16] range:NSMakeRange(0, title.length)];
     
     return title;
 }
