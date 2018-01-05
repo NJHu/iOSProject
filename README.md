@@ -1,7 +1,8 @@
-<img src="./images/qun1.jpg" width="18%"/><br>
+<img src="./images/qun1.jpg" width="18%"/>即将1月8日更新, 欢迎关注!
+===
 PLMMPrjk
 ===
-- 1月8日重大更新, 欢迎关注!
+
 
 <div>
 <img src="./images/gn1.png" width="15.6%">|
