@@ -1,43 +1,34 @@
 <img src="./images/qun1.jpg" width="18%"/>即将1月8日更新, 欢迎关注!
 ===
-PLMMPrjk
+iOSProject
 ===
 
-
+# <a id="Getting_Started"></a> 欢迎大家转发和点赞哦! 感谢大家支持!
 <div>
-<img src="./images/gn1.png" width="15.6%">|
-<img src="./images/demos.png" width="15.6%">|
-<img src="./images/bsj/bsqb.png" width="15.6%">|
-<img src="./images/wb/wb2.png" width="15.6%">|
-<img src="./images/qqmusic/mus2.png" width="15.6%">|
-<img src="./images/sp/tap.png" width="15.6%">
+<img src="./images/gn1iphonex.png" width="15.6%">|
+<img src="./images/jciphonex.png" width="15.6%">|
+<img src="./images/bsj/bsqbiphonex.png" width="15.6%">|
+<img src="./images/wb/wb2iphonex.png" width="15.6%">|
+<img src="./images/qqmusic/mus2iphonex.png" width="15.6%">|
+<img src="./images/sp/clpiphonex.png" width="15.6%">
 </div>
 
 GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ PR is welcome，or [feedback](mailto:64hp@163.com):64hp@163.com
 
 
-# Error: [报错原因以及处理方法](#errorHandle)
-```
-ld: framework not found Hyphenate
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-```
-
-## Contents
-
+## iOSProject
 - [综合项目截图](#Getting_Started)
 - [首页功能列表](#homeList)
-	- [首页功能列表子列表](#homeChildList)
-- [首页基础知识和分享登录](#homeBaseShareLogin)
-- [报错原因处理方法](#errorHandle)
+- [基础](#foundation)
+	- [基础子列表](#foundationList)
+- [分享和第三方登录](#homeBaseShareLogin)
 - [Demos 综合案例](#demo_s)
 	- [百思不得姐](#bsj)
 	- [微博](#wb)
 	- [QQ 音乐 music](#qqmusic)
-	- [聊天环信](#huanxinChat)
 	- [视频播放](#videos)
 
 
-# <a id="Getting_Started"></a> 综合项目截图 欢迎大家转发和点赞哦! 感谢大家支持!
 ## <a id="homeList"></a> 首页功能列表
 <img src="./images/gn1.png" width="32%">|
 <img src="./images/gn2.png" width="32%">|
@@ -45,23 +36,20 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 <br>
 <br>
 
-### <a id="homeChildList"></a> 首页功能列表子列表
+## <a id="foundation"></a> 基础知识
+<img src="./images/jciphonex.png" width="32%">
+<br>
+<br>
+### <a id="foundationList"></a> 基础知识列表
 <img src="./images/gn3_1.png" width="32%">|
 <img src="./images/gn3_2.png" width="32%">|
 <img src="./images/gn3_3.png" width="32%">
 <br>
 <br>
 
-## <a id="homeBaseShareLogin"></a> 首页基础知识和分享登录
-<img src="./images/jc.png" width="32%">|
+## <a id="homeBaseShareLogin"></a> 分享和第三方登录
 <img src="./images/fx.png" width="32%">|
 <img src="./images/fx_1.png" width="32%">
-<br>
-<br>
-<br>
-## <a id="errorHandle"></a> 报错原因以及处理方法
-### PLMMPRJK/PLMMPRJK/Classes/IM_HX/<br>EasyMobSDKS/HyphenateFullSDK/Hyphenate.framework/Hyphenate.a<br>路径下文件过大无法上传Git
-<img src="./images/jywj.png" width="100%">
 <br>
 <br>
 <br>
@@ -119,18 +107,6 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 <br>
 <br>
 
-## <a id="huanxinChat"></a> 聊天环信
-<img src="./images/hx/hx1.png" width="32%">|
-<img src="./images/hx/hx2.png" width="32%">|
-<img src="./images/hx/hx3.png" width="32%">|
-<img src="./images/hx/hx4.png" width="32%">|
-<img src="./images/hx/hx5.png" width="32%">|
-<img src="./images/hx/hx6.png" width="32%">
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## <a id="videos"></a> 视频播放
 <img src="./images/sp/sycoll.png" width="32%">|
