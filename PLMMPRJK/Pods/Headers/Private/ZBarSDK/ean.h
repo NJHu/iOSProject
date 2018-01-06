@@ -1,1 +1,0 @@
-../../../ZBarSDK/zbar/decoder/ean.h

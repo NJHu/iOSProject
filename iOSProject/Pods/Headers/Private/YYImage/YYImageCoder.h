@@ -1,0 +1,1 @@
+../../../YYImage/YYImage/YYImageCoder.h

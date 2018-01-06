@@ -1,1 +1,0 @@
-../../../LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXResultPoint.h

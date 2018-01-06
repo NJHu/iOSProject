@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LMJUpLoadImageCell" id="gTV-IL-0wX" customClass="LMJUpLoadImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="161" height="114"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="161" height="114"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8m7-vL-mkQ">
+                        <rect key="frame" x="0.0" y="0.0" width="161" height="114"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFo-m2-g44">
+                                <rect key="frame" x="10" y="10" width="141" height="94"/>
+                                <state key="normal" backgroundImage="btn_addPicture_BgImage"/>
+                                <connections>
+                                    <action selector="addClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="5QE-Af-uD4"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f0T-E1-7rp">
+                                <rect key="frame" x="0.0" y="0.0" width="161" height="114"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecR-kg-1ZR">
+                                <rect key="frame" x="117" y="0.0" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.38726128469999999" blue="0.58634440099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="I5T-ZT-7sz"/>
+                                    <constraint firstAttribute="width" constant="44" id="l2f-pC-Oaw"/>
+                                </constraints>
+                                <state key="normal" title="删除"/>
+                                <connections>
+                                    <action selector="deleteClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zrw-48-SHc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="f0T-E1-7rp" secondAttribute="bottom" id="4gJ-gn-Z4A"/>
+                            <constraint firstAttribute="bottom" secondItem="iFo-m2-g44" secondAttribute="bottom" constant="10" id="Asj-Vh-2vv"/>
+                            <constraint firstItem="f0T-E1-7rp" firstAttribute="leading" secondItem="8m7-vL-mkQ" secondAttribute="leading" id="GVG-De-kMU"/>
+                            <constraint firstAttribute="trailing" secondItem="ecR-kg-1ZR" secondAttribute="trailing" id="HHw-48-uEd"/>
+                            <constraint firstItem="ecR-kg-1ZR" firstAttribute="top" secondItem="8m7-vL-mkQ" secondAttribute="top" id="RVK-x3-Bjs"/>
+                            <constraint firstItem="iFo-m2-g44" firstAttribute="leading" secondItem="8m7-vL-mkQ" secondAttribute="leading" constant="10" id="Rh4-Um-lVm"/>
+                            <constraint firstAttribute="trailing" secondItem="iFo-m2-g44" secondAttribute="trailing" constant="10" id="Ua6-Xg-8MQ"/>
+                            <constraint firstAttribute="trailing" secondItem="f0T-E1-7rp" secondAttribute="trailing" id="Vdz-Bd-nfz"/>
+                            <constraint firstItem="f0T-E1-7rp" firstAttribute="top" secondItem="8m7-vL-mkQ" secondAttribute="top" id="n1D-p9-hh9"/>
+                            <constraint firstItem="iFo-m2-g44" firstAttribute="top" secondItem="8m7-vL-mkQ" secondAttribute="top" constant="10" id="u5x-KG-Cec"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8m7-vL-mkQ" secondAttribute="trailing" id="CAv-h7-lNs"/>
+                <constraint firstItem="8m7-vL-mkQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="d7Z-rv-3qu"/>
+                <constraint firstItem="8m7-vL-mkQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eAE-Gk-9zA"/>
+                <constraint firstAttribute="bottom" secondItem="8m7-vL-mkQ" secondAttribute="bottom" id="eLE-dt-sz1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="161" height="114"/>
+            <connections>
+                <outlet property="addBtn" destination="iFo-m2-g44" id="aFy-HC-lee"/>
+                <outlet property="deleteBtn" destination="ecR-kg-1ZR" id="gkB-0g-QeW"/>
+                <outlet property="imgView" destination="f0T-E1-7rp" id="fR6-dc-sq1"/>
+            </connections>
+            <point key="canvasLocation" x="89.5" y="22"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="btn_addPicture_BgImage" width="65" height="65"/>
+    </resources>
+</document>

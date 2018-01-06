@@ -1,1 +1,0 @@
-../../../LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/detector/ZXQRCodeAlignmentPattern.h

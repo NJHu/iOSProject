@@ -1,0 +1,1 @@
+../../../../UMengUShare/UShareSDK/UMSocialSDK/UMSocialCore.framework/Headers/UMSocialMessageObject.h

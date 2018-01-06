@@ -1,0 +1,174 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - ASIHTTPRequest (1.8.2):
+    - ASIHTTPRequest/ASIWebPageRequest (= 1.8.2)
+    - ASIHTTPRequest/CloudFiles (= 1.8.2)
+    - ASIHTTPRequest/Core (= 1.8.2)
+    - ASIHTTPRequest/S3 (= 1.8.2)
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/CloudFiles (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/Core (1.8.2):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.2):
+    - ASIHTTPRequest/Core
+  - BaiduMapKit (3.4.2)
+  - CYLTabBarController (1.17.6)
+  - FCUUID (1.3.1):
+    - UICKeyChainStore (~> 2.1.0)
+  - FDFullscreenPopGesture (1.1)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
+  - GVUserDefaults (1.0.2)
+  - HMEmoticon (1.0.12)
+  - HMQRCodeScanner (1.0.6)
+  - iflyMSC (1.144)
+  - IQKeyboardManager (5.0.7)
+  - KILabel (1.0.1)
+  - LxGridView (1.0.0)
+  - M13ProgressSuite (1.2.9)
+  - MagicWindowSDK (4.2.171115):
+    - WechatOpenSDK
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.15.1)
+  - MOFSPickerManager (1.0.4)
+  - Reachability (3.2)
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+  - TDTouchID (1.0.2)
+  - Toast (4.0.0)
+  - TZImagePickerController (1.9.8)
+  - UICKeyChainStore (2.1.1)
+  - UMengAnalytics (4.2.4)
+  - UMengUShare/Core (6.4.8):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.8)
+  - UMengUShare/Social/QQ (6.4.8):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedQQ (6.4.8):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedSina (6.4.8):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.8):
+    - UMengUShare/Core
+  - UMengUShare/Social/Sina (6.4.8):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedSina
+  - UMengUShare/UI (6.4.8):
+    - UMengUShare/Core
+  - WebViewJavascriptBridge (5.2.0)
+  - WechatOpenSDK (1.8.1)
+  - YYAsyncLayer (1.0)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYText (1.0.7)
+  - ZJScrollPageView (0.4.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - ASIHTTPRequest
+  - BaiduMapKit
+  - CYLTabBarController
+  - FCUUID
+  - FDFullscreenPopGesture
+  - FMDB
+  - GVUserDefaults
+  - HMEmoticon
+  - HMQRCodeScanner
+  - iflyMSC
+  - IQKeyboardManager
+  - KILabel
+  - LxGridView
+  - M13ProgressSuite
+  - MagicWindowSDK
+  - Masonry
+  - MBProgressHUD
+  - MJExtension
+  - MJRefresh
+  - MOFSPickerManager
+  - Reachability
+  - SDCycleScrollView
+  - SDWebImage
+  - TDTouchID
+  - Toast
+  - TZImagePickerController
+  - UMengAnalytics
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/Social/Sina
+  - UMengUShare/UI
+  - WebViewJavascriptBridge
+  - YYAsyncLayer
+  - YYCategories
+  - YYImage
+  - YYText
+  - ZJScrollPageView
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
+  BaiduMapKit: f61b19ecf07a3f2deede72b221b366bf698739ed
+  CYLTabBarController: c374643dea6dadece8bdff9c70f7387f8ffd7d08
+  FCUUID: bb054fc90cd7cd99320f9f6ff8e130fe607fba05
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  GVUserDefaults: 52d48cf8ba578b40a1a76312b196dfc9134ba36a
+  HMEmoticon: 7cac18c01b74a2eaf833e2083c0238cb3c29b6a8
+  HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
+  iflyMSC: 7631cefeb1493b4bf0812a2a9b4fcdc6fe9f782e
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  KILabel: 4797807cdc0b4992dad8bf91175ddc973c3b569b
+  LxGridView: af7b9360cce8eec2bcb11aa9d3cb7b9674372b74
+  M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
+  MagicWindowSDK: aa91ae646bb8b1ccd9479ea7fb0f4f7277ef31de
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  MOFSPickerManager: 8fa9dfe5f8a1619beae8cf9e88e9cf5ca913913d
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  TDTouchID: d40027ed36e3d9f528b9b3f6bb6cf46f4f26f954
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  TZImagePickerController: 3b9413ae5d049b1fdc5b0c720ad283f35b679a50
+  UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
+  UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  UMengUShare: 7a0ab762ccd445ccfcf11bde8e7f81b29b9f5e1c
+  WebViewJavascriptBridge: a00b2d61252aec5207e3263d46fd0fd3cfaf7895
+  WechatOpenSDK: 491d965d79335070328571d3e79f714549e79a5e
+  YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  ZJScrollPageView: dd8778909cb2413782616ab156e873956f6b0682
+
+PODFILE CHECKSUM: 59c74f5e51a89b842149521c866fe1ef8395bed4
+
+COCOAPODS: 1.2.0

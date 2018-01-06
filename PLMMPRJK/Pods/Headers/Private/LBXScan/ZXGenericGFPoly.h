@@ -1,1 +1,0 @@
-../../../LBXScan/LBXScan/LBXZXing/ZXingObjc/common/reedsolomon/ZXGenericGFPoly.h

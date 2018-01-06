@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aps-environment</key>
+	<string>development</string>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:zplan.s3.cn-north-1.amazonaws.com.cn</string>
+		<string>applinks:www.zplan.s3.cn-north-1.amazonaws.com.cn</string>
+		<string>applinks:zplantest.s3.cn-north-1.amazonaws.com.cn</string>
+		<string>applinks:www.zplantest.s3.cn-north-1.amazonaws.com.cn</string>
+	</array>
+	<key>inter-app-audio</key>
+	<true/>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)com.eagle.zplan</string>
+	</array>
+</dict>
+</plist>

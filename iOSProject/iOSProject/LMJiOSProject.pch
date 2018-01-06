@@ -1,0 +1,85 @@
+//
+//  NJiOSProject.pch
+//  iOSProject
+//
+//  Created by HuXuPeng on 2017/12/28.
+//  Copyright © 2017年 HuXuPeng. All rights reserved.
+//
+
+#ifndef NJiOSProject_pch
+#define NJiOSProject_pch
+
+#pragma clang diagnostic ignored "-Wstrict-prototypes"
+// category
+#import "UIView+LMJNjHuFrame.h"
+#import "MBProgressHUD+LMJ.h"
+#import "UIView+GestureCallback.h"
+#import "UIColor+Random.h"
+#import "UIButton+LMJ.h"
+#import "UITextView+WZB.h"
+#import "UIViewController+DDPopUpViewController.h"
+#import "NSDecimalNumber+Addtion.h"
+
+// helpers
+#import "LMJRequestManager.h"
+#import "GVUserDefaults+LMJ.h"
+#import "LMJConsts.h"
+#import "JXTAlertController.h"
+#import "UIView+LMJConfigBlank.h"
+#import "UIImageView+FitNet.h"
+
+// libs
+#import "UMessage.h"
+#import <AFNetworking.h>
+#import <IQKeyboardManager.h>
+#import <Masonry.h>
+#import <MBProgressHUD.h>
+#import <MJExtension.h>
+#import <MJRefresh.h>
+#import <SDCycleScrollView.h>
+#import <UIImageView+WebCache.h>
+#import <YYAsyncLayer.h>
+#import <YYCategories.h>
+#import <YYImage.h>
+#import <YYText.h>
+#import <Toast.h>
+
+//弱引用/强引用  可配对引用在外面用MPWeakSelf(self)，block用MPStrongSelf(self)  也可以单独引用在外面用MPWeakSelf(self) block里面用weakself
+
+#define LMJWeakSelf(type)  __weak typeof(type) weak##type = type
+
+/**
+ *  属性转字符串
+ */
+#define LMJKeyPath(obj, key) @(((void)obj.key, #key))
+
+
+//是否是空对象
+#define LMJIsEmpty(_object) (_object == nil \
+|| [_object isKindOfClass:[NSNull class]] \
+|| ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) \
+|| ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
+
+//不同屏幕尺寸字体适配（320，568是因为效果图为IPHONE5 如果不是则根据实际情况修改）
+#define kScreenWidthRatio  (UIScreen.mainScreen.bounds.size.width / 375.0)
+#define kScreenHeightRatio (UIScreen.mainScreen.bounds.size.height / 667.0)
+#define AdaptedWidth(x)  ceilf((x) * kScreenWidthRatio)
+#define AdaptedHeight(x) ceilf((x) * kScreenHeightRatio)
+#define AdaptedFontSize(R)     [UIFont systemFontOfSize:AdaptedWidth(R)]
+
+//由角度转换弧度
+#define kDegreesToRadian(x)      (M_PI * (x) / 180.0)
+//由弧度转换角度
+#define kRadianToDegrees(radian) (radian * 180.0) / (M_PI)
+
+#ifdef DEBUG
+
+#define NSLogFunc NSLog(@"=====Begin==========\n FILE: %@\n FUNC: %s\n LINE: %d\n", [NSString stringWithUTF8String:__FILE__].lastPathComponent, __PRETTY_FUNCTION__, __LINE__)
+
+#else
+
+#define NSLogFunc
+
+#endif
+
+#endif /* NJiOSProject_pch */

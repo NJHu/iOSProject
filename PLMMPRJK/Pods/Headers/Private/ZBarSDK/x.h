@@ -1,1 +1,0 @@
-../../../ZBarSDK/zbar/window/x.h

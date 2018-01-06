@@ -1,0 +1,1 @@
+../../../SDCycleScrollView/SDCycleScrollView/Lib/SDCycleScrollView/PageControl/TAAnimatedDotView.h

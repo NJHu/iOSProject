@@ -1,1 +1,0 @@
-../../../MagicWindowSDK/MagicWindowSDK/WeChat/WechatAuthSDK.h

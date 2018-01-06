@@ -1,0 +1,1 @@
+../../../../iflyMSC/RX3_iflyMSC/iflyMSC.framework/Headers/IFlySpeechSynthesizerDelegate.h
