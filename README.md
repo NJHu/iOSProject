@@ -17,7 +17,7 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 
 
 ## iOSProject
-- [综合项目截图](#Getting_Started)
+- [开始](#Getting_Started)
 - [首页功能列表](#homeList)
 - [基础](#foundation)
 	- [基础子列表](#foundationList)
