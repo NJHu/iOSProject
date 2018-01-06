@@ -19,8 +19,8 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 ## iOSProject
 - [开始](#Getting_Started)
 - [首页功能列表](#homeList)
-- [基础](#foundation)
-	- [基础子列表](#foundationList)
+- [基础知识](#foundation)
+	- [基础知识列表](#foundationList)
 - [分享和第三方登录](#homeBaseShareLogin)
 - [Demos 综合案例](#demo_s)
 	- [百思不得姐](#bsj)
@@ -40,6 +40,7 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 <img src="./images/jciphonex.png" width="32%">
 <br>
 <br>
+
 ### <a id="foundationList"></a> 基础知识列表
 <img src="./images/gn3_1.png" width="32%">|
 <img src="./images/gn3_2.png" width="32%">|
