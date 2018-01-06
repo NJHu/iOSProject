@@ -1,4 +1,4 @@
-<img src="./images/qun1.jpg" width="18%"/>即将1月8日更新, 欢迎关注!
+<img src="./images/qun1.jpg" width="18%"/>
 ===
 iOSProject
 ===
