@@ -22,7 +22,7 @@
     if (!self.accessToken) {
         return NO;
     }
-    
+
     if (!self.expiration || [self.expiration compare:[NSDate date]] != NSOrderedDescending) {
         return NO;
     }
@@ -76,15 +76,14 @@
 
 - (id)initWithCoder:(NSCoder *)decoder 
 { 
-    if (self = [super init]) { 
+    if (self = [super init]) {
         
         _name = [decoder decodeObjectForKey:LMJKeyPath(self, name)];
         _expiration = [decoder decodeObjectForKey:LMJKeyPath(self, expiration)];
         _accessToken = [decoder decodeObjectForKey:LMJKeyPath(self, accessToken)];
         _iconurl = [decoder decodeObjectForKey:LMJKeyPath(self, iconurl)];
         _uid = [decoder decodeObjectForKey:LMJKeyPath(self, uid)];
-        
-    } 
+    }
     return self; 
 } 
 
@@ -112,7 +111,12 @@
 {
     self = [super init];
     if (self) {
-        
+        // 测试作者信息
+        _name = @"NJ影伴人久";
+        _accessToken = @"2.00afSYxFZJms7E8582756c985F3jdC";
+        _iconurl = @"https://tvax3.sinaimg.cn/crop.1.0.510.510.180/005XyiFAly8fescv0z62zj30e80e6q3o.jpg";
+        _uid = @"5460642906";
+        _expiration = [NSDate distantFuture];
     }
     return self;
 }
@@ -131,7 +135,6 @@ static id _instance = nil;
         if (!_instance) {
             _instance = [[self alloc] init];
         }
-        
         
     });
     

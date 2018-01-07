@@ -3099,7 +3099,7 @@
 					"-framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eagle.zplan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.njhu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -3230,7 +3230,7 @@
 					"-framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eagle.zplan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.njhu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
