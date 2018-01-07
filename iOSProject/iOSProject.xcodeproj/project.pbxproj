@@ -1218,8 +1218,8 @@
 			children = (
 				58651A6A1FFE6D6E0087419D /* SINTabBarController.h */,
 				58651A701FFE6D6E0087419D /* SINTabBarController.m */,
-				58651A6D1FFE6D6E0087419D /* SINHomeViewController.m */,
 				58651A721FFE6D6E0087419D /* SINHomeViewController.h */,
+				58651A6D1FFE6D6E0087419D /* SINHomeViewController.m */,
 				58651A6E1FFE6D6E0087419D /* SINDiscoveryViewController.h */,
 				58651A681FFE6D6E0087419D /* SINDiscoveryViewController.m */,
 				58651A6C1FFE6D6E0087419D /* SINMessageViewController.h */,
@@ -2983,7 +2983,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EH8D228RS6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = iOSProject/LMJiOSProject.pch;
 				INFOPLIST_FILE = iOSProject/Info.plist;
@@ -3099,7 +3099,7 @@
 					"-framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eagle.zplan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eagle.zpaln;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -3114,7 +3114,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EH8D228RS6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = iOSProject/LMJiOSProject.pch;
 				INFOPLIST_FILE = iOSProject/Info.plist;
@@ -3230,7 +3230,7 @@
 					"-framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eagle.zplan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eagle.zpaln;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

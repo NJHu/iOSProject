@@ -26,12 +26,8 @@ static NSString *const LMJThirdSDKUMessageStartWithAppkey = @"58aa7d20e88bad08c1
 static NSString *const LMJThirdSDKUMessageAppMasterSecret = @"ntljqfii29nachyuqpbmwl5u5yofkyk6";
 
 
-
-// 种子计划分享
-static NSString *const LMJThirdSDKWeChatAppKey = @"wxf510029cc41f5123";
-
 // UM 微信登录
-//static NSString *const LMJThirdSDKWeChatAppKey = @"wxdc1e388c3822c80b";
+static NSString *const LMJThirdSDKWeChatAppKey = @"wxdc1e388c3822c80b";
 
 static NSString *const LMJThirdSDKWeChatAppSecret = @"3baf1193c85774b3fd9d18447d76cab0";
 
@@ -44,7 +40,6 @@ static NSString *const LMJThirdSDKSinaAppKey = @"4061770881";
 static NSString *const LMJThirdSDKSinaAppSecret = @"f48ff7f7791061a99a523c5381bf48ee";
 
 static NSString *const LMJThirdSDKSinaRedirectURL = @"http://zplan.com.cn";
-
 
 // UMQQ
 static NSString *const LMJThirdSDKQQAppKey = @"1105821097";
