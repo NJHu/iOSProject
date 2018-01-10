@@ -40,6 +40,16 @@
     
     // 自动播放，默认不自动播放
     [self.playerView autoPlayTheVideo];
+    
+//    [self lmj_navgationBar];
+    UIView *blackView = [[UIView alloc] init];
+    [self.view addSubview:blackView];
+    blackView.backgroundColor = [UIColor blackColor];
+    [blackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.top.right.offset(0);
+        make.height.mas_equalTo([UIApplication sharedApplication].statusBarFrame.size.height);
+    }];
 }
 
 
@@ -47,7 +57,7 @@
 {
     [super viewWillAppear:animated];
     
-    [UIApplication sharedApplication].statusBarHidden = YES;
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -65,7 +75,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [UIApplication sharedApplication].statusBarHidden = NO;
     
     // push出下一级页面时候暂停
     if (self.playerView && !self.playerView.isPauseByUser) {
@@ -86,6 +95,8 @@
         playerView.backgroundColor = [UIColor redColor];
         
         [playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+//        make.edges.mas_equalTo(self.playerFatherView).insets(UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height, 0, 0, 0));
             make.edges.insets(UIEdgeInsetsZero);
         }];
         
@@ -183,7 +194,7 @@
     
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.lmj_navgationBar.alpha = 0;
+//        self.lmj_navgationBar.alpha = 0;
     }];
 }
 /** 控制层即将隐藏 */
@@ -193,7 +204,7 @@
     NSLog(@"控制层即将隐藏 %zd", fullscreen);
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.lmj_navgationBar.alpha = !fullscreen;
+//        self.lmj_navgationBar.alpha = !fullscreen;
     }];
 }
 
@@ -263,35 +274,9 @@
 }
 
 
-/** 背景色 */
-- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
-{
-    return [UIColor RandomColor];
+- (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController{
+    return NO;
 }
-
-/** 是否隐藏底部黑线 */
-- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
-{
-    return YES;
-}
-
-
-/** 导航条左边的按钮 */
-- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
-{
-    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
-    
-    return [UIImage imageNamed:@"NavgationBar_white_back"];
-}
-
-
-#pragma mark - LMJNavUIBaseViewControllerDelegate
-/** 左边的按钮的点击 */
--(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 
 
 @end
