@@ -37,7 +37,7 @@
 #pragma mark - settter
 - (void)展示二维码控制器
 {
-    HMScannerController *scanner = [HMScannerController scannerWithCardName:nil avatar:nil completion:^(NSString *stringValue) {
+    HMScannerController *scanner = [HMScannerController scannerWithCardName:@"https://www.github.com/njhu" avatar:nil completion:^(NSString *stringValue) {
         
         self.contentLabel.text = stringValue;
         

@@ -8,6 +8,14 @@
 
 #import "LMJAdaptFontCell.h"
 
+//UIKIT_EXTERN const CGFloat KTopSpace;
+//UIKIT_EXTERN const CGFloat KLeftSpace;
+//UIKIT_EXTERN const CGFloat KRightSpace;
+//UIKIT_EXTERN const CGFloat KDateLabelFontSize;
+//UIKIT_EXTERN const CGFloat KDateMarginToText;
+//UIKIT_EXTERN const CGFloat KTextLabelFontSize;
+//UIKIT_EXTERN const CGFloat kBottomSpace;
+
 @interface LMJAdaptFontCell ()
 
 /** <#digest#> */
@@ -19,12 +27,6 @@
 @end
 
 
-
-
-static const CGFloat KTopSpace=10;
-static const CGFloat KLeftSpace=15;
-static const CGFloat KTextLabelFontSize=15;
-static const CGFloat KDateLabelFontSize=17;
 
 @implementation LMJAdaptFontCell
 
@@ -65,17 +67,10 @@ static const CGFloat KDateLabelFontSize=17;
 }
 
 
-- (void)setData:(NSMutableDictionary *)dict text:(NSString *)text date:(NSString *)date
+- (void)setParagraph:(LMJParagraph *)paragraph
 {
-    self.myTextLabel.attributedText = [self.class getTextAtt:text];
-    self.myDateLabel.text = date;
-    
-    if ([dict[text] integerValue] == 0) {
-        
-        [self layoutIfNeeded];
-        
-        dict[text] = @(self.myTextLabel.lmj_y + AdaptedHeight(KTopSpace) + [self.myTextLabel.attributedText boundingRectWithSize:CGSizeMake(kScreenWidth - KLeftSpace * 2, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
-    }
+    self.myTextLabel.attributedText = paragraph.attWords;
+    self.myDateLabel.text = paragraph.date;
 }
 
 
@@ -97,9 +92,9 @@ static const CGFloat KDateLabelFontSize=17;
         
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.top.mas_equalTo(AdaptedHeight(KTopSpace));
+            make.top.mas_equalTo(KTopSpace);
             make.left.mas_equalTo(KLeftSpace);
-            make.right.mas_equalTo(-KLeftSpace);
+            make.right.mas_equalTo(-KRightSpace);
             
         }];
         
@@ -132,9 +127,9 @@ static const CGFloat KDateLabelFontSize=17;
         
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.top.mas_equalTo(self.myDateLabel.mas_bottom).offset(AdaptedHeight(KTopSpace));
+            make.top.mas_equalTo(self.myDateLabel.mas_bottom).offset(KDateMarginToText);
             make.left.mas_equalTo(KLeftSpace);
-            make.right.mas_equalTo(-KLeftSpace);
+            make.right.mas_equalTo(-KRightSpace);
             
             
         }];
@@ -144,16 +139,6 @@ static const CGFloat KDateLabelFontSize=17;
 }
 
 
-+ (NSAttributedString *)getTextAtt:(NSString *)text
-{
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineSpacing = 4;
-    
-    NSAttributedString *arrS = [[NSAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName : AdaptedFontSize(KTextLabelFontSize), NSParagraphStyleAttributeName : paragraphStyle}];
-    
-    return arrS;
-    
-}
 
 
 @end

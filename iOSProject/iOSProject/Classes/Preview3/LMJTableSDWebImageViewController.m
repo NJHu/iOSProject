@@ -7,7 +7,7 @@
 //
 
 #import "LMJTableSDWebImageViewController.h"
-
+#import "VIDMoviePlayerViewController.h"
 #import "LMJXGMVideo.h"
 
 @interface LMJTableSDWebImageViewController ()
@@ -76,6 +76,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    VIDMoviePlayerViewController *playerVc = [[VIDMoviePlayerViewController alloc] init];
+    playerVc.videoURL = self.videos[indexPath.row].url.absoluteString;
+    
+    [self.navigationController pushViewController:playerVc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

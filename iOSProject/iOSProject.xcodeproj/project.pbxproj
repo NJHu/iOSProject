@@ -226,6 +226,7 @@
 		589B57832000339800B2D5A8 /* VIDCollectionViewVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589B57592000339800B2D5A8 /* VIDCollectionViewVideoCell.m */; };
 		589B57842000339800B2D5A8 /* VIDCollectionViewVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589B575A2000339800B2D5A8 /* VIDCollectionViewVideoCell.xib */; };
 		589B57852000339800B2D5A8 /* VIDVideoDownloadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589B575B2000339800B2D5A8 /* VIDVideoDownloadingCell.m */; };
+		58A17C4E2005F4E600B350AB /* LMJParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A17C4D2005F4E600B350AB /* LMJParagraph.m */; };
 		58DC816C1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC816B1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m */; };
 		58DC81721FFA29E00060DC03 /* LMJDragTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81711FFA29E00060DC03 /* LMJDragTableViewController.m */; };
 		58DC81751FFA2B720060DC03 /* UIView+GestureCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81731FFA2B710060DC03 /* UIView+GestureCallback.m */; };
@@ -760,6 +761,8 @@
 		589B575A2000339800B2D5A8 /* VIDCollectionViewVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIDCollectionViewVideoCell.xib; sourceTree = "<group>"; };
 		589B575B2000339800B2D5A8 /* VIDVideoDownloadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDVideoDownloadingCell.m; sourceTree = "<group>"; };
 		589B575C2000339800B2D5A8 /* VIDVideoDownloadedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDVideoDownloadedCell.h; sourceTree = "<group>"; };
+		58A17C4C2005F4E600B350AB /* LMJParagraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJParagraph.h; sourceTree = "<group>"; };
+		58A17C4D2005F4E600B350AB /* LMJParagraph.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJParagraph.m; sourceTree = "<group>"; };
 		58DC816A1FFA0A470060DC03 /* LMJTableSDWebImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTableSDWebImageViewController.h; sourceTree = "<group>"; };
 		58DC816B1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTableSDWebImageViewController.m; sourceTree = "<group>"; };
 		58DC81701FFA29DF0060DC03 /* LMJDragTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDragTableViewController.h; sourceTree = "<group>"; };
@@ -2153,6 +2156,8 @@
 				58DC84661FFC94B30060DC03 /* LMJGroup.h */,
 				58DC84691FFC94B30060DC03 /* LMJGroup.m */,
 				58DC84671FFC94B30060DC03 /* team_dictionary.plist */,
+				58A17C4C2005F4E600B350AB /* LMJParagraph.h */,
+				58A17C4D2005F4E600B350AB /* LMJParagraph.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2767,6 +2772,7 @@
 				589B577A2000339800B2D5A8 /* ZFVideoResolution.m in Sources */,
 				5892ADA71FF600F700E868C2 /* YYFPSLabel.m in Sources */,
 				58DC851B1FFC972C0060DC03 /* BSJMeSquareCell.m in Sources */,
+				58A17C4E2005F4E600B350AB /* LMJParagraph.m in Sources */,
 				58DC83CE1FFB43E30060DC03 /* LMJPiesViewController.m in Sources */,
 				589B57071FFFC53000B2D5A8 /* QQLrcDataTool.m in Sources */,
 				58651AA41FFE6D6F0087419D /* SINProfileViewController.m in Sources */,

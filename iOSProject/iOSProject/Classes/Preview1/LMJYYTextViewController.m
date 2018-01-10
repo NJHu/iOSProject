@@ -26,7 +26,7 @@
 - (void)layoutLabels
 {
     // 1, 普通的
-    YYLabel *label = [[YYLabel alloc] initWithFrame:CGRectMake(10, 80, kScreenWidth - 20, 30)];
+    YYLabel *label = [[YYLabel alloc] initWithFrame:CGRectMake(10, 90, kScreenWidth - 20, 30)];
     
     label.font = [UIFont systemFontOfSize:15];
     label.textColor = [UIColor RandomColor];

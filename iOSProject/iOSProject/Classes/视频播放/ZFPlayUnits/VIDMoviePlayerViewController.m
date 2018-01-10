@@ -143,7 +143,7 @@
         
         [playerFatherView mas_makeConstraints:^(MASConstraintMaker *make) {
            
-            make.top.offset(0);
+            make.top.offset([UIApplication sharedApplication].statusBarFrame.size.height);
             make.left.right.offset(0);
             make.height.mas_equalTo(self.playerFatherView.mas_width).multipliedBy(9.0f/16.0f);
             
@@ -266,7 +266,7 @@
 /** 背景色 */
 - (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 {
-    return [UIColor clearColor];
+    return [UIColor RandomColor];
 }
 
 /** 是否隐藏底部黑线 */

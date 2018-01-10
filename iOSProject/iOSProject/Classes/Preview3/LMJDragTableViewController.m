@@ -102,7 +102,6 @@ const NSInteger LMJDragTableViewControllerCols_ = 3;
                 // 把 cell移动到当前位置
                 [weakself.collectionView moveItemAtIndexPath:weakself.lastChangeIndexPath toIndexPath:curIndexPath];
                 
-                
                 // 记录当前的 indexPath
                 weakself.lastChangeIndexPath = curIndexPath;
                 

@@ -290,7 +290,7 @@
         
         make.top.mas_equalTo(220);
         make.left.mas_equalTo(170);
-        make.right.mas_equalTo(self.view).offset(10);
+        make.right.mas_equalTo(self.view).offset(-10);
         make.bottom.offset(-100);
         
     }];
@@ -385,7 +385,10 @@
             
         }];
         
-        [weakmyView layoutIfNeeded];
+        // 添加动画
+        [UIView animateWithDuration:1 animations:^{
+            [weakmyView layoutIfNeeded];
+        }];
         
     }];
     

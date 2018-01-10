@@ -109,7 +109,7 @@
             }
             
             
-            if (self.group.isOpened) {
+            if (weakself.group.isOpened) {
                 
                 [UIView animateWithDuration:0.3 animations:^{
                     
@@ -125,7 +125,7 @@
                 
                 [UIView animateWithDuration:0.3 animations:^{
                     
-                    self.indicatorButton.imageView.transform = CGAffineTransformMakeRotation(kDegreesToRadian(180.0));
+                    weakself.indicatorButton.imageView.transform = CGAffineTransformMakeRotation(kDegreesToRadian(180.0));
                     
                 }];
                 
@@ -148,23 +148,12 @@
     
     if (group.isOpened) {
         
-        
-            
-            self.indicatorButton.imageView.transform = CGAffineTransformIdentity;
-            
-        
-        
+        self.indicatorButton.imageView.transform = CGAffineTransformIdentity;
         
     }else
     {
         
-        
-        
-        
-            
-            self.indicatorButton.imageView.transform = CGAffineTransformMakeRotation(kDegreesToRadian(180.0));
-            
-        
+        self.indicatorButton.imageView.transform = CGAffineTransformMakeRotation(kDegreesToRadian(180.0));
         
     }
 }

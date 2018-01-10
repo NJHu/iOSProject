@@ -55,7 +55,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat kNavBarHeight = -64.0;
+    CGFloat kNavBarHeight = -self.lmj_navgationBar.height;
     
     CGPoint contentOffset = scrollView.contentOffset;
     

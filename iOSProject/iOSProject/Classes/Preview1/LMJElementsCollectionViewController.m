@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
     
-    self.title = @"京东首页布局";
+    self.title = @"app首页布局";
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
     

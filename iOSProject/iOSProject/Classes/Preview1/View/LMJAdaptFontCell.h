@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "LMJParagraph.h"
 @interface LMJAdaptFontCell : UITableViewCell
 
-- (void)setData:(NSMutableDictionary *)dict text:(NSString *)text date:(NSString *)date;
-
 + (instancetype)adaptFontCellWithTableView:(UITableView *)tableView;
+
+/** <#digest#> */
+@property (nonatomic, strong) LMJParagraph *paragraph;
 
 @end
