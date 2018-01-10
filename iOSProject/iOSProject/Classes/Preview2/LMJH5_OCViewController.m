@@ -156,6 +156,12 @@
         [self.webView.scrollView insertSubview:addRedView atIndex:0];
         _addRedView = addRedView;
         
+        UILabel *addCenterView = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, 300, 100)];
+        addCenterView.text = @"红色和绿色 是 添加的 Views";
+        
+        addCenterView.backgroundColor =  [UIColor greenColor];
+        [addRedView addSubview:addCenterView];
+        
         addRedView.backgroundColor = [UIColor redColor];
         
     }

@@ -65,6 +65,8 @@
 
   // 获取设备ID
   function getDeviceId() {
+      // NSString *const LMJOCJSHelperScriptMessageHandlerName1_ = @"OCJSHelper1";
+      // 注册了 OCJSHelper1
       window.webkit.messageHandlers.OCJSHelper1.postMessage({code: 'getDeviceId', functionName: 'globalCallback'});
   }
 
