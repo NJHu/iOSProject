@@ -21,12 +21,13 @@
 #import "NSDecimalNumber+Addtion.h"
 
 // helpers
+#import "LMJConst.h"
 #import "LMJRequestManager.h"
 #import "GVUserDefaults+LMJ.h"
-#import "LMJConsts.h"
 #import "JXTAlertController.h"
 #import "UIView+LMJConfigBlank.h"
 #import "UIImageView+FitNet.h"
+
 
 // libs
 #import "UMessage.h"

@@ -122,7 +122,6 @@
 		5892AD901FF5E32500E868C2 /* LMJIntroductoryPagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD8F1FF5E32500E868C2 /* LMJIntroductoryPagesHelper.m */; };
 		5892AD9F1FF5F23D00E868C2 /* AdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD9D1FF5F23D00E868C2 /* AdvertiseView.m */; };
 		5892ADA01FF5F23D00E868C2 /* AdvertiseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD9E1FF5F23D00E868C2 /* AdvertiseHelper.m */; };
-		5892ADA31FF6003500E868C2 /* LMJUISettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADA21FF6003500E868C2 /* LMJUISettings.m */; };
 		5892ADA71FF600F700E868C2 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADA61FF600F700E868C2 /* YYFPSLabel.m */; };
 		5892ADAA1FF603AD00E868C2 /* LMJUMengHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADA91FF603AD00E868C2 /* LMJUMengHelper.m */; };
 		5892ADAF1FF60A8300E868C2 /* JXTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADAE1FF60A8300E868C2 /* JXTAlertController.m */; };
@@ -227,6 +226,7 @@
 		58A17C542007112A00B350AB /* intro_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58A17C502007112500B350AB /* intro_3.jpg */; };
 		58A17C552007112A00B350AB /* intro_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58A17C512007112700B350AB /* intro_0.jpg */; };
 		58A17C562007112A00B350AB /* intro_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58A17C522007112A00B350AB /* intro_1.jpg */; };
+		58A17C592007335400B350AB /* LMJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A17C582007335400B350AB /* LMJConst.m */; };
 		58DC816C1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC816B1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m */; };
 		58DC81721FFA29E00060DC03 /* LMJDragTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81711FFA29E00060DC03 /* LMJDragTableViewController.m */; };
 		58DC81751FFA2B720060DC03 /* UIView+GestureCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81731FFA2B710060DC03 /* UIView+GestureCallback.m */; };
@@ -440,7 +440,6 @@
 		5840385F1FF875F8002A0566 /* LMJQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJQRCodeViewController.h; sourceTree = "<group>"; };
 		584038611FF87938002A0566 /* LMJUpLoadImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJUpLoadImagesViewController.m; sourceTree = "<group>"; };
 		584038621FF87939002A0566 /* LMJUpLoadImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJUpLoadImagesViewController.h; sourceTree = "<group>"; };
-		584038641FF88271002A0566 /* LMJConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJConsts.h; sourceTree = "<group>"; };
 		584038651FF88594002A0566 /* LMJUpLoadImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJUpLoadImageCell.h; sourceTree = "<group>"; };
 		584038661FF88594002A0566 /* LMJUpLoadImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJUpLoadImageCell.m; sourceTree = "<group>"; };
 		584038671FF88594002A0566 /* LMJUpLoadImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LMJUpLoadImageCell.xib; sourceTree = "<group>"; };
@@ -603,8 +602,6 @@
 		5892AD9C1FF5F23C00E868C2 /* AdvertiseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertiseHelper.h; sourceTree = "<group>"; };
 		5892AD9D1FF5F23D00E868C2 /* AdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseView.m; sourceTree = "<group>"; };
 		5892AD9E1FF5F23D00E868C2 /* AdvertiseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseHelper.m; sourceTree = "<group>"; };
-		5892ADA11FF6003500E868C2 /* LMJUISettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJUISettings.h; sourceTree = "<group>"; };
-		5892ADA21FF6003500E868C2 /* LMJUISettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJUISettings.m; sourceTree = "<group>"; };
 		5892ADA51FF600F700E868C2 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		5892ADA61FF600F700E868C2 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		5892ADA81FF603AD00E868C2 /* LMJUMengHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJUMengHelper.h; sourceTree = "<group>"; };
@@ -763,6 +760,8 @@
 		58A17C502007112500B350AB /* intro_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_3.jpg; sourceTree = "<group>"; };
 		58A17C512007112700B350AB /* intro_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_0.jpg; sourceTree = "<group>"; };
 		58A17C522007112A00B350AB /* intro_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_1.jpg; sourceTree = "<group>"; };
+		58A17C572007335400B350AB /* LMJConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJConst.h; sourceTree = "<group>"; };
+		58A17C582007335400B350AB /* LMJConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJConst.m; sourceTree = "<group>"; };
 		58DC816A1FFA0A470060DC03 /* LMJTableSDWebImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTableSDWebImageViewController.h; sourceTree = "<group>"; };
 		58DC816B1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTableSDWebImageViewController.m; sourceTree = "<group>"; };
 		58DC81701FFA29DF0060DC03 /* LMJDragTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDragTableViewController.h; sourceTree = "<group>"; };
@@ -1344,7 +1343,8 @@
 			children = (
 				584037FE1FF61CF8002A0566 /* iOSProject.entitlements */,
 				5892AD6A1FF5096500E868C2 /* LMJiOSProject.pch */,
-				584038641FF88271002A0566 /* LMJConsts.h */,
+				58A17C572007335400B350AB /* LMJConst.h */,
+				58A17C582007335400B350AB /* LMJConst.m */,
 				5892ACB01FF4EEB300E868C2 /* LMJAppDelegate.h */,
 				5892ACB11FF4EEB300E868C2 /* LMJAppDelegate.m */,
 				58651ABF1FFE6F3F0087419D /* Classes */,
@@ -1483,8 +1483,6 @@
 				5892AD8A1FF5E2C000E868C2 /* 欢迎页 */,
 				5892AD871FF5D46800E868C2 /* GVUserDefaults+LMJ.h */,
 				5892AD881FF5D46800E868C2 /* GVUserDefaults+LMJ.m */,
-				5892ADA11FF6003500E868C2 /* LMJUISettings.h */,
-				5892ADA21FF6003500E868C2 /* LMJUISettings.m */,
 				5892ADAD1FF60A8300E868C2 /* JXTAlertController.h */,
 				5892ADAE1FF60A8300E868C2 /* JXTAlertController.m */,
 				5892ADA81FF603AD00E868C2 /* LMJUMengHelper.h */,
@@ -2663,7 +2661,6 @@
 				58651ABD1FFE6D6F0087419D /* SINStatusListService.m in Sources */,
 				589B57772000339800B2D5A8 /* VIDCollectionViewController.m in Sources */,
 				58651AA91FFE6D6F0087419D /* SINBroswerViewController.m in Sources */,
-				5892ADA31FF6003500E868C2 /* LMJUISettings.m in Sources */,
 				589B57762000339800B2D5A8 /* VIDTableViewController.m in Sources */,
 				589B57622000339800B2D5A8 /* UIView+CustomControlView.m in Sources */,
 				58DC83D11FFB43E30060DC03 /* LMJClipImageViewController.m in Sources */,
@@ -2812,6 +2809,7 @@
 				58DC83841FFB43460060DC03 /* LMJDYViewController.m in Sources */,
 				58DC83801FFB43460060DC03 /* LMJZDTPViewController.m in Sources */,
 				584038101FF62F30002A0566 /* LMJAdaptFontCell.m in Sources */,
+				58A17C592007335400B350AB /* LMJConst.m in Sources */,
 				589B57722000339800B2D5A8 /* VIDMoviePlayerViewController.m in Sources */,
 				589B577D2000339800B2D5A8 /* VIDTableViewVideoCell.m in Sources */,
 				589B57652000339800B2D5A8 /* UIImageView+ZFCache.m in Sources */,

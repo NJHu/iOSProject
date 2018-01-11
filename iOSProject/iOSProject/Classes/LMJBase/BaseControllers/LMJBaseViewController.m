@@ -26,8 +26,9 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-
-   
+    if (@available(iOS 11.0, *)){
+        [[UIScrollView appearanceWhenContainedInInstancesOfClasses:@[[LMJBaseViewController class]]] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
