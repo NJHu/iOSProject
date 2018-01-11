@@ -5,12 +5,12 @@ iOSProject
 
 # <a id="Getting_Started"></a> 欢迎大家转发和点赞哦! 感谢大家支持!
 <div>
-<img src="./images/gn1iphonex.png" width="15.6%">|
-<img src="./images/jciphonex.png" width="15.6%">|
-<img src="./images/bsj/bsqbiphonex.png" width="15.6%">|
-<img src="./images/wb/wb2iphonex.png" width="15.6%">|
-<img src="./images/qqmusic/mus2iphonex.png" width="15.6%">|
-<img src="./images/sp/clpiphonex.png" width="15.6%">
+<img src="./images/gn1iphonex.png" width="16.6%">
+<img src="./images/jciphonex.png" width="16.6%">
+<img src="./images/bsj/bsqbiphonex.png" width="16.6%">
+<img src="./images/wb/wb2iphonex.png" width="16.6%">
+<img src="./images/qqmusic/mus2iphonex.png" width="16.6%">
+<img src="./images/sp/clpiphonex.png" width="16.6%">
 </div>
 
 GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ PR is welcome，or [feedback](mailto:64hp@163.com):64hp@163.com
@@ -20,7 +20,7 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 - [开始](#Getting_Started)
 - [首页功能列表](#homeList)
 - [基础知识](#foundation)
-	- [基础知识列表](#foundationList)
+	- [绘图,核心动画,物理仿真](#foundationList)
 - [分享和第三方登录](#homeBaseShareLogin)
 - [Demos 综合案例](#demo_s)
 	- [百思不得姐](#bsj)
@@ -30,18 +30,17 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 
 
 ## <a id="homeList"></a> 首页功能列表
-<img src="./images/gn1.png" width="32%">|
-<img src="./images/gn2.png" width="32%">|
-<img src="./images/gn3.png" width="32%">
+<img src="./images/gn1.png" width="40%">|
+<img src="./images/gn2.png" width="40%">
 <br>
 <br>
 
 ## <a id="foundation"></a> 基础知识
-<img src="./images/jciphonex.png" width="32%">
+<img src="./images/jciphonex.png" width="40%">
 <br>
 <br>
 
-### <a id="foundationList"></a> 基础知识列表
+### <a id="foundationList"></a> 绘图,核心动画,物理仿真
 <img src="./images/gn3_1.png" width="32%">|
 <img src="./images/gn3_2.png" width="32%">|
 <img src="./images/gn3_3.png" width="32%">
@@ -49,14 +48,14 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 <br>
 
 ## <a id="homeBaseShareLogin"></a> 分享和第三方登录
-<img src="./images/fx.png" width="32%">|
-<img src="./images/fx_1.png" width="32%">
+<img src="./images/fx.png" width="40%">|
+<img src="./images/fx_1.png" width="40%">
 <br>
 <br>
 <br>
 
 ## <a id="demo_s"></a> Demos 综合案例
-<img src="./images/demos.png" width="32%">|
+<img src="./images/demos.png" width="40%">
 
 ## <a id="bsj"></a> 百思不得姐
 <img src="./images/bsj/bsqb.png" width="32%">|
