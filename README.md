@@ -43,7 +43,7 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 <br>
 
 ## <a id="homeBaseShareLogin"></a> 分享和第三方登录
-<img src="./images/fx.png" width="40%">
+<img src="./images/fx.png" width="40%">|
 <img src="./images/fx_1.png" width="40%">
 <br>
 <br>
