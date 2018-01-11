@@ -16,10 +16,19 @@
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [AdvertiseHelper new];
+        instance = [[self alloc] init];
     });
 
     return instance;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(adClick:) name:NotificationContants_Advertise_Key object:nil];
+    }
+    return self;
 }
 
 
@@ -124,4 +133,23 @@
     
     return nil;
 }
+
+//NotificationContants_Advertise_Key
+- (void)adClick:(NSNotification *)noti
+{
+    NSString *url = @"https://github.com/NJHu/iOSProject/blob/master/README.md";
+    if (!LMJIsEmpty(url)) {
+        if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{@"username" : @"njhu"} completionHandler:^(BOOL success) {
+                
+                NSLog(@"%zd", success);
+            }];
+        }
+    }
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 @end

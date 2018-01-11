@@ -16,17 +16,10 @@
 @end
 
 //广告显示的时间
-static int const showtime = 3;
+static int const showtime = 5;
 
 @implementation AdvertiseView
 
-- (NSTimer *)countTimer
-{
-    if (!_countTimer) {
-        _countTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
-    }
-    return _countTimer;
-}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -78,8 +71,11 @@ NSString *const NotificationContants_Advertise_Key = @"NotificationContants_Adve
     _count --;
     [_countBtn setTitle:[NSString stringWithFormat:@"跳过%d",_count] forState:UIControlStateNormal];
     if (_count == 0) {
-        [self.countTimer invalidate];
-        self.countTimer = nil;
+        
+        if (_countTimer) {
+            [_countTimer invalidate];
+            _countTimer = nil;
+        }
         [self dismiss];
     }
 }
@@ -99,7 +95,11 @@ NSString *const NotificationContants_Advertise_Key = @"NotificationContants_Adve
 - (void)startTimer
 {
     _count = showtime;
-    [[NSRunLoop mainRunLoop] addTimer:self.countTimer forMode:NSRunLoopCommonModes];
+    
+    if (!_countTimer) {
+        _countTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:_countTimer forMode:NSRunLoopCommonModes];
+    }
 }
 
 // GCD倒计时
@@ -142,7 +142,7 @@ NSString *const NotificationContants_Advertise_Key = @"NotificationContants_Adve
 
 -(void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 
 @end
