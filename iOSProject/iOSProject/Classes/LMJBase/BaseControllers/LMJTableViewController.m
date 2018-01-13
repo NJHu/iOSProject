@@ -33,7 +33,6 @@
     
     
     if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
-        self.tableView.contentInset  = UIEdgeInsetsMake(64, 0, 0, 0);
         
         if ([self respondsToSelector:@selector(lmjNavigationHeight:)]) {
             
