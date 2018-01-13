@@ -286,7 +286,6 @@
         
         
         if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
-            webView.scrollView.contentInset  = UIEdgeInsetsMake(64.0, 0, 0, 0);
             
             if ([self respondsToSelector:@selector(lmjNavigationHeight:)]) {
                 
