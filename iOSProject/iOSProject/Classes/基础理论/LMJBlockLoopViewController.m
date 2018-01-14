@@ -1,6 +1,6 @@
 //
 //  LMJBlockLoopViewController.m
-//  PLMMPRJK
+//  PLMLMJRJK
 //
 //  Created by HuXuPeng on 2017/4/17.
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
@@ -46,7 +46,6 @@
         make.left.mas_equalTo(20);
     }];
     
-    //1:Block内部就完成处理，block不要以属性开放出来，否则不好管理,因为它block执行时就自个打破循环
     _myBlockView=[[UIView alloc] init];
     _myBlockView.backgroundColor=[UIColor RandomColor];
     [self.view addSubview:_myBlockView];
@@ -59,7 +58,7 @@
     LMJWeakSelf(self);
     [_myBlockView addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
         
-            //不要在这里面存放 关于BlockLoopViewController的属性 否则也会内存无法释放 例如：_info=name;
+            //不要在这里面存放 关于BlockLoopViewController的变量 否则也会内存无法释放 例如：_info=name;
         [weakself.view makeToast:@"点击了"];
         
     }];
@@ -75,8 +74,7 @@
     [LMJBlockLoopOperation operateWithSuccessBlock:^{
         [weakself showErrorMessage:@"成功执行完成"];
     }];
-    
-    //这种不会出现block 因为MPBlockLoopOperation没在MPBlockLoopViewController的属性中,所以三者不会是一个闭圈
+
     LMJBlockLoopOperation *operation = [[LMJBlockLoopOperation alloc] init];
     
     //3：如果带有block 又引入self就要进行弱化对象operation，否则会出现内存释放的问题

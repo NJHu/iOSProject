@@ -60,9 +60,9 @@
 
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-
-return [UIImage imageNamed:@"navigationButtonReturnClick"];
+    [leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+    
+    return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 

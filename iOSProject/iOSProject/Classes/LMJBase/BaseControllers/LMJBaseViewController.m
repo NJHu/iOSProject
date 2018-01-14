@@ -66,7 +66,6 @@
     if (self = [super init]) {
         self.title = title.copy;
     }
-    
     return self;
 }
 
@@ -75,12 +74,10 @@
 
 - (void)dealloc
 {
-    
     NSLog(@"dealloc---%@", self.class);
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
 }
+
 
 @end
 
