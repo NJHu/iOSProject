@@ -20,8 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    [self touchesBegan:[NSSet new] withEvent:[UIEvent new]];
 }
 
 static int i = 2;

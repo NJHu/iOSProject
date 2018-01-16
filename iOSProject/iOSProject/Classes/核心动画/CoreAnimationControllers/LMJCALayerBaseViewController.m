@@ -48,9 +48,9 @@
         
         // 快速进行图层缩放,KVC
         // x,y同时缩放0.5
-                [self.redView.layer setValue:@0.5 forKeyPath:@"transform.scale"];
-        
-        [self.redView.layer setValue:@(M_PI) forKeyPath:@"transform.rotation"];
+//                [self.redView.layer setValue:@0.5 forKeyPath:@"transform.scale"];
+//
+//                [self.redView.layer setValue:@(M_PI) forKeyPath:@"transform.rotation"];
         
         
     }];

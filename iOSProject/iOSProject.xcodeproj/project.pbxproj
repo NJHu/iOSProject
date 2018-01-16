@@ -2028,18 +2028,18 @@
 		58DC83951FFB43AB0060DC03 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				58DC83DB1FFB44360060DC03 /* WPFAttachmentView.h */,
-				58DC83E01FFB44370060DC03 /* WPFAttachmentView.m */,
 				58DC83E51FFB44370060DC03 /* WPFBaseView.h */,
 				58DC83E41FFB44370060DC03 /* WPFBaseView.m */,
-				58DC83DF1FFB44360060DC03 /* WPFCollisionView.h */,
-				58DC83E21FFB44370060DC03 /* WPFCollisionView.m */,
-				58DC83DC1FFB44360060DC03 /* WPFPushView.h */,
-				58DC83E31FFB44370060DC03 /* WPFPushView.m */,
 				58DC83DD1FFB44360060DC03 /* WPFSnapView.h */,
 				58DC83DE1FFB44360060DC03 /* WPFSnapView.m */,
+				58DC83DC1FFB44360060DC03 /* WPFPushView.h */,
+				58DC83E31FFB44370060DC03 /* WPFPushView.m */,
+				58DC83DB1FFB44360060DC03 /* WPFAttachmentView.h */,
+				58DC83E01FFB44370060DC03 /* WPFAttachmentView.m */,
 				58DC83E11FFB44370060DC03 /* WPFSpringView.h */,
 				58DC83DA1FFB44350060DC03 /* WPFSpringView.m */,
+				58DC83DF1FFB44360060DC03 /* WPFCollisionView.h */,
+				58DC83E21FFB44370060DC03 /* WPFCollisionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2082,8 +2082,8 @@
 				58DC83B41FFB43E20060DC03 /* LMJDrawBoardViewController.h */,
 				58DC83A21FFB43E20060DC03 /* LMJDrawBoardViewController.m */,
 				58DC83A41FFB43E20060DC03 /* LMJDrawBoardViewController.xib */,
-				58DC83AB1FFB43E20060DC03 /* LMJFingerLockViewController.m */,
 				58DC83BB1FFB43E20060DC03 /* LMJFingerLockViewController.h */,
+				58DC83AB1FFB43E20060DC03 /* LMJFingerLockViewController.m */,
 			);
 			path = CoreGraphics;
 			sourceTree = "<group>";
@@ -2189,13 +2189,13 @@
 			isa = PBXGroup;
 			children = (
 				58DC847A1FFC97280060DC03 /* libopenssl.a */,
-				58DC847B1FFC97280060DC03 /* NJVitamioViewController.m */,
 				58DC847C1FFC97280060DC03 /* libVitamio.a */,
 				58DC847D1FFC97280060DC03 /* LICENSE */,
 				58DC847E1FFC97280060DC03 /* CHANGELOG.md */,
 				58DC847F1FFC97280060DC03 /* include */,
 				58DC84891FFC97280060DC03 /* libffmpeg.a */,
 				58DC848A1FFC97280060DC03 /* NJVitamioViewController.h */,
+				58DC847B1FFC97280060DC03 /* NJVitamioViewController.m */,
 			);
 			path = Vitamio;
 			sourceTree = "<group>";
@@ -2251,8 +2251,8 @@
 				58DC84A51FFC97290060DC03 /* BSJPublishViewController.m */,
 				58DC84961FFC97280060DC03 /* BSJPublishWordViewController.h */,
 				58DC84A41FFC97290060DC03 /* BSJPublishWordViewController.m */,
-				58DC84991FFC97280060DC03 /* BSJPictureShowViewController.m */,
 				58DC84A11FFC97290060DC03 /* BSJPictureShowViewController.h */,
+				58DC84991FFC97280060DC03 /* BSJPictureShowViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

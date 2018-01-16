@@ -27,14 +27,6 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
 @implementation SINStatusListDAL
 
 
-+ (void)loadStatusListFromDiskWithSinceId:(NSString *)since_id maxId:(NSString *)max_id completion:(void(^)(NSMutableArray<NSMutableDictionary *> *dictArrayM, NSError *error))completion
-{
-    
-    
-    
-    
-}
-
 
 + (void)cachesStatusList:(NSMutableArray<NSMutableDictionary *> *)status
 {

@@ -25,8 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
-    self.fd_interactivePopDisabled = YES;
+
 }
 
 

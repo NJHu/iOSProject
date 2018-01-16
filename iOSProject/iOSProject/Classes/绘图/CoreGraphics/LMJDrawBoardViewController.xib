@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3R-Jg-AWN">
-                    <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="s4X-Vo-pl3"/>
                     </constraints>
@@ -111,7 +111,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-LE-czf" customClass="LMJDrawingView">
-                    <rect key="frame" x="0.0" y="108" width="375" height="489"/>
+                    <rect key="frame" x="0.0" y="132" width="375" height="465"/>
                     <color key="backgroundColor" red="0.2417735406" green="1" blue="0.95524575050000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
@@ -119,7 +119,7 @@
             <constraints>
                 <constraint firstItem="lRZ-LE-czf" firstAttribute="top" secondItem="U3R-Jg-AWN" secondAttribute="bottom" id="0Os-D0-uRv"/>
                 <constraint firstItem="lRZ-LE-czf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7C6-Gj-sQL"/>
-                <constraint firstItem="U3R-Jg-AWN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="B3N-Yb-YcP"/>
+                <constraint firstItem="U3R-Jg-AWN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="B3N-Yb-YcP"/>
                 <constraint firstAttribute="trailing" secondItem="U3R-Jg-AWN" secondAttribute="trailing" id="F1c-Mq-qFi"/>
                 <constraint firstItem="U3R-Jg-AWN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tff-1I-4Wp"/>
                 <constraint firstAttribute="trailing" secondItem="lRZ-LE-czf" secondAttribute="trailing" id="UIe-VE-TsR"/>
@@ -129,7 +129,7 @@
                 <constraint firstAttribute="bottom" secondItem="5bh-IH-EeH" secondAttribute="bottom" id="rIf-kl-ztv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="343.5" y="425.5"/>
+            <point key="canvasLocation" x="-2" y="268"/>
         </view>
     </objects>
 </document>

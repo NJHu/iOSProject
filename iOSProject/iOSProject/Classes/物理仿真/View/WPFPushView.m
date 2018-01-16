@@ -34,7 +34,9 @@
         
         // 2. 添加图片框，拖拽起点
         UIImageView *smallView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AttachmentPoint_Mask"]];
-        smallView.hidden = YES;
+        smallView.hidden = NO;
+        smallView.lmj_x = 100;
+        smallView.lmj_y = 200;
         [self addSubview:smallView];
         _smallView = smallView;
         

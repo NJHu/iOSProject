@@ -221,6 +221,7 @@
 // 执行代理方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     // 1. 实例化一个仿真管理器
     WPFDemoController *demoVc = [[WPFDemoController alloc] init];
     

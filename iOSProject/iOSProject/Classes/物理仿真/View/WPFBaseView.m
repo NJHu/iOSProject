@@ -18,7 +18,8 @@
         
         // 设置方块
         UIImageView *boxView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Box1"]];
-        boxView.center = CGPointMake(200, 220);
+        boxView.center = CGPointMake(200, 200);
+        boxView.userInteractionEnabled = YES;
         [self addSubview:boxView];
         self.boxView = boxView;
         

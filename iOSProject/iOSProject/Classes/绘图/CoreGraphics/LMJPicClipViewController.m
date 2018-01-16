@@ -114,6 +114,14 @@
     //    pan translationInView:<#(UIView *)#>
 }
 
+- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar {
+    
+    [rightButton setTitle:@"恢复" forState: UIControlStateNormal];
+    [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    return nil;
+}
+
 - (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     _imageV.image = [UIImage imageNamed:@"CATransition3.png"];

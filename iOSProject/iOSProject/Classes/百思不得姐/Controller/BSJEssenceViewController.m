@@ -34,11 +34,11 @@
     video.topicType = BSJTopicTypeVideo;
     all.topicType = BSJTopicTypeAll;
     
+    [self addChildViewController:all];
+    [self addChildViewController:video];
+    [self addChildViewController:picture];
     [self addChildViewController:words];
     [self addChildViewController:voice];
-    [self addChildViewController:picture];
-    [self addChildViewController:video];
-    [self addChildViewController:all];
     
     self.scrollPageView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 
@@ -81,7 +81,7 @@
     
 }
 
-- (UIViewController<ZJScrollPageViewChildVcDelegate> *)childViewController:(UIViewController<ZJScrollPageViewChildVcDelegate> *)reuseViewController forIndex:(NSInteger)index {
+- (UIViewController <ZJScrollPageViewChildVcDelegate> *)childViewController:(UIViewController<ZJScrollPageViewChildVcDelegate> *)reuseViewController forIndex:(NSInteger)index {
     
     
     UIViewController<ZJScrollPageViewChildVcDelegate> *childVc = reuseViewController;

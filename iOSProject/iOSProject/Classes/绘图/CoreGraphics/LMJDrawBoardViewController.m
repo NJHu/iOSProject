@@ -89,7 +89,7 @@
 
 - (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 {
-    return [UIColor clearColor];
+    return [UIColor whiteColor];
 }
 
 - (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar

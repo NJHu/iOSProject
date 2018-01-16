@@ -182,7 +182,8 @@
         
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.right.top.offset(0);
+            make.right.offset(0);
+            make.top.offset([UIApplication sharedApplication].statusBarFrame.size.height);
             make.size.mas_equalTo(CGSizeMake(100, 44));
             
         }];

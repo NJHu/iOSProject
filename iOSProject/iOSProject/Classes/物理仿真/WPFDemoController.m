@@ -60,7 +60,7 @@
     
     [baseView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.edges.insets(UIEdgeInsetsMake(self.lmj_navgationBar.lmj_height, 0, 0, 0));
+        make.edges.insets(UIEdgeInsetsMake(self.lmj_navgationBar.lmj_height + 10, 10, 10, 10));
     }];
     
 }
