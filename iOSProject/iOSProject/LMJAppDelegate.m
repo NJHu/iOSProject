@@ -7,15 +7,16 @@
 //
 
 #import "LMJAppDelegate.h"
-#import <UserNotifications/UserNotifications.h>
-#import <UserNotificationsUI/UserNotificationsUI.h>
 #import "LMJTabBarController.h"
 #import "LMJIntroductoryPagesHelper.h"
 #import "AdvertiseHelper.h"
 #import "YYFPSLabel.h"
 #import "LMJUMengHelper.h"
-//#import <Hyphenate/Hyphenate.h>
+#import <UserNotificationsUI/UserNotificationsUI.h>
 
+@interface LMJAppDelegate()
+
+@end
 
 @implementation LMJAppDelegate
 
