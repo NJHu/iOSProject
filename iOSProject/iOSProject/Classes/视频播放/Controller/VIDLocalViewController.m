@@ -216,6 +216,8 @@
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
     [leftButton setTitle:@"全部开始" forState:UIControlStateNormal];
+    [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    leftButton.width = 100;
     
     return nil;
 }
@@ -223,6 +225,8 @@
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
     [rightButton setTitle:@"全部暂停" forState:UIControlStateNormal];
+    [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    rightButton.width = 100;
     return nil;
 }
 
