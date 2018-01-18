@@ -9,7 +9,8 @@
 #import "VIDLocalViewController.h"
 #import "VIDVideoDownloadedCell.h"
 #import "VIDVideoDownloadingCell.h"
-#import "ZFDownloadManager.h"
+#import <ZFPlayer.h>
+#import <ZFDownloadManager.h>
 #define  DownloadManager  [ZFDownloadManager sharedDownloadManager]
 #import "VIDMoviePlayerViewController.h"
 

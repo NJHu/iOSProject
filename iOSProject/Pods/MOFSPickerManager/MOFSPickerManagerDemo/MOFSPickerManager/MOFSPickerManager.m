@@ -45,7 +45,6 @@
 - (void)showDatePickerWithTag:(NSInteger)tag commitBlock:(DatePickerCommitBlock)commitBlock cancelBlock:(DatePickerCancelBlock)cancelBlock {
     self.datePicker.datePickerMode = UIDatePickerModeDate;
     
-    self.datePicker.toolBar.titleBarTitle = @"";
     self.datePicker.toolBar.cancelBarTitle = @"取消";
     self.datePicker.toolBar.commitBarTitle = @"确定";
     
@@ -65,7 +64,6 @@
 - (void)showDatePickerWithTag:(NSInteger)tag datePickerMode:(UIDatePickerMode)mode commitBlock:(DatePickerCommitBlock)commitBlock cancelBlock:(DatePickerCancelBlock)cancelBlock {
     self.datePicker.datePickerMode = mode;
     
-    self.datePicker.toolBar.titleBarTitle = @"";
     self.datePicker.toolBar.cancelBarTitle = @"取消";
     self.datePicker.toolBar.commitBarTitle = @"确定";
     
@@ -105,7 +103,6 @@
 - (void)showDatePickerWithTag:(NSInteger)tag firstDate:(NSDate *)firstDate minDate:(NSDate *)minDate maxDate:(NSDate *)maxDate datePickerMode:(UIDatePickerMode)mode commitBlock:(DatePickerCommitBlock)commitBlock cancelBlock:(DatePickerCancelBlock)cancelBlock {
     self.datePicker.datePickerMode = mode;
     
-    self.datePicker.toolBar.titleBarTitle = @"";
     self.datePicker.toolBar.cancelBarTitle = @"取消";
     self.datePicker.toolBar.commitBarTitle = @"确定";
     

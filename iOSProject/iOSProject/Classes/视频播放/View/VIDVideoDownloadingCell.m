@@ -7,6 +7,8 @@
 //
 
 #import "VIDVideoDownloadingCell.h"
+#import <ZFDownloadManager.h>
+#import <ZFFileModel.h>
 
 @interface VIDVideoDownloadingCell ()
 @property (weak, nonatomic) IBOutlet UILabel *fileNameLabel;
@@ -134,9 +136,10 @@
     
     self.downloadProgressView.progress = progress;
     
-    // NSString *spped = [NSString stringWithFormat:@"%@/S",[ZFCommonHelper getFileSizeString:[NSString stringWithFormat:@"%lu",[ASIHTTPRequest averageBandwidthUsedPerSecond]]]];
-    if (fileInfo.speed) {
-        NSString *speed = [NSString stringWithFormat:@"%@ 剩余%@",fileInfo.speed,fileInfo.remainingTime];
+     NSString *speed = [NSString stringWithFormat:@"%@/S",[ZFCommonHelper getFileSizeString:[NSString stringWithFormat:@"%lu",[ASIHTTPRequest averageBandwidthUsedPerSecond]]]];
+    
+    
+    if (progress > 0) {
         self.speedStateLabel.text = speed;
     } else {
         self.speedStateLabel.text = @"正在获取";

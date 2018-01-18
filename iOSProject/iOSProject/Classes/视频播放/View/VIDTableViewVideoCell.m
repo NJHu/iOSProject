@@ -85,7 +85,7 @@
 }
 
 - (void)setModel:(ZFVideoModel *)model {
-    
+    _model = model;
     [self.picView sd_setImageWithURL:[NSURL URLWithString:model.coverForFeed] placeholderImage:[UIImage imageWithColor:[UIColor RandomColor]]];
     
     self.titleLabel.text = model.title;

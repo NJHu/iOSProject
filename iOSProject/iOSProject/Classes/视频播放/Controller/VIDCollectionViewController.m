@@ -7,10 +7,10 @@
 //
 
 #import "VIDCollectionViewController.h"
-#import "ZFPlayer.h"
-#import "ZFVideoModel.h"
 #import "VIDCollectionViewVideoCell.h"
-#import "ZFDownloadManager.h"
+#import <ZFPlayer.h>
+#import <ZFDownloadManager.h>
+#import "ZFVideoModel.h"
 
 
 @interface VIDCollectionViewController ()<LMJVerticalFlowLayoutDelegate, ZFPlayerDelegate>
@@ -55,29 +55,30 @@
     VIDCollectionViewVideoCell *cell = [VIDCollectionViewVideoCell videoCellWithCollectionView:collectionView forIndexPath:indexPath];
     
     // 取到对应cell的model
-    __block ZFVideoModel *model        = self.videoModels[indexPath.row];
+    ZFVideoModel *model        = self.videoModels[indexPath.row];
     // 赋值model
     cell.model                         = model;
-    __block NSIndexPath *weakIndexPath = indexPath;
-    __block VIDCollectionViewVideoCell *weakCell = cell;
+    __weak typeof(indexPath) weakIndexPath = indexPath;
+    __weak typeof(cell) weakCell = cell;
     __weak typeof(self)  weakSelf      = self;
+    __weak typeof(model) weakModel = model;
     // 点击播放的回调
     cell.playBlock = ^(UIButton *btn){
         
 
         // 取出字典中的第一视频URL
-        NSURL *videoURL = [NSURL URLWithString:model.playInfos.firstObject.url];
+        NSURL *videoURL = [NSURL URLWithString:weakModel.playInfos.firstObject.url];
         
         ZFPlayerModel *playerModel = [[ZFPlayerModel alloc] init];
-        playerModel.title            = model.title;
+        playerModel.title            = weakModel.title;
         playerModel.videoURL         = videoURL;
         playerModel.placeholderImageURLString = model.coverForFeed;
         playerModel.scrollView       = weakSelf.collectionView;
         playerModel.indexPath        = weakIndexPath;
         
         // 分辨率字典（key:分辨率名称，value：分辨率url)
-        NSMutableDictionary *dic = @{}.mutableCopy;
-        for (ZFVideoResolution * resolution in model.playInfos) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        for (ZFVideoResolution * resolution in weakModel.playInfos) {
             [dic setValue:resolution.url forKey:resolution.name];
         }
         // 赋值分辨率字典
@@ -130,8 +131,6 @@
         // _playerView.playerLayerGravity = ZFPlayerLayerGravityResizeAspect;
         // 静音
         // _playerView.mute = YES;
-        // 移除屏幕移除player
-        // _playerView.stopPlayWhileCellNotVisable = YES;
     }
     return _playerView;
 }

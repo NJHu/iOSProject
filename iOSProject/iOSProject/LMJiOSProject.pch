@@ -61,7 +61,7 @@
 || ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) \
 || ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
 
-//不同屏幕尺寸字体适配（320，568是因为效果图为IPHONE5 如果不是则根据实际情况修改）
+//不同屏幕尺寸字体适配
 #define kScreenWidthRatio  (UIScreen.mainScreen.bounds.size.width / 375.0)
 #define kScreenHeightRatio (UIScreen.mainScreen.bounds.size.height / 667.0)
 #define AdaptedWidth(x)  ceilf((x) * kScreenWidthRatio)

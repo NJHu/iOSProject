@@ -8,8 +8,10 @@
 
 #import "VIDTableViewController.h"
 #import "VIDTableViewVideoCell.h"
-#import "ZFPlayer.h"
-#import "ZFDownloadManager.h"
+#import <ZFPlayer.h>
+#import <ZFPlayerView.h>
+#import <ZFDownloadManager.h>
+#import "ZFVideoResolution.h"
 
 
 @interface VIDTableViewController ()<ZFPlayerDelegate>
@@ -58,29 +60,30 @@
     
     
     // 取到对应cell的model
-    __block ZFVideoModel *model        = self.videoModels[indexPath.row];
+    ZFVideoModel *model        = self.videoModels[indexPath.row];
     // 赋值model
     cell.model                         = model;
-    __block NSIndexPath *weakIndexPath = indexPath;
-    __block VIDTableViewVideoCell *weakCell     = cell;
+    __weak typeof(indexPath) weakIndexPath = indexPath;
+    __weak typeof(cell) weakCell = cell;
     __weak typeof(self)  weakSelf      = self;
+    __weak typeof(model) weakModel = model;
     // 点击播放的回调
     cell.playBlock = ^(UIButton *btn){
         
 
         // 取出字典中的第一视频URL
-        NSURL *videoURL = [NSURL URLWithString:model.playInfos.firstObject.url];
+        NSURL *videoURL = [NSURL URLWithString:weakModel.playInfos.firstObject.url];
         
         ZFPlayerModel *playerModel = [[ZFPlayerModel alloc] init];
-        playerModel.title            = model.title;
+        playerModel.title            = weakModel.title;
         playerModel.videoURL         = videoURL;
-        playerModel.placeholderImageURLString = model.coverForFeed;
+        playerModel.placeholderImageURLString = weakModel.coverForFeed;
         playerModel.scrollView       = weakSelf.tableView;
         playerModel.indexPath        = weakIndexPath;
 
         // 分辨率字典（key:分辨率名称，value：分辨率url)
-        NSMutableDictionary *dic = @{}.mutableCopy;
-        for (ZFVideoResolution * resolution in model.playInfos) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        for (ZFVideoResolution * resolution in weakModel.playInfos) {
             [dic setValue:resolution.url forKey:resolution.name];
         }
         playerModel.resolutionDic    = dic;
@@ -138,6 +141,9 @@
         // _playerView.mute = YES;
         // 移除屏幕移除player
         // _playerView.stopPlayWhileCellNotVisable = YES;
+        
+        ZFPlayerShared.isLockScreen = YES;
+        ZFPlayerShared.isStatusBarHidden = NO;
     }
     return _playerView;
 }

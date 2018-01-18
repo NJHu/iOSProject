@@ -106,4 +106,8 @@ pod 'iflyMSC'
 # scrollpageView
 pod 'ZJScrollPageView'
 
+# 列表视频
+pod 'ZFPlayer'
+pod 'ZFDownload'
+
 end
