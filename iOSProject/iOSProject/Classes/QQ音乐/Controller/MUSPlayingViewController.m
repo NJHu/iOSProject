@@ -455,7 +455,7 @@
 /** 添加定时器*/
 - (void)addTimer{
     
-    if (self.timer == nil) {
+    if (_timer == nil) {
         
         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setUpDataTimes) userInfo:nil repeats:YES];
         self.timer = timer;
@@ -474,11 +474,12 @@
 /** 定时更新 歌词面板信息*/
 - (void)addDisplayLink{
     
-    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateLrc)];
-    self.displayLink = displayLink;
-    
-    // 添加到 runloop
-    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    if (!_displayLink) {
+        CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateLrc)];
+        self.displayLink = displayLink;
+        // 添加到 runloop
+        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    }
 }
 
 /** 移除 歌词面板信息 定时器*/
@@ -508,14 +509,14 @@
         case UIEventSubtypeRemoteControlPlay:{
             //NSLog(@"播放");
 //            [[QQMusicOperationTool shareInstance] playCurrentMusic];
-            [self playOrPauseMusic:nil];
+            [self playOrPauseMusic:self.playOrPauseBtn];
             break;
         }
             
         case UIEventSubtypeRemoteControlPause:{
             //NSLog(@"暂停");
 //            [[QQMusicOperationTool shareInstance] pauseCurrentMusic];
-            [self playOrPauseMusic:nil];
+            [self playOrPauseMusic:self.playOrPauseBtn];
             break;
         }
             

@@ -34,7 +34,7 @@
     self.navigationItem.title = @"collectionView列表视频";
     
     UIEdgeInsets insets = self.collectionView.contentInset;
-    insets.bottom += 49;
+    insets.bottom += self.tabBarController.tabBar.lmj_height;
     self.collectionView.contentInset = insets;
 }
 

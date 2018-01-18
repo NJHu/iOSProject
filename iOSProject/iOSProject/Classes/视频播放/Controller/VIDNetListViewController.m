@@ -55,7 +55,7 @@
     
     
     UIEdgeInsets insets = self.tableView.contentInset;
-    insets.bottom += 49;
+    insets.bottom += self.tabBarController.tabBar.lmj_height;
     self.tableView.contentInset = insets;
     
     
