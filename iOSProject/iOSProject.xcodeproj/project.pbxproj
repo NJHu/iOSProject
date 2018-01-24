@@ -15,6 +15,8 @@
 		58223317201821C00008251F /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58223316201821C00008251F /* NullSafe.m */; };
 		5822332020182C5D0008251F /* MCCornersRoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822331E20182C5D0008251F /* MCCornersRoundViewController.m */; };
 		5822332120182C5D0008251F /* MCCornersRoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5822331F20182C5D0008251F /* MCCornersRoundViewController.xib */; };
+		5822334520185F790008251F /* MCSphereTagCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822334420185F790008251F /* MCSphereTagCloudViewController.m */; };
+		5822334B20185FB10008251F /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822334A20185FB10008251F /* DBSphereView.m */; };
 		584038001FF61D00002A0566 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584037FF1FF61D00002A0566 /* MapKit.framework */; };
 		584038021FF61D1A002A0566 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584038011FF61D1A002A0566 /* AudioToolbox.framework */; };
 		584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038051FF62371002A0566 /* LMJAddressPickerViewController.m */; };
@@ -381,6 +383,12 @@
 		5822331D20182C5D0008251F /* MCCornersRoundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCCornersRoundViewController.h; sourceTree = "<group>"; };
 		5822331E20182C5D0008251F /* MCCornersRoundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCCornersRoundViewController.m; sourceTree = "<group>"; };
 		5822331F20182C5D0008251F /* MCCornersRoundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCCornersRoundViewController.xib; sourceTree = "<group>"; };
+		5822334320185F790008251F /* MCSphereTagCloudViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSphereTagCloudViewController.h; sourceTree = "<group>"; };
+		5822334420185F790008251F /* MCSphereTagCloudViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCSphereTagCloudViewController.m; sourceTree = "<group>"; };
+		5822334720185FB10008251F /* DBPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPoint.h; sourceTree = "<group>"; };
+		5822334820185FB10008251F /* DBSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSphereView.h; sourceTree = "<group>"; };
+		5822334920185FB10008251F /* DBMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMatrix.h; sourceTree = "<group>"; };
+		5822334A20185FB10008251F /* DBSphereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSphereView.m; sourceTree = "<group>"; };
 		584037FE1FF61CF8002A0566 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		584037FF1FF61D00002A0566 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		584038011FF61D1A002A0566 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -1054,6 +1062,8 @@
 				5822331D20182C5D0008251F /* MCCornersRoundViewController.h */,
 				5822331E20182C5D0008251F /* MCCornersRoundViewController.m */,
 				5822331F20182C5D0008251F /* MCCornersRoundViewController.xib */,
+				5822334320185F790008251F /* MCSphereTagCloudViewController.h */,
+				5822334420185F790008251F /* MCSphereTagCloudViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1068,8 +1078,20 @@
 		5822331C20182B980008251F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5822334620185FB10008251F /* DBSphereTagCloud */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5822334620185FB10008251F /* DBSphereTagCloud */ = {
+			isa = PBXGroup;
+			children = (
+				5822334720185FB10008251F /* DBPoint.h */,
+				5822334920185FB10008251F /* DBMatrix.h */,
+				5822334820185FB10008251F /* DBSphereView.h */,
+				5822334A20185FB10008251F /* DBSphereView.m */,
+			);
+			path = DBSphereTagCloud;
 			sourceTree = "<group>";
 		};
 		584038031FF62366002A0566 /* Preview1 */ = {
@@ -2557,6 +2579,7 @@
 				5892AD5E1FF5079C00E868C2 /* LMJTableViewController.m in Sources */,
 				58651AAE1FFE6D6F0087419D /* SINDictURL.m in Sources */,
 				58DC85031FFC972C0060DC03 /* BSJPublishViewController.m in Sources */,
+				5822334B20185FB10008251F /* DBSphereView.m in Sources */,
 				5892AD061FF4F9D200E868C2 /* LMJVerticalFlowLayout.m in Sources */,
 				5892AD5F1FF5079C00E868C2 /* LMJRefreshCollectionViewController.m in Sources */,
 				58DC851A1FFC972C0060DC03 /* BSJRecommendUserCell.m in Sources */,
@@ -2589,6 +2612,7 @@
 				58651ABD1FFE6D6F0087419D /* SINStatusListService.m in Sources */,
 				589B57772000339800B2D5A8 /* VIDCollectionViewController.m in Sources */,
 				58651AA91FFE6D6F0087419D /* SINBroswerViewController.m in Sources */,
+				5822334520185F790008251F /* MCSphereTagCloudViewController.m in Sources */,
 				589B57762000339800B2D5A8 /* VIDTableViewController.m in Sources */,
 				58DC83D11FFB43E30060DC03 /* LMJClipImageViewController.m in Sources */,
 				589B56F91FFFC52F00B2D5A8 /* MUSLrcTableViewController.m in Sources */,

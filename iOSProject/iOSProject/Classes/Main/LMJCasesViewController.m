@@ -10,6 +10,7 @@
 #import <DWBubbleMenuButton.h>
 #import "MCCornersRoundViewController.h"
 #import "LMJSettingCell.h"
+#import "MCSphereTagCloudViewController.h"
 
 @interface LMJCasesViewController ()
 
@@ -25,8 +26,11 @@
     LMJWordArrowItem *item0 = [LMJWordArrowItem itemWithTitle:@"各种圆角btn" subTitle:@"MCCornersRoundViewController"];
     item0.destVc = [MCCornersRoundViewController class];
     
+    LMJWordArrowItem *item1 = [LMJWordArrowItem itemWithTitle:@"球形滚动标签" subTitle:@"MCSphereTagCloudViewController"];
+    item1.destVc = [MCSphereTagCloudViewController class];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0] andHeaderTitle:@"UI 更多案例" footerTitle:@"UI --end"];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1] andHeaderTitle:@"UI 更多案例" footerTitle:@"UI --end"];
     
     [self.sections addObject:section0];
 }
