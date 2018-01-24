@@ -17,6 +17,8 @@
 		5822332120182C5D0008251F /* MCCornersRoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5822331F20182C5D0008251F /* MCCornersRoundViewController.xib */; };
 		5822334520185F790008251F /* MCSphereTagCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822334420185F790008251F /* MCSphereTagCloudViewController.m */; };
 		5822334B20185FB10008251F /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822334A20185FB10008251F /* DBSphereView.m */; };
+		5822334E20187D610008251F /* LMJAutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822334D20187D610008251F /* LMJAutoLayoutViewController.m */; };
+		5822335120187F270008251F /* LMJVFLLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822335020187F270008251F /* LMJVFLLayoutViewController.m */; };
 		584038001FF61D00002A0566 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584037FF1FF61D00002A0566 /* MapKit.framework */; };
 		584038021FF61D1A002A0566 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584038011FF61D1A002A0566 /* AudioToolbox.framework */; };
 		584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038051FF62371002A0566 /* LMJAddressPickerViewController.m */; };
@@ -389,6 +391,10 @@
 		5822334820185FB10008251F /* DBSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSphereView.h; sourceTree = "<group>"; };
 		5822334920185FB10008251F /* DBMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMatrix.h; sourceTree = "<group>"; };
 		5822334A20185FB10008251F /* DBSphereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSphereView.m; sourceTree = "<group>"; };
+		5822334C20187D610008251F /* LMJAutoLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJAutoLayoutViewController.h; sourceTree = "<group>"; };
+		5822334D20187D610008251F /* LMJAutoLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJAutoLayoutViewController.m; sourceTree = "<group>"; };
+		5822334F20187F270008251F /* LMJVFLLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJVFLLayoutViewController.h; sourceTree = "<group>"; };
+		5822335020187F270008251F /* LMJVFLLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJVFLLayoutViewController.m; sourceTree = "<group>"; };
 		584037FE1FF61CF8002A0566 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		584037FF1FF61D00002A0566 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		584038011FF61D1A002A0566 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -1821,6 +1827,10 @@
 				58DC81821FFA311F0060DC03 /* LMJNavBarFadeViewController.m */,
 				58DC818C1FFA335B0060DC03 /* LMJFingerCheckViewController.h */,
 				58DC818B1FFA335B0060DC03 /* LMJFingerCheckViewController.m */,
+				5822334C20187D610008251F /* LMJAutoLayoutViewController.h */,
+				5822334D20187D610008251F /* LMJAutoLayoutViewController.m */,
+				5822334F20187F270008251F /* LMJVFLLayoutViewController.h */,
+				5822335020187F270008251F /* LMJVFLLayoutViewController.m */,
 				58DC81441FFA07710060DC03 /* Model */,
 				58DC81451FFA07710060DC03 /* View */,
 			);
@@ -2651,6 +2661,7 @@
 				58DC837F1FFB43460060DC03 /* LMJYinLZDTViewController.m in Sources */,
 				58DC825A1FFA7D7C0060DC03 /* LMJXGMVideo.m in Sources */,
 				58DC84001FFB47ED0060DC03 /* LMJHandleView.m in Sources */,
+				5822335120187F270008251F /* LMJVFLLayoutViewController.m in Sources */,
 				58DC841A1FFBC19A0060DC03 /* LMJRunTimeViewController.m in Sources */,
 				5892AD651FF5088D00E868C2 /* LMJTabBarController.m in Sources */,
 				589B56F81FFFC52F00B2D5A8 /* MUSHomeListViewController.m in Sources */,
@@ -2668,6 +2679,7 @@
 				58DC83BF1FFB43E30060DC03 /* LMJScreenShotViewController.m in Sources */,
 				5840383C1FF7E437002A0566 /* LMJKeyboardHandleViewController.m in Sources */,
 				5892AD5B1FF5079C00E868C2 /* LMJRequestBaseViewController.m in Sources */,
+				5822334E20187D610008251F /* LMJAutoLayoutViewController.m in Sources */,
 				589B57011FFFC52F00B2D5A8 /* MUSMusicCell.m in Sources */,
 				58DC84471FFBDC8A0060DC03 /* LMJBlockLoopViewController.m in Sources */,
 				5840387B1FF9F0FA002A0566 /* LMJH5_OCViewController.m in Sources */,

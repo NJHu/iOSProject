@@ -48,7 +48,6 @@
     [self asyncGloba];
     
     
-    
 }
 
 - (void)syncConCurrent

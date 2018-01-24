@@ -32,8 +32,8 @@
 #import "LMJCalendarViewController.h"
 #import "LMJNavBarFadeViewController.h"
 #import "LMJFingerCheckViewController.h"
-
-
+#import "LMJAutoLayoutViewController.h"
+#import "LMJVFLLayoutViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -164,8 +164,17 @@
     LMJWordArrowItem *item28 = [LMJWordArrowItem itemWithTitle:@"指纹解锁" subTitle: @""];
 
     item28.destVc = [LMJFingerCheckViewController class];
+    
+    LMJWordArrowItem *item29 = [LMJWordArrowItem itemWithTitle:@"原生AutoLayout" subTitle: @"纯代码"];
+    
+    item29.destVc = [LMJAutoLayoutViewController class];
+    
+    LMJWordArrowItem *item30 = [LMJWordArrowItem itemWithTitle:@"VFL布局约束" subTitle: @"纯代码"];
+    
+    item30.destVc = [LMJVFLLayoutViewController class];
+    
 
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item15, item16, item17, item18, item19, item20, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item29, item30, item15, item16, item17, item18, item19, item20, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
 
     [self.sections addObject:section0];
 }
