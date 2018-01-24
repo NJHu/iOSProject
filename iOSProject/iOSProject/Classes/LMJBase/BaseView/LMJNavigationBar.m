@@ -102,6 +102,11 @@
 
 - (void)setTitle:(NSMutableAttributedString *)title
 {
+    // bug fix
+    if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarTitleView:)]) {
+        return;
+    }
+    
     /**头部标题*/
     UILabel *navTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.lmj_width * 0.4, 44)];
     

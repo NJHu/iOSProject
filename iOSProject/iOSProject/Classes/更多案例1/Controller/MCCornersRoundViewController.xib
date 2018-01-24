@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MCCornersRoundViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rf6-w6-C8f" customClass="APRoundedButton">
+                    <rect key="frame" x="20" y="120" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Y2g-T1-7P2"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7e-Bm-2kX" customClass="APRoundedButton">
+                    <rect key="frame" x="197.5" y="120" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="c00-JP-Ity"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLi-eG-t4b" customClass="APRoundedButton">
+                    <rect key="frame" x="20" y="184" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="oba-zr-Ife"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SI-dD-UBC" customClass="APRoundedButton">
+                    <rect key="frame" x="197.5" y="184" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="iJs-p9-f1g"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wry-AQ-gSb" customClass="APRoundedButton">
+                    <rect key="frame" x="20" y="248" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="aMb-KR-dRy"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFb-vU-UBH" customClass="APRoundedButton">
+                    <rect key="frame" x="197.5" y="248" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="1vo-Yx-T4f"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07S-n0-cZ3" customClass="APRoundedButton">
+                    <rect key="frame" x="20" y="312" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2Jv-Oi-uC3"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbA-Xn-lAj" customClass="APRoundedButton">
+                    <rect key="frame" x="197.5" y="312" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Ixz-Ip-Wf0"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1r-3v-2cn" customClass="APRoundedButton">
+                    <rect key="frame" x="20" y="376" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="6H5-vT-3UM"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPY-QN-eli" customClass="APRoundedButton">
+                    <rect key="frame" x="197.5" y="376" width="157.5" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="xXd-or-Jsb"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="9"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvA-qA-2RF" customClass="APRoundedButton">
+                    <rect key="frame" x="20" y="440" width="335" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.74901960779999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="b19-PK-sdZ"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用IB_DESIGNABLE,IBInspectable两个关键字为APRoundedButton添加了属性, xib 里边直接绑定APRoundedButton-style 属性" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPR-ZQ-mwr">
+                    <rect key="frame" x="10" y="494" width="355" height="173"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KPR-ZQ-mwr" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="1Q5-Pu-33Q"/>
+                <constraint firstItem="1SI-dD-UBC" firstAttribute="width" secondItem="rf6-w6-C8f" secondAttribute="width" id="2S9-fx-iwX"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="KPR-ZQ-mwr" secondAttribute="trailing" constant="10" id="6iQ-BU-BDJ"/>
+                <constraint firstItem="07S-n0-cZ3" firstAttribute="top" secondItem="wry-AQ-gSb" secondAttribute="bottom" constant="20" id="6pI-nQ-eQs"/>
+                <constraint firstItem="cvA-qA-2RF" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="85s-WL-9Lf"/>
+                <constraint firstItem="kbA-Xn-lAj" firstAttribute="width" secondItem="rf6-w6-C8f" secondAttribute="width" id="9Lx-aA-yre"/>
+                <constraint firstItem="h1r-3v-2cn" firstAttribute="width" secondItem="rf6-w6-C8f" secondAttribute="width" id="9OX-Xw-isf"/>
+                <constraint firstItem="kbA-Xn-lAj" firstAttribute="top" secondItem="iFb-vU-UBH" secondAttribute="bottom" constant="20" id="9TY-3e-kQs"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="1SI-dD-UBC" secondAttribute="trailing" constant="20" id="BAh-fX-RnW"/>
+                <constraint firstItem="TLi-eG-t4b" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="Coa-QH-kHD"/>
+                <constraint firstItem="wry-AQ-gSb" firstAttribute="width" secondItem="rf6-w6-C8f" secondAttribute="width" id="De3-Nl-Isc"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="cvA-qA-2RF" secondAttribute="trailing" constant="20" id="DnH-Mu-D4R"/>
+                <constraint firstItem="rf6-w6-C8f" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="IOa-wr-QWV"/>
+                <constraint firstItem="wry-AQ-gSb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="Jci-3I-JWm"/>
+                <constraint firstItem="rf6-w6-C8f" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="QNg-Ex-m7q"/>
+                <constraint firstItem="iFb-vU-UBH" firstAttribute="leading" secondItem="wry-AQ-gSb" secondAttribute="trailing" constant="20" id="S66-e9-mbP"/>
+                <constraint firstItem="cvA-qA-2RF" firstAttribute="top" secondItem="h1r-3v-2cn" secondAttribute="bottom" constant="20" id="SmR-KZ-foK"/>
+                <constraint firstItem="TLi-eG-t4b" firstAttribute="width" secondItem="rf6-w6-C8f" secondAttribute="width" id="WLX-uU-dZ1"/>
+                <constraint firstItem="07S-n0-cZ3" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="XV5-SM-RAI"/>
+                <constraint firstItem="wry-AQ-gSb" firstAttribute="top" secondItem="TLi-eG-t4b" secondAttribute="bottom" constant="20" id="YFO-as-RPi"/>
+                <constraint firstItem="W7e-Bm-2kX" firstAttribute="leading" secondItem="rf6-w6-C8f" secondAttribute="trailing" constant="20" id="ZIR-63-F5k"/>
+                <constraint firstItem="1SI-dD-UBC" firstAttribute="leading" secondItem="TLi-eG-t4b" secondAttribute="trailing" constant="20" id="c25-Uc-4J3"/>
+                <constraint firstItem="h1r-3v-2cn" firstAttribute="top" secondItem="07S-n0-cZ3" secondAttribute="bottom" constant="20" id="emj-Mj-dnS"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="kbA-Xn-lAj" secondAttribute="trailing" constant="20" id="fqv-jl-lLr"/>
+                <constraint firstItem="07S-n0-cZ3" firstAttribute="width" secondItem="rf6-w6-C8f" secondAttribute="width" id="g3M-lU-Ibj"/>
+                <constraint firstItem="uPY-QN-eli" firstAttribute="top" secondItem="kbA-Xn-lAj" secondAttribute="bottom" constant="20" id="i0I-qF-wYM"/>
+                <constraint firstItem="iFb-vU-UBH" firstAttribute="top" secondItem="1SI-dD-UBC" secondAttribute="bottom" constant="20" id="k6g-DD-kEz"/>
+                <constraint firstItem="uPY-QN-eli" firstAttribute="width" secondItem="rf6-w6-C8f" secondAttribute="width" id="las-pp-SAw"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="KPR-ZQ-mwr" secondAttribute="bottom" id="m9R-g8-nBc"/>
+                <constraint firstItem="W7e-Bm-2kX" firstAttribute="width" secondItem="rf6-w6-C8f" secondAttribute="width" id="oql-3J-Ufu"/>
+                <constraint firstItem="KPR-ZQ-mwr" firstAttribute="top" secondItem="cvA-qA-2RF" secondAttribute="bottom" constant="10" id="r2G-R7-xyi"/>
+                <constraint firstItem="W7e-Bm-2kX" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="rWD-Sc-zYY"/>
+                <constraint firstItem="TLi-eG-t4b" firstAttribute="top" secondItem="rf6-w6-C8f" secondAttribute="bottom" constant="20" id="sUd-9l-ReB"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="iFb-vU-UBH" secondAttribute="trailing" constant="20" id="se7-oZ-BJh"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="uPY-QN-eli" secondAttribute="trailing" constant="20" id="t6W-jD-SJj"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="W7e-Bm-2kX" secondAttribute="trailing" constant="20" id="ub9-Wa-aWZ"/>
+                <constraint firstItem="1SI-dD-UBC" firstAttribute="top" secondItem="W7e-Bm-2kX" secondAttribute="bottom" constant="20" id="ujd-fg-2V7"/>
+                <constraint firstItem="h1r-3v-2cn" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="wcg-SP-oR5"/>
+                <constraint firstItem="uPY-QN-eli" firstAttribute="leading" secondItem="h1r-3v-2cn" secondAttribute="trailing" constant="20" id="woI-Ey-zhB"/>
+                <constraint firstItem="iFb-vU-UBH" firstAttribute="width" secondItem="rf6-w6-C8f" secondAttribute="width" id="xEo-SE-jsB"/>
+                <constraint firstItem="kbA-Xn-lAj" firstAttribute="leading" secondItem="07S-n0-cZ3" secondAttribute="trailing" constant="20" id="zEA-Qn-hwj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="62.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

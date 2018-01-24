@@ -48,7 +48,7 @@ static const CGFloat defaultTimeInterval = 0.5;
 }
 
 - (void)mySendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
-    NSLog(@"这里面存放着我其它操作");
+    NSLog(@"button 发送了 mySendAction");
     //这边要写自个的 在swizzling的过程中，方法中的[self mySendAction...]已经被重新指定到self类的sendAction:中  不会产生无限循环 如果调用sendAction就会产生无限循环
     if ([NSStringFromClass(self.class) isEqualToString:@"UIButton"]) {
         

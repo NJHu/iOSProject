@@ -13,6 +13,8 @@
 		58223314201821910008251F /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330D201821910008251F /* UITextView+WZB.m */; };
 		58223315201821910008251F /* NSDecimalNumber+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 58223311201821910008251F /* NSDecimalNumber+Addtion.m */; };
 		58223317201821C00008251F /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58223316201821C00008251F /* NullSafe.m */; };
+		5822332020182C5D0008251F /* MCCornersRoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822331E20182C5D0008251F /* MCCornersRoundViewController.m */; };
+		5822332120182C5D0008251F /* MCCornersRoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5822331F20182C5D0008251F /* MCCornersRoundViewController.xib */; };
 		584038001FF61D00002A0566 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584037FF1FF61D00002A0566 /* MapKit.framework */; };
 		584038021FF61D1A002A0566 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584038011FF61D1A002A0566 /* AudioToolbox.framework */; };
 		584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038051FF62371002A0566 /* LMJAddressPickerViewController.m */; };
@@ -376,6 +378,9 @@
 		58223310201821910008251F /* UIViewController+DDPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DDPopUpViewController.h"; sourceTree = "<group>"; };
 		58223311201821910008251F /* NSDecimalNumber+Addtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Addtion.m"; sourceTree = "<group>"; };
 		58223316201821C00008251F /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
+		5822331D20182C5D0008251F /* MCCornersRoundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCCornersRoundViewController.h; sourceTree = "<group>"; };
+		5822331E20182C5D0008251F /* MCCornersRoundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCCornersRoundViewController.m; sourceTree = "<group>"; };
+		5822331F20182C5D0008251F /* MCCornersRoundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCCornersRoundViewController.xib; sourceTree = "<group>"; };
 		584037FE1FF61CF8002A0566 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		584037FF1FF61D00002A0566 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		584038011FF61D1A002A0566 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -1025,6 +1030,48 @@
 			path = ThirdCategory;
 			sourceTree = "<group>";
 		};
+		5822331820182B980008251F /* 更多案例1 */ = {
+			isa = PBXGroup;
+			children = (
+				5822331920182B980008251F /* Other */,
+				5822331A20182B980008251F /* Controller */,
+				5822331B20182B980008251F /* Model */,
+				5822331C20182B980008251F /* View */,
+			);
+			path = "更多案例1";
+			sourceTree = "<group>";
+		};
+		5822331920182B980008251F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		5822331A20182B980008251F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5822331D20182C5D0008251F /* MCCornersRoundViewController.h */,
+				5822331E20182C5D0008251F /* MCCornersRoundViewController.m */,
+				5822331F20182C5D0008251F /* MCCornersRoundViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5822331B20182B980008251F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5822331C20182B980008251F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		584038031FF62366002A0566 /* Preview1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1277,6 +1324,7 @@
 				58651A5A1FFE6D6E0087419D /* 新浪微博 */,
 				589B56701FFFC52F00B2D5A8 /* QQ音乐 */,
 				589B570C2000339700B2D5A8 /* 视频播放 */,
+				5822331820182B980008251F /* 更多案例1 */,
 				5892ACAD1FF4EDED00E868C2 /* Libs */,
 			);
 			path = Classes;
@@ -2282,9 +2330,9 @@
 		5892AC8C1FF4EB4A00E868C2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = LMJ;
+				CLASSPREFIX = MC;
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = HuXuPeng;
+				ORGANIZATIONNAME = github.com/njhu;
 				TargetAttributes = {
 					5892AC931FF4EB4A00E868C2 = {
 						CreatedOnToolsVersion = 9.2;
@@ -2409,6 +2457,7 @@
 				589B56E01FFFC52F00B2D5A8 /* wf_icon@2x.jpg in Resources */,
 				589B56E51FFFC52F00B2D5A8 /* jj_icon@2x.png in Resources */,
 				58651AB31FFE6D6F0087419D /* SINPublishToolBar.xib in Resources */,
+				5822332120182C5D0008251F /* MCCornersRoundViewController.xib in Resources */,
 				589B56DD1FFFC52F00B2D5A8 /* dzq@2x.jpg in Resources */,
 				589B56D21FFFC52F00B2D5A8 /* 12309111.lrc in Resources */,
 				589B56F11FFFC52F00B2D5A8 /* 120125029.mp3 in Resources */,
@@ -2498,6 +2547,7 @@
 				58DC850B1FFC972C0060DC03 /* BSJUser.m in Sources */,
 				58DC852A1FFC972C0060DC03 /* BSJRecommendSevice.m in Sources */,
 				5892AD751FF5114A00E868C2 /* LMJMessageViewController.m in Sources */,
+				5822332020182C5D0008251F /* MCCornersRoundViewController.m in Sources */,
 				5892AD031FF4F9D200E868C2 /* LMJElementsFlowLayout.m in Sources */,
 				58DC852D1FFC9B720060DC03 /* LMJCommentHeaderView.m in Sources */,
 				58B59D0A2015B17800C4C4C9 /* LMJCasesViewController.m in Sources */,
