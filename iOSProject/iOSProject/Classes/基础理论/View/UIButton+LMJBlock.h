@@ -10,5 +10,7 @@
 
 @interface UIButton (LMJBlock)
 
+/**设置点击时间间隔*/
+@property (nonatomic, assign) NSTimeInterval timeInterval;
 
 @end

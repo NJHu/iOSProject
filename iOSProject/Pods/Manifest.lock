@@ -29,6 +29,7 @@ PODS:
     - ASIHTTPRequest/Core
   - BaiduMapKit (3.4.2)
   - CYLTabBarController (1.17.6)
+  - DWBubbleMenuButton (1.0.1)
   - FCUUID (1.3.1):
     - UICKeyChainStore (~> 2.1.0)
   - FDFullscreenPopGesture (1.1)
@@ -99,6 +100,7 @@ DEPENDENCIES:
   - ASIHTTPRequest
   - BaiduMapKit
   - CYLTabBarController
+  - DWBubbleMenuButton
   - FCUUID
   - FDFullscreenPopGesture
   - FMDB
@@ -141,6 +143,7 @@ SPEC CHECKSUMS:
   ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   BaiduMapKit: f61b19ecf07a3f2deede72b221b366bf698739ed
   CYLTabBarController: c374643dea6dadece8bdff9c70f7387f8ffd7d08
+  DWBubbleMenuButton: 4d9bdbb9d662bdf65c93ceb7fc65901871143d1e
   FCUUID: bb054fc90cd7cd99320f9f6ff8e130fe607fba05
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
@@ -177,6 +180,6 @@ SPEC CHECKSUMS:
   ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
   ZJScrollPageView: dd8778909cb2413782616ab156e873956f6b0682
 
-PODFILE CHECKSUM: 795f03dcc8bc8fade82dc9848c85560406d07ce9
+PODFILE CHECKSUM: 5804247614eaead164978ecf12f2683816f723b7
 
 COCOAPODS: 1.2.0

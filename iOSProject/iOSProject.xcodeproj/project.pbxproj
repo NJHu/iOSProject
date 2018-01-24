@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		54E3991EBFDEC31145ED8B0F /* libPods-iOSProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 195AF1DB9976AB51691A659C /* libPods-iOSProject.a */; };
+		58223312201821910008251F /* UIView+GestureCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330A201821910008251F /* UIView+GestureCallback.m */; };
+		58223313201821910008251F /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */; };
+		58223314201821910008251F /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330D201821910008251F /* UITextView+WZB.m */; };
+		58223315201821910008251F /* NSDecimalNumber+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 58223311201821910008251F /* NSDecimalNumber+Addtion.m */; };
+		58223317201821C00008251F /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58223316201821C00008251F /* NullSafe.m */; };
 		584038001FF61D00002A0566 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584037FF1FF61D00002A0566 /* MapKit.framework */; };
 		584038021FF61D1A002A0566 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584038011FF61D1A002A0566 /* AudioToolbox.framework */; };
 		584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038051FF62371002A0566 /* LMJAddressPickerViewController.m */; };
@@ -25,7 +30,6 @@
 		584038381FF7E2BE002A0566 /* LMJVerticalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038341FF7E2BC002A0566 /* LMJVerticalLayoutViewController.m */; };
 		584038391FF7E2BE002A0566 /* LMJHorizontalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038351FF7E2BD002A0566 /* LMJHorizontalLayoutViewController.m */; };
 		5840383C1FF7E437002A0566 /* LMJKeyboardHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5840383A1FF7E436002A0566 /* LMJKeyboardHandleViewController.m */; };
-		5840383F1FF7E91B002A0566 /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5840383E1FF7E91B002A0566 /* UITextView+WZB.m */; };
 		584038421FF7EC0E002A0566 /* LMJDownLoadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038401FF7EC0D002A0566 /* LMJDownLoadFileViewController.m */; };
 		584038481FF7F3E5002A0566 /* LMJRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038441FF7F3E4002A0566 /* LMJRequestManager.m */; };
 		584038491FF7F3E5002A0566 /* LMJBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038451FF7F3E4002A0566 /* LMJBaseResponse.m */; };
@@ -76,7 +80,6 @@
 		58651ABA1FFE6D6F0087419D /* SINStatusRetweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A971FFE6D6F0087419D /* SINStatusRetweetView.m */; };
 		58651ABB1FFE6D6F0087419D /* SINPostStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A991FFE6D6F0087419D /* SINPostStatusService.m */; };
 		58651ABD1FFE6D6F0087419D /* SINStatusListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A9C1FFE6D6F0087419D /* SINStatusListService.m */; };
-		58651AC21FFE70F00087419D /* NSDecimalNumber+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651AC11FFE70F00087419D /* NSDecimalNumber+Addtion.m */; };
 		5892ACA11FF4EB4A00E868C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */; };
 		5892ACA71FF4EB4A00E868C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACA61FF4EB4A00E868C2 /* main.m */; };
 		5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACB11FF4EEB300E868C2 /* LMJAppDelegate.m */; };
@@ -208,9 +211,9 @@
 		58A17C562007112A00B350AB /* intro_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58A17C522007112A00B350AB /* intro_1.jpg */; };
 		58A17C592007335400B350AB /* LMJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A17C582007335400B350AB /* LMJConst.m */; };
 		58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */; };
+		58B59D0A2015B17800C4C4C9 /* LMJCasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B59D092015B17800C4C4C9 /* LMJCasesViewController.m */; };
 		58DC816C1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC816B1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m */; };
 		58DC81721FFA29E00060DC03 /* LMJDragTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81711FFA29E00060DC03 /* LMJDragTableViewController.m */; };
-		58DC81751FFA2B720060DC03 /* UIView+GestureCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81731FFA2B710060DC03 /* UIView+GestureCallback.m */; };
 		58DC81781FFA2CF90060DC03 /* LMJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81761FFA2CF80060DC03 /* LMJCalendarViewController.m */; };
 		58DC817E1FFA2DC80060DC03 /* YBEventCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC817A1FFA2DC80060DC03 /* YBEventCalendar.m */; };
 		58DC81841FFA31200060DC03 /* LMJNavBarFadeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81821FFA311F0060DC03 /* LMJNavBarFadeViewController.m */; };
@@ -356,7 +359,6 @@
 		58DC85291FFC972C0060DC03 /* BSJTopicCmtService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84E81FFC97290060DC03 /* BSJTopicCmtService.m */; };
 		58DC852A1FFC972C0060DC03 /* BSJRecommendSevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84E91FFC97290060DC03 /* BSJRecommendSevice.m */; };
 		58DC852D1FFC9B720060DC03 /* LMJCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC852C1FFC9B720060DC03 /* LMJCommentHeaderView.m */; };
-		58DC85301FFCA1F70060DC03 /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC852F1FFCA1F70060DC03 /* UIViewController+DDPopUpViewController.m */; };
 		58DC85331FFCA30C0060DC03 /* UIImageView+FitNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC85311FFCA30B0060DC03 /* UIImageView+FitNet.m */; };
 		58DC88CE1FFDEEF70060DC03 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DC88CD1FFDEEF70060DC03 /* libbz2.1.0.tbd */; };
 		58DC88D01FFDEF030060DC03 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DC88CF1FFDEF020060DC03 /* libiconv.2.4.0.tbd */; };
@@ -365,6 +367,15 @@
 /* Begin PBXFileReference section */
 		04BC8A56D55E3588A098FA08 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		195AF1DB9976AB51691A659C /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5822330A201821910008251F /* UIView+GestureCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GestureCallback.m"; sourceTree = "<group>"; };
+		5822330B201821910008251F /* NSDecimalNumber+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Addtion.h"; sourceTree = "<group>"; };
+		5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DDPopUpViewController.m"; sourceTree = "<group>"; };
+		5822330D201821910008251F /* UITextView+WZB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+WZB.m"; sourceTree = "<group>"; };
+		5822330E201821910008251F /* UIView+GestureCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GestureCallback.h"; sourceTree = "<group>"; };
+		5822330F201821910008251F /* UITextView+WZB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+WZB.h"; sourceTree = "<group>"; };
+		58223310201821910008251F /* UIViewController+DDPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DDPopUpViewController.h"; sourceTree = "<group>"; };
+		58223311201821910008251F /* NSDecimalNumber+Addtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Addtion.m"; sourceTree = "<group>"; };
+		58223316201821C00008251F /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
 		584037FE1FF61CF8002A0566 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		584037FF1FF61D00002A0566 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		584038011FF61D1A002A0566 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -398,8 +409,6 @@
 		584038371FF7E2BD002A0566 /* LMJHorizontalLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHorizontalLayoutViewController.h; sourceTree = "<group>"; };
 		5840383A1FF7E436002A0566 /* LMJKeyboardHandleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJKeyboardHandleViewController.m; sourceTree = "<group>"; };
 		5840383B1FF7E437002A0566 /* LMJKeyboardHandleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJKeyboardHandleViewController.h; sourceTree = "<group>"; };
-		5840383D1FF7E91A002A0566 /* UITextView+WZB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+WZB.h"; sourceTree = "<group>"; };
-		5840383E1FF7E91B002A0566 /* UITextView+WZB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+WZB.m"; sourceTree = "<group>"; };
 		584038401FF7EC0D002A0566 /* LMJDownLoadFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDownLoadFileViewController.m; sourceTree = "<group>"; };
 		584038411FF7EC0E002A0566 /* LMJDownLoadFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDownLoadFileViewController.h; sourceTree = "<group>"; };
 		584038441FF7F3E4002A0566 /* LMJRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJRequestManager.m; sourceTree = "<group>"; };
@@ -496,8 +505,6 @@
 		58651A9A1FFE6D6F0087419D /* SINStatusListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusListService.h; sourceTree = "<group>"; };
 		58651A9C1FFE6D6F0087419D /* SINStatusListService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListService.m; sourceTree = "<group>"; };
 		58651A9D1FFE6D6F0087419D /* SINPostStatusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINPostStatusService.h; sourceTree = "<group>"; };
-		58651AC01FFE70EF0087419D /* NSDecimalNumber+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Addtion.h"; sourceTree = "<group>"; };
-		58651AC11FFE70F00087419D /* NSDecimalNumber+Addtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Addtion.m"; sourceTree = "<group>"; };
 		5892AC941FF4EB4A00E868C2 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5892ACA51FF4EB4A00E868C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -703,12 +710,12 @@
 		58A17C582007335400B350AB /* LMJConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJConst.m; sourceTree = "<group>"; };
 		58AE5CF320103BA3003BD369 /* VIDMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDMoviePlayerViewController.h; sourceTree = "<group>"; };
 		58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDMoviePlayerViewController.m; sourceTree = "<group>"; };
+		58B59D082015B17800C4C4C9 /* LMJCasesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJCasesViewController.h; sourceTree = "<group>"; };
+		58B59D092015B17800C4C4C9 /* LMJCasesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJCasesViewController.m; sourceTree = "<group>"; };
 		58DC816A1FFA0A470060DC03 /* LMJTableSDWebImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTableSDWebImageViewController.h; sourceTree = "<group>"; };
 		58DC816B1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJTableSDWebImageViewController.m; sourceTree = "<group>"; };
 		58DC81701FFA29DF0060DC03 /* LMJDragTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDragTableViewController.h; sourceTree = "<group>"; };
 		58DC81711FFA29E00060DC03 /* LMJDragTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDragTableViewController.m; sourceTree = "<group>"; };
-		58DC81731FFA2B710060DC03 /* UIView+GestureCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GestureCallback.m"; sourceTree = "<group>"; };
-		58DC81741FFA2B710060DC03 /* UIView+GestureCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GestureCallback.h"; sourceTree = "<group>"; };
 		58DC81761FFA2CF80060DC03 /* LMJCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCalendarViewController.m; sourceTree = "<group>"; };
 		58DC81771FFA2CF90060DC03 /* LMJCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCalendarViewController.h; sourceTree = "<group>"; };
 		58DC817A1FFA2DC80060DC03 /* YBEventCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBEventCalendar.m; sourceTree = "<group>"; };
@@ -975,8 +982,6 @@
 		58DC84EA1FFC97290060DC03 /* BSJTopicService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicService.h; sourceTree = "<group>"; };
 		58DC852B1FFC9B710060DC03 /* LMJCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCommentHeaderView.h; sourceTree = "<group>"; };
 		58DC852C1FFC9B720060DC03 /* LMJCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCommentHeaderView.m; sourceTree = "<group>"; };
-		58DC852E1FFCA1F70060DC03 /* UIViewController+DDPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DDPopUpViewController.h"; sourceTree = "<group>"; };
-		58DC852F1FFCA1F70060DC03 /* UIViewController+DDPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DDPopUpViewController.m"; sourceTree = "<group>"; };
 		58DC85311FFCA30B0060DC03 /* UIImageView+FitNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FitNet.m"; sourceTree = "<group>"; };
 		58DC85321FFCA30C0060DC03 /* UIImageView+FitNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FitNet.h"; sourceTree = "<group>"; };
 		58DC88CD1FFDEEF70060DC03 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
@@ -1004,6 +1009,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58223309201821910008251F /* ThirdCategory */ = {
+			isa = PBXGroup;
+			children = (
+				58223316201821C00008251F /* NullSafe.m */,
+				5822330E201821910008251F /* UIView+GestureCallback.h */,
+				5822330A201821910008251F /* UIView+GestureCallback.m */,
+				5822330B201821910008251F /* NSDecimalNumber+Addtion.h */,
+				58223311201821910008251F /* NSDecimalNumber+Addtion.m */,
+				5822330F201821910008251F /* UITextView+WZB.h */,
+				5822330D201821910008251F /* UITextView+WZB.m */,
+				58223310201821910008251F /* UIViewController+DDPopUpViewController.h */,
+				5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */,
+			);
+			path = ThirdCategory;
+			sourceTree = "<group>";
+		};
 		584038031FF62366002A0566 /* Preview1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1395,22 +1416,15 @@
 		5892AD601FF5088D00E868C2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				58223309201821910008251F /* ThirdCategory */,
 				5892AD661FF508E500E868C2 /* UIView+LMJNjHuFrame.h */,
 				5892AD671FF508E600E868C2 /* UIView+LMJNjHuFrame.m */,
 				5892AD791FF5133800E868C2 /* MBProgressHUD+LMJ.h */,
 				5892AD7A1FF5133800E868C2 /* MBProgressHUD+LMJ.m */,
-				58DC81741FFA2B710060DC03 /* UIView+GestureCallback.h */,
-				58DC81731FFA2B710060DC03 /* UIView+GestureCallback.m */,
 				5892AD7F1FF5175900E868C2 /* UIColor+Random.h */,
 				5892AD801FF5175A00E868C2 /* UIColor+Random.m */,
 				5892AD821FF517B200E868C2 /* UIButton+LMJ.h */,
 				5892AD831FF517B200E868C2 /* UIButton+LMJ.m */,
-				5840383D1FF7E91A002A0566 /* UITextView+WZB.h */,
-				5840383E1FF7E91B002A0566 /* UITextView+WZB.m */,
-				58DC852E1FFCA1F70060DC03 /* UIViewController+DDPopUpViewController.h */,
-				58DC852F1FFCA1F70060DC03 /* UIViewController+DDPopUpViewController.m */,
-				58651AC01FFE70EF0087419D /* NSDecimalNumber+Addtion.h */,
-				58651AC11FFE70F00087419D /* NSDecimalNumber+Addtion.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1451,6 +1465,8 @@
 				5892AD731FF5114900E868C2 /* LMJMessageViewController.m */,
 				5892AD711FF5113800E868C2 /* LMJMeViewController.h */,
 				5892AD701FF5113700E868C2 /* LMJMeViewController.m */,
+				58B59D082015B17800C4C4C9 /* LMJCasesViewController.h */,
+				58B59D092015B17800C4C4C9 /* LMJCasesViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -2484,6 +2500,7 @@
 				5892AD751FF5114A00E868C2 /* LMJMessageViewController.m in Sources */,
 				5892AD031FF4F9D200E868C2 /* LMJElementsFlowLayout.m in Sources */,
 				58DC852D1FFC9B720060DC03 /* LMJCommentHeaderView.m in Sources */,
+				58B59D0A2015B17800C4C4C9 /* LMJCasesViewController.m in Sources */,
 				58DC818D1FFA335C0060DC03 /* LMJFingerCheckViewController.m in Sources */,
 				58DC83D31FFB43E30060DC03 /* LMJDotRemoveViewController.m in Sources */,
 				58DC84FF1FFC972C0060DC03 /* BSJCommentPageViewController.m in Sources */,
@@ -2514,6 +2531,7 @@
 				5892AD8D1FF5E2D700E868C2 /* LMJIntroductoryPagesView.m in Sources */,
 				58DC85071FFC972C0060DC03 /* NJVideoPlayViewController.m in Sources */,
 				5892AD071FF4F9D200E868C2 /* LMJAutoRefreshFooter.m in Sources */,
+				58223317201821C00008251F /* NullSafe.m in Sources */,
 				58DC84EE1FFC972B0060DC03 /* BSJ.m in Sources */,
 				584038721FF9399B002A0566 /* LMJListTimerCountDownViewController.m in Sources */,
 				5840385D1FF873A8002A0566 /* LMJAnnotationCustomPopView.m in Sources */,
@@ -2548,15 +2566,14 @@
 				5840386F1FF93133002A0566 /* LMJUpLoadProgressViewController.m in Sources */,
 				58651ABA1FFE6D6F0087419D /* SINStatusRetweetView.m in Sources */,
 				58DC85221FFC972C0060DC03 /* BSJTopicPictureView.m in Sources */,
-				58DC81751FFA2B720060DC03 /* UIView+GestureCallback.m in Sources */,
 				5892AD571FF5079C00E868C2 /* LMJNavigationController.m in Sources */,
 				5892AD091FF4F9D200E868C2 /* LMJSettingCell.m in Sources */,
 				58DC818A1FFA317B0060DC03 /* LMJExpandHeader.m in Sources */,
 				58DC83EA1FFB44380060DC03 /* WPFPushView.m in Sources */,
 				5892AD531FF5079C00E868C2 /* LMJCollectionViewController.m in Sources */,
 				584038831FF9F2F1002A0566 /* LMJAlertViewsViewController.m in Sources */,
-				58DC85301FFCA1F70060DC03 /* UIViewController+DDPopUpViewController.m in Sources */,
 				58DC85131FFC972C0060DC03 /* BSJTopicCell.m in Sources */,
+				58223313201821910008251F /* UIViewController+DDPopUpViewController.m in Sources */,
 				58DC837F1FFB43460060DC03 /* LMJYinLZDTViewController.m in Sources */,
 				58DC825A1FFA7D7C0060DC03 /* LMJXGMVideo.m in Sources */,
 				58DC84001FFB47ED0060DC03 /* LMJHandleView.m in Sources */,
@@ -2592,10 +2609,10 @@
 				58DC83E81FFB44380060DC03 /* WPFAttachmentView.m in Sources */,
 				58DC83811FFB43460060DC03 /* LMJLZDHDTSViewController.m in Sources */,
 				5892ACA71FF4EB4A00E868C2 /* main.m in Sources */,
+				58223312201821910008251F /* UIView+GestureCallback.m in Sources */,
 				584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */,
 				589B577C2000339800B2D5A8 /* ZFVideoModel.m in Sources */,
 				58DC816C1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m in Sources */,
-				58651AC21FFE70F00087419D /* NSDecimalNumber+Addtion.m in Sources */,
 				58DC835A1FFB43100060DC03 /* LMJCoreAnimationViewController.m in Sources */,
 				589B57081FFFC53000B2D5A8 /* QQTimeTool.m in Sources */,
 				589B57051FFFC53000B2D5A8 /* NeteaseMusicAPI.m in Sources */,
@@ -2634,11 +2651,11 @@
 				58DC84511FFBDD5C0060DC03 /* LMJUsertProtocol.m in Sources */,
 				584038191FF64218002A0566 /* LMJBlankPageViewController.m in Sources */,
 				5892AD681FF508E600E868C2 /* UIView+LMJNjHuFrame.m in Sources */,
-				5840383F1FF7E91B002A0566 /* UITextView+WZB.m in Sources */,
 				58DC85121FFC972C0060DC03 /* BSJTopicTopComent.m in Sources */,
 				58DC83881FFB43460060DC03 /* LMJCALayerYSDHViewController.m in Sources */,
 				58DC83C61FFB43E30060DC03 /* LMJDrawProgressViewController.m in Sources */,
 				58651AA61FFE6D6F0087419D /* SINPublishViewController.m in Sources */,
+				58223315201821910008251F /* NSDecimalNumber+Addtion.m in Sources */,
 				58DC85191FFC972C0060DC03 /* BSJTopicVoiceView.m in Sources */,
 				58DC838F1FFB43460060DC03 /* LMJLZDHDTViewController.m in Sources */,
 				584038781FF93AA5002A0566 /* LMJCountDownCell.m in Sources */,
@@ -2652,6 +2669,7 @@
 				5892AD5D1FF5079C00E868C2 /* LMJWebViewController.m in Sources */,
 				58DC842F1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.m in Sources */,
 				58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */,
+				58223314201821910008251F /* UITextView+WZB.m in Sources */,
 				5892ADA01FF5F23D00E868C2 /* AdvertiseHelper.m in Sources */,
 				58DC85151FFC972C0060DC03 /* BSJTopicCmtCell.m in Sources */,
 				58DC85271FFC972C0060DC03 /* BSJTopicService.m in Sources */,

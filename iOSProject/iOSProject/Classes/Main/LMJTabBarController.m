@@ -12,7 +12,7 @@
 #import "LMJMessageViewController.h"
 #import "LMJMeViewController.h"
 #import "LMJNewViewController.h"
-
+#import "LMJCasesViewController.h"
 
 
 @interface LMJTabBarController ()<UITabBarControllerDelegate>
@@ -42,7 +42,9 @@
     
     LMJNavigationController *four = [[LMJNavigationController alloc] initWithRootViewController:[[LMJMeViewController alloc] init]];
     
-    self.viewControllers = @[two, one, three, four];
+    LMJNavigationController *five = [[LMJNavigationController alloc] initWithRootViewController:[[LMJCasesViewController alloc] init]];
+    
+    self.viewControllers = @[two, one, three, five, four];
     
 }
 
@@ -71,9 +73,15 @@
                                                   CYLTabBarItemImage : @"tabBar_me_icon",
                                                   CYLTabBarItemSelectedImage : @"tabBar_me_click_icon"
                                                   };
+    NSDictionary *fifthTabBarItemsAttributes = @{
+                                                  CYLTabBarItemTitle : @"更多案例",
+                                                  CYLTabBarItemImage : @"tabbar_discover",
+                                                  CYLTabBarItemSelectedImage : @"tabbar_discover_highlighted"
+                                                  };
     self.tabBarItemsAttributes = @[    secondTabBarItemsAttributes,
                                        firstTabBarItemsAttributes,
                                        thirdTabBarItemsAttributes,
+                                       fifthTabBarItemsAttributes,
                                        fourthTabBarItemsAttributes
                                        ];
 

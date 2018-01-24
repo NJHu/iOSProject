@@ -110,4 +110,8 @@ pod 'ZJScrollPageView'
 pod 'ZFPlayer'
 pod 'ZFDownload'
 
+# mark- 好玩的
+# 泡泡uibutton
+pod 'DWBubbleMenuButton'
+
 end

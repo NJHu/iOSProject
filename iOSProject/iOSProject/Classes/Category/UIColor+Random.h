@@ -16,3 +16,11 @@
  */
 + (UIColor *)RandomColor;
 @end
+
+
+
+#define  LMJ_HexColor(hex)        [UIColor colorWithHexString:@#hex]
+@interface UIColor (EXtension_LMJ)
+// 默认alpha位1
++ (UIColor *)colorWithHexString:(NSString *)color;
+@end
