@@ -29,7 +29,7 @@
     LMJWordArrowItem *item1 = [LMJWordArrowItem itemWithTitle:@"球形滚动标签" subTitle:@"MCSphereTagCloudViewController"];
     item1.destVc = [MCSphereTagCloudViewController class];
     
-    LMJWordArrowItem *item2 = [LMJWordArrowItem itemWithTitle:@"加载本地html和css" subTitle:@"MCLocalHTMLViewController"];
+    LMJWordArrowItem *item2 = [LMJWordArrowItem itemWithTitle:@"加载本地html和css 需要建立实体文件夹" subTitle:@"MCLocalHTMLViewController"];
     item2.destVc = [MCLocalHTMLViewController class];
     
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2] andHeaderTitle:@"UI 更多案例" footerTitle:@"UI --end"];
