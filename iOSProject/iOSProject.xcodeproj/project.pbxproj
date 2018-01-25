@@ -19,6 +19,8 @@
 		5822334B20185FB10008251F /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822334A20185FB10008251F /* DBSphereView.m */; };
 		5822334E20187D610008251F /* LMJAutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822334D20187D610008251F /* LMJAutoLayoutViewController.m */; };
 		5822335120187F270008251F /* LMJVFLLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822335020187F270008251F /* LMJVFLLayoutViewController.m */; };
+		5822335420188F5D0008251F /* MCLocalHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822335320188F5D0008251F /* MCLocalHTMLViewController.m */; };
+		5822335620188F6E0008251F /* adm in Resources */ = {isa = PBXBuildFile; fileRef = 5822335520188F6E0008251F /* adm */; };
 		584038001FF61D00002A0566 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584037FF1FF61D00002A0566 /* MapKit.framework */; };
 		584038021FF61D1A002A0566 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584038011FF61D1A002A0566 /* AudioToolbox.framework */; };
 		584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038051FF62371002A0566 /* LMJAddressPickerViewController.m */; };
@@ -395,6 +397,9 @@
 		5822334D20187D610008251F /* LMJAutoLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJAutoLayoutViewController.m; sourceTree = "<group>"; };
 		5822334F20187F270008251F /* LMJVFLLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJVFLLayoutViewController.h; sourceTree = "<group>"; };
 		5822335020187F270008251F /* LMJVFLLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJVFLLayoutViewController.m; sourceTree = "<group>"; };
+		5822335220188F5D0008251F /* MCLocalHTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCLocalHTMLViewController.h; sourceTree = "<group>"; };
+		5822335320188F5D0008251F /* MCLocalHTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCLocalHTMLViewController.m; sourceTree = "<group>"; };
+		5822335520188F6E0008251F /* adm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = adm; sourceTree = "<group>"; };
 		584037FE1FF61CF8002A0566 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		584037FF1FF61D00002A0566 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		584038011FF61D1A002A0566 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -1058,6 +1063,7 @@
 		5822331920182B980008251F /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5822335520188F6E0008251F /* adm */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1070,6 +1076,8 @@
 				5822331F20182C5D0008251F /* MCCornersRoundViewController.xib */,
 				5822334320185F790008251F /* MCSphereTagCloudViewController.h */,
 				5822334420185F790008251F /* MCSphereTagCloudViewController.m */,
+				5822335220188F5D0008251F /* MCLocalHTMLViewController.h */,
+				5822335320188F5D0008251F /* MCLocalHTMLViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2505,6 +2513,7 @@
 				589B56D71FFFC52F00B2D5A8 /* jay@2x.jpg in Resources */,
 				5892ACBD1FF4EF4500E868C2 /* BSJ.xcassets in Resources */,
 				58DC85231FFC972C0060DC03 /* BSJTopicCmtCell.xib in Resources */,
+				5822335620188F6E0008251F /* adm in Resources */,
 				58DC83C31FFB43E30060DC03 /* LMJDrawProgressViewController.xib in Resources */,
 				58DC83F91FFB478E0060DC03 /* CATransition2.png in Resources */,
 			);
@@ -2648,6 +2657,7 @@
 				5892AD011FF4F9D200E868C2 /* LMJWordItem.m in Sources */,
 				5840387F1FF9F128002A0566 /* LMJOCJSHelper.m in Sources */,
 				5840386F1FF93133002A0566 /* LMJUpLoadProgressViewController.m in Sources */,
+				5822335420188F5D0008251F /* MCLocalHTMLViewController.m in Sources */,
 				58651ABA1FFE6D6F0087419D /* SINStatusRetweetView.m in Sources */,
 				58DC85221FFC972C0060DC03 /* BSJTopicPictureView.m in Sources */,
 				5892AD571FF5079C00E868C2 /* LMJNavigationController.m in Sources */,
