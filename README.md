@@ -1,9 +1,8 @@
-<img src="./images/qun2.jpg" width="18%"/>
+<img src="./images/qun.jpg" width="18%"/>
 
 iOSProject
 ===
 
-# <a id="Getting_Started"></a> 欢迎大家转发和点赞哦! 感谢大家支持!
 <div>
 <img src="./images/gn1iphonex.png" width="16.6%"><img src="./images/jciphonex.png" width="16.6%"><img src="./images/bsj/bsqbiphonex.png" width="16.6%"><img src="./images/wb/wb2iphonex.png" width="16.6%"><img src="./images/qqmusic/mus2iphonex.png" width="16.6%"><img src="./images/sp/clpiphonex.png" width="16.6%">
 </div>
