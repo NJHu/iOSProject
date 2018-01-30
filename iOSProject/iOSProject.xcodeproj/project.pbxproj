@@ -88,6 +88,8 @@
 		58651ABA1FFE6D6F0087419D /* SINStatusRetweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A971FFE6D6F0087419D /* SINStatusRetweetView.m */; };
 		58651ABB1FFE6D6F0087419D /* SINPostStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A991FFE6D6F0087419D /* SINPostStatusService.m */; };
 		58651ABD1FFE6D6F0087419D /* SINStatusListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A9C1FFE6D6F0087419D /* SINStatusListService.m */; };
+		58926426201B622B007DA41E /* BSJSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926425201B622B007DA41E /* BSJSQLiteManager.m */; };
+		58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926428201B64D3007DA41E /* BSJTopicListDAL.m */; };
 		5892ACA11FF4EB4A00E868C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */; };
 		5892ACA71FF4EB4A00E868C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACA61FF4EB4A00E868C2 /* main.m */; };
 		5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACB11FF4EEB300E868C2 /* LMJAppDelegate.m */; };
@@ -529,6 +531,10 @@
 		58651A9A1FFE6D6F0087419D /* SINStatusListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusListService.h; sourceTree = "<group>"; };
 		58651A9C1FFE6D6F0087419D /* SINStatusListService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListService.m; sourceTree = "<group>"; };
 		58651A9D1FFE6D6F0087419D /* SINPostStatusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINPostStatusService.h; sourceTree = "<group>"; };
+		58926424201B622B007DA41E /* BSJSQLiteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSJSQLiteManager.h; sourceTree = "<group>"; };
+		58926425201B622B007DA41E /* BSJSQLiteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSJSQLiteManager.m; sourceTree = "<group>"; };
+		58926427201B64D3007DA41E /* BSJTopicListDAL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSJTopicListDAL.h; sourceTree = "<group>"; };
+		58926428201B64D3007DA41E /* BSJTopicListDAL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSJTopicListDAL.m; sourceTree = "<group>"; };
 		5892AC941FF4EB4A00E868C2 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5892ACA51FF4EB4A00E868C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2154,6 +2160,10 @@
 				58DC84761FFC97280060DC03 /* BSJ.m */,
 				58DC84771FFC97280060DC03 /* MenuPopOverView.h */,
 				58DC84741FFC97280060DC03 /* MenuPopOverView.m */,
+				58926424201B622B007DA41E /* BSJSQLiteManager.h */,
+				58926425201B622B007DA41E /* BSJSQLiteManager.m */,
+				58926427201B64D3007DA41E /* BSJTopicListDAL.h */,
+				58926428201B64D3007DA41E /* BSJTopicListDAL.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -2314,8 +2324,8 @@
 				58DC84E91FFC97290060DC03 /* BSJRecommendSevice.m */,
 				58DC84EA1FFC97290060DC03 /* BSJTopicService.h */,
 				58DC84E61FFC97290060DC03 /* BSJTopicService.m */,
-				58DC84E81FFC97290060DC03 /* BSJTopicCmtService.m */,
 				58DC84E31FFC97290060DC03 /* BSJTopicCmtService.h */,
+				58DC84E81FFC97290060DC03 /* BSJTopicCmtService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -2625,6 +2635,7 @@
 				5892AD071FF4F9D200E868C2 /* LMJAutoRefreshFooter.m in Sources */,
 				58223317201821C00008251F /* NullSafe.m in Sources */,
 				58DC84EE1FFC972B0060DC03 /* BSJ.m in Sources */,
+				58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */,
 				584038721FF9399B002A0566 /* LMJListTimerCountDownViewController.m in Sources */,
 				5840385D1FF873A8002A0566 /* LMJAnnotationCustomPopView.m in Sources */,
 				58651AB41FFE6D6F0087419D /* SINUnLoginRegisterView.m in Sources */,
@@ -2726,6 +2737,7 @@
 				584038581FF872EB002A0566 /* LMJCoordinateModel.m in Sources */,
 				58DC851C1FFC972C0060DC03 /* BSJHlightedTextField.m in Sources */,
 				584038501FF8727D002A0566 /* LMJBaiduMapViewController.m in Sources */,
+				58926426201B622B007DA41E /* BSJSQLiteManager.m in Sources */,
 				58DC84FA1FFC972C0060DC03 /* BSJEssenceViewController.m in Sources */,
 				58DC83E61FFB44380060DC03 /* WPFSpringView.m in Sources */,
 				58DC851E1FFC972C0060DC03 /* BSJTopicVideoView.m in Sources */,

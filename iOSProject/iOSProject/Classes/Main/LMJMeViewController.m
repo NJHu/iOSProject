@@ -236,7 +236,7 @@
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    [LMJUMengHelper shareTitle:@"NJHu-GitHub" subTitle:@"谢谢使用!欢迎交流!" thumbImage:@"https://avatars2.githubusercontent.com/u/18454795?s=400&u=c8a7cc691e5c3611e9fb49dcf9c83843dd9141a2&v=4" shareURL:@"https://www.github.com/njhu"];
+    [LMJUMengHelper shareTitle:@"GitHub-iOSProject" subTitle:@"谢谢使用!欢迎交流!" thumbImage:@"https://avatars2.githubusercontent.com/u/18454795?s=400&u=c8a7cc691e5c3611e9fb49dcf9c83843dd9141a2&v=4" shareURL:@"https://www.github.com/njhu"];
     
 }
 

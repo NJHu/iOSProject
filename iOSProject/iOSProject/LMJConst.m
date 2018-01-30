@@ -49,6 +49,7 @@ NSString *const LMJThirdSDKQQAppSecret = @"ublD75ttNYKh0zXx";
 NSString *const LMJThirdSDKQQRedirectURL = @"http://mobile.umeng.com/social";
 
 
+// 魔窗
 NSString *const LMJThirdSDKMagicWindow = @"75Z6Q063T395YQ85QN27FDR7RAVIEKR7";
 
 //百度地图
