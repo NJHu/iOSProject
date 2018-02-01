@@ -56,19 +56,19 @@
 //    LMJWordArrowItem *item0 = [LMJWordArrowItem itemWithTitle:@"占位" subTitle: nil];
 //    item0.destVc = [LMJLoggerViewController class];
 
-    LMJWordArrowItem *item1 = [LMJWordArrowItem itemWithTitle:@"省市区三级联动" subTitle: nil];
+    LMJWordArrowItem *item1 = [LMJWordArrowItem itemWithTitle:@"省市区三级联动" subTitle: @""];
 
     item1.destVc = [LMJAddressPickerViewController class];
 
-    LMJWordArrowItem *item2 = [LMJWordArrowItem itemWithTitle:@"没有导航栏全局返回" subTitle: nil];
+    LMJWordArrowItem *item2 = [LMJWordArrowItem itemWithTitle:@"没有导航栏全局返回" subTitle: @"滑动返回"];
 
     item2.destVc = [LMJNoNavBarViewController class];
 
-    LMJWordArrowItem *item3 = [LMJWordArrowItem itemWithTitle:@"字体适配屏幕" subTitle: nil];
+    LMJWordArrowItem *item3 = [LMJWordArrowItem itemWithTitle:@"字体适配屏幕" subTitle: @"FontSize适配"];
 
     item3.destVc = [ LMJAdaptFontViewController class];
 
-    LMJWordArrowItem *item4 = [LMJWordArrowItem itemWithTitle:@"空白页展示" subTitle: nil];
+    LMJWordArrowItem *item4 = [LMJWordArrowItem itemWithTitle:@"空白页展示" subTitle: @"Error Blank"];
 
     item4.destVc = [LMJBlankPageViewController class];
 
@@ -76,7 +76,7 @@
 
     item5.destVc = [LMJAnimationNavBarViewController class];
 
-    LMJWordArrowItem *item6 = [LMJWordArrowItem itemWithTitle:@"关于 YYText 使用" subTitle: nil];
+    LMJWordArrowItem *item6 = [LMJWordArrowItem itemWithTitle:@"关于 YYText 使用" subTitle: @""];
 
     item6.destVc = [LMJYYTextViewController class];
 
@@ -84,7 +84,7 @@
 
     item7.destVc = [LMJListExpandHideViewController class];
 
-    LMJWordArrowItem *item8 = [LMJWordArrowItem itemWithTitle:@"App首页 CollectionView 布局" subTitle: nil];
+    LMJWordArrowItem *item8 = [LMJWordArrowItem itemWithTitle:@"App首页 CollectionView 布局" subTitle: @""];
 
     item8.destVc = [LMJElementsCollectionViewController class];
 
@@ -97,23 +97,23 @@
 
     item10.destVc = [LMJHorizontalLayoutViewController class];
 
-    LMJWordArrowItem *item11 = [LMJWordArrowItem itemWithTitle:@"键盘处理" subTitle: nil];
+    LMJWordArrowItem *item11 = [LMJWordArrowItem itemWithTitle:@"键盘处理" subTitle: @""];
 
     item11.destVc = [LMJKeyboardHandleViewController class];
 
-    LMJWordArrowItem *item12 = [LMJWordArrowItem itemWithTitle:@"文件下载" subTitle: nil];
+    LMJWordArrowItem *item12 = [LMJWordArrowItem itemWithTitle:@"文件下载" subTitle: @"不重复下载服务器文件"];
 
     item12.destVc = [LMJDownLoadFileViewController class];
 
-    LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"Masonry 布局实例" subTitle: nil];
+    LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"Masonry 布局实例" subTitle: @"包含scrollView布局"];
 
     item13.destVc = [LMJMasonryViewController class];
 
-    LMJWordArrowItem *item15 = [LMJWordArrowItem itemWithTitle:@"百度地图" subTitle: nil];
+    LMJWordArrowItem *item15 = [LMJWordArrowItem itemWithTitle:@"百度地图" subTitle: @"第三方"];
 
     item15.destVc = [LMJBaiduMapViewController class];
 
-    LMJWordArrowItem *item16 = [LMJWordArrowItem itemWithTitle:@"二维码" subTitle: nil];
+    LMJWordArrowItem *item16 = [LMJWordArrowItem itemWithTitle:@"二维码" subTitle: @"第三方"];
 
     item16.destVc = [LMJQRCodeViewController class];
 
@@ -130,11 +130,11 @@
 
     item19.destVc = [LMJListTimerCountDownViewController class];
 
-    LMJWordArrowItem *item20 = [LMJWordArrowItem itemWithTitle:@"H5和 OC 交互" subTitle: nil];
+    LMJWordArrowItem *item20 = [LMJWordArrowItem itemWithTitle:@"H5和 OC 交互" subTitle: @""];
 
     item20.destVc = [LMJH5_OCViewController class];
 
-    LMJWordArrowItem *item21 = [LMJWordArrowItem itemWithTitle:@"自定义各种弹框" subTitle: nil];
+    LMJWordArrowItem *item21 = [LMJWordArrowItem itemWithTitle:@"自定义各种弹框" subTitle: @""];
 
     item21.destVc = [LMJAlertViewsViewController class];
 
@@ -153,7 +153,7 @@
 
     item25.destVc = [LMJDragTableViewController class];
 
-    LMJWordArrowItem *item26 = [LMJWordArrowItem itemWithTitle:@"日历操作" subTitle: @""];
+    LMJWordArrowItem *item26 = [LMJWordArrowItem itemWithTitle:@"日历操作" subTitle: @"第三方"];
 
     item26.destVc = [LMJCalendarViewController class];
 

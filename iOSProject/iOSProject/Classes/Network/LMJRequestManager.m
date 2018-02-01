@@ -225,7 +225,6 @@
     self.responseFormat = ^LMJBaseResponse *(LMJBaseResponse *response) {
         return response;
     };
-    
 }
 
 #pragma mark - 处理返回序列化
@@ -239,8 +238,6 @@
         JSONserializer.readingOptions = NSJSONReadingMutableContainers;
         
     }
-    
-    
 }
 
 

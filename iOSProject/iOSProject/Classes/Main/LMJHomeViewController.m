@@ -76,15 +76,15 @@
     [self.sections addObject:section1];
     
     
-    LMJWordArrowItem *item20 = [LMJWordArrowItem itemWithTitle:@"物理仿真" subTitle: @""];
+    LMJWordArrowItem *item20 = [LMJWordArrowItem itemWithTitle:@"物理仿真" subTitle: @"UIDynamic"];
     
     item20.destVc = [LMJDynamicViewController class];
     
-    LMJWordArrowItem *item21 = [LMJWordArrowItem itemWithTitle:@"核心动画" subTitle: @""];
+    LMJWordArrowItem *item21 = [LMJWordArrowItem itemWithTitle:@"核心动画" subTitle: @"CATransform3D"];
     
     item21.destVc = [LMJCoreAnimationViewController class];
     
-    LMJWordArrowItem *item22 = [LMJWordArrowItem itemWithTitle:@"绘图 Quartz2D" subTitle: @"Draw Rect"];
+    LMJWordArrowItem *item22 = [LMJWordArrowItem itemWithTitle:@"绘图 Quartz2D" subTitle: @"drawRect"];
     
     item22.destVc = [LMJDrawRectViewController class];
     
