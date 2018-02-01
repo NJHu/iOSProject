@@ -64,9 +64,9 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
                 
             }
             
+            NSLog(@"向数据库新增%zd条数据", db.changes);
         }];
-        
-        NSLog(@"向数据库新增%zd条数据", db.changes);
+
         
     }];
     
