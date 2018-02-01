@@ -31,7 +31,7 @@
     
     UIEdgeInsets edgeInsets = self.tableView.contentInset;
     
-    edgeInsets.bottom += self.navigationController.tabBarController.tabBar.lmj_height;
+    edgeInsets.bottom += self.tabBarController.tabBar.lmj_height;
     
     self.tableView.contentInset = edgeInsets;
     
@@ -44,6 +44,13 @@
     self.tableView.estimatedSectionFooterHeight = 0;
 }
 
+
+#pragma mark - ZJScrollPageViewChildVcDelegate
+// bug fix
+- (void)zj_viewDidAppearForIndex:(NSInteger)index {
+    
+    self.view.height = self.view.superview.height;
+}
 
 - (void)loadMore:(BOOL)isMore
 {

@@ -9,9 +9,6 @@
 #import "LMJRefreshTableViewController.h"
 #import "BSJ.h"
 
-
-
-
 @interface BSJTopicViewController : LMJRefreshTableViewController
 
 /** <#digest#> */
