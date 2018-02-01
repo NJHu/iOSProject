@@ -32,6 +32,12 @@
     self.tableView.contentInset = edgeInset;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.tableView.estimatedRowHeight = 0;
+    
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    
+    self.tableView.estimatedSectionFooterHeight = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -63,6 +69,7 @@
         
         if (error) {
             [weakself.view makeToast:error.localizedDescription];
+            return ;
         }
         
         [weakself.tableView reloadData];

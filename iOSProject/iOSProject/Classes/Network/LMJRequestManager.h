@@ -29,12 +29,6 @@ typedef LMJBaseResponse *(^ResponseFormat)(LMJBaseResponse *response);
 //预处理返回的数据
 @property (copy, nonatomic) ResponseFormat responseFormat;
 
-
-//当前的网络状态
-@property (assign, nonatomic) AFNetworkReachabilityStatus currentNetworkStatus;
-
-
-
 - (void)POST:(NSString *)urlString parameters:(id)parameters completion:(void (^)(LMJBaseResponse *response))completion;
 
 - (void)GET:(NSString *)urlString parameters:(id)parameters completion:(void (^)(LMJBaseResponse *response))completion;

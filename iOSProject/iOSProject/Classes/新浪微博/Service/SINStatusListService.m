@@ -54,7 +54,7 @@
         
         
         
-        if (dictArrayM.count > 1) {
+        if (dictArrayM.count >= 1) {
             
             [self dictConverModels:dictArrayM complation:^(NSError *error, NSMutableArray<SINStatusViewModel *> *statusViewModels) {
                 if (self.lastParams != params) {

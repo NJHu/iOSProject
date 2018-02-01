@@ -10,4 +10,20 @@
 
 @interface BSJTopicListDAL : NSObject
 
+//parameters[@"a"] = typeA;
+//parameters[@"c"] = @"data";
+//parameters[@"type"] = @(topicType);
+//parameters[@"maxtime"] = isMore ? self.maxtime : nil;
+//parameters[@"per"] = @10;
+
++ (void)queryTopicListFromDiskWithAreaType:(NSString *)areaType topicType:(NSString *)topicType maxTime:(NSString *)maxTime per:(NSInteger)per completion:(void(^)(NSMutableArray<NSMutableDictionary *> *dictArrayM))completion;
+
+
+
++ (void)cachesTopicList:(NSMutableArray<NSMutableDictionary *> *)topics areaType:(NSString *)areaType;
+
+
+
++ (void)clearOutTimeCashes;
+
 @end

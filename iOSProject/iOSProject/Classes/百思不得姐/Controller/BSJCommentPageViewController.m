@@ -82,6 +82,7 @@
         [weakself endHeaderFooterRefreshing];
         if (error) {
             [weakself.view makeToast:error.localizedDescription];
+            return ;
         }
         
         

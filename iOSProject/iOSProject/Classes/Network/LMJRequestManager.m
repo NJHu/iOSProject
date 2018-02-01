@@ -37,7 +37,7 @@
         return;
     }
     
-    if (self.currentNetworkStatus == AFNetworkReachabilityStatusNotReachable) {
+    if (self.reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable) {
         LMJBaseResponse *response = [LMJBaseResponse new];
         response.error = [NSError errorWithDomain:NSCocoaErrorDomain code:-1 userInfo:nil];
         response.errorMsg = @"网络无法连接";
@@ -211,14 +211,7 @@
 {
     //设置可接收的数据类型
     self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", @"application/xml", @"text/xml", @"*/*", nil];
-    self.currentNetworkStatus = AFNetworkReachabilityStatusUnknown;
-    
-    LMJWeakSelf(self);
     //记录网络状态
-    [self.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        weakself.currentNetworkStatus = status;
-    }];
-    
     [self.reachabilityManager startMonitoring];
     
     //自定义处理数据

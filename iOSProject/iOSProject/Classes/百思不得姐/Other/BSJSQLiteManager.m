@@ -9,6 +9,8 @@
 #import "BSJSQLiteManager.h"
 
 static NSString *const _dbName = @"bsj_t_topics.sqlite";
+static NSString *const listTableName_ = @"t_topics";
+static NSString *const nweListTableName_ = @"new_t_topics";
 
 static NSString *_dbPath = nil;
 
@@ -62,18 +64,35 @@ static NSString *_dbPath = nil;
     
     NSString *creatTableSql = @"CREATE TABLE IF NOT EXISTS t_topics \n\
     (id INTEGER PRIMARY KEY AUTOINCREMENT, \n\
-    topicid TEXT NOT NULL, \n\
     topic BLOB NOT NULL, \n\
-    a TEXT NOT NULL, \n\
     type TEXT NOT NULL, \n\
     t INTEGER NOT NULL, \n\
-    c TEXT NOT NULL, \n\
     time TEXT NOT NULL  DEFAULT (datetime('now', 'localtime'))\n\
     )\n";
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         
         BOOL result = [db executeStatements:creatTableSql];
+        
+        if (result) {
+            NSLog(@"创建表成功");
+        }else {
+            NSLog(@"创建表失败");
+        }
+        
+    }];
+    
+    NSString *creatNewTopicTableSql = @"CREATE TABLE IF NOT EXISTS new_t_topics \n\
+    (id INTEGER PRIMARY KEY AUTOINCREMENT, \n\
+    topic BLOB NOT NULL, \n\
+    type TEXT NOT NULL, \n\
+    t INTEGER NOT NULL, \n\
+    time TEXT NOT NULL  DEFAULT (datetime('now', 'localtime'))\n\
+    )\n";
+    
+    [self.dbQueue inDatabase:^(FMDatabase *db) {
+        
+        BOOL result = [db executeStatements:creatNewTopicTableSql];
         
         if (result) {
             NSLog(@"创建表成功");
@@ -94,12 +113,6 @@ static NSString *_dbPath = nil;
     }
     return _dbQueue;
 }
-
-
-
-
-
-
 
 
 #pragma mark - 单例
