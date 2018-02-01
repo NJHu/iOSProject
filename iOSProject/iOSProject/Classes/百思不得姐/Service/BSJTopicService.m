@@ -11,9 +11,6 @@
 @interface BSJTopicService ()
 
 /** <#digest#> */
-@property (assign, nonatomic) NSInteger currentPage;
-
-/** <#digest#> */
 @property (nonatomic, copy) NSString *maxtime;
 
 @end
@@ -25,10 +22,6 @@
 - (void)getTopicIsMore:(BOOL)isMore typeA:(NSString *)typeA topicType:(NSInteger)topicType completion:(void(^)(NSError *error, NSInteger totalCount, NSInteger currentCount))completion
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    
-    
-    NSInteger page = isMore ? (self.currentPage + 1) : 1;
-    
     
     parameters[@"a"] = typeA;
     parameters[@"c"] = @"data";
@@ -48,14 +41,8 @@
             
             [self.topicViewModels removeAllObjects];
         }
-        
-        self.currentPage = page;
-        
-        self.maxtime = [response.responseObject[@"info"][@"maxtime"] copy];
-        
-        
+
         NSMutableArray<BSJTopicViewModel *> *newTopicViewModels = [NSMutableArray array];
-        
         
         [[BSJTopic mj_objectArrayWithKeyValuesArray:response.responseObject[@"list"]] enumerateObjectsUsingBlock:^(BSJTopic  *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
@@ -65,12 +52,11 @@
         
         [self.topicViewModels addObjectsFromArray:newTopicViewModels];
         
+        self.maxtime = self.topicViewModels.lastObject.topic.t;
         
         completion(nil, [response.responseObject[@"info"][@"count"] integerValue], self.topicViewModels.count);
         
-
     }];
-    
     
 }
 

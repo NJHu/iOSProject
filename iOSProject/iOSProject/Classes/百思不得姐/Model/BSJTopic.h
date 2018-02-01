@@ -93,6 +93,8 @@
 /** 审核通过的时间 */
 @property (nonatomic, copy) NSString *passtime;
 
+/** 帖子的 id time */
+@property (nonatomic, copy) NSString *t;
 
 /** 图片的宽度 */
 @property (nonatomic, assign) CGFloat width;

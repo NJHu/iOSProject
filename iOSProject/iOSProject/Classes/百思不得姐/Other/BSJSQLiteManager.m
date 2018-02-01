@@ -67,6 +67,7 @@ static NSString *_dbPath = nil;
     a TEXT NOT NULL, \n\
     type TEXT NOT NULL, \n\
     t INTEGER NOT NULL, \n\
+    c TEXT NOT NULL, \n\
     time TEXT NOT NULL  DEFAULT (datetime('now', 'localtime'))\n\
     )\n";
     
