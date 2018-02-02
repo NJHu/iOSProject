@@ -119,7 +119,7 @@ const CGFloat BSJCellContentImageMaxHeight = 1000.0;
         
         [self.topic.topCmts enumerateObjectsUsingBlock:^(BSJTopicTopComent * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
-            NSMutableAttributedString *oneCmt = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@: %@", idx ? @"\n" : @"",obj.user.username, obj.content]];
+            NSMutableAttributedString *oneCmt = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@: %@", obj.user.username, obj.content]];
             
             oneCmt.yy_lineSpacing = 4.0;
             oneCmt.yy_font = [UIFont systemFontOfSize:13];
@@ -136,18 +136,14 @@ const CGFloat BSJCellContentImageMaxHeight = 1000.0;
             } longPressAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
                 
                 
-                
-                
             }];
             
             
             [cmtsM appendAttributedString:oneCmt];
-            
-            
+            [cmtsM yy_appendString:@"\n"];
         }];
         
         cmtsM.yy_paragraphSpacing = 7.0;
-        
         
         YYTextLayout *topCmtLayout = [YYTextLayout layoutWithContainerSize:cmtSize text:cmtsM];
         

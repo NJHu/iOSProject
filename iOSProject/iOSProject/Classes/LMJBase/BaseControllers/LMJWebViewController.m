@@ -23,6 +23,12 @@
 
 @implementation LMJWebViewController
 
+- (void)setGotoURL:(NSString *)gotoURL {
+    NSString *charactersToEscape = @"?!@#$^&%*+,:;='\"`<>()[]{}/\\| ";
+    NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:charactersToEscape] invertedSet];
+    NSString *encodedUrl = [gotoURL stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+    _gotoURL = encodedUrl;
+}
 
 #pragma mark - 生命周期
 - (void)viewDidLoad {

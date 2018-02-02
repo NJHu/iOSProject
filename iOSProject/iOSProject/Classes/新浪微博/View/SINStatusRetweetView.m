@@ -10,6 +10,7 @@
 #import "SINStatusPicsView.h"
 #import "SINStatusViewModel.h"
 #import <KILabel.h>
+#import "LMJWebViewController.h"
 
 @interface SINStatusRetweetView ()
 
@@ -99,11 +100,7 @@ static const CGFloat margin = 10.0;
         [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeHashtag];
         [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeURL];
         
-        textPostLabel.userHandleLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
-            
-            NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
-            
-        };
+//        LMJWeakSelf(self);
         
         
         textPostLabel.userHandleLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
@@ -122,6 +119,10 @@ static const CGFloat margin = 10.0;
         textPostLabel.urlLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
             
             NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
+//            LMJWebViewController *webVc = [[LMJWebViewController alloc] init];
+//            webVc.gotoURL = string.copy;
+//
+//            [weakself.viewController.navigationController pushViewController:webVc animated:YES];
             
         };
         
