@@ -28,7 +28,6 @@
 		5840380C1FF62ECF002A0566 /* LMJAdaptFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5840380B1FF62ECF002A0566 /* LMJAdaptFontViewController.m */; };
 		584038101FF62F30002A0566 /* LMJAdaptFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5840380F1FF62F30002A0566 /* LMJAdaptFontCell.m */; };
 		584038131FF63617002A0566 /* LMJEasyBlankPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038121FF63617002A0566 /* LMJEasyBlankPageView.m */; };
-		584038161FF64124002A0566 /* UIView+LMJConfigBlank.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038151FF64124002A0566 /* UIView+LMJConfigBlank.m */; };
 		584038191FF64218002A0566 /* LMJBlankPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038181FF64218002A0566 /* LMJBlankPageViewController.m */; };
 		5840381C1FF644D2002A0566 /* LMJAnimationNavBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5840381B1FF644D1002A0566 /* LMJAnimationNavBarViewController.m */; };
 		5840381F1FF64718002A0566 /* LMJYYTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5840381E1FF64718002A0566 /* LMJYYTextViewController.m */; };
@@ -415,8 +414,6 @@
 		5840380F1FF62F30002A0566 /* LMJAdaptFontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAdaptFontCell.m; sourceTree = "<group>"; };
 		584038111FF63617002A0566 /* LMJEasyBlankPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJEasyBlankPageView.h; sourceTree = "<group>"; };
 		584038121FF63617002A0566 /* LMJEasyBlankPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJEasyBlankPageView.m; sourceTree = "<group>"; };
-		584038141FF64124002A0566 /* UIView+LMJConfigBlank.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LMJConfigBlank.h"; sourceTree = "<group>"; };
-		584038151FF64124002A0566 /* UIView+LMJConfigBlank.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LMJConfigBlank.m"; sourceTree = "<group>"; };
 		584038171FF64217002A0566 /* LMJBlankPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBlankPageViewController.h; sourceTree = "<group>"; };
 		584038181FF64218002A0566 /* LMJBlankPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBlankPageViewController.m; sourceTree = "<group>"; };
 		5840381A1FF644D1002A0566 /* LMJAnimationNavBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAnimationNavBarViewController.h; sourceTree = "<group>"; };
@@ -1534,8 +1531,6 @@
 				5892ADA91FF603AD00E868C2 /* LMJUMengHelper.m */,
 				584038111FF63617002A0566 /* LMJEasyBlankPageView.h */,
 				584038121FF63617002A0566 /* LMJEasyBlankPageView.m */,
-				584038141FF64124002A0566 /* UIView+LMJConfigBlank.h */,
-				584038151FF64124002A0566 /* UIView+LMJConfigBlank.m */,
 				58DC85321FFCA30C0060DC03 /* UIImageView+FitNet.h */,
 				58DC85311FFCA30B0060DC03 /* UIImageView+FitNet.m */,
 			);
@@ -2625,7 +2620,6 @@
 				584038381FF7E2BE002A0566 /* LMJVerticalLayoutViewController.m in Sources */,
 				58DC84541FFBDDC40060DC03 /* LMJChildBlockViewController.m in Sources */,
 				584038681FF88594002A0566 /* LMJUpLoadImageCell.m in Sources */,
-				584038161FF64124002A0566 /* UIView+LMJConfigBlank.m in Sources */,
 				58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */,
 				58DC84F71FFC972C0060DC03 /* BSJNewViewController.m in Sources */,
 				58651AA21FFE6D6F0087419D /* SINHomeCategoryViewController.m in Sources */,

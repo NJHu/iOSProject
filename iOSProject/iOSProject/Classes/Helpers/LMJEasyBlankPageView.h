@@ -13,7 +13,10 @@ typedef enum : NSUInteger {
 } LMJEasyBlankPageViewType;
 
 @interface LMJEasyBlankPageView : UIView
-
 - (void)configWithType:(LMJEasyBlankPageViewType)blankPageType hasData:(BOOL)hasData hasError:(BOOL)hasError reloadButtonBlock:(void(^)(UIButton *sender))block;
+@end
 
+
+@interface UIView (LMJConfigBlank)
+- (void)configBlankPage:(LMJEasyBlankPageViewType)blankPageType hasData:(BOOL)hasData hasError:(BOOL)hasError reloadButtonBlock:(void(^)(id sender))block;
 @end

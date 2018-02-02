@@ -25,7 +25,7 @@
 #import "LMJRequestManager.h"
 #import "GVUserDefaults+LMJ.h"
 #import "JXTAlertController.h"
-#import "UIView+LMJConfigBlank.h"
+#import "LMJEasyBlankPageView.h"
 #import "UIImageView+FitNet.h"
 
 
