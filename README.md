@@ -21,7 +21,7 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 	- [微博](#wb)
 	- [QQ 音乐 music](#qqmusic)
 	- [视频播放](#videos)
-
+- [期待](#qidai)
 
 ## <a id="homeList"></a> 首页功能列表
 <img src="./images/gn1.png" width="31%">|
@@ -118,7 +118,7 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 <br>
 <br>
 
-## 期待
+## <a id="qidai"></a> 期待
 * 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的Demo代码看看BUG修复没有）
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个Demo增加更多好用的功能，谢谢
 * 如果你想为iOSProject输出代码，请拼命Pull Requests我
