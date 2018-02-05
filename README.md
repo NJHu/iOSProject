@@ -24,13 +24,13 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 
 
 ## <a id="homeList"></a> 首页功能列表
-<img src="./images/gn1.png" width="40%">|
-<img src="./images/gn2.png" width="40%">
+<img src="./images/gn1.png" width="31%">|
+<img src="./images/gn2.png" width="31%">
 <br>
 <br>
 
 ## <a id="foundation"></a> 基础知识
-<img src="./images/jciphonex.png" width="40%">
+<img src="./images/jciphonex.png" width="31%">
 <br>
 <br>
 
@@ -42,14 +42,14 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 <br>
 
 ## <a id="homeBaseShareLogin"></a> 分享和第三方登录
-<img src="./images/fx.png" width="40%">|
-<img src="./images/fx_1.png" width="40%">
+<img src="./images/fx.png" width="31%">|
+<img src="./images/fx_1.png" width="31%">
 <br>
 <br>
 <br>
 
 ## <a id="demo_s"></a> Demos 综合案例
-<img src="./images/demos.png" width="40%">
+<img src="./images/demos.png" width="31%">
 
 ## <a id="bsj"></a> 百思不得姐
 <img src="./images/bsj/bsqb.png" width="31%">|

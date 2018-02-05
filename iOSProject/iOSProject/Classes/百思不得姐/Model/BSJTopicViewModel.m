@@ -93,6 +93,7 @@ const CGFloat BSJCellContentImageMaxHeight = 1000.0;
     // 热门评论 5 + 10 + 10 + 10 () + 10 + 10 + 5, font = 13
     if (self.topic.topCmts.count) {
 //        CGFloat hotCommentWidth = kScreenWidth - (5 + 10 + 10 + 10 + 10 + 5);
+        // 测试显示更多评论
         if (arc4random() % 2) {
             [self.topic.topCmts addObject:self.topic.topCmts.firstObject];
         }
