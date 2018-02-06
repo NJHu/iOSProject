@@ -18,7 +18,7 @@
 
 @implementation LMJSettingCell
 
-static NSString *const ID = @"cellSetting";
+static NSString *const ID = @"LMJSettingCell";
 + (instancetype)cellWithTableView:(UITableView *)tableView andCellStyle:(UITableViewCellStyle)style
 {
     LMJSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
