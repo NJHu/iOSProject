@@ -16,7 +16,7 @@
 #import "LMJLockViewController.h"
 #import "LMJProtocolViewController.h"
 #import "LMJBlockLoopViewController.h"
-
+#import "LMJRunLoopViewController.h"
 #import "LMJDynamicViewController.h"
 #import "LMJCoreAnimationViewController.h"
 #import "LMJDrawRectViewController.h"
@@ -67,12 +67,10 @@
     LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"同步锁知识" subTitle: nil];
     item13.destVc = [LMJLockViewController class];
     
+    LMJWordArrowItem *item14 = [LMJWordArrowItem itemWithTitle:@"RunLoop" subTitle: @"建议看"];
+    item14.destVc = [LMJRunLoopViewController class];
     
-    
-    LMJItemSection *section1 = [LMJItemSection sectionWithItems:@[item10, item11, item12, item13] andHeaderTitle:@"NSThread, GCD, NSOperation, Lock" footerTitle:nil];
-    
-    [section1.items makeObjectsPerformSelector:@selector(setTitleColor:) withObject:[UIColor RandomColor]];
-    
+    LMJItemSection *section1 = [LMJItemSection sectionWithItems:@[item10, item11, item12, item14, item13] andHeaderTitle:@"NSThread, GCD, NSOperation, Lock, RunLoop" footerTitle:nil];
     [self.sections addObject:section1];
     
     

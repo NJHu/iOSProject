@@ -89,6 +89,7 @@
 		58651ABD1FFE6D6F0087419D /* SINStatusListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A9C1FFE6D6F0087419D /* SINStatusListService.m */; };
 		58926426201B622B007DA41E /* BSJSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926425201B622B007DA41E /* BSJSQLiteManager.m */; };
 		58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926428201B64D3007DA41E /* BSJTopicListDAL.m */; };
+		58926467202C54C2007DA41E /* LMJRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926466202C54C2007DA41E /* LMJRunLoopViewController.m */; };
 		5892ACA11FF4EB4A00E868C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */; };
 		5892ACA71FF4EB4A00E868C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACA61FF4EB4A00E868C2 /* main.m */; };
 		5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACB11FF4EEB300E868C2 /* LMJAppDelegate.m */; };
@@ -532,6 +533,8 @@
 		58926425201B622B007DA41E /* BSJSQLiteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSJSQLiteManager.m; sourceTree = "<group>"; };
 		58926427201B64D3007DA41E /* BSJTopicListDAL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSJTopicListDAL.h; sourceTree = "<group>"; };
 		58926428201B64D3007DA41E /* BSJTopicListDAL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSJTopicListDAL.m; sourceTree = "<group>"; };
+		58926465202C54C2007DA41E /* LMJRunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJRunLoopViewController.h; sourceTree = "<group>"; };
+		58926466202C54C2007DA41E /* LMJRunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJRunLoopViewController.m; sourceTree = "<group>"; };
 		5892AC941FF4EB4A00E868C2 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5892ACA51FF4EB4A00E868C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2083,6 +2086,8 @@
 				58DC843A1FFBD1280060DC03 /* LMJGCDViewController.m */,
 				58DC84361FFBD1270060DC03 /* LMJNSOperationViewController.h */,
 				58DC843D1FFBD1290060DC03 /* LMJNSOperationViewController.m */,
+				58926465202C54C2007DA41E /* LMJRunLoopViewController.h */,
+				58926466202C54C2007DA41E /* LMJRunLoopViewController.m */,
 				58DC843C1FFBD1290060DC03 /* LMJLockViewController.h */,
 				58DC843B1FFBD1280060DC03 /* LMJLockViewController.m */,
 				58DC84051FFBC1770060DC03 /* Model */,
@@ -2821,6 +2826,7 @@
 				58DC838B1FFB43460060DC03 /* LMJCAClockViewController.m in Sources */,
 				5892AD561FF5079C00E868C2 /* LMJStaticTableViewController.m in Sources */,
 				584038331FF72A40002A0566 /* LMJElementsCollectionViewController.m in Sources */,
+				58926467202C54C2007DA41E /* LMJRunLoopViewController.m in Sources */,
 				58DC83C11FFB43E30060DC03 /* LMJZhusViewController.m in Sources */,
 				58651A9F1FFE6D6F0087419D /* SINUserManager.m in Sources */,
 				584038861FF9F602002A0566 /* LMJFillTableFormViewController.m in Sources */,

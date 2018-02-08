@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString *footerTitle;
 
 /** <#digest#> */
-@property (nonatomic, strong) NSArray<LMJWordItem *> *items;
+@property (nonatomic, strong) NSMutableArray<LMJWordItem *> *items;
 
 + (instancetype)sectionWithItems:(NSArray<LMJWordItem *> *)items andHeaderTitle:(NSString *)headerTitle footerTitle:(NSString *)footerTitle;
 

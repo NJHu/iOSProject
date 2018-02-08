@@ -20,33 +20,198 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self des];
+    [self setDes];
+    
+    LMJWeakSelf(self);
+    
+    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"并发队列 + 同步执行" subTitle:nil];
+    [item0 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself syncConCurrent];
+    }];
+    
+    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"并发队列 + 异步执行" subTitle:nil];
+    [item1 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself asyncConcurrent];
+    }];
+    
+    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"串行队列 + 同步执行" subTitle:nil];
+    [item2 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself syncSerial];
+    }];
+    
+    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"串行队列 + 异步执行" subTitle:nil];
+    [item3 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself asyncSerial];
+    }];
+    
+    LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"主队列 + 同步执行--相互等待" subTitle:@"直接闪退"];
+    [item4 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself syncMain];
+    }];
+    
+    LMJWordItem *item5 = [LMJWordItem itemWithTitle:@"主队列 + 异步执行" subTitle:nil];
+    [item5 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself asyncMain];
+    }];
+    
+    LMJWordItem *item6 = [LMJWordItem itemWithTitle:@"全局队列+ 异步执行" subTitle:nil];
+    [item6 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself asyncGloba];
+    }];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6] andHeaderTitle:@"六种类型：" footerTitle:nil];
+    LMJItemSection *section1 = [LMJItemSection sectionWithItems:nil andHeaderTitle:@"多种 GCD" footerTitle:nil];
     
     
-//    六种类型：
-//    并发队列 + 同步执行
-    [self syncConCurrent];
+    LMJWordItem *item10 = [LMJWordItem itemWithTitle:@"dispatch_barrier_async" subTitle:@"栅栏函数"];
+    item10.itemOperation = ^(NSIndexPath *indexPath) {
+        
+        [weakself barrier];
+        
+    };
     
+    LMJWordItem *item11 = [LMJWordItem itemWithTitle:@"dispatch_apply" subTitle:@"快速迭代"];
+    item11.itemOperation = ^(NSIndexPath *indexPath) {
+        [weakself apply];
+    };
     
-//    并发队列 + 异步执行
+    LMJWordItem *item12 = [LMJWordItem itemWithTitle:@"dispatch_group_t" subTitle:@"队列组和线程通讯"];
+    item12.itemOperation = ^(NSIndexPath *indexPath) {
+        [weakself group];
+    };
     
-    [self asyncConcurrent];
+    [section1.items addObjectsFromArray:@[item10, item11, item12]];
     
-//    串行队列 + 同步执行
-    [self syncSerial];
+    [self.sections addObject:section0];
+    [self.sections addObject:section1];
+
+}
+- (void)group
+{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // 创建一个队列组
+    dispatch_group_t group = dispatch_group_create();
     
-//    串行队列 + 异步执行
-    [self asyncSerial];
+   __block UIImage *image1 = nil;
     
-    //五：主队列 + 同步执行 直接闪退
-//    [self syncMain];
+    // 1.下载图片1
+    dispatch_group_async(group, queue, ^{
+        // 图片的网络路径
+        NSURL *url = [NSURL URLWithString:@"http://img.pconline.com.cn/images/photoblog/9/9/8/1/9981681/200910/11/1255259355826.jpg"];
+        
+        // 加载图片
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        // 生成图片
+        image1 = [UIImage imageWithData:data];
+    });
     
-    //六：主队列 + 异步执行
-    [self asyncMain];
+   __block UIImage *image2 = nil;
     
-    //七：全局队列+ 异步执行
-    [self asyncGloba];
+    // 2.下载图片2
+    dispatch_group_async(group, queue, ^{
+        // 图片的网络路径
+        NSURL *url = [NSURL URLWithString:@"http://pic38.nipic.com/20140228/5571398_215900721128_2.jpg"];
+        
+        // 加载图片
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        // 生成图片
+        image2 = [UIImage imageWithData:data];
+    });
     
+    // 3.将图片1、图片2合成一张新的图片
+    dispatch_group_notify(group, queue, ^{
+        // 开启新的图形上下文
+        UIGraphicsBeginImageContext(CGSizeMake(100, 100));
+        
+        // 绘制图片
+        [image1 drawInRect:CGRectMake(0, 0, 50, 100)];
+        [image2 drawInRect:CGRectMake(50, 0, 50, 100)];
+        
+        // 取得上下文中的图片
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        // 结束上下文
+        UIGraphicsEndImageContext();
+        
+        // 回到主线程显示图片
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 4.将新图片显示出来
+            UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
+            imageV.frame = CGRectMake(100, 100, 200, 200);
+            [self.view addSubview:imageV];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [imageV removeFromSuperview];
+            });
+        });
+    });
+    
+}
+/*
+ 这个函数提交代码块到一个分发队列,以供多次调用,会等迭代其中的任务全部完成以后,才会返回.
+ 如果被提交的队列是并发队列,那么这个代码块必须保证每次读写的安全.
+ 这个函数对并行的循环 还有作用,
+ 
+ 我理解就是类似遍历一个数组一样,当提交到一个并发的队列上的时候,这个遍历是并发运行的,速度很快.
+ 
+ 作者：机器人小雪
+ 链接：https://www.jianshu.com/p/0243f317d79e
+ 來源：简书
+ 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ */
+- (void)apply
+{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_apply(100, queue, ^(size_t index) {
+        
+        NSLog(@"%zd---%@", index, [NSThread currentThread]);
+    });
+}
+
+/*
+ <一>什么是dispatch_barrier_async函数
+ 
+ 毫无疑问,dispatch_barrier_async函数的作用与barrier的意思相同,在进程管理中起到一个栅栏的作用,它等待所有位于barrier函数之前的操作执行完毕后执行,并且在barrier函数执行之后,barrier函数之后的操作才会得到执行,该函数需要同dispatch_queue_create函数生成的concurrent Dispatch Queue队列一起使用
+ 
+ <二>dispatch_barrier_async函数的作用
+ 
+ 1.实现高效率的数据库访问和文件访问
+ 
+ 2.避免数据竞争
+ 
+ <三>dispatch_barrier_async实例
+ */
+- (void)barrier
+{
+    dispatch_queue_t queue = dispatch_queue_create("my-queue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(queue, ^{
+        
+        NSLog(@"1, dispatch_async(dispatch_get_main_queue()");
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"2, dispatch_async(dispatch_get_global_queue(0, 0)");
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"3, dispatch_sync(dispatch_get_global_queue(0, 0)");
+    });
+    
+    dispatch_barrier_async(queue, ^(){
+        NSLog(@"----barrier-----%@", [NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"4, dispatch_async(dispatch_get_global_queue(0, 0)");
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"5, dispatch_sync(dispatch_get_global_queue(0, 0)");
+    });
     
 }
 
@@ -132,39 +297,9 @@
 }
 
 
-- (UITextView *)inputTextView
-{
-    if(_inputTextView == nil)
-    {
-        UITextView *textView = [[UITextView alloc] init];
-        
-        [self.view addSubview:textView];
-        
-                textView.userInteractionEnabled = YES;
-                textView.editable = NO;
-                textView.selectable = NO;
-                textView.scrollEnabled = YES;
-        
-        //        [textView addPlaceHolder:@"我是占位的"];
-        
-        [textView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.edges.mas_equalTo(UIEdgeInsetsMake(60, 0, 0, 0));
-            
-        }];
-        
-        textView.textColor = [UIColor RandomColor];
-        textView.font = AdaptedFontSize(16);
-        
-        _inputTextView = textView;
-        
-    }
-    return _inputTextView;
-}
 
 
-
-
+// 串行队列 同步执行
 - (void)syncSerial
 {
     NSLog(@"syncSerial---begin");
@@ -206,7 +341,7 @@
     
 }
 
-
+// 串行队列 异步执行
 - (void)asyncSerial
 {
     
@@ -250,6 +385,7 @@
     
 }
 
+// 主队列 + 同步执行 卡死崩溃(方法等待)
 - (void)syncMain
 {
     dispatch_queue_t mainQueue = dispatch_get_main_queue();
@@ -297,7 +433,14 @@
     });
     
     NSLog(@"asyncSerial---end");
-    
+    /*
+     2018-02-08 16:33:55.378498+0800 iOSProject[63192:4356386] 1------<NSThread: 0x600000070c80>{number = 1, name = main}
+     2018-02-08 16:33:55.378659+0800 iOSProject[63192:4356386] 1------<NSThread: 0x600000070c80>{number = 1, name = main}
+     2018-02-08 16:33:55.378955+0800 iOSProject[63192:4356386] 2------<NSThread: 0x600000070c80>{number = 1, name = main}
+     2018-02-08 16:33:55.379283+0800 iOSProject[63192:4356386] 2------<NSThread: 0x600000070c80>{number = 1, name = main}
+     2018-02-08 16:33:55.379804+0800 iOSProject[63192:4356386] 3------<NSThread: 0x600000070c80>{number = 1, name = main}
+     2018-02-08 16:33:55.380723+0800 iOSProject[63192:4356386] 3------<NSThread: 0x600000070c80>{number = 1, name = main}
+     */
 }
 
 
@@ -349,54 +492,24 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-}
-
-- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%@", sender);
-}
-
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return [self changeTitle:@"GCD"];;
-}
 
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+    [leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
 
-return [UIImage imageNamed:@"navigationButtonReturnClick"];
+    return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
 
 
-- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+- (void)setDes
 {
-    rightButton.backgroundColor = [UIColor RandomColor];
+    UILabel *label = [[UILabel alloc] init];
+    label.width = kScreenWidth;
+    self.tableView.tableFooterView = label;
+    label.numberOfLines = 0;
+    label.textColor = [UIColor blackColor];
     
-    return nil;
-}
-
-
-
-#pragma mark 自定义代码
-
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:[UIColor RandomColor] range:NSMakeRange(0, title.length)];
-    
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, title.length)];
-    
-    return title;
-}
-
-- (void)des
-{
-    self.inputTextView.text= @"------------------------------------------------------------------------------------------\n\
+    label.text= @"------------------------------------------------------------------------------------------\n\
     理论知识\n\
     同步执行（sync）：只能在当前线程中执行任务，不具备开启新线程的能力\n\
     异步执行（async）：可以在新的线程中执行任务，具备开启新线程的能力\n\
@@ -428,7 +541,7 @@ return [UIImage imageNamed:@"navigationButtonReturnClick"];
     主队列 + 异步执行\n\
     ------------------------------------------------------------------------------------------\n\
     ";
-    
+    [label sizeToFit];
 }
 
 @end

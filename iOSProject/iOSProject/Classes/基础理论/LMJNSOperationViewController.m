@@ -19,65 +19,66 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setDes];
+    
+    LMJWeakSelf(self);
+    
+    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"一：NSInvocationOperation子类+主队列" subTitle:@"主线程中执行"];
+    [item0 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself addOperationFormInvocation];
+    }];
+    
+    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"二：NSInvocationOperation子类+非主队列  (新开线程中执行)" subTitle:nil];
+    [item1 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself addAsnysOperationFormInvocation];
+    }];
+    
+    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"三：使用子类- NSBlockOperation 主线程和子线程执行" subTitle:nil];
+    [item2 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself addOperationFormBlock];
+    }];
+    
+    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"四：使用子类- NSBlockOperation 子线程执行 加入非主队列" subTitle:nil];
+    [item3 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself addAsnysOperationFormBlock];
+    }];
+    
+    LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"五：maxConcurrentOperationCount设置 并发或串行" subTitle:@""];
+    [item4 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself addMaxConcurrentOperation];
+    }];
+    
+    LMJWordItem *item5 = [LMJWordItem itemWithTitle:@"七：操作依赖" subTitle:nil];
+    [item5 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself addDependency];
+    }];
     
     
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5] andHeaderTitle:@"" footerTitle:nil];
     
-    self.view.backgroundColor=[UIColor whiteColor];
-    
-    //一：NSInvocationOperation子类+主队列
-    [self addOperationFormInvocation];
-    //二：NSInvocationOperation子类+非主队列  (新开线程中执行)
-    [self addAsnysOperationFormInvocation];
-    //三：使用子类- NSBlockOperation 主线程执行
-    [self addOperationFormBlock];
-    //四：使用子类- NSBlockOperation 子线程执行 加入非主队列
-    [self addAsnysOperationFormBlock];
-    //五：maxConcurrentOperationCount设置 并发或串行
-    [self addMaxConcurrentOperation];
-    //六：定义继承自NSOperation的子类
-    [self addChildNSOperation];
-    //七：操作依赖
-    [self addDependency];
+    [self.sections addObject:section0];
     
     
-    [self des];
+//    //一：NSInvocationOperation子类+主队列
+//    [self addOperationFormInvocation];
+//    //二：NSInvocationOperation子类+非主队列  (新开线程中执行)
+//    [self addAsnysOperationFormInvocation];
+//    //三：使用子类- NSBlockOperation 主线程执行
+//    [self addOperationFormBlock];
+//    //四：使用子类- NSBlockOperation 子线程执行 加入非主队列
+//    [self addAsnysOperationFormBlock];
+//    //五：maxConcurrentOperationCount设置 并发或串行
+//    [self addMaxConcurrentOperation];
+//    //六：定义继承自NSOperation的子类
+//    [self addChildNSOperation];
+//    //七：操作依赖
+//    [self addDependency];
     
 }
 
 
 #pragma mark - 自定义方法
 
-//------------------------------------------------------------------------------------------
-//理论知识：
-//NSOperation是苹果提供给我们的一套多线程解决方案。实际上NSOperation是基于GCD更高一层的封装，但是比GCD更简单易用、代码可读性也更高。
-//NSOperation需要配合NSOperationQueue来实现多线程。因为默认情况下，NSOperation单独使用时系统同步执行操作，并没有开辟新线程的能力，只有配合NSOperationQueue才能实现异步执行
-//
-//------------------------------------------------------------------------------------------
-//步骤3
-//创建任务：先将需要执行的操作封装到一个NSOperation对象中。
-//创建队列：创建NSOperationQueue对象。
-//将任务加入到队列中：然后将NSOperation对象添加到NSOperationQueue中。
-//
-//------------------------------------------------------------------------------------------
-//创建队列
-//NSOperationQueue一共有两种队列：主队列、其他队列
-//主队列 NSOperationQueue *queue = [NSOperationQueue mainQueue]; 凡是添加到主队列中的任务（NSOperation），都会放到主线程中执行
-//其他队列（非主队列） NSOperationQueue *queue = [[NSOperationQueue alloc] init]; 就会自动放到子线程中执行 同时包含了：串行、并发功能
-//
-//------------------------------------------------------------------------------------------
-//NSOperation是个抽象类，并不能封装任务。我们只有使用它的子类来封装任务。我们有三种方式来封装任务。
-//
-//使用子类NSInvocationOperation
-//使用子类NSBlockOperation
-//定义继承自NSOperation的子类，通过实现内部相应的方法来封装任务
-//
-//------------------------------------------------------------------------------------------
-//其它知识点
-//- (void)cancel; NSOperation提供的方法，可取消单个操作
-//- (void)cancelAllOperations; NSOperationQueue提供的方法，可以取消队列的所有操作
-//- (void)setSuspended:(BOOL)b; 可设置任务的暂停和恢复，YES代表暂停队列，NO代表恢复队列
-//- (BOOL)isSuspended; 判断暂停状态
-//------------------------------------------------------------------------------------------
 
 
 //一：NSInvocationOperation子类+主队列  (主线程中执行)
@@ -124,7 +125,7 @@
 }
 
 
-//三：使用子类- NSBlockOperation 主线程执行
+//三：使用子类- NSBlockOperation 主线程和子线程执行
 -(void)addOperationFormBlock
 {
     //NSOperationQueue *queue = [NSOperationQueue mainQueue];  //主队列 主线程  //[queue addOperation:op];进行加入动作  //不用写[op start];便可执行
@@ -197,7 +198,7 @@
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
     //并发操作的最大值：你可以设定NSOperationQueue可以并发运行的最大操作数。NSOperationQueue会选择去运行任何数量的并发操作，但是不会超过最大值
-    queue.maxConcurrentOperationCount=10;
+    queue.maxConcurrentOperationCount = 10;
     //修改成它的默认值
     //queue.MaxConcurrentOperationCount = NSOperationQueueDefaultMaxConcurrentOperationCount;
     
@@ -253,17 +254,26 @@
 {
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
+    NSBlockOperation *op0 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"addDependency0当前线程%@", [NSThread  currentThread]);
+    }];
+    
+    
     NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
         NSLog(@"addDependency1当前线程%@", [NSThread  currentThread]);
     }];
+    
+
     NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
         NSLog(@"addDependency2当前线程%@", [NSThread  currentThread]);
     }];
     
-    [op1 addDependency:op2];    // 让op1 依赖于 op2，则先执行op2，在执行op1
+    [op0 addDependency:op1];    // 让op1 依赖于 op2，则先执行op2，在执行op1
+    [op0 addDependency:op2];
     
     [queue addOperation:op1];
     [queue addOperation:op2];
+    [queue addOperation:op0];
     
     
     //输出
@@ -273,103 +283,34 @@
 
 }
 
+#pragma mark - LMJNavUIBaseViewControllerDataSource
 
-
-#pragma mark 重写BaseViewController设置内容
-
-- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
+/** 导航条左边的按钮 */
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    return [UIColor RandomColor];
+    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
+    
+    return [UIImage imageNamed:@"NavgationBar_blue_back"];
 }
 
-- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    NSLog(@"%s", __func__);
-    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+
+
+- (void)setDes
 {
-    NSLog(@"%s", __func__);
-}
-
-- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%@", sender);
-}
-
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return [self changeTitle:@"NSOperation"];;
-}
-
-- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
-{
-[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-
-return [UIImage imageNamed:@"navigationButtonReturnClick"];
-}
-
-
-- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
-{
-    rightButton.backgroundColor = [UIColor RandomColor];
+    UILabel *label = [[UILabel alloc] init];
+    label.width = kScreenWidth;
+    self.tableView.tableFooterView = label;
+    label.numberOfLines = 0;
+    label.textColor = [UIColor blackColor];
     
-    return nil;
-}
-
-
-
-#pragma mark 自定义代码
-
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:[UIColor RandomColor] range:NSMakeRange(0, title.length)];
-    
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, title.length)];
-    
-    return title;
-}
-
-- (UITextView *)inputTextView
-{
-    if(_inputTextView == nil)
-    {
-        UITextView *textView = [[UITextView alloc] init];
-        
-        [self.view addSubview:textView];
-        
-        textView.userInteractionEnabled = YES;
-        textView.editable = NO;
-        textView.selectable = NO;
-        textView.scrollEnabled = YES;
-        
-        //        [textView addPlaceHolder:@"我是占位的"];
-        
-        [textView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.edges.mas_equalTo(UIEdgeInsetsMake(60, 0, 0, 0));
-            
-        }];
-        
-        textView.textColor = [UIColor RandomColor];
-        textView.font = AdaptedFontSize(16);
-        
-        _inputTextView = textView;
-        
-    }
-    return _inputTextView;
-}
-
-
-
-- (void)des
-{
-    
-    self.inputTextView.text = @"理论知识：\n\
+    label.text= @"理论知识：\n\
     NSOperation是苹果提供给我们的一套多线程解决方案。实际上NSOperation是基于GCD更高一层的封装，但是比GCD更简单易用、代码可读性也更高。\n\
     NSOperation需要配合NSOperationQueue来实现多线程。因为默认情况下，NSOperation单独使用时系统同步执行操作，并没有开辟新线程的能力，只有配合NSOperationQueue才能实现异步执行\n\
     \n\
@@ -399,6 +340,8 @@ return [UIImage imageNamed:@"navigationButtonReturnClick"];
     - (void)setSuspended:(BOOL)b; 可设置任务的暂停和恢复，YES代表暂停队列，NO代表恢复队列\n\
     - (BOOL)isSuspended; 判断暂停状态\n\
 ";
+    
+    [label sizeToFit];
 }
 
 
