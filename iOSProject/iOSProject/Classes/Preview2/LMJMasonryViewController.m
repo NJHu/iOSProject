@@ -34,6 +34,32 @@
     [self masonryUpdate];
 }
 
+/**
+ *  多个控件固定间隔的等间隔排列，变化的是控件的长度或者宽度值
+ *
+ *  @param axisType        轴线方向
+ *  @param fixedSpacing    间隔大小
+ *  @param leadSpacing     头部间隔
+ *  @param tailSpacing     尾部间隔
+ */
+//- (void)mas_distributeViewsAlongAxis:(MASAxisType)axisType
+//                    withFixedSpacing:(CGFloat)fixedSpacing l
+//eadSpacing:(CGFloat)leadSpacing
+//tailSpacing:(CGFloat)tailSpacing;
+
+/**
+ *  多个固定大小的控件的等间隔排列,变化的是间隔的空隙
+ *
+ *  @param axisType        轴线方向
+ *  @param fixedItemLength 每个控件的固定长度或者宽度值
+ *  @param leadSpacing     头部间隔
+ *  @param tailSpacing     尾部间隔
+ */
+//- (void)mas_distributeViewsAlongAxis:(MASAxisType)axisType
+//                 withFixedItemLength:(CGFloat)fixedItemLength
+//                         leadSpacing:(CGFloat)leadSpacing
+//                         tailSpacing:(CGFloat)tailSpacing;
+
 - (void)masonryArrayBtns
 {
     NSArray *strings = @[@"确认", @"取消", @"再考虑一下吧"];
