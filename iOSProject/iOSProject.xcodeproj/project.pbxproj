@@ -90,6 +90,7 @@
 		58926426201B622B007DA41E /* BSJSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926425201B622B007DA41E /* BSJSQLiteManager.m */; };
 		58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926428201B64D3007DA41E /* BSJTopicListDAL.m */; };
 		58926467202C54C2007DA41E /* LMJRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926466202C54C2007DA41E /* LMJRunLoopViewController.m */; };
+		5892646B202D6662007DA41E /* XLMJThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892646A202D6662007DA41E /* XLMJThread.m */; };
 		5892ACA11FF4EB4A00E868C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */; };
 		5892ACA71FF4EB4A00E868C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACA61FF4EB4A00E868C2 /* main.m */; };
 		5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACB11FF4EEB300E868C2 /* LMJAppDelegate.m */; };
@@ -535,6 +536,8 @@
 		58926428201B64D3007DA41E /* BSJTopicListDAL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSJTopicListDAL.m; sourceTree = "<group>"; };
 		58926465202C54C2007DA41E /* LMJRunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJRunLoopViewController.h; sourceTree = "<group>"; };
 		58926466202C54C2007DA41E /* LMJRunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJRunLoopViewController.m; sourceTree = "<group>"; };
+		58926469202D6662007DA41E /* XLMJThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLMJThread.h; sourceTree = "<group>"; };
+		5892646A202D6662007DA41E /* XLMJThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLMJThread.m; sourceTree = "<group>"; };
 		5892AC941FF4EB4A00E868C2 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5892ACA51FF4EB4A00E868C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1372,6 +1375,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		58926468202D6645007DA41E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				58926469202D6662007DA41E /* XLMJThread.h */,
+				5892646A202D6662007DA41E /* XLMJThread.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		5892AC8B1FF4EB4A00E868C2 = {
 			isa = PBXGroup;
 			children = (
@@ -2090,6 +2102,7 @@
 				58926466202C54C2007DA41E /* LMJRunLoopViewController.m */,
 				58DC843C1FFBD1290060DC03 /* LMJLockViewController.h */,
 				58DC843B1FFBD1280060DC03 /* LMJLockViewController.m */,
+				58926468202D6645007DA41E /* Other */,
 				58DC84051FFBC1770060DC03 /* Model */,
 				58DC84041FFBC1770060DC03 /* View */,
 			);
@@ -2795,6 +2808,7 @@
 				58651AB01FFE6D6F0087419D /* SINUser.m in Sources */,
 				5892AD721FF5113800E868C2 /* LMJMeViewController.m in Sources */,
 				58DC850A1FFC972C0060DC03 /* BSJRecommendUser.m in Sources */,
+				5892646B202D6662007DA41E /* XLMJThread.m in Sources */,
 				58DC85101FFC972C0060DC03 /* BSJRecommendCategory.m in Sources */,
 				58DC83D91FFB440E0060DC03 /* WPFDemoController.m in Sources */,
 				58DC85091FFC972C0060DC03 /* NJAVPlayerViewController.m in Sources */,

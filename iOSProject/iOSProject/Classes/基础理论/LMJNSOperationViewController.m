@@ -10,8 +10,6 @@
 
 @interface LMJNSOperationViewController ()
 
-/** <#digest#> */
-@property (weak, nonatomic) UITextView *inputTextView;
 
 @end
 
