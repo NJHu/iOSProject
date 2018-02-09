@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [self layoutLabels];
     
     self.view.backgroundColor = [UIColor grayColor];
@@ -172,7 +171,7 @@
 
 
 
-#pragma mark 重写BaseViewController设置内容
+#pragma mark 重写BaseViewController设置内容, 可以不用看
 
 //- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
 //{

@@ -33,15 +33,16 @@
         
         [weakself endHeaderFooterRefreshing];
         
+        
         if (!response.error && response.responseObject) {
             weakself.videos = [LMJXGMVideo mj_objectArrayWithKeyValuesArray:response.responseObject[@"videos"]];
         } else {
+            [weakself.tableView configBlankPage:LMJEasyBlankPageViewTypeNoData hasData:weakself.videos.count hasError:response.error reloadButtonBlock:^(id sender) {
+                [weakself.tableView.mj_header beginRefreshing];
+            }];
             [weakself.view makeToast:response.errorMsg];
+            return ;
         }
-        
-        [weakself.tableView configBlankPage:LMJEasyBlankPageViewTypeNoData hasData:weakself.videos.count hasError:response.error reloadButtonBlock:^(id sender) {
-            [weakself.tableView.mj_header beginRefreshing];
-        }];
         
         [weakself.tableView.mj_footer setState:MJRefreshStateNoMoreData];
         [weakself.tableView reloadData];

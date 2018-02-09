@@ -101,7 +101,7 @@
 
     item11.destVc = [LMJKeyboardHandleViewController class];
 
-    LMJWordArrowItem *item12 = [LMJWordArrowItem itemWithTitle:@"文件下载" subTitle: @"不重复下载服务器文件"];
+    LMJWordArrowItem *item12 = [LMJWordArrowItem itemWithTitle:@"文件下载" subTitle: @"不重复下载服务器未更新文件"];
 
     item12.destVc = [LMJDownLoadFileViewController class];
 

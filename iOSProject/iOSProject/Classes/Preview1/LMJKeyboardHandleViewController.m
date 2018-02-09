@@ -174,29 +174,7 @@ static const CGFloat topViewHeigt=100;
 
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
-//- (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController
-//{
-//    return YES;
-//}
 
-/**头部标题*/
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return [self changeTitle:@"键盘处理"];
-}
-
-/** 导航条左边的按钮 */
-- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-    [leftButton setTitle:@"< 返回" forState:UIControlStateNormal];
-    
-    leftButton.lmj_width = 60;
-    
-    [leftButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
-    
-    return nil;
-}
 /** 导航条右边的按钮 */
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
@@ -205,14 +183,27 @@ static const CGFloat topViewHeigt=100;
     
     rightButton.lmj_width = 100;
     
-    [rightButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
+    [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     return nil;
 }
 
 
+/** 右边的按钮的点击 */
+-(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [self.myTextField becomeFirstResponder];
+}
 
-#pragma mark - life
+#pragma mark - LMJNavUIBaseViewControllerDataSource
+
+/** 导航条左边的按钮 */
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
+    
+    return [UIImage imageNamed:@"NavgationBar_blue_back"];
+}
 
 #pragma mark - LMJNavUIBaseViewControllerDelegate
 /** 左边的按钮的点击 */
@@ -220,31 +211,6 @@ static const CGFloat topViewHeigt=100;
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
-/** 右边的按钮的点击 */
--(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    [self.myTextField becomeFirstResponder];
-}
-/** 中间如果是 label 就会有点击 */
--(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-
-
-#pragma mark 自定义代码
-
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:[UIColor RandomColor] range:NSMakeRange(0, title.length)];
-    
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, title.length)];
-    
-    return title;
-}
-
 
 
 

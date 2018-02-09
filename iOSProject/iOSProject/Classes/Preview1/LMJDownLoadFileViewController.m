@@ -26,77 +26,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.downBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.center.mas_equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(200, 44));
-    }];
-    
-    
-    [self.memoryFileBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.centerX.offset(0);
-        make.centerY.mas_equalTo(self.view.mas_centerY).offset(100);
-        make.size.mas_equalTo(CGSizeMake(200, 44));
-    }];
+    LMJWeakSelf(self);
+    self.addItem([LMJWordItem itemWithTitle:@"点击下载" subTitle:@"不会重复下载" itemOperation:^(NSIndexPath *indexPath) {
+        [weakself downloadFile];
+    }]);
 }
 
 
-- (UIButton *)downBtn
-{
-    if(_downBtn == nil)
-    {
-        LMJWeakSelf(self);
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 44) buttonTitle:@"下载文件点击" normalBGColor:[UIColor greenColor] selectBGColor:[UIColor lightGrayColor] normalColor:[UIColor redColor] selectColor:[UIColor whiteColor] buttonFont:[UIFont systemFontOfSize:17] cornerRadius:5 doneBlock:^(UIButton *button) {
-            
-            [weakself downloadFile];
-            
-        }];
-        
-        
-        [self.view addSubview:btn];
-        
-        _downBtn = btn;
-        
-    }
-    return _downBtn;
-}
 
-
-- (UIButton *)memoryFileBtn
-{
-    if(_memoryFileBtn == nil)
-    {
-        LMJWeakSelf(self);
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 44) buttonTitle:@"加载内存文件" normalBGColor:[UIColor greenColor] selectBGColor:[UIColor lightGrayColor] normalColor:[UIColor redColor] selectColor:[UIColor whiteColor] buttonFont:[UIFont systemFontOfSize:17] cornerRadius:5 doneBlock:^(UIButton *button) {
-
-            
-            CFTimeInterval start = CFAbsoluteTimeGetCurrent();
-            
-            NSString *path = @"/Users/huxupeng/Demo/area.json";
-            NSData *data = [NSData dataWithContentsOfFile:path];
-            
-            //        for (NSInteger i = 0; i < 1000; i++) {
-            
-            if (data.length) {
-                weakself.addressArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-            }
-            
-            
-            //        }
-            
-            NSLog(@"%f", (CFAbsoluteTimeGetCurrent() - start));
-            
-        }];
-        
-        
-        [self.view addSubview:btn];
-        
-        _memoryFileBtn = btn;
-        
-    }
-    return _memoryFileBtn;
-}
 
 - (void)downloadFile
 {
@@ -138,7 +75,6 @@
         return [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:[fileDownLoadPath lastPathComponent]]];
         
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-        
     
         [MBProgressHUD hideHUDForView:weakself.view animated:YES];
         NSLog(@"%@", filePath);
@@ -147,9 +83,11 @@
         
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         
+        [self.view makeToast:[NSString stringWithFormat:@"statuscode: %zd, \n200是下载成功, 304是不用下载", httpResponse.statusCode]];
+        
         NSString *lastModified = [httpResponse allHeaderFields][@"Last-Modified"];
         
-        if (lastModified) {
+        if (lastModified && !error) {
             [NSUserDefaults.standardUserDefaults setObject:lastModified forKey:@"Last-Modified"];
             
         }
@@ -164,112 +102,22 @@
 
 
 
+
 #pragma mark - LMJNavUIBaseViewControllerDataSource
-//- (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController
-//{
-//    return YES;
-//}
 
-//- (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
-//{
-//    return UIStatusBarStyleDefault;
-//}
-
-/**头部标题*/
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return [self changeTitle:self.navigationItem.title];
-}
-
-/** 背景图片 */
-//- (UIImage *)lmjNavigationBarBackgroundImage:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
-
-/** 背景色 */
-//- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
-
-/** 是否隐藏底部黑线 */
-//- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
-//{
-//    return NO;
-//}
-
-/** 导航条的高度 */
-//- (CGFloat)lmjNavigationHeight:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
-
-
-/** 导航条的左边的 view */
-//- (UIView *)lmjNavigationBarLeftView:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
-/** 导航条右边的 view */
-//- (UIView *)lmjNavigationBarRightView:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
-/** 导航条中间的 View */
-//- (UIView *)lmjNavigationBarTitleView:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
 /** 导航条左边的按钮 */
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
+    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
     
-    [leftButton setTitle:@"< 返回" forState:UIControlStateNormal];
-    
-    leftButton.lmj_width = 60;
-    
-    [leftButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
-    
-    return nil;
+    return [UIImage imageNamed:@"NavgationBar_blue_back"];
 }
-/** 导航条右边的按钮 */
-//- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
-//{
-//
-//}
-
-
 
 #pragma mark - LMJNavUIBaseViewControllerDelegate
 /** 左边的按钮的点击 */
 -(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-/** 右边的按钮的点击 */
--(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-/** 中间如果是 label 就会有点击 */
--(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-
-
-#pragma mark 自定义代码
-
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:[UIColor RandomColor] range:NSMakeRange(0, title.length)];
-    
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:18] range:NSMakeRange(0, title.length)];
-    
-    return title;
 }
 
 @end

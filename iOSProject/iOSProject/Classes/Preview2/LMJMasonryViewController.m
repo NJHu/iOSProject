@@ -84,7 +84,7 @@
     
     [btnM mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(80);
+        make.top.mas_equalTo(100);
         make.height.mas_equalTo(44);
         
     }];
@@ -93,50 +93,6 @@
 
 - (void)show:(UIButton *)btn
 {
-    if (btn.tag == 0) {
-        
-        
-        [UIAlertController mj_showAlertWithTitle:@"one button" message:@"content" appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-            
-            alertMaker.addActionDefaultTitle(@"default_btn");
-            
-        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-            NSLog(@"%zd, %@, %@", buttonIndex, action, alertSelf);
-        }];
-        
-    }else if (btn.tag == 1)
-    {
-        [UIAlertController mj_showAlertWithTitle:@"multiple btn" message:@"contentcontentcontentcontentcontentcontent" appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-            alertMaker.addActionDefaultTitle(@"default_btn").addActionCancelTitle(@"cancel_btn").addActionDestructiveTitle(@"Destructive_btn");
-        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-            NSLog(@"%zd, %@, %@", buttonIndex, action, alertSelf);
-        }];
-        
-    }else if (btn.tag == 2)
-    {
-        [UIAlertController mj_showAlertWithTitle:@"title" message:@"content" appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-            
-            [alertMaker addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-                NSLog(@"%@", textField);
-                textField.placeholder = @"placeholder";
-            }];
-            
-            [alertMaker addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-                NSLog(@"%@", textField);
-                textField.placeholder = @"placeholder";
-            }];
-            
-            alertMaker.addActionDestructiveTitle(@"textOf1");
-            alertMaker.addActionDestructiveTitle(@"textOf2");
-            
-        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-            if (buttonIndex == 0) {
-                NSLog(@"%@", [alertSelf.textFields.firstObject text]);
-            }else {
-                NSLog(@"%@", [alertSelf.textFields.lastObject text]);
-            }
-        }];
-    }
 }
 
 
@@ -162,7 +118,7 @@
     
     [myLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(130);
+        make.top.mas_equalTo(160);
         make.left.mas_equalTo(10);
     }];
     
@@ -197,10 +153,8 @@
     
     [myLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(160);
+        make.top.mas_equalTo(190);
         make.left.mas_equalTo(10);
-        
-        
         make.right.mas_lessThanOrEqualTo(-80).priorityHigh();
     }];
     
@@ -236,7 +190,7 @@
     
     [myLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(190);
+        make.top.mas_equalTo(220);
         make.left.mas_equalTo(10);
         
         
@@ -264,7 +218,7 @@
     [myView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.mas_equalTo(10);
-        make.top.mas_equalTo(220);
+        make.top.mas_equalTo(250);
         make.size.mas_equalTo(CGSizeMake(150, 100));
     }];
     
@@ -314,7 +268,7 @@
     
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(220);
+        make.top.mas_equalTo(250);
         make.left.mas_equalTo(170);
         make.right.mas_equalTo(self.view).offset(-10);
         make.bottom.offset(-100);
@@ -384,7 +338,7 @@
     [myView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.mas_equalTo(10);
-        make.bottom.offset(-20);
+        make.bottom.offset(-100);
         make.size.mas_equalTo(CGSizeMake(150, 200));
     }];
     

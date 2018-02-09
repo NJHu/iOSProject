@@ -33,6 +33,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    // 关键
     return self.groups[section].isOpened ? self.groups[section].teams.count : 0;
 }
 

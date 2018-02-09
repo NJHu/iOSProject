@@ -7,7 +7,7 @@
 //
 
 #import "LMJCalendarViewController.h"
-#import "YBEventCalendar.h"
+#import "CalendarReminderManager.h"
 
 @interface LMJCalendarViewController ()
 /** <#digest#> */
@@ -24,119 +24,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    LMJWeakSelf(self);
     
-    [self addViews];
-}
-
-- (void)addCalendar
-{
-    
-    
-    [YBEventCalendar createEventCalendarTitle:@"我在测试" location:@"北京" startDate:[[NSDate date] dateByAddingDays:1] endDate:[[NSDate date] dateByAddingDays:2] allDay:YES alarmArray:@[@"-86400", @"-43200", @"-21600", @"-3600"] completion:^(BOOL granted, NSError *error) {
- 
-        if (error) {
-            [self.view makeToast:error.localizedDescription];
-        }else {
-            [MBProgressHUD showSuccess:@"添加成功" ToView:self.view];
-        }
-    }];
-    
-}
-
-
-- (void)deleteCalendar
-{
-    
-    
-}
-
-- (void)addViews
-{
-    [self.addCalendarButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.addItem([LMJWordItem itemWithTitle:@"event: " subTitle:@"" itemOperation:nil])
+    .addItem([LMJWordItem itemWithTitle:@"增加日历事件" subTitle: nil itemOperation:^(NSIndexPath *indexPath) {
         
-        make.top.offset(100);
-        make.left.offset(20);
-        make.right.offset(-20);
-        make.height.mas_equalTo(50);
+//        [CalendarReminderManager addEventWithTitle:@"我是增加的" notes:@"" location:<#(NSString *)#> startDate:<#(NSDate *)#> endDate:<#(NSDate *)#> alarms:<#(NSArray<EKAlarm *> *)#> URL:<#(NSURL *)#> availability:<#(EKEventAvailability)#> successBlock:<#^(NSString *eventIdentifier)successBlock#> failBlock:<#^(NSError *error)failBlock#>];
         
-    }];
-    
-    [self.deleteCalendarButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"删除日历" subTitle: nil itemOperation:^(NSIndexPath *indexPath) {
         
-        make.top.mas_equalTo(self.addCalendarButton.mas_bottom).offset(30);
-        make.left.right.height.mas_equalTo(self.addCalendarButton);
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"查找" subTitle:nil itemOperation:^(NSIndexPath *indexPath) {
         
-    }];
-    
-
-    
-    [self.desLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.left.right.offset(0);
-        make.top.mas_equalTo(self.deleteCalendarButton.mas_bottom).offset(20);
-    }];
-    
-
-    
-}
-
-- (UIButton *)addCalendarButton
-{
-    if(_addCalendarButton == nil)
-    {
-        LMJWeakSelf(self);
-        UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
-        _addCalendarButton = btn;
-        [btn setTitle:@"增加日历事件" forState: UIControlStateNormal];
-        [btn setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
-        [btn setBackgroundColor:[UIColor RandomColor] forState:UIControlStateNormal];
         
-        [btn addActionHandler:^(NSInteger tag) {
-            
-            [weakself addCalendar];
-        }];
-        
-    }
-    return _addCalendarButton;
-}
-
-
-- (UIButton *)deleteCalendarButton
-{
-    if(_deleteCalendarButton == nil)
-    {
-        LMJWeakSelf(self);
-        UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
-        _deleteCalendarButton = btn;
-        [btn setTitle:@"删除日历事件" forState: UIControlStateNormal];
-        [btn setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
-        [btn setBackgroundColor:[UIColor RandomColor] forState:UIControlStateNormal];
-        
-        [btn addActionHandler:^(NSInteger tag) {
-            
-            [weakself  deleteCalendar];
-        }];
-    }
-    return _deleteCalendarButton;
-}
-
-- (UILabel *)desLabel
-{
-    if(_desLabel == nil)
-    {
-        UILabel *label = [UILabel new];
-        [self.view addSubview:label];
-        _desLabel = label;
-        
-        label.text = @"日历信息回县";
-        label.numberOfLines = 0;
-        label.backgroundColor = [UIColor RandomColor];
-        label.textColor = [UIColor whiteColor];
-        
-    }
-    return _desLabel;
+    }]);
 }
 
 

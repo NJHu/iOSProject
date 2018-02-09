@@ -91,6 +91,7 @@
 		58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926428201B64D3007DA41E /* BSJTopicListDAL.m */; };
 		58926467202C54C2007DA41E /* LMJRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926466202C54C2007DA41E /* LMJRunLoopViewController.m */; };
 		5892646B202D6662007DA41E /* XLMJThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892646A202D6662007DA41E /* XLMJThread.m */; };
+		58926476202DA70E007DA41E /* CalendarReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926474202DA70D007DA41E /* CalendarReminderManager.m */; };
 		5892ACA11FF4EB4A00E868C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */; };
 		5892ACA71FF4EB4A00E868C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACA61FF4EB4A00E868C2 /* main.m */; };
 		5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACB11FF4EEB300E868C2 /* LMJAppDelegate.m */; };
@@ -226,7 +227,6 @@
 		58DC816C1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC816B1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m */; };
 		58DC81721FFA29E00060DC03 /* LMJDragTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81711FFA29E00060DC03 /* LMJDragTableViewController.m */; };
 		58DC81781FFA2CF90060DC03 /* LMJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81761FFA2CF80060DC03 /* LMJCalendarViewController.m */; };
-		58DC817E1FFA2DC80060DC03 /* YBEventCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC817A1FFA2DC80060DC03 /* YBEventCalendar.m */; };
 		58DC81841FFA31200060DC03 /* LMJNavBarFadeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81821FFA311F0060DC03 /* LMJNavBarFadeViewController.m */; };
 		58DC81891FFA317B0060DC03 /* LMJExpandImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81871FFA317A0060DC03 /* LMJExpandImageView.m */; };
 		58DC818A1FFA317B0060DC03 /* LMJExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81881FFA317B0060DC03 /* LMJExpandHeader.m */; };
@@ -538,6 +538,8 @@
 		58926466202C54C2007DA41E /* LMJRunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJRunLoopViewController.m; sourceTree = "<group>"; };
 		58926469202D6662007DA41E /* XLMJThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLMJThread.h; sourceTree = "<group>"; };
 		5892646A202D6662007DA41E /* XLMJThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLMJThread.m; sourceTree = "<group>"; };
+		58926474202DA70D007DA41E /* CalendarReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarReminderManager.m; sourceTree = "<group>"; };
+		58926475202DA70D007DA41E /* CalendarReminderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarReminderManager.h; sourceTree = "<group>"; };
 		5892AC941FF4EB4A00E868C2 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5892ACA51FF4EB4A00E868C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -751,8 +753,6 @@
 		58DC81711FFA29E00060DC03 /* LMJDragTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDragTableViewController.m; sourceTree = "<group>"; };
 		58DC81761FFA2CF80060DC03 /* LMJCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCalendarViewController.m; sourceTree = "<group>"; };
 		58DC81771FFA2CF90060DC03 /* LMJCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCalendarViewController.h; sourceTree = "<group>"; };
-		58DC817A1FFA2DC80060DC03 /* YBEventCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBEventCalendar.m; sourceTree = "<group>"; };
-		58DC817C1FFA2DC80060DC03 /* YBEventCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBEventCalendar.h; sourceTree = "<group>"; };
 		58DC81821FFA311F0060DC03 /* LMJNavBarFadeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNavBarFadeViewController.m; sourceTree = "<group>"; };
 		58DC81831FFA31200060DC03 /* LMJNavBarFadeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNavBarFadeViewController.h; sourceTree = "<group>"; };
 		58DC81851FFA317A0060DC03 /* LMJExpandHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJExpandHeader.h; sourceTree = "<group>"; };
@@ -1534,7 +1534,8 @@
 		5892AD611FF5088D00E868C2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				58DC81791FFA2DC80060DC03 /* YBCalendarManager */,
+				58926475202DA70D007DA41E /* CalendarReminderManager.h */,
+				58926474202DA70D007DA41E /* CalendarReminderManager.m */,
 				5892ADA41FF600F700E868C2 /* YYFPSLabel(刷新率) */,
 				5892AD9A1FF5F04700E868C2 /* 广告页 */,
 				5892AD8A1FF5E2C000E868C2 /* 欢迎页 */,
@@ -1879,15 +1880,6 @@
 				58DC81871FFA317A0060DC03 /* LMJExpandImageView.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		58DC81791FFA2DC80060DC03 /* YBCalendarManager */ = {
-			isa = PBXGroup;
-			children = (
-				58DC817C1FFA2DC80060DC03 /* YBEventCalendar.h */,
-				58DC817A1FFA2DC80060DC03 /* YBEventCalendar.m */,
-			);
-			path = YBCalendarManager;
 			sourceTree = "<group>";
 		};
 		58DC82A81FFB40A50060DC03 /* 物理仿真 */ = {
@@ -2626,7 +2618,6 @@
 				5892AD5F1FF5079C00E868C2 /* LMJRefreshCollectionViewController.m in Sources */,
 				58DC851A1FFC972C0060DC03 /* BSJRecommendUserCell.m in Sources */,
 				58DC838D1FFB43460060DC03 /* LMJCABasicAnimationViewController.m in Sources */,
-				58DC817E1FFA2DC80060DC03 /* YBEventCalendar.m in Sources */,
 				58DC81841FFA31200060DC03 /* LMJNavBarFadeViewController.m in Sources */,
 				58DC84FE1FFC972C0060DC03 /* BSJLoginRegisterViewController.m in Sources */,
 				584038491FF7F3E5002A0566 /* LMJBaseResponse.m in Sources */,
@@ -2635,6 +2626,7 @@
 				58DC85011FFC972C0060DC03 /* BSJTopicViewController.m in Sources */,
 				5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */,
 				58DC83C51FFB43E30060DC03 /* LMJDrawBoardViewController.m in Sources */,
+				58926476202DA70E007DA41E /* CalendarReminderManager.m in Sources */,
 				584038381FF7E2BE002A0566 /* LMJVerticalLayoutViewController.m in Sources */,
 				58DC84541FFBDDC40060DC03 /* LMJChildBlockViewController.m in Sources */,
 				584038681FF88594002A0566 /* LMJUpLoadImageCell.m in Sources */,

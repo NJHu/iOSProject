@@ -329,8 +329,6 @@
 
 
 
-
-
 #pragma mark - BMKMapViewDelegate
 /**
  *根据overlay生成对应的View
@@ -464,12 +462,7 @@
             }
                 break;
         }
-        
-        
-        
-        
     }
-    
     
     
     return pinAnnotationView;
@@ -504,7 +497,6 @@
     if (iError) {
         [MBProgressHUD showError:@"返回网络错误" ToView:self.view];
     }
-    
 }
 
 /**
@@ -513,7 +505,6 @@
  */
 - (void)onGetPermissionState:(int)iError
 {
-    
     if (iError) {
         
         [MBProgressHUD showError:@"返回授权验证错误" ToView:self.view];
@@ -527,8 +518,6 @@
     if(_mapManager == nil)
     {
         _mapManager = [[BMKMapManager alloc] init];
-        
-        
     }
     return _mapManager;
 }

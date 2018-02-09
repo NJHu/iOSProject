@@ -13,108 +13,70 @@
 /** <#digest#> */
 @property (weak, nonatomic) UIImageView *myImageView;
 
-/** <#digest#> */
-@property (weak, nonatomic) UILabel *contentLabel;
 @end
 
 @implementation LMJQRCodeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    LMJWeakSelf(self);
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
     
-    
+    UIImageView *imageV = [[UIImageView alloc] init];
+    imageV.lmj_size = CGSizeMake(150, 150);
+    imageV.lmj_centerX = 100;
+    imageV.lmj_centerY = 100;
+    [self.tableView.tableHeaderView addSubview:imageV];
+    _myImageView = imageV;
+    self.addItem([LMJWordItem itemWithTitle:@"文字: " subTitle:@"https://www.github.com/njhu" itemOperation:nil]);
     [HMScannerController cardImageWithCardName:@"https://www.github.com/njhu" avatar:nil scale:0.2 completion:^(UIImage *image) {
-        
-        self.myImageView.image = image;
-        
+        weakself.myImageView.image = image;
     }];
+
     
-}
-
-
-
-
-#pragma mark - settter
-- (void)展示二维码控制器
-{
-    HMScannerController *scanner = [HMScannerController scannerWithCardName:@"https://www.github.com/njhu" avatar:nil completion:^(NSString *stringValue) {
+    self.addItem([LMJWordItem itemWithTitle:@"根据文字生成二维码" subTitle:@"" itemOperation:^(NSIndexPath *indexPath) {
         
-        self.contentLabel.text = stringValue;
+        [UIAlertController mj_showAlertWithTitle:@"请输入文字" message: nil appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+            
+            [alertMaker addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.placeholder = @"请输入文字";
+            }];
+            
+            alertMaker.addActionDefaultTitle(@"确认");
+            
+        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+            
+            if (alertSelf.textFields.firstObject.text.length) {
+                
+                weakself.sections.firstObject.items.firstObject.subTitle = alertSelf.textFields.firstObject.text;
+                [HMScannerController cardImageWithCardName:alertSelf.textFields.firstObject.text avatar:nil scale:0.2 completion:^(UIImage *image) {
+                    weakself.myImageView.image = image;
+                }];
+                
+                [weakself.tableView reloadRow:0 inSection:0 withRowAnimation:0];
+            }
+            
+        }];
         
-    }];
-    
-    [scanner setTitleColor:[UIColor whiteColor] tintColor:[UIColor greenColor]];
-    
-    [self showDetailViewController:scanner sender:nil];
-    
-}
-
-
-
-#pragma mark - getter
-
-- (UIImageView *)myImageView
-{
-    if(_myImageView == nil)
-    {
+    }]).addItem([LMJWordArrowItem itemWithTitle:@"二维码扫描" subTitle: nil itemOperation:^(NSIndexPath *indexPath) {
         
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        [self.view addSubview:imageView];
-        _myImageView = imageView;
-        
-        
-        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        HMScannerController *scanner = [HMScannerController scannerWithCardName:@"https://www.github.com/njhu" avatar:nil completion:^(NSString *stringValue) {
+            
+            weakself.sections.firstObject.items.firstObject.subTitle = stringValue;
            
-            make.left.offset(100);
-            make.right.offset(-100);
-            make.top.offset(100);
-            
-            make.height.equalTo(imageView.mas_width).multipliedBy(1);
+            [weakself.tableView reloadRow:0 inSection:0 withRowAnimation:0];
             
         }];
         
+        [scanner setTitleColor:[UIColor whiteColor] tintColor:[UIColor greenColor]];
         
-    }
-    return _myImageView;
+        [weakself showDetailViewController:scanner sender:nil];
+        
+    }]);
 }
 
 
-- (UILabel *)contentLabel
-{
-    if(_contentLabel == nil)
-    {
-        UILabel *label = [[UILabel alloc] init];
-        
-        [self.view addSubview:label];
-        
-        _contentLabel = label;
-        
-        label.numberOfLines = 0;
-        
-        label.textColor = [UIColor blackColor];
-        
-        
-        [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.right.equalTo(self.myImageView);
-            make.top.equalTo(self.myImageView.mas_bottom).offset(20);
-            
-        }];
-    }
-    return _contentLabel;
-}
 
-#pragma mark - LMJNavUIBaseViewControllerDataSource
-
-
-- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
-{
-    [rightButton setTitle:@"扫一扫" forState: UIControlStateNormal];
-    
-    [rightButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    
-    return nil;
-}
 
 /** 导航条左边的按钮 */
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
@@ -132,9 +94,5 @@
 }
 
 
-- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    [self 展示二维码控制器];
-}
 
 @end
