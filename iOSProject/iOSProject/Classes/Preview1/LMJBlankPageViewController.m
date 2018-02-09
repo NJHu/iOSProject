@@ -53,19 +53,6 @@
 
 
 #pragma mark 重写BaseViewController设置内容
-
-- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
-{
-    return [UIColor whiteColor];
-}
-
-- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     NSLog(@"%s", __func__);
@@ -78,25 +65,18 @@
     }];
 }
 
-- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%@", sender);
-}
-
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return [self changeTitle:@"空白页展示"];;
-}
-
-
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
     [leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
     
     return [UIImage imageNamed:@"navigationButtonReturnClick"];
 }
-
-
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    NSLog(@"%s", __func__);
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
     
@@ -111,20 +91,6 @@
     return nil;
 }
 
-
-
-#pragma mark 自定义代码
-
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:[UIColor RandomColor] range:NSMakeRange(0, title.length)];
-    
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, title.length)];
-    
-    return title;
-}
 
 
 @end

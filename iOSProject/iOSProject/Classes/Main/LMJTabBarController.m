@@ -59,22 +59,22 @@
                                                  };
     
     NSDictionary *secondTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"功能",
+                                                 CYLTabBarItemTitle : @"预演",
                                                  CYLTabBarItemImage : @"tabBar_friendTrends_icon",
                                                  CYLTabBarItemSelectedImage : @"tabBar_friendTrends_click_icon",
                                                  };
     NSDictionary *thirdTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"其他",
+                                                 CYLTabBarItemTitle : @"实例",
                                                  CYLTabBarItemImage : @"tabBar_new_icon",
                                                  CYLTabBarItemSelectedImage : @"tabBar_new_click_icon",
                                                  };
     NSDictionary *fourthTabBarItemsAttributes = @{
-                                                  CYLTabBarItemTitle : @"分享登录",
+                                                  CYLTabBarItemTitle : @"分享",
                                                   CYLTabBarItemImage : @"tabBar_me_icon",
                                                   CYLTabBarItemSelectedImage : @"tabBar_me_click_icon"
                                                   };
     NSDictionary *fifthTabBarItemsAttributes = @{
-                                                  CYLTabBarItemTitle : @"更多案例",
+                                                  CYLTabBarItemTitle : @"更多",
                                                   CYLTabBarItemImage : @"tabbar_discover",
                                                   CYLTabBarItemSelectedImage : @"tabbar_discover_highlighted"
                                                   };

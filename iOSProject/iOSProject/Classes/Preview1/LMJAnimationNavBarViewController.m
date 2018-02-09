@@ -42,31 +42,31 @@
         
         if (contentOffsetY == 0) {
             
-            [self changeNavigationBarTranslationY:0];
-            [self changeNavgationBarBackgroundColor:[UIColor clearColor]];
-            [self changeNavigationBarHeight:[self lmjNavigationHeight:nil]];
+            self.lmj_navgationBar.transform = CGAffineTransformMakeTranslation(0, 0);
+            self.lmj_navgationBar.backgroundColor = [UIColor clearColor];
+            self.lmj_navgationBar.lmj_height = [self lmjNavigationHeight:nil];
             
         }else if (contentOffsetY < 0)
         {
-            [self changeNavigationBarTranslationY:-[self lmjNavigationHeight:nil]];
+            self.lmj_navgationBar.transform = CGAffineTransformMakeTranslation(0, -[self lmjNavigationHeight:nil]);
         }else
         {
-            [self changeNavigationBarTranslationY:0];
+            self.lmj_navgationBar.transform = CGAffineTransformMakeTranslation(0, 0);
             
             UIColor *redColor = [self lmjNavigationBackgroundColor:nil];
             
             redColor = [redColor colorWithAlphaComponent:(contentOffsetY/ (([self lmjNavigationHeight:nil] + CGRectGetHeight([UIApplication sharedApplication].statusBarFrame)) * 2.0 * 0.63))];
             
-            [self changeNavigationBarHeight:[self lmjNavigationHeight:nil]];
+            self.lmj_navgationBar.lmj_height = [self lmjNavigationHeight:nil];
             
-            [self changeNavgationBarBackgroundColor:redColor];
+            self.lmj_navgationBar.backgroundColor = redColor;
         }
     }
     
     
     if (!_isColorChange) {
         
-        [self changeNavgationBarBackgroundColor:[self lmjNavigationBackgroundColor:nil]];
+        self.lmj_navgationBar.backgroundColor = [self lmjNavigationBackgroundColor:self.lmj_navgationBar];
         
         CGFloat contentOffsetY = self.tableView.contentOffset.y + self.tableView.contentInset.top;
         
@@ -80,7 +80,7 @@
             scale = 1;
         }
         
-        [self changeNavigationBarHeight:[self lmjNavigationHeight:nil] * scale];
+        self.lmj_navgationBar.lmj_height = [self lmjNavigationHeight:self.lmj_navgationBar] * scale;
         
     }
     

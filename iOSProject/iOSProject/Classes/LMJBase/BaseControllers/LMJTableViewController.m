@@ -20,12 +20,7 @@
     
     [self setupBaseTableViewUI];
     
-    
 }
-
-
-
-
 
 - (void)setupBaseTableViewUI
 {

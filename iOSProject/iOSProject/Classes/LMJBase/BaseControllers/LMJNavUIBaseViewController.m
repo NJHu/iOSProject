@@ -28,7 +28,6 @@
 {
     [super viewWillAppear:animated];
     
-    
 }
 
 - (void)viewWillLayoutSubviews
@@ -149,13 +148,13 @@
 
 #pragma mark 自定义代码
 
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
+- (NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 {
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
     
     [title addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, title.length)];
     
-    [title addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:NSMakeRange(0, title.length)];
+    [title addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:17] range:NSMakeRange(0, title.length)];
     
     return title;
 }
@@ -180,15 +179,6 @@
 
 
 
--(void)changeNavigationBarTranslationY:(CGFloat)translationY
-{
-    self.lmj_navgationBar.transform = CGAffineTransformMakeTranslation(0, translationY);
-}
-
--(void)changeNavgationTitle:(NSMutableAttributedString *)title
-{
-    self.lmj_navgationBar.title = title;
-}
 
 - (void)setTitle:(NSString *)title
 {
@@ -197,15 +187,7 @@
     self.lmj_navgationBar.title = [self changeTitle:title];
 }
 
--(void)changeNavigationBarHeight:(CGFloat)height
-{
-    self.lmj_navgationBar.lmj_height = height;
-}
 
--(void)changeNavgationBarBackgroundColor:(UIColor *)backgroundColor
-{
-    self.lmj_navgationBar.backgroundColor = backgroundColor;
-}
 
 
 @end

@@ -66,34 +66,31 @@
     
     if (contentOffset.y <= kNavBarHeight) {
         
-        [self changeNavgationTitle:[self changeTitle:@"我的" color:[UIColor redColor]]];
+        self.lmj_navgationBar.title = [self changeTitle:@"我的" color:[UIColor redColor]];
         
         leftBtn.selected = NO;
         rightBtn.selected = NO;
         
-        [self changeNavgationBarBackgroundColor:[UIColor clearColor]];
+        self.lmj_navgationBar.backgroundColor = [UIColor clearColor];
         
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
         
     }else if (contentOffset.y > kNavBarHeight && contentOffset.y < 0)
     {
-        [self changeNavgationTitle:[self changeTitle:@"我的" color:[UIColor redColor]]];
-        
+        self.lmj_navgationBar.title = [self changeTitle:@"我的" color:[UIColor redColor]];
         leftBtn.selected = NO;
         rightBtn.selected = NO;
         
-        [self changeNavgationBarBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:(1 - contentOffset.y / kNavBarHeight)]];
+        self.lmj_navgationBar.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:(1 - contentOffset.y / kNavBarHeight)];
         
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
         
     }else if (contentOffset.y >= 0)
     {
-        [self changeNavgationTitle:[self changeTitle:@"我的" color:[UIColor greenColor]]];
-        
+        self.lmj_navgationBar.title = [self changeTitle:@"我的" color:[UIColor greenColor]];
         leftBtn.selected = YES;
         rightBtn.selected = YES;
-        
-        [self changeNavgationBarBackgroundColor:[UIColor whiteColor]];
+        self.lmj_navgationBar.backgroundColor = [UIColor whiteColor];
         
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     }

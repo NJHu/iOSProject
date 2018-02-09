@@ -21,45 +21,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor RandomColor];
     
-    
-    [self.pushBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.center.equalTo(self.view).centerOffset(CGPointMake(0, -100));
-        make.height.mas_equalTo(100);
-        
-    }];
-    
+    LMJWeakSelf(self);
     [self.view makeToast:@"侧滑返回" duration:4 position:CSToastPositionCenter];
+    
+    [self.sections addObject:[LMJItemSection sectionWithItems:@[[LMJWordItem itemWithTitle:@"点击跳转到一个不能全局返回的控制器" subTitle:nil itemOperation:^(NSIndexPath *indexPath) {
+        
+        LMJWebViewController *webVc = [[LMJWebViewController alloc] init];
+        webVc.gotoURL = @"https://www.github.com/njhu";
+        
+        [weakself.navigationController pushViewController:webVc animated:YES];
+        
+    }]] andHeaderTitle:nil footerTitle:nil]];
 }
 
+// 隐藏导航条
 - (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController
 {
     return NO;
 }
 
-- (UIButton *)pushBtn
-{
-    if(_pushBtn == nil)
-    {
-        LMJWeakSelf(self);
-        UIButton *btn = [UIButton initWithFrame:CGRectZero buttonTitle:@"点击跳转到一个不能全局返回的控制器" normalBGColor:[UIColor RandomColor] selectBGColor:[UIColor RandomColor] normalColor:[UIColor RandomColor] selectColor:[UIColor RandomColor] buttonFont:AdaptedFontSize(15) cornerRadius:5 doneBlock:^(UIButton *button) {
-            
-            LMJWebViewController *webVc = [[LMJWebViewController alloc] init];
-            webVc.gotoURL = @"https://www.baidu.com";
-            
-            [weakself.navigationController pushViewController:webVc animated:YES];
-            
-        }];
-        
-        [self.view addSubview:btn];
-        [btn sizeToFit];
-        
-        _pushBtn = btn;
-        
-    }
-    return _pushBtn;
-}
 
 @end

@@ -18,6 +18,12 @@
     return item;
 }
 
++ (instancetype)itemWithTitle:(NSString *)title subTitle:(NSString *)subTitle itemOperation:(void(^)(NSIndexPath *indexPath))itemOperation {
+    LMJWordItem *item = [self itemWithTitle:title subTitle:subTitle];
+    item.itemOperation = itemOperation;
+    return item;
+}
+
 - (instancetype)init
 {
     if (self = [super init]) {

@@ -1406,6 +1406,8 @@
 			isa = PBXGroup;
 			children = (
 				584037FE1FF61CF8002A0566 /* iOSProject.entitlements */,
+				5892ACA51FF4EB4A00E868C2 /* Info.plist */,
+				5892ACA61FF4EB4A00E868C2 /* main.m */,
 				5892AD6A1FF5096500E868C2 /* LMJiOSProject.pch */,
 				58A17C572007335400B350AB /* LMJConst.h */,
 				58A17C582007335400B350AB /* LMJConst.m */,
@@ -1419,8 +1421,6 @@
 				5892ACB41FF4EF4400E868C2 /* QQMusic.xcassets */,
 				5892ACB51FF4EF4400E868C2 /* Sina.xcassets */,
 				5892ACB61FF4EF4500E868C2 /* WXIM.xcassets */,
-				5892ACA61FF4EB4A00E868C2 /* main.m */,
-				5892ACA51FF4EB4A00E868C2 /* Info.plist */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";

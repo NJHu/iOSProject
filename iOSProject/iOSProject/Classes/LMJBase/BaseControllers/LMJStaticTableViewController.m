@@ -107,9 +107,22 @@ const UIEdgeInsets tableViewDefaultLayoutMargins = {8, 8, 8, 8};
     return _sections;
 }
 
+- (instancetype (^)(LMJWordItem *))addItem {
+    
+    LMJWeakSelf(self);
+    if (!self.sections.firstObject) {
+        [self.sections addObject:[LMJItemSection sectionWithItems:@[] andHeaderTitle:nil footerTitle:nil]];
+    }
+     return  ^(LMJWordItem *item) {
+         [weakself.sections.firstObject.items addObject:item];
+         return weakself;
+    };
+}
+
 - (instancetype)init
 {
     return [super initWithStyle:UITableViewStyleGrouped];
 }
+
 
 @end

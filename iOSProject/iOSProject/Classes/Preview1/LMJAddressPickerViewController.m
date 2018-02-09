@@ -24,64 +24,58 @@
     [super viewDidLoad];
     
     
-    [self selectBtn];
-    
-    [self chooseCityCountry];
-}
-
-
-- (void)chooseCityCountry
-{
-    [[MOFSPickerManager shareManger] showMOFSAddressPickerWithTitle:nil cancelTitle:@"取消" commitTitle:@"完成" commitBlock:^(NSString *address, NSString *zipcode) {
+    NSArray *array = @[[LMJWordItem itemWithTitle:@"选择地址" subTitle:@"" itemOperation:^(NSIndexPath *indexPath) {
         
-    } cancelBlock:^{
-        
-    }];
-    
-//    [[MOFSPickerManager shareManger] searchAddressByZipcode:@"450000-450900-450921" block:^(NSString *address) {
-//
-//        NSLog(@"%@",address);
-//
-//    }];
-    
-//    [[MOFSPickerManager shareManger] searchZipCodeByAddress:@"河北省-石家庄市-长安区" block:^(NSString *zipcode) {
-//
-//        NSLog(@"%@",zipcode);
-//
-//    }];
-}
-
-- (UIButton *)selectBtn
-{
-    if(_selectBtn == nil)
-    {
-        LMJWeakSelf(self);
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setTitle:@"选择地址" forState: UIControlStateNormal];
-        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [btn setBackgroundColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        [btn addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
+        [[MOFSPickerManager shareManger] showMOFSAddressPickerWithTitle:nil cancelTitle:@"取消" commitTitle:@"完成" commitBlock:^(NSString *address, NSString *zipcode) {
             
-            [weakself chooseCityCountry];
-        }];
-        
-        
-        [self.view addSubview:btn];
-        
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            [UIAlertController mj_showAlertWithTitle:address message:zipcode appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+                
+                alertMaker.addActionDefaultTitle(@"确认");
+                
+            } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+                
+            }];
             
-            make.top.offset(100);
-            make.height.mas_equalTo(AdaptedWidth(44));
-            make.left.right.offset(0);
+        } cancelBlock:^{
             
         }];
         
-        _selectBtn = btn;
-    }
-    return _selectBtn;
+    }], [LMJWordItem itemWithTitle:@"根据编号选择地址" subTitle:@"450000-450900-450921" itemOperation:^(NSIndexPath *indexPath) {
+        
+        [[MOFSPickerManager shareManger] searchAddressByZipcode:@"450000-450900-450921" block:^(NSString *address) {
+            
+            [UIAlertController mj_showAlertWithTitle:@"450000-450900-450921" message:address appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+                
+                alertMaker.addActionDefaultTitle(@"确认");
+                
+            } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+                
+            }];
+            
+            NSLog(@"%@",address);
+            
+        }];
+        
+    }], [LMJWordItem itemWithTitle:@"根据地址获得编号" subTitle:@"河北省-石家庄市-长安区" itemOperation:^(NSIndexPath *indexPath) {
+        
+            [[MOFSPickerManager shareManger] searchZipCodeByAddress:@"河北省-石家庄市-长安区" block:^(NSString *zipcode) {
+        
+                NSLog(@"%@",zipcode);
+                
+                [UIAlertController mj_showAlertWithTitle:@"河北省-石家庄市-长安区" message:zipcode appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+                    
+                    alertMaker.addActionDefaultTitle(@"确认");
+                    
+                } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+                    
+                }];
+        
+            }];
+        
+    }]];
+    
+    [self.sections addObject:[LMJItemSection sectionWithItems:array andHeaderTitle:nil footerTitle:nil]];
 }
-
 
 
 

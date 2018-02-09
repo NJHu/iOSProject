@@ -379,7 +379,7 @@
 //    // 歌手名称
 //    self.singerNameLabel.text = musicMessageModel.musicM.singer;
     
-    [self changeNavgationTitle:[self changeTitle:[musicMessageModel.musicM.name stringByAppendingFormat:@"\n%@", musicMessageModel.musicM.singer]]];
+    self.lmj_navgationBar.title = [self changeTitle:[musicMessageModel.musicM.name stringByAppendingFormat:@"\n%@", musicMessageModel.musicM.singer]];
     
     // 总时长
     self.totalTimeLabel.text = musicMessageModel.totalTimeFormat;

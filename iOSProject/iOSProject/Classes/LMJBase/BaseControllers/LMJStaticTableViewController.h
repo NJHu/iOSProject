@@ -23,6 +23,8 @@
 // 自定义某一行cell的时候调用super, 返回为空
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath NS_REQUIRES_SUPER;
 
+- (instancetype(^)(LMJWordItem *item))addItem;
+
 @end
 
 
