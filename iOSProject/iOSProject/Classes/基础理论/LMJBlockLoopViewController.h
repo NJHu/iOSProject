@@ -6,8 +6,8 @@
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import "LMJBaseViewController.h"
+#import "LMJStaticTableViewController.h"
 
-@interface LMJBlockLoopViewController : LMJBaseViewController
+@interface LMJBlockLoopViewController : LMJStaticTableViewController
 
 @end

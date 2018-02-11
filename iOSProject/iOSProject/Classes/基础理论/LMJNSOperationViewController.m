@@ -53,6 +53,7 @@
     
     
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5] andHeaderTitle:@"" footerTitle:nil];
+    [section0.items makeObjectsPerformSelector:@selector(setTitleFont:) withObject:[UIFont systemFontOfSize:12]];
     
     [self.sections addObject:section0];
     

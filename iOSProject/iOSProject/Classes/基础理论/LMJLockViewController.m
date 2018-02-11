@@ -17,25 +17,56 @@
 // 安全
 @property (strong, atomic) NSLock *mylock;
 
+/** <#digest#> */
+@property (nonatomic, assign) NSInteger action;
 
-
+/** <#digest#> */
+@property (nonatomic, strong) NSMutableString *printStr;
 @end
 
 @implementation LMJLockViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if(!self.myMutableList)
-    {
-        self.myMutableList = [@[@"图片1",@"图片2",@"图片3",@"图片4",@"图片5",@"图片6",@"图片7",@"图片8",@"图片9"] mutableCopy];
-    }
-    
+    LMJWeakSelf(self);
     //初始化锁对象
     self.mylock = [[NSLock alloc]init];
     
+
     
-    [self addArrayThtead];
+    self.addItem([LMJWordItem itemWithTitle:@"第一种情况" subTitle:@"空" itemOperation:^(NSIndexPath *indexPath) {
+        [weakself start:indexPath];
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"第二种情况" subTitle:@"NSLock" itemOperation:^(NSIndexPath *indexPath) {
+        [weakself start:indexPath];
+    }])
+    
+    .addItem([LMJWordItem itemWithTitle:@"第三种情况" subTitle:@"@synchronized" itemOperation:^(NSIndexPath *indexPath) {
+        [weakself start:indexPath];
+    }]);
+    
+    
+}
+
+- (void)start:(NSIndexPath *)indexPath
+{
+    LMJWeakSelf(self);
+    weakself.myMutableList = [NSMutableArray array];
+    for (NSInteger i = 0; i < 20; i++) {
+        [weakself.myMutableList addObject:[NSString stringWithFormat:@"图片%zd", i+1]];
+    }
+    weakself.printStr = [NSMutableString string];
+    weakself.action = indexPath.row;
+    [weakself addArrayThtead];
+    
+    [MBProgressHUD showLoadToView:self.view];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUDForView:self.view];
+        [UIAlertController mj_showActionSheetWithTitle:@"打印" message:weakself.printStr appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+            alertMaker.addActionDefaultTitle(@"知道了");
+        } actionsBlock:nil];
+    });
+    
 }
 
 - (void)addArrayThtead
@@ -46,14 +77,13 @@
     
     [self.myThreadList removeAllObjects];
     
-    for(int i=0; i<10;i++)
+    for(int i = 0; i < 20; i++)
     {
         NSThread *thread=[[NSThread alloc]initWithTarget:self selector:@selector(loadAction:) object:[NSNumber numberWithInt:i]];
         thread.name=[NSString stringWithFormat:@"myThread%i",i];
         
         [self.myThreadList addObject:thread];
     }
-    
     
     for (int i=0; i<self.myThreadList.count; i++) {
         NSThread *thread=self.myThreadList[i];
@@ -67,44 +97,52 @@
     NSThread *thread = [NSThread currentThread];
     NSLog(@"loadAction是在线程%@中执行",thread.name);
     
-    //结合下面的cancel运用 进行强制退出线程的操作
-    if ([[NSThread currentThread] isCancelled]) {
-        NSLog(@"当前thread-exit被exit动作了");
-        [NSThread exit];
-    }
-    
-    //第一种情况，第二种情况：
-//        NSString *name;
-//        if (self.myMutableList.count>0) {
-//            name=[self.myMutableList lastObject];
-//            [self.myMutableList removeObject:name];
-//        }
-    
-    //第三种情况
-//        NSString *name;
-//
-//        //加锁
-//        [_mylock lock];
-//        if (self.myMutableList.count>0) {
-//            name=[self.myMutableList lastObject];
-//            [self.myMutableList removeObject:name];
-//        }
-//        [_mylock unlock];
-    
-    //    第四种情况
-    //线程同步
-    NSString *name;
-    @synchronized(self){
+    NSMutableString *name;
+    if (self.action == 0) {
+        //第一种情况
         if (self.myMutableList.count>0) {
-            name=[self.myMutableList lastObject];
-            [self.myMutableList removeObject:name];
+            name=[[self.myMutableList lastObject] mutableCopy];
+            
+            [self.myMutableList removeObject:[self.myMutableList lastObject]];
         }
+    }else if (self.action == 1) {
+        //    第二种情况
+        //加锁
+        [_mylock lock];
+        if (self.myMutableList.count>0) {
+            name=[[self.myMutableList lastObject] mutableCopy];
+            
+            [self.myMutableList removeObject:[self.myMutableList lastObject]];
+        }
+        [_mylock unlock];
+        
+    }else if (self.action == 2) {
+        //  第三种情况
+        //线程同步
+        @synchronized(self){
+            if (self.myMutableList.count>0) {
+                name = [[self.myMutableList lastObject] mutableCopy];
+                
+                [self.myMutableList removeObject:[self.myMutableList lastObject]];
+            }
+        }
+        
     }
-    
+
     NSLog(@"当前要加载的图片名称%@",name);
+    [self.printStr appendFormat:@"当前要加载的图片名称%@\n",name];
     
     //回主线程去执行  有些UI相应 必须在主线程中更新
     [self performSelectorOnMainThread:@selector(updateImage) withObject:nil waitUntilDone:YES];
+    
+    //结合下面的cancel运用 进行强制退出线程的操作
+    if (![thread isCancelled]) {
+        [thread cancel];
+        NSLog(@"当前thread-exit被exit动作了");
+        [NSThread exit];
+    }else {
+        [NSThread exit];
+    }
 }
 
 -(void)updateImage
@@ -127,72 +165,29 @@
         NSThread *thread=self.myThreadList[i];
         if (![thread isCancelled]) {
             NSLog(@"当前thread-exit线程被cancel");
-            [thread cancel];
             //cancel 只是一个标识 最下退出强制终止线程的操作是exit 如果单写cancel 线程还是会继续执行
+            [thread cancel];
         }}
 }
 
 
-#pragma mark 重写BaseViewController设置内容
 
-- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
-{
-    return [UIColor RandomColor];
-}
+#pragma mark - LMJNavUIBaseViewControllerDataSource
 
-- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-}
-
-- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%@", sender);
-}
-
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return [self changeTitle:@"Lock"];;
-}
-
+/** 导航条左边的按钮 */
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-[leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
-
-return [UIImage imageNamed:@"navigationButtonReturnClick"];
+    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
+    
+    return [UIImage imageNamed:@"NavgationBar_blue_back"];
 }
 
-
-- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    rightButton.backgroundColor = [UIColor RandomColor];
-    
-    return nil;
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
-
-
-#pragma mark 自定义代码
-
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:[UIColor RandomColor] range:NSMakeRange(0, title.length)];
-    
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, title.length)];
-    
-    return title;
-}
-
-
 @end
 
 

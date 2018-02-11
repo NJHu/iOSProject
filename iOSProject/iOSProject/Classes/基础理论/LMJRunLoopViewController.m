@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"看打印";
     LMJWeakSelf(self);
     LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"线程和RunLoop" subTitle:nil];
     item0.itemOperation = ^(NSIndexPath *indexPath) {
@@ -37,7 +37,7 @@
 //        [weakself observerRunLoop];
 //    };
     
-    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"1, 线程常驻:runLoop里边需要添加NSPort" subTitle:@"2添加runloop观察者, 请点击多次看打印"];
+    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"1, 线程常驻:runLoop里边需要添加NSPort" subTitle:@"2,添加runloop观察者, 请点击多次看打印"];
     item3.itemOperation = ^(NSIndexPath *indexPath) {
 
         static dispatch_once_t onceToken;
