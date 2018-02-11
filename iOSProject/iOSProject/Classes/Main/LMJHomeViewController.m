@@ -163,9 +163,12 @@
 /** 导航条右边的按钮 */
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    [rightButton setTitle:@"GitHub" forState:UIControlStateNormal];
+    [rightButton setTitle:@"点个赞吧😁" forState:UIControlStateNormal];
     
     [rightButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
+    [rightButton sizeToFit];
+    rightButton.lmj_width += 10;
+    rightButton.height = 44;
     return nil;
 }
 
@@ -181,7 +184,7 @@
 -(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     LMJWebViewController *ac = [LMJWebViewController new];
-    ac.gotoURL = @"https://github.com/NJHu/iOSProject/blob/master/README.md";
+    ac.gotoURL = @"https://github.com/NJHu/iOSProject";
     
     [self.navigationController pushViewController:ac animated:YES];
     NSLog(@"%s", __func__);

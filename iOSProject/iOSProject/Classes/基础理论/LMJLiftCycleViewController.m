@@ -10,8 +10,6 @@
 
 @interface LMJLiftCycleViewController ()
 
-/** <#digest#> */
-@property (weak, nonatomic) UITextView *inputTextView;
 
 @end
 
@@ -28,62 +26,19 @@
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
-    UIView *oneView = [[UIView alloc] initWithFrame:CGRectMake(100, self.lmj_navgationBar.lmj_height, 100, 100)];
-    
-    [self.view addSubview:oneView];
-    
-    
-    UIView *twoView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
-    
-    [self.view addSubview:twoView];
-    
-    
-    [self life:__FUNCTION__];
 }
 
 
 - (void)life:(const char *)func
 {
-    NSMutableString *strM = [NSMutableString stringWithFormat:@"%@", self.inputTextView.text ?: @""];
+    LMJWordItem *item = [LMJWordItem itemWithTitle:[NSString stringWithUTF8String:func] subTitle:nil itemOperation:nil];
+    item.titleFont = [UIFont systemFontOfSize:12];
     
-    [strM appendString:[NSString stringWithUTF8String:func]];
+    self.addItem(item);
     
-    self.inputTextView.text = [strM.copy stringByAppendingString:@"\n"];
-    
+    [self.tableView reloadData];
 }
 
-- (UITextView *)inputTextView
-{
-    if(_inputTextView == nil)
-    {
-        UITextView *textView = [[UITextView alloc] init];
-        
-        [self.view addSubview:textView];
-        
-        //        textView.userInteractionEnabled = YES;
-        //        textView.editable = YES;
-        //        textView.selectable = NO;
-        //        textView.scrollEnabled = YES;
-        
-        //        [textView addPlaceHolder:@"我是占位的"];
-        
-        [textView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.edges.mas_equalTo(UIEdgeInsetsMake(100, 0, 0, 0));
-            
-        }];
-        
-        textView.textColor = [UIColor RandomColor];
-        textView.font = AdaptedFontSize(16);
-        
-        _inputTextView = textView;
-        
-    }
-    return _inputTextView;
-}
 
 
 - (void)viewWillAppear:(BOOL)animated
