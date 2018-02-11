@@ -47,11 +47,7 @@ typedef void (^CalendarReminderManagerFetchSuccessBlock)(NSArray *eventArr);
 + (BOOL)deleteEventWithEventIdentifier:(NSString *)eventIdentifier;
 
 
-//查询所有的提醒(回调方式返回所有的提醒)
-+ (void)fetchAllRemindersWithsuccess:(CalendarReminderManagerFetchSuccessBlock)success;
 
-// 根据标识获取唯一的提醒 (⚠️这个方法也可以查询日历里面的事件）
-+ (EKCalendarItem *)fetchReminderWithIdentier:(NSString *)identifier;
 
 // 保存一个提醒
 // title : 提醒的标题
@@ -73,4 +69,10 @@ typedef void (^CalendarReminderManagerFetchSuccessBlock)(NSArray *eventArr);
 
 //根据标识删除一个提醒
 + (BOOL)deleteReminderWithIdentifer:(NSString *)identifier;
+
+//查询所有的提醒(回调方式返回所有的提醒)
++ (void)fetchAllRemindersWithsuccess:(CalendarReminderManagerFetchSuccessBlock)success;
+
+// 根据标识获取唯一的提醒 (⚠️这个方法也可以查询日历里面的事件）
++ (EKCalendarItem *)fetchReminderWithIdentier:(NSString *)identifier;
 @end

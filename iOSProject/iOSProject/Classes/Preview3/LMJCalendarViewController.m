@@ -24,21 +24,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    LMJWeakSelf(self);
+    LMJWeakSelf(self);
     
-    self.addItem([LMJWordItem itemWithTitle:@"event: " subTitle:@"" itemOperation:nil])
+    EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:2];
+    EKAlarm *alarm1 = [EKAlarm alarmWithRelativeOffset:4];
+    
+    
+    self.addItem([LMJWordItem itemWithTitle:@"事件标题: " subTitle:@"" itemOperation:nil])
+    
     .addItem([LMJWordItem itemWithTitle:@"增加日历事件" subTitle: nil itemOperation:^(NSIndexPath *indexPath) {
         
-//        [CalendarReminderManager addEventWithTitle:@"我是增加的" notes:@"" location:<#(NSString *)#> startDate:<#(NSDate *)#> endDate:<#(NSDate *)#> alarms:<#(NSArray<EKAlarm *> *)#> URL:<#(NSURL *)#> availability:<#(EKEventAvailability)#> successBlock:<#^(NSString *eventIdentifier)successBlock#> failBlock:<#^(NSError *error)failBlock#>];
+        [CalendarReminderManager addEventWithTitle:@"我是增加的日历标题" notes:@"我是备注" location:@"北京" startDate:[[NSDate date] dateByAddingDays:1] endDate:[[NSDate date] dateByAddingDays:2] alarms:@[alarm, alarm1] URL:[NSURL URLWithString:@"https://www.github.com/njhu"] availability:EKEventAvailabilityBusy successBlock:^(NSString *eventIdentifier) {
+            
+            [weakself.view makeToast:@"增加成功"];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:eventIdentifier forKey:@"CalendarReminderManager_events"];
+            
+        } failBlock:^(NSError *error) {
+            
+            [weakself.view makeToast:error.localizedFailureReason];
+            
+        }];
         
     }])
-    .addItem([LMJWordItem itemWithTitle:@"删除日历" subTitle: nil itemOperation:^(NSIndexPath *indexPath) {
+    
+    .addItem([LMJWordItem itemWithTitle:@"查找" subTitle: nil itemOperation:^(NSIndexPath *indexPath) {
+        
+       EKEvent *event = [CalendarReminderManager fetchEventWithIdentifer:[[NSUserDefaults standardUserDefaults] objectForKey:@"CalendarReminderManager_events"]];
+        
+        weakself.sections.firstObject.items.firstObject.subTitle = event.title;
+        
+        [weakself.tableView reloadRow:0 inSection:0 withRowAnimation:0];
         
     }])
-    .addItem([LMJWordItem itemWithTitle:@"查找" subTitle:nil itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordItem itemWithTitle:@"删除" subTitle:nil itemOperation:^(NSIndexPath *indexPath) {
         
+       BOOL isDeleted = [CalendarReminderManager deleteEventWithEventIdentifier:[[NSUserDefaults standardUserDefaults] objectForKey:@"CalendarReminderManager_events"]];
         
-        
+        if (isDeleted) {
+            [weakself.view makeToast:@"删除成功"];
+            weakself.sections.firstObject.items.firstObject.subTitle = nil;
+            [weakself.tableView reloadRow:0 inSection:0 withRowAnimation:0];
+        }else {
+             [weakself.view makeToast:@"删除失败"];
+        }
+            
     }]);
 }
 
