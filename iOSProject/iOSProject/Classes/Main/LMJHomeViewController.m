@@ -163,7 +163,7 @@
 /** 导航条右边的按钮 */
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    [rightButton setTitle:@"百度" forState:UIControlStateNormal];
+    [rightButton setTitle:@"GitHub" forState:UIControlStateNormal];
     
     [rightButton setTitleColor:[UIColor RandomColor] forState:UIControlStateNormal];
     return nil;
@@ -181,7 +181,7 @@
 -(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     LMJWebViewController *ac = [LMJWebViewController new];
-    ac.gotoURL = @"http://www.baidu.com";
+    ac.gotoURL = @"https://github.com/NJHu/iOSProject/blob/master/README.md";
     
     [self.navigationController pushViewController:ac animated:YES];
     NSLog(@"%s", __func__);

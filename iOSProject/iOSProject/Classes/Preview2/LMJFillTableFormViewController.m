@@ -42,6 +42,7 @@
             textF.tag = indexPath.row + 100;
             textF.delegate = self;
             textF.textColor = [UIColor clearColor];
+            textF.borderStyle = UITextBorderStyleNone;
             [cell.contentView addSubview:textF];
         }
 
@@ -96,6 +97,7 @@
             textF.tag = indexPath.row + 100;
             textF.delegate = self;
             textF.textColor = [UIColor clearColor];
+            textF.borderStyle = UITextBorderStyleNone;
             [cell.contentView addSubview:textF];
         }
         

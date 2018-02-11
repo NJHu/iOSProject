@@ -19,14 +19,10 @@
     [super viewDidLoad];
     
     //使用TDButton更方便 https://github.com/greezi/TDButton
-    UIButton *touchIDButton = [[UIButton alloc] init];
-    [touchIDButton setBackgroundImage:[UIImage imageWithColor:[UIColor RandomColor]] forState:UIControlStateNormal];
-    
-    [touchIDButton setTitle:@"指纹解锁" forState:UIControlStateNormal];
-    
-    [touchIDButton addTarget:self action:@selector(touchVerification) forControlEvents:UIControlEventTouchDown];
-    touchIDButton.frame = CGRectMake((self.view.frame.size.width - 200) * 0.5, 200, 200, 60);
-    [self.view addSubview:touchIDButton];
+    LMJWeakSelf(self);
+    self.addItem([LMJWordItem itemWithTitle:@"指纹解锁" subTitle:nil itemOperation:^(NSIndexPath *indexPath) {
+        [weakself touchVerification];
+    }]);
 }
 
 

@@ -151,7 +151,7 @@
 /** 左边的按钮的点击 */
 -(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 /** 右边的按钮的点击 */
 -(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
