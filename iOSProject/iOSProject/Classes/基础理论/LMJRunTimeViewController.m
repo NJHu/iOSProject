@@ -33,10 +33,10 @@
     self.myButton = [[UIButton alloc]init];
     self.myButton.backgroundColor = [UIColor blueColor];
     self.myButton.height = 50;
-    [self.myButton setTitle:@"方法替换或者交换(UIButton+LMJBlock)" forState:UIControlStateNormal];
+    [weakself.myButton setTitle:@"方法替换或者交换(UIButton+LMJBlock)" forState:UIControlStateNormal];
     self.tableView.tableHeaderView = self.myButton;
     
-    [self.myButton addActionHandler:^(NSInteger tag) {
+    [weakself.myButton addActionHandler:^(NSInteger tag) {
         [UIAlertController mj_showAlertWithTitle:@"提示" message:@"跟按钮添加了 actoinblock" appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
             alertMaker.addActionDefaultTitle(@"确认看 UIButto+LMJ");
         } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
@@ -47,20 +47,20 @@
     self.addItem([LMJWordItem itemWithTitle:@"获取类的信息" subTitle:@"关键字: class_get" itemOperation:^(NSIndexPath *indexPath) {
         
         //类名
-        NSString *className = [NSString stringWithFormat:@"class name: %s\n", class_getName([self.myRunTimeTest class])];
+        NSString *className = [NSString stringWithFormat:@"class name: %s\n", class_getName([weakself.myRunTimeTest class])];
         
         // 父类
-        NSString *superClassName = [NSString stringWithFormat:@"super class name: %s\n", class_getName(class_getSuperclass([self.myRunTimeTest class]))];
+        NSString *superClassName = [NSString stringWithFormat:@"super class name: %s\n", class_getName(class_getSuperclass([weakself.myRunTimeTest class]))];
         
         // 是否是元类
-        NSString *isMetaClass = [NSString stringWithFormat:@"myRunTimeTest is %@ a meta-class\n", (class_isMetaClass([self.myRunTimeTest class]) ? @"" : @"not")];
+        NSString *isMetaClass = [NSString stringWithFormat:@"myRunTimeTest is %@ a meta-class\n", (class_isMetaClass([weakself.myRunTimeTest class]) ? @"" : @"not")];
         
         // 元类是什么
-        Class meta_class = objc_getMetaClass(class_getName([self.myRunTimeTest class]));
+        Class meta_class = objc_getMetaClass(class_getName([weakself.myRunTimeTest class]));
         NSString *metaClass = [NSString stringWithFormat:@"%s's meta-class is %s\n", class_getName([LMJRunTimeTest class]), class_getName(meta_class)];
         
         // 变量实例大小
-        NSString *instanceSize = [NSString stringWithFormat:@"instance size: %zu\n", class_getInstanceSize([self.myRunTimeTest class])];
+        NSString *instanceSize = [NSString stringWithFormat:@"instance size: %zu\n", class_getInstanceSize([weakself.myRunTimeTest class])];
         
         NSString *message = [NSString stringWithFormat:@"%@%@%@%@%@", className, superClassName, isMetaClass, metaClass, instanceSize];
         
@@ -72,7 +72,7 @@
         NSMutableString *strM = [NSMutableString string];
         
         unsigned int count;
-        objc_property_t *propertyList = class_copyPropertyList([self.myRunTimeTest class], &count);
+        objc_property_t *propertyList = class_copyPropertyList([weakself.myRunTimeTest class], &count);
         for (unsigned int i=0; i<count; i++) {
             const char *propertyName = property_getName(propertyList[i]);
             NSLog(@"属性名称为---->%@", [NSString stringWithUTF8String:propertyName]);
@@ -84,7 +84,7 @@
         free(propertyList);
         [strM appendString:@"\n\n\n"];
         
-        objc_property_t array = class_getProperty([self.myRunTimeTest class], "name");
+        objc_property_t array = class_getProperty([weakself.myRunTimeTest class], "name");
         if (array != NULL) {
             NSLog(@"当前存在属性 %s", property_getName(array));
             [strM appendFormat:@"当前存在属性 %s", property_getName(array)];
@@ -109,7 +109,7 @@
         NSMutableString *strM = [NSMutableString string];
         
         unsigned int count;
-        Ivar *ivarList = class_copyIvarList([self.myRunTimeTest class], &count);
+        Ivar *ivarList = class_copyIvarList([weakself.myRunTimeTest class], &count);
         for (unsigned int i = 0; i < count; i++) {
             Ivar myIvar = ivarList[i];
             const char *ivarName = ivar_getName(myIvar);
@@ -126,7 +126,7 @@
         //成员变量为---->_age
         [strM appendString:@"\n\n\n"];
         
-        Ivar string = class_getInstanceVariable([self.myRunTimeTest class], "_age");
+        Ivar string = class_getInstanceVariable([weakself.myRunTimeTest class], "_age");
         if (string != NULL) {
             NSLog(@"当前存在变量 %s", ivar_getName(string));
             [strM appendFormat:@"class_getInstanceVariable\n当前存在变量 %s\n", ivar_getName(string)];
@@ -171,7 +171,7 @@
         NSMutableString *strM = [NSMutableString string];
         
         unsigned int count;
-        Method *methods = class_copyMethodList([self.myRunTimeTest class], &count);
+        Method *methods = class_copyMethodList([weakself.myRunTimeTest class], &count);
         for (int i = 0; i < count; i++) {
             Method method = methods[i];
             NSLog(@"实例方法: %@", NSStringFromSelector(method_getName(method)));
@@ -196,7 +196,7 @@
         // 实例方法: age
         
         unsigned int classcount;
-        Method *classmethods = class_copyMethodList(object_getClass([self.myRunTimeTest class]), &classcount);
+        Method *classmethods = class_copyMethodList(object_getClass([weakself.myRunTimeTest class]), &classcount);
         for (int i = 0; i < classcount; i++) {
             Method method = classmethods[i];
             NSLog(@"类方法: %@", NSStringFromSelector(method_getName(method)));
@@ -213,7 +213,7 @@
         
         
         //判断类实例方法是否存在
-        Method method1 = class_getInstanceMethod([self.myRunTimeTest class], @selector(showUserName:));
+        Method method1 = class_getInstanceMethod([weakself.myRunTimeTest class], @selector(showUserName:));
         if (method1 != NULL) {
             NSLog(@"类实例方法: %@", NSStringFromSelector(method_getName(method1)));
             [strM appendFormat:@"判断类实例方法是否存在\n类实例方法: %@", NSStringFromSelector(method_getName(method1))];
@@ -226,7 +226,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wundeclared-selector"
         //判断类方法是否存在
-        Method classMethod = class_getClassMethod([self.myRunTimeTest class], @selector(showAddress));
+        Method classMethod = class_getClassMethod([weakself.myRunTimeTest class], @selector(showAddress));
         if (classMethod != NULL) {
             NSLog(@"类方法: %@", NSStringFromSelector(method_getName(classMethod)));
             [strM appendFormat:@"判断类方法是否存在\n类方法: %@", NSStringFromSelector(method_getName(classMethod))];
@@ -245,7 +245,7 @@
         NSMutableString *strM = [NSMutableString string];
         
         unsigned int count;
-        Protocol * __unsafe_unretained * protocols = class_copyProtocolList([self.myRunTimeTest class], &count);
+        Protocol * __unsafe_unretained * protocols = class_copyProtocolList([weakself.myRunTimeTest class], &count);
         Protocol * protocol;
         for (int i = 0; i < count; i++) {
             protocol = protocols[i];
@@ -258,9 +258,9 @@
         
         [strM appendFormat:@"\n\n\n"];
         
-        NSLog(@"LMJRunTimeTest is%@ responsed to protocol %s", class_conformsToProtocol([self.myRunTimeTest class], protocol) ? @"" : @" not", protocol_getName(protocol));
+        NSLog(@"LMJRunTimeTest is%@ responsed to protocol %s", class_conformsToProtocol([weakself.myRunTimeTest class], protocol) ? @"" : @" not", protocol_getName(protocol));
         
-        [strM appendFormat:@"LMJRunTimeTest is%@ responsed to protocol %s", class_conformsToProtocol([self.myRunTimeTest class], protocol) ? @"" : @" not", protocol_getName(protocol)];
+        [strM appendFormat:@"LMJRunTimeTest is%@ responsed to protocol %s", class_conformsToProtocol([weakself.myRunTimeTest class], protocol) ? @"" : @" not", protocol_getName(protocol)];
         
         //******显示内容如下******
         //LMJRunTimeTest is responsed to protocol NSCoding
@@ -274,10 +274,10 @@
 #pragma clang diagnostic ignored"-Wundeclared-selector"
         //写在这个中间的代码,都不会被编译器提示-Wundeclared-selector类型的警告
         
-        class_addMethod([self.myRunTimeTest class], @selector(guess), (IMP)guessAnswer, "v@:");
-        if ([self.myRunTimeTest respondsToSelector:@selector(guess)]) {
+        class_addMethod([weakself.myRunTimeTest class], @selector(guess), (IMP)guessAnswer, "v@:");
+        if ([weakself.myRunTimeTest respondsToSelector:@selector(guess)]) {
 
-            [self.myRunTimeTest performSelector:@selector(guess)];
+            [weakself.myRunTimeTest performSelector:@selector(guess)];
             
         } else{
             NSLog(@"方法没有增加成功");
@@ -304,20 +304,20 @@
     .addItem([LMJWordItem itemWithTitle:@"动态交换两个方法的实现" subTitle:@"method_exchangeImplementations" itemOperation:^(NSIndexPath *indexPath) {
         
         NSMutableString *strM = [NSMutableString string];
-        Method m1 = class_getInstanceMethod([self.myRunTimeTest class], @selector(showUserName:));
-        Method m2 = class_getInstanceMethod([self.myRunTimeTest class], @selector(showUserAge:));
+        Method m1 = class_getInstanceMethod([weakself.myRunTimeTest class], @selector(showUserName:));
+        Method m2 = class_getInstanceMethod([weakself.myRunTimeTest class], @selector(showUserAge:));
         
         method_exchangeImplementations(m1, m2);
         
-        NSLog(@"%@", [self.myRunTimeTest showUserName:@"njhu"]);
-        NSLog(@"%@", [self.myRunTimeTest showUserAge:@"18"]);
+        NSLog(@"%@", [weakself.myRunTimeTest showUserName:@"njhu"]);
+        NSLog(@"%@", [weakself.myRunTimeTest showUserAge:@"18"]);
         
         //******显示内容如下******
         //注意 如果有参数 记得参数的类型要一样 或者可以进行相应的转换 或者两个方法类型不同会闪退
         //年龄是njhu
         //用户名字是18
-        [strM appendFormat:@"showUserName: %@\n", [self.myRunTimeTest showUserName:@"njhu"]];
-        [strM appendFormat:@"showUserAge: %@\n", [self.myRunTimeTest showUserAge:@"18"]];
+        [strM appendFormat:@"showUserName: %@\n", [weakself.myRunTimeTest showUserName:@"njhu"]];
+        [strM appendFormat:@"showUserAge: %@\n", [weakself.myRunTimeTest showUserAge:@"18"]];
         
         [weakself alertTitle:@"动态交换两个方法的实现" message:strM];
     }]);
