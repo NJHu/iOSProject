@@ -86,21 +86,4 @@
     self.drawingView.lineWidth = sender.value;
 }
 
-
-- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
-{
-    return [UIColor whiteColor];
-}
-
-- (BOOL)lmjNavigationIsHideBottomLine:(LMJNavigationBar *)navigationBar
-{
-    return YES;
-}
-
-- (NSMutableAttributedString *)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return nil;
-}
-
-
 @end

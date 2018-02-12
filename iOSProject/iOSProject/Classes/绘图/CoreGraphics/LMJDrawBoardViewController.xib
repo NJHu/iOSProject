@@ -55,7 +55,7 @@
                     </items>
                 </toolbar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bh-IH-EeH">
-                    <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                    <rect key="frame" x="0.0" y="553" width="375" height="70"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W27-mX-bGX">
                             <rect key="frame" x="8" y="32" width="106.5" height="30"/>
@@ -111,7 +111,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-LE-czf" customClass="LMJDrawingView">
-                    <rect key="frame" x="0.0" y="132" width="375" height="465"/>
+                    <rect key="frame" x="0.0" y="132" width="375" height="421"/>
                     <color key="backgroundColor" red="0.2417735406" green="1" blue="0.95524575050000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
@@ -126,7 +126,7 @@
                 <constraint firstItem="5bh-IH-EeH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d7F-9e-j6M"/>
                 <constraint firstItem="5bh-IH-EeH" firstAttribute="top" secondItem="lRZ-LE-czf" secondAttribute="bottom" id="dS2-w8-QSF"/>
                 <constraint firstAttribute="trailing" secondItem="5bh-IH-EeH" secondAttribute="trailing" id="mJe-77-rYp"/>
-                <constraint firstAttribute="bottom" secondItem="5bh-IH-EeH" secondAttribute="bottom" id="rIf-kl-ztv"/>
+                <constraint firstAttribute="bottom" secondItem="5bh-IH-EeH" secondAttribute="bottom" constant="44" id="rIf-kl-ztv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="-2" y="268"/>

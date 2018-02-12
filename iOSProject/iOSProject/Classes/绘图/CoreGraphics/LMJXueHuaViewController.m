@@ -82,7 +82,7 @@ static CGFloat _snowY = 0;
     CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(timeChange)];
     
     // 添加主运行循环
-    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)layoutSubviews

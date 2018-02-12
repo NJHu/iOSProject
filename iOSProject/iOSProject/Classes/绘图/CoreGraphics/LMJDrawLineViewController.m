@@ -9,20 +9,79 @@
 #import "LMJDrawLineViewController.h"
 
 @interface LMJDrawLineViewController ()
-
+/** <#digest#> */
+@property (weak, nonatomic) LineView *redView;
 @end
 
 @implementation LMJDrawLineViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.redView.drawTypeType = 5;
     [self redView];
+    LMJWeakSelf(self);
+    self.addItem([LMJWordItem itemWithTitle:@"最原始的绘图方式" subTitle:@"drawLine" itemOperation:^(NSIndexPath *indexPath) {
+        weakself.redView.drawTypeType = indexPath.row;
+        [weakself.redView setNeedsDisplay];
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"绘图第二种方式" subTitle:@"drawLine2" itemOperation:^(NSIndexPath *indexPath) {
+        weakself.redView.drawTypeType = indexPath.row;
+        [weakself.redView setNeedsDisplay];
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"绘图第三种方式" subTitle:@"drawLine2" itemOperation:^(NSIndexPath *indexPath) {
+        weakself.redView.drawTypeType = indexPath.row;
+        [weakself.redView setNeedsDisplay];
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"设置属性Ctx" subTitle:@"drawCtxState" itemOperation:^(NSIndexPath *indexPath) {
+        weakself.redView.drawTypeType = indexPath.row;
+        [weakself.redView setNeedsDisplay];
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"设置属性UIBezierPath" subTitle:@"drawUIBezierPathState" itemOperation:^(NSIndexPath *indexPath) {
+        weakself.redView.drawTypeType = indexPath.row;
+        [weakself.redView setNeedsDisplay];
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"弧线" subTitle:@"drawCornerLine" itemOperation:^(NSIndexPath *indexPath) {
+        weakself.redView.drawTypeType = indexPath.row;
+        [weakself.redView setNeedsDisplay];
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"扇形或者圆形" subTitle:@"drawCircle" itemOperation:^(NSIndexPath *indexPath) {
+        weakself.redView.drawTypeType = indexPath.row;
+        [weakself.redView setNeedsDisplay];
+    }])
+    .addItem([LMJWordItem itemWithTitle:@"圆角矩形" subTitle:@"radiousRect" itemOperation:^(NSIndexPath *indexPath) {
+        weakself.redView.drawTypeType = indexPath.row;
+        [weakself.redView setNeedsDisplay];
+    }]);
 }
 
-- (Class)drawViewClass
+- (LineView *)redView
 {
-    return [LineView class];
+    if(!_redView)
+    {
+        LineView *redView = [[LineView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth)];
+        self.tableView.tableHeaderView = redView;
+        _redView = redView;
+        redView.backgroundColor = [UIColor whiteColor];
+    }
+    return _redView;
+}
+
+
+#pragma mark - LMJNavUIBaseViewControllerDataSource
+
+/** 导航条左边的按钮 */
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
+    
+    return [UIImage imageNamed:@"NavgationBar_blue_back"];
+}
+
+#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
@@ -43,11 +102,45 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     
+    switch (self.drawTypeType) {
+        case 0:
+            [self drawLine];
+            break;
+        case 1:
+            [self drawLine1];
+            break;
+        case 2:
+            [self drawLine2];
+            break;
+        case 3:
+            [self drawCtxState];
+            break;
+        case 4:
+            [self drawUIBezierPathState];
+            break;
+        case 5:
+            [self drawCornerLine];
+            break;
+        case 6:
+            [self drawCircle];
+            break;
+        case 7:
+            [self radiousRect];
+            break;
+    }
+}
 
+
+- (void)radiousRect
+{
     // 圆角矩形
-    //   UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(20, 20, 200, 200) cornerRadius:100];
-    
-    
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(20, 20, 350, 200) cornerRadius:30];
+    [[UIColor redColor] set];
+    [path fill];
+}
+
+- (void)drawCircle
+{
     // 圆弧
     // Center：圆心
     // startAngle:弧度
@@ -69,9 +162,6 @@
     // 填充：必须是一个完整的封闭路径,默认就会自动关闭路径
     [path fill];
     
-    
-    
-    
 }
 
 
@@ -86,10 +176,10 @@
     
     // 描述路径
     // 设置起点
-    CGContextMoveToPoint(ctx, 50, 50);
+    CGContextMoveToPoint(ctx, 50, 150);
     
     // cpx:控制点的x
-    CGContextAddQuadCurveToPoint(ctx, 150, 20, 250, 50);
+    CGContextAddQuadCurveToPoint(ctx, 150, 80, 250, 150);
     
     
     // 渲染上下文
@@ -172,7 +262,7 @@
     UIBezierPath *path = [UIBezierPath bezierPath];
     
     // 设置起点
-    [path moveToPoint:CGPointMake(50, 50)];
+    [path moveToPoint:CGPointMake(150, 50)];
     
     // 添加一根线到某个点
     [path addLineToPoint:CGPointMake(200, 200)];
@@ -193,7 +283,7 @@
     
     // 描述路径
     // 设置起点
-    CGContextMoveToPoint(ctx, 50, 50);
+    CGContextMoveToPoint(ctx, 100, 50);
     
     CGContextAddLineToPoint(ctx, 200, 200);
     

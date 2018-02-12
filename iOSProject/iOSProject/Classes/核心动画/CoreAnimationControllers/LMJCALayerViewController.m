@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.fd_interactivePopDisabled = YES;
+    [self.view makeToast:@"点击屏幕" duration:3 position:CSToastPositionCenter];
 }
 
 - (UIView *)redView

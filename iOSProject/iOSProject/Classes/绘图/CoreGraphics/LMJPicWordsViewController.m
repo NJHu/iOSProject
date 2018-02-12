@@ -75,8 +75,7 @@
     // 4.关闭上下文
         UIGraphicsEndImageContext();
     
-    self.redView.layer.contents = (__bridge id _Nullable)(imageWater.CGImage)
-    ;
+    self.redView.layer.contents = (__bridge id _Nullable)(imageWater.CGImage);
     
     
     

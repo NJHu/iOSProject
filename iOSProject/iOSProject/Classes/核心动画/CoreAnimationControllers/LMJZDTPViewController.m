@@ -28,6 +28,7 @@
     [super viewDidLoad];
 //    self.title = @"拖拽顶部图片";
     [MBProgressHUD showAutoMessage:@"拖拽顶部图片"];
+    self.title = @"拖拽顶部图片";
     // Do any additional setup after loading the view, typically from a nib.
     // 通过设置contentsRect可以设置图片显示的尺寸，取值0~1
     _topView.layer.contentsRect = CGRectMake(0, 0, 1, 0.5);
@@ -92,6 +93,7 @@
         [UIView animateWithDuration:0.6 delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
             _topView.layer.transform = CATransform3DIdentity;
+            _gradientL.opacity = 0;
             
         } completion:^(BOOL finished) {
             

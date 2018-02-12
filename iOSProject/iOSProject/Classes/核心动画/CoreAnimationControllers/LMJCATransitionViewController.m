@@ -57,7 +57,7 @@ static int i = 2;
         [self.view addSubview:_imageView];
         
         [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.insets(UIEdgeInsetsMake(70, 10, 10, 10));
+            make.edges.insets(UIEdgeInsetsMake(90, 20, 20, 20));
         }];
     }
     return _imageView;

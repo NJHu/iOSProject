@@ -6,13 +6,14 @@
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import "LMJDrawBaseViewController.h"
+#import "LMJStaticTableViewController.h"
 
-@interface LMJDrawLineViewController : LMJDrawBaseViewController
+@interface LMJDrawLineViewController : LMJStaticTableViewController
 
 @end
 
 
 @interface LineView : UIView
-
+/** <#digest#> */
+@property (nonatomic, assign) NSInteger drawTypeType;
 @end

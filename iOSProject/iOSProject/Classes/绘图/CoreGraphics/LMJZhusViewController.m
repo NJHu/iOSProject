@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self redView];
+    
+    [self.view makeToast:@"点击图案!" duration:3 position:CSToastPositionCenter];
 }
 
 - (Class)drawViewClass

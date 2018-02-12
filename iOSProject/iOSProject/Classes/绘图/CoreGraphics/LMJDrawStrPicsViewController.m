@@ -50,6 +50,7 @@
     // 绘图
     [image drawAsPatternInRect:rect];
     
+    [self drawText];
     [self attrText];
     
 }
@@ -67,7 +68,7 @@
     // 不会换行
     //    [str drawAtPoint:CGPointZero withAttributes:nil];
     
-    [str drawInRect:self.bounds withAttributes:nil];
+    [str drawInRect:CGRectMake(100, 100, 200, 100) withAttributes:nil];
     
 }
 - (void)attrText

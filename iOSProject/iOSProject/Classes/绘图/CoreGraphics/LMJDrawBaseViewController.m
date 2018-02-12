@@ -26,7 +26,7 @@
 {
     if(!_redView)
     {
-        UIView *redView = [[self.drawViewClass alloc] initWithFrame:CGRectMake(10, 80, kScreenWidth - 20, kScreenHeight - 80 - 10)];
+        UIView *redView = [[self.drawViewClass alloc] initWithFrame:CGRectMake(10, 100, kScreenWidth - 20, kScreenHeight - 140)];
         [self.view addSubview:redView];
         _redView = redView;
         redView.backgroundColor = [UIColor whiteColor];

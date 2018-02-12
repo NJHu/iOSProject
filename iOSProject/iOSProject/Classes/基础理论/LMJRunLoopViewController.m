@@ -14,7 +14,8 @@
 @interface LMJRunLoopViewController ()
 /** <#digest#> */
 @property (nonatomic, strong) XLMJThread *xlmjThread;
-
+/** <#digest#> */
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation LMJRunLoopViewController
@@ -168,10 +169,18 @@
     
     // 调用了scheduledTimer返回的定时器，已经自动被添加到当前runLoop中，而且是NSDefaultRunLoopMode
    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(run) userInfo:nil repeats:YES];
+    _timer = timer;
     // 修改模式
     // 定时器会跑在标记为common modes的模式下
     // 标记为common modes的模式：UITrackingRunLoopMode和kCFRunLoopDefaultMode
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)dealloc {
+    [_timer invalidate];
+    _timer = nil;
+    [_xlmjThread cancel];
+    _xlmjThread = nil;
 }
 
 - (void)threadRunLoop

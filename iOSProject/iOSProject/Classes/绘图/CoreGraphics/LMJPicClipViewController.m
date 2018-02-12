@@ -122,8 +122,7 @@
     return nil;
 }
 
-- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar {
     _imageV.image = [UIImage imageNamed:@"CATransition3.png"];
 }
 

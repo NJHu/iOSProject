@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view makeToast:@"点击扇形!!" duration:3 position:CSToastPositionCenter];
 }
 @end
 

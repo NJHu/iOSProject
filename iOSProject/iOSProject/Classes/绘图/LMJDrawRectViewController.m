@@ -41,10 +41,10 @@
     LMJWordArrowItem *item4 = [LMJWordArrowItem itemWithTitle:@"图片和文字" subTitle:nil];
     item4.destVc = [LMJDrawStrPicsViewController class];
     
-    LMJWordArrowItem *item5 = [LMJWordArrowItem itemWithTitle:@"下雪啦" subTitle:nil];
+    LMJWordArrowItem *item5 = [LMJWordArrowItem itemWithTitle:@"下雪定时器" subTitle:@"CADisplayLink"];
     item5.destVc = [LMJXueHuaViewController class];
     
-    LMJWordArrowItem *item6 = [LMJWordArrowItem itemWithTitle:@"图形上下文栈" subTitle:nil];
+    LMJWordArrowItem *item6 = [LMJWordArrowItem itemWithTitle:@"图形上下文栈" subTitle:@"CGContextSaveGState"];
     item6.destVc = [LMJShangXiaWenZhanViewController class];
     
     LMJWordArrowItem *item7 = [LMJWordArrowItem itemWithTitle:@"矩阵操作" subTitle:nil];
