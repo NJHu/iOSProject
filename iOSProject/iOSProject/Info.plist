@@ -327,6 +327,8 @@
 	<string>App需要您的同意,才能访问运动与健身</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>需要访问您的相册</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>需要添加到相册</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

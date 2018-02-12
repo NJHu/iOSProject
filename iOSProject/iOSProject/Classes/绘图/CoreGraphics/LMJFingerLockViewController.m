@@ -64,7 +64,7 @@
         }
         
         NSLog(@"%@", strM);
-        [self.viewController.view makeToast:[NSString stringWithFormat:@"拖拽顺序%@", strM] duration:3 position:CSToastPositionCenter];
+        [self makeToast:[NSString stringWithFormat:@"拖拽顺序%@", strM] duration:3 position:CSToastPositionCenter];
         
         [self.selectedBtns makeObjectsPerformSelector:@selector(setSelected:) withObject:nil];
         
