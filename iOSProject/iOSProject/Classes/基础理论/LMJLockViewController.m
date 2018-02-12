@@ -102,8 +102,9 @@
         //第一种情况
         if (self.myMutableList.count>0) {
             name=[[self.myMutableList lastObject] mutableCopy];
-            
             [self.myMutableList removeObject:[self.myMutableList lastObject]];
+            NSLog(@"当前要加载的图片名称%@",name);
+            [self.printStr appendFormat:@"当前要加载的图片名称%@\n",name];
         }
     }else if (self.action == 1) {
         //    第二种情况
@@ -111,9 +112,10 @@
         [_mylock lock];
         if (self.myMutableList.count>0) {
             name=[[self.myMutableList lastObject] mutableCopy];
-            
             [self.myMutableList removeObject:[self.myMutableList lastObject]];
         }
+        NSLog(@"当前要加载的图片名称%@",name);
+        [self.printStr appendFormat:@"当前要加载的图片名称%@\n",name];
         [_mylock unlock];
         
     }else if (self.action == 2) {
@@ -122,15 +124,13 @@
         @synchronized(self){
             if (self.myMutableList.count>0) {
                 name = [[self.myMutableList lastObject] mutableCopy];
-                
                 [self.myMutableList removeObject:[self.myMutableList lastObject]];
+                NSLog(@"当前要加载的图片名称%@",name);
+                [self.printStr appendFormat:@"当前要加载的图片名称%@\n",name];
             }
         }
         
     }
-
-    NSLog(@"当前要加载的图片名称%@",name);
-    [self.printStr appendFormat:@"当前要加载的图片名称%@\n",name];
     
     //回主线程去执行  有些UI相应 必须在主线程中更新
     [self performSelectorOnMainThread:@selector(updateImage) withObject:nil waitUntilDone:YES];
