@@ -14,6 +14,7 @@
 @interface LMJRunLoopViewController ()
 /** <#digest#> */
 @property (nonatomic, strong) XLMJThread *xlmjThread;
+
 @end
 
 @implementation LMJRunLoopViewController
@@ -27,8 +28,14 @@
         [weakself threadRunLoop];
     };
     
+    
     LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"定时器和RunLoop" subTitle:nil];
+    LMJWeakSelf(item1);
     item1.itemOperation = ^(NSIndexPath *indexPath) {
+        if (weakitem1.subTitle) {
+            return ;
+        }
+        weakitem1.subTitle = @"";
         [weakself timerRunLoop];
     };
     
@@ -37,7 +44,7 @@
 //        [weakself observerRunLoop];
 //    };
     
-    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"1, 线程常驻:runLoop里边需要添加NSPort" subTitle:@"2,添加runloop观察者, 请点击多次看打印"];
+    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"1, 线程常驻:runLoop里边需要添加NSPort" subTitle:@"2, 添加runloop观察者, 请点击多次看打印"];
     item3.itemOperation = ^(NSIndexPath *indexPath) {
 
         static dispatch_once_t onceToken;
