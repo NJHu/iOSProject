@@ -28,13 +28,16 @@
         
         [[MOFSPickerManager shareManger] showMOFSAddressPickerWithTitle:nil cancelTitle:@"取消" commitTitle:@"完成" commitBlock:^(NSString *address, NSString *zipcode) {
             
-            [UIAlertController mj_showAlertWithTitle:address message:zipcode appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-                
-                alertMaker.addActionDefaultTitle(@"确认");
-                
-            } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-                
-            }];
+            NSLog(@"==%@==", [NSThread currentThread]);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIAlertController mj_showAlertWithTitle:address message:zipcode appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+                    
+                    alertMaker.addActionDefaultTitle(@"确认");
+                    
+                } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+                    
+                }];
+            });
             
         } cancelBlock:^{
             
@@ -44,24 +47,27 @@
         
         [[MOFSPickerManager shareManger] searchAddressByZipcode:@"450000-450900-450921" block:^(NSString *address) {
             
-            [UIAlertController mj_showAlertWithTitle:@"450000-450900-450921" message:address appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-                
-                alertMaker.addActionDefaultTitle(@"确认");
-                
-            } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-                
-            }];
-            
+            NSLog(@"==%@==", [NSThread currentThread]);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIAlertController mj_showAlertWithTitle:@"450000-450900-450921" message:address appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+                    
+                    alertMaker.addActionDefaultTitle(@"确认");
+                    
+                } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+                    
+                }];
+            });
             NSLog(@"%@",address);
             
         }];
         
     }], [LMJWordItem itemWithTitle:@"根据地址获得编号" subTitle:@"河北省-石家庄市-长安区" itemOperation:^(NSIndexPath *indexPath) {
         
-            [[MOFSPickerManager shareManger] searchZipCodeByAddress:@"河北省-石家庄市-长安区" block:^(NSString *zipcode) {
-        
-                NSLog(@"%@",zipcode);
-                
+        [[MOFSPickerManager shareManger] searchZipCodeByAddress:@"河北省-石家庄市-长安区" block:^(NSString *zipcode) {
+            
+            NSLog(@"%@",zipcode);
+            NSLog(@"==%@==", [NSThread currentThread]);
+            dispatch_async(dispatch_get_main_queue(), ^{
                 [UIAlertController mj_showAlertWithTitle:@"河北省-石家庄市-长安区" message:zipcode appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
                     
                     alertMaker.addActionDefaultTitle(@"确认");
@@ -69,8 +75,8 @@
                 } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
                     
                 }];
-        
-            }];
+            });
+        }];
         
     }]];
     
