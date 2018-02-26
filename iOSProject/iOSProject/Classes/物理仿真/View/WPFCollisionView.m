@@ -14,10 +14,9 @@
 
 @implementation WPFCollisionView
 
-- (instancetype)init {
+- (instancetype)initWithFrame:(CGRect)frame {
     
-    if (self = [super init]) {
-        
+    if (self = [super initWithFrame:frame]) {
         
         self.boxView.center = CGPointMake(190, 0);
         
@@ -42,7 +41,7 @@
         
         
         // 4. 手动添加边界
-        UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRect:redView.frame];
+        UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRect:CGRectMake(redView.lmj_x + 10, redView.lmj_y - 10, redView.lmj_width + 10, redView.lmj_height + 10)];
         
         [collision addBoundaryWithIdentifier:@"redBoundary" forPath:bezierPath];
         

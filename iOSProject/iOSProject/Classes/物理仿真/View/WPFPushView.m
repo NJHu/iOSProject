@@ -21,9 +21,9 @@
 @implementation WPFPushView
 
 // 重写init 方法
-- (instancetype)init {
+- (instancetype)initWithFrame:(CGRect)frame {
     
-    if (self = [super init]) {
+    if (self = [super initWithFrame:frame]) {
         
         // 1. 添加蓝色view
         UIView *blueView = [[UIView alloc] initWithFrame:CGRectMake(150, 300, 20, 20)];
@@ -107,8 +107,6 @@
         // 2. 将起点的小圆隐藏
         _smallView.hidden = YES;
         [self setNeedsDisplay];
-        
-        
     }
     
     

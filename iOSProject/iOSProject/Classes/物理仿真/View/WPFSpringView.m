@@ -31,9 +31,9 @@
  
  */
 
-- (instancetype)init {
+- (instancetype)initWithFrame:(CGRect)frame {
     
-    if (self = [super init]) {
+    if (self = [super initWithFrame:frame]) {
         
         // 振幅
         //self.attachment.damping = 1.0f;

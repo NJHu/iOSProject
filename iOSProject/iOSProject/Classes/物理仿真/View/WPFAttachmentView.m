@@ -20,8 +20,9 @@
 
 @implementation WPFAttachmentView
 
-- (instancetype)init {
-    if (self = [super init]) {
+- (instancetype)initWithFrame:(CGRect)frame {
+    
+    if (self = [super initWithFrame:frame]) {
         
         // 1. 设置boxView 的中心点
         self.boxView.center = CGPointMake(200, 200);

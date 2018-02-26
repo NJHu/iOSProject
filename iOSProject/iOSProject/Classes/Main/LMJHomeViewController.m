@@ -86,7 +86,7 @@
     
     item22.destVc = [LMJDrawRectViewController class];
     
-    LMJItemSection *section2 = [LMJItemSection sectionWithItems:@[item20, item21, item22] andHeaderTitle:@"物理仿真, 核心动画, 绘图 Quartz2D" footerTitle:nil];
+    LMJItemSection *section2 = [LMJItemSection sectionWithItems:@[item22, item21, item20] andHeaderTitle:@"物理仿真, 核心动画, 绘图 Quartz2D" footerTitle:nil];
     
     [self.sections addObject:section2];
     
