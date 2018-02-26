@@ -44,6 +44,9 @@
     // 启动广告
     [AdvertiseHelper showAdvertiserView:imagesURLS];
     
+    // 检查版本更新
+    NSLog(@"%zd", [LMJRequestManager sharedManager].reachabilityManager.networkReachabilityStatus);
+    
     // 刷新率
     [self.window addSubview:[[YYFPSLabel alloc] initWithFrame:CGRectMake(20, 70, 0, 0)]];
     

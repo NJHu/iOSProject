@@ -61,7 +61,7 @@
 
         
         if (error) {
-            [weakself.view makeToast:error.localizedDescription];
+            [weakself.view makeToast:error.localizedDescription duration:3 position:CSToastPositionCenter];
             return ;
         }
         

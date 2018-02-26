@@ -70,6 +70,7 @@
         //        [self.playerView pause];
         self.playerView.playerPushedOrPresented = YES;
     }
+    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 

@@ -58,7 +58,7 @@
             
             self.maxtime = self.topicViewModels.lastObject.topic.t;
             
-            completion(nil, INFINITY, self.topicViewModels.count);
+            completion(nil, 999999999, self.topicViewModels.count);
             
         } else {
             
