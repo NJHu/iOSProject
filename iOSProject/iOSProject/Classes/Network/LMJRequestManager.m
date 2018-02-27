@@ -245,17 +245,12 @@
 }
 
 static LMJRequestManager *_instance = nil;
-
 + (instancetype)sharedManager
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
         _instance = [[self alloc] init];
-        
-        
     });
-    
     return _instance;
 }
 

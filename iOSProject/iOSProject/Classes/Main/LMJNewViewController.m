@@ -34,6 +34,7 @@
 #import "LMJFingerCheckViewController.h"
 #import "LMJAutoLayoutViewController.h"
 #import "LMJVFLLayoutViewController.h"
+#import "LMJOfflineDownloadViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -104,6 +105,10 @@
     LMJWordArrowItem *item12 = [LMJWordArrowItem itemWithTitle:@"文件下载" subTitle: @"不重复下载服务器未更新文件"];
 
     item12.destVc = [LMJDownLoadFileViewController class];
+    
+    LMJWordArrowItem *item121 = [LMJWordArrowItem itemWithTitle:@"文件 断点 离线 缓存 下载" subTitle: @""];
+    
+    item121.destVc = [LMJOfflineDownloadViewController class];
 
     LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"Masonry 布局实例" subTitle: @"包含scrollView布局"];
 
@@ -174,7 +179,7 @@
     item30.destVc = [LMJVFLLayoutViewController class];
     
 
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item29, item30, item15, item16, item17, item18, item19, item20, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item121,item13, item29, item30, item15, item16, item17, item18, item19, item20, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
 
     [self.sections addObject:section0];
 }

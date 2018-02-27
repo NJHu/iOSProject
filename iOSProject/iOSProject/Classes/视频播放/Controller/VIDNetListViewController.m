@@ -35,7 +35,6 @@
                         @"http://120.25.226.186:32812/resources/videos/minion_09.mp4",
                         @"http://120.25.226.186:32812/resources/videos/minion_10.mp4"
                         ];
-    
     NSMutableArray<LMJWordArrowItem *> *items = [NSMutableArray array];
     
     [urls enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

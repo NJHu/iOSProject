@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		54E3991EBFDEC31145ED8B0F /* libPods-iOSProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 195AF1DB9976AB51691A659C /* libPods-iOSProject.a */; };
+		581A3E2C2044434400AF08C0 /* LMJOfflineDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E2B2044434400AF08C0 /* LMJOfflineDownloadViewController.m */; };
+		581A3E302044448F00AF08C0 /* NJDownloadOffLineTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E2F2044448F00AF08C0 /* NJDownloadOffLineTask.m */; };
+		581A3E33204444B200AF08C0 /* NJDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E32204444B200AF08C0 /* NJDownloadManager.m */; };
+		581A3E362044499700AF08C0 /* NJDownLoadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E352044499700AF08C0 /* NJDownLoadHelper.m */; };
 		58223312201821910008251F /* UIView+GestureCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330A201821910008251F /* UIView+GestureCallback.m */; };
 		58223313201821910008251F /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */; };
 		58223314201821910008251F /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330D201821910008251F /* UITextView+WZB.m */; };
@@ -378,6 +382,14 @@
 /* Begin PBXFileReference section */
 		04BC8A56D55E3588A098FA08 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		195AF1DB9976AB51691A659C /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		581A3E2A2044434400AF08C0 /* LMJOfflineDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJOfflineDownloadViewController.h; sourceTree = "<group>"; };
+		581A3E2B2044434400AF08C0 /* LMJOfflineDownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJOfflineDownloadViewController.m; sourceTree = "<group>"; };
+		581A3E2E2044448F00AF08C0 /* NJDownloadOffLineTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDownloadOffLineTask.h; sourceTree = "<group>"; };
+		581A3E2F2044448F00AF08C0 /* NJDownloadOffLineTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDownloadOffLineTask.m; sourceTree = "<group>"; };
+		581A3E31204444B200AF08C0 /* NJDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJDownloadManager.h; sourceTree = "<group>"; };
+		581A3E32204444B200AF08C0 /* NJDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJDownloadManager.m; sourceTree = "<group>"; };
+		581A3E342044499700AF08C0 /* NJDownLoadHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJDownLoadHelper.h; sourceTree = "<group>"; };
+		581A3E352044499700AF08C0 /* NJDownLoadHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJDownLoadHelper.m; sourceTree = "<group>"; };
 		5822330A201821910008251F /* UIView+GestureCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GestureCallback.m"; sourceTree = "<group>"; };
 		5822330B201821910008251F /* NSDecimalNumber+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Addtion.h"; sourceTree = "<group>"; };
 		5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DDPopUpViewController.m"; sourceTree = "<group>"; };
@@ -1042,6 +1054,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		581A3E2D2044448700AF08C0 /* Toos */ = {
+			isa = PBXGroup;
+			children = (
+				581A3E2E2044448F00AF08C0 /* NJDownloadOffLineTask.h */,
+				581A3E2F2044448F00AF08C0 /* NJDownloadOffLineTask.m */,
+				581A3E342044499700AF08C0 /* NJDownLoadHelper.h */,
+				581A3E352044499700AF08C0 /* NJDownLoadHelper.m */,
+				581A3E31204444B200AF08C0 /* NJDownloadManager.h */,
+				581A3E32204444B200AF08C0 /* NJDownloadManager.m */,
+			);
+			path = Toos;
+			sourceTree = "<group>";
+		};
 		58223309201821910008251F /* ThirdCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -1856,6 +1881,9 @@
 				5822334D20187D610008251F /* LMJAutoLayoutViewController.m */,
 				5822334F20187F270008251F /* LMJVFLLayoutViewController.h */,
 				5822335020187F270008251F /* LMJVFLLayoutViewController.m */,
+				581A3E2A2044434400AF08C0 /* LMJOfflineDownloadViewController.h */,
+				581A3E2B2044434400AF08C0 /* LMJOfflineDownloadViewController.m */,
+				581A3E2D2044448700AF08C0 /* Toos */,
 				58DC81441FFA07710060DC03 /* Model */,
 				58DC81451FFA07710060DC03 /* View */,
 			);
@@ -2626,9 +2654,11 @@
 				58DC85011FFC972C0060DC03 /* BSJTopicViewController.m in Sources */,
 				5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */,
 				58DC83C51FFB43E30060DC03 /* LMJDrawBoardViewController.m in Sources */,
+				581A3E362044499700AF08C0 /* NJDownLoadHelper.m in Sources */,
 				58926476202DA70E007DA41E /* CalendarReminderManager.m in Sources */,
 				584038381FF7E2BE002A0566 /* LMJVerticalLayoutViewController.m in Sources */,
 				58DC84541FFBDDC40060DC03 /* LMJChildBlockViewController.m in Sources */,
+				581A3E2C2044434400AF08C0 /* LMJOfflineDownloadViewController.m in Sources */,
 				584038681FF88594002A0566 /* LMJUpLoadImageCell.m in Sources */,
 				58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */,
 				58DC84F71FFC972C0060DC03 /* BSJNewViewController.m in Sources */,
@@ -2753,6 +2783,7 @@
 				5892ADA71FF600F700E868C2 /* YYFPSLabel.m in Sources */,
 				58DC851B1FFC972C0060DC03 /* BSJMeSquareCell.m in Sources */,
 				58A17C4E2005F4E600B350AB /* LMJParagraph.m in Sources */,
+				581A3E302044448F00AF08C0 /* NJDownloadOffLineTask.m in Sources */,
 				58DC83CE1FFB43E30060DC03 /* LMJPiesViewController.m in Sources */,
 				589B57071FFFC53000B2D5A8 /* QQLrcDataTool.m in Sources */,
 				58651AA41FFE6D6F0087419D /* SINProfileViewController.m in Sources */,
@@ -2804,6 +2835,7 @@
 				58DC85101FFC972C0060DC03 /* BSJRecommendCategory.m in Sources */,
 				58DC83D91FFB440E0060DC03 /* WPFDemoController.m in Sources */,
 				58DC85091FFC972C0060DC03 /* NJAVPlayerViewController.m in Sources */,
+				581A3E33204444B200AF08C0 /* NJDownloadManager.m in Sources */,
 				58DC843F1FFBD1290060DC03 /* LMJGCDViewController.m in Sources */,
 				58DC85291FFC972C0060DC03 /* BSJTopicCmtService.m in Sources */,
 				58651AA71FFE6D6F0087419D /* SINTabBarController.m in Sources */,
