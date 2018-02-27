@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		54E3991EBFDEC31145ED8B0F /* libPods-iOSProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 195AF1DB9976AB51691A659C /* libPods-iOSProject.a */; };
 		581A3E2C2044434400AF08C0 /* LMJOfflineDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E2B2044434400AF08C0 /* LMJOfflineDownloadViewController.m */; };
-		581A3E302044448F00AF08C0 /* NJDownloadOffLineTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E2F2044448F00AF08C0 /* NJDownloadOffLineTask.m */; };
-		581A3E33204444B200AF08C0 /* NJDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E32204444B200AF08C0 /* NJDownloadManager.m */; };
-		581A3E362044499700AF08C0 /* NJDownLoadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E352044499700AF08C0 /* NJDownLoadHelper.m */; };
+		581A3E3F20450B3E00AF08C0 /* MJDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E3920450B3D00AF08C0 /* MJDownloadManager.m */; };
+		581A3E4020450B3E00AF08C0 /* MJDownloadConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E3A20450B3D00AF08C0 /* MJDownloadConst.m */; };
+		581A3E4120450B3E00AF08C0 /* NSString+MJDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E3D20450B3D00AF08C0 /* NSString+MJDownload.m */; };
 		58223312201821910008251F /* UIView+GestureCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330A201821910008251F /* UIView+GestureCallback.m */; };
 		58223313201821910008251F /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */; };
 		58223314201821910008251F /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330D201821910008251F /* UITextView+WZB.m */; };
@@ -384,12 +384,13 @@
 		195AF1DB9976AB51691A659C /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		581A3E2A2044434400AF08C0 /* LMJOfflineDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJOfflineDownloadViewController.h; sourceTree = "<group>"; };
 		581A3E2B2044434400AF08C0 /* LMJOfflineDownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJOfflineDownloadViewController.m; sourceTree = "<group>"; };
-		581A3E2E2044448F00AF08C0 /* NJDownloadOffLineTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDownloadOffLineTask.h; sourceTree = "<group>"; };
-		581A3E2F2044448F00AF08C0 /* NJDownloadOffLineTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDownloadOffLineTask.m; sourceTree = "<group>"; };
-		581A3E31204444B200AF08C0 /* NJDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJDownloadManager.h; sourceTree = "<group>"; };
-		581A3E32204444B200AF08C0 /* NJDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJDownloadManager.m; sourceTree = "<group>"; };
-		581A3E342044499700AF08C0 /* NJDownLoadHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJDownLoadHelper.h; sourceTree = "<group>"; };
-		581A3E352044499700AF08C0 /* NJDownLoadHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJDownLoadHelper.m; sourceTree = "<group>"; };
+		581A3E3820450B3D00AF08C0 /* NSString+MJDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJDownload.h"; sourceTree = "<group>"; };
+		581A3E3920450B3D00AF08C0 /* MJDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDownloadManager.m; sourceTree = "<group>"; };
+		581A3E3A20450B3D00AF08C0 /* MJDownloadConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDownloadConst.m; sourceTree = "<group>"; };
+		581A3E3B20450B3D00AF08C0 /* MJDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDownloadManager.h; sourceTree = "<group>"; };
+		581A3E3C20450B3D00AF08C0 /* MJDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDownload.h; sourceTree = "<group>"; };
+		581A3E3D20450B3D00AF08C0 /* NSString+MJDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJDownload.m"; sourceTree = "<group>"; };
+		581A3E3E20450B3D00AF08C0 /* MJDownloadConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDownloadConst.h; sourceTree = "<group>"; };
 		5822330A201821910008251F /* UIView+GestureCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GestureCallback.m"; sourceTree = "<group>"; };
 		5822330B201821910008251F /* NSDecimalNumber+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Addtion.h"; sourceTree = "<group>"; };
 		5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DDPopUpViewController.m"; sourceTree = "<group>"; };
@@ -1057,14 +1058,23 @@
 		581A3E2D2044448700AF08C0 /* Toos */ = {
 			isa = PBXGroup;
 			children = (
-				581A3E2E2044448F00AF08C0 /* NJDownloadOffLineTask.h */,
-				581A3E2F2044448F00AF08C0 /* NJDownloadOffLineTask.m */,
-				581A3E342044499700AF08C0 /* NJDownLoadHelper.h */,
-				581A3E352044499700AF08C0 /* NJDownLoadHelper.m */,
-				581A3E31204444B200AF08C0 /* NJDownloadManager.h */,
-				581A3E32204444B200AF08C0 /* NJDownloadManager.m */,
+				581A3E3720450B3D00AF08C0 /* MJDownload */,
 			);
 			path = Toos;
+			sourceTree = "<group>";
+		};
+		581A3E3720450B3D00AF08C0 /* MJDownload */ = {
+			isa = PBXGroup;
+			children = (
+				581A3E3E20450B3D00AF08C0 /* MJDownloadConst.h */,
+				581A3E3C20450B3D00AF08C0 /* MJDownload.h */,
+				581A3E3A20450B3D00AF08C0 /* MJDownloadConst.m */,
+				581A3E3B20450B3D00AF08C0 /* MJDownloadManager.h */,
+				581A3E3920450B3D00AF08C0 /* MJDownloadManager.m */,
+				581A3E3820450B3D00AF08C0 /* NSString+MJDownload.h */,
+				581A3E3D20450B3D00AF08C0 /* NSString+MJDownload.m */,
+			);
+			path = MJDownload;
 			sourceTree = "<group>";
 		};
 		58223309201821910008251F /* ThirdCategory */ = {
@@ -2654,7 +2664,6 @@
 				58DC85011FFC972C0060DC03 /* BSJTopicViewController.m in Sources */,
 				5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */,
 				58DC83C51FFB43E30060DC03 /* LMJDrawBoardViewController.m in Sources */,
-				581A3E362044499700AF08C0 /* NJDownLoadHelper.m in Sources */,
 				58926476202DA70E007DA41E /* CalendarReminderManager.m in Sources */,
 				584038381FF7E2BE002A0566 /* LMJVerticalLayoutViewController.m in Sources */,
 				58DC84541FFBDDC40060DC03 /* LMJChildBlockViewController.m in Sources */,
@@ -2669,6 +2678,7 @@
 				5892AD071FF4F9D200E868C2 /* LMJAutoRefreshFooter.m in Sources */,
 				58223317201821C00008251F /* NullSafe.m in Sources */,
 				58DC84EE1FFC972B0060DC03 /* BSJ.m in Sources */,
+				581A3E4120450B3E00AF08C0 /* NSString+MJDownload.m in Sources */,
 				58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */,
 				584038721FF9399B002A0566 /* LMJListTimerCountDownViewController.m in Sources */,
 				5840385D1FF873A8002A0566 /* LMJAnnotationCustomPopView.m in Sources */,
@@ -2700,11 +2710,13 @@
 				58DC83C91FFB43E30060DC03 /* LMJDrawBaseViewController.m in Sources */,
 				58DC83C01FFB43E30060DC03 /* LMJDrawLineViewController.m in Sources */,
 				5892AD011FF4F9D200E868C2 /* LMJWordItem.m in Sources */,
+				581A3E4020450B3E00AF08C0 /* MJDownloadConst.m in Sources */,
 				5840387F1FF9F128002A0566 /* LMJOCJSHelper.m in Sources */,
 				5840386F1FF93133002A0566 /* LMJUpLoadProgressViewController.m in Sources */,
 				5822335420188F5D0008251F /* MCLocalHTMLViewController.m in Sources */,
 				58651ABA1FFE6D6F0087419D /* SINStatusRetweetView.m in Sources */,
 				58DC85221FFC972C0060DC03 /* BSJTopicPictureView.m in Sources */,
+				581A3E3F20450B3E00AF08C0 /* MJDownloadManager.m in Sources */,
 				5892AD571FF5079C00E868C2 /* LMJNavigationController.m in Sources */,
 				5892AD091FF4F9D200E868C2 /* LMJSettingCell.m in Sources */,
 				58DC818A1FFA317B0060DC03 /* LMJExpandHeader.m in Sources */,
@@ -2783,7 +2795,6 @@
 				5892ADA71FF600F700E868C2 /* YYFPSLabel.m in Sources */,
 				58DC851B1FFC972C0060DC03 /* BSJMeSquareCell.m in Sources */,
 				58A17C4E2005F4E600B350AB /* LMJParagraph.m in Sources */,
-				581A3E302044448F00AF08C0 /* NJDownloadOffLineTask.m in Sources */,
 				58DC83CE1FFB43E30060DC03 /* LMJPiesViewController.m in Sources */,
 				589B57071FFFC53000B2D5A8 /* QQLrcDataTool.m in Sources */,
 				58651AA41FFE6D6F0087419D /* SINProfileViewController.m in Sources */,
@@ -2835,7 +2846,6 @@
 				58DC85101FFC972C0060DC03 /* BSJRecommendCategory.m in Sources */,
 				58DC83D91FFB440E0060DC03 /* WPFDemoController.m in Sources */,
 				58DC85091FFC972C0060DC03 /* NJAVPlayerViewController.m in Sources */,
-				581A3E33204444B200AF08C0 /* NJDownloadManager.m in Sources */,
 				58DC843F1FFBD1290060DC03 /* LMJGCDViewController.m in Sources */,
 				58DC85291FFC972C0060DC03 /* BSJTopicCmtService.m in Sources */,
 				58651AA71FFE6D6F0087419D /* SINTabBarController.m in Sources */,
