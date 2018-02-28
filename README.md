@@ -1,17 +1,19 @@
-<div style="position: fixed; right: 0; display: inline-block; width: 20%; background-color: #52a64b; z-index: 1000; padding: 0; margin: 0; top: 20%">
-        <p>
-            <label style="text-align: center; color: white">加入iOS技术微信群，享有更多互动</label>
-            <img src="./images/qun.jpg" width="100%"/>
-        </p>
-        <p style="margin-top: 50px">
-            <label style="text-align: center; color: white">作者微信:</label>
-            <img src="./images/nj.jpg" width="100%"/>
-        </p>
-</div>
+<div style="background-color: #52a64b">
+        <div style="display: inline-block; width: 48%; text-align: center">
+            <div style="text-align: center; color: white">加入iOS技术微信群，享有更多互动</div>
+            <img src="./images/qun.jpg" width="42%"/>
+        </div>
+        <div style="display: inline-block; width: 48%; text-align: center">
+            <div style="text-align: center; color: white">作者微信:</div>
+            <img src="./images/nj.jpg" width="42%"/>
+        </div>
+    </div>
+
 <div>
 <img src="./images/gn1iphonex.png" width="16.6%"><img src="./images/jciphonex.png" width="16.6%"><img src="./images/bsj/bsqbiphonex.png" width="16.6%"><img src="./images/wb/wb2iphonex.png" width="16.6%"><img src="./images/qqmusic/mus2iphonex.png" width="16.6%"><img src="./images/sp/clpiphonex.png" width="16.6%">
 </div>
-GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ PR is welcome，or [feedback](mailto:64hp@163.com):64hp@163.com
+
+GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ [feedback](mailto:64hp@163.com):64hp@163.com
 
 ## iOSProject
 - [开始](#Getting_Started)
