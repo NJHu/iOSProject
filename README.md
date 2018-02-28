@@ -1,4 +1,6 @@
-<img src="./images/qun.jpg" width="150px" height="132px"><img src="./images/lvse.jpg" width="50px" height="132px"><img src="./images/nj.jpg" width="93px" height="132px">
+<div>
+<img src="./images/qun.jpg" width="150px" height="132px" alt=""><img src="./images/lvse.jpg" width="10%" height="132px" alt=""><img src="./images/nj.jpg" width="93px" height="132px" alt="">
+</div>
 
 GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ [feedback](mailto:64hp@163.com):64hp@163.com
 
