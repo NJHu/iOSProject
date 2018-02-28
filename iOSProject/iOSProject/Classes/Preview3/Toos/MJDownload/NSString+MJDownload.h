@@ -27,5 +27,5 @@
 /**
  *  生成编码后的URL
  */
-- (NSString *)encodedURL;
+//- (NSString *)encodedURL;
 @end
