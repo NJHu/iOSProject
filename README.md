@@ -1,11 +1,3 @@
-<div>
-<img src="./images/gn1iphonex.png" width="16.6%"><img src="./images/jciphonex.png" width="16.6%"><img src="./images/bsj/bsqbiphonex.png" width="16.6%"><img src="./images/wb/wb2iphonex.png" width="16.6%"><img src="./images/qqmusic/mus2iphonex.png" width="16.6%"><img src="./images/sp/clpiphonex.png" width="16.6%">
-</div>
-
-<img src="./images/qunju.jpg" width="62%">
-
-GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ [feedback](mailto:64hp@163.com):64hp@163.com
-
 ## iOSProject
 
 - [开始](#Getting_Started)
@@ -19,6 +11,16 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 	- [QQ 音乐 music](#qqmusic)
 	- [视频播放](#videos)
 - [期待](#qidai)
+
+## <a id="Getting_Started"></a> 开始
+
+<img src="./images/qunju.jpg" width="62%">
+
+GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ [feedback](mailto:64hp@163.com):64hp@163.com
+
+<div>
+<img src="./images/gn1iphonex.png" width="16.6%"><img src="./images/jciphonex.png" width="16.6%"><img src="./images/bsj/bsqbiphonex.png" width="16.6%"><img src="./images/wb/wb2iphonex.png" width="16.6%"><img src="./images/qqmusic/mus2iphonex.png" width="16.6%"><img src="./images/sp/clpiphonex.png" width="16.6%">
+</div>
 
 ## <a id="homeList"></a> 首页功能列表
 <img src="./images/gn1.png" width="31%">|
