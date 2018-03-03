@@ -1,5 +1,5 @@
 <div>
-<img src="./images/qun.jpg" width="150px" height="132px"><img src="./images/lvse.jpg" width="20%" height="132px"><img src="./images/nj.jpg" width="93px" height="132px"><b>Github&nbsp点个赞↑👍🙏</b>
+<img src="./images/qun.jpg" width="150px" height="132px"><img src="./images/lvse.jpg" width="20%" height="132px"><img src="./images/nj.jpg" width="93px" height="132px"><b>Github&nbsp点个赞↑👍,感谢您的支持!</b>
 </div>
 
 GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https://www.weibo.com/njhu) ｜ [feedback](mailto:64hp@163.com):64hp@163.com
