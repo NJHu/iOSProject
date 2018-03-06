@@ -11,14 +11,24 @@
 #import <CoreFoundation/CoreFoundation.h>
 #import "XLMJThread.h"
 #import "LMJSettingCell.h"
+
 @interface LMJRunLoopViewController ()
 /** <#digest#> */
 @property (nonatomic, strong) XLMJThread *xlmjThread;
 /** <#digest#> */
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSMutableArray<NSTimer *> *timers;
+
+/** <#digest#> */
+@property (nonatomic, strong) NSMutableArray<NSThread *> *threads;
+
 @end
 
 @implementation LMJRunLoopViewController
+
+static BOOL item01Operationed = NO;
+static BOOL item02Operationed = NO;
+static BOOL item1Operationed = NO;
+static BOOL item3Operationed = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,38 +39,59 @@
         [weakself threadRunLoop];
     };
     
-    
-    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"定时器和RunLoop" subTitle:nil];
-    LMJWeakSelf(item1);
-    item1.itemOperation = ^(NSIndexPath *indexPath) {
-        if (weakitem1.subTitle) {
+    LMJWordItem *item01 = [LMJWordItem itemWithTitle:@"子线程定时器" subTitle:@"思考定时器为什么不执行?"];
+    item01.itemOperation = ^(NSIndexPath *indexPath) {
+        if (item01Operationed) {
             return ;
         }
-        weakitem1.subTitle = @"";
+        item01Operationed = YES;
+        [weakself timerOnChildThread];
+    };
+    
+    LMJWordItem *item02 = [LMJWordItem itemWithTitle:@"子线程定时器2" subTitle:@"思考定时器为什么\"执行\"?"];
+    item02.itemOperation = ^(NSIndexPath *indexPath) {
+        if (item02Operationed) {
+            return ;
+        }
+        item02Operationed = YES;
+        [weakself timerOnChildThread2];
+    };
+    
+    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"定时器和RunLoop" subTitle:nil];
+    item1.itemOperation = ^(NSIndexPath *indexPath) {
+        if (item1Operationed) {
+            return ;
+        }
+        item1Operationed = YES;
         [weakself timerRunLoop];
     };
     
-//    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"RunLoop观察者" subTitle:@""];
-//    item2.itemOperation = ^(NSIndexPath *indexPath) {
-//        [weakself observerRunLoop];
-//    };
     
     LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"1, 线程常驻:runLoop里边需要添加NSPort" subTitle:@"2, 添加runloop观察者, 请点击多次看打印"];
     item3.itemOperation = ^(NSIndexPath *indexPath) {
 
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            
+        if (!item3Operationed) {
             XLMJThread *thread = [[XLMJThread alloc] initWithTarget:weakself selector:@selector(liveThread) object:nil];
             weakself.xlmjThread = thread;
             [thread start];
-        });
+        }
+        
+        item3Operationed = YES;
         // 在常驻线程执行
         [weakself performSelector:@selector(liveThreadRun) onThread:weakself.xlmjThread withObject:nil waitUntilDone:NO];
     };
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item3] andHeaderTitle:nil footerTitle:nil];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item01, item02, item1, item3] andHeaderTitle:nil footerTitle:nil];
     [self.sections addObject:section0];
+    
+    UIButton *btn = [UIButton initWithFrame:CGRectMake(0, 0, 100, 100) buttonTitle:@"取消所有的定时器, 停止所有的线程, 恢复初始化" normalBGColor:[UIColor yellowColor] selectBGColor:[UIColor whiteColor] normalColor:[UIColor redColor] selectColor:[UIColor greenColor] buttonFont:[UIFont systemFontOfSize:16] cornerRadius:10 doneBlock:^(UIButton *btn) {
+        
+        [weakself cancelAndDissmissAll];
+    }];
+    
+    btn.titleLabel.numberOfLines = 0;
+
+    self.tableView.tableFooterView = btn;
 }
 
 - (void)liveThread
@@ -168,8 +199,8 @@
     NSLog(@"--runLoop--%p", [NSRunLoop mainRunLoop]);
     
     // 调用了scheduledTimer返回的定时器，已经自动被添加到当前runLoop中，而且是NSDefaultRunLoopMode
-   NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(run) userInfo:nil repeats:YES];
-    _timer = timer;
+   NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(run) userInfo:nil repeats:YES];
+    [self.timers addObject:timer];
     // 修改模式
     // 定时器会跑在标记为common modes的模式下
     // 标记为common modes的模式：UITrackingRunLoopMode和kCFRunLoopDefaultMode
@@ -177,10 +208,23 @@
 }
 
 - (void)dealloc {
-    [_timer invalidate];
-    _timer = nil;
+    [self cancelAndDissmissAll];
+}
+
+- (void)cancelAndDissmissAll
+{
+    [_timers makeObjectsPerformSelector:@selector(invalidate)];
+    [_timers removeAllObjects];
+    
+    [_threads makeObjectsPerformSelector:@selector(cancel)];
+    [_threads removeAllObjects];
     [_xlmjThread cancel];
     _xlmjThread = nil;
+    
+    item01Operationed = NO;
+    item02Operationed = NO;
+    item1Operationed = NO;
+    item3Operationed = NO;
 }
 
 - (void)threadRunLoop
@@ -188,6 +232,7 @@
     // 主运行循环
     NSLog(@"--runLoop--%p", [NSRunLoop mainRunLoop]);
     NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+    [self.threads addObject:thread];
     [thread start];
 }
 
@@ -198,6 +243,66 @@
     NSLog(@"--%@---", [NSThread currentThread]);
 }
 
+- (void)timerOnChildThread2
+{
+    NSLog(@"-----runLoop--%p", [NSRunLoop currentRunLoop]);
+    NSLog(@"--%@---", [NSThread currentThread]);
+    
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(scheduledTimer2) object:nil];
+    [thread start];
+    
+    [self.threads addObject:thread];
+}
+
+- (void)scheduledTimer2
+{
+    NSLog(@"-----runLoop--%p", [NSRunLoop currentRunLoop]);
+    NSLog(@"--%@---", [NSThread currentThread]);
+    
+    NSLog(@"----------run--- start -%@", [NSThread currentThread]);
+    
+    LMJWeakSelf(self);
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [weakself run];
+    }];
+    [self.timers addObject:timer];
+    // 添加 port
+    [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
+    
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    
+    // 跑起来
+    [[NSRunLoop currentRunLoop] run];
+    
+    // 不会走的, 不会执行
+    NSLog(@"----------run-- end --%@", [NSThread currentThread]);
+}
+
+- (void)timerOnChildThread
+{
+    NSLog(@"-----runLoop--%p", [NSRunLoop currentRunLoop]);
+    NSLog(@"--%@---", [NSThread currentThread]);
+    
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(scheduledTimer) object:nil];
+    [thread start];
+    
+    [self.threads addObject:thread];
+}
+
+- (void)scheduledTimer
+{
+    NSLog(@"-----runLoop--%p", [NSRunLoop currentRunLoop]);
+    NSLog(@"--%@---", [NSThread currentThread]);
+    LMJWeakSelf(self);
+   NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [weakself run];
+    }];
+    [self.timers addObject:timer];
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+
+#pragma mark - no
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView cellForRowAtIndexPath:indexPath];
@@ -241,6 +346,24 @@
     web.gotoURL = @"https://github.com/NJHu/NJNet/blob/master/0912runloop/README.md";
     [self.navigationController pushViewController:web animated:YES];
     
+}
+
+- (NSMutableArray<NSTimer *> *)timers
+{
+    if(!_timers)
+    {
+        _timers = [NSMutableArray array];
+    }
+    return _timers;
+}
+
+- (NSMutableArray<NSThread *> *)threads
+{
+    if(!_threads)
+    {
+        _threads = [NSMutableArray array];
+    }
+    return _threads;
 }
 
 @end
