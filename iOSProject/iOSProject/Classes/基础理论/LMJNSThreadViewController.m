@@ -22,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     LMJWeakSelf(self);
-    self.title = @"看打印";
+//    self.title = @"看打印";
+    [self.view makeToast:@"看打印"];
     
     self.addItem([LMJWordItem itemWithTitle:@"简单创建一个多线程" subTitle:@"NSThread alloc init" itemOperation:^(NSIndexPath *indexPath) {
         [weakself addThreadAction];

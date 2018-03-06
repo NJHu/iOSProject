@@ -32,7 +32,8 @@ static BOOL item3Operationed = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"看打印";
+//    self.title = @"看打印";
+    [self.view makeToast:@"看打印"];
     LMJWeakSelf(self);
     LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"线程和RunLoop" subTitle:nil];
     item0.itemOperation = ^(NSIndexPath *indexPath) {
