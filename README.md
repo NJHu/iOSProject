@@ -39,10 +39,7 @@ GitHub：[NJHu](https://github.com/njhu) ｜ Blog：[NJHu 微博(Chinese)](https
 <br>
 
 ### <a id="foundationList02"></a> 多线程,NSThread,,线程同步,GCD,NSOperation,同步锁
-<img src="./images/nsthreads.png" width="23.5%">
-<img src="./images/gcd.png" width="23.5%">
-<img src="./images/nsoperation.png" width="23.5%">
-<img src="./images/nslock.png" width="23.5%">
+<img src="./images/nsthreads.png" width="23.5%"><img src="./images/gcd.png" width="23.5%"><img src="./images/nsoperation.png" width="23.5%"><img src="./images/nslock.png" width="23.5%">
 <br>
 <br>
 
