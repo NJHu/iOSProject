@@ -13,19 +13,28 @@
 
 @implementation WKBridgeTool
 
++ (void)receiveActionURL:(NSURL *)actionURL {
+    
+}
+
++ (BOOL)isWebViewJavascriptBridgeURL:(NSURL *)url {
+    return [url.scheme.lowercaseString isEqualToString:kProtocolScheme];
+}
+
 + (void)bridgeRegisterDefault:(WKWebViewJsBridge *)bridge {
     
+    
     //启动页面
-    [bridge registerHandler:kStartPageMessage handler:^(id data, WVJBResponseCallback responseCallback) {
+    [bridge registerHandler:kStartPageMessage handle:^(id data, void (^responseCallback)(id responseData)) {
         [WKBridgeTool handlerPage:data callback:responseCallback];
     }];
     
     //调用方法
-    [bridge registerHandler:kStartActionMessage handler:^(id data, WVJBResponseCallback responseCallback) {
+    [bridge registerHandler:kStartActionMessage handle:^(id data, void (^responseCallback)(id responseData)) {
         [WKBridgeTool handlerAction:data callback:responseCallback];
     }];
     //获取数据
-    [bridge registerHandler:kGetMessage handler:^(id data, WVJBResponseCallback responseCallback) {
+    [bridge registerHandler:kGetMessage handle:^(id data, void (^responseCallback)(id responseData)) {
         if (![data isKindOfClass:NSArray.class]) {
             return;
         }
@@ -41,10 +50,11 @@
                 dict[key] = value;
             }
         }
-        responseCallback(dict);
+        
+        !responseCallback ?: responseCallback(dict);
     }];
     //保存数据
-    [bridge registerHandler:kSetMessage handler:^(id data, WVJBResponseCallback responseCallback) {
+    [bridge registerHandler:kSetMessage handle:^(id data, void (^responseCallback)(id responseData)) {
         if (![data isKindOfClass:NSDictionary.class]) {
             return;
         }
@@ -52,12 +62,14 @@
         [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key];
         }];
+        
+        !responseCallback ?: responseCallback(nil);
     }];
     
     
     LMJWeakSelf(bridge);
     //关闭当前h5
-    [bridge registerHandler:kCloseMessage handler:^(id data, WVJBResponseCallback responseCallback) {
+    [bridge registerHandler:kCloseMessage handle:^(id data, void (^responseCallback)(id responseData)) {
         UIViewController *con = [weakbridge.webView viewController];
         
         // 判断两种情况: push 和 present
@@ -68,6 +80,8 @@
         }else{
             [con.navigationController popViewControllerAnimated:YES];
         }
+        
+        !responseCallback ?: responseCallback(nil);
     }];
 }
 
@@ -87,7 +101,7 @@
  }
  */
 
-+ (void) handlerPage:(id)data callback:(WVJBResponseCallback)callback {
++ (void) handlerPage:(id)data callback:(void(^)(id responseData))callback {
     if (![data isKindOfClass:NSDictionary.class]) {
         return;
     }
@@ -143,8 +157,9 @@
 }
 
 
-+ (void)handlerAction:(id)data callback:(WVJBResponseCallback)callback {
++ (void)handlerAction:(id)data callback:(void(^)(id responseData))callback {
     
+    !callback ?: callback(nil);
     NSLog(@"%@", data);
     
 //    NSDictionary *dict = @{

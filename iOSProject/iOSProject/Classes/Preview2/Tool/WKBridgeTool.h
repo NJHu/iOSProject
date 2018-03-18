@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#define kProtocolScheme    @"njhu_h5_scheme"
 
-#define kStartPageMessage   @"startPage"
-#define kStartActionMessage @"startAction"
+
+#define kQueueHasMessage   @"__queue_message__"
+#define kReturnMessage     @"__return_message__"
+#define kInitAppMessage    @"__init_app__"
+#define kStartPageMessage   @"startpage"
+#define kStartActionMessage @"startaction"
 #define kGetMessage         @"get"
 #define kSetMessage         @"set"
 #define kCloseMessage       @"close"
+
 
 @class WKWebViewJsBridge;
 
@@ -29,8 +35,6 @@
  */
 + (void)bridgeRegisterDefault:(WKWebViewJsBridge *)bridge;
 
-+ (void) handlerPage:(id)data callback:(WVJBResponseCallback)callback;
-
-+ (void)handlerAction:(id)data callback:(WVJBResponseCallback)callback;
++ (BOOL)isWebViewJavascriptBridgeURL:(NSURL *)url;
 
 @end
