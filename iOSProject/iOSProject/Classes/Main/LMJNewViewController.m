@@ -100,7 +100,7 @@
 
     item10.destVc = [LMJHorizontalLayoutViewController class];
 
-    LMJWordArrowItem *item101 = [LMJWordArrowItem itemWithTitle:@"三种的布局" subTitle: @"Cute"];
+    LMJWordArrowItem *item101 = [LMJWordArrowItem itemWithTitle:@"三种CollectionViewLayout布局" subTitle: @"Cute"];
     
     item101.destVc = [LMJCuteFlowLayoutViewController class];
     

@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.fd_interactivePopDisabled = YES;
     UICollectionViewLayout *lineFlowLayout = [[LMJCircleLayout alloc] init];
     self.collectionView.collectionViewLayout = lineFlowLayout;
     self.collectionView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight * 0.8);
