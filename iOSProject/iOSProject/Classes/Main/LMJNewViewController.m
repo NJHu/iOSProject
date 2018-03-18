@@ -35,6 +35,8 @@
 #import "LMJAutoLayoutViewController.h"
 #import "LMJVFLLayoutViewController.h"
 #import "LMJOfflineDownloadViewController.h"
+#import "LMJH5JSBridgeViewController.h"
+#import "LMJCuteFlowLayoutViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -98,6 +100,10 @@
 
     item10.destVc = [LMJHorizontalLayoutViewController class];
 
+    LMJWordArrowItem *item101 = [LMJWordArrowItem itemWithTitle:@"三种的布局" subTitle: @"Cute"];
+    
+    item101.destVc = [LMJCuteFlowLayoutViewController class];
+    
     LMJWordArrowItem *item11 = [LMJWordArrowItem itemWithTitle:@"键盘处理" subTitle: @""];
 
     item11.destVc = [LMJKeyboardHandleViewController class];
@@ -135,9 +141,13 @@
 
     item19.destVc = [LMJListTimerCountDownViewController class];
 
-    LMJWordArrowItem *item20 = [LMJWordArrowItem itemWithTitle:@"H5和 OC 交互" subTitle: @""];
+    LMJWordArrowItem *item20 = [LMJWordArrowItem itemWithTitle:@"H5_OC交互" subTitle: @"原生addScriptMessageHandler"];
 
     item20.destVc = [LMJH5_OCViewController class];
+    
+    LMJWordArrowItem *item201 = [LMJWordArrowItem itemWithTitle:@"H5_OC_JSBridge交互" subTitle: @"自定义 JSBridge "];
+    
+    item201.destVc = [LMJH5JSBridgeViewController class];
 
     LMJWordArrowItem *item21 = [LMJWordArrowItem itemWithTitle:@"自定义各种弹框" subTitle: @""];
 
@@ -179,7 +189,7 @@
     item30.destVc = [LMJVFLLayoutViewController class];
     
 
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item121,item13, item29, item30, item15, item16, item17, item18, item19, item20, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item101, item11, item12, item121,item13, item29, item30, item15, item16, item17, item18, item19, item20, item201, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
 
     [self.sections addObject:section0];
 }

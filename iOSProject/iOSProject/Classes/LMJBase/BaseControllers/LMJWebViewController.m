@@ -160,8 +160,7 @@
 }
 
 // 关闭按钮的点击
-- (void)closeBtnClick:(UIButton *)closeBtn webView:(WKWebView *)webView
-{
+- (void)closeBtnClick:(UIButton *)closeBtn webView:(WKWebView *)webView {
     // 判断两种情况: push 和 present
     if ((self.navigationController.presentedViewController || self.navigationController.presentingViewController) && self.navigationController.childViewControllers.count == 1) {
         
@@ -213,19 +212,22 @@
 // 3, 6, 加载 HTTPS 的链接，需要权限认证时调用  \  如果 HTTPS 是用的证书在信任列表中这不要此代理方法
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler {
     
-    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
-        if ([challenge previousFailureCount] == 0) {
-            
-            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
-            completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
-        } else {
-            
-            completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
-        }
-    } else {
-        
-        completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
-    }
+    NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+    completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
+    
+//    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+//        if ([challenge previousFailureCount] == 0) {
+//
+//            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+//            completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
+//        } else {
+//
+//            completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
+//        }
+//    } else {
+//
+//        completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
+//    }
 }
 
 // 7页面加载完调用

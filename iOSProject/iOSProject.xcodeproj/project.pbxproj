@@ -91,6 +91,14 @@
 		58651ABA1FFE6D6F0087419D /* SINStatusRetweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A971FFE6D6F0087419D /* SINStatusRetweetView.m */; };
 		58651ABB1FFE6D6F0087419D /* SINPostStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A991FFE6D6F0087419D /* SINPostStatusService.m */; };
 		58651ABD1FFE6D6F0087419D /* SINStatusListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A9C1FFE6D6F0087419D /* SINStatusListService.m */; };
+		588CCD76205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD75205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m */; };
+		588CCD7A205D45DC0067E3C4 /* WKWebViewJsBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD79205D45DC0067E3C4 /* WKWebViewJsBridge.m */; };
+		588CCD7C205D49000067E3C4 /* H5Bridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 588CCD7B205D49000067E3C4 /* H5Bridge.js */; };
+		588CCD7F205D4FA60067E3C4 /* WKBridgeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD7E205D4FA60067E3C4 /* WKBridgeTool.m */; };
+		588CCD82205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD81205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m */; };
+		588CCD89205DF92F0067E3C4 /* LMJLineFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD85205DF92E0067E3C4 /* LMJLineFlowLayout.m */; };
+		588CCD8A205DF92F0067E3C4 /* LMJGirdLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD86205DF92E0067E3C4 /* LMJGirdLayout.m */; };
+		588CCD8B205DF92F0067E3C4 /* LMJCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD87205DF92F0067E3C4 /* LMJCircleLayout.m */; };
 		58926426201B622B007DA41E /* BSJSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926425201B622B007DA41E /* BSJSQLiteManager.m */; };
 		58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926428201B64D3007DA41E /* BSJTopicListDAL.m */; };
 		58926467202C54C2007DA41E /* LMJRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926466202C54C2007DA41E /* LMJRunLoopViewController.m */; };
@@ -543,6 +551,21 @@
 		58651A9A1FFE6D6F0087419D /* SINStatusListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINStatusListService.h; sourceTree = "<group>"; };
 		58651A9C1FFE6D6F0087419D /* SINStatusListService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListService.m; sourceTree = "<group>"; };
 		58651A9D1FFE6D6F0087419D /* SINPostStatusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINPostStatusService.h; sourceTree = "<group>"; };
+		588CCD74205D42EE0067E3C4 /* LMJH5JSBridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJH5JSBridgeViewController.h; sourceTree = "<group>"; };
+		588CCD75205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJH5JSBridgeViewController.m; sourceTree = "<group>"; };
+		588CCD78205D45DC0067E3C4 /* WKWebViewJsBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewJsBridge.h; sourceTree = "<group>"; };
+		588CCD79205D45DC0067E3C4 /* WKWebViewJsBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJsBridge.m; sourceTree = "<group>"; };
+		588CCD7B205D49000067E3C4 /* H5Bridge.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = H5Bridge.js; sourceTree = "<group>"; };
+		588CCD7D205D4FA60067E3C4 /* WKBridgeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKBridgeTool.h; sourceTree = "<group>"; };
+		588CCD7E205D4FA60067E3C4 /* WKBridgeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKBridgeTool.m; sourceTree = "<group>"; };
+		588CCD80205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJCuteFlowLayoutViewController.h; sourceTree = "<group>"; };
+		588CCD81205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJCuteFlowLayoutViewController.m; sourceTree = "<group>"; };
+		588CCD83205DF92D0067E3C4 /* LMJCircleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCircleLayout.h; sourceTree = "<group>"; };
+		588CCD84205DF92E0067E3C4 /* LMJLineFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLineFlowLayout.h; sourceTree = "<group>"; };
+		588CCD85205DF92E0067E3C4 /* LMJLineFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLineFlowLayout.m; sourceTree = "<group>"; };
+		588CCD86205DF92E0067E3C4 /* LMJGirdLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJGirdLayout.m; sourceTree = "<group>"; };
+		588CCD87205DF92F0067E3C4 /* LMJCircleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCircleLayout.m; sourceTree = "<group>"; };
+		588CCD88205DF92F0067E3C4 /* LMJGirdLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJGirdLayout.h; sourceTree = "<group>"; };
 		58926424201B622B007DA41E /* BSJSQLiteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSJSQLiteManager.h; sourceTree = "<group>"; };
 		58926425201B622B007DA41E /* BSJSQLiteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSJSQLiteManager.m; sourceTree = "<group>"; };
 		58926427201B64D3007DA41E /* BSJTopicListDAL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSJTopicListDAL.h; sourceTree = "<group>"; };
@@ -1212,6 +1235,7 @@
 		5840384A1FF7FB88002A0566 /* Preview2 */ = {
 			isa = PBXGroup;
 			children = (
+				588CCD77205D45450067E3C4 /* Tool */,
 				584038511FF872BE002A0566 /* model */,
 				584038521FF872BE002A0566 /* view */,
 				5840384C1FF7FBCF002A0566 /* LMJMasonryViewController.h */,
@@ -1228,6 +1252,8 @@
 				584038711FF9399B002A0566 /* LMJListTimerCountDownViewController.m */,
 				584038791FF9F0F8002A0566 /* LMJH5_OCViewController.h */,
 				5840387A1FF9F0F9002A0566 /* LMJH5_OCViewController.m */,
+				588CCD74205D42EE0067E3C4 /* LMJH5JSBridgeViewController.h */,
+				588CCD75205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m */,
 				584038821FF9F2F1002A0566 /* LMJAlertViewsViewController.h */,
 				584038811FF9F2F0002A0566 /* LMJAlertViewsViewController.m */,
 				584038851FF9F602002A0566 /* LMJFillTableFormViewController.h */,
@@ -1408,6 +1434,18 @@
 				5892ACAD1FF4EDED00E868C2 /* Libs */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		588CCD77205D45450067E3C4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				588CCD78205D45DC0067E3C4 /* WKWebViewJsBridge.h */,
+				588CCD79205D45DC0067E3C4 /* WKWebViewJsBridge.m */,
+				588CCD7D205D4FA60067E3C4 /* WKBridgeTool.h */,
+				588CCD7E205D4FA60067E3C4 /* WKBridgeTool.m */,
+				588CCD7B205D49000067E3C4 /* H5Bridge.js */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		58926468202D6645007DA41E /* Other */ = {
@@ -1893,6 +1931,8 @@
 				5822335020187F270008251F /* LMJVFLLayoutViewController.m */,
 				581A3E2A2044434400AF08C0 /* LMJOfflineDownloadViewController.h */,
 				581A3E2B2044434400AF08C0 /* LMJOfflineDownloadViewController.m */,
+				588CCD80205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.h */,
+				588CCD81205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m */,
 				581A3E2D2044448700AF08C0 /* Toos */,
 				58DC81441FFA07710060DC03 /* Model */,
 				58DC81451FFA07710060DC03 /* View */,
@@ -1912,6 +1952,12 @@
 		58DC81451FFA07710060DC03 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				588CCD83205DF92D0067E3C4 /* LMJCircleLayout.h */,
+				588CCD87205DF92F0067E3C4 /* LMJCircleLayout.m */,
+				588CCD88205DF92F0067E3C4 /* LMJGirdLayout.h */,
+				588CCD86205DF92E0067E3C4 /* LMJGirdLayout.m */,
+				588CCD84205DF92E0067E3C4 /* LMJLineFlowLayout.h */,
+				588CCD85205DF92E0067E3C4 /* LMJLineFlowLayout.m */,
 				58DC81851FFA317A0060DC03 /* LMJExpandHeader.h */,
 				58DC81881FFA317B0060DC03 /* LMJExpandHeader.m */,
 				58DC81861FFA317A0060DC03 /* LMJExpandImageView.h */,
@@ -2508,6 +2554,7 @@
 				589B57792000339800B2D5A8 /* videoData.json in Resources */,
 				589B56CC1FFFC52F00B2D5A8 /* 月半小夜曲.lrc in Resources */,
 				589B56CD1FFFC52F00B2D5A8 /* 255319.lrc in Resources */,
+				588CCD7C205D49000067E3C4 /* H5Bridge.js in Resources */,
 				589B56D01FFFC52F00B2D5A8 /* 309769.lrc in Resources */,
 				589B56F41FFFC52F00B2D5A8 /* Musics.plist in Resources */,
 				589B56D31FFFC52F00B2D5A8 /* 339744.lrc in Resources */,
@@ -2632,18 +2679,21 @@
 				58DC83E71FFB44380060DC03 /* WPFSnapView.m in Sources */,
 				5840384D1FF7FBCF002A0566 /* LMJMasonryViewController.m in Sources */,
 				58DC85201FFC972C0060DC03 /* BSJGuidePushView.m in Sources */,
+				588CCD82205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m in Sources */,
 				58651AAC1FFE6D6F0087419D /* SINStatusViewModel.m in Sources */,
 				589B56FB1FFFC52F00B2D5A8 /* MUSPlayingViewController.m in Sources */,
 				589B57852000339800B2D5A8 /* VIDVideoDownloadingCell.m in Sources */,
 				589B56FF1FFFC52F00B2D5A8 /* QQLrcModel.m in Sources */,
 				58DC84FD1FFC972C0060DC03 /* BSJTabBarController.m in Sources */,
 				584038421FF7EC0E002A0566 /* LMJDownLoadFileViewController.m in Sources */,
+				588CCD7A205D45DC0067E3C4 /* WKWebViewJsBridge.m in Sources */,
 				58DC850B1FFC972C0060DC03 /* BSJUser.m in Sources */,
 				58DC852A1FFC972C0060DC03 /* BSJRecommendSevice.m in Sources */,
 				5892AD751FF5114A00E868C2 /* LMJMessageViewController.m in Sources */,
 				5822332020182C5D0008251F /* MCCornersRoundViewController.m in Sources */,
 				5892AD031FF4F9D200E868C2 /* LMJElementsFlowLayout.m in Sources */,
 				58DC852D1FFC9B720060DC03 /* LMJCommentHeaderView.m in Sources */,
+				588CCD7F205D4FA60067E3C4 /* WKBridgeTool.m in Sources */,
 				58B59D0A2015B17800C4C4C9 /* LMJCasesViewController.m in Sources */,
 				58DC818D1FFA335C0060DC03 /* LMJFingerCheckViewController.m in Sources */,
 				58DC83D31FFB43E30060DC03 /* LMJDotRemoveViewController.m in Sources */,
@@ -2687,6 +2737,7 @@
 				589B57772000339800B2D5A8 /* VIDCollectionViewController.m in Sources */,
 				58651AA91FFE6D6F0087419D /* SINBroswerViewController.m in Sources */,
 				5822334520185F790008251F /* MCSphereTagCloudViewController.m in Sources */,
+				588CCD8B205DF92F0067E3C4 /* LMJCircleLayout.m in Sources */,
 				589B57762000339800B2D5A8 /* VIDTableViewController.m in Sources */,
 				58DC83D11FFB43E30060DC03 /* LMJClipImageViewController.m in Sources */,
 				589B56F91FFFC52F00B2D5A8 /* MUSLrcTableViewController.m in Sources */,
@@ -2703,6 +2754,7 @@
 				5892AD051FF4F9D200E868C2 /* LMJHorizontalFlowLayout.m in Sources */,
 				58DC846B1FFC94B30060DC03 /* LMJTeam.m in Sources */,
 				58DC846F1FFC967E0060DC03 /* LMJBaseRequest.m in Sources */,
+				588CCD8A205DF92F0067E3C4 /* LMJGirdLayout.m in Sources */,
 				58DC83CC1FFB43E30060DC03 /* LMJJuZhenCaoZuoViewController.m in Sources */,
 				58DC838E1FFB43460060DC03 /* LMJHDZSQViewController.m in Sources */,
 				58DC85061FFC972C0060DC03 /* NJPlayerView.m in Sources */,
@@ -2717,6 +2769,7 @@
 				58651ABA1FFE6D6F0087419D /* SINStatusRetweetView.m in Sources */,
 				58DC85221FFC972C0060DC03 /* BSJTopicPictureView.m in Sources */,
 				581A3E3F20450B3E00AF08C0 /* MJDownloadManager.m in Sources */,
+				588CCD89205DF92F0067E3C4 /* LMJLineFlowLayout.m in Sources */,
 				5892AD571FF5079C00E868C2 /* LMJNavigationController.m in Sources */,
 				5892AD091FF4F9D200E868C2 /* LMJSettingCell.m in Sources */,
 				58DC818A1FFA317B0060DC03 /* LMJExpandHeader.m in Sources */,
@@ -2820,6 +2873,7 @@
 				58DC846C1FFC94B30060DC03 /* LMJGroup.m in Sources */,
 				5892AD5A1FF5079C00E868C2 /* LMJBaseViewController.m in Sources */,
 				58DC83C21FFB43E30060DC03 /* LMJDrawStrPicsViewController.m in Sources */,
+				588CCD76205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m in Sources */,
 				5892AD5D1FF5079C00E868C2 /* LMJWebViewController.m in Sources */,
 				58DC842F1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.m in Sources */,
 				58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */,

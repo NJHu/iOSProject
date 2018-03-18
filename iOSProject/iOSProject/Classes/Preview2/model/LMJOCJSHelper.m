@@ -21,9 +21,7 @@ NSString *const LMJOCJSHelperScriptMessageHandlerName1_ = @"OCJSHelper1";
 {
     if (userContentController == self.webView.configuration.userContentController) {
         
-        
         if ([message.name isEqualToString:LMJOCJSHelperScriptMessageHandlerName1_]) {
-            
             
             NSDictionary *dict = message.body;
             
