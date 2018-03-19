@@ -1,0 +1,19 @@
+body {
+    margin:0;
+    padding:0;
+    background-color: #999999;
+}
+ul,li{
+    list-style-type: none;
+    margin:0;
+    padding:0
+}
+li{
+    display: block;
+    padding:10px 20px;
+    background:#aaa;
+    color:#fff;
+    border-radius: 5px;
+    margin-top:20px;
+    text-align: center;
+}

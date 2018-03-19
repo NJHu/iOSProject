@@ -15,6 +15,7 @@
 #import "LMJElementsCollectionViewController.h"
 #import "LMJVerticalLayoutViewController.h"
 #import "LMJHorizontalLayoutViewController.h"
+#import "LMJCuteFlowLayoutViewController.h"
 #import "LMJKeyboardHandleViewController.h"
 #import "LMJDownLoadFileViewController.h"
 #import "LMJMasonryViewController.h"
@@ -24,6 +25,7 @@
 #import "LMJUpLoadProgressViewController.h"
 #import "LMJListTimerCountDownViewController.h"
 #import "LMJH5_OCViewController.h"
+#import "LMJH5JSBridgeViewController.h"
 #import "LMJAlertViewsViewController.h"
 #import "LMJFillTableFormViewController.h"
 //#import "LMJFaceRecognizeViewController.h"
@@ -35,8 +37,8 @@
 #import "LMJAutoLayoutViewController.h"
 #import "LMJVFLLayoutViewController.h"
 #import "LMJOfflineDownloadViewController.h"
-#import "LMJH5JSBridgeViewController.h"
-#import "LMJCuteFlowLayoutViewController.h"
+
+
 
 @interface LMJNewViewController ()
 

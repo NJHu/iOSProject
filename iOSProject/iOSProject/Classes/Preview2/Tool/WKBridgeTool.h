@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#define kProtocolScheme    @"njhu_h5_scheme"
+#define kProtocolScheme    @"njhu"
 
 
 #define kQueueHasMessage   @"__queue_message__"
@@ -18,6 +18,7 @@
 #define kGetMessage         @"get"
 #define kSetMessage         @"set"
 #define kCloseMessage       @"close"
+#define kSplit @"_:_"
 
 
 @class WKWebViewJsBridge;
@@ -36,5 +37,23 @@
 + (void)bridgeRegisterDefault:(WKWebViewJsBridge *)bridge;
 
 + (BOOL)isWebViewJavascriptBridgeURL:(NSURL *)url;
+
+/**
+给 H5 发送消息
+ */
+
++ (NSString *)returnMsg;
+
++ (void)dispatchMsgToh5:(NSDictionary *)responseMsg webView:(WKWebView *)webView;
+
++ (NSString *)returnMsg:(NSString *)msg;
+
++ (NSString *)returnMsg:(NSString *)msg msg2:(NSString *)msg2;
+
+- (NSString *)returnMsg;
+
+- (NSString *)returnMsg:(NSString *)msg;
+
+- (NSString *)returnMsg:(NSString *)msg msg2:(NSString *)msg2;
 
 @end

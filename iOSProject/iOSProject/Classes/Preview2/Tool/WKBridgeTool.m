@@ -9,7 +9,8 @@
 
 #import "WKWebViewJsBridge.h"
 #import "WKBridgeTool.h"
-
+#import <ZFPlayer/UIWindow+CurrentViewController.h>
+#import <NSObject+YYAdd.h>
 
 @implementation WKBridgeTool
 
@@ -51,6 +52,7 @@
             }
         }
         
+        // 回调给 H5
         !responseCallback ?: responseCallback(dict);
     }];
     //保存数据
@@ -63,7 +65,7 @@
             [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key];
         }];
         
-        !responseCallback ?: responseCallback(nil);
+        !responseCallback ?: responseCallback(dict);
     }];
     
     
@@ -120,28 +122,27 @@
         NSMutableDictionary *pageData = [NSMutableDictionary dictionaryWithDictionary:data[@"setPageData"]];
         
         if (!LMJIsEmpty(pageData)) {
-            
-            [pageData enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-                pageData[key] = pageData[key][@"value"];
-            }];
+            UIViewController *setValueVC = viewController;
             
             if ([viewController isKindOfClass:UINavigationController.class]) {
-                [((UINavigationController *)viewController).viewControllers.firstObject setValuesForKeysWithDictionary:pageData];
-            } else {
-                [viewController setValuesForKeysWithDictionary:pageData];
+                setValueVC = viewController.childViewControllers.firstObject;
             }
+            
+            [pageData enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                [setValueVC setValue:obj[@"value"] forKey:key];
+            }];
         }
         
         
             NSString *startType = data[@"startType"];
             
             if ([viewController isKindOfClass:UINavigationController.class] || [startType isEqualToString:@"present"]) {
-                [UIApplication.sharedApplication.keyWindow.currentViewController presentViewController:viewController animated:YES completion:nil];
+                [UIWindow.zf_currentViewController presentViewController:viewController animated:YES completion:nil];
             }else {
                 
-                UINavigationController *navVc = UIApplication.sharedApplication.keyWindow.currentViewController.navigationController;
-                if (!navVc || ![navVc isKindOfClass:[UINavigationController class]]) {
-                    navVc = (UINavigationController *)UIApplication.sharedApplication.keyWindow.topMostWindowController;
+                UINavigationController *navVc = (UINavigationController *)UIWindow.zf_currentViewController;
+                if (![navVc isKindOfClass:[UINavigationController class]]) {
+                    navVc = navVc.navigationController;
                 }
                 if (navVc && [navVc isKindOfClass:[UINavigationController class]]) {
                     [navVc pushViewController:viewController animated:YES];
@@ -159,107 +160,149 @@
 
 + (void)handlerAction:(id)data callback:(void(^)(id responseData))callback {
     
-    !callback ?: callback(nil);
-    NSLog(@"%@", data);
+
+//    3、调用app原生静态方法或单例类方法 （工具类 或 静态功能方法， 只支持参数为 '基本数据类型'、'字符串' 的方法）
+    //调用所需要的数据， 具体属性的值怎么写由app开发人员提供
+//    var actionData = {
+//        "action" : {
+//            "ios" : "ios的类名_:_构造方法_:_执行的方法名",
+//            "android" : "android全类名_:_构造方法_:_执行的方法名"
+//        },
+//        "data" : [ //可选参数，调用方法所需要的数据, 或为  {"android":[], "ios":[]}
+//                  "value1",
+//                  "value2"
+//                  ]
+//    };
+//    //调用原生方法
+//    app.startAction(actionData, function(data) {
+//        //app执行完后的回调，data为执行原生方法的返回值
+//    });
     
-//    NSDictionary *dict = @{
-//                           @"class" : @"className",
-//                           @"classInit": @"alloc init",
-////                            @"classInit": @"sharedManager"
-//                           @"action": @""
-//    }
-//
-//    if (![data isKindOfClass:NSDictionary.class]) {
-//        return;
-//    }
-//    @try {
-//        NSString *action = data[@"action"][@"ios"];
-//        if (LMJIsEmpty(action)) {
-//            return;
-//        }
-//        NSArray *arr = [action componentsSeparatedByString:split];
-//        NSString *className = arr[0];
-//        NSString *methodName = arr[arr.count -1];
-//        NSString *instanceName = nil;
-//        if (arr.count == 3) {
-//            instanceName = arr[1];
-//        }
-//        Class class = NSClassFromString(className);
-//        if (!class) {
-//            return;
-//        }
-//
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-//        id obj = class;
-//        if (e_isNotEmpty(instanceName)) {
-//            if ([@"()" isEqualToString:instanceName]) {
-//                obj = [[class alloc] init];
-//            } else if ([class respondsToSelector:NSSelectorFromString(instanceName)]){
-//                obj = [class performSelector:NSSelectorFromString(instanceName)];
-//            } else {
-//                return;
-//            }
-//        }
-//        SEL method = NSSelectorFromString(methodName);
-//        if (![obj respondsToSelector:method]) {
-//            return;
-//        }
-//
-//        id methodData = data[@"data"];
-//        NSArray *dataArr = nil;
-//        if (LMJIsEmpty(methodData)) {
-//            dataArr = @[];
-//        } else {
-//            if ([methodData isKindOfClass:NSDictionary.class]) {
-//                id iosData = methodData[@"ios"];
-//                if ([iosData isKindOfClass:NSArray.class]) {
-//                    dataArr = iosData;
-//                } else {
-//                    dataArr = @[iosData];
-//                }
-//            } else if ([methodData isKindOfClass:NSArray.class]){
-//                dataArr = methodData;
-//            }
-//        }
-//        // 方法签名(方法的描述)
-//        NSMethodSignature *signature = [class methodSignatureForSelector:method];
-//        if (!signature) {
-//            signature = [class instanceMethodSignatureForSelector:method];
-//        }
-//        if (!signature) {
-//            return;
-//        }
-//        // NSInvocation : 利用一个NSInvocation对象包装一次方法调用（方法调用者、方法名、方法参数、方法返回值）
-//        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-//        invocation.target = obj;
-//        invocation.selector = method;
-//        // 设置参数
-//        NSInteger paramsCount = signature.numberOfArguments - 2;
-//        paramsCount = MIN(paramsCount, dataArr.count);
-//        for (NSInteger i = 0; i < paramsCount; i++) {
-//            id object = dataArr[i];
-//            if ([object isKindOfClass:[NSNull class]]) continue;
-//            [invocation setArgument:&object atIndex:i + 2];
-//        }
-//
-//        // 调用方法
-//        [invocation invoke];
-//        id result = nil;
-//        void *tempResultSet;
-//        if (signature.methodReturnLength) {
-//            [invocation getReturnValue:&tempResultSet];
-//            result = (__bridge id)(tempResultSet);
-//        }
-//        if (result && callback) {
-//            callback(result);
-//        }
-//    } @catch (NSException *exception) {
-//        NSLog(@"%@: %@", exception.name, exception.reason);
-//    }
-//#pragma clang diagnostic pop
+    if (![data isKindOfClass:NSDictionary.class]) {
+        return;
+    }
+    NSDictionary *actionData = data;
+    NSString *action = actionData[@"action"][@"ios"];
+    if (LMJIsEmpty(action)) {
+        return;
+    }
     
+    NSArray<NSString *> *calssInits = [action componentsSeparatedByString:kSplit];
+    
+    NSString *className = nil;
+    NSString *init = nil;
+    NSString *sel = nil;
+    
+    if (calssInits.count < 2) {
+        return;
+    }
+    className = calssInits[0];
+    if (calssInits.count == 2) {
+        sel = calssInits[1];
+    }
+    if (calssInits.count == 3) {
+        init = calssInits[1];
+        sel = calssInits[2];
+    }
+    
+    Class class = NSClassFromString(className);
+    if (!class) {
+        return;
+    }
+    
+    id obj = class;
+    if (!LMJIsEmpty(init)) {
+        if ([@"()" isEqualToString:init]) {
+            obj = [[class alloc] init];
+        }else if ([class respondsToSelector:NSSelectorFromString(init)]) {
+            
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            
+            obj = [class performSelector:NSSelectorFromString(init)];
+            
+        }else {
+            return;
+        }
+    }
+    
+    SEL method = NSSelectorFromString(sel);
+    if (![obj respondsToSelector:method]) {
+        return;
+    }
+
+    @try {
+        id result;
+        NSArray *args = actionData[@"data"];
+        if (!LMJIsEmpty(args)) {
+            if (args.count == 1) {
+                result = [obj performSelector:method withObject:args[0]];
+            }else if (args.count == 2) {
+                result = [obj performSelector:method withObject:args[0] withObject:args[1]];
+            }
+        } else {
+            result = [obj performSelector:method];
+        }
+        
+        #pragma clang diagnostic pop
+        
+        !callback ?: callback(result);
+    } @catch (NSException *exception) {
+        NSLog(@"%@", exception);
+    } @finally {
+    }
 }
 
 
++ (void)dispatchMsgToh5:(NSDictionary *)responseMsg webView:(WKWebView *)webView {
+    
+    NSString *messageJSON = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:responseMsg options:0 error:nil] encoding:NSUTF8StringEncoding];
+    
+    messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
+    messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\'" withString:@"\\\'"];
+    messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
+    messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\r" withString:@"\\r"];
+    messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\f" withString:@"\\f"];
+    messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\u2028" withString:@"\\u2028"];
+    messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\u2029" withString:@"\\u2029"];
+    
+    NSString *javascriptCommand = [NSString stringWithFormat:@"app._dispatchMessageFromApp('%@')", messageJSON];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [webView evaluateJavaScript:javascriptCommand completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+            
+            NSLog(@"%@", result);
+        }];
+    });
+}
+
++ (NSString *)returnMsg {
+   return [NSString stringWithFormat:@"我是类方法"];
+}
+
++ (NSString *)returnMsg:(NSString *)msg {
+    return [NSString stringWithFormat:@"我是类方法: %@", msg];
+}
+
++ (NSString *)returnMsg:(NSString *)msg msg2:(NSString *)msg2 {
+    return [NSString stringWithFormat:@"我是类多参数方法: %@,,%@", msg, msg2];
+}
+
+- (NSString *)returnMsg {
+    return [NSString stringWithFormat:@"我是对象方法"];
+}
+
+- (NSString *)returnMsg:(NSString *)msg {
+    return [NSString stringWithFormat:@"我是对象方法: %@", msg];
+}
+
+- (NSString *)returnMsg:(NSString *)msg msg2:(NSString *)msg2 {
+    return [NSString stringWithFormat:@"我是对象多参数方法: %@,,%@", msg, msg2];
+}
+
 @end
+
+
+
+

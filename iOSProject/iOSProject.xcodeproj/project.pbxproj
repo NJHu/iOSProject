@@ -235,6 +235,8 @@
 		58A17C562007112A00B350AB /* intro_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58A17C522007112A00B350AB /* intro_1.jpg */; };
 		58A17C592007335400B350AB /* LMJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A17C582007335400B350AB /* LMJConst.m */; };
 		58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */; };
+		58B4EE2F205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */; };
+		58B4EE31205FA4E100FFF4F8 /* H5Bridge.css in Resources */ = {isa = PBXBuildFile; fileRef = 58B4EE30205FA4E100FFF4F8 /* H5Bridge.css */; };
 		58B59D0A2015B17800C4C4C9 /* LMJCasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B59D092015B17800C4C4C9 /* LMJCasesViewController.m */; };
 		58DC816C1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC816B1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m */; };
 		58DC81721FFA29E00060DC03 /* LMJDragTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81711FFA29E00060DC03 /* LMJDragTableViewController.m */; };
@@ -781,6 +783,8 @@
 		58A17C582007335400B350AB /* LMJConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJConst.m; sourceTree = "<group>"; };
 		58AE5CF320103BA3003BD369 /* VIDMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDMoviePlayerViewController.h; sourceTree = "<group>"; };
 		58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDMoviePlayerViewController.m; sourceTree = "<group>"; };
+		58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = LMJH5JSBridgeViewController.html; sourceTree = "<group>"; };
+		58B4EE30205FA4E100FFF4F8 /* H5Bridge.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = H5Bridge.css; sourceTree = "<group>"; };
 		58B59D082015B17800C4C4C9 /* LMJCasesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJCasesViewController.h; sourceTree = "<group>"; };
 		58B59D092015B17800C4C4C9 /* LMJCasesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJCasesViewController.m; sourceTree = "<group>"; };
 		58DC816A1FFA0A470060DC03 /* LMJTableSDWebImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJTableSDWebImageViewController.h; sourceTree = "<group>"; };
@@ -1444,6 +1448,8 @@
 				588CCD7D205D4FA60067E3C4 /* WKBridgeTool.h */,
 				588CCD7E205D4FA60067E3C4 /* WKBridgeTool.m */,
 				588CCD7B205D49000067E3C4 /* H5Bridge.js */,
+				58B4EE30205FA4E100FFF4F8 /* H5Bridge.css */,
+				58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2531,6 +2537,7 @@
 				589B56E81FFFC52F00B2D5A8 /* zxy_icon@2x.jpg in Resources */,
 				58651AB81FFE6D6F0087419D /* SINStatusToolBarView.xib in Resources */,
 				5892ACBB1FF4EF4500E868C2 /* Sina.xcassets in Resources */,
+				58B4EE2F205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html in Resources */,
 				58DC83F71FFB478E0060DC03 /* CATransition3.png in Resources */,
 				589B57842000339800B2D5A8 /* VIDCollectionViewVideoCell.xib in Resources */,
 				5892ACBC1FF4EF4500E868C2 /* WXIM.xcassets in Resources */,
@@ -2573,6 +2580,7 @@
 				584038801FF9F128002A0566 /* LMJH5_OCViewController.html in Resources */,
 				589B56E91FFFC52F00B2D5A8 /* nanquan_icon@2x.jpg in Resources */,
 				589B56D91FFFC52F00B2D5A8 /* jay_icon@2x.png in Resources */,
+				58B4EE31205FA4E100FFF4F8 /* H5Bridge.css in Resources */,
 				589B56D61FFFC52F00B2D5A8 /* wf@2x.jpg in Resources */,
 				58DC84F61FFC972C0060DC03 /* BSJLoginRegisterViewController.xib in Resources */,
 				58DC83ED1FFB472B0060DC03 /* 卡哇伊.jpg in Resources */,

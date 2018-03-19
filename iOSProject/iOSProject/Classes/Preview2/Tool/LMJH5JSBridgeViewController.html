@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+                <!-- 必须导入文件 -->
+                <script type="text/javascript" src="./H5Bridge.js"></script>
+                <link rel="stylesheet" href="./H5Bridge.css">
+                    <title>jsbridge</title>
+                    </head>
+    <body>
+        <ul id="tableUlId">
+            
+            <li onclick="alertToast()">toast</li><br>
+            
+            <li onclick="closepage()">close</li><br>
+            
+            <li onclick="startPage()">startPage</li>
+            <label>跳转页面并设置数据</label>
+            <br>
+            
+            
+            <li onclick="startClassAction()">startClassAction</li>
+            <label>WKBridgeTool_:_returnMsg === </label>
+            <label id="srartActionId"></label>
+            <br>
+            
+            <li onclick="startClassAction2Args()">startClassAction2Args</li>
+            <label>WKBridgeTool_:_returnMsg:msg2: === </label>
+            <label id="startClassAction2ArgsId"></label>
+            <br>
+            
+            <li onclick="startInstanceAction()">startInstanceAction</li>
+            <label>WKBridgeTool_:_()_:_returnMsg === </label>
+            <label id="startInstanceActionId"></label>
+            <br>
+            
+            <li onclick="startInstanceAction2Args()">startInstanceAction2Args</li>
+            <label>WKBridgeTool_:_new_:_returnMsg:msg2: === </label>
+            <label id="startInstanceAction2ArgsId"></label>
+            <br>
+            
+            
+            <li onclick="set()">set</li>
+            <label>{sesstionId: 'illllllllllll'} 存到偏好设置里边</label>
+            <br>
+            
+            <li onclick="get()">get</li>
+            <label>sesstionId: </label>
+            <label id="sesstionIdResult"></label><br>
+            
+        </ul>
+    </body>
+    
+    <script>
+        // =======     数据示范    =======
+        function startClassAction() {
+            <!--            3、调用app原生静态方法或单例类方法 （工具类 或 静态功能方法， 只支持参数为 '基本数据类型'、'字符串' 的方法）-->
+            //    var actionData = {
+            //        "action" : {
+            //            "ios" : "ios的类名_:_构造方法_:_执行的方法名",
+            //            "android" : "android全类名_:_构造方法_:_执行的方法名"
+            //        },
+            //        "data" : [ //可选参数，调用方法所需要的数据, 或为  {"android":[], "ios":[]}
+            //                  "value1",
+            //                  "value2"
+            //                  ]
+            //    };
+            //    //调用原生方法
+            //    app.startAction(actionData, function(data) {
+            //        //app执行完后的回调，data为执行原生方法的返回值
+            //    });
+            
+            app.callHandler('startAction', {action: {ios: 'WKBridgeTool_:_returnMsg'}}, function (back) {
+                            document.getElementById('srartActionId').innerHTML = back;
+                            })
+        }
+    
+    function startClassAction2Args() {
+        app.callHandler('startAction', {action: {ios: 'WKBridgeTool_:_returnMsg:msg2:'}, data: ['arg1', 'arg2']}, function (back) {
+                        document.getElementById('startClassAction2ArgsId').innerHTML = back;
+                        })
+    }
+    
+    function startInstanceAction() {
+        app.callHandler('startAction', {action: {ios: 'WKBridgeTool_:_()_:_returnMsg'}}, function (back) {
+                        document.getElementById('startInstanceActionId').innerHTML = back;
+                        })
+    }
+    
+    function startInstanceAction2Args() {
+        app.callHandler('startAction', {action: {ios: 'WKBridgeTool_:_new_:_returnMsg:msg2:'}, data: ['arg1', 'arg2']}, function (back) {
+                        document.getElementById('startInstanceAction2ArgsId').innerHTML = back;
+                        })
+    }
+    
+    function startPage() {
+        console.log('12312');
+        // pageName 适配安卓
+        //valueType适配安卓
+        app.callHandler('startPage', {pageName: {ios: 'LMJWebViewController'}, setPageData: {
+                        gotoURL: {value: 'https://www.github.com/njhu', valueType: 'string'},
+                        title: {value: '我是标题', valueType: 'string'}
+                        },
+                        startType: 'push'
+                        });
+    }
+    
+    function set() {
+        console.log('12312');
+        app.callHandler('set', {sesstionId: 'illllllllllll'})
+    }
+    
+    function get() {
+        console.log('12312');
+        app.callHandler('get', ['sesstionId'], function (back) {
+                        console.log(back);
+                        document.getElementById('sesstionIdResult').innerHTML = back['sesstionId'];
+                        })
+    }
+    
+    function closepage() {
+        console.log('12312');
+        app.callHandler('close', '', null);
+    }
+    
+    function alertToast() {
+        app.callHandler('alertToast', '我是 H5 给的内容', null);
+    }
+    
+    // =======     数据示范    =======
+        </script>
+</html>

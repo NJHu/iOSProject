@@ -23,10 +23,6 @@
 
 @implementation LMJWebViewController
 
-- (void)setGotoURL:(NSString *)gotoURL {
-    _gotoURL = gotoURL.copy;
-}
-
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     
