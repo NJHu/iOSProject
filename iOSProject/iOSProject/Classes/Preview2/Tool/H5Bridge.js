@@ -74,7 +74,6 @@ function _dispatchMessageFromApp (messageJSON) {
 const app = {
     callHandler: callHandler,
     _dispatchMessageFromApp: _dispatchMessageFromApp,
-    registerHandler: registerHandler;
 };
 
 
