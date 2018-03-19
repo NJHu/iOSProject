@@ -33,8 +33,8 @@
         [weakself.view makeToast:data duration:3 position:CSToastPositionCenter];
     }];
     
-//    self.webView.lmj_height = self.view.lmj_height * 0.6;
-//    self.view.backgroundColor = [UIColor yellowColor];
+    self.webView.lmj_height = self.view.lmj_height * 0.7;
+    self.view.backgroundColor = [UIColor greenColor];
 }
 
 - (void)addData
