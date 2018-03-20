@@ -21,6 +21,7 @@ function _createMessageIframe (src) {
 // JS 注册原生的事件, handlerName: 原生的方法名字标识   handler: 回调
 function registerHandler (handlerName, handler) {
     messageHandlers[handlerName] = handler;
+    console.log(messageHandlers);
 }
 
 
@@ -41,12 +42,13 @@ function _doSend (message, responseCallback) {
 }
 
 function _dispatchMessageFromApp (messageJSON) {
-    
+    console.log(messageJSON);
     messageJSON = messageJSON.replace(/(\t)/g, '    ');
     messageJSON = messageJSON.replace(/(\r\n)|(\n)/g, '<br>');
     const message = JSON.parse(messageJSON);
-    var responseCallback;
+    
     if (message.responseId) {
+        var responseCallback;
         responseCallback = responseCallbacks[message.responseId];
         if (!responseCallback) {
             return;
@@ -54,18 +56,22 @@ function _dispatchMessageFromApp (messageJSON) {
         responseCallback(message.responseData);
         delete responseCallbacks[message.responseId];
     } else {
+        var messageCallback;
         if (message.callbackId) {
             const callbackResponseId = message.callbackId;
-            responseCallback = function (responseData) {
+            messageCallback = function (responseData) {
                 _doSend({responseId: callbackResponseId, responseData: responseData});
             };
         }
         var handler;
+        console.log(message.handlerName);
+        console.log(messageHandlers);
         if (message.handlerName) {
             handler = messageHandlers[message.handlerName];
         }
+        console.log(handler);
         if (handler) {
-            handler(message.data, responseCallback);
+            handler(message.data, messageCallback);
         }
     }
     
@@ -74,6 +80,7 @@ function _dispatchMessageFromApp (messageJSON) {
 const app = {
     callHandler: callHandler,
     _dispatchMessageFromApp: _dispatchMessageFromApp,
+    registerHandler: registerHandler
 };
 
 

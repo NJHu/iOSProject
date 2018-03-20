@@ -12,6 +12,8 @@
     <body>
         <ul id="tableUlId">
             
+            <div id="insertContentId" style="color: red"></div>
+            
             <li onclick="alertToast()">toast</li><br>
             
             <li onclick="closepage()">close</li><br>
@@ -129,6 +131,23 @@
         app.callHandler('alertToast', '我是 H5 给的内容', null);
     }
     
-    // =======     数据示范    =======
+                            // =======     数据示范    =======
+                            </script>
+    
+    <script>
+        
+        function registJS() {
+            console.log('setTimeout');
+            app.registerHandler('insertContent', function (data, responseCallback) {
+                                console.log(data);
+                                document.getElementById('insertContentId').innerHTML = data;
+                                    if (responseCallback) {
+                                        responseCallback('我是 js 返回给 OC 的内容 回调');
+                                    }
+                                });
+                        }
+                                
+            registJS();
+        
         </script>
 </html>

@@ -35,12 +35,29 @@
     
     self.webView.lmj_height = self.view.lmj_height * 0.7;
     self.view.backgroundColor = [UIColor greenColor];
+    
+    UIButton *btn = [UIButton initWithFrame:CGRectMake(0, self.view.lmj_height * 0.8, kScreenWidth, 44) buttonTitle:@"oc 调用 js 注册的方法" normalBGColor:[UIColor whiteColor] selectBGColor:[UIColor redColor] normalColor:[UIColor blackColor] selectColor:[UIColor greenColor] buttonFont:[UIFont boldSystemFontOfSize:17] cornerRadius:5 doneBlock:^(UIButton *btn) {
+        [weakself callJS];
+    }];
+    
+    [self.view addSubview:btn];
 }
 
 - (void)addData
 {
     [[NSUserDefaults standardUserDefaults] setObject:@"我是存在偏好设置里边value" forKey:@"sesstionId"];
-    
+}
+
+- (void)callJS
+{
+    [self.webView.scrollView scrollToTop];
+    static int i = 0;
+    i+=2;
+    LMJWeakSelf(self);
+    [self.jsBridge callHandler:@"insertContent" data:[NSString stringWithFormat:@"我是oc调用js传给js的内容, 内容: %zd", i] responseCallback:^(id responseData) {
+        NSLog(@"%@", responseData);
+        [weakself.view makeToast:responseData duration:3 position:CSToastPositionCenter];
+    }];
 }
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
@@ -62,5 +79,8 @@
     
 }
 
+- (void)dealloc {
+    _jsBridge = nil;
+}
 
 @end

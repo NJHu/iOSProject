@@ -8,9 +8,11 @@
    __weak WKWebView *_webView;
     __weak id<WKNavigationDelegate> _delegate;
 }
-/** js 调用 oc */
+/** js 调用 oc , oc 需要注册*/
 @property (nonatomic, strong) NSMutableDictionary *messageHandles;
 
+/** js 回调 OC  */
+@property (nonatomic, strong) NSMutableDictionary *responseCallbacks;
 @end
 
 @implementation WKWebViewJsBridge
@@ -52,12 +54,11 @@
         return;
     }
     
+    
+    
     NSString *handleName = messageJsonDict[khandlerName];
     // 转换成小写啦啦啦啦啦
     void(^handlerBlock)(id data, void(^)(id responseData)) = self.messageHandles[handleName.lowercaseString];
-    if (!handlerBlock) {
-        return;
-    }
     
     // 回调给 H5!!!!关键步骤!!!!!================================
     void(^responseCallback)(id responseData) = nil;
@@ -68,33 +69,59 @@
             if (LMJIsEmpty(responseData)) {
                 return ;
             }
-            
             NSDictionary *responseMsg = @{kResponseId: callbackId, kResponseData: responseData};
-            
             // 回调 H5
             [WKBridgeTool dispatchMsgToh5:responseMsg webView:_webView];
         };
     }else {
-        
         responseCallback = ^(id responseData) {
-            
         };
     }
     // =============================================================
     // 传递的数据
     id data = messageJsonDict[kData];
+    !handlerBlock ?: handlerBlock(data, responseCallback);
     
     
-    handlerBlock(data, responseCallback);
+#define KResponseData @"responseData"
+    // response==========================================================================
+    NSString *responseId = messageJsonDict[kResponseId];
+    if (!LMJIsEmpty(responseId)) {
+        void (^responseCallBack)(id responseData) = self.responseCallbacks[responseId];
+        
+        id data = messageJsonDict[KResponseData];
+        
+        !responseCallBack ?: responseCallBack(data);
+    }
+}
+
+
+- (void)callHandler:(NSString*)handlerName data:(id)data responseCallback:(void(^)(id responseData))responseCallback {
+
+#define kHandlerName @"handlerName"
+#define kCallbackId @"callbackId"
+    
+    NSDictionary *message01 = @{kHandlerName: handlerName, kData: data};
+    
+    NSMutableDictionary *message = [NSMutableDictionary dictionaryWithDictionary:message01];
+    
+    if (responseCallback) {
+        
+        NSString* callbackSpecialId = [NSString stringWithFormat:@"objc_cb_%lf", CFAbsoluteTimeGetCurrent()];
+        // 传递需要回调的 id
+        message[kCallbackId] = callbackSpecialId;
+        
+        // 保存 block
+        self.responseCallbacks[callbackSpecialId] = [responseCallback copy];
+    }
+    
+    [WKBridgeTool dispatchMsgToh5:message webView:_webView];
+    
 }
 
 #pragma mark - handel
 - (void)registerHandler:(NSString *)handleName handle:(void(^)(id data, void(^)(id responseData)))handle {
     self.messageHandles[handleName.lowercaseString] = [handle copy];
-}
-
-- (void)callHandler:(NSString*)handlerName data:(id)data responseCallback:(void(^)(id responseData))responseCallback {
-    
 }
 
 #pragma mark - init
@@ -119,12 +146,14 @@
     self = [super init];
     if (self) {
         _messageHandles = [NSMutableDictionary dictionary];
+        _responseCallbacks = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
 - (void)dealloc {
     _messageHandles = nil;
+    _responseCallbacks = nil;
     _delegate = nil;
     _webView = nil;
 }
