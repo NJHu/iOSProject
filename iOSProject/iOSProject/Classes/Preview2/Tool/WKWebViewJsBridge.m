@@ -88,9 +88,8 @@
     NSString *responseId = messageJsonDict[kResponseId];
     if (!LMJIsEmpty(responseId)) {
         void (^responseCallBack)(id responseData) = self.responseCallbacks[responseId];
-        
         id data = messageJsonDict[KResponseData];
-        
+        [self.responseCallbacks removeObjectForKey:responseId];
         !responseCallBack ?: responseCallBack(data);
     }
 }
