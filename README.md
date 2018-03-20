@@ -15,7 +15,7 @@
 <li><a href="#homeList">首页功能列表</a></li>
 <li><a href="#foundation">基础知识</a>
 <ul>
-<li><a href="#foundationList02">多线程,NSThread,,线程同步,GCD,NSOperation,同步锁</a></li>
+<li><a href="#foundationList02">多线程,NSThread,线程同步,GCD,NSOperation,同步锁</a></li>
 <li><a href="#foundationList01">运行时 RunTime, 运行循环 RunLoop</a></li>
 <li><a href="#foundationList">绘图,核心动画,物理仿真</a></li>
 </ul>
