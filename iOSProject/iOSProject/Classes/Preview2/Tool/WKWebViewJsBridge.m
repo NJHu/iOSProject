@@ -65,10 +65,7 @@
     NSString *callbackId = messageJsonDict[kCallbackId];
     
     if (!LMJIsEmpty(callbackId)) {
-        responseCallback = ^(id responseData) {
-            if (LMJIsEmpty(responseData)) {
-                return ;
-            }
+        responseCallback = ^void(id responseData) {
             NSDictionary *responseMsg = @{kResponseId: callbackId, kResponseData: responseData};
             // 回调 H5
             [WKBridgeTool dispatchMsgToh5:responseMsg webView:_webView];

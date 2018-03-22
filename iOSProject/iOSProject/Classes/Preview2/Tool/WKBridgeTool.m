@@ -26,7 +26,7 @@
     
     
     //启动页面
-    [bridge registerHandler:kStartPageMessage handle:^(id data, void (^responseCallback)(id responseData)) {
+    [bridge registerHandler:kStartPageMessage handle:^void(id data, void (^responseCallback)(id responseData)) {
         [WKBridgeTool handlerPage:data callback:responseCallback];
     }];
     
