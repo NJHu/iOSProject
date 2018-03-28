@@ -37,7 +37,7 @@
 #import "LMJAutoLayoutViewController.h"
 #import "LMJVFLLayoutViewController.h"
 #import "LMJOfflineDownloadViewController.h"
-
+#import "LMJRSAViewController.h"
 
 
 @interface LMJNewViewController ()
@@ -190,12 +190,15 @@
     
     item30.destVc = [LMJVFLLayoutViewController class];
     
+    LMJWordArrowItem *item40 = [LMJWordArrowItem itemWithTitle:@"RSA 加密解密" subTitle: @"网络数据加密解密"];
+    
+    item40.destVc = [LMJRSAViewController class];
 
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item101, item11, item12, item121,item13, item29, item30, item15, item16, item17, item18, item19, item20, item201, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item40, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item101, item11, item12, item121,item13, item29, item30, item15, item16, item17, item18, item19, item20, item201, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
 
 //    [section0.items sortUsingComparator:^NSComparisonResult(LMJWordItem  *_Nonnull obj1, LMJWordItem  *_Nonnull obj2) {
 //
-//        return [NSString stringWithFormat:@"%@%@", obj2.title, obj2.subTitle].length - [NSString stringWithFormat:@"%@%@", obj1.title, obj1.subTitle].length;
+//        return [NSString stringWithFormat:@"%@%@", obj2.title, obj2.subTitle].length > [NSString stringWithFormat:@"%@%@", obj1.title, obj1.subTitle].length;
 //    }];
     
     [self.sections addObject:section0];

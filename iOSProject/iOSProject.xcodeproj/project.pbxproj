@@ -152,6 +152,11 @@
 		5892ADA71FF600F700E868C2 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADA61FF600F700E868C2 /* YYFPSLabel.m */; };
 		5892ADAA1FF603AD00E868C2 /* LMJUMengHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADA91FF603AD00E868C2 /* LMJUMengHelper.m */; };
 		5892ADAF1FF60A8300E868C2 /* JXTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADAE1FF60A8300E868C2 /* JXTAlertController.m */; };
+		5898889F206B34BF00BDAACD /* DES3Encryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58988894206B34BE00BDAACD /* DES3Encryptor.m */; };
+		589888A0206B34BF00BDAACD /* EncryptorTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58988895206B34BE00BDAACD /* EncryptorTool.m */; };
+		589888A1206B34BF00BDAACD /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898889A206B34BE00BDAACD /* GTMBase64.m */; };
+		589888A2206B34BF00BDAACD /* MD5andBASE64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898889B206B34BE00BDAACD /* MD5andBASE64.m */; };
+		589888A3206B34BF00BDAACD /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898889C206B34BE00BDAACD /* RSAEncryptor.m */; };
 		589B56CC1FFFC52F00B2D5A8 /* 月半小夜曲.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 589B56731FFFC52F00B2D5A8 /* 月半小夜曲.lrc */; };
 		589B56CD1FFFC52F00B2D5A8 /* 255319.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 589B56741FFFC52F00B2D5A8 /* 255319.lrc */; };
 		589B56CE1FFFC52F00B2D5A8 /* 14945107.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 589B56751FFFC52F00B2D5A8 /* 14945107.lrc */; };
@@ -228,6 +233,8 @@
 		589B57832000339800B2D5A8 /* VIDCollectionViewVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589B57592000339800B2D5A8 /* VIDCollectionViewVideoCell.m */; };
 		589B57842000339800B2D5A8 /* VIDCollectionViewVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589B575A2000339800B2D5A8 /* VIDCollectionViewVideoCell.xib */; };
 		589B57852000339800B2D5A8 /* VIDVideoDownloadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589B575B2000339800B2D5A8 /* VIDVideoDownloadingCell.m */; };
+		58A043D9206B28A1003CB4E5 /* LMJRSAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A043D8206B28A1003CB4E5 /* LMJRSAViewController.m */; };
+		58A043DB206B2E1E003CB4E5 /* RSA证书 in Resources */ = {isa = PBXBuildFile; fileRef = 58A043DA206B2E1D003CB4E5 /* RSA证书 */; };
 		58A17C4E2005F4E600B350AB /* LMJParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A17C4D2005F4E600B350AB /* LMJParagraph.m */; };
 		58A17C532007112A00B350AB /* intro_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58A17C4F2007112300B350AB /* intro_2.jpg */; };
 		58A17C542007112A00B350AB /* intro_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58A17C502007112500B350AB /* intro_3.jpg */; };
@@ -669,6 +676,17 @@
 		5892ADA91FF603AD00E868C2 /* LMJUMengHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJUMengHelper.m; sourceTree = "<group>"; };
 		5892ADAD1FF60A8300E868C2 /* JXTAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTAlertController.h; sourceTree = "<group>"; };
 		5892ADAE1FF60A8300E868C2 /* JXTAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTAlertController.m; sourceTree = "<group>"; };
+		58988893206B34BE00BDAACD /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
+		58988894206B34BE00BDAACD /* DES3Encryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DES3Encryptor.m; sourceTree = "<group>"; };
+		58988895206B34BE00BDAACD /* EncryptorTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptorTool.m; sourceTree = "<group>"; };
+		58988897206B34BE00BDAACD /* MD5andBASE64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5andBASE64.h; sourceTree = "<group>"; };
+		58988898206B34BE00BDAACD /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		58988899206B34BE00BDAACD /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		5898889A206B34BE00BDAACD /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		5898889B206B34BE00BDAACD /* MD5andBASE64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5andBASE64.m; sourceTree = "<group>"; };
+		5898889C206B34BE00BDAACD /* RSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAEncryptor.m; sourceTree = "<group>"; };
+		5898889D206B34BE00BDAACD /* EncryptorTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptorTool.h; sourceTree = "<group>"; };
+		5898889E206B34BE00BDAACD /* DES3Encryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES3Encryptor.h; sourceTree = "<group>"; };
 		589B56731FFFC52F00B2D5A8 /* 月半小夜曲.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "月半小夜曲.lrc"; sourceTree = "<group>"; };
 		589B56741FFFC52F00B2D5A8 /* 255319.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 255319.lrc; sourceTree = "<group>"; };
 		589B56751FFFC52F00B2D5A8 /* 14945107.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 14945107.lrc; sourceTree = "<group>"; };
@@ -773,6 +791,9 @@
 		589B575A2000339800B2D5A8 /* VIDCollectionViewVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIDCollectionViewVideoCell.xib; sourceTree = "<group>"; };
 		589B575B2000339800B2D5A8 /* VIDVideoDownloadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDVideoDownloadingCell.m; sourceTree = "<group>"; };
 		589B575C2000339800B2D5A8 /* VIDVideoDownloadedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDVideoDownloadedCell.h; sourceTree = "<group>"; };
+		58A043D7206B28A1003CB4E5 /* LMJRSAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJRSAViewController.h; sourceTree = "<group>"; };
+		58A043D8206B28A1003CB4E5 /* LMJRSAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJRSAViewController.m; sourceTree = "<group>"; };
+		58A043DA206B2E1D003CB4E5 /* RSA证书 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "RSA证书"; sourceTree = "<group>"; };
 		58A17C4C2005F4E600B350AB /* LMJParagraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJParagraph.h; sourceTree = "<group>"; };
 		58A17C4D2005F4E600B350AB /* LMJParagraph.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJParagraph.m; sourceTree = "<group>"; };
 		58A17C4F2007112300B350AB /* intro_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_2.jpg; sourceTree = "<group>"; };
@@ -1694,6 +1715,32 @@
 			path = "YYFPSLabel(刷新率)";
 			sourceTree = "<group>";
 		};
+		58988892206B34BE00BDAACD /* RSATools */ = {
+			isa = PBXGroup;
+			children = (
+				58988896206B34BE00BDAACD /* Base64 */,
+				5898889E206B34BE00BDAACD /* DES3Encryptor.h */,
+				58988894206B34BE00BDAACD /* DES3Encryptor.m */,
+				58988893206B34BE00BDAACD /* RSAEncryptor.h */,
+				5898889C206B34BE00BDAACD /* RSAEncryptor.m */,
+				5898889D206B34BE00BDAACD /* EncryptorTool.h */,
+				58988895206B34BE00BDAACD /* EncryptorTool.m */,
+			);
+			path = RSATools;
+			sourceTree = "<group>";
+		};
+		58988896206B34BE00BDAACD /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				58988899206B34BE00BDAACD /* GTMDefines.h */,
+				58988898206B34BE00BDAACD /* GTMBase64.h */,
+				5898889A206B34BE00BDAACD /* GTMBase64.m */,
+				58988897206B34BE00BDAACD /* MD5andBASE64.h */,
+				5898889B206B34BE00BDAACD /* MD5andBASE64.m */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
 		589B56701FFFC52F00B2D5A8 /* QQ音乐 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1939,6 +1986,10 @@
 				581A3E2B2044434400AF08C0 /* LMJOfflineDownloadViewController.m */,
 				588CCD80205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.h */,
 				588CCD81205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m */,
+				58A043D7206B28A1003CB4E5 /* LMJRSAViewController.h */,
+				58A043D8206B28A1003CB4E5 /* LMJRSAViewController.m */,
+				58988892206B34BE00BDAACD /* RSATools */,
+				58A043DA206B2E1D003CB4E5 /* RSA证书 */,
 				581A3E2D2044448700AF08C0 /* Toos */,
 				58DC81441FFA07710060DC03 /* Model */,
 				58DC81451FFA07710060DC03 /* View */,
@@ -2535,6 +2586,7 @@
 				58DC83CB1FFB43E30060DC03 /* LMJPiesViewController.xib in Resources */,
 				58DC83C71FFB43E30060DC03 /* LMJDrawBoardViewController.xib in Resources */,
 				589B56E81FFFC52F00B2D5A8 /* zxy_icon@2x.jpg in Resources */,
+				58A043DB206B2E1E003CB4E5 /* RSA证书 in Resources */,
 				58651AB81FFE6D6F0087419D /* SINStatusToolBarView.xib in Resources */,
 				5892ACBB1FF4EF4500E868C2 /* Sina.xcassets in Resources */,
 				58B4EE2F205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html in Resources */,
@@ -2737,8 +2789,10 @@
 				58223317201821C00008251F /* NullSafe.m in Sources */,
 				58DC84EE1FFC972B0060DC03 /* BSJ.m in Sources */,
 				581A3E4120450B3E00AF08C0 /* NSString+MJDownload.m in Sources */,
+				589888A1206B34BF00BDAACD /* GTMBase64.m in Sources */,
 				58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */,
 				584038721FF9399B002A0566 /* LMJListTimerCountDownViewController.m in Sources */,
+				5898889F206B34BF00BDAACD /* DES3Encryptor.m in Sources */,
 				5840385D1FF873A8002A0566 /* LMJAnnotationCustomPopView.m in Sources */,
 				58651AB41FFE6D6F0087419D /* SINUnLoginRegisterView.m in Sources */,
 				58651ABD1FFE6D6F0087419D /* SINStatusListService.m in Sources */,
@@ -2824,6 +2878,7 @@
 				58DC83811FFB43460060DC03 /* LMJLZDHDTSViewController.m in Sources */,
 				5892ACA71FF4EB4A00E868C2 /* main.m in Sources */,
 				58223312201821910008251F /* UIView+GestureCallback.m in Sources */,
+				58A043D9206B28A1003CB4E5 /* LMJRSAViewController.m in Sources */,
 				584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */,
 				589B577C2000339800B2D5A8 /* ZFVideoModel.m in Sources */,
 				58DC816C1FFA0A480060DC03 /* LMJTableSDWebImageViewController.m in Sources */,
@@ -2836,6 +2891,7 @@
 				58DC84401FFBD1290060DC03 /* LMJLockViewController.m in Sources */,
 				58DC84021FFB47ED0060DC03 /* LMJBezierPathCP.m in Sources */,
 				589B57752000339800B2D5A8 /* VIDNetListViewController.m in Sources */,
+				589888A0206B34BF00BDAACD /* EncryptorTool.m in Sources */,
 				58DC83861FFB43460060DC03 /* LMJCATransitionViewController.m in Sources */,
 				58651AB51FFE6D6F0087419D /* SINPublishToolBar.m in Sources */,
 				5892AD811FF5175A00E868C2 /* UIColor+Random.m in Sources */,
@@ -2844,6 +2900,7 @@
 				584038581FF872EB002A0566 /* LMJCoordinateModel.m in Sources */,
 				58DC851C1FFC972C0060DC03 /* BSJHlightedTextField.m in Sources */,
 				584038501FF8727D002A0566 /* LMJBaiduMapViewController.m in Sources */,
+				589888A2206B34BF00BDAACD /* MD5andBASE64.m in Sources */,
 				58926426201B622B007DA41E /* BSJSQLiteManager.m in Sources */,
 				58DC84FA1FFC972C0060DC03 /* BSJEssenceViewController.m in Sources */,
 				58DC83E61FFB44380060DC03 /* WPFSpringView.m in Sources */,
@@ -2914,6 +2971,7 @@
 				58DC83CD1FFB43E30060DC03 /* LMJShangXiaWenZhanViewController.m in Sources */,
 				58DC84F91FFC972C0060DC03 /* BSJMeViewController.m in Sources */,
 				58DC81721FFA29E00060DC03 /* LMJDragTableViewController.m in Sources */,
+				589888A3206B34BF00BDAACD /* RSAEncryptor.m in Sources */,
 				584038481FF7F3E5002A0566 /* LMJRequestManager.m in Sources */,
 				58DC84321FFBC44B0060DC03 /* LMJRunTimeTest+LMJMethod.m in Sources */,
 				5892AD781FF5115E00E868C2 /* LMJNewViewController.m in Sources */,
