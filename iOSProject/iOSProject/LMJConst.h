@@ -10,6 +10,7 @@ UIKIT_EXTERN NSString *const kURL_Reachability__Address;
 // 友盟统计
 UIKIT_EXTERN NSString *const LMJThirdSDKUMConfigInstanceAppKey;
 
+// 渠道
 UIKIT_EXTERN NSString *const LMJThirdSDKUMConfigInstanceChannelId;
 
 // 友盟社交

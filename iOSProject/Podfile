@@ -85,9 +85,6 @@ pod 'MOFSPickerManager'
 # 全局滑动
 pod 'FDFullscreenPopGesture'
 
-# 数据存储
-pod 'GVUserDefaults'
-
 # toast
 pod 'Toast'
 

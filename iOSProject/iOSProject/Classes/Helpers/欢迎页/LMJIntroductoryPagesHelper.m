@@ -19,15 +19,15 @@
 
 @implementation LMJIntroductoryPagesHelper
 
+static LMJIntroductoryPagesHelper *shareInstance_ = nil;
 + (instancetype)shareInstance
 {
-    static LMJIntroductoryPagesHelper *shareInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shareInstance = [[LMJIntroductoryPagesHelper alloc] init];
+        shareInstance_ = [[LMJIntroductoryPagesHelper alloc] init];
     });
     
-    return shareInstance;
+    return shareInstance_;
 }
 
 + (void)showIntroductoryPageView:(NSArray<NSString *> *)imageArray

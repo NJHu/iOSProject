@@ -25,13 +25,9 @@
     [self request:@"GET" URL:urlString parameters:parameters completion:completion];
 }
 
-
-
 #pragma mark - post & get
 - (void)request:(NSString *)method URL:(NSString *)urlString parameters:(id)parameters completion:(void (^)(LMJBaseResponse *response))completion
 {
-    
-    
     if (self.isLocal) {
         [self requestLocal:urlString completion:completion];
         return;
@@ -48,7 +44,6 @@
     
     void(^success)(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        
         [self wrapperTask:task responseObject:responseObject error:nil completion:completion];
     };
     
@@ -57,17 +52,13 @@
         [self wrapperTask:task responseObject:nil error:error completion:completion];
     };
     
-    
-    
     if ([method isEqualToString:@"GET"]) {
         
         [self GET:urlString parameters:parameters progress:nil success:success failure:failure];
         
     }
     
-    
     if ([method isEqualToString:@"POST"]) {
-        
         [self POST:urlString parameters:parameters progress:nil success:success failure:failure];
     }
     
@@ -75,46 +66,41 @@
 
 
 #pragma mark - 加载本地数据
+static NSString *jsonFileDirectory = @"LMJLocalJsons";
 - (void)requestLocal:(NSString *)urlString completion:(void (^)(LMJBaseResponse *response))completion
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
         NSError *fileError = nil;
         NSError *jsonError = nil;
         
-        NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:[urlString lastPathComponent] withExtension:@"json"];
+        NSString *jsonFile = [NSString stringWithFormat:@"%@/%@", jsonFileDirectory, [urlString lastPathComponent]];
+        NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:jsonFile ofType:@"json"];
+        NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath options:0 error:&fileError];
         
-        NSData *jsonData = [NSData dataWithContentsOfURL:fileUrl options:0 error:&fileError];
-        
-        
-        id responseObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
-        
-        
-        [self wrapperTask:nil responseObject:responseObj error:fileError ?: jsonError completion:completion];
-        
+        if (fileError) {
+            [self wrapperTask:nil responseObject:nil error:fileError completion:completion];
+            
+        }else {
+            id responseObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
+            
+            [self wrapperTask:nil responseObject:responseObj error:jsonError completion:completion];
+        }
     });
-    
 }
 
 
 #pragma mark - 处理数据
 - (void)wrapperTask:(NSURLSessionDataTask *)task responseObject:(id)responseObject error:(NSError *)error completion:(void (^)(LMJBaseResponse *response))completion
 {
-    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
         LMJBaseResponse *response = [self convertTask:task responseObject:responseObject error:error];
-        
         [self LogResponse:task.currentRequest.URL.absoluteString response:response];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
             !completion ?: completion(response);
-            
         });
-        
     });
-    
 }
 
 
@@ -125,31 +111,23 @@
     
     LMJBaseResponse *response = [LMJBaseResponse new];
     
-    if (responseObject) {
+    if (!LMJIsEmpty(responseObject)) {
         response.responseObject = responseObject;
     }
-    
     if (error) {
         response.error = error;
-        response.statusCode = error.code;
     }
     
-    
     if ([task.response isKindOfClass:[NSHTTPURLResponse class]]) {
-        
         NSHTTPURLResponse *HTTPURLResponse = (NSHTTPURLResponse *)task.response;
-        
         response.headers = HTTPURLResponse.allHeaderFields.mutableCopy;
-        
     }
     
     if (self.responseFormat) {
         response = self.responseFormat(response);
     }
     
-    
     return response;
-    
 }
 
 
@@ -158,8 +136,7 @@
 #pragma mark - 打印返回日志
 - (void)LogResponse:(NSString *)urlString response:(LMJBaseResponse *)response
 {
-    NSLog(@"[%@]---%@", urlString, response);
-
+    NSLog(@"\n[%@]---%@\n", urlString, response);
 }
 
 
@@ -200,12 +177,6 @@
     
 }
 
-
-
-
-
-
-
 #pragma mark - 初始化设置
 - (void)configSettings
 {
@@ -213,7 +184,6 @@
     self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", @"application/xml", @"text/xml", @"*/*", nil];
     //记录网络状态
     [self.reachabilityManager startMonitoring];
-    
     //自定义处理数据
     self.responseFormat = ^LMJBaseResponse *(LMJBaseResponse *response) {
         return response;
@@ -229,7 +199,6 @@
         AFJSONResponseSerializer *JSONserializer = (AFJSONResponseSerializer *)responseSerializer;
         JSONserializer.removesKeysWithNullValues = YES;
         JSONserializer.readingOptions = NSJSONReadingMutableContainers;
-        
     }
 }
 
@@ -238,7 +207,6 @@
 {
     self = [super init];
     if (self) {
-        
         [self configSettings];
     }
     return self;

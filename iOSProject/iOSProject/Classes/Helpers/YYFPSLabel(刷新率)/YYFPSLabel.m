@@ -16,7 +16,6 @@
     NSTimeInterval _lastTime;
     UIFont *_font;
     UIFont *_subFont;
-    
     NSTimeInterval _llll;
 }
 
@@ -44,15 +43,8 @@
     _link = [CADisplayLink displayLinkWithTarget:weakSelf selector:@selector(tick:)];
     [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     
-
     [self addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithActionBlock:^(UIPanGestureRecognizer  *_Nonnull sender) {
-        
-//        NSLog(@"%@", sender);
-        
-        // 获取手势的触摸点
-        // CGPoint curP = [pan locationInView:self.imageView];
-        
-        // 移动视图
+
         // 获取手势的移动，也是相对于最开始的位置
         CGPoint transP = [sender translationInView:weakSelf];
         
@@ -64,8 +56,7 @@
         if (sender.state == UIGestureRecognizerStateEnded) {
             
             [UIView animateWithDuration:0.2 animations:^{
-                
-                weakSelf.lmj_x = (weakSelf.lmj_x - kScreenWidth / 2) > 0 ? (kScreenWidth - weakSelf.lmj_width - 20) : 20;
+                weakSelf.lmj_x = (weakSelf.lmj_x - kScreenWidth * 0.5) > 0 ? (kScreenWidth - weakSelf.lmj_width - 20) : 20;
                 weakSelf.lmj_y = weakSelf.lmj_y > 80 ? weakSelf.lmj_y : 80;
             }];
         }
@@ -77,10 +68,7 @@
 
 - (void)dealloc {
     [_link invalidate];
-}
-
-- (CGSize)sizeThatFits:(CGSize)size {
-    return kSize;
+    _link = nil;
 }
 
 - (void)tick:(CADisplayLink *)link {
@@ -88,18 +76,17 @@
         _lastTime = link.timestamp;
         return;
     }
-    
     _count++;
     NSTimeInterval delta = link.timestamp - _lastTime;
     if (delta < 1) return;
     _lastTime = link.timestamp;
-    float fps = _count / delta;
+    CGFloat fps = _count / delta;
     _count = 0;
     
     CGFloat progress = fps / 60.0;
     UIColor *color = [UIColor colorWithHue:0.27 * (progress - 0.2) saturation:1 brightness:0.9 alpha:1];
     
-    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d FPS",(int)round(fps)]];
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%zd FPS",(int)round(fps)]];
 
     [text yy_setColor:color range:NSMakeRange(0, text.length - 3)];
     [text yy_setColor:[UIColor whiteColor] range:NSMakeRange(text.length - 3, 3)];

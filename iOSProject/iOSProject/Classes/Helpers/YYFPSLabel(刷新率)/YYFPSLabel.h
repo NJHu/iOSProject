@@ -1,20 +1,4 @@
-//
-//  YYFPSLabel.h
-//  YYKitExample
-//
-//    运用Demo
-//    @property (nonatomic, strong) YYFPSLabel *fpsLabel;
-//
-//    _fpsLabel = [YYFPSLabel new];
-//    [_fpsLabel sizeToFit];
-//    _fpsLabel.bottom = 100;
-//    _fpsLabel.left = 10;
-//    _fpsLabel.alpha = 1;
-//    [self.view addSubview:_fpsLabel];
-//
-//  Created by ibireme on 15/9/3.
-//  Copyright (c) 2015 ibireme. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
 

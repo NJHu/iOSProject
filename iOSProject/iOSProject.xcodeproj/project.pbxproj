@@ -25,6 +25,8 @@
 		5822335120187F270008251F /* LMJVFLLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822335020187F270008251F /* LMJVFLLayoutViewController.m */; };
 		5822335420188F5D0008251F /* MCLocalHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822335320188F5D0008251F /* MCLocalHTMLViewController.m */; };
 		5822335620188F6E0008251F /* adm in Resources */ = {isa = PBXBuildFile; fileRef = 5822335520188F6E0008251F /* adm */; };
+		583D507020731574001480C8 /* LMJLocalJsons in Resources */ = {isa = PBXBuildFile; fileRef = 583D506F20731574001480C8 /* LMJLocalJsons */; };
+		583D50722073246C001480C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583D50712073246C001480C8 /* LaunchScreen.storyboard */; };
 		584038001FF61D00002A0566 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584037FF1FF61D00002A0566 /* MapKit.framework */; };
 		584038021FF61D1A002A0566 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584038011FF61D1A002A0566 /* AudioToolbox.framework */; };
 		584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038051FF62371002A0566 /* LMJAddressPickerViewController.m */; };
@@ -144,7 +146,6 @@
 		5892AD7B1FF5133800E868C2 /* MBProgressHUD+LMJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD7A1FF5133800E868C2 /* MBProgressHUD+LMJ.m */; };
 		5892AD811FF5175A00E868C2 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD801FF5175A00E868C2 /* UIColor+Random.m */; };
 		5892AD841FF517B200E868C2 /* UIButton+LMJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD831FF517B200E868C2 /* UIButton+LMJ.m */; };
-		5892AD891FF5D46800E868C2 /* GVUserDefaults+LMJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD881FF5D46800E868C2 /* GVUserDefaults+LMJ.m */; };
 		5892AD8D1FF5E2D700E868C2 /* LMJIntroductoryPagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD8C1FF5E2D700E868C2 /* LMJIntroductoryPagesView.m */; };
 		5892AD901FF5E32500E868C2 /* LMJIntroductoryPagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD8F1FF5E32500E868C2 /* LMJIntroductoryPagesHelper.m */; };
 		5892AD9F1FF5F23D00E868C2 /* AdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD9D1FF5F23D00E868C2 /* AdvertiseView.m */; };
@@ -433,6 +434,8 @@
 		5822335220188F5D0008251F /* MCLocalHTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCLocalHTMLViewController.h; sourceTree = "<group>"; };
 		5822335320188F5D0008251F /* MCLocalHTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCLocalHTMLViewController.m; sourceTree = "<group>"; };
 		5822335520188F6E0008251F /* adm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = adm; sourceTree = "<group>"; };
+		583D506F20731574001480C8 /* LMJLocalJsons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LMJLocalJsons; sourceTree = "<group>"; };
+		583D50712073246C001480C8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		584037FE1FF61CF8002A0566 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		584037FF1FF61D00002A0566 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		584038011FF61D1A002A0566 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -660,8 +663,6 @@
 		5892AD801FF5175A00E868C2 /* UIColor+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Random.m"; sourceTree = "<group>"; };
 		5892AD821FF517B200E868C2 /* UIButton+LMJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+LMJ.h"; sourceTree = "<group>"; };
 		5892AD831FF517B200E868C2 /* UIButton+LMJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LMJ.m"; sourceTree = "<group>"; };
-		5892AD871FF5D46800E868C2 /* GVUserDefaults+LMJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+LMJ.h"; sourceTree = "<group>"; };
-		5892AD881FF5D46800E868C2 /* GVUserDefaults+LMJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+LMJ.m"; sourceTree = "<group>"; };
 		5892AD8B1FF5E2D700E868C2 /* LMJIntroductoryPagesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJIntroductoryPagesView.h; sourceTree = "<group>"; };
 		5892AD8C1FF5E2D700E868C2 /* LMJIntroductoryPagesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJIntroductoryPagesView.m; sourceTree = "<group>"; };
 		5892AD8E1FF5E32500E868C2 /* LMJIntroductoryPagesHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJIntroductoryPagesHelper.h; sourceTree = "<group>"; };
@@ -1247,6 +1248,7 @@
 		584038431FF7F3DC002A0566 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				583D506F20731574001480C8 /* LMJLocalJsons */,
 				58DC846D1FFC967C0060DC03 /* LMJBaseRequest.h */,
 				58DC846E1FFC967D0060DC03 /* LMJBaseRequest.m */,
 				584038471FF7F3E4002A0566 /* LMJBaseResponse.h */,
@@ -1515,6 +1517,7 @@
 				5892ACB11FF4EEB300E868C2 /* LMJAppDelegate.m */,
 				58651ABF1FFE6F3F0087419D /* Classes */,
 				5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */,
+				583D50712073246C001480C8 /* LaunchScreen.storyboard */,
 				5892ACB71FF4EF4500E868C2 /* BSJ.xcassets */,
 				5892ACB31FF4EF4400E868C2 /* Preview.xcassets */,
 				5892ACB81FF4EF4500E868C2 /* Public.xcassets */,
@@ -1639,8 +1642,6 @@
 				5892ADA41FF600F700E868C2 /* YYFPSLabel(刷新率) */,
 				5892AD9A1FF5F04700E868C2 /* 广告页 */,
 				5892AD8A1FF5E2C000E868C2 /* 欢迎页 */,
-				5892AD871FF5D46800E868C2 /* GVUserDefaults+LMJ.h */,
-				5892AD881FF5D46800E868C2 /* GVUserDefaults+LMJ.m */,
 				5892ADAD1FF60A8300E868C2 /* JXTAlertController.h */,
 				5892ADAE1FF60A8300E868C2 /* JXTAlertController.m */,
 				5892ADA81FF603AD00E868C2 /* LMJUMengHelper.h */,
@@ -2615,6 +2616,7 @@
 				589B56CD1FFFC52F00B2D5A8 /* 255319.lrc in Resources */,
 				588CCD7C205D49000067E3C4 /* H5Bridge.js in Resources */,
 				589B56D01FFFC52F00B2D5A8 /* 309769.lrc in Resources */,
+				583D507020731574001480C8 /* LMJLocalJsons in Resources */,
 				589B56F41FFFC52F00B2D5A8 /* Musics.plist in Resources */,
 				589B56D31FFFC52F00B2D5A8 /* 339744.lrc in Resources */,
 				58DC84F41FFC972C0060DC03 /* CHANGELOG.md in Resources */,
@@ -2650,6 +2652,7 @@
 				589B56E71FFFC52F00B2D5A8 /* bb_icon@2x.jpg in Resources */,
 				58DC85051FFC972C0060DC03 /* NJPlayerView.xib in Resources */,
 				589B56D51FFFC52F00B2D5A8 /* 120125029.lrc in Resources */,
+				583D50722073246C001480C8 /* LaunchScreen.storyboard in Resources */,
 				58DC85081FFC972C0060DC03 /* NJPlayer.bundle in Resources */,
 				589B56DE1FFFC52F00B2D5A8 /* jj@2x.jpg in Resources */,
 				589B56FA1FFFC52F00B2D5A8 /* MUSPlayingViewController.xib in Resources */,
@@ -2865,7 +2868,6 @@
 				589B57011FFFC52F00B2D5A8 /* MUSMusicCell.m in Sources */,
 				58DC84471FFBDC8A0060DC03 /* LMJBlockLoopViewController.m in Sources */,
 				5840387B1FF9F0FA002A0566 /* LMJH5_OCViewController.m in Sources */,
-				5892AD891FF5D46800E868C2 /* GVUserDefaults+LMJ.m in Sources */,
 				58651AA31FFE6D6F0087419D /* SINDiscoveryViewController.m in Sources */,
 				58DC83E91FFB44380060DC03 /* WPFCollisionView.m in Sources */,
 				58DC842C1FFBC3E10060DC03 /* LMJRunTimeTest.m in Sources */,
@@ -3127,7 +3129,6 @@
 			baseConfigurationReference = 04BC8A56D55E3588A098FA08 /* Pods-iOSProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
@@ -3152,7 +3153,6 @@
 					"-l\"FCUUID\"",
 					"-l\"FDFullscreenPopGesture\"",
 					"-l\"FMDB\"",
-					"-l\"GVUserDefaults\"",
 					"-l\"HMEmoticon\"",
 					"-l\"IQKeyboardManager\"",
 					"-l\"M13ProgressSuite\"",
@@ -3260,7 +3260,6 @@
 			baseConfigurationReference = AA64D526EE098D357A7E6B09 /* Pods-iOSProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
@@ -3285,7 +3284,6 @@
 					"-l\"FCUUID\"",
 					"-l\"FDFullscreenPopGesture\"",
 					"-l\"FMDB\"",
-					"-l\"GVUserDefaults\"",
 					"-l\"HMEmoticon\"",
 					"-l\"IQKeyboardManager\"",
 					"-l\"M13ProgressSuite\"",

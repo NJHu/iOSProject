@@ -8,15 +8,19 @@
 
 #import "AdvertiseView.h"
 
+NSString *const NotificationContants_Advertise_Key = @"NotificationContants_Advertise_Key";
+
 @interface AdvertiseView()
+
 @property (nonatomic, strong) YYAnimatedImageView *adView;
 @property (nonatomic, strong) UIButton *countBtn;
-@property (nonatomic, strong) NSTimer *countTimer;
-@property (nonatomic, assign) int count;
+@property (nonatomic, assign) NSUInteger count;
+
+@property (nonatomic, strong) dispatch_source_t gcdTimer;
 @end
 
 //广告显示的时间
-static int const showtime = 5;
+static const NSUInteger showtime = 5;
 
 @implementation AdvertiseView
 
@@ -38,7 +42,7 @@ static int const showtime = 5;
         CGFloat btnH = 30;
         _countBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - btnW - 24, [UIApplication sharedApplication].statusBarFrame.size.height + btnH, btnW, btnH)];
         [_countBtn addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
-        [_countBtn setTitle:[NSString stringWithFormat:@"跳过%d", showtime] forState:UIControlStateNormal];
+        [_countBtn setTitle:[NSString stringWithFormat:@"跳过%zd", showtime] forState:UIControlStateNormal];
         _countBtn.titleLabel.font = [UIFont systemFontOfSize:15];
         [_countBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _countBtn.backgroundColor = [UIColor colorWithRed:38 /255.0 green:38 /255.0 blue:38 /255.0 alpha:0.6];
@@ -57,92 +61,63 @@ static int const showtime = 5;
     _adView.image = [YYImage imageWithContentsOfFile:filePath];
 }
 
-NSString *const NotificationContants_Advertise_Key = @"NotificationContants_Advertise_Key";
 
 - (void)pushToAd{
     
     [self dismiss];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:NotificationContants_Advertise_Key object:nil userInfo:nil];
 }
 
-- (void)countDown
-{
-    _count --;
-    [_countBtn setTitle:[NSString stringWithFormat:@"跳过%d",_count] forState:UIControlStateNormal];
-    if (_count == 0) {
-        
-        if (_countTimer) {
-            [_countTimer invalidate];
-            _countTimer = nil;
-        }
-        [self dismiss];
-    }
-}
 
 - (void)show
 {
     // 倒计时方法1：GCD
-    //    [self startCoundown];
+    [self startCoundown];
     
-    // 倒计时方法2：定时器
-    [self startTimer];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self];
 }
 
-// 定时器倒计时
-- (void)startTimer
-{
-    _count = showtime;
-    
-    if (!_countTimer) {
-        _countTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
-        [[NSRunLoop mainRunLoop] addTimer:_countTimer forMode:NSRunLoopCommonModes];
-    }
-}
 
 // GCD倒计时
 - (void)startCoundown
 {
     __block int timeout = showtime + 1; //倒计时时间 + 1
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
-    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
-    dispatch_source_set_event_handler(_timer, ^{
+    LMJWeakSelf(self);
+    // GCD 定时器
+    self.gcdTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+    dispatch_source_set_timer(self.gcdTimer, dispatch_time(DISPATCH_TIME_NOW, 0), 1 * NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(self.gcdTimer, ^{
         if(timeout <= 0){ //倒计时结束，关闭
-            dispatch_source_cancel(_timer);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [self dismiss];
-                
-            });
-        }else{
-            
+            [weakself dismiss];
+        }else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_countBtn setTitle:[NSString stringWithFormat:@"跳过%d",timeout] forState:UIControlStateNormal];
             });
             timeout--;
         }
     });
-    dispatch_resume(_timer);
+    dispatch_resume(self.gcdTimer);
 }
 
 // 移除广告页面
 - (void)dismiss
 {
-    [UIView animateWithDuration:0.3f animations:^{
+    dispatch_cancel(_gcdTimer);
+    _gcdTimer = nil;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.3f animations:^{
+            self.alpha = 0.f;
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+        }];
         
-        self.alpha = 0.f;
-    } completion:^(BOOL finished) {
-        [self removeFromSuperview];
-        
-    }];
+    });
 }
 
--(void)dealloc
+- (void)dealloc
 {
-    
+    _gcdTimer = nil;
 }
 
 @end

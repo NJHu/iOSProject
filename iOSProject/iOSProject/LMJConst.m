@@ -17,7 +17,7 @@ NSString *const kURL_Reachability__Address = @"www.baidu.com";
 
 NSString *const LMJThirdSDKUMConfigInstanceAppKey = @"58aa7d20e88bad08c1001dcd";
 
-NSString *const LMJThirdSDKUMConfigInstanceChannelId = nil;
+NSString *const LMJThirdSDKUMConfigInstanceChannelId = @"App Store";
 
 NSString *const LMJThirdSDKUMSocialAppkey = @"58aa7d20e88bad08c1001dcd";
 

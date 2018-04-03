@@ -23,7 +23,6 @@
 // helpers
 #import "LMJConst.h"
 #import "LMJRequestManager.h"
-#import "GVUserDefaults+LMJ.h"
 #import "JXTAlertController.h"
 #import "LMJEasyBlankPageView.h"
 #import "UIImageView+FitNet.h"

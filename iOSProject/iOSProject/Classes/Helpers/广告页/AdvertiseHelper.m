@@ -8,18 +8,17 @@
 
 #import "AdvertiseHelper.h"
 
+static NSString *const adImageName = @"adImageName";
 @implementation AdvertiseHelper
 
+static AdvertiseHelper* _instance = nil;
 + (instancetype)sharedInstance
 {
-    static AdvertiseHelper* instance = nil;
-
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[self alloc] init];
+        _instance = [[self alloc] init];
     });
-
-    return instance;
+    return _instance;
 }
 
 - (instancetype)init
@@ -32,18 +31,16 @@
 }
 
 
-+(void)showAdvertiserView:(NSArray *)imageArray
++ (void)showAdvertiserView:(NSArray<NSString *> *)imageArray
 {
     // 1.判断沙盒中是否存在广告图片，如果存在，直接显示
     NSString *filePath = [[AdvertiseHelper sharedInstance] getFilePathWithImageName:[NSUserDefaults.standardUserDefaults valueForKey:adImageName]];
     
     BOOL isExist = [[AdvertiseHelper sharedInstance] isFileExistWithFilePath:filePath];
     if (isExist) {// 图片存在
-    
         AdvertiseView *advertiseView = [[AdvertiseView alloc] initWithFrame:UIScreen.mainScreen.bounds];
         advertiseView.filePath = filePath;
         [advertiseView show];
-        
     }
     
     // 2.无论沙盒中是否存在广告图片，都需要重新调用广告接口，判断广告是否更新
@@ -54,11 +51,10 @@
 /**
  *  初始化广告页面
  */
-- (void)getAdvertisingImage:(NSArray *)imageArray
+- (void)getAdvertisingImage:(NSArray<NSString *> *)imageArray
 {
     //随机取一张
     NSString *imageUrl = imageArray[arc4random() % imageArray.count];
-    
     NSArray *stringArr = [imageUrl componentsSeparatedByString:@"/"];
     NSString *imageName = stringArr.lastObject;
     
@@ -89,8 +85,6 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-//        YYImage *image = [YYImage imageWithData:data];
-        
         NSString *filePath = [self getFilePathWithImageName:imageName]; // 保存文件的名称
         
         if ([data writeToFile:filePath atomically:YES]) {// 保存成功
@@ -127,21 +121,18 @@
     if (imageName) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask, YES);
         NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:imageName];
-        
         return filePath;
     }
-    
     return nil;
 }
 
 //NotificationContants_Advertise_Key
 - (void)adClick:(NSNotification *)noti
 {
-    NSString *url = @"https://github.com/NJHu/iOSProject/blob/master/README.md";
+    NSString *url = @"https://github.com/NJHu";
     if (!LMJIsEmpty(url)) {
         if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{@"username" : @"njhu"} completionHandler:^(BOOL success) {
-                
                 NSLog(@"%zd", success);
             }];
         }

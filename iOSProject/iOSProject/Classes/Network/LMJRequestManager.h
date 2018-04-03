@@ -11,17 +11,15 @@
 #import <AFNetworking.h>
 
 typedef enum : NSInteger {
+    // 自定义错误码
     LMJRequestManagerStatusCodeCustomDemo = -10000,
 } LMJRequestManagerStatusCode;
 
 typedef LMJBaseResponse *(^ResponseFormat)(LMJBaseResponse *response);
 
-
 @interface LMJRequestManager : AFHTTPSessionManager
 
-
 + (instancetype)sharedManager;
-
 
 //本地数据模式
 @property (assign, nonatomic) BOOL isLocal;
@@ -38,6 +36,5 @@ typedef LMJBaseResponse *(^ResponseFormat)(LMJBaseResponse *response);
   name 服务端需要参数
  */
 - (void)upload:(NSString *)urlString parameters:(id)parameters formDataBlock:(void(^)(id<AFMultipartFormData> formData))formDataBlock progress:(void (^)(NSProgress *progress))progress completion:(void (^)(LMJBaseResponse *response))completion;
-
 
 @end

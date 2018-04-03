@@ -10,9 +10,6 @@
 
 UIKIT_EXTERN NSString *const NotificationContants_Advertise_Key;
 
-
-static NSString *const adImageName = @"adImageName";
-
 @interface AdvertiseView : UIView
 
 /** 显示广告页面方法*/

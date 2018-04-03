@@ -12,7 +12,7 @@
 /** <#digest#> */
 @property (nonatomic, strong) NSArray<NSString *> *imagesArray;
 
-@property(nonatomic,strong)UIPageControl *pageControl;
+@property (nonatomic,strong) UIPageControl *pageControl;
 
 /** <#digest#> */
 @property (weak, nonatomic) UIScrollView *scrollView;

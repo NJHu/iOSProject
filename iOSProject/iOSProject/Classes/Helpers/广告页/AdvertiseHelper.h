@@ -14,6 +14,6 @@
 
 + (instancetype)sharedInstance;
 
-+(void)showAdvertiserView:(NSArray *)imageArray;
++ (void)showAdvertiserView:(NSArray<NSString *> *)imageArray;
 
 @end

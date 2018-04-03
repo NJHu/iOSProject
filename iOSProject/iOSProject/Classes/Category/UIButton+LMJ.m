@@ -94,8 +94,6 @@ static const void *UIButtonBlockKey = &UIButtonBlockKey;
 @implementation APRoundedButton
 
 
-
-
 - (void)makeCorner {
     UIRectCorner corners;
     
@@ -136,22 +134,43 @@ static const void *UIButtonBlockKey = &UIButtonBlockKey;
             break;
     }
     
+    _nj_cornerRaduous = _nj_cornerRaduous ?: 10.0;
     
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
                                                    byRoundingCorners:corners
-                                                         cornerRadii:CGSizeMake(10, 10)];
+                                                         cornerRadii:CGSizeMake(_nj_cornerRaduous, _nj_cornerRaduous)];
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame         = self.bounds;
     maskLayer.path          = maskPath.CGPath;
     self.layer.mask         = maskLayer;
-    
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self setupUIOnce];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self setupUIOnce];
+    }
+    return self;
+}
+
+
+- (void)setupUIOnce
+{
+    [self makeCorner];
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self makeCorner];
 }
-
 
 @end
