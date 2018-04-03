@@ -91,8 +91,7 @@
     
 }
 
-- (void)show:(UIButton *)btn
-{
+- (void)show:(UIButton *)btn {
 }
 
 
@@ -155,13 +154,16 @@
         
         make.top.mas_equalTo(190);
         make.left.mas_equalTo(10);
-        make.right.mas_lessThanOrEqualTo(-80).priorityHigh();
     }];
     
     [mySenondLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.mas_equalTo(myLabel.mas_right).offset(10);
         make.top.mas_equalTo(myLabel.mas_top);
+        make.width.mas_equalTo(44);
+        // 最少80
+        make.right.mas_lessThanOrEqualTo(-80).priorityHigh();
+        
     }];
     
 }
@@ -192,15 +194,17 @@
         
         make.top.mas_equalTo(220);
         make.left.mas_equalTo(10);
-        
-        
-        make.right.mas_lessThanOrEqualTo(-80).priorityHigh();
+
     }];
     
     [mySenondLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.mas_equalTo(myLabel.mas_right).offset(10);
         make.top.mas_equalTo(myLabel.mas_top);
+        
+        make.width.mas_equalTo(44);
+        // 最少80
+        make.right.mas_lessThanOrEqualTo(-80).priorityHigh();
     }];
     
 }
@@ -266,6 +270,7 @@
     scrollView.showsVerticalScrollIndicator = scrollView.showsHorizontalScrollIndicator = YES;
     [self.view addSubview:scrollView];
     
+    // 约束它的frame
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(250);
@@ -275,7 +280,7 @@
         
     }];
     
-    
+    // 添加一个 containerView, containerView里边放子控件,通过子控件约束 containerView 大小
     UIView *containerView = [[UIView alloc] init];
     
     containerView.backgroundColor = [UIColor RandomColor];
@@ -284,9 +289,17 @@
     
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        //        make.edges.mas_equalTo(scrollView);
-        make.edges.mas_equalTo(UIEdgeInsetsMake(10, 10, 10, 20));
-        //        make.height.mas_equalTo(kScreenHeight);
+        // 约束 内边距
+        // 或者
+        // make.edges.mas_equalTo(scrollView);
+        // 或者
+//        make.edges.mas_equalTo(UIEdgeInsetsMake(10, 10, 10, 20));
+        // 或者
+        make.left.offset(0);
+        make.right.offset(0);
+        make.top.offset(0);
+        make.bottom.offset(0);
+        // 约束宽度
         make.width.mas_equalTo(scrollView.mas_width);
     }];
     
@@ -322,6 +335,7 @@
     
     [containerView mas_updateConstraints:^(MASConstraintMaker *make) {
         
+        // 关键性约束, 约束 containerView 的大小
         make.bottom.mas_equalTo(lastView.mas_bottom).offset(20);
     }];
 }
