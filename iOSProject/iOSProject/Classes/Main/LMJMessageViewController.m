@@ -41,35 +41,25 @@
     [item1 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[SINTabBarController alloc] init] animated:YES completion:nil];
     }];
-    
-    
-    
+
 //    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"IM_HX" subTitle: @"环信聊天"];
 //    [item2 setItemOperation:^(NSIndexPath *indexPath){
 //        [weakself presentViewController:[[IMHTabBarController alloc] init] animated:YES completion:nil];
 //    }];
-    
-    
     
     LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"Musics" subTitle: @"QQ音乐"];
     [item3 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[LMJNavigationController alloc] initWithRootViewController:[[MUSHomeListViewController alloc] init]] animated:YES completion:nil];
     }];
     
-    
-    
     LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"Videos" subTitle: @"列表视频"];
     [item4 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[VIDTabBarController alloc] init] animated:YES completion:nil];
     }];
-
-    
     
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item3, item4] andHeaderTitle:nil footerTitle:nil];
     
     [self.sections addObject:section0];
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {

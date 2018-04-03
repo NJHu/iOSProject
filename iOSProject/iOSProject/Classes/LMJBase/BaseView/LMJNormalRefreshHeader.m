@@ -27,7 +27,6 @@
 
 - (void)setupUIOnce
 {
-    
     self.automaticallyChangeAlpha = YES;
 }
 

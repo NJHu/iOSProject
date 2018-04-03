@@ -8,12 +8,7 @@
 
 #import "LMJNavUIBaseViewController.h"
 #import "LMJNavigationBar.h"
-
-@interface LMJNavUIBaseViewController ()
-
-
-
-@end
+#import <sys/utsname.h>
 
 @implementation LMJNavUIBaseViewController
 
@@ -167,12 +162,10 @@
     {
         LMJNavigationBar *navigationBar = [[LMJNavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0)];
         [self.view addSubview:navigationBar];
-        _lmj_navgationBar = navigationBar;
-        
         navigationBar.dataSource = self;
         navigationBar.lmjDelegate = self;
         
-        
+        _lmj_navgationBar = navigationBar;
     }
     return _lmj_navgationBar;
 }
@@ -186,8 +179,6 @@
     
     self.lmj_navgationBar.title = [self changeTitle:title];
 }
-
-
 
 
 @end

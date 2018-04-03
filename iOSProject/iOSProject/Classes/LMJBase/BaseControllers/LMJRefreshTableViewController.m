@@ -23,18 +23,9 @@
         
         [weakself loadIsMore:NO];
     }];
-    self.tableView.mj_header.automaticallyChangeAlpha = YES;
-    
-    
     self.tableView.mj_footer = [LMJAutoRefreshFooter footerWithRefreshingBlock:^{
-        
         [weakself loadIsMore:YES];
-        
     }];
-    self.tableView.mj_footer.automaticallyChangeAlpha = YES;
-//    self.tableView.mj_footer.automaticallyHidden = YES;
-    
-    
     [self.tableView.mj_header beginRefreshing];
 }
 

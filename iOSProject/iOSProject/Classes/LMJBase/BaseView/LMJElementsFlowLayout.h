@@ -25,8 +25,6 @@
  */
 - (CGSize)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout collectionView:(UICollectionView *)collectionView sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 
-
-
 @optional
 
 /**
@@ -43,7 +41,6 @@
  *  距离collectionView四周的间距, 默认{20, 10, 10, 10}
  */
 - (UIEdgeInsets)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout edgeInsetsInCollectionView:(UICollectionView *)collectionView;
-
 
 @end
 

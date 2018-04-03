@@ -27,15 +27,12 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        
         _titleColor = [UIColor blackColor];
         _subTitleColor = [UIColor blackColor];
-        
         _cellHeight = AdaptedWidth(50);
         _titleFont = AdaptedFontSize(16);
         _subTitleFont = AdaptedFontSize(16);
-        
-}
+    }
     
     return self;
 }

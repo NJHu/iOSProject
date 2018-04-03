@@ -18,10 +18,10 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
 @interface LMJVerticalFlowLayout()
 
 /** 所有的cell的attrbts */
-@property (nonatomic, strong) NSMutableArray *lmj_AtrbsArray;
+@property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *lmj_AtrbsArray;
 
 /** 每一列的最后的高度 */
-@property (nonatomic, strong) NSMutableArray *lmj_ColumnsHeightArray;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *lmj_ColumnsHeightArray;
 
 - (NSInteger)columns;
 
@@ -35,8 +35,6 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
 
 @implementation LMJVerticalFlowLayout
 
-
-
 /**
  *  刷新布局的时候回重新调用
  */
@@ -49,7 +47,6 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     
     //复赋值以顶部的高度, 并且根据列数
     for (NSInteger i = 0; i < self.columns; i++) {
-        
         [self.lmj_ColumnsHeightArray addObject:@(self.edgeInsets.top)];
     }
     
@@ -62,8 +59,6 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
         [self.lmj_AtrbsArray addObject:[self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]]];
     }
     
-    
-
 }
 
 
@@ -82,19 +77,16 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     CGFloat h = [self.delegate waterflowLayout:self collectionView:self.collectionView heightForItemAtIndexPath:indexPath itemWidth:w];
     
     // 拿到最后的高度最小的那一列, 假设第0列最小
-    NSInteger indexCol = 0;
-    CGFloat minColH = [self.lmj_ColumnsHeightArray[indexCol] doubleValue];
-    
-    for (NSInteger i = 1; i < self.lmj_ColumnsHeightArray.count; i++)
-    {
-        CGFloat colH = [self.lmj_ColumnsHeightArray[i] doubleValue];
-        if(minColH > colH)
-        {
+   __block NSInteger indexCol = 0;
+   __block CGFloat minColH = [self.lmj_ColumnsHeightArray[indexCol] doubleValue];
+
+    [self.lmj_ColumnsHeightArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGFloat colH = obj.floatValue;
+        if (minColH > colH) {
             minColH = colH;
-            indexCol = i;
+            indexCol = idx;
         }
-    }
-    
+    }];
     
     CGFloat x = self.edgeInsets.left + (self.xMargin + w) * indexCol;
     
@@ -102,7 +94,6 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     
     // 是第一行
     if (minColH == self.edgeInsets.top) {
-        
         y = self.edgeInsets.top;
     }
     
@@ -115,7 +106,7 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     return atrbs;
 }
 
-
+// layoutAttributesForElementsInRect
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
 {
     return self.lmj_AtrbsArray;
@@ -212,7 +203,6 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
 - (instancetype)initWithDelegate:(id<LMJVerticalFlowLayoutDelegate>)delegate
 {
     if (self = [super init]) {
-        
     }
     return self;
 }

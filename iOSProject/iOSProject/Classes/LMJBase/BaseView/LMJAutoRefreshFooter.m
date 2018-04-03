@@ -27,15 +27,11 @@
 - (void)setupUIOnce
 {
     self.automaticallyChangeAlpha = YES;
-//    self.automaticallyHidden = YES;
-    
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    
 }
 
 @end

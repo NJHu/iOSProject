@@ -1573,18 +1573,18 @@
 			children = (
 				5892ACE51FF4F9D100E868C2 /* LMJNavigationBar.h */,
 				5892ACED1FF4F9D100E868C2 /* LMJNavigationBar.m */,
-				5892ACE31FF4F9D100E868C2 /* LMJAutoRefreshFooter.h */,
-				5892ACEA1FF4F9D100E868C2 /* LMJAutoRefreshFooter.m */,
-				5892ACEE1FF4F9D100E868C2 /* LMJElementsFlowLayout.h */,
-				5892ACE41FF4F9D100E868C2 /* LMJElementsFlowLayout.m */,
-				5892ACEF1FF4F9D100E868C2 /* LMJVerticalFlowLayout.h */,
-				5892ACE91FF4F9D100E868C2 /* LMJVerticalFlowLayout.m */,
-				5892ACE81FF4F9D100E868C2 /* LMJSettingCell.h */,
-				5892ACF01FF4F9D100E868C2 /* LMJSettingCell.m */,
-				5892ACEB1FF4F9D100E868C2 /* LMJHorizontalFlowLayout.h */,
-				5892ACE71FF4F9D100E868C2 /* LMJHorizontalFlowLayout.m */,
 				5892ACEC1FF4F9D100E868C2 /* LMJNormalRefreshHeader.h */,
 				5892ACE61FF4F9D100E868C2 /* LMJNormalRefreshHeader.m */,
+				5892ACE31FF4F9D100E868C2 /* LMJAutoRefreshFooter.h */,
+				5892ACEA1FF4F9D100E868C2 /* LMJAutoRefreshFooter.m */,
+				5892ACE81FF4F9D100E868C2 /* LMJSettingCell.h */,
+				5892ACF01FF4F9D100E868C2 /* LMJSettingCell.m */,
+				5892ACEF1FF4F9D100E868C2 /* LMJVerticalFlowLayout.h */,
+				5892ACE91FF4F9D100E868C2 /* LMJVerticalFlowLayout.m */,
+				5892ACEB1FF4F9D100E868C2 /* LMJHorizontalFlowLayout.h */,
+				5892ACE71FF4F9D100E868C2 /* LMJHorizontalFlowLayout.m */,
+				5892ACEE1FF4F9D100E868C2 /* LMJElementsFlowLayout.h */,
+				5892ACE41FF4F9D100E868C2 /* LMJElementsFlowLayout.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";

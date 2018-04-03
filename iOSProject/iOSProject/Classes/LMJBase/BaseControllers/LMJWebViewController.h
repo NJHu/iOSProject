@@ -44,6 +44,9 @@
 /** <#digest#> */
 @property (nonatomic, copy) NSString *gotoURL;
 
+/** <#digest#> */
+@property (nonatomic, copy) NSString *contentHTML;
+
 
 // 7页面加载完调用, 必须调用super
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation NS_REQUIRES_SUPER;

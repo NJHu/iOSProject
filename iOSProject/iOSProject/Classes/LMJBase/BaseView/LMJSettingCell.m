@@ -26,7 +26,6 @@ static NSString *const ID = @"LMJSettingCell";
     {
         cell = [[self alloc] initWithStyle:style reuseIdentifier:ID];
     }
-    
     return cell;
 }
 
@@ -102,7 +101,5 @@ static NSString *const ID = @"LMJSettingCell";
     [super layoutSubviews];
     
 }
-
-
 
 @end

@@ -33,7 +33,6 @@
     LMJWeakSelf(self);
     [self.webView addObserverBlockForKeyPath:LMJKeyPath(weakself.webView, estimatedProgress) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
         
-        
         weakself.progressView.progress = weakself.webView.estimatedProgress;
         // 加载完成
         if (weakself.webView.estimatedProgress  >= 1.0f ) {
@@ -49,34 +48,24 @@
         
     }];
     
-    
-    
-    if ([self webViewController:self webViewIsNeedAutoTitle:self.webView]) {
+    [self.webView addObserverBlockForKeyPath:LMJKeyPath(self.webView, title) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
         
-        [self.webView addObserverBlockForKeyPath:LMJKeyPath(self.webView, title) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
-            
-            if ([newVal isKindOfClass:[NSString class]]) {
-                
-                weakself.title = newVal;
-                
-            }
-            
-        }];
-    }
-    
-    
-    [self.webView.scrollView addObserverBlockForKeyPath:LMJKeyPath(self.webView.scrollView, contentSize) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
-        
-        [weakself webView:weakself.webView scrollView:weakself.webView.scrollView contentSize:weakself.webView.scrollView.contentSize];
+        if (!LMJIsEmpty(newVal) && [newVal isKindOfClass:[NSString class]] && [self webViewController:self webViewIsNeedAutoTitle:self.webView]) {
+            weakself.title = newVal;
+        }
         
     }];
     
     
+    [self.webView.scrollView addObserverBlockForKeyPath:LMJKeyPath(self.webView.scrollView, contentSize) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+        [weakself webView:weakself.webView scrollView:weakself.webView.scrollView contentSize:weakself.webView.scrollView.contentSize];
+    }];
     
     if (self.gotoURL.length > 0) {
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.gotoURL]]];
+    }else if (!LMJIsEmpty(self.contentHTML)) {
+        [self.webView loadHTMLString:self.contentHTML baseURL:nil];
     }
-    
 }
 
 
@@ -84,9 +73,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-
     [self.view bringSubviewToFront:self.progressView];
-    
 }
 
 
@@ -144,11 +131,8 @@
 - (void)backBtnClick:(UIButton *)backBtn webView:(WKWebView *)webView
 {
     if (self.webView.canGoBack) {
-        
         self.closeBtn.hidden = NO;
-        
         [self.webView goBack];
-        
     }else
     {
         [self closeBtnClick:self.closeBtn webView:self.webView];
@@ -159,9 +143,7 @@
 - (void)closeBtnClick:(UIButton *)closeBtn webView:(WKWebView *)webView {
     // 判断两种情况: push 和 present
     if ((self.navigationController.presentedViewController || self.navigationController.presentingViewController) && self.navigationController.childViewControllers.count == 1) {
-        
         [self dismissViewControllerAnimated:YES completion:nil];
-        
     }else{
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -259,7 +241,7 @@
         //不通过用户交互，是否可以打开窗口
         config.preferences.javaScriptCanOpenWindowsAutomatically = YES;
         // 检测各种特殊的字符串：比如电话、网站
-//                config.dataDetectorTypes = UIDataDetectorTypeAll;
+        config.dataDetectorTypes = UIDataDetectorTypeAll;
         // 播放视频
         config.allowsInlineMediaPlayback = YES;
 
@@ -268,14 +250,13 @@
 //        config.userContentController = [[WKUserContentController alloc] init];
 //        [config.userContentController addScriptMessageHandler:weakself name:<#(nonnull NSString *)#>];
         
-        
         WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
-        
+        [self.view addSubview:webView];
+        _webView = webView;
         webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         webView.navigationDelegate = self;
         webView.UIDelegate = self;
-//        webView.scrollView.delegate = self;
         
         webView.opaque = NO;
         webView.backgroundColor = [UIColor clearColor];
@@ -283,24 +264,17 @@
         //滑动返回看这里
         webView.allowsBackForwardNavigationGestures = YES;
         
-        [self.view addSubview:webView];
-        
-        
         if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
-            
-            if ([self respondsToSelector:@selector(lmjNavigationHeight:)]) {
                 
-                webView.scrollView.contentInset = UIEdgeInsetsMake([self lmjNavigationHeight:nil], 0, 0, 0);
-                // AppDelegate 进行全局设置
-                if (@available(iOS 11.0, *)){
-                    webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-                }
+            webView.scrollView.contentInset = UIEdgeInsetsMake([self lmjNavigationHeight:nil], 0, 0, 0);
+            UIEdgeInsets contentInset = webView.scrollView.contentInset;
+            contentInset.top += self.lmj_navgationBar.lmj_height;
+            webView.scrollView.contentInset = contentInset;
+            if (@available(iOS 11.0, *)){
+                webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
             }
-            
             webView.scrollView.scrollIndicatorInsets = webView.scrollView.contentInset;
         }
-        
-        _webView = webView;
     }
     return _webView;
 }
@@ -324,11 +298,9 @@
         progressView.tintColor = [UIColor greenColor];
         
         if ([self respondsToSelector:@selector(webViewController:webViewIsNeedProgressIndicator:)]) {
-            
             if (![self webViewController:self webViewIsNeedProgressIndicator:self.webView]) {
                 progressView.hidden = YES;
             }
-            
         }
         
     }

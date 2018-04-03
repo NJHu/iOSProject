@@ -22,7 +22,7 @@
  *  @param  indexPath          对应的cell, 的indexPath, 但是indexPath.section == 0
  *  @param itemHeight           layout内部计算的高度
  *
- *  @return 需要代理高度对应的cell的高度
+ *  @return 需要代理高度对应的cell的宽度
  */
 - (CGFloat)waterflowLayout:(LMJHorizontalFlowLayout *)waterflowLayout collectionView:(UICollectionView *)collectionView widthForItemAtIndexPath:(NSIndexPath *)indexPath itemHeight:(CGFloat)itemHeight;
 @optional
@@ -31,10 +31,12 @@
  *  需要显示的行数, 默认3
  */
 - (NSInteger)waterflowLayout:(LMJHorizontalFlowLayout *)waterflowLayout linesInCollectionView:(UICollectionView *)collectionView;
+
 /**
  *  列间距, 默认10
  */
 - (CGFloat)waterflowLayout:(LMJHorizontalFlowLayout *)waterflowLayout collectionView:(UICollectionView *)collectionView columnsMarginForItemAtIndexPath:(NSIndexPath *)indexPath;
+
 /**
  *  行间距, 默认10
  */

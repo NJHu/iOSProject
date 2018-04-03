@@ -19,10 +19,10 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
 @interface LMJHorizontalFlowLayout()
 
 /** 所有的cell的attrbts */
-@property (nonatomic, strong) NSMutableArray *lmj_AtrbsArray;
+@property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *lmj_AtrbsArray;
 
 /** 每一列的最后的高度 */
-@property (nonatomic, strong) NSMutableArray *lmj_LinesWidthArray;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *lmj_LinesWidthArray;
 
 - (NSInteger)lines;
 
@@ -48,9 +48,8 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
     //如果重新刷新就需要移除之前存储的高度
     [self.lmj_LinesWidthArray removeAllObjects];
     
-    //复赋值以顶部的高度, 并且根据列数
+    //复赋值以顶部的高度, 并且根据行数
     for (NSInteger i = 0; i < self.lines; i++) {
-        
         [self.lmj_LinesWidthArray addObject:@(self.edgeInsets.left)];
     }
     
@@ -62,9 +61,6 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
     {
         [self.lmj_AtrbsArray addObject:[self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]]];
     }
-    
-    
-
 }
 
 
@@ -83,18 +79,17 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {10, 10, 10, 10};
     CGFloat w = [self.delegate waterflowLayout:self collectionView:self.collectionView widthForItemAtIndexPath:indexPath itemHeight:h];
     
     // 拿到最后的高度最小的那一列, 假设第0列最小
-    NSInteger indexLine = 0;
-    CGFloat minLineW = [self.lmj_LinesWidthArray[indexLine] doubleValue];
+   __block NSInteger indexLine = 0;
+   __block CGFloat minLineW = [self.lmj_LinesWidthArray[indexLine] doubleValue];
     
-    for (NSInteger i = 1; i < self.lmj_LinesWidthArray.count; i++)
-    {
-        CGFloat lineW = [self.lmj_LinesWidthArray[i] doubleValue];
+    [self.lmj_LinesWidthArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGFloat lineW = obj.doubleValue;
         if(minLineW > lineW)
         {
             minLineW = lineW;
-            indexLine = i;
+            indexLine = idx;
         }
-    }
+    }];
     
     
     CGFloat x = [self xMarginAtIndexPath:indexPath] + minLineW;

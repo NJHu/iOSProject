@@ -27,7 +27,6 @@
     [self setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, -3)] forKeyPath:LMJKeyPath(self, titlePositionAdjustment)];
     [self addTabarItems];
     [self addChildViewControllers];
-    
     self.delegate = self;
 }
 
@@ -50,7 +49,6 @@
 
 - (void)addTabarItems
 {
-    
     
     NSDictionary *firstTabBarItemsAttributes = @{
                                                  CYLTabBarItemTitle : @"基础",
@@ -84,7 +82,6 @@
                                        fifthTabBarItemsAttributes,
                                        fourthTabBarItemsAttributes
                                        ];
-
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController

@@ -19,15 +19,11 @@
     
     LMJWeakSelf(self);
     self.collectionView.mj_header = [LMJNormalRefreshHeader headerWithRefreshingBlock:^{
-        
         [weakself loadIsMore:NO];
     }];
     
-    
     self.collectionView.mj_footer = [LMJAutoRefreshFooter footerWithRefreshingBlock:^{
-        
         [weakself loadIsMore:YES];
-        
     }];
     
     [self.collectionView.mj_header beginRefreshing];
