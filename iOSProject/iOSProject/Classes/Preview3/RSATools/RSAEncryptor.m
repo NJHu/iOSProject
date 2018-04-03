@@ -259,7 +259,8 @@ static NSData *base64_decode(NSString *str){
         size_t outlen = block_size;
         OSStatus status = noErr;
         status = SecKeyEncrypt(keyRef,
-                               kSecPaddingPKCS1,
+                               //kSecPaddingPKCS1是随机类型 选择kSecPaddingNone类型就能保证每次加密出来的都一样了 否则的话 JAVA服务器读取出来会有摘要
+                               kSecPaddingNone,
                                srcbuf + idx,
                                data_len,
                                outbuf,
@@ -428,6 +429,7 @@ static NSData *base64_decode(NSString *str){
         size_t outlen = block_size;
         OSStatus status = noErr;
         status = SecKeyDecrypt(keyRef,
+                               //kSecPaddingPKCS1是随机类型 选择kSecPaddingNone类型就能保证每次加密出来的都一样了 否则的话 JAVA服务器读取出来会有摘要
                                kSecPaddingNone,
                                srcbuf + idx,
                                data_len,

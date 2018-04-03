@@ -31,7 +31,7 @@
     
     if (encryptOperation == kCCDecrypt)//传递过来的是decrypt 解码
     {
-        //转成utf-8并decode
+        //转成utf-8并decode, UTF-8, 一般用这个..........., 如果服务器特别就用别的...
         //解码 base64
        NSData *decryptData = [[NSData alloc] initWithBase64EncodedData:[sText dataUsingEncoding:NSUTF8StringEncoding] options:NSDataBase64DecodingIgnoreUnknownCharacters];
         
@@ -84,8 +84,13 @@
     }
     else //encryptOperation==0  （加密过程中，把加好密的数据转成base64的）
     {
+        // base64data
+        NSData *base64Data = [data base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        
         //编码 base64
-       result = [data  base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        // UTF-8, 一般用这个..........., 如果服务器特别就用别的...
+       result = [[NSString alloc] initWithData:base64Data encoding:NSUTF8StringEncoding];
+        
     }
     
     return result;

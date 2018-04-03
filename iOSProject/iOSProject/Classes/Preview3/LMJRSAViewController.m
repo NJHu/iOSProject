@@ -53,11 +53,11 @@
 - (void)requestDataEncrypt
 {
     NSMutableDictionary *dictM = [NSMutableDictionary dictionaryWithDictionary:@{
-         @"sessionId" : @"eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1MjIyMTY0OTIsInN1YiI6IntcImRpc2FibGVkXCI6ZmFsc2UsXCJpZFwiOjE0NzMzMjUsXCJsb2dpbk5hbWVcIjpcIk0xNTYwMDYwMDAwMlwiLFwibW9iaWxlXCI6XCIxNTYwMDYwMDAwMlwiLFwicm9sZU5hbWVzXCI6W1wiSU5WRVNUT1JcIl19In0.0K7aq0N97Mw6RfAyQKSaAPVUbD-DzDGa78KyzKVoGmkz_Q-gO2LSWUTXQHXpyKjMC25yGRNcjCPq70w0yR1n-g",
-         @"versionCode" : @"370",
+         @"sessionId" : @"eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1MjI3NTI3MjEsInN1YiI6IntcImRpc2FibGVkXCI6ZmFsc2UsXCJpZFwiOjE0NzMzMjUsXCJsb2dpbk5hbWVcIjpcIk0xNTYwMDYwMDAwMlwiLFwibW9iaWxlXCI6XCIxNTYwMDYwMDAwMlwiLFwicm9sZU5hbWVzXCI6W1wiSU5WRVNUT1JcIl19In0.ZmE_RyS2ba6g6paa_56V_YZ0FKX5QrKMaRp2X82UdoZjglUCWxOp81Nuv-FKHWyTEJupwrhGR81IwIoKPnUM8g",
+         @"versionCode" : @"380",
          @"platformType" : @"5",
          @"channelId" : @"ios",
-         @"deviceId" : @"D060CBF9-AA28-43E0-9BEF-D3CB3B7E5400",
+         @"deviceId" : @"06761B15-C2E0-4A8F-8C5C-BBBB07261059",
          @"msgeps" : @"",
          @"msgnonce" : @"",
          @"msgtimestamp" : @"",
@@ -69,10 +69,10 @@
     NSString *timestmp = [dateformatter stringFromDate:[NSDate date]];
     
     // UUID
-    NSString *uuid = [NSString queryUUID];
+    NSString *uuid = @"0BE8421A-6A0A-4F3D-BDCE-C2DD78BD65D0";
     
     // nonce
-    NSString *nonce = [NSString stringWithFormat:@"%@%@%@%@", dictM[@"platformType"], dictM[@"deviceId"], timestmp, uuid];
+    NSString *nonce = [[NSString stringWithFormat:@"%@%@%@%@",dictM[@"platformType"], dictM[@"deviceId"], timestmp, uuid] md5String];
 
     // 时间戳
     dictM[@"msgtimestamp"] = timestmp;
@@ -94,7 +94,7 @@
     
     
     //    @"%@%@%@", pkey, content, mkey    DES3   mkey, 服务器拿到消息内容作对比
-    NSString *sign = [DES3Encryptor DES3EncryptString:[NSString stringWithFormat:@"%@%@%@", pkey, content, mkey] keyString:mkey ivString:@"01234567"];
+    NSString *sign = [DES3Encryptor DES3EncryptString:[NSString stringWithFormat:@"%@%@%@", pkey, content, mkey].md5String keyString:mkey ivString:@"01234567"];
     [self.manager.requestSerializer setValue:sign forHTTPHeaderField:@"msgsign"];
     
     //content DES3 pkey
