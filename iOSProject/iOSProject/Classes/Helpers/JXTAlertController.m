@@ -192,7 +192,7 @@ typedef void (^JXTAlertActionsConfig)(JXTAlertActionBlock actionBlock);
         alertMaker.alertActionsConfig(actionBlock);
 
         [self presentViewController:alertMaker animated:!(alertMaker.jxt_setAlertAnimated) completion:^{
-            alertMaker.alertDidShown ?: alertMaker.alertDidShown();
+            !alertMaker.alertDidShown ?: alertMaker.alertDidShown();
         }];
     }
 }
