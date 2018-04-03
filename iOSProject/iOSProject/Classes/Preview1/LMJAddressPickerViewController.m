@@ -11,18 +11,12 @@
 
 @interface LMJAddressPickerViewController ()
 
-
-/** <#digest#> */
-@property (weak, nonatomic) UIButton *selectBtn;
-
-
 @end
 
 @implementation LMJAddressPickerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     NSArray *array = @[[LMJWordItem itemWithTitle:@"选择地址" subTitle:@"" itemOperation:^(NSIndexPath *indexPath) {
         

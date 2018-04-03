@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lanuchImage" translatesAutoresizingMaskIntoConstraints="NO" id="CF5-lx-dWh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LMJSpashLanuch.png" translatesAutoresizingMaskIntoConstraints="NO" id="CF5-lx-dWh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lanuchImage" width="621" height="1104"/>
+        <image name="LMJSpashLanuch.png" width="1125" height="2436"/>
     </resources>
 </document>

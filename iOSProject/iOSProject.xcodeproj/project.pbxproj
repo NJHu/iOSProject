@@ -27,6 +27,7 @@
 		5822335620188F6E0008251F /* adm in Resources */ = {isa = PBXBuildFile; fileRef = 5822335520188F6E0008251F /* adm */; };
 		583D507020731574001480C8 /* LMJLocalJsons in Resources */ = {isa = PBXBuildFile; fileRef = 583D506F20731574001480C8 /* LMJLocalJsons */; };
 		583D50722073246C001480C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583D50712073246C001480C8 /* LaunchScreen.storyboard */; };
+		583D507420736347001480C8 /* LMJSpashLanuch.png in Resources */ = {isa = PBXBuildFile; fileRef = 583D507320736347001480C8 /* LMJSpashLanuch.png */; };
 		584038001FF61D00002A0566 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584037FF1FF61D00002A0566 /* MapKit.framework */; };
 		584038021FF61D1A002A0566 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584038011FF61D1A002A0566 /* AudioToolbox.framework */; };
 		584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038051FF62371002A0566 /* LMJAddressPickerViewController.m */; };
@@ -436,6 +437,7 @@
 		5822335520188F6E0008251F /* adm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = adm; sourceTree = "<group>"; };
 		583D506F20731574001480C8 /* LMJLocalJsons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LMJLocalJsons; sourceTree = "<group>"; };
 		583D50712073246C001480C8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		583D507320736347001480C8 /* LMJSpashLanuch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LMJSpashLanuch.png; sourceTree = "<group>"; };
 		584037FE1FF61CF8002A0566 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		584037FF1FF61D00002A0566 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		584038011FF61D1A002A0566 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -1518,6 +1520,7 @@
 				58651ABF1FFE6F3F0087419D /* Classes */,
 				5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */,
 				583D50712073246C001480C8 /* LaunchScreen.storyboard */,
+				583D507320736347001480C8 /* LMJSpashLanuch.png */,
 				5892ACB71FF4EF4500E868C2 /* BSJ.xcassets */,
 				5892ACB31FF4EF4400E868C2 /* Preview.xcassets */,
 				5892ACB81FF4EF4500E868C2 /* Public.xcassets */,
@@ -2653,6 +2656,7 @@
 				58DC85051FFC972C0060DC03 /* NJPlayerView.xib in Resources */,
 				589B56D51FFFC52F00B2D5A8 /* 120125029.lrc in Resources */,
 				583D50722073246C001480C8 /* LaunchScreen.storyboard in Resources */,
+				583D507420736347001480C8 /* LMJSpashLanuch.png in Resources */,
 				58DC85081FFC972C0060DC03 /* NJPlayer.bundle in Resources */,
 				589B56DE1FFFC52F00B2D5A8 /* jj@2x.jpg in Resources */,
 				589B56FA1FFFC52F00B2D5A8 /* MUSPlayingViewController.xib in Resources */,
