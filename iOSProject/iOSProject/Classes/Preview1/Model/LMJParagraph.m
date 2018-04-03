@@ -49,6 +49,9 @@ const CGFloat kBottomSpace = 10;
        _height += [self.attWords boundingRectWithSize:CGSizeMake(kScreenWidth - KLeftSpace - KRightSpace, INFINITY) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height;
         
         _height += [self.date boundingRectWithSize:CGSizeMake(kScreenWidth - KLeftSpace - KRightSpace, INFINITY) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : AdaptedFontSize(KDateLabelFontSize)} context:nil].size.height;
+        
+        // 向上取整
+        _height = ceilf(_height);
     }
     return _height;
 }

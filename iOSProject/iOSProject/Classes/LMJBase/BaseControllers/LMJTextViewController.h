@@ -30,9 +30,6 @@
 - (void)textViewController:(LMJTextViewController *)textViewController inputViewDone:(id)inputView;
 @end
 
-
-
-
 @interface LMJTextViewController : LMJNavUIBaseViewController<LMJTextViewControllerDataSource, LMJTextViewControllerDelegate>
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField NS_REQUIRES_SUPER;

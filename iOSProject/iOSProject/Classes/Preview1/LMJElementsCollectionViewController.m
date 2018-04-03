@@ -63,7 +63,6 @@
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
-    
     NSLog(@"%zd", indexPath.item);
 }
 

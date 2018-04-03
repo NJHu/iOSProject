@@ -103,35 +103,20 @@
         [btn addActionHandler:^(NSInteger tag) {
             
             if (weakself.selectGroup) {
-                
                 weakself.selectGroup();
-                
             }
             
-            
             if (weakself.group.isOpened) {
-                
                 [UIView animateWithDuration:0.3 animations:^{
-                    
-                    self.indicatorButton.imageView.transform = CGAffineTransformIdentity;
-                    
+                    weakself.indicatorButton.imageView.transform = CGAffineTransformIdentity;
                 }];
-                
                 
             }else
             {
-                
-                
-                
                 [UIView animateWithDuration:0.3 animations:^{
-                    
                     weakself.indicatorButton.imageView.transform = CGAffineTransformMakeRotation(kDegreesToRadian(180.0));
-                    
                 }];
-                
             }
-            
-            
         }];
         
         _indicatorButton = btn;

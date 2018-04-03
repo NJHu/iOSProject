@@ -10,15 +10,6 @@
 
 @interface LMJDownLoadFileViewController ()
 
-/** <#digest#> */
-@property (weak, nonatomic) UIButton *downBtn;
-
-/** <#digest#> */
-@property (weak, nonatomic) UIButton *memoryFileBtn;
-
-/** <#digest#> */
-@property (nonatomic, strong) NSArray *addressArray;
-
 @end
 
 @implementation LMJDownLoadFileViewController
@@ -52,7 +43,7 @@
     
     NSString *fileDownLoadPath = @"https://s3.cn-north-1.amazonaws.com.cn/zplantest.s3.seed.meme2c.com/area/area.json";
     
-    NSString *lastModified = [NSUserDefaults.standardUserDefaults stringForKey:@"Last-Modified"] ?: @"";
+    NSString *lastModified = [NSUserDefaults.standardUserDefaults stringForKey:@"areajson_Last_Modified"] ?: @"";
     
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:fileDownLoadPath]];
@@ -88,12 +79,10 @@
         NSString *lastModified = [httpResponse allHeaderFields][@"Last-Modified"];
         
         if (lastModified && !error) {
-            [NSUserDefaults.standardUserDefaults setObject:lastModified forKey:@"Last-Modified"];
-            
+            [NSUserDefaults.standardUserDefaults setObject:lastModified forKey:@"areajson_Last_Modified"];
         }
         
         NSLog(@"%@", lastModified);
-        
         
     }] resume];
     

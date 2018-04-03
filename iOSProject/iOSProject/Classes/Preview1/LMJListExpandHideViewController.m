@@ -55,7 +55,6 @@
         
     }
     
-    
     cell.textLabel.text = self.groups[indexPath.section].teams[indexPath.row].sortNumber;
     cell.detailTextLabel.text = self.groups[indexPath.section].teams[indexPath.row].name;
     
@@ -73,11 +72,8 @@
         weakself.groups[section].isOpened = !weakself.groups[section].isOpened;
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
             [weakself.tableView reloadData];
-            
         });
-        
         return weakself.groups[section].isOpened;
     }];
     
@@ -98,7 +94,7 @@
         _groups = [NSMutableArray array];
         
         NSString *path = [[NSBundle mainBundle] pathForResource:@"team_dictionary" ofType:@"plist"];
-        //        NSArray *dictArr = [NSArray arrayWithContentsOfFile:path];
+        
         NSDictionary *dictDict = [NSDictionary dictionaryWithContentsOfFile:path];
         
         [dictDict enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSArray<NSString *>  *obj, BOOL * _Nonnull stop) {
@@ -125,7 +121,6 @@
         
         
         [_groups sortUsingComparator:^NSComparisonResult(LMJTeam * _Nonnull obj1, LMJTeam * _Nonnull obj2) {
-            
             return [obj1.name compare:obj2.name] == NSOrderedAscending ? NSOrderedAscending : NSOrderedDescending;
         }];
     }

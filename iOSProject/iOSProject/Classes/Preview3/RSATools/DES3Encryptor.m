@@ -25,7 +25,7 @@
     return [self doCipher:decryptString keyString:keyString ivString:ivString operation:kCCDecrypt];
 }
 
-+(NSString *) doCipher:(NSString*)plainText keyString:(NSString*)keyString ivString:(NSString*)ivString operation:(CCOperation)encryptOrDecrypt
++ (NSString *) doCipher:(NSString*)plainText keyString:(NSString*)keyString ivString:(NSString*)ivString operation:(CCOperation)encryptOrDecrypt
 {
     const void * vplainText;
     size_t plainTextBufferSize;

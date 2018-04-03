@@ -61,7 +61,6 @@
     
     
     // 3, 高亮和点击的
-    
     CGSize bSize = CGSizeMake(kScreenWidth - 20, INFINITY);
     
     NSString *bAllString = @"点击高亮点击高亮, 点击高亮点击高亮, 点击高亮点击高亮, 点击高亮点击高亮, DDDDDDD 点击高亮点击高亮";
@@ -99,7 +98,7 @@
     YYLabel *bLabel = [[YYLabel alloc] init];
     
     bLabel.frame = CGRectMake(10, aLabel.lmj_bottom + 10, bLayout.textBoundingSize.width, bLayout.textBoundingSize.height);
-    
+
     bLabel.textLayout = bLayout;
     
     [self.view addSubview:bLabel];
@@ -112,15 +111,10 @@
     cAttStrM.yy_color = [UIColor redColor];
     cAttStrM.yy_alignment = NSTextAlignmentCenter;
 
-    
     YYTextBorder *border = [YYTextBorder borderWithFillColor:nil cornerRadius:20];
-    
     border.insets = UIEdgeInsetsMake(-5, -10, -5, -10);
-    
     border.strokeColor = [UIColor whiteColor];
-    
     border.strokeWidth = 2;
-    
     
     border.lineStyle = YYTextLineStyleSingle;
     
@@ -164,7 +158,6 @@
     
     attrM.yy_kern = @5;
     
-    
     return attrM;
 }
 
@@ -173,87 +166,23 @@
 
 #pragma mark 重写BaseViewController设置内容, 可以不用看
 
-//- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
-//{
-//    return [UIColor RandomColor];
-//}
 
-- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
+#pragma mark - LMJNavUIBaseViewControllerDataSource
 
-- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-}
-
-- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%@", sender);
-}
-
-
-- (UIView *)lmjNavigationBarTitleView:(LMJNavigationBar *)navigationBar
-{
-    YYLabel *label = [[YYLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth * 0.63, 44)];
-    
-    
-    label.textColor = [UIColor purpleColor];
-    
-    label.font = [UIFont systemFontOfSize:15];
-    
-    label.text = @"YYText 的使用YYText 的使用";
-    
-    label.numberOfLines = 0;
-    
-    label.textAlignment = NSTextAlignmentCenter;
-    
-    
-    
-    return label;
-    
-}
-
-
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return [self changeTitle:@"YYText 的使用"];;
-    
-}
-
+/** 导航条左边的按钮 */
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    [leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
     
-    return [UIImage imageNamed:@"navigationButtonReturnClick"];
+    return [UIImage imageNamed:@"NavgationBar_blue_back"];
 }
 
-
-- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    rightButton.backgroundColor = [UIColor RandomColor];
-    
-    return nil;
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
-
-
-#pragma mark 自定义代码
-
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:[UIColor RandomColor] range:NSMakeRange(0, title.length)];
-    
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, title.length)];
-    
-    return title;
-}
-
 
 
 @end

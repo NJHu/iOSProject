@@ -22,7 +22,6 @@
     
     self.isColorChange = YES;
     
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
 }
 
@@ -42,16 +41,22 @@
         
         if (contentOffsetY == 0) {
             
+            [UIView animateWithDuration:0.2 animations:^{
             self.lmj_navgationBar.transform = CGAffineTransformMakeTranslation(0, 0);
+            }];
             self.lmj_navgationBar.backgroundColor = [UIColor clearColor];
             self.lmj_navgationBar.lmj_height = [self lmjNavigationHeight:nil];
             
         }else if (contentOffsetY < 0)
         {
-            self.lmj_navgationBar.transform = CGAffineTransformMakeTranslation(0, -[self lmjNavigationHeight:nil]);
+            [UIView animateWithDuration:0.2 animations:^{
+                self.lmj_navgationBar.transform = CGAffineTransformMakeTranslation(0, -[self lmjNavigationHeight:nil]);
+            }];
         }else
         {
+            [UIView animateWithDuration:0.2 animations:^{
             self.lmj_navgationBar.transform = CGAffineTransformMakeTranslation(0, 0);
+            }];
             
             UIColor *redColor = [self lmjNavigationBackgroundColor:nil];
             
@@ -140,7 +145,6 @@
     [btn setTitle:@"颜色渐变" forState:UIControlStateNormal];
     
     [btn setTitle:@"高度渐变" forState:UIControlStateSelected];
-    
     [btn sizeToFit];
     
     btn.lmj_height = 44.0;

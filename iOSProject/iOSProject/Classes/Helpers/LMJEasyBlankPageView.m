@@ -44,7 +44,7 @@
         [self.reloadBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.offset(0);
             make.top.mas_equalTo(self.imageView.mas_bottom).offset(10);
-            make.width.mas_equalTo(@94);
+//            make.width.mas_equalTo(@94);
             make.height.mas_equalTo(44);
         }];
     }
