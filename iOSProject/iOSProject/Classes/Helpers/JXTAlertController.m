@@ -199,12 +199,16 @@ typedef void (^JXTAlertActionsConfig)(JXTAlertActionBlock actionBlock);
 
 - (void)jxt_showAlertWithTitle:(NSString *)title message:(NSString *)message appearanceProcess:(JXTAlertAppearanceProcess)appearanceProcess actionsBlock:(JXTAlertActionBlock)actionBlock
 {
-    [self jxt_showAlertWithPreferredStyle:UIAlertControllerStyleAlert title:title message:message appearanceProcess:appearanceProcess actionsBlock:actionBlock];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self jxt_showAlertWithPreferredStyle:UIAlertControllerStyleAlert title:title message:message appearanceProcess:appearanceProcess actionsBlock:actionBlock];
+    });
 }
 
 - (void)jxt_showActionSheetWithTitle:(NSString *)title message:(NSString *)message appearanceProcess:(JXTAlertAppearanceProcess)appearanceProcess actionsBlock:(JXTAlertActionBlock)actionBlock
 {
+    dispatch_async(dispatch_get_main_queue(), ^{
     [self jxt_showAlertWithPreferredStyle:UIAlertControllerStyleActionSheet title:title message:message appearanceProcess:appearanceProcess actionsBlock:actionBlock];
+    });
 }
 
 

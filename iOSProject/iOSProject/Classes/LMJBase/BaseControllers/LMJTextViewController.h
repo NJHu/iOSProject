@@ -17,6 +17,7 @@
 
 - (BOOL)textViewControllerEnableAutoToolbar:(LMJTextViewController *)textViewController;
 
+//  控制是否可以点击点击的按钮
 - (NSArray <UIButton *> *)textViewControllerRelationButtons:(LMJTextViewController *)textViewController;
 
 @end
@@ -27,9 +28,6 @@
 @optional
 #pragma mark - 最后一个输入框点击键盘上的完成按钮时调用
 - (void)textViewController:(LMJTextViewController *)textViewController inputViewDone:(id)inputView;
-
-
-
 @end
 
 

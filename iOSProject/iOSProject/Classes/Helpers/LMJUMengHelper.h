@@ -18,16 +18,13 @@
  */
 + (void)UMAnalyticStart;
 
-
 /**
  初始化第三方登录和分享
  */
 + (void)UMSocialStart;
 
-
 /**
  初始化推送
- 
  */
 + (void)UMPushStart:(NSDictionary *)launchOptions;
 
@@ -37,7 +34,7 @@
  
  @param title 分享的标题
  @param subTitle 内容
- @param thumbImage 缩略图
+ @param thumbImage 缩略图 url
  @param shareURL 分享的url
  */
 + (void)shareTitle:(NSString *)title subTitle:(NSString *)subTitle thumbImage:(NSString *)thumbImage shareURL:(NSString *)shareURL;

@@ -11,7 +11,7 @@
 @interface LMJNavigationController ()
 
 /** 系统的右划返回功能的代理记录 */
-@property (nonatomic, strong) id popGesDelegate;
+//@property (nonatomic, strong) id popGesDelegate;
 
 @end
 
@@ -55,17 +55,9 @@
     self.fd_viewControllerBasedNavigationBarAppearanceEnabled = NO;
 }
 
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-}
-
-
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    
     if (self.childViewControllers.count != 0) {
-        
         viewController.hidesBottomBarWhenPushed = YES;
     }
     

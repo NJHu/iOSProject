@@ -18,5 +18,4 @@
 
 // tableview的样式, 默认plain
 - (instancetype)initWithStyle:(UITableViewStyle)style;
-
 @end

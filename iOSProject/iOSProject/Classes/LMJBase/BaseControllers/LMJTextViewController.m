@@ -24,15 +24,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     [self initKeyboard];
 }
 
@@ -45,7 +42,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
     [self.view endEditing:YES];
 }
 
@@ -53,14 +49,11 @@
 
 #pragma mark - UITextViewDelegate, UITextFieldDelegate
 
-
 #pragma mark - 处理 returnKey
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (![IQKeyboardManager sharedManager].canGoNext) {
-        
         [self textViewController:self inputViewDone:textField];
-        
     }
     
     return YES;
@@ -68,9 +61,7 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if (![IQKeyboardManager sharedManager].canGoNext && [text isEqualToString:@"\n"]) {
-        
         [self textViewController:self inputViewDone:textView];
-        
     }
     return YES;
 }
@@ -88,7 +79,6 @@
     NSString *current = [textField.text stringByReplacingCharactersInRange:range withString:string].stringByTrim;
     
     if (textField.isEmptyAutoEnable && (LMJIsEmpty(textField.text.stringByTrim) || LMJIsEmpty(current))) {
-        
         if (LMJIsEmpty(current)) {
             [self checkIsEmpty:YES textField:textField];
         }else
@@ -105,10 +95,8 @@
 - (BOOL)textFieldShouldClear:(UITextField *)textField
 {
     if (textField.isEmptyAutoEnable) {
-        
         [self checkIsEmpty:YES textField:textField];
     }
-    
     return YES;
 }
 
@@ -121,11 +109,9 @@
     }
     
     if ([self respondsToSelector:@selector(textViewControllerRelationButtons:)]) {
-        
         if (LMJIsEmpty([self textViewControllerRelationButtons:self])) {
             return;
         }
-        
     }else
     {
         return;
@@ -134,22 +120,15 @@
     __block BOOL isButtonEnabled = !isEmpty;
     
     if (!isEmpty) {
-        
         [self.requiredTextFields enumerateObjectsUsingBlock:^(UITextField *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            
             if (obj != textField && LMJIsEmpty(obj.text.stringByTrim)) {
-                
                 isButtonEnabled = NO;
-                
                 *stop = YES;
             }
-            
         }];
-        
     }
     
     [[self textViewControllerRelationButtons:self] enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
         obj.enabled = isButtonEnabled;
     }];
 }
@@ -192,9 +171,7 @@
     if(_requiredTextFields == nil)
     {
         NSArray *responsedInputViews = [self.view deepResponderViews];
-        
         NSMutableArray<UITextField *> *array = [NSMutableArray array];
-        
         [responsedInputViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
             if ([obj isKindOfClass:[UITextField class]]) {
@@ -203,10 +180,7 @@
                 field.delegate = self;
                 
                 if (field.isEmptyAutoEnable) {
-                    
                     [array addObject:field];
-                    
-//                    [self checkIsEmpty:YES textField:field];
                 }
             }
             
@@ -214,12 +188,9 @@
                 UITextView *textView = (UITextView *)obj;
                 textView.delegate = self;
             }
-            
         }];
         
-        
         _requiredTextFields = array;
-        
     }
     return _requiredTextFields;
 }
@@ -231,9 +202,7 @@
     {
         _returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
         _returnKeyHandler.delegate = self;
-        
         _returnKeyHandler.lastTextFieldReturnKeyType = [self textViewControllerLastReturnKeyType:self];
-        
     }
     return _returnKeyHandler;
 }
@@ -264,9 +233,7 @@ static void *isEmptyAutoEnableKey = &isEmptyAutoEnableKey;
 }
 @end
 
-
 @implementation LMJTextViewControllerTextField
-
 - (NSString *)text {
     return ([[super text] stringByTrim]);
 }

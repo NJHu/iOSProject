@@ -11,9 +11,7 @@
 
 @implementation LMJUMengHelper
 + (void)UMAnalyticStart {
-    
     // 友盟统计
-    // UM统计
     UMConfigInstance.appKey = LMJThirdSDKUMConfigInstanceAppKey;
     //    UMConfigInstance.ChannelId:@"Web" 中的Web 替换为您应用的推广渠道。channelId为nil或@""时，默认会被当作@"App Store"渠道。
     UMConfigInstance.channelId = LMJThirdSDKUMConfigInstanceChannelId;
@@ -21,15 +19,12 @@
     [MobClick setAppVersion:XcodeAppVersion];
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
     /** 设置是否开启background模式, 默认YES. */
-    //    [MobClick setBackgroundTaskEnabled:YES];
+//    [MobClick setBackgroundTaskEnabled:YES];
     
 #ifdef DEBUG
     // 打开友盟sdk调试，注意Release发布时需要注释掉此行,减少io消耗
     [MobClick setLogEnabled:YES];
-    
 #endif
-    
-    return;
 }
 
 
@@ -42,7 +37,7 @@
     [[UMSocialManager defaultManager] setUmSocialAppkey:LMJThirdSDKUMSocialAppkey];
     
     // 获取友盟social版本号
-    //NSLog(@"UMeng social version: %@", [UMSocialGlobal umSocialSDKVersion]);
+    NSLog(@"UMeng social version: %@", [UMSocialGlobal umSocialSDKVersion]);
     
     //设置微信的appKey和appSecret
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:LMJThirdSDKWeChatAppKey appSecret:LMJThirdSDKWeChatAppSecret redirectURL:LMJThirdSDKWeChatRedirectURL];
@@ -61,12 +56,9 @@
     
     // 如果不想显示平台下的某些类型，可用以下接口设置
     //    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_AlipaySession),@(UMSocialPlatformType_Email),@(UMSocialPlatformType_Sms), @(UMSocialPlatformType_WechatFavorite), @(UMSocialPlatformType_TencentWb)]];
-    
 #ifdef DEBUG
-    
     //打开调试日志
     [[UMSocialManager defaultManager] openLog:YES];
-    
 #endif
 }
 
@@ -76,10 +68,8 @@
     //初始化方法,也可以使用(void)startWithAppkey:(NSString *)appKey launchOptions:(NSDictionary * )launchOptions httpsenable:(BOOL)value;这个方法，方便设置https请求。
     [UMessage startWithAppkey:LMJThirdSDKUMessageStartWithAppkey launchOptions:launchOptions];
     
-    
     //注册通知，如果要使用category的自定义策略，可以参考demo中的代码。
     [UMessage registerForRemoteNotifications];
-    
     
     //iOS10必须加下面这段代码。
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
@@ -88,26 +78,21 @@
     
     UNAuthorizationOptions types10 = UNAuthorizationOptionBadge |   UNAuthorizationOptionAlert | UNAuthorizationOptionSound;
     
-    [center requestAuthorizationWithOptions:types10     completionHandler:^(BOOL granted, NSError * _Nullable error) {
+    [center requestAuthorizationWithOptions:types10 completionHandler:^(BOOL granted, NSError * _Nullable error) {
         if (granted) {
             //点击允许
             //这里可以添加一些自己的逻辑
             NSLog(@"用户允许");
-            
         } else {
             //点击不允许
             //这里可以添加一些自己的逻辑
             NSLog(@"用户拒绝");
-            
         }
     }];
     
-    
 #ifdef DEBUG
-    
     //打开日志，方便调试
     [UMessage setLogEnabled:YES];
-    
 #endif
     
 }
@@ -118,13 +103,9 @@
 + (void)shareTitle:(NSString *)title subTitle:(NSString *)subTitle thumbImage:(NSString *)thumbImage shareURL:(NSString *)shareURL
 {
     //显示分享面板
-    //显示分享面板
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
         // 根据获取的platformType确定所选平台进行下一步操作
-        
         [self shareWebPageToPlatformType:platformType shareTitle:title subTitle:subTitle thumbImage:thumbImage shareURL:shareURL];
-        
-        
     }];
 }
 
@@ -156,12 +137,9 @@
                 //第三方原始返回的数据
                 NSLog(@"response originalResponse data is %@",resp.originalResponse);
                 
-                
-                
             }else{
                 NSLog(@"response data is %@",data);
             }
-            
             // 分享成功的通知
             [[NSNotificationCenter defaultCenter] postNotificationName:LMJUMSocialShareSucceedNotification object:shareURL];
         }
@@ -347,24 +325,20 @@
 #pragma mark - 统计
 + (void)beginLogPageView:(__unsafe_unretained Class)pageView {
     [MobClick beginLogPageView:NSStringFromClass(pageView)];
-    return;
 }
 
 + (void)endLogPageView:(__unsafe_unretained Class)pageView {
     [MobClick endLogPageView:NSStringFromClass(pageView)];
-    return;
 }
 
 +(void)beginLogPageViewName:(NSString *)pageViewName
 {
     [MobClick beginLogPageView:pageViewName];
-    return;
 }
 
 +(void)endLogPageViewName:(NSString *)pageViewName
 {
     [MobClick endLogPageView:pageViewName];
-    return;
 }
 
 @end

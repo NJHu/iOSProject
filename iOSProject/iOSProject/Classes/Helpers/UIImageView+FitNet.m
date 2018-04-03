@@ -46,7 +46,6 @@
         }else
         {
             [self sd_setImageWithURL:thumbImageURL placeholderImage:placeholder options:options  progress:progressBlock completed:completedBlock];
-            
         }
         
         

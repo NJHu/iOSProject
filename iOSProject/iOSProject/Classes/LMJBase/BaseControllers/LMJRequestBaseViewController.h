@@ -29,8 +29,8 @@
 
 
 @interface LMJRequestBaseViewController : LMJTextViewController<LMJRequestBaseViewControllerDelegate>
-
 #pragma mark - 加载框
+
 - (void)showLoading;
 
 - (void)dismissLoading;
