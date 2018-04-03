@@ -265,8 +265,6 @@
         webView.allowsBackForwardNavigationGestures = YES;
         
         if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
-                
-            webView.scrollView.contentInset = UIEdgeInsetsMake([self lmjNavigationHeight:nil], 0, 0, 0);
             UIEdgeInsets contentInset = webView.scrollView.contentInset;
             contentInset.top += self.lmj_navgationBar.lmj_height;
             webView.scrollView.contentInset = contentInset;
