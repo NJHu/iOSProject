@@ -156,8 +156,6 @@
 		5892ADAF1FF60A8300E868C2 /* JXTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADAE1FF60A8300E868C2 /* JXTAlertController.m */; };
 		5898889F206B34BF00BDAACD /* DES3Encryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58988894206B34BE00BDAACD /* DES3Encryptor.m */; };
 		589888A0206B34BF00BDAACD /* EncryptorTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58988895206B34BE00BDAACD /* EncryptorTool.m */; };
-		589888A1206B34BF00BDAACD /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898889A206B34BE00BDAACD /* GTMBase64.m */; };
-		589888A2206B34BF00BDAACD /* MD5andBASE64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898889B206B34BE00BDAACD /* MD5andBASE64.m */; };
 		589888A3206B34BF00BDAACD /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898889C206B34BE00BDAACD /* RSAEncryptor.m */; };
 		589B56CC1FFFC52F00B2D5A8 /* 月半小夜曲.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 589B56731FFFC52F00B2D5A8 /* 月半小夜曲.lrc */; };
 		589B56CD1FFFC52F00B2D5A8 /* 255319.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 589B56741FFFC52F00B2D5A8 /* 255319.lrc */; };
@@ -682,11 +680,6 @@
 		58988893206B34BE00BDAACD /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
 		58988894206B34BE00BDAACD /* DES3Encryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DES3Encryptor.m; sourceTree = "<group>"; };
 		58988895206B34BE00BDAACD /* EncryptorTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptorTool.m; sourceTree = "<group>"; };
-		58988897206B34BE00BDAACD /* MD5andBASE64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5andBASE64.h; sourceTree = "<group>"; };
-		58988898206B34BE00BDAACD /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
-		58988899206B34BE00BDAACD /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		5898889A206B34BE00BDAACD /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
-		5898889B206B34BE00BDAACD /* MD5andBASE64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5andBASE64.m; sourceTree = "<group>"; };
 		5898889C206B34BE00BDAACD /* RSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAEncryptor.m; sourceTree = "<group>"; };
 		5898889D206B34BE00BDAACD /* EncryptorTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptorTool.h; sourceTree = "<group>"; };
 		5898889E206B34BE00BDAACD /* DES3Encryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES3Encryptor.h; sourceTree = "<group>"; };
@@ -1722,7 +1715,6 @@
 		58988892206B34BE00BDAACD /* RSATools */ = {
 			isa = PBXGroup;
 			children = (
-				58988896206B34BE00BDAACD /* Base64 */,
 				5898889E206B34BE00BDAACD /* DES3Encryptor.h */,
 				58988894206B34BE00BDAACD /* DES3Encryptor.m */,
 				58988893206B34BE00BDAACD /* RSAEncryptor.h */,
@@ -1731,18 +1723,6 @@
 				58988895206B34BE00BDAACD /* EncryptorTool.m */,
 			);
 			path = RSATools;
-			sourceTree = "<group>";
-		};
-		58988896206B34BE00BDAACD /* Base64 */ = {
-			isa = PBXGroup;
-			children = (
-				58988899206B34BE00BDAACD /* GTMDefines.h */,
-				58988898206B34BE00BDAACD /* GTMBase64.h */,
-				5898889A206B34BE00BDAACD /* GTMBase64.m */,
-				58988897206B34BE00BDAACD /* MD5andBASE64.h */,
-				5898889B206B34BE00BDAACD /* MD5andBASE64.m */,
-			);
-			path = Base64;
 			sourceTree = "<group>";
 		};
 		589B56701FFFC52F00B2D5A8 /* QQ音乐 */ = {
@@ -2796,7 +2776,6 @@
 				58223317201821C00008251F /* NullSafe.m in Sources */,
 				58DC84EE1FFC972B0060DC03 /* BSJ.m in Sources */,
 				581A3E4120450B3E00AF08C0 /* NSString+MJDownload.m in Sources */,
-				589888A1206B34BF00BDAACD /* GTMBase64.m in Sources */,
 				58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */,
 				584038721FF9399B002A0566 /* LMJListTimerCountDownViewController.m in Sources */,
 				5898889F206B34BF00BDAACD /* DES3Encryptor.m in Sources */,
@@ -2906,7 +2885,6 @@
 				584038581FF872EB002A0566 /* LMJCoordinateModel.m in Sources */,
 				58DC851C1FFC972C0060DC03 /* BSJHlightedTextField.m in Sources */,
 				584038501FF8727D002A0566 /* LMJBaiduMapViewController.m in Sources */,
-				589888A2206B34BF00BDAACD /* MD5andBASE64.m in Sources */,
 				58926426201B622B007DA41E /* BSJSQLiteManager.m in Sources */,
 				58DC84FA1FFC972C0060DC03 /* BSJEssenceViewController.m in Sources */,
 				58DC83E61FFB44380060DC03 /* WPFSpringView.m in Sources */,

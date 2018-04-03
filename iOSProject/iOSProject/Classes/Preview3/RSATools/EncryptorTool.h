@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "RSAEncryptor.h"
 #import "DES3Encryptor.h"
-#import "GTMBase64.h"
-#import "MD5andBASE64.h"
 
 UIKIT_EXTERN NSString *const privateKeyFileP12Password_;
 //.der path

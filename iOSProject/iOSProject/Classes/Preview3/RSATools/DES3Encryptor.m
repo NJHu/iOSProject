@@ -7,7 +7,6 @@
 //
 
 #import "DES3Encryptor.h"
-#import "GTMBase64.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCrypto.h>
 
@@ -25,83 +24,68 @@
     return [self doCipher:decryptString keyString:keyString ivString:ivString operation:kCCDecrypt];
 }
 
-+ (NSString *) doCipher:(NSString*)plainText keyString:(NSString*)keyString ivString:(NSString*)ivString operation:(CCOperation)encryptOrDecrypt
++ (NSString *) doCipher:(NSString*)sText keyString:(NSString*)keyString ivString:(NSString*)ivString operation:(CCOperation)encryptOperation
 {
-    const void * vplainText;
-    size_t plainTextBufferSize;
+    const void *dataIn;
+    size_t dataInLength;
     
-    if (encryptOrDecrypt== kCCDecrypt)
+    if (encryptOperation == kCCDecrypt)//传递过来的是decrypt 解码
     {
-        NSData * EncryptData = [GTMBase64 decodeData:[plainText
-                                                      dataUsingEncoding:NSUTF8StringEncoding]];
+        //转成utf-8并decode
+        //解码 base64
+       NSData *decryptData = [[NSData alloc] initWithBase64EncodedData:[sText dataUsingEncoding:NSUTF8StringEncoding] options:NSDataBase64DecodingIgnoreUnknownCharacters];
         
-        plainTextBufferSize= [EncryptData length];
-        vplainText = [EncryptData bytes];
+        dataInLength = [decryptData length];
+        dataIn = [decryptData bytes];
     }
-    else
+    else  //encrypt
     {
-        NSData * tempData = [plainText dataUsingEncoding:NSUTF8StringEncoding];
-        plainTextBufferSize= [tempData length];
-        vplainText = [tempData bytes];
+        NSData* encryptData = [sText dataUsingEncoding:NSUTF8StringEncoding];
+        dataInLength = [encryptData length];
+        dataIn = (const void *)[encryptData bytes];
     }
     
+    /*
+     DES加密 ：用CCCrypt函数加密一下，然后用base64编码下，传过去
+     DES解密 ：把收到的数据根据base64，decode一下，然后再用CCCrypt函数解密，得到原本的数据
+     */
     CCCryptorStatus ccStatus;
-    uint8_t * bufferPtr = NULL;
-    size_t bufferPtrSize = 0;
-    size_t movedBytes = 0;
-    // uint8_t ivkCCBlockSize3DES;
+    uint8_t *dataOut = NULL; //可以理解位type/typedef 的缩写（有效的维护了代码，比如：一个人用int，一个人用long。最好用typedef来定义）
+    size_t dataOutAvailable = 0; //size_t  是操作符sizeof返回的结果类型
+    size_t dataOutMoved = 0;
     
-    bufferPtrSize = (plainTextBufferSize + kCCBlockSize3DES)
-    &~(kCCBlockSize3DES- 1);
+    dataOutAvailable = (dataInLength + kCCBlockSizeDES) & ~(kCCBlockSizeDES - 1);
+    dataOut = malloc( dataOutAvailable * sizeof(uint8_t));
+    memset((void *)dataOut, 0x0, dataOutAvailable);//将已开辟内存空间buffer的首 1 个字节的值设为值 0
     
-    bufferPtr = malloc(bufferPtrSize* sizeof(uint8_t));
-    memset((void*)bufferPtr,0x0, bufferPtrSize);
+    const void *vkey = (const void *) [keyString UTF8String];
+    const void *iv = (const void *) [ivString UTF8String];
     
-    NSString * key = keyString;
-    NSString * initVec = ivString;
+    //CCCrypt函数 加密/解密
+    ccStatus = CCCrypt(encryptOperation,//  加密/解密
+                       kCCAlgorithm3DES,//  加密根据哪个标准（des，3des，aes。。。。）
+                       kCCOptionPKCS7Padding,//  选项分组密码算法(des:对每块分组加一次密  3DES：对每块分组加三个不同的密)
+                       vkey,  //密钥    加密和解密的密钥必须一致
+                       kCCKeySize3DES,//   DES 密钥的大小（kCCKeySizeDES=8）
+                       iv, //  可选的初始矢量
+                       dataIn, // 数据的存储单元
+                       dataInLength,// 数据的大小
+                       (void *)dataOut,// 用于返回数据
+                       dataOutAvailable,
+                       &dataOutMoved);
     
-    const void * vkey= (const void *)[key UTF8String];
-    const void * vinitVec= (const void *)[initVec UTF8String];
+    NSString *result = nil;
+    NSData *data = [NSData dataWithBytes:(const void *)dataOut length:(NSUInteger)dataOutMoved];
     
-    uint8_t iv[kCCBlockSize3DES];
-    memset((void*) iv,0x0, (size_t)sizeof(iv));
-    
-    ccStatus = CCCrypt(encryptOrDecrypt,
-                       kCCAlgorithm3DES,
-                       kCCOptionPKCS7Padding,
-                       vkey,//"123456789012345678901234", //key
-                       kCCKeySize3DES,
-                       vinitVec,//"init Vec", //iv,
-                       vplainText,//plainText,
-                       plainTextBufferSize,
-                       (void*)bufferPtr,
-                       bufferPtrSize,
-                       &movedBytes);
-    
-    //if (ccStatus == kCCSuccess) NSLog(@"SUCCESS");
-    if (ccStatus== kCCParamError) return @"PARAM ERROR";
-    else if (ccStatus == kCCBufferTooSmall) return @"BUFFER TOO SMALL";
-    else if (ccStatus == kCCMemoryFailure) return @"MEMORY FAILURE";
-    else if (ccStatus == kCCAlignmentError) return @"ALIGNMENT";
-    else if (ccStatus == kCCDecodeError) return @"DECODE ERROR";
-    else if (ccStatus == kCCUnimplemented) return @"UNIMPLEMENTED";
-    
-    NSString * result;
-    
-    if (encryptOrDecrypt== kCCDecrypt)
+    if (encryptOperation == kCCDecrypt)//encryptOperation==1  解码
     {
-        result = [[NSString alloc] initWithData:[NSData
-                                                 dataWithBytes:(const void *)bufferPtr
-                                                 length:(NSUInteger)movedBytes]
-                                       encoding:NSUTF8StringEncoding];
-        ;
+        //得到解密出来的data数据，改变为utf-8的字符串
+        result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] ;
     }
-    else
+    else //encryptOperation==0  （加密过程中，把加好密的数据转成base64的）
     {
-        NSData * myData =[NSData dataWithBytes:(const void *)bufferPtr
-                                        length:(NSUInteger)movedBytes];
-        
-        result = [GTMBase64 stringByEncodingData:myData];
+        //编码 base64
+       result = [data  base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     }
     
     return result;

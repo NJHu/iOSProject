@@ -1,18 +1,26 @@
 #import "RSAEncryptor.h"
 #import <CommonCrypto/CommonCrypto.h>
 #import <Security/Security.h>
-#import "MD5andBASE64.h"
 
 @implementation RSAEncryptor
 
 static NSString *base64_encode_data(NSData *data){
-    data = [data base64EncodedDataWithOptions:0];
+    
+    data = [data base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
     return ret;
 }
 
 static NSData *base64_decode(NSString *str){
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    
+    NSData *utf8Data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    
+   NSData *data = [[NSData alloc] initWithBase64EncodedData:utf8Data options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    
+//    [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    
     return data;
 }
 
@@ -24,7 +32,8 @@ static NSData *base64_decode(NSString *str){
     return [self encryptString:str publicKeyRef:[self getPublicKeyRefWithContentsOfFile:path]];
 }
 
-//获取公钥
+
+#pragma mark - 获取公钥
 + (SecKeyRef)getPublicKeyRefWithContentsOfFile:(NSString *)filePath{
     NSData *certData = [NSData dataWithContentsOfFile:filePath];
     if (!certData) {
@@ -59,12 +68,14 @@ static NSData *base64_decode(NSString *str){
         return nil;
     }
     NSData *data = [self encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] withKeyRef:publicKeyRef];
+    
     NSString *ret = base64_encode_data(data);
+    
     return ret;
 }
 
-#pragma mark - 使用'.12'私钥文件解密
 
+#pragma mark - 使用'.12'私钥文件解密
 //解密
 + (NSString *)decryptString:(NSString *)str privateKeyWithContentsOfFile:(NSString *)path password:(NSString *)password{
     if (!str || !path) return nil;
@@ -72,7 +83,8 @@ static NSData *base64_decode(NSString *str){
     return [self decryptString:str privateKeyRef:[self getPrivateKeyRefWithContentsOfFile:path password:password]];
 }
 
-//获取私钥
+
+#pragma mark - 获取私钥
 + (SecKeyRef)getPrivateKeyRefWithContentsOfFile:(NSString *)filePath password:(NSString*)password{
     
     NSData *p12Data = [NSData dataWithContentsOfFile:filePath];
@@ -98,11 +110,12 @@ static NSData *base64_decode(NSString *str){
 }
 
 + (NSString *)decryptString:(NSString *)str privateKeyRef:(SecKeyRef)privKeyRef{
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    if (!privKeyRef) {
+   NSData *data = base64_decode(str);
+    if (!privKeyRef || !data) {
         return nil;
     }
     data = [self decryptData:data withKeyRef:privKeyRef];
+    
     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return ret;
 }
@@ -225,6 +238,8 @@ static NSData *base64_decode(NSString *str){
     return ([NSData dataWithBytes:&c_key[idx] length:len - idx]);
 }
 
+
+#pragma mark - 用SecKeyRef加密
 + (NSData *)encryptData:(NSData *)data withKeyRef:(SecKeyRef) keyRef{
     const uint8_t *srcbuf = (const uint8_t *)[data bytes];
     size_t srclen = (size_t)data.length;
@@ -273,9 +288,13 @@ static NSData *base64_decode(NSString *str){
 //使用私钥字符串解密
 + (NSString *)decryptString:(NSString *)str privateKey:(NSString *)privKey{
     if (!str) return nil;
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    
+    NSData *data = base64_decode(str);
+    
     data = [self decryptData:data privateKey:privKey];
+    
     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
     return ret;
 }
 

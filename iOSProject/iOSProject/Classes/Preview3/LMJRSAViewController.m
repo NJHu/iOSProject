@@ -72,7 +72,7 @@
     NSString *uuid = [NSString queryUUID];
     
     // nonce
-    NSString *nonce = [MD5andBASE64 MD5:[NSString stringWithFormat:@"%@%@%@%@", dictM[@"platformType"], dictM[@"deviceId"], timestmp, uuid]];
+    NSString *nonce = [NSString stringWithFormat:@"%@%@%@%@", dictM[@"platformType"], dictM[@"deviceId"], timestmp, uuid];
 
     // 时间戳
     dictM[@"msgtimestamp"] = timestmp;
@@ -94,7 +94,7 @@
     
     
     //    @"%@%@%@", pkey, content, mkey    DES3   mkey, 服务器拿到消息内容作对比
-    NSString *sign = [DES3Encryptor DES3EncryptString:[MD5andBASE64 md5:[NSString stringWithFormat:@"%@%@%@", pkey, content, mkey]] keyString:mkey ivString:@"01234567"];
+    NSString *sign = [DES3Encryptor DES3EncryptString:[NSString stringWithFormat:@"%@%@%@", pkey, content, mkey] keyString:mkey ivString:@"01234567"];
     [self.manager.requestSerializer setValue:sign forHTTPHeaderField:@"msgsign"];
     
     //content DES3 pkey
