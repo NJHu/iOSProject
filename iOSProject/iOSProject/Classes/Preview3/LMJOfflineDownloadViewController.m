@@ -9,6 +9,7 @@
 #import "LMJOfflineDownloadViewController.h"
 #import "MJDownload.h"
 #import "VIDMoviePlayerViewController.h"
+#import "LMJSettingCell.h"
 @interface LMJOfflineDownloadViewController ()
 
 @end
@@ -34,36 +35,54 @@
     self.title = @"点击Cell开始/暂停下载";
     LMJWeakSelf(self);
     [urls enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
         MJDownloadInfo *info = [[MJDownloadManager defaultManager] downloadInfoForURL:obj];
+        
         NSString *subTitle = nil;
         if (info.state == MJDownloadStateCompleted) {
             subTitle = @"播放";
         }else {
-            subTitle = @"进度: 0.0%";
+            CGFloat progress = ((CGFloat)info.totalBytesWritten) / info.totalBytesExpectedToWrite * 100;
+            subTitle = [NSString stringWithFormat:@"进度: %.2f%%, 点击开始", isnan(progress) ? 0 : progress];
         }
+        
         self.addItem([LMJWordItem itemWithTitle:obj.lastPathComponent subTitle:subTitle itemOperation:^(NSIndexPath *indexPath) {
             
-            if (info.state == MJDownloadStateResumed || info.state == MJDownloadStateWillResume) {
+            if (info.state == MJDownloadStateResumed) {
+
                 [[MJDownloadManager defaultManager] suspend:info.url];
-            } else if (info.state == MJDownloadStateSuspened || info.state == MJDownloadStateNone) {
+                
+                CGFloat progress = ((CGFloat)info.totalBytesWritten) / info.totalBytesExpectedToWrite * 100;
+                
+                weakself.sections.firstObject.items[indexPath.row].subTitle = [NSString stringWithFormat:@"暂停中..进度: %.2f%%", isnan(progress) ? 0 : progress];
+                
+                ((LMJSettingCell *)[weakself.tableView cellForRowAtIndexPath:indexPath]).item = weakself.sections.firstObject.items[indexPath.row];
+                
+            } else if (info.state == MJDownloadStateSuspened || info.state == MJDownloadStateNone || info.state == MJDownloadStateWillResume) {
+                
                 [[MJDownloadManager defaultManager] download:obj progress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
                         weakself.sections.firstObject.items[indexPath.row].subTitle = [NSString stringWithFormat:@"进度: %.2f%%", (CGFloat)totalBytesWritten / totalBytesExpectedToWrite * 100.0];
-                        [weakself.tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone];
+
+                        ((LMJSettingCell *)[weakself.tableView cellForRowAtIndexPath:indexPath]).item = weakself.sections.firstObject.items[indexPath.row];
                     });
                 } state:^(MJDownloadState state, NSString *file, NSError *error) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         if (state == MJDownloadStateCompleted) {
                             weakself.sections.firstObject.items[indexPath.row].subTitle = @"播放";
-                            [weakself.tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone];
+
+                            ((LMJSettingCell *)[weakself.tableView cellForRowAtIndexPath:indexPath]).item = weakself.sections.firstObject.items[indexPath.row];
                         }
                     });
                 }];
+                
             }else if (info.state == MJDownloadStateCompleted) {
+                
                 VIDMoviePlayerViewController *playerVc = [[VIDMoviePlayerViewController alloc] init];
                 playerVc.videoURL = [NSString stringWithFormat:@"file://%@", info.file];
                 [weakself.navigationController pushViewController:playerVc animated:YES];
+                
             }
             
         }]);

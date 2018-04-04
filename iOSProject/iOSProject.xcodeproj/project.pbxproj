@@ -1110,8 +1110,8 @@
 		581A3E3720450B3D00AF08C0 /* MJDownload */ = {
 			isa = PBXGroup;
 			children = (
-				581A3E3E20450B3D00AF08C0 /* MJDownloadConst.h */,
 				581A3E3C20450B3D00AF08C0 /* MJDownload.h */,
+				581A3E3E20450B3D00AF08C0 /* MJDownloadConst.h */,
 				581A3E3A20450B3D00AF08C0 /* MJDownloadConst.m */,
 				581A3E3B20450B3D00AF08C0 /* MJDownloadManager.h */,
 				581A3E3920450B3D00AF08C0 /* MJDownloadManager.m */,
