@@ -48,7 +48,7 @@
         
         self.addItem([LMJWordItem itemWithTitle:obj.lastPathComponent subTitle:subTitle itemOperation:^(NSIndexPath *indexPath) {
             
-            if (info.state == MJDownloadStateResumed) {
+            if (info.state == MJDownloadStateResumed || info.state == MJDownloadStateWillResume) {
 
                 [[MJDownloadManager defaultManager] suspend:info.url];
                 
@@ -58,7 +58,7 @@
                 
                 ((LMJSettingCell *)[weakself.tableView cellForRowAtIndexPath:indexPath]).item = weakself.sections.firstObject.items[indexPath.row];
                 
-            } else if (info.state == MJDownloadStateSuspened || info.state == MJDownloadStateNone || info.state == MJDownloadStateWillResume) {
+            } else if (info.state == MJDownloadStateSuspened || info.state == MJDownloadStateNone) {
                 
                 [[MJDownloadManager defaultManager] download:obj progress:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
                     dispatch_async(dispatch_get_main_queue(), ^{
