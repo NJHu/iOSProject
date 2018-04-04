@@ -187,7 +187,6 @@ static NSString * const MJDowndloadManagerDefaultIdentifier = @"com.github.njhu.
 - (void)cancel
 {
     if (self.state == MJDownloadStateCompleted || self.state == MJDownloadStateNone) return;
-    
     [self.task cancel];
     self.state = MJDownloadStateNone;
 }
@@ -473,7 +472,11 @@ static NSLock *_lock;
 - (void)suspendAll
 {
     // 暂停
-    [self.downloadInfoArray makeObjectsPerformSelector:@selector(suspend)];
+    self.batching = YES;
+    [self.downloadInfoArray enumerateObjectsUsingBlock:^(MJDownloadInfo *info, NSUInteger idx, BOOL *stop) {
+        [self suspend:info.url];
+    }];
+    self.batching = NO;
 }
 
 + (void)suspendAll
