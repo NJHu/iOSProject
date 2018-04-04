@@ -11,7 +11,7 @@
 #import "LMJCircleLayout.h"
 #import "LMJLineFlowLayout.h"
 
-@interface LMJCuteFlowLayoutViewController ()
+@interface LMJCuteFlowLayoutViewController ()<LMJCircleLayoutDelegate>
 @property (nonatomic, strong) NSMutableArray<UIImage *> *images;
 @end
 
@@ -52,7 +52,7 @@
         
     } else {
         
-        [self.collectionView setCollectionViewLayout:[[LMJCircleLayout alloc] init]animated:YES];
+        [self.collectionView setCollectionViewLayout:[[LMJCircleLayout alloc] initWithDelegate:self] animated:YES];
         
     }
     
@@ -99,6 +99,15 @@
         }
     }
     return _images;
+}
+
+
+#pragma mark - LMJCircleLayoutDelegate
+-(CGFloat)circleLayout:(LMJCircleLayout *)circleLayout collectionView:(UICollectionView *)collectionView radiusForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
+- (CGSize)circleLayout:(LMJCircleLayout *)circleLayout collectionView:(UICollectionView *)collectionView sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(62, 62);
 }
 
 

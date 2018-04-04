@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class LMJLineFlowLayout;
+
+@protocol LMJLineFlowLayoutDelegate <NSObject>
+@optional
+
+@end
+
 @interface LMJLineFlowLayout : UICollectionViewFlowLayout
+
+- (instancetype)initWithDelegate:(id<LMJLineFlowLayoutDelegate>)delegate;
+
++ (instancetype)lineLayoutWithDelegate:(id<LMJLineFlowLayoutDelegate>)delegate;
 
 @end

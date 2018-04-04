@@ -8,9 +8,16 @@
 
 #import "LMJCircleLayout.h"
 
+static const CGSize LMJ_itemSize_ = {64, 64};
+static const CGFloat LMJ_radius_ = 120;
 @interface LMJCircleLayout ()
 /** <#digest#> */
-@property (nonatomic, strong) NSMutableArray *atrbsArray;
+@property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *atrbsArray;
+
+- (CGSize)itemSizeAtIndexPath:(NSIndexPath *)indexPath;
+
+- (CGFloat)radiusAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 @implementation LMJCircleLayout
@@ -42,34 +49,29 @@
 }
 
 
-- (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
-{
-    return self.atrbsArray;
-}
-
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewLayoutAttributes *newAtrb = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
-    CGSize size = CGSizeMake(62, 62);
+    CGSize  size = [self itemSizeAtIndexPath:indexPath];
     
+    size.width = ceilf(size.width);
+    size.height = ceilf(size.height);
     
-    CGPoint oCenter =  CGPointMake(self.collectionView.frame.size.width/2, self.collectionView.frame.size.height/2);
+    // center
+    CGPoint oCenter =  CGPointMake(self.collectionView.frame.size.width * 0.5, self.collectionView.frame.size.height * 0.5);
     
-    
+    // 360°, 平均度数
     CGFloat angle = M_PI * 2 / [self.collectionView numberOfItemsInSection:0] * indexPath.item;
     
-    
-    CGFloat radius = 100;
+    // 半径
+    CGFloat radius = [self radiusAtIndexPath:indexPath];
     
     CGFloat realX = oCenter.x + sin(angle) * radius;
     CGFloat realY = oCenter.y - cos(angle) * radius;
     
-    
-    
     newAtrb.size = size;
-    
     
     if([self.collectionView numberOfItemsInSection:0] == 1)
     {
@@ -77,13 +79,15 @@
     }
     else
     {
-        
         newAtrb.center = CGPointMake(realX, realY);
     }
-    
     return newAtrb;
 }
 
+- (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
+{
+    return self.atrbsArray;
+}
 
 - (CGSize)collectionViewContentSize
 {
@@ -91,5 +95,39 @@
 }
 
 
+#pragma mark - getter
+- (CGSize)itemSizeAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.delegate respondsToSelector:@selector(circleLayout:collectionView:sizeForItemAtIndexPath:)]) {
+        return [self.delegate circleLayout:self collectionView:self.collectionView sizeForItemAtIndexPath:indexPath];
+    }
+    return LMJ_itemSize_;
+}
+
+- (CGFloat)radiusAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.delegate respondsToSelector:@selector(circleLayout:collectionView:radiusForItemAtIndexPath:)]) {
+        return [self.delegate circleLayout:self collectionView:self.collectionView radiusForItemAtIndexPath:indexPath];
+    }
+    return LMJ_radius_;
+}
+
+#pragma mark - delegate
+
+- (id<LMJCircleLayoutDelegate>)delegate
+{
+    return (id<LMJCircleLayoutDelegate>)self.collectionView.dataSource;
+}
+
+- (instancetype)initWithDelegate:(id<LMJCircleLayoutDelegate>)delegate {
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
++ (instancetype)circleLayoutWithDelegate:(id<LMJCircleLayoutDelegate>)delegate {
+    return [[self alloc] initWithDelegate:delegate];
+}
 
 @end
