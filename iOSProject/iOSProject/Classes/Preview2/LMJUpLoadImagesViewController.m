@@ -35,9 +35,10 @@ static const NSInteger maxPhotoCount = 9;
         _imagePickerVc.delegate = self;
         // set appearance / 改变相册选择页的导航栏外观
         if (iOS7Later) {
-            _imagePickerVc.navigationBar.barTintColor = self.navigationController.navigationBar.barTintColor;
+            _imagePickerVc.navigationBar.barTintColor = [UIColor greenColor];
         }
-        _imagePickerVc.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
+        // 红色
+        _imagePickerVc.navigationBar.tintColor = [UIColor redColor];
         UIBarButtonItem *tzBarItem, *BarItem;
         if (iOS9Later) {
             tzBarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[TZImagePickerController class]]];
@@ -289,7 +290,7 @@ static const NSInteger maxPhotoCount = 9;
                         if (tzImagePickerVc.sortAscendingByModificationDate) {
                             assetModel = [models lastObject];
                         }
-                        if (YES) { // 允许裁剪,去裁剪
+                        if (/* DISABLES CODE */ (NO)) { // 允许裁剪,去裁剪
                             TZImagePickerController *imagePicker = [[TZImagePickerController alloc] initCropTypeWithAsset:assetModel.asset photo:image completion:^(UIImage *cropImage, id asset) {
                                 [self refreshCollectionViewWithAddedAsset:asset image:cropImage];
                             }];
@@ -297,7 +298,7 @@ static const NSInteger maxPhotoCount = 9;
                             imagePicker.circleCropRadius = 100;
                             [self presentViewController:imagePicker animated:YES completion:nil];
                         } else {
-//                            [self refreshCollectionViewWithAddedAsset:assetModel.asset image:image];
+                            [self refreshCollectionViewWithAddedAsset:assetModel.asset image:image];
                         }
                     }];
                 }];

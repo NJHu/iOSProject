@@ -61,7 +61,7 @@ typedef void (^MJDownloadStateChangeBlock)(MJDownloadState state, NSString *file
 /** 下载的错误信息 */
 @property (strong, nonatomic, readonly) NSError *error;
 /** 下载速度 */
-@property (strong, nonatomic) NSNumber *speed;
+@property (strong, nonatomic, readonly) NSNumber *speed;
 @end
 /****************** MJDownloadInfo End ******************/
 

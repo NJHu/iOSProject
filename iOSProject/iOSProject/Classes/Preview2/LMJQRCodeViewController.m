@@ -65,13 +65,11 @@
             weakself.sections.firstObject.items.firstObject.subTitle = stringValue;
            
             [weakself.tableView reloadRow:0 inSection:0 withRowAnimation:0];
-            
         }];
         
         [scanner setTitleColor:[UIColor whiteColor] tintColor:[UIColor greenColor]];
         
         [weakself showDetailViewController:scanner sender:nil];
-        
     }]);
 }
 

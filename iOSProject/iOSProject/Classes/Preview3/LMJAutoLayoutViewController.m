@@ -62,7 +62,6 @@
     // 添加右边约束：redView的右边 == blueView的右边
     NSLayoutConstraint *rightConstraint2 = [NSLayoutConstraint constraintWithItem:redView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:blueView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
     [self.view addConstraint:rightConstraint2];
-    
 }
 
 
