@@ -106,7 +106,7 @@
 		58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926428201B64D3007DA41E /* BSJTopicListDAL.m */; };
 		58926467202C54C2007DA41E /* LMJRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926466202C54C2007DA41E /* LMJRunLoopViewController.m */; };
 		5892646B202D6662007DA41E /* XLMJThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892646A202D6662007DA41E /* XLMJThread.m */; };
-		58926476202DA70E007DA41E /* CalendarReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926474202DA70D007DA41E /* CalendarReminderManager.m */; };
+		58926476202DA70E007DA41E /* LMJEventTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926474202DA70D007DA41E /* LMJEventTool.m */; };
 		5892ACA11FF4EB4A00E868C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */; };
 		5892ACA71FF4EB4A00E868C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACA61FF4EB4A00E868C2 /* main.m */; };
 		5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACB11FF4EEB300E868C2 /* LMJAppDelegate.m */; };
@@ -586,8 +586,8 @@
 		58926466202C54C2007DA41E /* LMJRunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJRunLoopViewController.m; sourceTree = "<group>"; };
 		58926469202D6662007DA41E /* XLMJThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLMJThread.h; sourceTree = "<group>"; };
 		5892646A202D6662007DA41E /* XLMJThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLMJThread.m; sourceTree = "<group>"; };
-		58926474202DA70D007DA41E /* CalendarReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarReminderManager.m; sourceTree = "<group>"; };
-		58926475202DA70D007DA41E /* CalendarReminderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarReminderManager.h; sourceTree = "<group>"; };
+		58926474202DA70D007DA41E /* LMJEventTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJEventTool.m; sourceTree = "<group>"; };
+		58926475202DA70D007DA41E /* LMJEventTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJEventTool.h; sourceTree = "<group>"; };
 		5892AC941FF4EB4A00E868C2 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5892ACA51FF4EB4A00E868C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1633,8 +1633,8 @@
 		5892AD611FF5088D00E868C2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				58926475202DA70D007DA41E /* CalendarReminderManager.h */,
-				58926474202DA70D007DA41E /* CalendarReminderManager.m */,
+				58926475202DA70D007DA41E /* LMJEventTool.h */,
+				58926474202DA70D007DA41E /* LMJEventTool.m */,
 				5892ADA41FF600F700E868C2 /* YYFPSLabel(刷新率) */,
 				5892AD9A1FF5F04700E868C2 /* 广告页 */,
 				5892AD8A1FF5E2C000E868C2 /* 欢迎页 */,
@@ -2761,7 +2761,7 @@
 				58DC85011FFC972C0060DC03 /* BSJTopicViewController.m in Sources */,
 				5892ACB21FF4EEB400E868C2 /* LMJAppDelegate.m in Sources */,
 				58DC83C51FFB43E30060DC03 /* LMJDrawBoardViewController.m in Sources */,
-				58926476202DA70E007DA41E /* CalendarReminderManager.m in Sources */,
+				58926476202DA70E007DA41E /* LMJEventTool.m in Sources */,
 				584038381FF7E2BE002A0566 /* LMJVerticalLayoutViewController.m in Sources */,
 				58DC84541FFBDDC40060DC03 /* LMJChildBlockViewController.m in Sources */,
 				581A3E2C2044434400AF08C0 /* LMJOfflineDownloadViewController.m in Sources */,
