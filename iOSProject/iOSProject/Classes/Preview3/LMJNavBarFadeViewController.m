@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     
     UIEdgeInsets contentInset = self.tableView.contentInset;
@@ -32,8 +31,6 @@
     imageView.lmj_width = kScreenWidth;
     
    _expandHander = [LMJExpandHeader expandWithScrollView:self.tableView expandView:imageView];
-    
-    // 不透明
 }
 
 
@@ -128,8 +125,6 @@
 /** 导航条左边的按钮 */
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-
-//    tabBar_new_click_icon
     
     [leftButton setImage:[UIImage imageNamed:@"tabBar_new_click_icon"] forState:UIControlStateSelected];
     
@@ -138,8 +133,6 @@
 /** 导航条右边的按钮 */
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-//    mine-setting-icon
-    
     [rightButton setImage:[UIImage imageNamed:@"mine-setting-icon"] forState:UIControlStateSelected];
     
     return [UIImage imageNamed:@"mine-setting-icon-click"];

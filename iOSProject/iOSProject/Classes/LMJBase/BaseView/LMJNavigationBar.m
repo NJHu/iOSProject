@@ -103,7 +103,7 @@
 - (void)setTitle:(NSMutableAttributedString *)title
 {
     // bug fix
-    if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarTitleView:)]) {
+    if ([self.dataSource respondsToSelector:@selector(lmjNavigationBarTitleView:)] && [self.dataSource lmjNavigationBarTitleView:self]) {
         return;
     }
     

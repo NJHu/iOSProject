@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "LMJExpandImageView.h"
 
-@interface LMJExpandHeader : NSObject <UIScrollViewDelegate>
+@interface LMJExpandHeader : NSObject
 
 #pragma mark - 类方法 
 /**
@@ -30,12 +30,6 @@
  */
 - (void)expandWithScrollView:(UIScrollView*)scrollView expandView:(UIView*)expandView;
 
-/**
- *  监听scrollViewDidScroll方法
- *
- *  @param scrollView
- */
-- (void)scrollViewDidScroll:(UIScrollView*)scrollView;
 
 /** 头部视图 */
 @property (weak, nonatomic, readonly) UIView *headerView;

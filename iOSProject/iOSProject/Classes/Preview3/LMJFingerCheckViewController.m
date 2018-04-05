@@ -33,7 +33,7 @@
     
     TDTouchID *touchID = [[TDTouchID alloc] init];
     
-    [touchID td_showTouchIDWithDescribe:nil BlockState:^(TDTouchIDState state, NSError *error) {
+    [touchID td_showTouchIDWithDescribe:@"来个指纹吧" BlockState:^(TDTouchIDState state, NSError *error) {
         
         if (state == TDTouchIDStateNotSupport) {    //不支持TouchID
             
