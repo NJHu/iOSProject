@@ -54,10 +54,6 @@
     return AdaptedHeight(50);
 }
 
-
-
-
-
 - (NSMutableArray<LMJCountDownModel *> *)products
 {
     if(_products == nil)
@@ -72,7 +68,7 @@
             
             model.productName = [NSString stringWithFormat:@"产品标号%zd", i];
             
-            model.date = CFAbsoluteTimeGetCurrent() + i * (10);
+            model.date = (arc4random() % 10 + 10) * i;
             
             model.pruductImage = [UIImage imageNamed:@"test_BaiDu_red"];
         }
@@ -93,20 +89,19 @@
 
 - (void)timeCount:(NSTimer *)timer
 {
-    [self.products enumerateObjectsUsingBlock:^(LMJCountDownModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    @synchronized(self) {
+        [self.products enumerateObjectsUsingBlock:^(LMJCountDownModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj.date == 0) {
+            }else {
+                obj.date--;
+            }
+        }];
         
-        if (obj.date == CFAbsoluteTimeGetCurrent()) {
-            
-        }else {
-            obj.date  = obj.date - 1;
-        }
-    }];
-    
-    
-    [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(__kindof UITableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        LMJCountDownCell *cell = (LMJCountDownCell *)obj;
-        cell.countDownModel = cell.countDownModel;
-    }];
+        [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(__kindof UITableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            LMJCountDownCell *cell = (LMJCountDownCell *)obj;
+            cell.countDownModel = cell.countDownModel;
+        }];
+    }
 }
 
 

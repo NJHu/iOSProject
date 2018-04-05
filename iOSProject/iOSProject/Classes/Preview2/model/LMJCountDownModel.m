@@ -8,8 +8,7 @@
 
 #import "LMJCountDownModel.h"
 @interface LMJCountDownModel()
-/** <#digest#> */
-@property (weak, nonatomic) NSTimer *timer;
+
 @end
 
 @implementation LMJCountDownModel

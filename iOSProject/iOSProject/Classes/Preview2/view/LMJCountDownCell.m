@@ -14,11 +14,12 @@
 {
     _countDownModel = countDownModel;
     self.imageView.image = countDownModel.pruductImage;
-//    self.textLabel.text = countDownModel.productName;
     
-    self.userInteractionEnabled = !(countDownModel.date <= CFAbsoluteTimeGetCurrent());
+    self.userInteractionEnabled = (countDownModel.date <= 0);
     
-    self.textLabel.text = [NSString stringWithFormat:@"%lu", (NSUInteger)countDownModel.date];
+    self.textLabel.text = [NSString stringWithFormat:@"%.0lf", countDownModel.date];
+    
+    self.textLabel.text = countDownModel.date <= 0 ? @"End" : [NSString stringWithFormat:@"%lu", (NSUInteger)countDownModel.date];
 }
 
 
