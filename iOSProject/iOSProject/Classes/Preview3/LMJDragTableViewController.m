@@ -37,41 +37,46 @@ const NSInteger LMJDragTableViewControllerCols_ = 3;
     LMJWeakSelf(self);
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
     
-    
     [self.collectionView addLongPressGestureRecognizer:^(UILongPressGestureRecognizer *recognizer, NSString *gestureId) {
         
         if (recognizer.state == UIGestureRecognizerStateBegan) {
             
             // 获取手势的触摸点
              CGPoint curP = [recognizer locationInView:weakself.collectionView];
-            
-            UICollectionViewCell *onCell = [weakself.collectionView cellForItemAtIndexPath:[weakself.collectionView indexPathForItemAtPoint:curP]];
+
+            // cur indexPath
+            NSIndexPath *curIndexPath = [weakself.collectionView indexPathForItemAtPoint:curP];
+            if (!curIndexPath) {
+                return ;
+            }
+ 
+            UICollectionViewCell *onCell = [weakself.collectionView cellForItemAtIndexPath:curIndexPath];
             
             if (!onCell) {
                 return ;
             }
             
+            // 为移动做准备
+            weakself.beginPoint = curP;
+            // 记录最后一个 IndexPath
+            weakself.lastChangeIndexPath = curIndexPath;
             
             weakself.drawImageView.transform = CGAffineTransformIdentity;
-            
             weakself.drawImageView.image = [onCell snapshotImage];
             weakself.drawImageView.frame = onCell.frame;
+            
             [UIView animateWithDuration:0.5 animations:^{
                 
-                onCell.alpha = 0;
                 weakself.drawImageView.transform = CGAffineTransformMakeScale(1.1, 1.1);
                 weakself.drawImageView.alpha = 1;
-//                weakself.drawImageView.center = curP;
+                onCell.alpha = 0;
+
             } completion:^(BOOL finished) {
-                
-                onCell.hidden = YES;
+
+                // 在这里控制隐藏
+                // 防止手指刚按下就抬起来 有 bug , 注释掉
+                // onCell.hidden = YES;
             }];
-            
-            // 为移动做准备
-            weakself.beginPoint = [recognizer locationInView:weakself.collectionView];
-            
-            // 记录最后一个 IndexPath
-            weakself.lastChangeIndexPath = [weakself.collectionView indexPathForItemAtPoint:curP];
         }
         
         if (recognizer.state == UIGestureRecognizerStateChanged) {
@@ -79,34 +84,45 @@ const NSInteger LMJDragTableViewControllerCols_ = 3;
             if (!weakself.lastChangeIndexPath) {
                 return;
             }
+            UICollectionViewCell *lastChangeIndexPathCell = [weakself.collectionView cellForItemAtIndexPath:weakself.lastChangeIndexPath];
+            if (!lastChangeIndexPathCell) {
+                return;
+            }
+            // 在这里控制隐藏
+            // 防止手指刚按下就抬起来
+            lastChangeIndexPathCell.hidden = YES;
             
             // 移动视图
             // 获取手势的移动，也是相对于最开始的位置
-           CGPoint curPoint = [recognizer locationInView:weakself.collectionView];
+            CGPoint curPoint = [recognizer locationInView:weakself.collectionView];
             
             CGPoint translation = CGPointMake(curPoint.x - weakself.beginPoint.x, curPoint.y - weakself.beginPoint.y);
-            
-            weakself.drawImageView.transform = CGAffineTransformMakeTranslation(translation.x, translation.y);
-            weakself.drawImageView.transform = CGAffineTransformScale(weakself.drawImageView.transform, 1.1, 1.1);
+
+            CGAffineTransform scale = CGAffineTransformMakeScale(1.1, 1.1);
+            weakself.drawImageView.transform = CGAffineTransformTranslate(scale, translation.x, translation.y);
+            [weakself.collectionView bringSubviewToFront:weakself.drawImageView];
             
             // 获取当前的 indexPath
             NSIndexPath *curIndexPath = [weakself.collectionView indexPathForItemAtPoint:curPoint];
             
+            if (!curIndexPath) {
+                return;
+            }
+            UICollectionViewCell *onCell = [weakself.collectionView cellForItemAtIndexPath:curIndexPath];
+            if (!onCell) {
+                return;
+            }
+            
             // 更换 cell
             if (curIndexPath && (curIndexPath.item != weakself.lastChangeIndexPath.item)) {
                 
-                
-                
                 [weakself.datas exchangeObjectAtIndex:curIndexPath.item withObjectAtIndex:weakself.lastChangeIndexPath.item];
-
+                
                 // 把 cell移动到当前位置
                 [weakself.collectionView moveItemAtIndexPath:weakself.lastChangeIndexPath toIndexPath:curIndexPath];
-                
                 // 记录当前的 indexPath
                 weakself.lastChangeIndexPath = curIndexPath;
-                
             }
-            
         }
         
         if (recognizer.state == UIGestureRecognizerStateEnded) {
@@ -116,31 +132,25 @@ const NSInteger LMJDragTableViewControllerCols_ = 3;
             }
             
             UICollectionViewCell *beginCell = [weakself.collectionView cellForItemAtIndexPath:weakself.lastChangeIndexPath];
+            [weakself.collectionView bringSubviewToFront:beginCell];
+            
             // 从当前的位置移动过去
             CGRect curDragFrame = weakself.drawImageView.frame;
+            
             CGRect targetFrame = beginCell.frame;
             beginCell.frame = curDragFrame;
+            weakself.drawImageView.alpha = 0;
             
             beginCell.alpha = 1;
             beginCell.hidden = NO;
             
-            weakself.drawImageView.alpha = 0;
             [UIView animateWithDuration:0.5 animations:^{
-                
                 beginCell.frame = targetFrame;
-                
             } completion:^(BOOL finished) {
-                
                 weakself.lastChangeIndexPath = nil;
-                
             }];
-            
-            
         }
-        
-        
     }];
-    
 }
 
 #pragma mark - delegate
@@ -199,7 +209,6 @@ const NSInteger LMJDragTableViewControllerCols_ = 3;
         for (NSInteger i = 0; i < 20; i++) {
             [_datas addObject:[NSString stringWithFormat:@"%zd", i]];
         }
-        
     }
     return _datas;
 }

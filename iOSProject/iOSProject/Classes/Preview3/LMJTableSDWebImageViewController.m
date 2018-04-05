@@ -9,6 +9,8 @@
 #import "LMJTableSDWebImageViewController.h"
 #import "VIDMoviePlayerViewController.h"
 #import "LMJXGMVideo.h"
+#import "LMJSettingCell.h"
+#import "LMJWordItem.h"
 
 @interface LMJTableSDWebImageViewController ()
 /** <#digest#> */
@@ -58,20 +60,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
+    LMJSettingCell *setCell = [LMJSettingCell cellWithTableView:tableView andCellStyle:UITableViewCellStyleSubtitle];
     
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:NSStringFromClass([UITableViewCell class])];
-        cell.imageView.lmj_size = CGSizeMake(80, 80);
+    LMJXGMVideo *video = self.videos[indexPath.row];
+    
+    LMJWordItem *item = setCell.item;
+    if (!item) {
+        item = [[LMJWordItem alloc] init];
+        item.itemOperation = ^(NSIndexPath *indexPath) {
+        };
     }
+    item.image = video.image;
+    item.title = video.ID;
+    item.subTitle = video.name;
+    setCell.item = item;
     
-    [cell.imageView sd_setImageWithURL:self.videos[indexPath.row].image placeholderImage:[UIImage imageNamed:@"public_empty_loading"]];
     
-    cell.textLabel.text = self.videos[indexPath.row].ID;
-    
-    cell.detailTextLabel.text = self.videos[indexPath.row].name;
-    
-    return cell;
+    return setCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -86,7 +91,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 63;
 }
 
 - (NSMutableArray<LMJXGMVideo *> *)videos

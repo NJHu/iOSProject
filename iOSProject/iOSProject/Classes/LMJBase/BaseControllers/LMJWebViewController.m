@@ -7,7 +7,6 @@
 //
 
 #import "LMJWebViewController.h"
-
 @interface LMJWebViewController ()
 
 /** <#digest#> */
@@ -22,6 +21,11 @@
 @end
 
 @implementation LMJWebViewController
+
+- (void)setGotoURL:(NSString *)gotoURL {
+//    @"`#%^{}\"[]|\\<> "   最后有一位空格
+    _gotoURL = [gotoURL stringByAddingPercentEncodingWithAllowedCharacters:[[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "] invertedSet]];
+}
 
 #pragma mark - 生命周期
 - (void)viewDidLoad {
