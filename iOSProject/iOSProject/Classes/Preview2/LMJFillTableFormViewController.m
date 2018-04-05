@@ -41,9 +41,10 @@
             textF = [[UITextField alloc] init];
             textF.tag = indexPath.row + 100;
             textF.delegate = self;
-            textF.textColor = [UIColor clearColor];
-            textF.borderStyle = UITextBorderStyleNone;
+//            textF.textColor = [UIColor clearColor];
+//            textF.borderStyle = UITextBorderStyleNone;
             [cell.contentView addSubview:textF];
+            textF.hidden = YES;
         }
 
         [textF becomeFirstResponder];
@@ -96,9 +97,10 @@
             textF = [[UITextField alloc] init];
             textF.tag = indexPath.row + 100;
             textF.delegate = self;
-            textF.textColor = [UIColor clearColor];
-            textF.borderStyle = UITextBorderStyleNone;
+//            textF.textColor = [UIColor clearColor];
+//            textF.borderStyle = UITextBorderStyleNone;
             [cell.contentView addSubview:textF];
+            textF.hidden = YES;
         }
         
         [textF becomeFirstResponder];
@@ -113,11 +115,17 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
-    NSString *current = [textField.text stringByReplacingCharactersInRange:range withString:string].stringByTrim;
+    // 九宫格输入 bug fix
+    if ([@"➋➌➍➎➏➐➑➒" rangeOfString:string].location != NSNotFound) {
+        return YES;
+    }
+    
+    NSString *current = [textField.text stringByReplacingCharactersInRange:range withString:string.stringByTrim].stringByTrim;
+    NSLog(@"%@", textField.text);
     NSLog(@"%@", current);
+    NSLog(@"%@", string);
     
     LMJWordItem *item = self.sections.firstObject.items[textField.tag - 100];
-    
     item.subTitle = current;
     
     LMJSettingCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:textField.tag - 100 inSection:0]];

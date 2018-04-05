@@ -87,7 +87,7 @@
         [UIAlertController mj_showActionSheetWithTitle:@"无按钮actionSheet-toast" message:@"toast样式，可自定义展示延时时间，支持配置弹出、关闭回调，可关闭弹出动画" appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
             alertMaker.toastStyleDuration = 3;
             //关闭动画效果
-            [alertMaker alertAnimateDisabled];
+//            [alertMaker alertAnimateDisabled];
             
             [alertMaker setAlertDidShown:^{
                 NSLog(@"alertDidShown");
@@ -132,10 +132,6 @@
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4] andHeaderTitle:nil footerTitle:nil];
     
     [self.sections addObject:section0];
-    
-    
-    
-    
 }
 
 

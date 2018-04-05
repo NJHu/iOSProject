@@ -128,6 +128,7 @@ typedef void (^JXTAlertActionsConfig)(JXTAlertActionBlock actionBlock);
     return self;
 }
 
+
 - (void)alertAnimateDisabled
 {
     self.jxt_setAlertAnimated = YES;

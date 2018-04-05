@@ -76,7 +76,11 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    NSString *current = [textField.text stringByReplacingCharactersInRange:range withString:string].stringByTrim;
+    // 九宫格 bug fix
+    if ([@"➋➌➍➎➏➐➑➒" rangeOfString:string].location != NSNotFound) {
+        return YES;
+    }
+    NSString *current = [textField.text stringByReplacingCharactersInRange:range withString:string.stringByTrim].stringByTrim;
     
     if (textField.isEmptyAutoEnable && (LMJIsEmpty(textField.text.stringByTrim) || LMJIsEmpty(current))) {
         if (LMJIsEmpty(current)) {
@@ -85,9 +89,7 @@
         {
             [self checkIsEmpty:NO textField:textField];
         }
-        
     }
-    
     
     return YES;
 }
