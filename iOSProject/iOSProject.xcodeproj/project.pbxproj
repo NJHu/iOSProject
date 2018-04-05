@@ -26,6 +26,8 @@
 		5822335420188F5D0008251F /* MCLocalHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822335320188F5D0008251F /* MCLocalHTMLViewController.m */; };
 		5822335620188F6E0008251F /* adm in Resources */ = {isa = PBXBuildFile; fileRef = 5822335520188F6E0008251F /* adm */; };
 		583D507020731574001480C8 /* LMJLocalJsons in Resources */ = {isa = PBXBuildFile; fileRef = 583D506F20731574001480C8 /* LMJLocalJsons */; };
+		583D508420765948001480C8 /* TDTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 583D508320765948001480C8 /* TDTouchID.m */; };
+		583D508720765978001480C8 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 583D508520765978001480C8 /* YYFPSLabel.m */; };
 		584038001FF61D00002A0566 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584037FF1FF61D00002A0566 /* MapKit.framework */; };
 		584038021FF61D1A002A0566 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584038011FF61D1A002A0566 /* AudioToolbox.framework */; };
 		584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038051FF62371002A0566 /* LMJAddressPickerViewController.m */; };
@@ -149,7 +151,6 @@
 		5892AD901FF5E32500E868C2 /* LMJIntroductoryPagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD8F1FF5E32500E868C2 /* LMJIntroductoryPagesHelper.m */; };
 		5892AD9F1FF5F23D00E868C2 /* AdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD9D1FF5F23D00E868C2 /* AdvertiseView.m */; };
 		5892ADA01FF5F23D00E868C2 /* AdvertiseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892AD9E1FF5F23D00E868C2 /* AdvertiseHelper.m */; };
-		5892ADA71FF600F700E868C2 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADA61FF600F700E868C2 /* YYFPSLabel.m */; };
 		5892ADAA1FF603AD00E868C2 /* LMJUMengHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADA91FF603AD00E868C2 /* LMJUMengHelper.m */; };
 		5892ADAF1FF60A8300E868C2 /* JXTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ADAE1FF60A8300E868C2 /* JXTAlertController.m */; };
 		5898889F206B34BF00BDAACD /* DES3Encryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58988894206B34BE00BDAACD /* DES3Encryptor.m */; };
@@ -432,6 +433,10 @@
 		5822335320188F5D0008251F /* MCLocalHTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCLocalHTMLViewController.m; sourceTree = "<group>"; };
 		5822335520188F6E0008251F /* adm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = adm; sourceTree = "<group>"; };
 		583D506F20731574001480C8 /* LMJLocalJsons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LMJLocalJsons; sourceTree = "<group>"; };
+		583D508220765947001480C8 /* TDTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDTouchID.h; sourceTree = "<group>"; };
+		583D508320765948001480C8 /* TDTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTouchID.m; sourceTree = "<group>"; };
+		583D508520765978001480C8 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		583D508620765978001480C8 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		584037FE1FF61CF8002A0566 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		584037FF1FF61D00002A0566 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		584038011FF61D1A002A0566 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -667,8 +672,6 @@
 		5892AD9C1FF5F23C00E868C2 /* AdvertiseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertiseHelper.h; sourceTree = "<group>"; };
 		5892AD9D1FF5F23D00E868C2 /* AdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseView.m; sourceTree = "<group>"; };
 		5892AD9E1FF5F23D00E868C2 /* AdvertiseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseHelper.m; sourceTree = "<group>"; };
-		5892ADA51FF600F700E868C2 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
-		5892ADA61FF600F700E868C2 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		5892ADA81FF603AD00E868C2 /* LMJUMengHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJUMengHelper.h; sourceTree = "<group>"; };
 		5892ADA91FF603AD00E868C2 /* LMJUMengHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJUMengHelper.m; sourceTree = "<group>"; };
 		5892ADAD1FF60A8300E868C2 /* JXTAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTAlertController.h; sourceTree = "<group>"; };
@@ -1627,19 +1630,22 @@
 		5892AD611FF5088D00E868C2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				58926475202DA70D007DA41E /* LMJEventTool.h */,
-				58926474202DA70D007DA41E /* LMJEventTool.m */,
-				5892ADA41FF600F700E868C2 /* YYFPSLabel(刷新率) */,
 				5892AD9A1FF5F04700E868C2 /* 广告页 */,
 				5892AD8A1FF5E2C000E868C2 /* 欢迎页 */,
+				583D508620765978001480C8 /* YYFPSLabel.h */,
+				583D508520765978001480C8 /* YYFPSLabel.m */,
+				583D508220765947001480C8 /* TDTouchID.h */,
+				583D508320765948001480C8 /* TDTouchID.m */,
+				58926475202DA70D007DA41E /* LMJEventTool.h */,
+				58926474202DA70D007DA41E /* LMJEventTool.m */,
 				5892ADAD1FF60A8300E868C2 /* JXTAlertController.h */,
 				5892ADAE1FF60A8300E868C2 /* JXTAlertController.m */,
-				5892ADA81FF603AD00E868C2 /* LMJUMengHelper.h */,
-				5892ADA91FF603AD00E868C2 /* LMJUMengHelper.m */,
 				584038111FF63617002A0566 /* LMJEasyBlankPageView.h */,
 				584038121FF63617002A0566 /* LMJEasyBlankPageView.m */,
 				58DC85321FFCA30C0060DC03 /* UIImageView+FitNet.h */,
 				58DC85311FFCA30B0060DC03 /* UIImageView+FitNet.m */,
+				5892ADA81FF603AD00E868C2 /* LMJUMengHelper.h */,
+				5892ADA91FF603AD00E868C2 /* LMJUMengHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1695,15 +1701,6 @@
 				5892AD9D1FF5F23D00E868C2 /* AdvertiseView.m */,
 			);
 			path = "广告页";
-			sourceTree = "<group>";
-		};
-		5892ADA41FF600F700E868C2 /* YYFPSLabel(刷新率) */ = {
-			isa = PBXGroup;
-			children = (
-				5892ADA51FF600F700E868C2 /* YYFPSLabel.h */,
-				5892ADA61FF600F700E868C2 /* YYFPSLabel.m */,
-			);
-			path = "YYFPSLabel(刷新率)";
 			sourceTree = "<group>";
 		};
 		58988892206B34BE00BDAACD /* RSATools */ = {
@@ -2839,6 +2836,7 @@
 				58DC83BF1FFB43E30060DC03 /* LMJScreenShotViewController.m in Sources */,
 				5840383C1FF7E437002A0566 /* LMJKeyboardHandleViewController.m in Sources */,
 				5892AD5B1FF5079C00E868C2 /* LMJRequestBaseViewController.m in Sources */,
+				583D508720765978001480C8 /* YYFPSLabel.m in Sources */,
 				5822334E20187D610008251F /* LMJAutoLayoutViewController.m in Sources */,
 				589B57011FFFC52F00B2D5A8 /* MUSMusicCell.m in Sources */,
 				58DC84471FFBDC8A0060DC03 /* LMJBlockLoopViewController.m in Sources */,
@@ -2886,7 +2884,6 @@
 				58DC83EB1FFB44380060DC03 /* WPFBaseView.m in Sources */,
 				58DC84411FFBD1290060DC03 /* LMJNSOperationViewController.m in Sources */,
 				589B577A2000339800B2D5A8 /* ZFVideoResolution.m in Sources */,
-				5892ADA71FF600F700E868C2 /* YYFPSLabel.m in Sources */,
 				58DC851B1FFC972C0060DC03 /* BSJMeSquareCell.m in Sources */,
 				58A17C4E2005F4E600B350AB /* LMJParagraph.m in Sources */,
 				58DC83CE1FFB43E30060DC03 /* LMJPiesViewController.m in Sources */,
@@ -2963,6 +2960,7 @@
 				5892AD901FF5E32500E868C2 /* LMJIntroductoryPagesHelper.m in Sources */,
 				58DC850D1FFC972C0060DC03 /* BSJComment.m in Sources */,
 				58651AAA1FFE6D6F0087419D /* SINBroswerCell.m in Sources */,
+				583D508420765948001480C8 /* TDTouchID.m in Sources */,
 				589B57001FFFC52F00B2D5A8 /* QQLrcCell.m in Sources */,
 				5892AD021FF4F9D200E868C2 /* LMJWordArrowItem.m in Sources */,
 				58651AA51FFE6D6F0087419D /* SINHomeViewController.m in Sources */,
@@ -3143,7 +3141,6 @@
 					"-l\"SocialQQ\"",
 					"-l\"SocialSina\"",
 					"-l\"SocialWeChat\"",
-					"-l\"TDTouchID\"",
 					"-l\"Toast\"",
 					"-l\"UICKeyChainStore\"",
 					"-l\"UMSocialLog\"",
@@ -3275,7 +3272,6 @@
 					"-l\"SocialQQ\"",
 					"-l\"SocialSina\"",
 					"-l\"SocialWeChat\"",
-					"-l\"TDTouchID\"",
 					"-l\"Toast\"",
 					"-l\"UICKeyChainStore\"",
 					"-l\"UMSocialLog\"",

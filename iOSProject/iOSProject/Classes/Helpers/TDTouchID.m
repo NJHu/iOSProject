@@ -1,25 +1,10 @@
-//
-//  TDTouchID.m
-//  TDTouchID
-//
-//  Created by imtudou on 2016/11/19.
-//  Copyright © 2016年 TuDou. All rights reserved.
-//
+
 
 #import "TDTouchID.h"
 
 @implementation TDTouchID
 
-+ (instancetype)sharedInstance {
-    static TDTouchID *instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[TDTouchID alloc] init];
-    });
-    return instance;
-}
-
--(void)td_showTouchIDWithDescribe:(NSString *)desc BlockState:(StateBlock)block{
++ (void)td_showTouchIDWithDescribe:(NSString *)desc BlockState:(StateBlock)block{
     
     if (NSFoundationVersionNumber < NSFoundationVersionNumber_iOS_8_0) {
         
@@ -31,15 +16,15 @@
         return;
     }
     
-    LAContext *context = [[LAContext alloc]init];
+    LAContext *context = [[LAContext alloc] init];
     
-    context.localizedFallbackTitle = desc;
+    context.localizedFallbackTitle = desc ?: @"通过Home键验证已有指纹";
     
     NSError *error = nil;
     
     if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
         
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:desc == nil ? @"通过Home键验证已有指纹":desc reply:^(BOOL success, NSError * _Nullable error) {
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:desc ?: @"通过Home键验证已有指纹" reply:^(BOOL success, NSError * _Nullable error) {
             
             if (success) {
                 dispatch_async(dispatch_get_main_queue(), ^{

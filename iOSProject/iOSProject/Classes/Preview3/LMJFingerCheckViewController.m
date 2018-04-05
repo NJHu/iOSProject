@@ -7,7 +7,7 @@
 //
 
 #import "LMJFingerCheckViewController.h"
-#import <TDTouchID.h>
+#import "TDTouchID.h"
 
 @interface LMJFingerCheckViewController ()
 
@@ -31,9 +31,7 @@
  */
 - (void)touchVerification {
     
-    TDTouchID *touchID = [[TDTouchID alloc] init];
-    
-    [touchID td_showTouchIDWithDescribe:@"来个指纹吧" BlockState:^(TDTouchIDState state, NSError *error) {
+    [TDTouchID td_showTouchIDWithDescribe:nil BlockState:^(TDTouchIDState state, NSError *error) {
         
         if (state == TDTouchIDStateNotSupport) {    //不支持TouchID
             
@@ -48,6 +46,10 @@
         } else if (state == TDTouchIDStateInputPassword) { //用户选择手动输入密码
             
             [self.view makeToast:@"当前设备不支持TouchID, 请输入密码"];
+        }else {
+//            localizedFailureReason
+//            localizedDescription
+            [self.view makeToast:error.localizedDescription];
         }
         
         // ps:以上的状态处理并没有写完全!

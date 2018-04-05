@@ -1,10 +1,4 @@
-//
-//  TDTouchID.h
-//  TDTouchID
-//
-//  Created by imtudou on 2016/11/19.
-//  Copyright © 2016年 TuDou. All rights reserved.
-//
+
 
 
 #import <LocalAuthentication/LocalAuthentication.h>
@@ -71,7 +65,7 @@ typedef NS_ENUM(NSUInteger, TDTouchIDState){
 
 
 
-@interface TDTouchID : LAContext
+@interface TDTouchID : NSObject
 
 typedef void (^StateBlock)(TDTouchIDState state,NSError *error);
 
@@ -83,7 +77,7 @@ typedef void (^StateBlock)(TDTouchIDState state,NSError *error);
  @param block 回调状态的block
  */
 
--(void)td_showTouchIDWithDescribe:(NSString *)desc BlockState:(StateBlock)block;
++ (void)td_showTouchIDWithDescribe:(NSString *)desc BlockState:(StateBlock)block;
 
 
 @end

@@ -76,7 +76,7 @@ pod 'IQKeyboardManager'
 pod 'FCUUID'
 
 # 指纹识别
-pod 'TDTouchID'
+#pod 'TDTouchID'
 
 # 三级联动 时间 地址
 pod 'MOFSPickerManager'

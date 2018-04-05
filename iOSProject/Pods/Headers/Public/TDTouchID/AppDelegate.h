@@ -1,1 +1,0 @@
-../../../TDTouchID/TDTouchID/TDTouchID/AppDelegate.h

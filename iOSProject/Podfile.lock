@@ -56,7 +56,6 @@ PODS:
   - SDWebImage (4.2.3):
     - SDWebImage/Core (= 4.2.3)
   - SDWebImage/Core (4.2.3)
-  - TDTouchID (1.0.2)
   - Toast (4.0.0)
   - TZImagePickerController (1.9.8)
   - UICKeyChainStore (2.1.1)
@@ -119,7 +118,6 @@ DEPENDENCIES:
   - Reachability
   - SDCycleScrollView
   - SDWebImage
-  - TDTouchID
   - Toast
   - TZImagePickerController
   - UMengAnalytics
@@ -161,7 +159,6 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
-  TDTouchID: d40027ed36e3d9f528b9b3f6bb6cf46f4f26f954
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TZImagePickerController: 3b9413ae5d049b1fdc5b0c720ad283f35b679a50
   UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
@@ -177,6 +174,6 @@ SPEC CHECKSUMS:
   ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
   ZJScrollPageView: dd8778909cb2413782616ab156e873956f6b0682
 
-PODFILE CHECKSUM: 0b5fe79b4d0158220b82ec3fa73c5192ea610ac4
+PODFILE CHECKSUM: 6a5b23bcb7bc65a9e01cda34652d15b3eab782d4
 
 COCOAPODS: 1.2.0
