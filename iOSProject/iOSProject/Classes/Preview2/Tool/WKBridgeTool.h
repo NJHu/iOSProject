@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #define kProtocolScheme    @"njhu"
 
-
-#define kQueueHasMessage   @"__queue_message__"
 #define kReturnMessage     @"__return_message__"
 #define kInitAppMessage    @"__init_app__"
 #define kStartPageMessage   @"startpage"

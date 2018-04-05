@@ -178,7 +178,6 @@
     
     NSLog(@"decidePolicyForNavigationResponse   ====    %@", navigationResponse);
     decisionHandler(WKNavigationResponsePolicyAllow);
-    
 }
 
 // 5,内容开始返回时调用
@@ -210,19 +209,21 @@
 
 // 7页面加载完调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-    
     NSLog(@"didFinishNavigation   ====    %@", navigation);
     
 }
 
 // 8页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
-    
     NSLog(@"didFailProvisionalNavigation   ====    %@\nerror   ====   %@", navigation, error);
-    
     [MBProgressHUD showError:@"网页加载失败" ToView:self.view];
 }
 
+//当 WKWebView 总体内存占用过大，页面即将白屏的时候，系统会调用回调函数
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
+    [webView reload];
+    NSLog(@"webViewWebContentProcessDidTerminate");
+}
 
 #pragma mark - 懒加载
 

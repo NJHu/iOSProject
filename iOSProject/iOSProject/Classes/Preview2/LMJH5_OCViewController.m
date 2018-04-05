@@ -38,18 +38,14 @@
 - (void)webView:(WKWebView *)webView scrollView:(UIScrollView *)scrollView contentSize:(CGSize)contentSize
 {
     [super webView:webView scrollView:scrollView contentSize:contentSize];
-    
+
 #pragma mark - 添加红色的 View================================================
     // 添加红色的 View
     static CGFloat contentSizeHeight = 0;
     if (contentSizeHeight != contentSize.height) {
         contentSizeHeight = contentSize.height;
-        
         self.addRedView.frame = CGRectMake(0, contentSize.height - self.addRedView.lmj_height, kScreenWidth, self.addRedView.lmj_height);
     }
-    //==========================================================================
-    
-    
 }
 
 
@@ -70,12 +66,12 @@
     NSString *js = [NSString stringWithFormat:@"\
                     var appendDiv = document.getElementById(\"AppAppendDIV\");\
                     if (appendDiv) {\
-                    appendDiv.style.height = %@+\"px\";\
+                    appendDiv.style.height = \"%@px\";\
                     } else {\
                     var appendDiv = document.createElement(\"div\");\
                     appendDiv.setAttribute(\"id\",\"AppAppendDIV\");\
-                    appendDiv.style.width=%@+\"px\";\
-                    appendDiv.style.height=%@+\"px\";\
+                    appendDiv.style.width= \"%@px\";\
+                    appendDiv.style.height= \"%@px\";\
                     document.body.appendChild(appendDiv);\
                     }\
                     ", @(self.addRedView.lmj_height), @(kScreenWidth), @(self.addRedView.lmj_height)];
@@ -84,7 +80,6 @@
         self.addRedView.frame = CGRectMake(0, self.webView.scrollView.contentSize.height - self.addRedView.lmj_height, kScreenWidth, self.addRedView.lmj_height);
     }];
     //==========================================================================
-    
 }
 
 

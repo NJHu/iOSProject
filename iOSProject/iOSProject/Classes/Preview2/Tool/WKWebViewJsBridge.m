@@ -45,6 +45,7 @@
     if (url.path.length < 1) {
         return;
     }
+    //    njhu://__return_message__/{json}
     NSString *messageJsonString = [url.path substringFromIndex:1];
     
     NSDictionary *messageJsonDict = [NSJSONSerialization JSONObjectWithData:[messageJsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
@@ -53,11 +54,9 @@
     if (![messageJsonDict isKindOfClass:[NSDictionary class]]) {
         return;
     }
-    
-    
-    
+
     NSString *handleName = messageJsonDict[khandlerName];
-    // 转换成小写啦啦啦啦啦
+    // 转换成小写啦啦啦啦啦, block 嵌套
     void(^handlerBlock)(id data, void(^)(id responseData)) = self.messageHandles[handleName.lowercaseString];
     
     // 回调给 H5!!!!关键步骤!!!!!================================
@@ -65,8 +64,15 @@
     NSString *callbackId = messageJsonDict[kCallbackId];
     
     if (!LMJIsEmpty(callbackId)) {
+        // 把它作为回调传给 h5
         responseCallback = ^void(id responseData) {
-            NSDictionary *responseMsg = @{kResponseId: callbackId, kResponseData: responseData};
+            
+            NSMutableDictionary *responseMsg = [NSMutableDictionary dictionary];
+            responseMsg[kResponseId] = callbackId;
+            if (!LMJIsEmpty(responseData)) {
+                responseMsg[kResponseData] = responseData;
+            }
+
             // 回调 H5
             [WKBridgeTool dispatchMsgToh5:responseMsg webView:_webView];
         };
@@ -117,7 +123,9 @@
 
 #pragma mark - handel
 - (void)registerHandler:(NSString *)handleName handle:(void(^)(id data, void(^)(id responseData)))handle {
-    self.messageHandles[handleName.lowercaseString] = [handle copy];
+    if (handle && !LMJIsEmpty(handleName)) {
+        self.messageHandles[handleName.lowercaseString] = [handle copy];
+    }
 }
 
 #pragma mark - init
@@ -183,7 +191,6 @@
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     if (webView != _webView) { return; }
-    
     if (_delegate && [_delegate respondsToSelector:@selector(webView:didFinishNavigation:)]) {
         [_delegate webView:webView didFinishNavigation:navigation];
     }
@@ -192,7 +199,6 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     if (webView != _webView) { return; }
-    
     if (_delegate && [_delegate respondsToSelector:@selector(webView:decidePolicyForNavigationResponse:decisionHandler:)]) {
         [_delegate webView:webView decidePolicyForNavigationResponse:navigationResponse decisionHandler:decisionHandler];
     }
@@ -203,7 +209,6 @@
 
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler {
     if (webView != _webView) { return; }
-    
     if (_delegate && [_delegate respondsToSelector:@selector(webView:didReceiveAuthenticationChallenge:completionHandler:)]) {
         [_delegate webView:webView didReceiveAuthenticationChallenge:challenge completionHandler:completionHandler];
     } else {
@@ -213,7 +218,6 @@
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     if (webView != _webView) { return; }
-    
     if (_delegate && [_delegate respondsToSelector:@selector(webView:didStartProvisionalNavigation:)]) {
         [_delegate webView:webView didStartProvisionalNavigation:navigation];
     }
@@ -222,7 +226,6 @@
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     if (webView != _webView) { return; }
-    
     if (_delegate && [_delegate respondsToSelector:@selector(webView:didFailNavigation:withError:)]) {
         [_delegate webView:webView didFailNavigation:navigation withError:error];
     }
@@ -230,12 +233,25 @@
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     if (webView != _webView) { return; }
-    
     if (_delegate && [_delegate respondsToSelector:@selector(webView:didFailProvisionalNavigation:withError:)]) {
         [_delegate webView:webView didFailProvisionalNavigation:navigation withError:error];
     }
 }
 
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
+    if (webView != _webView) { return; }
+    if (_delegate && [_delegate respondsToSelector:@selector(webView:didReceiveServerRedirectForProvisionalNavigation:)]) {
+        [_delegate webView:webView didReceiveServerRedirectForProvisionalNavigation:navigation];
+    }
+}
+
+
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView API_AVAILABLE(macosx(10.11), ios(9.0)){
+    if (webView != _webView) { return; }
+    if (_delegate && [_delegate respondsToSelector:@selector(webViewWebContentProcessDidTerminate:)]) {
+        [_delegate webViewWebContentProcessDidTerminate:webView];
+    }
+}
 
 
 @end
