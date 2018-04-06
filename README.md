@@ -5,7 +5,7 @@
 <p>GitHub：<a href="https://github.com/njhu">NJHu</a> ｜ Blog：<a href="https://www.weibo.com/njhu" rel="nofollow">NJHu 微博(Chinese)</a> ｜ <a href="mailto:64hp@163.com">feedback</a>:<a href="mailto:64hp@163.com">64hp@163.com</a></p>
 
 <div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn1.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/bsqbiphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/wb2iphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qqmusic/mus2iphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/clpiphonex.png" width="16.6%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn1iphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/bsqbiphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/wb2iphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qqmusic/mus2iphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/clpiphonex.png" width="16.6%">
 </div>
 
 <h2><a id="Getting_Started">iOSProject</a></h2>
@@ -35,9 +35,10 @@
 
 <h2><a id="homeList">首页功能列表</a></h2>
 <div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn1.png" width="31%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn2.png" width="31%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn3.png" width="31%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn1.png" width="24%">|
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn2.png" width="23%">|
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn3.png" width="24%">|
+<img src="./images/home.gif" width="24%">
 </div>
 <br>
 <br>
