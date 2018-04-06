@@ -1,11 +1,14 @@
 <div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qun.jpg" width="14%"><img width="25%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/nj.jpg" width="14%"><b>Github&nbsp点个赞↑👍,感谢您的支持!</b>
+<div>
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/nj.jpg" width="14%"><b>Github&nbsp点个赞↑👍,感谢您的支持!</b><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qun.jpg" width="14%">
+</div>
+
 </div>
 
 <p>GitHub：<a href="https://github.com/njhu">NJHu</a> ｜ Blog：<a href="https://www.weibo.com/njhu" rel="nofollow">NJHu 微博(Chinese)</a> ｜ <a href="mailto:64hp@163.com">feedback</a>:<a href="mailto:64hp@163.com">64hp@163.com</a></p>
 
 <div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn1iphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/bsqbiphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/wb2iphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qqmusic/mus2iphonex.png" width="16.6%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/clpiphonex.png" width="16.6%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%">
 </div>
 
 <h2><a id="Getting_Started">iOSProject</a></h2>
@@ -38,7 +41,7 @@
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn1.png" width="24%">|
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn2.png" width="23%">|
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn3.png" width="24%">|
-<img src="./images/home.gif" width="24%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%">
 </div>
 <br>
 <br>
