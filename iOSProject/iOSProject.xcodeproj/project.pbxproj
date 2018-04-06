@@ -321,11 +321,8 @@
 		58DC843F1FFBD1290060DC03 /* LMJGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC843A1FFBD1280060DC03 /* LMJGCDViewController.m */; };
 		58DC84401FFBD1290060DC03 /* LMJLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC843B1FFBD1280060DC03 /* LMJLockViewController.m */; };
 		58DC84411FFBD1290060DC03 /* LMJNSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC843D1FFBD1290060DC03 /* LMJNSOperationViewController.m */; };
-		58DC84441FFBDC720060DC03 /* LMJProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84431FFBDC710060DC03 /* LMJProtocolViewController.m */; };
 		58DC84471FFBDC8A0060DC03 /* LMJBlockLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84461FFBDC8A0060DC03 /* LMJBlockLoopViewController.m */; };
 		58DC844A1FFBDC9E0060DC03 /* LMJModalBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84491FFBDC9D0060DC03 /* LMJModalBlockViewController.m */; };
-		58DC84501FFBDD5C0060DC03 /* LMJOraceDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC844C1FFBDD5B0060DC03 /* LMJOraceDataBase.m */; };
-		58DC84511FFBDD5C0060DC03 /* LMJUsertProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC844E1FFBDD5C0060DC03 /* LMJUsertProtocol.m */; };
 		58DC84541FFBDDC40060DC03 /* LMJChildBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84521FFBDDC40060DC03 /* LMJChildBlockViewController.m */; };
 		58DC84571FFBE0440060DC03 /* LMJBlockLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84561FFBE0440060DC03 /* LMJBlockLoopOperation.m */; };
 		58DC846A1FFC94B30060DC03 /* team_dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58DC84671FFC94B30060DC03 /* team_dictionary.plist */; };
@@ -941,17 +938,10 @@
 		58DC843B1FFBD1280060DC03 /* LMJLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJLockViewController.m; sourceTree = "<group>"; };
 		58DC843C1FFBD1290060DC03 /* LMJLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJLockViewController.h; sourceTree = "<group>"; };
 		58DC843D1FFBD1290060DC03 /* LMJNSOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNSOperationViewController.m; sourceTree = "<group>"; };
-		58DC84421FFBDC710060DC03 /* LMJProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJProtocolViewController.h; sourceTree = "<group>"; };
-		58DC84431FFBDC710060DC03 /* LMJProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJProtocolViewController.m; sourceTree = "<group>"; };
 		58DC84451FFBDC8A0060DC03 /* LMJBlockLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBlockLoopViewController.h; sourceTree = "<group>"; };
 		58DC84461FFBDC8A0060DC03 /* LMJBlockLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBlockLoopViewController.m; sourceTree = "<group>"; };
 		58DC84481FFBDC9D0060DC03 /* LMJModalBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJModalBlockViewController.h; sourceTree = "<group>"; };
 		58DC84491FFBDC9D0060DC03 /* LMJModalBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJModalBlockViewController.m; sourceTree = "<group>"; };
-		58DC844B1FFBDD5B0060DC03 /* LMJDataBaseConnectionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDataBaseConnectionProtocol.h; sourceTree = "<group>"; };
-		58DC844C1FFBDD5B0060DC03 /* LMJOraceDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJOraceDataBase.m; sourceTree = "<group>"; };
-		58DC844D1FFBDD5B0060DC03 /* LMJUsertProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJUsertProtocol.h; sourceTree = "<group>"; };
-		58DC844E1FFBDD5C0060DC03 /* LMJUsertProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJUsertProtocol.m; sourceTree = "<group>"; };
-		58DC844F1FFBDD5C0060DC03 /* LMJOraceDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJOraceDataBase.h; sourceTree = "<group>"; };
 		58DC84521FFBDDC40060DC03 /* LMJChildBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJChildBlockViewController.m; sourceTree = "<group>"; };
 		58DC84531FFBDDC40060DC03 /* LMJChildBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJChildBlockViewController.h; sourceTree = "<group>"; };
 		58DC84551FFBE0440060DC03 /* LMJBlockLoopOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJBlockLoopOperation.h; sourceTree = "<group>"; };
@@ -2192,8 +2182,6 @@
 				58DC840E1FFBC1980060DC03 /* LMJLiftCycleViewController.m */,
 				58DC84081FFBC1960060DC03 /* LMJRunTimeViewController.h */,
 				58DC84111FFBC1980060DC03 /* LMJRunTimeViewController.m */,
-				58DC84421FFBDC710060DC03 /* LMJProtocolViewController.h */,
-				58DC84431FFBDC710060DC03 /* LMJProtocolViewController.m */,
 				58DC84451FFBDC8A0060DC03 /* LMJBlockLoopViewController.h */,
 				58DC84461FFBDC8A0060DC03 /* LMJBlockLoopViewController.m */,
 				58DC84531FFBDDC40060DC03 /* LMJChildBlockViewController.h */,
@@ -2229,11 +2217,6 @@
 		58DC84051FFBC1770060DC03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				58DC844B1FFBDD5B0060DC03 /* LMJDataBaseConnectionProtocol.h */,
-				58DC844F1FFBDD5C0060DC03 /* LMJOraceDataBase.h */,
-				58DC844C1FFBDD5B0060DC03 /* LMJOraceDataBase.m */,
-				58DC844D1FFBDD5B0060DC03 /* LMJUsertProtocol.h */,
-				58DC844E1FFBDD5C0060DC03 /* LMJUsertProtocol.m */,
 				58DC842B1FFBC3E10060DC03 /* LMJRunTimeTest.h */,
 				58DC842A1FFBC3E10060DC03 /* LMJRunTimeTest.m */,
 				58DC842D1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.h */,
@@ -2823,7 +2806,6 @@
 				5892AD651FF5088D00E868C2 /* LMJTabBarController.m in Sources */,
 				589B56F81FFFC52F00B2D5A8 /* MUSHomeListViewController.m in Sources */,
 				584038391FF7E2BE002A0566 /* LMJHorizontalLayoutViewController.m in Sources */,
-				58DC84441FFBDC720060DC03 /* LMJProtocolViewController.m in Sources */,
 				589B57742000339800B2D5A8 /* VIDTabBarController.m in Sources */,
 				58DC83981FFB43DC0060DC03 /* LMJDrawRectViewController.m in Sources */,
 				58651AAD1FFE6D6F0087419D /* SINStatus.m in Sources */,
@@ -2893,7 +2875,6 @@
 				58DC85041FFC972C0060DC03 /* BSJRecommendViewController.m in Sources */,
 				589B56FE1FFFC52F00B2D5A8 /* QQMusicModel.m in Sources */,
 				58DC81891FFA317B0060DC03 /* LMJExpandImageView.m in Sources */,
-				58DC84511FFBDD5C0060DC03 /* LMJUsertProtocol.m in Sources */,
 				584038191FF64218002A0566 /* LMJBlankPageViewController.m in Sources */,
 				5892AD681FF508E600E868C2 /* UIView+LMJNjHuFrame.m in Sources */,
 				58DC85121FFC972C0060DC03 /* BSJTopicTopComent.m in Sources */,
@@ -2956,7 +2937,6 @@
 				58651AA01FFE6D6F0087419D /* SINSQLiteManager.m in Sources */,
 				589B56FC1FFFC52F00B2D5A8 /* QQMusicMessageModel.m in Sources */,
 				589B57782000339800B2D5A8 /* VIDLocalViewController.m in Sources */,
-				58DC84501FFBDD5C0060DC03 /* LMJOraceDataBase.m in Sources */,
 				5892AD901FF5E32500E868C2 /* LMJIntroductoryPagesHelper.m in Sources */,
 				58DC850D1FFC972C0060DC03 /* BSJComment.m in Sources */,
 				58651AAA1FFE6D6F0087419D /* SINBroswerCell.m in Sources */,

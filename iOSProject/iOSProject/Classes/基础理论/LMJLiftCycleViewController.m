@@ -15,7 +15,6 @@
 
 @implementation LMJLiftCycleViewController
 
-
 - (void)loadView
 {
     [super loadView];
@@ -26,20 +25,8 @@
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self life:__FUNCTION__];
 }
-
-
-- (void)life:(const char *)func
-{
-    LMJWordItem *item = [LMJWordItem itemWithTitle:[NSString stringWithUTF8String:func] subTitle:nil itemOperation:nil];
-    item.titleFont = [UIFont systemFontOfSize:12];
-    
-    self.addItem(item);
-    
-    [self.tableView reloadData];
-}
-
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -100,65 +87,32 @@
 
 
 
-#pragma mark 重写BaseViewController设置内容
-
-- (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar
+- (void)life:(const char *)func
 {
-    return [UIColor yellowColor];
-}
-
-- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
+    LMJWordItem *item = [LMJWordItem itemWithTitle:[NSString stringWithUTF8String:func] subTitle:nil itemOperation:nil];
+    item.titleFont = [UIFont systemFontOfSize:12];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    self.addItem(item);
+    
+    [self.tableView reloadData];
 }
 
-- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-}
+#pragma mark - LMJNavUIBaseViewControllerDataSource
 
-- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%@", sender);
-}
-
-- (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
-{
-    return [self changeTitle:@"生命周期"];
-}
-
+/** 导航条左边的按钮 */
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
-    [leftButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
     
-    return [UIImage imageNamed:@"navigationButtonReturnClick"];
+    return [UIImage imageNamed:@"NavgationBar_blue_back"];
 }
 
-
-- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 左边的按钮的点击 */
+-(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    rightButton.backgroundColor = [UIColor RandomColor];
-    
-    return nil;
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
-
-
-#pragma mark 自定义代码
-
--(NSMutableAttributedString *)changeTitle:(NSString *)curTitle
-{
-    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
-    
-    [title addAttribute:NSForegroundColorAttributeName value:[UIColor RandomColor] range:NSMakeRange(0, title.length)];
-    
-    [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, title.length)];
-    
-    return title;
-}
-
 
 
 @end
