@@ -14,7 +14,7 @@ NSString *const kMail_cc_ToRecipients_Address = @"64hp@163.com";
 //网络状态监控地址
 NSString *const kURL_Reachability__Address = @"www.baidu.com";
 
-
+// 友盟
 NSString *const LMJThirdSDKUMConfigInstanceAppKey = @"58aa7d20e88bad08c1001dcd";
 
 NSString *const LMJThirdSDKUMConfigInstanceChannelId = @"App Store";
@@ -55,15 +55,14 @@ NSString *const LMJThirdSDKMagicWindow = @"75Z6Q063T395YQ85QN27FDR7RAVIEKR7";
 //百度地图
 NSString *const LMJThirdSDKBaiduMapKey = @"K4FQLr0hX8zGxsYdGVuFTAmpMNRCVLBF";
 
-
 // 科大讯飞
 NSString *const  USER_APPID = @"56ce54a5";
+
+// 服务器XMG
+NSString *const LMJXMGBaseUrl = @"http://120.25.226.186:32812";
 
 
 // 通知
 NSString *const LMJUMSocialShareSucceedNotification = @"LMJUMSocialShareSucceedNotification";
 
 NSString *const LMJTableViewControllerDeallocNotification = @"LMJTableViewControllerDeallocNotification";
-
-// 服务器XMG
-NSString *const LMJXMGBaseUrl = @"http://120.25.226.186:32812";

@@ -31,7 +31,8 @@ UIKIT_EXTERN NSString *const LMJThirdSDKWeChatAppSecret;
 UIKIT_EXTERN NSString *const LMJThirdSDKWeChatRedirectURL;
 
 
-//sina
+//sina 对应的 bundleID: com.github.njhu
+// 不对应第三方用不了
 UIKIT_EXTERN NSString *const LMJThirdSDKSinaAppKey;
 
 UIKIT_EXTERN NSString *const LMJThirdSDKSinaAppSecret;
@@ -48,7 +49,8 @@ UIKIT_EXTERN NSString *const LMJThirdSDKQQRedirectURL;
 // 魔窗 ios 9 通用链接, 可以服务器自己做
 UIKIT_EXTERN NSString *const LMJThirdSDKMagicWindow;
 
-//百度地图
+//百度地图, 对应的 bundleID: com.github.njhu
+// 不对应的话会失败
 UIKIT_EXTERN NSString *const LMJThirdSDKBaiduMapKey;
 
 // 科大讯飞
