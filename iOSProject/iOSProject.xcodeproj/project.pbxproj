@@ -105,7 +105,6 @@
 		58926426201B622B007DA41E /* BSJSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926425201B622B007DA41E /* BSJSQLiteManager.m */; };
 		58926429201B64D3007DA41E /* BSJTopicListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926428201B64D3007DA41E /* BSJTopicListDAL.m */; };
 		58926467202C54C2007DA41E /* LMJRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926466202C54C2007DA41E /* LMJRunLoopViewController.m */; };
-		5892646B202D6662007DA41E /* XLMJThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892646A202D6662007DA41E /* XLMJThread.m */; };
 		58926476202DA70E007DA41E /* LMJEventTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58926474202DA70D007DA41E /* LMJEventTool.m */; };
 		5892ACA11FF4EB4A00E868C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5892ACA01FF4EB4A00E868C2 /* Assets.xcassets */; };
 		5892ACA71FF4EB4A00E868C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892ACA61FF4EB4A00E868C2 /* main.m */; };
@@ -243,6 +242,7 @@
 		58A8584A2078760A0063DE98 /* LMJWebImagesCacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A858492078760A0063DE98 /* LMJWebImagesCacheViewController.m */; };
 		58A8584E207878430063DE98 /* LMJWebImageCacheCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A8584C207878430063DE98 /* LMJWebImageCacheCell.m */; };
 		58A8584F207878430063DE98 /* LMJWebImageCacheCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A8584D207878430063DE98 /* LMJWebImageCacheCell.xib */; };
+		58A858522078842B0063DE98 /* LMJStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A858512078842B0063DE98 /* LMJStudent.m */; };
 		58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */; };
 		58B4EE2F205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */; };
 		58B4EE31205FA4E100FFF4F8 /* H5Bridge.css in Resources */ = {isa = PBXBuildFile; fileRef = 58B4EE30205FA4E100FFF4F8 /* H5Bridge.css */; };
@@ -316,9 +316,6 @@
 		58DC84171FFBC19A0060DC03 /* LMJLiftCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC840E1FFBC1980060DC03 /* LMJLiftCycleViewController.m */; };
 		58DC841A1FFBC19A0060DC03 /* LMJRunTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84111FFBC1980060DC03 /* LMJRunTimeViewController.m */; };
 		58DC84291FFBC3260060DC03 /* UIButton+LMJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84281FFBC3250060DC03 /* UIButton+LMJBlock.m */; };
-		58DC842C1FFBC3E10060DC03 /* LMJRunTimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC842A1FFBC3E10060DC03 /* LMJRunTimeTest.m */; };
-		58DC842F1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC842E1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.m */; };
-		58DC84321FFBC44B0060DC03 /* LMJRunTimeTest+LMJMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84311FFBC44B0060DC03 /* LMJRunTimeTest+LMJMethod.m */; };
 		58DC843E1FFBD1290060DC03 /* LMJNSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84381FFBD1270060DC03 /* LMJNSThreadViewController.m */; };
 		58DC843F1FFBD1290060DC03 /* LMJGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC843A1FFBD1280060DC03 /* LMJGCDViewController.m */; };
 		58DC84401FFBD1290060DC03 /* LMJLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC843B1FFBD1280060DC03 /* LMJLockViewController.m */; };
@@ -584,8 +581,6 @@
 		58926428201B64D3007DA41E /* BSJTopicListDAL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSJTopicListDAL.m; sourceTree = "<group>"; };
 		58926465202C54C2007DA41E /* LMJRunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJRunLoopViewController.h; sourceTree = "<group>"; };
 		58926466202C54C2007DA41E /* LMJRunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJRunLoopViewController.m; sourceTree = "<group>"; };
-		58926469202D6662007DA41E /* XLMJThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLMJThread.h; sourceTree = "<group>"; };
-		5892646A202D6662007DA41E /* XLMJThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLMJThread.m; sourceTree = "<group>"; };
 		58926474202DA70D007DA41E /* LMJEventTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJEventTool.m; sourceTree = "<group>"; };
 		58926475202DA70D007DA41E /* LMJEventTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJEventTool.h; sourceTree = "<group>"; };
 		5892AC941FF4EB4A00E868C2 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -801,6 +796,8 @@
 		58A8584B207878430063DE98 /* LMJWebImageCacheCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJWebImageCacheCell.h; sourceTree = "<group>"; };
 		58A8584C207878430063DE98 /* LMJWebImageCacheCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJWebImageCacheCell.m; sourceTree = "<group>"; };
 		58A8584D207878430063DE98 /* LMJWebImageCacheCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LMJWebImageCacheCell.xib; sourceTree = "<group>"; };
+		58A858502078842B0063DE98 /* LMJStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJStudent.h; sourceTree = "<group>"; };
+		58A858512078842B0063DE98 /* LMJStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJStudent.m; sourceTree = "<group>"; };
 		58AE5CF320103BA3003BD369 /* VIDMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDMoviePlayerViewController.h; sourceTree = "<group>"; };
 		58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDMoviePlayerViewController.m; sourceTree = "<group>"; };
 		58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = LMJH5JSBridgeViewController.html; sourceTree = "<group>"; };
@@ -929,12 +926,6 @@
 		58DC84111FFBC1980060DC03 /* LMJRunTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJRunTimeViewController.m; sourceTree = "<group>"; };
 		58DC84271FFBC3250060DC03 /* UIButton+LMJBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LMJBlock.h"; sourceTree = "<group>"; };
 		58DC84281FFBC3250060DC03 /* UIButton+LMJBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LMJBlock.m"; sourceTree = "<group>"; };
-		58DC842A1FFBC3E10060DC03 /* LMJRunTimeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJRunTimeTest.m; sourceTree = "<group>"; };
-		58DC842B1FFBC3E10060DC03 /* LMJRunTimeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJRunTimeTest.h; sourceTree = "<group>"; };
-		58DC842D1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LMJRunTimeTest+LMJWork.h"; sourceTree = "<group>"; };
-		58DC842E1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LMJRunTimeTest+LMJWork.m"; sourceTree = "<group>"; };
-		58DC84301FFBC44B0060DC03 /* LMJRunTimeTest+LMJMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LMJRunTimeTest+LMJMethod.h"; sourceTree = "<group>"; };
-		58DC84311FFBC44B0060DC03 /* LMJRunTimeTest+LMJMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LMJRunTimeTest+LMJMethod.m"; sourceTree = "<group>"; };
 		58DC84361FFBD1270060DC03 /* LMJNSOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNSOperationViewController.h; sourceTree = "<group>"; };
 		58DC84371FFBD1270060DC03 /* LMJNSThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJNSThreadViewController.h; sourceTree = "<group>"; };
 		58DC84381FFBD1270060DC03 /* LMJNSThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNSThreadViewController.m; sourceTree = "<group>"; };
@@ -1469,8 +1460,6 @@
 		58926468202D6645007DA41E /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				58926469202D6662007DA41E /* XLMJThread.h */,
-				5892646A202D6662007DA41E /* XLMJThread.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -2225,14 +2214,10 @@
 		58DC84051FFBC1770060DC03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				58DC842B1FFBC3E10060DC03 /* LMJRunTimeTest.h */,
-				58DC842A1FFBC3E10060DC03 /* LMJRunTimeTest.m */,
-				58DC842D1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.h */,
-				58DC842E1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.m */,
-				58DC84301FFBC44B0060DC03 /* LMJRunTimeTest+LMJMethod.h */,
-				58DC84311FFBC44B0060DC03 /* LMJRunTimeTest+LMJMethod.m */,
 				58DC84551FFBE0440060DC03 /* LMJBlockLoopOperation.h */,
 				58DC84561FFBE0440060DC03 /* LMJBlockLoopOperation.m */,
+				58A858502078842B0063DE98 /* LMJStudent.h */,
+				58A858512078842B0063DE98 /* LMJStudent.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2836,7 +2821,6 @@
 				5840387B1FF9F0FA002A0566 /* LMJH5_OCViewController.m in Sources */,
 				58651AA31FFE6D6F0087419D /* SINDiscoveryViewController.m in Sources */,
 				58DC83E91FFB44380060DC03 /* WPFCollisionView.m in Sources */,
-				58DC842C1FFBC3E10060DC03 /* LMJRunTimeTest.m in Sources */,
 				589B57021FFFC52F00B2D5A8 /* QQLrcLabel.m in Sources */,
 				584038601FF875F8002A0566 /* LMJQRCodeViewController.m in Sources */,
 				5892ADAA1FF603AD00E868C2 /* LMJUMengHelper.m in Sources */,
@@ -2904,7 +2888,6 @@
 				58DC83C21FFB43E30060DC03 /* LMJDrawStrPicsViewController.m in Sources */,
 				588CCD76205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m in Sources */,
 				5892AD5D1FF5079C00E868C2 /* LMJWebViewController.m in Sources */,
-				58DC842F1FFBC4270060DC03 /* LMJRunTimeTest+LMJWork.m in Sources */,
 				58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */,
 				58223314201821910008251F /* UITextView+WZB.m in Sources */,
 				5892ADA01FF5F23D00E868C2 /* AdvertiseHelper.m in Sources */,
@@ -2925,7 +2908,6 @@
 				58651AB01FFE6D6F0087419D /* SINUser.m in Sources */,
 				5892AD721FF5113800E868C2 /* LMJMeViewController.m in Sources */,
 				58DC850A1FFC972C0060DC03 /* BSJRecommendUser.m in Sources */,
-				5892646B202D6662007DA41E /* XLMJThread.m in Sources */,
 				58DC85101FFC972C0060DC03 /* BSJRecommendCategory.m in Sources */,
 				58DC83D91FFB440E0060DC03 /* WPFDemoController.m in Sources */,
 				58DC85091FFC972C0060DC03 /* NJAVPlayerViewController.m in Sources */,
@@ -2937,7 +2919,6 @@
 				58DC81721FFA29E00060DC03 /* LMJDragTableViewController.m in Sources */,
 				589888A3206B34BF00BDAACD /* RSAEncryptor.m in Sources */,
 				584038481FF7F3E5002A0566 /* LMJRequestManager.m in Sources */,
-				58DC84321FFBC44B0060DC03 /* LMJRunTimeTest+LMJMethod.m in Sources */,
 				5892AD781FF5115E00E868C2 /* LMJNewViewController.m in Sources */,
 				58DC84291FFBC3260060DC03 /* UIButton+LMJBlock.m in Sources */,
 				58DC83891FFB43460060DC03 /* LMJCALayerBaseViewController.m in Sources */,
@@ -2968,6 +2949,7 @@
 				58DC84F81FFC972C0060DC03 /* BSJTrendViewController.m in Sources */,
 				5892AD6F1FF5110B00E868C2 /* LMJHomeViewController.m in Sources */,
 				5840380C1FF62ECF002A0566 /* LMJAdaptFontViewController.m in Sources */,
+				58A858522078842B0063DE98 /* LMJStudent.m in Sources */,
 				584038751FF93A86002A0566 /* LMJCountDownModel.m in Sources */,
 				58DC85021FFC972C0060DC03 /* BSJPublishWordViewController.m in Sources */,
 				58DC81781FFA2CF90060DC03 /* LMJCalendarViewController.m in Sources */,

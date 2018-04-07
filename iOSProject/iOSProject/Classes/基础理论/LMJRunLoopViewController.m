@@ -9,12 +9,12 @@
 #import "LMJRunLoopViewController.h"
 #import "LMJWebViewController.h"
 #import <CoreFoundation/CoreFoundation.h>
-#import "XLMJThread.h"
 #import "LMJSettingCell.h"
 
 @interface LMJRunLoopViewController ()
+
 /** <#digest#> */
-@property (nonatomic, strong) XLMJThread *xlmjThread;
+@property (nonatomic, strong) NSThread *xlmjThread;
 /** <#digest#> */
 @property (nonatomic, strong) NSMutableArray<NSTimer *> *timers;
 
@@ -72,7 +72,7 @@ static BOOL item3Operationed = NO;
     item3.itemOperation = ^(NSIndexPath *indexPath) {
 
         if (!item3Operationed) {
-            XLMJThread *thread = [[XLMJThread alloc] initWithTarget:weakself selector:@selector(liveThread) object:nil];
+            NSThread *thread = [[NSThread alloc] initWithTarget:weakself selector:@selector(liveThread) object:nil];
             weakself.xlmjThread = thread;
             [thread start];
         }

@@ -100,11 +100,9 @@
                     // 2下载
                     imageData = [NSData dataWithContentsOfURL:video.image];
                     if (imageData) {
-                        
+
                         // 3缓存到沙盒
-                        [[[NSOperationQueue alloc] init] addOperationWithBlock:^{
-                            [imageData writeToFile:file atomically:YES];
-                        }];
+                        [imageData writeToFile:file atomically:YES];
                         
                         UIImage *imageDataImage = [UIImage imageWithData:imageData];
                         // 4缓存到内存
