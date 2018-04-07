@@ -25,7 +25,6 @@
     [super viewDidLoad];
     LMJWeakSelf(self);
     
-    
     _myBlockView = [[UIView alloc] init];
     _myBlockView.backgroundColor=[UIColor RandomColor];
     _myBlockView.height = 100;
@@ -35,7 +34,6 @@
         //不要在这里面存放 关于BlockLoopViewController的变量 否则也会内存无法释放 例如：
 //        _info = infoStr;
         [weakself.view makeToast:@"点击了"];
-        
     }];
     
     self.addItem([LMJWordArrowItem itemWithTitle:@"跳转子页" subTitle:nil itemOperation:^(NSIndexPath *indexPath) {
@@ -56,35 +54,17 @@
 }
 
 
-//调用其它类的一些内存问题
--(void)myBlockButtonAction
-{
-    LMJWeakSelf(self);
-    //1：
-    [LMJBlockLoopOperation operateWithSuccessBlock:^{
-        [weakself showErrorMessage:@"成功执行完成"];
-    }];
-
-    LMJBlockLoopOperation *operation = [[LMJBlockLoopOperation alloc] init];
-    
-    //3：如果带有block 又引入self就要进行弱化对象operation，否则会出现内存释放的问题
-    LMJWeakSelf(operation);
-    operation.logAddress = ^(NSString *address) {
-        
-        [weakself showErrorMessage:weakoperation.address];
-    };
-}
-
-//子页开放的block
 -(void)myButtonAction
 {
     LMJChildBlockViewController *vc=[[LMJChildBlockViewController alloc]init];
+    // 子页面的 block push
     vc.successBlock=^()
     {
         [self loadPage];
     };
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 -(void)myModelButtonAction
 {
@@ -98,7 +78,27 @@
         }
     };
     
+//    A presentViewController B 后，a.presentedViewController就是b，b.presentingViewController就是a，
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+//调用其它类的一些内存问题
+-(void)myBlockButtonAction
+{
+    LMJWeakSelf(self);
+    //1：
+    [LMJBlockLoopOperation operateWithSuccessBlock:^{
+        [weakself showErrorMessage:@"成功执行完成"];
+    }];
+    
+    LMJBlockLoopOperation *operation = [[LMJBlockLoopOperation alloc] init];
+    
+    //3：如果带有block 又引入self就要进行弱化对象operation，否则会出现内存释放的问题
+    LMJWeakSelf(operation);
+    operation.logAddress = ^(NSString *address) {
+        
+        [weakself showErrorMessage:weakoperation.address];
+    };
 }
 
 -(void)showErrorMessage:(NSString *)message
