@@ -154,7 +154,7 @@
     }];
     
     
-    LMJWeakSelf(tableView);
+    LMJWeak(tableView);
     UITableViewRowAction *action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         
         NSLog(@"%@, %@", action, indexPath);

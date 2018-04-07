@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     
     LMJEventModel *eventModel = [[LMJEventModel alloc] init];
 //    @property (nonatomic, strong) NSString *title;                          //标题

@@ -28,7 +28,7 @@
     
     [self addData];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.jsBridge registerHandler:@"alertToast" handle:^(id data, void (^responseCallBack)(id responseData)) {
         [weakself.view makeToast:data duration:3 position:CSToastPositionCenter];
     }];
@@ -53,7 +53,7 @@
     [self.webView.scrollView scrollToTop];
     static int i = 0;
     i+=2;
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.jsBridge callHandler:@"insertContent" data:[NSString stringWithFormat:@"我是oc调用js传给js的内容, 内容: %zd", i] responseCallback:^(id responseData) {
         NSLog(@"%@", responseData);
         [weakself.view makeToast:responseData duration:3 position:CSToastPositionCenter];

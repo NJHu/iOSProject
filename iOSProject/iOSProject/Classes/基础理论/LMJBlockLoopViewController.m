@@ -17,13 +17,15 @@
 
 @property(nonatomic,strong) UIView *myBlockView;
 
+/** <#digest#> */
+@property (nonatomic, strong) LMJBlockLoopOperation *operation;
 @end
 
 @implementation LMJBlockLoopViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     
     _myBlockView = [[UIView alloc] init];
     _myBlockView.backgroundColor=[UIColor RandomColor];
@@ -70,7 +72,7 @@
 {
     LMJModalBlockViewController *vc=[[LMJModalBlockViewController alloc]init];
     
-    LMJWeakSelf(vc);
+    LMJWeak(vc);
     vc.successBlock=^()
     {
         if (weakvc) {
@@ -85,18 +87,18 @@
 //调用其它类的一些内存问题
 -(void)myBlockButtonAction
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     //1：
     [LMJBlockLoopOperation operateWithSuccessBlock:^{
-        [weakself showErrorMessage:@"成功执行完成"];
+        [self showErrorMessage:@"成功执行完成"];
     }];
     
     LMJBlockLoopOperation *operation = [[LMJBlockLoopOperation alloc] init];
     
     //3：如果带有block 又引入self就要进行弱化对象operation，否则会出现内存释放的问题
-    LMJWeakSelf(operation);
+    _operation = operation;
+    LMJWeak(operation);
     operation.logAddress = ^(NSString *address) {
-        
         [weakself showErrorMessage:weakoperation.address];
     };
 }

@@ -66,7 +66,7 @@
     LMJListExpendHeaderView *headerView = [LMJListExpendHeaderView headerViewWithTableView:tableView];
     
     headerView.group = self.groups[section];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [headerView setSelectGroup:^BOOL{
         
         weakself.groups[section].isOpened = !weakself.groups[section].isOpened;

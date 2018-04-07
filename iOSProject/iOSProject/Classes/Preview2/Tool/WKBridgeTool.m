@@ -69,7 +69,7 @@
     }];
     
     
-    LMJWeakSelf(bridge);
+    LMJWeak(bridge);
     //关闭当前h5
     [bridge registerHandler:kCloseMessage handle:^(id data, void (^responseCallback)(id responseData)) {
         UIViewController *con = [weakbridge.webView viewController];

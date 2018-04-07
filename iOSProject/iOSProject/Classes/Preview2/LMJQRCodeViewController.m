@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
     
     UIImageView *imageV = [[UIImageView alloc] init];

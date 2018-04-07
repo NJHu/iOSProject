@@ -14,7 +14,7 @@
 - (void)GET:(NSString *)URLString parameters:(id)parameters completion:(void(^)(LMJBaseResponse *response))completion
 {
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [[LMJRequestManager sharedManager] GET:URLString parameters:parameters completion:^(LMJBaseResponse *response) {
         
         if (!weakself) {
@@ -29,7 +29,7 @@
 
 - (void)POST:(NSString *)URLString parameters:(id)parameters completion:(void(^)(LMJBaseResponse *response))completion
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [[LMJRequestManager sharedManager] POST:URLString parameters:parameters completion:^(LMJBaseResponse *response) {
         
         if (!weakself) {

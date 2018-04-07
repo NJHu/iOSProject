@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     //使用TDButton更方便 https://github.com/greezi/TDButton
-    LMJWeakSelf(self);
+    LMJWeak(self);
     self.addItem([LMJWordItem itemWithTitle:@"指纹解锁" subTitle:nil itemOperation:^(NSIndexPath *indexPath) {
         [weakself touchVerification];
     }]);

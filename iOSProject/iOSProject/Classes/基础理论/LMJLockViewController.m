@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     //初始化锁对象
     self.mylock = [[NSLock alloc]init];
     
@@ -50,7 +50,7 @@
 
 - (void)start:(NSIndexPath *)indexPath
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     weakself.myMutableList = [NSMutableArray array];
     for (NSInteger i = 0; i < 20; i++) {
         [weakself.myMutableList addObject:[NSString stringWithFormat:@"图片%zd", i+1]];

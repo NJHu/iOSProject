@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     LMJWordItem *item0 = [LMJWordArrowItem itemWithTitle:@"系统设置" subTitle: nil];
     item0.image = [UIImage imageNamed:@"mine-setting-icon"];
     [item0 setItemOperation:^void(NSIndexPath *indexPath){
@@ -30,7 +30,7 @@
     
     LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"姓名" subTitle:@"请输入姓名"];
     item1.subTitleColor = [UIColor lightGrayColor];
-//    LMJWeakSelf(item1);
+//    LMJWeak(item1);
     [item1 setItemOperation:^void(NSIndexPath *indexPath){
         // 拿到cell
         UITableViewCell *cell = [weakself.tableView cellForRowAtIndexPath:indexPath];
@@ -53,7 +53,7 @@
     
     LMJWordItem *item2 = [LMJWordArrowItem itemWithTitle:@"性别" subTitle: @"请选择出性别"];
     item2.subTitleColor = [UIColor lightGrayColor];
-    LMJWeakSelf(item2);
+    LMJWeak(item2);
     [item2 setItemOperation:^void(NSIndexPath *indexPath){
         
         [[MOFSPickerManager shareManger] showPickerViewWithDataArray:@[@"男",@"女"] tag:1 title:nil cancelTitle:@"取消" commitTitle:@"确定" commitBlock:^(NSString *string) {
@@ -70,7 +70,7 @@
     
     LMJWordItem *item3 = [LMJWordArrowItem itemWithTitle:@"生日" subTitle: @"请选择出生日期"];
     item3.subTitleColor = [UIColor lightGrayColor];
-    LMJWeakSelf(item3);
+    LMJWeak(item3);
     [item3 setItemOperation:^void(NSIndexPath *indexPath){
         
         [[MOFSPickerManager shareManger] showDatePickerWithTag:1 commitBlock:^(NSDate *date) {
@@ -86,7 +86,7 @@
     
     // 占位
     LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"家庭地址" subTitle:@"请输入家庭地址"];
-//    LMJWeakSelf(item4);
+//    LMJWeak(item4);
     [item4 setItemOperation:^void(NSIndexPath *indexPath){
         // 拿到cell
         UITableViewCell *cell = [weakself.tableView cellForRowAtIndexPath:indexPath];

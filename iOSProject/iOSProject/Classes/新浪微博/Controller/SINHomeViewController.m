@@ -57,7 +57,7 @@
 
 - (void)loadMore:(BOOL)isMore
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     if (![SINUserManager sharedManager].isLogined) {
         [weakself endHeaderFooterRefreshing];
         return;
@@ -202,7 +202,7 @@
 {
     if(_unLoginRegisterView == nil)
     {
-        LMJWeakSelf(self);
+        LMJWeak(self);
         SINUnLoginRegisterView *unLoginRegisterView = [SINUnLoginRegisterView unLoginRegisterViewWithType:SINUnLoginRegisterViewTypeHomePage registClick:^{
             
             [weakself gotoLogin];
@@ -229,7 +229,7 @@
 
 - (void)gotoLogin
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [[SINUserManager sharedManager] sinaLogin:^(NSError *error) {
         
         if (error) {

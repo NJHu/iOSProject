@@ -58,7 +58,7 @@
     
     BSJTabBar *tabBar = [[BSJTabBar alloc] init];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [tabBar setPublishBtnClick:^(BSJTabBar *tabBar, UIButton *publishBtn){
         
         BSJPublishViewController *publishVc = [[BSJPublishViewController alloc] init];

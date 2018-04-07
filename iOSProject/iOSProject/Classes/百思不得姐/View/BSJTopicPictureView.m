@@ -64,7 +64,7 @@
      
      [self.ringProgressView setProgress:topicViewModel.downloadPictureProgress animated:NO];
      
-     LMJWeakSelf(self);
+     LMJWeak(self);
      [self.pictureImageView lmj_setImageWithURL:topicViewModel.topic.largePicture thumbnailImageURL:topicViewModel.topic.smallPicture placeholderImage:nil options:SDWebImageTransformAnimatedImage progress:^(NSInteger receivedSize, NSInteger expectedSize) {
      
      //关键步骤
@@ -166,7 +166,7 @@
         
         pictureImageView.userInteractionEnabled = YES;
         
-        LMJWeakSelf(self);
+        LMJWeak(self);
         [pictureImageView addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
             
             BSJPictureShowViewController *showPicVc = [[BSJPictureShowViewController alloc] init];

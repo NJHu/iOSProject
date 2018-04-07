@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.view makeToast:@"侧滑返回" duration:4 position:CSToastPositionCenter];
     
     [self.sections addObject:[LMJItemSection sectionWithItems:@[[LMJWordItem itemWithTitle:@"点击跳转到一个不能全局返回的控制器" subTitle:nil itemOperation:^(NSIndexPath *indexPath) {

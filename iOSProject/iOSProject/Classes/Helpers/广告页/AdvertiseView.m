@@ -83,7 +83,7 @@ static const NSUInteger showtime = 5;
 - (void)startCoundown
 {
     __block int timeout = showtime + 1; //倒计时时间 + 1
-    LMJWeakSelf(self);
+    LMJWeak(self);
     // GCD 定时器
     self.gcdTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
     dispatch_source_set_timer(self.gcdTimer, dispatch_time(DISPATCH_TIME_NOW, 0), 1 * NSEC_PER_SEC, 0); //每秒执行

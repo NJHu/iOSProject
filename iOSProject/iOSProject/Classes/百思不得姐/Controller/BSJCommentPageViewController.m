@@ -76,7 +76,7 @@
 
 - (void)loadMore:(BOOL)isMore
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.topicCmtService getCmtsWithTopicID:self.topicViewModel.topic.ID.copy isMore:isMore completion:^(NSError *error, BOOL isHaveNextPage) {
         
         [weakself endHeaderFooterRefreshing];

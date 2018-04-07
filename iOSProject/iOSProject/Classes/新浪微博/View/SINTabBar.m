@@ -70,8 +70,8 @@
         
         [btn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button"] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
-        LMJWeakSelf(self);
-        LMJWeakSelf(btn);
+        LMJWeak(self);
+        LMJWeak(btn);
         [btn addActionHandler:^(NSInteger tag) {
             
             !weakself.publishBtnClick ?: weakself.publishBtnClick(weakself, weakbtn);

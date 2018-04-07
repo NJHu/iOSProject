@@ -26,12 +26,12 @@
 }
 - (IBAction)deleteClick:(UIButton *)sender {
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     !self.deletePhotoClick ?: self.deletePhotoClick(weakself.photoImage);
 }
 
 - (IBAction)addClick:(UIButton *)sender {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     !self.addPhotoClick ?: self.addPhotoClick(weakself);
 }
 

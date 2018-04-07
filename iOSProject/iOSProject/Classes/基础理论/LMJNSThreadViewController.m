@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LMJWeakSelf(self);
+    LMJWeak(self);
 //    self.title = @"看打印";
     [self.view makeToast:@"看打印"];
     

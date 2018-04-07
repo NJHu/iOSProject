@@ -63,7 +63,7 @@
     [self showLoading];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        LMJWeakSelf(self);
+        LMJWeak(self);
         [self.recommendSevice getRecommendCategorys:^(NSError *error) {
             [weakself dismissLoading];
             
@@ -103,7 +103,7 @@
     BSJRecommendCategory *selectedCategory = BSJSelectedCategory;
     
     NSLog(@"13131313131313131313131313131313");
-    LMJWeakSelf(self);
+    LMJWeak(self);
     if (self.leftTagTableView.indexPathForSelectedRow.row == 0) {
         
         NSLog(@"141414141414141414414141441414144141441");

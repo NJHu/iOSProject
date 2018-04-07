@@ -30,7 +30,7 @@
 - (void)setImageDict:(SINDictURL *)imageDict
 {
     _imageDict = imageDict;
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.imageView sd_setImageWithURL:imageDict.bmiddle_pic placeholderImage:[UIImage imageNamed:@"empty_picture"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
        
         if (image && !error) {

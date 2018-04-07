@@ -21,7 +21,7 @@
     
     [self setDes];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     
     LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"并发队列 + 同步执行" subTitle:nil];
     [item0 setItemOperation:^(NSIndexPath *indexPath) {

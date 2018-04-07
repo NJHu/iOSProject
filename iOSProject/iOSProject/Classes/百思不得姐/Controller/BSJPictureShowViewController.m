@@ -33,7 +33,7 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.view addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
         
         [weakself dismissPopUpViewController:DDPopUpAnimationTypeFade];
@@ -153,7 +153,7 @@
             make.size.mas_equalTo(CGSizeMake(44, 44));
         }];
         
-        LMJWeakSelf(self);
+        LMJWeak(self);
         [btn addActionHandler:^(NSInteger tag) {
             [weakself dismissPopUpViewController:DDPopUpAnimationTypeFade];
         }];

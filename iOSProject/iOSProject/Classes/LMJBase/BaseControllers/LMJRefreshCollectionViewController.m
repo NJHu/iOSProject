@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     self.collectionView.mj_header = [LMJNormalRefreshHeader headerWithRefreshingBlock:^{
         [weakself loadIsMore:NO];
     }];

@@ -65,7 +65,7 @@ static const NSInteger maxPhotoCount = 9;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     LMJUpLoadImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LMJUpLoadImageCell class]) forIndexPath:indexPath];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     if (indexPath.item == self.selectedImages.count) {
         cell.photoImage = nil;
         cell.addPhotoClick = ^(LMJUpLoadImageCell *uploadImageCell) {
@@ -171,7 +171,7 @@ static const NSInteger maxPhotoCount = 9;
     
     imagePickerVc.isStatusBarDefault = NO;
 #pragma mark - 到这里为止
-    LMJWeakSelf(self);
+    LMJWeak(self);
     // You can get the photos by block, the same as by delegate.
     // 你可以通过block或者代理，来得到用户选择的照片.
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {

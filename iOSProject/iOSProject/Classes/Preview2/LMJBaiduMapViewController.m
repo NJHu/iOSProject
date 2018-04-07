@@ -114,7 +114,7 @@
     [super viewDidLoad];
     
     self.fd_interactivePopDisabled = YES;
-    LMJWeakSelf(self);
+    LMJWeak(self);
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
     BOOL ret = [self.mapManager start:LMJThirdSDKBaiduMapKey  generalDelegate:weakself];
     if (!ret) {

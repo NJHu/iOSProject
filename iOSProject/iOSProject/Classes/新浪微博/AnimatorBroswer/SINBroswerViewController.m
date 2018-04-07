@@ -21,7 +21,7 @@
     self.view.backgroundColor = self.collectionView.backgroundColor = [UIColor blackColor];
     self.collectionView.pagingEnabled = YES;
 
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.collectionView addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
         [weakself dismissViewControllerAnimated:YES completion:nil];
     }];

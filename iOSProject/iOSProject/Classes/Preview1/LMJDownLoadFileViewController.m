@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     self.addItem([LMJWordItem itemWithTitle:@"点击下载" subTitle:@"不会重复下载" itemOperation:^(NSIndexPath *indexPath) {
         [weakself downloadFile];
     }]);
@@ -53,7 +53,7 @@
     
     [request setValue:@"no-cache" forHTTPHeaderField:@"Cache-Control"];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     NSLog(@"%@", request);
     MBProgressHUD *hud = [MBProgressHUD showProgressToView:weakself.view Text:@"下载中"];
     [[[LMJRequestManager sharedManager] downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {

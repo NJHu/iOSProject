@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     NSLog(@"%@", weakself);
     self.navigationItem.title = @"功能实例";
     
@@ -88,7 +88,7 @@
         btn.layer.cornerRadius = 15;
         btn.layer.masksToBounds = YES;
         
-        LMJWeakSelf(self);
+        LMJWeak(self);
         [btn addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
             
             if (weakself.presentedViewController) {
@@ -98,7 +98,7 @@
         }];
         
 
-        LMJWeakSelf(btn);
+        LMJWeak(btn);
         [btn addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithActionBlock:^(UIPanGestureRecognizer  *_Nonnull sender) {
             
 //            NSLog(@"%@", sender);

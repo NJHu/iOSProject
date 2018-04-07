@@ -42,7 +42,7 @@
     // Der 加密 Pem 解密
     [self DerPem];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     LMJWordItem *item = [LMJWordItem itemWithTitle:@"网络数据加密解密" subTitle:@"Demo" itemOperation:^(NSIndexPath *indexPath) {
         // 网络加密解密
         [weakself requestDataEncrypt];
@@ -123,7 +123,7 @@
 // Der 加密 P12 解密
 - (void)DerP12
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     // ======================================================================================================
     self.addItem([LMJWordItem itemWithTitle:@"点击加密: " subTitle:self.oriMsg itemOperation:^(NSIndexPath *indexPath) {
         NSString *encryptedMsg = [EncryptorTool EncryptMsg:weakself.oriMsg DESKey:weakself.DESKey];
@@ -152,7 +152,7 @@
 
 - (void)PemP12
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     LMJWordItem *item10 = [LMJWordItem itemWithTitle:@"点击加密: " subTitle:self.oriMsg itemOperation:^(NSIndexPath *indexPath) {
         
         NSString *encryptedMsg = [RSAEncryptor encryptString:weakself.oriMsg publicKey:weakself.javaPubKey];
@@ -188,7 +188,7 @@
 
 - (void)PemPem
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     LMJWordItem *item20 = [LMJWordItem itemWithTitle:@"点击加密: " subTitle:self.oriMsg itemOperation:^(NSIndexPath *indexPath) {
         
         NSString *encryptedMsg = [RSAEncryptor encryptString:weakself.oriMsg publicKey:weakself.javaPubKey];
@@ -220,7 +220,7 @@
 
 - (void)DerPem
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     LMJWordItem *item30 = [LMJWordItem itemWithTitle:@"点击加密: " subTitle:self.oriMsg itemOperation:^(NSIndexPath *indexPath) {
         
         NSString *encryptedMsg = [RSAEncryptor encryptString:weakself.oriMsg publicKeyWithContentsOfFile:publicKeyFile_];

@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self setDes];
     self.myRunTimeTest=[[LMJRunTimeTest alloc] init];
     

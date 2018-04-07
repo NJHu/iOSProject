@@ -54,7 +54,7 @@
 
 - (void)loadMore:(BOOL)isMore
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.topicService getTopicIsMore:isMore typeA:self.areaType topicType:self.topicType completion:^(NSError *error, NSInteger totalCount, NSInteger currentCount) {
         
         [weakself endHeaderFooterRefreshing];

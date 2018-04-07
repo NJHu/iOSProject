@@ -27,7 +27,7 @@
 
 - (void)loadMore:(BOOL)isMore
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     
     NSDictionary *parameters = @{@"type" : @"JSON"};
     

@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.redView.drawTypeType = 5;
     [self redView];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     self.addItem([LMJWordItem itemWithTitle:@"最原始的绘图方式" subTitle:@"drawLine" itemOperation:^(NSIndexPath *indexPath) {
         weakself.redView.drawTypeType = indexPath.row;
         [weakself.redView setNeedsDisplay];

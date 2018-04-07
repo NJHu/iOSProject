@@ -34,7 +34,7 @@ const NSInteger LMJDragTableViewControllerCols_ = 3;
     
     self.fd_interactivePopDisabled = YES;
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
     
     [self.collectionView addLongPressGestureRecognizer:^(UILongPressGestureRecognizer *recognizer, NSString *gestureId) {

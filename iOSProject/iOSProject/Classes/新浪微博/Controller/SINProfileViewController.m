@@ -46,7 +46,7 @@
 {
     if(_unLoginRegisterView == nil)
     {
-        LMJWeakSelf(self);
+        LMJWeak(self);
         SINUnLoginRegisterView *unLoginRegisterView = [SINUnLoginRegisterView unLoginRegisterViewWithType:SINUnLoginRegisterViewTypeProfilePage registClick:^{
             
             [weakself gotoLogin];

@@ -138,7 +138,7 @@ static const NSInteger maxPhotoCount = 9;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     LMJUpLoadImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LMJUpLoadImageCell class]) forIndexPath:indexPath];
     
     if (indexPath.item == self.selectedImages.count) {
@@ -217,8 +217,8 @@ static const NSInteger maxPhotoCount = 9;
         
         [[YYTextKeyboardManager defaultManager] addObserver:self];
         
-        LMJWeakSelf(self);
-//        LMJWeakSelf(publishTooBar);
+        LMJWeak(self);
+//        LMJWeak(publishTooBar);
         publishTooBar.selectInput = ^(SINPublishToolBarClickType type) {
             
             if (type == SINPublishToolBarClickTypeKeyboard) {
@@ -412,7 +412,7 @@ static const NSInteger maxPhotoCount = 9;
     
     imagePickerVc.isStatusBarDefault = NO;
 #pragma mark - 到这里为止
-    LMJWeakSelf(self);
+    LMJWeak(self);
     // You can get the photos by block, the same as by delegate.
     // 你可以通过block或者代理，来得到用户选择的照片.
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
@@ -578,7 +578,7 @@ static const NSInteger maxPhotoCount = 9;
         return;
     }
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self showLoading];
     [self.postStatusService retweetText:self.postTextView.emoticonText images:self.selectedImages completion:^(BOOL isSucceed) {
         [weakself dismissLoading];

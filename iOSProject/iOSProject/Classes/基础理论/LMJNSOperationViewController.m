@@ -19,7 +19,7 @@
     [super viewDidLoad];
     [self setDes];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     
     LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"一：NSInvocationOperation子类+主队列" subTitle:@"主线程中执行"];
     [item0 setItemOperation:^(NSIndexPath *indexPath) {

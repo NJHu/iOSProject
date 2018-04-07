@@ -132,9 +132,9 @@
 - (instancetype)initWithWebView:(WKWebView *)webView delegate:(id<WKNavigationDelegate>)delegate {
     if (self = [self init]) {
         
-        LMJWeakSelf(self);
-        LMJWeakSelf(webView);
-        LMJWeakSelf(delegate);
+        LMJWeak(self);
+        LMJWeak(webView);
+        LMJWeak(delegate);
         
         _webView = weakwebView;
         _webView.navigationDelegate = weakself;

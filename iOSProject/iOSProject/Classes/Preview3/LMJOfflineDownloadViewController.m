@@ -33,7 +33,7 @@
                                   ];
     
     self.title = @"点击Cell开始/暂停下载";
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [urls enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         MJDownloadInfo *info = [[MJDownloadManager defaultManager] downloadInfoForURL:obj];

@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     self.tableView.mj_header = [LMJNormalRefreshHeader headerWithRefreshingBlock:^{
         
         [weakself loadIsMore:NO];

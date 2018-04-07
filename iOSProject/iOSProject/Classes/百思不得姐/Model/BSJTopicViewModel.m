@@ -114,7 +114,7 @@ const CGFloat BSJCellContentImageMaxHeight = 1000.0;
             return nil;
         }
         
-        LMJWeakSelf(self);
+        LMJWeak(self);
         NSMutableAttributedString *cmtsM = [[NSMutableAttributedString alloc] init];
         CGSize cmtSize = CGSizeMake(kScreenWidth - (5 + 10 + 10 + 10 + 10 + 10 + 5), INFINITY);
         

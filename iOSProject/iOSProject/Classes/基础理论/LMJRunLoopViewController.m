@@ -34,7 +34,7 @@ static BOOL item3Operationed = NO;
     [super viewDidLoad];
 //    self.title = @"看打印";
     [self.view makeToast:@"看打印"];
-    LMJWeakSelf(self);
+    LMJWeak(self);
     LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"线程和RunLoop" subTitle:nil];
     item0.itemOperation = ^(NSIndexPath *indexPath) {
         [weakself threadRunLoop];
@@ -262,7 +262,7 @@ static BOOL item3Operationed = NO;
     
     NSLog(@"----------run--- start -%@", [NSThread currentThread]);
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
         [weakself run];
     }];
@@ -294,7 +294,7 @@ static BOOL item3Operationed = NO;
 {
     NSLog(@"-----runLoop--%p", [NSRunLoop currentRunLoop]);
     NSLog(@"--%@---", [NSThread currentThread]);
-    LMJWeakSelf(self);
+    LMJWeak(self);
    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
         [weakself run];
     }];

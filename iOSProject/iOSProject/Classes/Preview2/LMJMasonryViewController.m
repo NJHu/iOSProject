@@ -369,8 +369,8 @@
         make.edges.mas_equalTo(myView).insets(UIEdgeInsetsMake(10, 5, 15, 5));
     }];
     
-    LMJWeakSelf(myInView);
-    LMJWeakSelf(myView);
+    LMJWeak(myInView);
+    LMJWeak(myView);
     [myView addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
         
         [weakmyInView mas_remakeConstraints:^(MASConstraintMaker *make) {

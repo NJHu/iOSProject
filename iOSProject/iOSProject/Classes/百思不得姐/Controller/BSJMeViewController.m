@@ -46,7 +46,7 @@
     params[@"a"] = @"square";
     params[@"c"] = @"topic";
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.requestManager GET:BSJBaiSiJieHTTPAPI parameters:params completion:^(LMJBaseResponse *response) {
 
         NSError *error = response.error;

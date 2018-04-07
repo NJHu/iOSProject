@@ -34,7 +34,7 @@
     
     self.fd_interactivePopDisabled = YES;
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.webView addObserverBlockForKeyPath:LMJKeyPath(weakself.webView, estimatedProgress) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
         
         weakself.progressView.progress = weakself.webView.estimatedProgress;
@@ -251,7 +251,7 @@
         config.allowsInlineMediaPlayback = YES;
 
         // 交互对象设置
-//        LMJWeakSelf(self);
+//        LMJWeak(self);
 //        config.userContentController = [[WKUserContentController alloc] init];
 //        [config.userContentController addScriptMessageHandler:weakself name:<#(nonnull NSString *)#>];
         

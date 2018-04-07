@@ -101,7 +101,7 @@ static const CGFloat margin = 10.0;
     if(_sin_textPost == nil && !LMJIsEmpty(self.status.text))
     {
         
-        //        LMJWeakSelf(self);
+        //        LMJWeak(self);
         NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithAttributedString:[[HMEmoticonManager sharedManager] emoticonStringWithString:self.status.text font:[UIFont systemFontOfSize:AdaptedWidth(15)] textColor:UIColor.redColor]];
         
         

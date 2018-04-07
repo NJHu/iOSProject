@@ -67,8 +67,8 @@
         [btn setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
         
-        LMJWeakSelf(self);
-        LMJWeakSelf(btn);
+        LMJWeak(self);
+        LMJWeak(btn);
         [btn addActionHandler:^(NSInteger tag) {
             
             !weakself.publishBtnClick ?: weakself.publishBtnClick(weakself, weakbtn);

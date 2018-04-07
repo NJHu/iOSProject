@@ -40,7 +40,7 @@
 - (void)setUpTabBar {
     SINTabBar *tabBar = [[SINTabBar alloc] init];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [tabBar setPublishBtnClick:^(SINTabBar *tabBar, UIButton *publishBtn){
         
         if (![SINUserManager sharedManager].isLogined) {

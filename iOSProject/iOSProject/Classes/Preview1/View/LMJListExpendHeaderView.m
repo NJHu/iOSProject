@@ -98,7 +98,7 @@
         
         [self.contentView addSubview:btn];
         
-        LMJWeakSelf(self);
+        LMJWeak(self);
         
         [btn addActionHandler:^(NSInteger tag) {
             

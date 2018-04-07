@@ -67,7 +67,7 @@ static const void *UIButtonBlockKey = &UIButtonBlockKey;
         [self setBackgroundImage:[UIImage imageWithColor:normalBGColor] forState:UIControlStateNormal];
         [self setBackgroundImage:[UIImage imageWithColor:selectBGColor] forState:UIControlStateHighlighted];
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
         
         !doneBlock ?: doneBlock(weakself);

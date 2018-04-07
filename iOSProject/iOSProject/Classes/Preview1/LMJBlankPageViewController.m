@@ -35,7 +35,7 @@
 
 - (void)loadMore:(BOOL)isMore
 {
-    LMJWeakSelf(self);
+    LMJWeak(self);
     
     [self endHeaderFooterRefreshing];
     
@@ -57,7 +57,7 @@
 {
     NSLog(@"%s", __func__);
     
-    LMJWeakSelf(self);
+    LMJWeak(self);
     [self.tableView configBlankPage:LMJEasyBlankPageViewTypeNoData hasData:self.dateArray.count > 0 hasError:YES reloadButtonBlock:^(id sender) {
         
         [weakself.tableView.mj_header beginRefreshing];
