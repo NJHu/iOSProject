@@ -66,9 +66,7 @@
         // 对应的图片下载操作
         operation = self.operations[video.image.absoluteString];
         
-        if (operation) {
-            
-        }else {
+        if (!operation) {
             
             operation = [NSBlockOperation blockOperationWithBlock:^{
                 NSFileManager *manager = [NSFileManager defaultManager];
@@ -99,12 +97,13 @@
                 if (!imageData) {
                     // 2下载
                     imageData = [NSData dataWithContentsOfURL:video.image];
+                    
                     if (imageData) {
-
                         // 3缓存到沙盒
                         [imageData writeToFile:file atomically:YES];
                         
                         UIImage *imageDataImage = [UIImage imageWithData:imageData];
+                        
                         // 4缓存到内存
                         self.images[video.image.absoluteString] = imageDataImage;
                         
