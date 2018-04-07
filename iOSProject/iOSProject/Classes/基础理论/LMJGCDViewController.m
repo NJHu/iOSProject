@@ -23,37 +23,37 @@
     
     LMJWeak(self);
     
-    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"并发队列 + 同步执行" subTitle:nil];
+    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"并发队列 + 同步函数" subTitle:nil];
     [item0 setItemOperation:^(NSIndexPath *indexPath) {
         [weakself syncConCurrent];
     }];
     
-    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"并发队列 + 异步执行" subTitle:nil];
+    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"并发队列 + 异步函数" subTitle:nil];
     [item1 setItemOperation:^(NSIndexPath *indexPath) {
         [weakself asyncConcurrent];
     }];
     
-    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"串行队列 + 同步执行" subTitle:nil];
+    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"串行队列 + 同步函数" subTitle:nil];
     [item2 setItemOperation:^(NSIndexPath *indexPath) {
         [weakself syncSerial];
     }];
     
-    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"串行队列 + 异步执行" subTitle:nil];
+    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"串行队列 + 异步函数" subTitle:nil];
     [item3 setItemOperation:^(NSIndexPath *indexPath) {
         [weakself asyncSerial];
     }];
     
-    LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"主队列 + 同步执行--相互等待" subTitle:@"直接闪退"];
+    LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"主队列 + 同步函数--相互等待" subTitle:@"直接闪退"];
     [item4 setItemOperation:^(NSIndexPath *indexPath) {
         [weakself syncMain];
     }];
     
-    LMJWordItem *item5 = [LMJWordItem itemWithTitle:@"主队列 + 异步执行" subTitle:nil];
+    LMJWordItem *item5 = [LMJWordItem itemWithTitle:@"主队列 + 异步函数" subTitle:nil];
     [item5 setItemOperation:^(NSIndexPath *indexPath) {
         [weakself asyncMain];
     }];
     
-    LMJWordItem *item6 = [LMJWordItem itemWithTitle:@"全局队列+ 异步执行" subTitle:nil];
+    LMJWordItem *item6 = [LMJWordItem itemWithTitle:@"全局队列+ 异步函数" subTitle:nil];
     [item6 setItemOperation:^(NSIndexPath *indexPath) {
         [weakself asyncGloba];
     }];
@@ -196,16 +196,12 @@ int count = 0;
  
  我理解就是类似遍历一个数组一样,当提交到一个并发的队列上的时候,这个遍历是并发运行的,速度很快.
  
- 作者：机器人小雪
- 链接：https://www.jianshu.com/p/0243f317d79e
- 來源：简书
- 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
 - (void)apply
 {
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
-    dispatch_apply(100, queue, ^(size_t index) {
+    dispatch_apply(100000, queue, ^(size_t index) {
         
         NSLog(@"%zd---%@", index, [NSThread currentThread]);
     });

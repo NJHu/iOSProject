@@ -29,7 +29,7 @@
 #import "LMJAlertViewsViewController.h"
 #import "LMJFillTableFormViewController.h"
 //#import "LMJFaceRecognizeViewController.h"
-#import "LMJTableSDWebImageViewController.h"
+#import "LMJWebImagesCacheViewController.h"
 #import "LMJDragTableViewController.h"
 #import "LMJCalendarViewController.h"
 #import "LMJNavBarFadeViewController.h"
@@ -162,9 +162,9 @@
 //    LMJWordArrowItem *item23 = [LMJWordArrowItem itemWithTitle:@"人脸识别" subTitle: nil];
 //    item23.destVc = [LMJFaceRecognizeViewController class];
 
-    LMJWordArrowItem *item24 = [LMJWordArrowItem itemWithTitle:@"列表加载图片" subTitle: @"SDWebImage"];
+    LMJWordArrowItem *item24 = [LMJWordArrowItem itemWithTitle:@"列表加载图片s" subTitle: @"模仿sdwebImage"];
 
-    item24.destVc = [LMJTableSDWebImageViewController class];
+    item24.destVc = [LMJWebImagesCacheViewController class];
 
     LMJWordArrowItem *item25 = [LMJWordArrowItem itemWithTitle:@"列表拖拽" subTitle: @""];
 

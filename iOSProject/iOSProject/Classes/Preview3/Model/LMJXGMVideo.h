@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface LMJXGMVideo : NSObject
-
-//
 //id: 2,
 //image: "resources/images/minion_02.png",
 //length: 12,

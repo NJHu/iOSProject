@@ -21,7 +21,7 @@
     
     LMJWeak(self);
     
-    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"一：NSInvocationOperation子类+主队列" subTitle:@"主线程中执行"];
+    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"一：NSInvocationOperation子类+主队列 (主线程中执行)" subTitle:@""];
     [item0 setItemOperation:^(NSIndexPath *indexPath) {
         [weakself addOperationFormInvocation];
     }];
@@ -46,33 +46,25 @@
         [weakself addMaxConcurrentOperation];
     }];
     
-    LMJWordItem *item5 = [LMJWordItem itemWithTitle:@"七：操作依赖" subTitle:nil];
+    LMJWordItem *item5 = [LMJWordItem itemWithTitle:@"七：操作依赖(addDependency)" subTitle:nil];
     [item5 setItemOperation:^(NSIndexPath *indexPath) {
         [weakself addDependency];
     }];
     
+    LMJWordItem *item6 = [LMJWordItem itemWithTitle:@"八：queue addOperationWithBlock" subTitle:nil];
+    [item6 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself addOperationWithBlock];
+    }];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5] andHeaderTitle:@"" footerTitle:nil];
+    LMJWordItem *item7 = [LMJWordItem itemWithTitle:@"九：线程间通讯" subTitle:nil];
+    [item7 setItemOperation:^(NSIndexPath *indexPath) {
+        [weakself commit];
+    }];
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3, item4, item5, item6, item7] andHeaderTitle:@"" footerTitle:nil];
     [section0.items makeObjectsPerformSelector:@selector(setTitleFont:) withObject:[UIFont systemFontOfSize:12]];
     
     [self.sections addObject:section0];
-    
-    
-//    //一：NSInvocationOperation子类+主队列
-//    [self addOperationFormInvocation];
-//    //二：NSInvocationOperation子类+非主队列  (新开线程中执行)
-//    [self addAsnysOperationFormInvocation];
-//    //三：使用子类- NSBlockOperation 主线程执行
-//    [self addOperationFormBlock];
-//    //四：使用子类- NSBlockOperation 子线程执行 加入非主队列
-//    [self addAsnysOperationFormBlock];
-//    //五：maxConcurrentOperationCount设置 并发或串行
-//    [self addMaxConcurrentOperation];
-//    //六：定义继承自NSOperation的子类
-//    [self addChildNSOperation];
-//    //七：操作依赖
-//    [self addDependency];
-    
 }
 
 
@@ -127,8 +119,6 @@
 //三：使用子类- NSBlockOperation 主线程和子线程执行
 -(void)addOperationFormBlock
 {
-    //NSOperationQueue *queue = [NSOperationQueue mainQueue];  //主队列 主线程  //[queue addOperation:op];进行加入动作  //不用写[op start];便可执行
-    
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         // 在主线程
         NSLog(@"NSBlockOperation当前的线程：%@", [NSThread currentThread]);
@@ -147,7 +137,6 @@
     }];
     
     [op start];
-    
     
     //输出
     //    NSBlockOperation当前的线程：<NSThread: 0x600000261800>{number = 1, name = main}
@@ -278,8 +267,105 @@
     //输出
     //    addDependency2当前线程<NSThread: 0x60000027c200>{number = 12, name = (null)}
     //    addDependency1当前线程<NSThread: 0x608000262900>{number = 9, name = (null)}
-    
+}
 
+- (void)addOperationWithBlock
+{
+    // 创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+//     设置最大并发操作数
+//   == 1 就变成了串行队列
+        queue.maxConcurrentOperationCount = 3;
+    
+        // 添加操作
+        [queue addOperationWithBlock:^{
+            for (NSInteger i = 0; i<1000; i++) {
+                NSLog(@"download1 -%zd-- %@", i, [NSThread currentThread]);
+            }
+        }];
+        [queue addOperationWithBlock:^{
+            for (NSInteger i = 0; i<1000; i++) {
+                NSLog(@"download2 --- %@", [NSThread currentThread]);
+            }
+        }];
+        [queue addOperationWithBlock:^{
+            for (NSInteger i = 0; i<1000; i++) {
+                NSLog(@"download3 --- %@", [NSThread currentThread]);
+            }
+        }];
+}
+
+- (void)commit
+{
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    __block UIImage *image1 = nil;
+    // 下载图片1
+    NSBlockOperation *download1 = [NSBlockOperation blockOperationWithBlock:^{
+        
+        // 图片的网络路径
+        NSURL *url = [NSURL URLWithString:@"http://img.pconline.com.cn/images/photoblog/9/9/8/1/9981681/200910/11/1255259355826.jpg"];
+        
+        // 加载图片
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        // 生成图片
+        image1 = [UIImage imageWithData:data];
+    }];
+    
+    __block UIImage *image2 = nil;
+    // 下载图片2
+    NSBlockOperation *download2 = [NSBlockOperation blockOperationWithBlock:^{
+        
+        // 图片的网络路径
+        NSURL *url = [NSURL URLWithString:@"http://pic38.nipic.com/20140228/5571398_215900721128_2.jpg"];
+        
+        
+        // 加载图片
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        // 生成图片
+        image2 = [UIImage imageWithData:data];
+    }];
+    
+    // 合成图片
+    NSBlockOperation *combine = [NSBlockOperation blockOperationWithBlock:^{
+        // 开启新的图形上下文
+        UIGraphicsBeginImageContext(CGSizeMake(100, 100));
+        
+        // 绘制图片
+        [image1 drawInRect:CGRectMake(0, 0, 50, 100)];
+        image1 = nil;
+        
+        [image2 drawInRect:CGRectMake(50, 0, 50, 100)];
+        image2 = nil;
+        
+        // 取得上下文中的图片
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        // 结束上下文
+        UIGraphicsEndImageContext();
+        
+        // 回到主线程
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            // 4.将新图片显示出来
+            UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
+            imageV.frame = CGRectMake(100, 100, 200, 200);
+            [self.view addSubview:imageV];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [imageV removeFromSuperview];
+            });
+        }];
+    }];
+    [combine addDependency:download1];
+    [combine addDependency:download2];
+    
+    [queue addOperation:download1];
+    [queue addOperation:download2];
+    [queue addOperation:combine];
+    
 }
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource

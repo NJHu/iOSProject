@@ -19,6 +19,7 @@
 #import "LMJDynamicViewController.h"
 #import "LMJCoreAnimationViewController.h"
 #import "LMJDrawRectViewController.h"
+#import "LMJWebImagesCacheViewController.h"
 
 @interface LMJHomeViewController ()
 
@@ -40,10 +41,10 @@
     LMJWordArrowItem *item04 = [LMJWordArrowItem itemWithTitle:@"Block 内存释放" subTitle: nil];
     item04.destVc = [LMJBlockLoopViewController class];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item00, item04] andHeaderTitle:@"生命周期, Block" footerTitle:nil];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item00, item04] andHeaderTitle:@"生命周期, block" footerTitle:nil];
     
 
-    LMJWordArrowItem *item10 = [LMJWordArrowItem itemWithTitle:@"NSThread 多线程" subTitle: nil];
+    LMJWordArrowItem *item10 = [LMJWordArrowItem itemWithTitle:@"Thread 多线程" subTitle: nil];
     item10.destVc = [LMJNSThreadViewController class];
     
     LMJWordArrowItem *item11 = [LMJWordArrowItem itemWithTitle:@"GCD 多线程" subTitle: nil];
@@ -52,13 +53,14 @@
     LMJWordArrowItem *item12 = [LMJWordArrowItem itemWithTitle:@"NSOperation 多线程" subTitle: nil];
     item12.destVc = [LMJNSOperationViewController class];
     
-    LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"同步锁知识" subTitle: nil];
+    LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"同步锁知识" subTitle: @"NSLock @synchronized"];
     item13.destVc = [LMJLockViewController class];
     
-    LMJItemSection *section1 = [LMJItemSection sectionWithItems:@[item10, item11, item12, item13] andHeaderTitle:@"NSThread, GCD, NSOperation, NSLock" footerTitle:nil];
+    LMJWordArrowItem *item131 = [LMJWordArrowItem itemWithTitle:@"列表图片s下载缓存" subTitle:@"SDWebImage列表图片模仿"];
+    item131.destVc = [LMJWebImagesCacheViewController class];
+    
+    LMJItemSection *section1 = [LMJItemSection sectionWithItems:@[item10, item11, item12, item13, item131] andHeaderTitle:@"多线程, 同步锁, 列表加载图片" footerTitle:nil];
 
-    
-    
     LMJWordArrowItem *item20 = [LMJWordArrowItem itemWithTitle:@"物理仿真" subTitle: @"UIDynamic"];
     
     item20.destVc = [LMJDynamicViewController class];
@@ -70,7 +72,7 @@
     
     item22.destVc = [LMJDrawRectViewController class];
     
-    LMJItemSection *section2 = [LMJItemSection sectionWithItems:@[item22, item21, item20] andHeaderTitle:@"绘图 Quartz2D, 核心动画, 物理仿真" footerTitle:nil];
+    LMJItemSection *section2 = [LMJItemSection sectionWithItems:@[item22, item21, item20] andHeaderTitle:@"绘图Quartz2D, 核心动画, 物理仿真" footerTitle:nil];
     
 
     
@@ -82,7 +84,7 @@
     
     item14.destVc = [LMJRunLoopViewController class];
     
-    LMJItemSection *section3 = [LMJItemSection sectionWithItems:@[item01, item14] andHeaderTitle:@"RunTime, RunLoop" footerTitle:nil];
+    LMJItemSection *section3 = [LMJItemSection sectionWithItems:@[item01, item14] andHeaderTitle:@"运行时RunTime, 运行循环RunLoop" footerTitle:nil];
     
     
     [self.sections addObjectsFromArray:@[section2, section1, section3, section0]];
