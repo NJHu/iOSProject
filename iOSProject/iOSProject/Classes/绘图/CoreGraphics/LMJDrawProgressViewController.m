@@ -21,17 +21,10 @@
 
 
 - (IBAction)progressChange:(UISlider *)sender {
-    
-    
     // %% = %
-    _labelView.text = [NSString stringWithFormat:@"%.2f%%",sender.value * 100];
-    
+    _labelView.text = [NSString stringWithFormat:@"%.2f%%", sender.value * 100];
     // 给progressView赋值
     _progressView.progress = sender.value;
-    
-    // 获取滑块值
-    //    NSLog(@"%f",sender.value);
-    
 }
 @end
 
@@ -41,11 +34,7 @@
 - (void)setProgress:(CGFloat)progress
 {
     _progress = progress;
-    
-    
     // 重新绘制圆弧
-    //    [self drawRect:self.bounds];
-    
     // 重绘，系统会先创建与view相关联的上下文，然后再调用drawRect
     [self setNeedsDisplay];
 }
@@ -55,20 +44,23 @@
 
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    
+    [super drawRect:rect];
     // 创建贝瑟尔路径
     CGFloat radius = rect.size.width * 0.5;
     CGPoint center = CGPointMake(radius, radius);
     
-    
     CGFloat endA = -M_PI_2 + _progress * M_PI * 2;
     
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius - 2 startAngle:-M_PI_2 endAngle:endA clockwise:YES];
+    UIBezierPath *path0 = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+    path0.lineWidth = 5;
+    [[UIColor greenColor] setStroke];
+    [path0 stroke];
     
     
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius - 1 startAngle:-M_PI_2 endAngle:endA clockwise:YES];
+    path.lineWidth = 2;
+    [[UIColor redColor] setStroke];
     [path stroke];
-    
-    
 }
 
 

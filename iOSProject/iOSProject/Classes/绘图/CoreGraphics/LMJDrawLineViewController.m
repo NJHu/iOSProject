@@ -20,19 +20,19 @@
     self.redView.drawTypeType = 5;
     [self redView];
     LMJWeak(self);
-    self.addItem([LMJWordItem itemWithTitle:@"最原始的绘图方式" subTitle:@"drawLine" itemOperation:^(NSIndexPath *indexPath) {
+    self.addItem([LMJWordItem itemWithTitle:@"最原始的绘图方式" subTitle:@"CGMutablePathRef" itemOperation:^(NSIndexPath *indexPath) {
         weakself.redView.drawTypeType = indexPath.row;
         [weakself.redView setNeedsDisplay];
     }])
-    .addItem([LMJWordItem itemWithTitle:@"绘图第二种方式" subTitle:@"drawLine2" itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordItem itemWithTitle:@"绘图第二种方式" subTitle:@"CGContextMoveToPoint" itemOperation:^(NSIndexPath *indexPath) {
         weakself.redView.drawTypeType = indexPath.row;
         [weakself.redView setNeedsDisplay];
     }])
-    .addItem([LMJWordItem itemWithTitle:@"绘图第三种方式" subTitle:@"drawLine2" itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordItem itemWithTitle:@"绘图第三种方式" subTitle:@"UIBezierPath" itemOperation:^(NSIndexPath *indexPath) {
         weakself.redView.drawTypeType = indexPath.row;
         [weakself.redView setNeedsDisplay];
     }])
-    .addItem([LMJWordItem itemWithTitle:@"设置属性Ctx" subTitle:@"drawCtxState" itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordItem itemWithTitle:@"设置属性Ctx" subTitle:@"CGContextSet..." itemOperation:^(NSIndexPath *indexPath) {
         weakself.redView.drawTypeType = indexPath.row;
         [weakself.redView setNeedsDisplay];
     }])
@@ -40,15 +40,15 @@
         weakself.redView.drawTypeType = indexPath.row;
         [weakself.redView setNeedsDisplay];
     }])
-    .addItem([LMJWordItem itemWithTitle:@"弧线" subTitle:@"drawCornerLine" itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordItem itemWithTitle:@"弧线" subTitle:@"CGContextAddQuadCurveToPoint" itemOperation:^(NSIndexPath *indexPath) {
         weakself.redView.drawTypeType = indexPath.row;
         [weakself.redView setNeedsDisplay];
     }])
-    .addItem([LMJWordItem itemWithTitle:@"扇形或者圆形" subTitle:@"drawCircle" itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordItem itemWithTitle:@"扇形或者圆形" subTitle:@"bezierPathWithArcCenter" itemOperation:^(NSIndexPath *indexPath) {
         weakself.redView.drawTypeType = indexPath.row;
         [weakself.redView setNeedsDisplay];
     }])
-    .addItem([LMJWordItem itemWithTitle:@"圆角矩形" subTitle:@"radiousRect" itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordItem itemWithTitle:@"圆角矩形" subTitle:@"bezierPathWithRoundedRect" itemOperation:^(NSIndexPath *indexPath) {
         weakself.redView.drawTypeType = indexPath.row;
         [weakself.redView setNeedsDisplay];
     }]);
@@ -58,7 +58,7 @@
 {
     if(!_redView)
     {
-        LineView *redView = [[LineView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth)];
+        LineView *redView = [[LineView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 230)];
         self.tableView.tableHeaderView = redView;
         _redView = redView;
         redView.backgroundColor = [UIColor whiteColor];
@@ -101,7 +101,7 @@
 // 注意：rect是当前控件的bounds
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    
+    [super drawRect:rect];
     switch (self.drawTypeType) {
         case 0:
             [self drawLine];
@@ -135,8 +135,9 @@
 {
     // 圆角矩形
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(20, 20, 350, 200) cornerRadius:30];
-    [[UIColor redColor] set];
-    [path fill];
+    path.lineWidth = 10;
+    [[UIColor redColor] setStroke];
+    [path stroke];
 }
 
 - (void)drawCircle
@@ -145,30 +146,29 @@
     // Center：圆心
     // startAngle:弧度
     // clockwise:YES:顺时针 NO：逆时针
-    
     // 扇形
-    CGPoint center = CGPointMake(125, 125);
+    CGPoint center = CGPointMake(120, 120);
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:100 startAngle:0 endAngle:M_PI_2 clockwise:YES];
     
     // 添加一根线到圆心
     [path addLineToPoint:center];
     
     // 封闭路径，关闭路径：从路径的终点到起点
-    //    [path closePath];
+    [path closePath];
     
+    path.lineWidth = 3;
+    [[UIColor redColor] set];
+    [path stroke];
     
-    //    [path stroke];
-    
+    [[UIColor greenColor] setFill];
     // 填充：必须是一个完整的封闭路径,默认就会自动关闭路径
     [path fill];
-    
 }
 
 
+// 如何绘制曲线
 - (void)drawCornerLine
 {
-    // 如何绘制曲线
-    
     // 原生绘制方法
     
     // 获取上下文
@@ -179,12 +179,13 @@
     CGContextMoveToPoint(ctx, 50, 150);
     
     // cpx:控制点的x
+//    CG_EXTERN void CGContextAddQuadCurveToPoint(CGContextRef cg_nullable c,
+//                                                CGFloat cpx, CGFloat cpy, CGFloat x, CGFloat y)
     CGContextAddQuadCurveToPoint(ctx, 150, 80, 250, 150);
     
     
     // 渲染上下文
     CGContextStrokePath(ctx);
-    
 }
 
 - (void)drawUIBezierPathState
@@ -195,32 +196,33 @@
     
     [path addLineToPoint:CGPointMake(200, 200)];
     
-    
+    // 设置状态
     path.lineWidth = 10;
     [[UIColor redColor] set];
-    
+    // 绘制
     [path stroke];
     
     UIBezierPath *path1 = [UIBezierPath bezierPath];
-    
-    [path1 moveToPoint:CGPointMake(0, 0)];
-    
-    [path1 addLineToPoint:CGPointMake(30, 60)];
+    [path1 moveToPoint:CGPointMake(100, 50)];
+    [path1 addLineToPoint:CGPointMake(200, 100)];
+    // 设置状态
+    path1.lineWidth = 3;
     [[UIColor greenColor] set];
     
-    path1.lineWidth = 3;
+    path1.lineJoinStyle = kCGLineJoinBevel;
     
     [path1 stroke];
 }
 
 
+#pragma mark - CGContextSet...
 - (void)drawCtxState
 {
     // 获取上下文
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     // 描述路径
-    //起点
+    // 添加到上下文
     CGContextMoveToPoint(ctx, 50, 50);
     
     CGContextAddLineToPoint(ctx, 100, 50);
@@ -244,19 +246,14 @@
     // 设置顶角样式
     CGContextSetLineCap(ctx, kCGLineCapRound);
     
-    
     // 渲染上下文
     CGContextStrokePath(ctx);
 }
-
-
-#pragma mark - 绘图的几种方式
 
 #pragma mark - 绘图第三种方式
 - (void)drawLine2
 {
     // UIKit已经封装了一些绘图的功能
-    
     // 贝瑟尔路径
     // 创建路径
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -269,9 +266,6 @@
     
     // 绘制路径
     [path stroke];
-    
-    //    NSLog(@"%@",NSStringFromCGRect(rect));
-    
 }
 
 
@@ -282,14 +276,13 @@
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     // 描述路径
-    // 设置起点
+    // 添加到上下文
     CGContextMoveToPoint(ctx, 100, 50);
     
     CGContextAddLineToPoint(ctx, 200, 200);
     
     // 渲染上下文
     CGContextStrokePath(ctx);
-    
 }
 
 #pragma mark - 最原始的绘图方式
@@ -316,14 +309,5 @@
     
     // 4.渲染上下文
     CGContextStrokePath(ctx);
-    
 }
-
-// 加载完xib的时候调用
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-}
-
-
 @end

@@ -78,17 +78,12 @@
 
 }
 
-
-
-
-
 #pragma mark - LMJNavUIBaseViewControllerDataSource
 
 /** 导航条左边的按钮 */
 - (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
 {
     [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
-    
     return [UIImage imageNamed:@"NavgationBar_blue_back"];
 }
 

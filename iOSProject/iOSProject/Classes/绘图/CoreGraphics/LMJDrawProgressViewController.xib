@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,29 +21,42 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4F-ev-QJm" customClass="ProgressView">
-                    <rect key="frame" x="91" y="162" width="100" height="100"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4F-ev-QJm" customClass="ProgressView">
+                    <rect key="frame" x="127.5" y="100" width="120" height="120"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3X-u6-KHI">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3X-u6-KHI">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="N3X-u6-KHI" secondAttribute="bottom" id="AoY-xP-x9j"/>
+                        <constraint firstAttribute="width" constant="120" id="GJ0-vd-AT8"/>
+                        <constraint firstItem="N3X-u6-KHI" firstAttribute="top" secondItem="y4F-ev-QJm" secondAttribute="top" id="lcr-uP-jgh"/>
+                        <constraint firstAttribute="height" constant="120" id="qsc-j4-gTR"/>
+                        <constraint firstItem="N3X-u6-KHI" firstAttribute="leading" secondItem="y4F-ev-QJm" secondAttribute="leading" id="ukj-kM-GZ4"/>
+                        <constraint firstAttribute="trailing" secondItem="N3X-u6-KHI" secondAttribute="trailing" id="w8K-nQ-Cv0"/>
+                    </constraints>
                 </view>
-                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="p8U-5L-NH4">
-                    <rect key="frame" x="22" y="353" width="278" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="p8U-5L-NH4">
+                    <rect key="frame" x="48" y="270" width="279" height="31"/>
                     <connections>
                         <action selector="progressChange:" destination="-1" eventType="valueChanged" id="acb-Yl-rHB"/>
                     </connections>
                 </slider>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="p8U-5L-NH4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="1k1-1D-Pmj"/>
+                <constraint firstItem="p8U-5L-NH4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2Yd-ll-qqx"/>
+                <constraint firstItem="y4F-ev-QJm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Br0-mn-5wS"/>
+                <constraint firstItem="p8U-5L-NH4" firstAttribute="top" secondItem="y4F-ev-QJm" secondAttribute="bottom" constant="50" id="HDx-mg-iPG"/>
+                <constraint firstItem="y4F-ev-QJm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="R7X-15-69o"/>
+                <constraint firstAttribute="trailing" secondItem="p8U-5L-NH4" secondAttribute="trailing" constant="50" id="goX-Nf-sfk"/>
+            </constraints>
         </view>
     </objects>
 </document>

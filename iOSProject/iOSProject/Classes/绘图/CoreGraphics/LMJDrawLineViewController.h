@@ -14,6 +14,6 @@
 
 
 @interface LineView : UIView
-/** <#digest#> */
+
 @property (nonatomic, assign) NSInteger drawTypeType;
 @end
