@@ -8,15 +8,10 @@
 
 #import "LMJShangXiaWenZhanViewController.h"
 
-@interface LMJShangXiaWenZhanViewController ()
-
-@end
-
 @implementation LMJShangXiaWenZhanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self redView];
 }
 
@@ -25,9 +20,7 @@
     return [ShangXiaWenView class];
 }
 
-
 @end
-
 
 
 @implementation ShangXiaWenView
@@ -54,22 +47,15 @@
     // 保存一份上下文的状态
     CGContextSaveGState(ctx);
     
-    
-    
     // 设置上下文状态
     CGContextSetLineWidth(ctx, 10);
-    
     [[UIColor redColor] set];
     
     // 渲染上下文
     CGContextStrokePath(ctx);
     
     // 第二根
-    
-    
-    
     // 2.描述路径
-    
     path = [UIBezierPath bezierPath];
     
     [path moveToPoint:CGPointMake(125, 10)];
@@ -82,14 +68,9 @@
     
     // 还原状态
     CGContextRestoreGState(ctx);
-    //    // 设置上下文状态
-    //    CGContextSetLineWidth(ctx, 1);
-    //
-    //    [[UIColor blackColor] set];
     
     // 渲染上下文
     CGContextStrokePath(ctx);
-    
 }
 
 

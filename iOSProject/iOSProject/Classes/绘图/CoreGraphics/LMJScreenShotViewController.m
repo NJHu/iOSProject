@@ -19,7 +19,6 @@
     
     
     // 生成一张新的图片
-    
     UIImage *image =  [LMJScreenShotViewController imageWithCaputureView:[UIApplication sharedApplication].delegate.window];
     
     UIImageView *imv = [[UIImageView alloc] initWithImage:image];
@@ -28,10 +27,8 @@
     
     // image转data
     // compressionQuality： 图片质量 1:最高质量
-    
-    NSData *data = UIImageJPEGRepresentation(image,1);
-    
-    [data writeToFile:@"/Users/huxupeng/Desktop/view.png" atomically:YES];
+//    NSData *data = UIImageJPEGRepresentation(image,1);
+//    [data writeToFile:@"/Users/huxupeng/Desktop/view.png" atomically:YES];
 }
 
 + (UIImage *)imageWithCaputureView:(UIView *)view

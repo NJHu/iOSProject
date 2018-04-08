@@ -13,7 +13,7 @@
 @property (nonatomic, assign) CGPoint startP;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
-@property (nonatomic, weak) UIView *clipView;
+@property (nonatomic, strong) UIView *clipView;
 
 @end
 
@@ -25,7 +25,6 @@
     
     // 给控制器的view添加一个pan手势
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-    
     [self.imageV addGestureRecognizer:pan];
 }
 
@@ -33,13 +32,10 @@
     if (_clipView == nil) {
         UIView *view = [[UIView alloc] init];
         _clipView = view;
-        
         view.backgroundColor = [UIColor blackColor];
         view.alpha = 0.5;
-        
         [self.imageV addSubview:view];
     }
-    
     return _clipView;
 }
 
@@ -62,56 +58,37 @@
         // 获取截取范围
         CGRect clipRect = CGRectMake(_startP.x, _startP.y, w, h);
         
-        
         // 生成截屏的view
         self.clipView.frame = clipRect;
-        
-        
-        
-    }else if (pan.state == UIGestureRecognizerStateEnded){
-        
-        
 
-        
+    }else if (pan.state == UIGestureRecognizerStateEnded){
+        if (CGRectEqualToRect(_clipView.frame, CGRectZero)) {
+            return;
+        }
         // 图片裁剪，生成一张新的图片
-        
         // 开启上下文
         // 如果不透明，默认超出裁剪区域会变成黑色，通常都是透明
         UIGraphicsBeginImageContextWithOptions(_imageV.bounds.size, NO, 0);
         
         // 设置裁剪区域
         UIBezierPath *path =  [UIBezierPath bezierPathWithRect:_clipView.frame];
-        
         [path addClip];
         
-        // 先移除
-        [_clipView removeFromSuperview];
-        // 截取的view设置为nil
-        _clipView = nil;
+        // 截取的view设置为0
+        _clipView.frame = CGRectZero;
         
         // 获取上下文
         CGContextRef ctx = UIGraphicsGetCurrentContext();
         
-        
         // 把控件上的内容渲染到上下文
         [_imageV.layer renderInContext:ctx];
         
-        
         // 生成一张新的图片
         _imageV.image = UIGraphicsGetImageFromCurrentImageContext();
-        
-        
+
         // 关闭上下文
         UIGraphicsEndImageContext();
-        
-        
-
-        
     }
-    
-    
-    // 获取手指的偏移量
-    //    pan translationInView:<#(UIView *)#>
 }
 
 - (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar {

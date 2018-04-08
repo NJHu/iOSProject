@@ -16,18 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.redView.backgroundColor = [UIColor yellowColor];
-    
     self.redView.lmj_height = self.redView.lmj_width;
     
     // 0.加载图片
     UIImage *image = [UIImage imageNamed:@"卡哇伊.jpg"];
     
-    
    self.redView.layer.contents = (__bridge id _Nullable)([LMJClipImageViewController imageWithClipImage:image borderWidth:3 borderColor:[UIColor RandomColor]].CGImage);
-    
-    
 }
 
 - (void)clipImage
@@ -74,9 +69,7 @@
     
     // 2.画大圆
     UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, ovalWH, ovalWH)];
-    
     [color set];
-    
     [path fill];
     
     // 3.设置裁剪区域
@@ -93,7 +86,6 @@
     UIGraphicsEndImageContext();
     
     return clipImage;
-    
 }
 
 @end

@@ -16,9 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-    
     [self.view addGestureRecognizer:pan];
 }
 
@@ -36,7 +34,6 @@
     
     // 开启上下文
     UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);
-    
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     // 控件的layer渲染上去
@@ -47,13 +44,10 @@
     
     // 生成一张图片
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
     _imageView.image = image;
     
     // 关闭上下文
     UIGraphicsEndImageContext();
-    
-    
 }
 
 - (UIColor *)lmjNavigationBackgroundColor:(LMJNavigationBar *)navigationBar

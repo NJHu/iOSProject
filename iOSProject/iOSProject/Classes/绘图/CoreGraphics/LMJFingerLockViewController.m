@@ -16,14 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor blackColor];
-    
     self.redView.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.4];
-    
     self.redView.lmj_height = self.redView.lmj_width;
 }
-
 
 - (Class)drawViewClass
 {
@@ -35,10 +31,11 @@
 
 
 @interface LMJLockView ()
-/** <#digest#> */
-@property (nonatomic, strong) NSMutableArray *selectedBtns;
+
+@property (nonatomic, strong) NSMutableArray<UIButton *> *selectedBtns;
 
 @property (assign, nonatomic) CGPoint curP;
+
 @end
 
 @implementation LMJLockView
@@ -46,8 +43,9 @@
 - (void)pan:(UIPanGestureRecognizer *)sender
 {
     self.curP = [sender locationInView:self];
+    NSArray<UIButton *> *btns = self.subviews;
     
-    for (UIButton *btn in self.subviews) {
+    for (UIButton *btn in btns) {
         if(CGRectContainsPoint(btn.frame, self.curP) && !btn.isSelected)
         {
             btn.selected = YES;
@@ -95,7 +93,6 @@
     
     [bezier addLineToPoint:self.curP];
     
-    
     [[UIColor greenColor] set];
     bezier.lineCapStyle = kCGLineCapRound;
     bezier.lineJoinStyle = kCGLineJoinRound;
@@ -107,9 +104,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-     
         [self setupOnce];
-        
     }
     return self;
 }
@@ -117,7 +112,6 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    
     [self setupOnce];
 }
 
@@ -126,7 +120,6 @@
     // 添加手势
     UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [self addGestureRecognizer:panGR];
-    
     
     NSUInteger count = 9;
     
@@ -138,7 +131,6 @@
         [btn setImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
         [self addSubview:btn];
     }
-    
 }
 
 - (void)layoutSubviews
@@ -146,21 +138,18 @@
     [super layoutSubviews];
     
     UIImage *image = [UIImage imageNamed:@"gesture_node_normal"];
-    
     NSUInteger cols = 3;
-    
     CGFloat x = 0;
     CGFloat y = 0;
     CGFloat w = image.size.width;
     CGFloat h = image.size.height;
-    CGFloat margin = (self.frame.size.width - cols * w)/ (cols + 1);
+    CGFloat margin = (self.frame.size.width - cols * w) / (cols + 1);
     
-    for (NSUInteger i = 0; i < self.subviews.count; i++) {
-        
+    NSArray<UIButton *> *btns = self.subviews;
+    for (NSUInteger i = 0; i < btns.count; i++) {
         x = margin + (i % cols) * (w + margin);
         y = margin + (i / cols) * (h + margin);
-        
-        self.subviews[i].frame = CGRectMake(x, y, w, h);
+        btns[i].frame = CGRectMake(x, y, w, h);
     }
 }
 - (NSMutableArray *)selectedBtns
