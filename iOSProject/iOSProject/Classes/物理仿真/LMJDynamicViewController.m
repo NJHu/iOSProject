@@ -10,9 +10,7 @@
 #import "WPFDemoController.h"
 
 @interface LMJDynamicViewController ()
-{
-    NSArray *_dynamicArr;
-}
+
 @end
 
 @implementation LMJDynamicViewController
@@ -20,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     LMJWeak(self);
-    _dynamicArr = @[@"吸附行为", @"推动行为", @"刚性附着行为", @"弹性附着行为", @"碰撞检测"];
+    NSArray *dynamicArr = @[@"吸附行为", @"推动行为", @"刚性附着行为", @"弹性附着行为", @"碰撞检测"];
     
     [self addDes];
     
@@ -29,7 +27,7 @@
         WPFDemoController *demoVc = [[WPFDemoController alloc] init];
         
         // 2. 设置标题
-        demoVc.title = _dynamicArr[indexPath.row];
+        demoVc.title = dynamicArr[indexPath.row];
         
         // 3. 传递功能类型
         demoVc.function = (int)indexPath.row;
@@ -43,7 +41,7 @@
         WPFDemoController *demoVc = [[WPFDemoController alloc] init];
         
         // 2. 设置标题
-        demoVc.title = _dynamicArr[indexPath.row];
+        demoVc.title = dynamicArr[indexPath.row];
         
         // 3. 传递功能类型
         demoVc.function = (int)indexPath.row;
@@ -57,7 +55,7 @@
         WPFDemoController *demoVc = [[WPFDemoController alloc] init];
         
         // 2. 设置标题
-        demoVc.title = _dynamicArr[indexPath.row];
+        demoVc.title = dynamicArr[indexPath.row];
         
         // 3. 传递功能类型
         demoVc.function = (int)indexPath.row;
@@ -71,7 +69,7 @@
         WPFDemoController *demoVc = [[WPFDemoController alloc] init];
         
         // 2. 设置标题
-        demoVc.title = _dynamicArr[indexPath.row];
+        demoVc.title = dynamicArr[indexPath.row];
         
         // 3. 传递功能类型
         demoVc.function = (int)indexPath.row;
@@ -85,7 +83,7 @@
         WPFDemoController *demoVc = [[WPFDemoController alloc] init];
         
         // 2. 设置标题
-        demoVc.title = _dynamicArr[indexPath.row];
+        demoVc.title = dynamicArr[indexPath.row];
         
         // 3. 传递功能类型
         demoVc.function = (int)indexPath.row;
