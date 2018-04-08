@@ -66,7 +66,7 @@
     LMJWordArrowItem *item12 = [LMJWordArrowItem itemWithTitle:@"图片擦除" subTitle:nil];
     item12.destVc = NSClassFromString(@"LMJDotRemoveViewController");
     
-    LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"绘图" subTitle:nil];
+    LMJWordArrowItem *item13 = [LMJWordArrowItem itemWithTitle:@"绘图" subTitle:@"所有的UIGestureRecognizers 用法"];
     item13.destVc = NSClassFromString(@"LMJDrawBoardViewController");
     
     LMJWordArrowItem *item14 = [LMJWordArrowItem itemWithTitle:@"九宫格解锁" subTitle:nil];

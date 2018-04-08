@@ -9,7 +9,6 @@
 #import "LMJHandleView.h"
 
 @interface LMJHandleView ()<UIGestureRecognizerDelegate>
-/** <#digest#> */
 @property (weak, nonatomic) UIImageView *imageView;
 @end
 
@@ -19,7 +18,7 @@
 {
     if(_imageView == nil)
     {
-//        self.backgroundColor = [UIColor purpleColor];
+        //        self.backgroundColor = [UIColor purpleColor];
         self.clipsToBounds = YES;
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
         imageView.userInteractionEnabled = YES;
@@ -33,7 +32,8 @@
 
 - (void)addgesturesForView:(UIView *)view
 {
-    UIPanGestureRecognizer *stopSuperViewPanGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(stopSuperViewPan:)];
+    // 当添加照片的时候, 不让后边绘制啦, 占位
+    UIPanGestureRecognizer *stopSuperViewPanGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action: nil];
     [self addGestureRecognizer:stopSuperViewPanGR];
     
     
@@ -44,17 +44,19 @@
     
     [view addGestureRecognizer:panGR];
     [view addGestureRecognizer:longPressGR];
+    
     [view addGestureRecognizer:pinchGR];
     pinchGR.delegate = self;
     [view addGestureRecognizer:rotationGR];
     rotationGR.delegate = self;
+    
 }
 - (void)pan:(UIPanGestureRecognizer *)panGR
 {
     CGPoint transP = [panGR translationInView:self.imageView];
     
     self.imageView.transform = CGAffineTransformTranslate(self.imageView.transform, transP.x, transP.y);
-    
+    // 恢复
     [panGR setTranslation:CGPointZero inView:self.imageView];
 }
 
@@ -97,12 +99,14 @@
 - (void)pinch:(UIPinchGestureRecognizer *)pinchGR
 {
     self.imageView.transform = CGAffineTransformScale(self.imageView.transform, pinchGR.scale, pinchGR.scale);
+    // 恢复
     pinchGR.scale = 1;
 }
 
 - (void)rotate:(UIRotationGestureRecognizer *)rotateGR
 {
     self.imageView.transform = CGAffineTransformRotate(self.imageView.transform, rotateGR.rotation);
+    // 恢复
     rotateGR.rotation = 0;
 }
 
@@ -117,8 +121,4 @@
     return YES;
 }
 
-- (void)stopSuperViewPan:(UIPanGestureRecognizer *)panGR
-{
-    
-}
 @end

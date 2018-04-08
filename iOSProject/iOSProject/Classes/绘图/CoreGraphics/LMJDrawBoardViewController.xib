@@ -114,17 +114,27 @@
                     <rect key="frame" x="0.0" y="132" width="375" height="421"/>
                     <color key="backgroundColor" red="0.2417735406" green="1" blue="0.95524575050000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="照片手势: 旋转, 平移, 缩放, 长按图片渲染绘制" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oul-MM-BSe">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.46247023599999998" green="1" blue="0.26705223810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="lRZ-LE-czf" firstAttribute="top" secondItem="U3R-Jg-AWN" secondAttribute="bottom" id="0Os-D0-uRv"/>
+                <constraint firstItem="oul-MM-BSe" firstAttribute="top" secondItem="5bh-IH-EeH" secondAttribute="bottom" id="2od-qF-1mo"/>
                 <constraint firstItem="lRZ-LE-czf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7C6-Gj-sQL"/>
                 <constraint firstItem="U3R-Jg-AWN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="B3N-Yb-YcP"/>
                 <constraint firstAttribute="trailing" secondItem="U3R-Jg-AWN" secondAttribute="trailing" id="F1c-Mq-qFi"/>
+                <constraint firstAttribute="bottom" secondItem="oul-MM-BSe" secondAttribute="bottom" id="P7y-iU-NgF"/>
                 <constraint firstItem="U3R-Jg-AWN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tff-1I-4Wp"/>
                 <constraint firstAttribute="trailing" secondItem="lRZ-LE-czf" secondAttribute="trailing" id="UIe-VE-TsR"/>
+                <constraint firstItem="oul-MM-BSe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cTu-9X-QYD"/>
                 <constraint firstItem="5bh-IH-EeH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d7F-9e-j6M"/>
                 <constraint firstItem="5bh-IH-EeH" firstAttribute="top" secondItem="lRZ-LE-czf" secondAttribute="bottom" id="dS2-w8-QSF"/>
+                <constraint firstAttribute="trailing" secondItem="oul-MM-BSe" secondAttribute="trailing" id="hgF-g0-eiG"/>
                 <constraint firstAttribute="trailing" secondItem="5bh-IH-EeH" secondAttribute="trailing" id="mJe-77-rYp"/>
                 <constraint firstAttribute="bottom" secondItem="5bh-IH-EeH" secondAttribute="bottom" constant="44" id="rIf-kl-ztv"/>
             </constraints>

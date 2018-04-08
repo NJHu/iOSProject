@@ -10,11 +10,7 @@
 #import "LMJBezierPathCP.h"
 
 @interface LMJDrawingView ()
-
 @property (nonatomic, strong) NSMutableArray *array;
-
-/** <#digest#> */
-@property (nonatomic, strong) LMJBezierPathCP *bezier;
 @end
 
 @implementation LMJDrawingView
@@ -35,7 +31,6 @@
 {
     UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [self addGestureRecognizer:panGR];
-    
     self.lineWidth = 1;
     self.lineColor = [UIColor blackColor];
 }
@@ -43,19 +38,19 @@
 - (void)pan:(UIPanGestureRecognizer *)panGR
 {
     CGPoint curP = [panGR locationInView:self];
-    
     if(panGR.state == UIGestureRecognizerStateBegan)
     {
-        _bezier = [LMJBezierPathCP bezierPath];
-        
-        _bezier.lineWidth = self.lineWidth;
-        _bezier.lineColor = self.lineColor;
-        [self.array addObject:_bezier];
-        
-        [_bezier moveToPoint:curP];
+        LMJBezierPathCP *bezier = [LMJBezierPathCP bezierPath];
+        bezier.lineWidth = self.lineWidth;
+        bezier.lineColor = self.lineColor;
+        [self.array addObject:bezier];
+        [bezier moveToPoint:curP];
     }
     
-    [_bezier addLineToPoint:curP];
+    LMJBezierPathCP *bezier = self.array.lastObject;
+    if ([bezier isMemberOfClass:[LMJBezierPathCP class]]) {
+        [self.array.lastObject addLineToPoint:curP];
+    }
     
     [self setNeedsDisplay];
 }
@@ -63,19 +58,17 @@
 - (void)drawRect:(CGRect)rect
 {
     if(self.array.count == 0)  return;
-    for (LMJBezierPathCP *beizer in self.array)
-    {
-        if([beizer isKindOfClass:[UIImage class]])
-        {
+    [self.array enumerateObjectsUsingBlock:^(LMJBezierPathCP *beizer, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if([beizer isKindOfClass:[UIImage class]]) {
             UIImage *image = (UIImage *)beizer;
             [image drawInRect:rect];
-        }
-        else
-        {
+        } else if([beizer isMemberOfClass:[LMJBezierPathCP class]]) {
             [beizer.lineColor set];
             [beizer stroke];
         }
-    }
+        
+    }];
 }
 - (void)setImage:(UIImage *)image
 {

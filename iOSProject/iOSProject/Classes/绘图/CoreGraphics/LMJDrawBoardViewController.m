@@ -18,7 +18,6 @@
 
 @implementation LMJDrawBoardViewController
 - (IBAction)clearAll:(UIBarButtonItem *)sender {
-    
     [self.drawingView clearAll];
 }
 - (IBAction)undo:(UIBarButtonItem *)sender {
@@ -28,12 +27,9 @@
     self.drawingView.lineColor = self.drawingView.backgroundColor;
 }
 - (IBAction)showPicture:(UIBarButtonItem *)sender {
-    
     UIImagePickerController *pickerVC = [[UIImagePickerController alloc] init];
-    
     pickerVC.delegate = self;
     pickerVC.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    
     [self presentViewController:pickerVC animated:YES completion:nil];
 }
 
@@ -41,10 +37,10 @@
 {
     LMJHandleView *handleView = [[LMJHandleView alloc] initWithFrame:self.drawingView.bounds];
     handleView.image = info[UIImagePickerControllerOriginalImage];
-    
+    LMJWeak(self);
     handleView.imageBlock = ^(UIImage *image)
     {
-        self.drawingView.image = image;
+        weakself.drawingView.image = image;
     };
     [self.drawingView addSubview:handleView];
     
@@ -68,14 +64,17 @@
     
     // 保存到相册
     UIImageWriteToSavedPhotosAlbum(newImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-    
 }
+
+
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"成功保存到相册" preferredStyle:UIAlertControllerStyleAlert];
     
     [self presentViewController:alert animated:YES completion:^{
-        [self dismissViewControllerAnimated:YES completion:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
     }];
 }
 

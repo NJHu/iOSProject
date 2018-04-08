@@ -65,10 +65,10 @@
     
     item20.destVc = [LMJDynamicViewController class];
     
-    LMJWordArrowItem *item21 = [LMJWordArrowItem itemWithTitle:@"核心动画" subTitle: @"CATransform3D"];
+    LMJWordArrowItem *item21 = [LMJWordArrowItem itemWithTitle:@"核心动画 CoreAnimation" subTitle: @"CATransform3D"];
     item21.destVc = [LMJCoreAnimationViewController class];
     
-    LMJWordArrowItem *item22 = [LMJWordArrowItem itemWithTitle:@"绘图 Quartz2D" subTitle: @"Rrawrect, BezierPath"];
+    LMJWordArrowItem *item22 = [LMJWordArrowItem itemWithTitle:@"绘图Quartz2D" subTitle: @"Drawrect,贝塞尔,手势"];
     
     item22.destVc = [LMJDrawRectViewController class];
     
