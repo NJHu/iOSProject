@@ -8,34 +8,20 @@
 
 #import "LMJCAKeyFrameAnimationViewController.h"
 
-@interface LMJCAKeyFrameAnimationViewController ()
-
-
-@end
-
 @implementation LMJCAKeyFrameAnimationViewController
 
 - (void)loadView
 {
     self.view = [[DrawView alloc] init];
-    
-//    self.title = @"手指移动画线";
-    [MBProgressHUD showAutoMessage:@"手指移动画线"];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [MBProgressHUD showAutoMessage:@"手指移动画线"];
+    self.blueLayer.bounds = CGRectMake(0, 0, 50, 50);
 }
 
-
-
 @end
-
-
-
-
-
 
 @interface DrawView ()
 
@@ -77,22 +63,25 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    static BOOL isValue;
     // 给imageView添加核心动画
     // 添加核心动画
-    
     CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
     
-    
     anim.keyPath = @"position";
+    // values
     
-    //    anim.values = @[@(angle2Radion(-10)),@(angle2Radion(10)),@(angle2Radion(-10))];
+    if (isValue) {
+        anim.values = @[@(100),@(-100),@(100)];
+        isValue = NO;
+    }else {
+        // path
+        anim.path = _path.CGPath;
+        isValue = YES;
+    }
     
-    anim.path = _path.CGPath;
-    
-    anim.duration = 1;
-    
+    anim.duration = 3;
     anim.repeatCount = MAXFLOAT;
-    
     [[(LMJCAKeyFrameAnimationViewController *)self.viewController blueLayer] addAnimation:anim forKey:nil];
 }
 

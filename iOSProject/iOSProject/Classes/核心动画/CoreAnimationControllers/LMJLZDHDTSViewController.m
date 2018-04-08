@@ -18,7 +18,6 @@
     [super viewDidLoad];
     
     self.fd_interactivePopDisabled = YES;
-//    self.title = @"手指移动画线";
     [MBProgressHUD showAutoMessage:@"手指移动画线"];
 }
 
@@ -32,7 +31,6 @@
 }
 
 
-
 - (IBAction)reDraw:(UIButton *)sender {
     
     LZDHDTSDrawView *view = (LZDHDTSDrawView *)self.view;
@@ -40,11 +38,6 @@
 }
 
 @end
-
-
-
-
-
 
 
 
@@ -102,9 +95,7 @@
     
     // 设置起点
     [self.path moveToPoint:curP];
-    
-    
-    
+
 }
 
 static int _instansCount = 0;
@@ -123,7 +114,6 @@ static int _instansCount = 0;
     [self setNeedsDisplay];
     
     _instansCount ++;
-    
 }
 
 
@@ -158,7 +148,6 @@ static int _instansCount = 0;
     
     // 延迟图层动画
     _repL.instanceDelay = 0.2;
-    
 }
 
 #pragma mark - 加载完xib调用，创建复制层

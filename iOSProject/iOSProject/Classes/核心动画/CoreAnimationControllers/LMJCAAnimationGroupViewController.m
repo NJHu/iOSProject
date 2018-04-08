@@ -32,7 +32,7 @@
     CABasicAnimation *rotation = [CABasicAnimation animation];
     rotation.keyPath = @"transform.rotation";
     rotation.toValue = @(arc4random_uniform(M_PI));
-    
+
     CABasicAnimation *position = [CABasicAnimation animation];
     position.keyPath = @"position";
     position.toValue = [NSValue valueWithCGPoint:CGPointMake(arc4random_uniform(200), arc4random_uniform(200))];
@@ -40,8 +40,6 @@
     group.animations = @[scale,rotation,position];
     
     [self.redView.layer addAnimation:group forKey:nil];
-    
-    
 }
 
 @end

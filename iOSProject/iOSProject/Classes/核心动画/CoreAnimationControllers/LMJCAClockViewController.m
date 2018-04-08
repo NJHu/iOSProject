@@ -10,7 +10,9 @@
 
 @interface LMJCAClockViewController ()
 
-/** <#digest#> */
+/** timer */
+@property (weak, nonatomic) NSTimer *timer;
+
 @property (strong, nonatomic) UIImageView *clockImageView;
 
 @property (nonatomic, weak) CALayer *secondLayer;
@@ -28,7 +30,6 @@
 
 // 一分钟分针转6°
 #define perMinuteA 6
-
 
 // 一小时时针转30°
 #define perHourA 30
@@ -60,10 +61,14 @@
     [self setUpSecondLayer];
     
     // 添加定时器
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeChange) userInfo:nil repeats:YES];
-    
+   NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeChange) userInfo:nil repeats:YES];
+    _timer = timer;
     [self timeChange];
-    
+}
+
+- (void)dealloc {
+    [_timer invalidate];
+    _timer = nil;
 }
 
 #pragma mark - 添加秒针
@@ -80,7 +85,7 @@
     
     secondL.bounds = CGRectMake(0, 0, 1, kClockW * 0.5 - 20);
     
-    
+    secondL.cornerRadius = 0;
     
     [_clockImageView.layer addSublayer:secondL];
     
@@ -102,7 +107,7 @@
     
     layer.bounds = CGRectMake(0, 0, 4, kClockW * 0.5 - 20);
     
-    layer.cornerRadius = 4;
+    layer.cornerRadius = 2;
     
     
     [_clockImageView.layer addSublayer:layer];

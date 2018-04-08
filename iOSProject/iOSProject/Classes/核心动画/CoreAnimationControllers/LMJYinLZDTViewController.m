@@ -51,7 +51,6 @@
     // 设置动画反转
     anim.autoreverses = YES;
     
-    
     [layer addAnimation:anim forKey:nil];
     
     

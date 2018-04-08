@@ -20,7 +20,6 @@
     self.redView.backgroundColor = [UIColor grayColor];
     
     
-    
     CAReplicatorLayer *repL = [CAReplicatorLayer layer];
     
     repL.frame = self.redView.bounds;
@@ -69,7 +68,6 @@
     repL.instanceTransform = CATransform3DMakeRotation(angle, 0, 0, 1);
     
     repL.instanceDelay = duration / count;
-    
 }
 
 @end

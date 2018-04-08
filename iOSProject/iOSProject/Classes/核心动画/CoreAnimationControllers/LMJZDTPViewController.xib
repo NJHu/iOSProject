@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,25 +22,47 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="小新.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Lga-bk-J9i">
-                    <rect key="frame" x="79" y="334" width="200" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小新.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Lga-bk-J9i">
+                    <rect key="frame" x="87.5" y="367" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="YgQ-3z-Uja"/>
+                        <constraint firstAttribute="height" constant="200" id="xGI-zs-Gvd"/>
+                    </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="小新.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DmN-iA-enp">
-                    <rect key="frame" x="86" y="150" width="200" height="100"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小新.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DmN-iA-enp">
+                    <rect key="frame" x="87.5" y="150" width="200" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="1o4-jP-SI2"/>
+                        <constraint firstAttribute="width" constant="200" id="EcM-zQ-VIw"/>
+                    </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="小新.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UH8-eV-pYU">
-                    <rect key="frame" x="86" y="150" width="200" height="100"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小新.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UH8-eV-pYU">
+                    <rect key="frame" x="87.5" y="150" width="200" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Yx5-G3-KOF"/>
+                        <constraint firstAttribute="width" constant="200" id="fgT-fP-zcm"/>
+                    </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EA9-IB-Ckl">
-                    <rect key="frame" x="86" y="100" width="200" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EA9-IB-Ckl">
+                    <rect key="frame" x="87.5" y="100" width="200" height="200"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="6ud-ZD-Uek"/>
+                        <constraint firstAttribute="height" constant="200" id="Ce6-bz-EOO"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EA9-IB-Ckl" firstAttribute="top" secondItem="K6t-Bt-Za6" secondAttribute="top" constant="100" id="19g-Md-pOL"/>
+                <constraint firstItem="Lga-bk-J9i" firstAttribute="centerX" secondItem="K6t-Bt-Za6" secondAttribute="centerX" id="5o6-gf-q8U"/>
+                <constraint firstItem="DmN-iA-enp" firstAttribute="centerY" secondItem="EA9-IB-Ckl" secondAttribute="centerY" id="7lq-fg-NKx"/>
+                <constraint firstItem="UH8-eV-pYU" firstAttribute="centerX" secondItem="EA9-IB-Ckl" secondAttribute="centerX" id="UTY-2m-ME8"/>
+                <constraint firstItem="DmN-iA-enp" firstAttribute="centerX" secondItem="EA9-IB-Ckl" secondAttribute="centerX" id="hn1-6u-Xu0"/>
+                <constraint firstAttribute="bottom" secondItem="Lga-bk-J9i" secondAttribute="bottom" constant="100" id="t3R-QZ-K3g"/>
+                <constraint firstItem="UH8-eV-pYU" firstAttribute="centerY" secondItem="EA9-IB-Ckl" secondAttribute="centerY" id="vX7-41-gRq"/>
+                <constraint firstItem="EA9-IB-Ckl" firstAttribute="centerX" secondItem="K6t-Bt-Za6" secondAttribute="centerX" id="z7T-wl-fhA"/>
+            </constraints>
         </view>
     </objects>
     <resources>

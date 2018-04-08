@@ -19,20 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
-
-static int i = 2;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    static int i = 2;
     
     // 转场代码
     if (i == 4) {
         i = 1;
     }
     // 加载图片名称
-    NSString *imageN = [NSString stringWithFormat:@"CATransition%d",i];
+    NSString *imageN = [NSString stringWithFormat:@"CATransition%d.png",i];
     
     self.imageView.image = [UIImage imageNamed:imageN];
     

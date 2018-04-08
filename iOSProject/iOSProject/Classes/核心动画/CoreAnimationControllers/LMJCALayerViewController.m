@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.fd_interactivePopDisabled = YES;
     [self.view makeToast:@"点击屏幕" duration:3 position:CSToastPositionCenter];
 }
@@ -25,7 +24,7 @@
 {
     if(!_redView)
     {
-        UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(10, 100, 100, 250)];
+        UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(50, 100, 150, 200)];
         [self.view addSubview:redView];
         _redView = redView;
         redView.backgroundColor = [UIColor redColor];
@@ -41,8 +40,7 @@
         [self.view.layer addSublayer:blueLayer];
         blueLayer.backgroundColor = [UIColor blueColor].CGColor;
         _blueLayer = blueLayer;
-        
-        blueLayer.frame = CGRectMake(150, 100, 100, 60);
+        blueLayer.frame = CGRectMake(50, 350, 100, 70);
         
     }
     return _blueLayer;

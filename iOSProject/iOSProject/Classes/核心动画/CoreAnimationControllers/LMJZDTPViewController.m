@@ -26,7 +26,7 @@
 // 如果快速把两个控件拼接成一个完整图片
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.title = @"拖拽顶部图片";
+
     [MBProgressHUD showAutoMessage:@"拖拽顶部图片"];
     self.title = @"拖拽顶部图片";
     // Do any additional setup after loading the view, typically from a nib.
@@ -52,13 +52,13 @@
     gradientL.colors = @[(id)[UIColor clearColor].CGColor,(id)[UIColor blackColor].CGColor];
     _gradientL = gradientL;
     // 设置渐变颜色
-    //    gradientL.colors = @[(id)[UIColor redColor].CGColor,(id)[UIColor greenColor].CGColor,(id)[UIColor yellowColor].CGColor];
+//        gradientL.colors = @[(id)[UIColor redColor].CGColor,(id)[UIColor greenColor].CGColor,(id)[UIColor yellowColor].CGColor];
     
     // 设置渐变定位点
-    //    gradientL.locations = @[@0.1,@0.4,@0.5];
+//        gradientL.locations = @[@0.1,@0.4,@0.5];
     
     // 设置渐变开始点，取值0~1
-    //    gradientL.startPoint = CGPointMake(0, 1);
+    gradientL.startPoint = CGPointMake(0, 1);
     
     [_bottomView.layer addSublayer:gradientL];
     
@@ -69,16 +69,15 @@
 {
     // 获取偏移量
     CGPoint transP = [pan translationInView:_dragView];
-    
+    NSLog(@"%f", transP.y);
     // 旋转角度,往下逆时针旋转
     CGFloat angle = -transP.y / 200.0 * M_PI;
     
     CATransform3D transfrom = CATransform3DIdentity;
     
-    
     // 增加旋转的立体感，近大远小,d：距离图层的距离
     transfrom.m34 = -1 / 500.0;
-    
+
     transfrom = CATransform3DRotate(transfrom, angle, 1, 0, 0);
     
     _topView.layer.transform = transfrom;
