@@ -6,8 +6,8 @@
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import "LMJTableViewController.h"
+#import "LMJStaticTableViewController.h"
 
-@interface LMJDynamicViewController : LMJTableViewController
+@interface LMJDynamicViewController : LMJStaticTableViewController
 
 @end

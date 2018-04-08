@@ -19,10 +19,88 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
+    LMJWeak(self);
     _dynamicArr = @[@"吸附行为", @"推动行为", @"刚性附着行为", @"弹性附着行为", @"碰撞检测"];
+    
+    [self addDes];
+    
+    self.addItem([LMJWordArrowItem itemWithTitle:@"吸附行为" subTitle:@"UISnapBehavior" itemOperation:^(NSIndexPath *indexPath) {
+        // 1. 实例化一个仿真管理器
+        WPFDemoController *demoVc = [[WPFDemoController alloc] init];
+        
+        // 2. 设置标题
+        demoVc.title = _dynamicArr[indexPath.row];
+        
+        // 3. 传递功能类型
+        demoVc.function = (int)indexPath.row;
+        
+        // 4. 跳转界面
+        [weakself.navigationController pushViewController:demoVc animated:YES];
+        
+    }])
+    .addItem([LMJWordArrowItem itemWithTitle:@"推动行为" subTitle:@"UIPushBehavior" itemOperation:^(NSIndexPath *indexPath) {
+        // 1. 实例化一个仿真管理器
+        WPFDemoController *demoVc = [[WPFDemoController alloc] init];
+        
+        // 2. 设置标题
+        demoVc.title = _dynamicArr[indexPath.row];
+        
+        // 3. 传递功能类型
+        demoVc.function = (int)indexPath.row;
+        
+        // 4. 跳转界面
+        [weakself.navigationController pushViewController:demoVc animated:YES];
+        
+    }])
+    .addItem([LMJWordArrowItem itemWithTitle:@"刚性附着行为" subTitle:@"" itemOperation:^(NSIndexPath *indexPath) {
+        // 1. 实例化一个仿真管理器
+        WPFDemoController *demoVc = [[WPFDemoController alloc] init];
+        
+        // 2. 设置标题
+        demoVc.title = _dynamicArr[indexPath.row];
+        
+        // 3. 传递功能类型
+        demoVc.function = (int)indexPath.row;
+        
+        // 4. 跳转界面
+        [weakself.navigationController pushViewController:demoVc animated:YES];
+        
+    }])
+    .addItem([LMJWordArrowItem itemWithTitle:@"弹性附着行为" subTitle:@"" itemOperation:^(NSIndexPath *indexPath) {
+        // 1. 实例化一个仿真管理器
+        WPFDemoController *demoVc = [[WPFDemoController alloc] init];
+        
+        // 2. 设置标题
+        demoVc.title = _dynamicArr[indexPath.row];
+        
+        // 3. 传递功能类型
+        demoVc.function = (int)indexPath.row;
+        
+        // 4. 跳转界面
+        [weakself.navigationController pushViewController:demoVc animated:YES];
+        
+    }])
+    .addItem([LMJWordArrowItem itemWithTitle:@"碰撞检测" subTitle:@"" itemOperation:^(NSIndexPath *indexPath) {
+        // 1. 实例化一个仿真管理器
+        WPFDemoController *demoVc = [[WPFDemoController alloc] init];
+        
+        // 2. 设置标题
+        demoVc.title = _dynamicArr[indexPath.row];
+        
+        // 3. 传递功能类型
+        demoVc.function = (int)indexPath.row;
+        
+        // 4. 跳转界面
+        [weakself.navigationController pushViewController:demoVc animated:YES];
+        
+    }]);
+}
 
+
+
+#pragma mark - des
+- (void)addDes
+{
     
     UILabel *l = [[UILabel alloc] init];
     l.text = @"一、简单介绍\n\
@@ -188,54 +266,6 @@
     
 }
 
-// 几组
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-// 几行
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
-}
-
-// 每行的具体内容
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // 1. 设置可重用id
-    NSString *identifier = @"helloCell";
-    
-    // 2. 根据可重用id 去tableView 的缓存区去找
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    // 3. 如果找不到，就重新实例化一个
-    if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
-    cell.textLabel.text = _dynamicArr[indexPath.row];
-    
-    return cell;
-}
-
-// 执行代理方法
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    // 1. 实例化一个仿真管理器
-    WPFDemoController *demoVc = [[WPFDemoController alloc] init];
-    
-    // 2. 设置标题
-    demoVc.title = _dynamicArr[indexPath.row];
-    
-    // 3. 传递功能类型
-    demoVc.function = (int)indexPath.row;
-    
-    // 4. 跳转界面
-    [self.navigationController pushViewController:demoVc animated:YES];
-    
-}
-
 #pragma mark - LMJNavUIBaseViewControllerDataSource
 
 /** 导航条左边的按钮 */
@@ -252,5 +282,6 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end

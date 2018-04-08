@@ -25,14 +25,7 @@
     
     if (self = [super initWithFrame:frame]) {
         
-        // 1. 添加蓝色view
-        UIView *blueView = [[UIView alloc] initWithFrame:CGRectMake(150, 300, 20, 20)];
-        blueView.backgroundColor = [UIColor blueColor];
-        [self addSubview:blueView];
-        
-        
-        
-        // 2. 添加图片框，拖拽起点
+        // 1. 添加图片框，拖拽起点
         UIImageView *smallView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AttachmentPoint_Mask"]];
         smallView.hidden = NO;
         smallView.lmj_x = 100;
@@ -40,23 +33,21 @@
         [self addSubview:smallView];
         _smallView = smallView;
         
-        // 3. 添加推动行为
+        // 2. 添加推动行为
         UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.boxView] mode:UIPushBehaviorModeInstantaneous];
         [self.animator addBehavior:push];
         _push = push;
         
-        
-        // 4. 增加碰撞检测
-        UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[blueView, self.boxView]];
+        // 2.5 添加碰撞行为
+        UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.boxView]];
         collision.translatesReferenceBoundsIntoBoundary = YES;
+        collision.collisionMode = UICollisionBehaviorModeBoundaries;
         [self.animator addBehavior:collision];
         
-        // 5. 添加拖拽手势
+        // 3. 添加拖拽手势
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
         [self addGestureRecognizer:pan];
-        
     }
-    
     return self;
 }
 
@@ -78,11 +69,8 @@
         
         [self setNeedsDisplay];
         
-        
         // 当前拖拽行为结束
     } else if (pan.state == UIGestureRecognizerStateEnded){
-        
-        
         
         // 1. 计算偏移量
         CGPoint offset = CGPointMake(_currentPoint.x - _firstPoint.x, _currentPoint.y - _firstPoint.y);
@@ -126,7 +114,7 @@
     CGContextSetLineWidth(ctxRef, 10);
     CGContextSetLineJoin(ctxRef, kCGLineJoinRound);
     CGContextSetLineCap(ctxRef, kCGLineCapRound);
-    [[UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1.0] setStroke];
+    [[UIColor RandomColor] setStroke];
     
     // 4. 渲染
     CGContextStrokePath(ctxRef);
