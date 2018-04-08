@@ -1432,7 +1432,7 @@
 				58DC84031FFBC15B0060DC03 /* 基础理论 */,
 				58DC82A81FFB40A50060DC03 /* 物理仿真 */,
 				58DC82AE1FFB40A60060DC03 /* 核心动画 */,
-				58DC82AB1FFB40A60060DC03 /* 绘图 */,
+				58DC82AB1FFB40A60060DC03 /* 绘图和手势 */,
 				58DC84701FFC97280060DC03 /* 百思不得姐 */,
 				58651A5A1FFE6D6E0087419D /* 新浪微博 */,
 				589B56701FFFC52F00B2D5A8 /* QQ音乐 */,
@@ -1993,7 +1993,7 @@
 			path = "物理仿真";
 			sourceTree = "<group>";
 		};
-		58DC82AB1FFB40A60060DC03 /* 绘图 */ = {
+		58DC82AB1FFB40A60060DC03 /* 绘图和手势 */ = {
 			isa = PBXGroup;
 			children = (
 				58DC83961FFB43DC0060DC03 /* LMJDrawRectViewController.h */,
@@ -2002,7 +2002,7 @@
 				58DC83921FFB439A0060DC03 /* Model */,
 				58DC83931FFB439A0060DC03 /* View */,
 			);
-			path = "绘图";
+			path = "绘图和手势";
 			sourceTree = "<group>";
 		};
 		58DC82AE1FFB40A60060DC03 /* 核心动画 */ = {
