@@ -79,8 +79,7 @@
 
 <h2><a id="homeBaseShareLogin">分享和第三方登录</a></h2>
 <div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/fx.png" width="31%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/fx_1.png" width="31%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/fx.png" width="23%">|<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/dlwo.png" width="23%">|<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/dlwx.png" width="23%">|<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/tzwx.png" width="23%">
 </div>
 <br>
 <br>
