@@ -30,6 +30,11 @@
         contentInset.top += self.lmj_navgationBar.lmj_height;
         self.tableView.contentInset = contentInset;
     }
+    
+    // 适配 ios 11
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
 }
 
 #pragma mark - scrollDeleggate

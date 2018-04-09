@@ -30,6 +30,12 @@
     self.automaticallyChangeAlpha = YES;
 }
 
+// MJBug fix
+- (void)endRefreshing {
+    [super endRefreshing];
+    self.state = MJRefreshStateIdle;
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
