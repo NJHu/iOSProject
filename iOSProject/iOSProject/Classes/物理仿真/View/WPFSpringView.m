@@ -36,10 +36,10 @@
     if (self = [super initWithFrame:frame]) {
         
         // 振幅
-        //self.attachment.damping = 1.0f;
+//        self.attachment.damping = 1.0f;
         
         // 频率(让线具有弹性)
-        self.attachment.frequency = 1.0f;
+//        self.attachment.frequency = 1.0f;
         
         UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.boxView]];
         [self.animator addBehavior:gravity];
@@ -53,7 +53,6 @@
          */
         
         [self.boxView addObserver:self forKeyPath:@"center" options:NSKeyValueObservingOptionNew context:nil];
-        
     }
     
     return self;
@@ -62,23 +61,13 @@
 
 // 监听，当boxView 的中心店改变时就进行冲重绘
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    
     [self setNeedsDisplay];
 }
 
 
 - (void)dealloc {
-    
     [self.boxView removeObserver:self forKeyPath:@"center"];
-    
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

@@ -50,7 +50,7 @@
         [weakself.navigationController pushViewController:demoVc animated:YES];
         
     }])
-    .addItem([LMJWordArrowItem itemWithTitle:@"刚性附着行为" subTitle:@"" itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordArrowItem itemWithTitle:@"刚性附着行为" subTitle:@"UIAttachmentBehavior" itemOperation:^(NSIndexPath *indexPath) {
         // 1. 实例化一个仿真管理器
         WPFDemoController *demoVc = [[WPFDemoController alloc] init];
         
@@ -64,7 +64,7 @@
         [weakself.navigationController pushViewController:demoVc animated:YES];
         
     }])
-    .addItem([LMJWordArrowItem itemWithTitle:@"弹性附着行为" subTitle:@"" itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordArrowItem itemWithTitle:@"弹性附着行为" subTitle:@"UIGravityBehavior" itemOperation:^(NSIndexPath *indexPath) {
         // 1. 实例化一个仿真管理器
         WPFDemoController *demoVc = [[WPFDemoController alloc] init];
         
@@ -78,7 +78,7 @@
         [weakself.navigationController pushViewController:demoVc animated:YES];
         
     }])
-    .addItem([LMJWordArrowItem itemWithTitle:@"碰撞检测" subTitle:@"" itemOperation:^(NSIndexPath *indexPath) {
+    .addItem([LMJWordArrowItem itemWithTitle:@"碰撞检测" subTitle:@"UICollisionBehavior, UIDynamicItemBehavior" itemOperation:^(NSIndexPath *indexPath) {
         // 1. 实例化一个仿真管理器
         WPFDemoController *demoVc = [[WPFDemoController alloc] init];
         

@@ -9,7 +9,6 @@
 #import "WPFBaseView.h"
 
 @interface WPFAttachmentView : WPFBaseView
-
 @property (nonatomic, strong) UIAttachmentBehavior *attachment;
 
 @end

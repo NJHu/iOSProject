@@ -41,7 +41,7 @@
         // 2.5 添加碰撞行为
         UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.boxView]];
         collision.translatesReferenceBoundsIntoBoundary = YES;
-        collision.collisionMode = UICollisionBehaviorModeBoundaries;
+//        collision.collisionMode = UICollisionBehaviorModeBoundaries;
         [self.animator addBehavior:collision];
         
         // 3. 添加拖拽手势
