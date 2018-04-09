@@ -8,7 +8,7 @@
 <p>GitHub：<a href="https://github.com/njhu">NJHu</a> ｜ Blog：<a href="https://www.weibo.com/njhu" rel="nofollow">NJHu 微博(Chinese)</a> ｜ <a href="mailto:64hp@163.com">feedback</a>:<a href="mailto:64hp@163.com">64hp@163.com</a></p>
 
 <div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.gif" width="24%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%">
 </div>
 
 <h2><a id="Getting_Started">iOSProject</a></h2>
@@ -69,9 +69,10 @@
 <br>
 
 <h3><a id="foundationList">绘图,核心动画,物理仿真</a></h3>
-<div><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/quartz2d.png" width="24%">|
+<div><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/quartz2d.png" width="22%">|
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/coreanimation.png" width="24%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/uidynamic.png" width="24%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/uidynamic.png" width="24%">|
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%">
 </div>
 <br>
 <br>
