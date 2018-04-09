@@ -38,10 +38,7 @@
 
 <h2><a id="homeList">首页功能列表</a></h2>
 <div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn1.png" width="24%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn2.png" width="23%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn3.png" width="24%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn1.png" width="24%">|<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn2.png" width="23%">|<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/gn3.png" width="23%">|<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%">
 </div>
 <br>
 <br>
@@ -69,10 +66,7 @@
 <br>
 
 <h3><a id="foundationList">绘图,核心动画,物理仿真</a></h3>
-<div><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/quartz2d.png" width="22%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/coreanimation.png" width="24%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/uidynamic.png" width="24%">|
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%">
+<div><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/quartz2d.png" width="22%">|<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/coreanimation.png" width="24%">|<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/uidynamic.png" width="24%">|<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%">
 </div>
 <br>
 <br>

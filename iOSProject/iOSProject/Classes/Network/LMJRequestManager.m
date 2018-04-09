@@ -198,6 +198,11 @@ static NSString *jsonFileDirectory = @"LMJLocalJsons";
     if ([responseSerializer isKindOfClass:[AFJSONResponseSerializer class]]) {
         AFJSONResponseSerializer *JSONserializer = (AFJSONResponseSerializer *)responseSerializer;
         JSONserializer.removesKeysWithNullValues = YES;
+        /*
+        NSJSONReadingMutableContainers = 转换出来的对象是可变数组或者可变字典
+        NSJSONReadingMutableLeaves = 转换呼出来的OC对象中的字符串是可变的\注意：iOS7之后无效 bug
+        NSJSONReadingAllowFragments = 如果服务器返回的JSON数据，不是标准的JSON，那么就必须使用这个值，否则无法解析
+         */
         JSONserializer.readingOptions = NSJSONReadingMutableContainers;
     }
 }
