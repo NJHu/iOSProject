@@ -147,16 +147,20 @@ static NSString *jsonFileDirectory = @"LMJLocalJsons";
 //  fileName 图片对应名字,一般服务不会使用,因为服务端会直接根据你上传的图片随机产生一个唯一的图片名字
 //  mimeType 资源类型
 //  不确定参数类型 可以这个 octet-stream 类型, 二进制流
-- (void)upload:(NSString *)urlString parameters:(id)parameters formDataBlock:(void(^)(id<AFMultipartFormData> formData))formDataBlock progress:(void (^)(NSProgress *progress))progress completion:(void (^)(LMJBaseResponse *response))completion
+- (void)upload:(NSString *)urlString parameters:(id)parameters formDataBlock:(NSDictionary<NSData *, LMJDataName *> *(^)(id<AFMultipartFormData> formData, NSMutableDictionary<NSData *, LMJDataName *> *needFillDataDict))formDataBlock progress:(void (^)(NSProgress *progress))progress completion:(void (^)(LMJBaseResponse *response))completion
 {
+    static NSString *mineType = @"application/octet-stream";
     
     [self POST:urlString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
-//        NSString *mineType = @"application/octet-stream";
+        NSMutableDictionary *needFillDataDict = [NSMutableDictionary dictionary];
+        NSDictionary *datas = !formDataBlock ? nil : formDataBlock(formData, needFillDataDict);
         
-//        [formData appendPartWithFileData:data name:name fileName:@"test" mimeType:mineType];
-        
-        !formDataBlock ?: formDataBlock(formData);
+        if (datas) {
+            [datas enumerateKeysAndObjectsUsingBlock:^(NSData * _Nonnull data, LMJDataName * _Nonnull name, BOOL * _Nonnull stop) {
+                [formData appendPartWithFileData:data name:name fileName:@"random" mimeType:mineType];
+            }];
+        }
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
@@ -181,13 +185,44 @@ static NSString *jsonFileDirectory = @"LMJLocalJsons";
 - (void)configSettings
 {
     //设置可接收的数据类型
-    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", @"application/xml", @"text/xml", @"*/*", nil];
+    NSMutableSet *acceptableContentTypes = [NSMutableSet setWithSet:self.responseSerializer.acceptableContentTypes];
+    [acceptableContentTypes addObjectsFromArray:@[@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", @"application/xml", @"text/xml", @"*/*", @"application/x-plist"]];
+    self.responseSerializer.acceptableContentTypes = [acceptableContentTypes copy];
+    
     //记录网络状态
     [self.reachabilityManager startMonitoring];
     //自定义处理数据
     self.responseFormat = ^LMJBaseResponse *(LMJBaseResponse *response) {
         return response;
     };
+}
+
+- (void)setCerFilePath:(NSString *)cerFilePath {
+    _cerFilePath = cerFilePath;
+    if (LMJIsEmpty(cerFilePath)) {
+        return;
+    }
+    
+    // 先导入证书 证书由服务端生成，具体由服务端人员操作
+//    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"xxx" ofType:@"cer"];//证书的路径
+    NSData *cerData = [NSData dataWithContentsOfFile:cerFilePath];
+    
+    // AFSSLPinningModeCertificate 使用证书验证模式
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    // allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO
+    // 如果是需要验证自建证书，需要设置为YES
+    securityPolicy.allowInvalidCertificates = YES;
+    
+    //validatesDomainName 是否需要验证域名，默认为YES;
+    //假如证书的域名与你请求的域名不一致，需把该项设置为NO；如设成NO的话，即服务器使用其他可信任机构颁发的证书，也可以建立连接，这个非常危险，建议打开。
+    //置为NO，主要用于这种情况：客户端请求的是子域名，而证书上的是另外一个域名。因为SSL证书上的域名是独立的，假如证书上注册的域名是www.google.com，那么mail.google.com是无法验证通过的；当然，有钱可以注册通配符的域名*.google.com，但这个还是比较贵的。
+    //如置为NO，建议自己添加对应域名的校验逻辑。
+    securityPolicy.validatesDomainName = NO;
+    
+    securityPolicy.pinnedCertificates = [[NSSet alloc] initWithObjects:cerData, nil];
+    
+//    2.加上这个函数，https ssl 验证。
+    [self setSecurityPolicy:securityPolicy];
 }
 
 #pragma mark - 处理返回序列化
@@ -199,9 +234,9 @@ static NSString *jsonFileDirectory = @"LMJLocalJsons";
         AFJSONResponseSerializer *JSONserializer = (AFJSONResponseSerializer *)responseSerializer;
         JSONserializer.removesKeysWithNullValues = YES;
         /*
-        NSJSONReadingMutableContainers = 转换出来的对象是可变数组或者可变字典
-        NSJSONReadingMutableLeaves = 转换呼出来的OC对象中的字符串是可变的\注意：iOS7之后无效 bug
-        NSJSONReadingAllowFragments = 如果服务器返回的JSON数据，不是标准的JSON，那么就必须使用这个值，否则无法解析
+         NSJSONReadingMutableContainers = 转换出来的对象是可变数组或者可变字典
+         NSJSONReadingMutableLeaves = 转换呼出来的OC对象中的字符串是可变的\注意：iOS7之后无效 bug
+         NSJSONReadingAllowFragments = 如果服务器返回的JSON数据，不是标准的JSON，那么就必须使用这个值，否则无法解析
          */
         JSONserializer.readingOptions = NSJSONReadingMutableContainers;
     }
@@ -222,7 +257,7 @@ static LMJRequestManager *_instance = nil;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _instance = [[self alloc] init];
+        _instance = [self manager];
     });
     return _instance;
 }

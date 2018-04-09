@@ -47,7 +47,7 @@
         NSString *urlString = @"https://api.weibo.com/2/statuses/upload.json";
         
         
-        [[LMJRequestManager sharedManager] upload:urlString parameters:params formDataBlock:^(id<AFMultipartFormData> formData) {
+        [[LMJRequestManager sharedManager] upload:urlString parameters:params formDataBlock:^NSDictionary<NSData *,LMJDataName *> *(id<AFMultipartFormData> formData, NSMutableDictionary<NSData *,LMJDataName *> *needFillDataDict) {
             
             //  data 图片对应的二进制数据
             //  name 服务端需要参数
@@ -57,9 +57,11 @@
             
             [images enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 
-                [formData appendPartWithFileData:UIImageJPEGRepresentation(obj, 0.6) name:@"pic" fileName:[NSString stringWithFormat:@"pic_%zd", idx] mimeType:@"application/octet-stream"];
-                
+//                [formData appendPartWithFileData:UIImageJPEGRepresentation(obj, 0.6) name:@"pic" fileName:[NSString stringWithFormat:@"pic_%zd", idx] mimeType:@"application/octet-stream"];
+                needFillDataDict[UIImageJPEGRepresentation(obj, 0.6)] = @"pic";
             }];
+            
+            return needFillDataDict;
             
         } progress:^(NSProgress *progress) {
             

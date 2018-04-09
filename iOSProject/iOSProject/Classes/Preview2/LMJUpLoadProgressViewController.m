@@ -334,14 +334,16 @@ static const NSInteger maxPhotoCount = 9;
         return;
     }
     
-    NSString *mineType = @"application/octet-stream";
+//    NSString *mineType = @"application/octet-stream";
     NSString *name = @"file";
     [self.selectedImages enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
-        [[LMJRequestManager sharedManager] upload:[LMJXMGBaseUrl stringByAppendingPathComponent:@"upload"] parameters:@{@"username" : @"NJHu"} formDataBlock:^(id<AFMultipartFormData> formData) {
+
+        [[LMJRequestManager sharedManager] upload:[LMJXMGBaseUrl stringByAppendingPathComponent:@"upload"] parameters:@{@"username" : @"NJHu"} formDataBlock:^NSDictionary<NSData *,LMJDataName *> *(id<AFMultipartFormData> formData, NSMutableDictionary<NSData *,LMJDataName *> *needFillDataDict) {
             
             // 压缩率控制
-            [formData appendPartWithFileData:UIImageJPEGRepresentation(obj, 1) name:name fileName:@"test.png" mimeType:mineType];
+            needFillDataDict[UIImageJPEGRepresentation(obj, 1)] = name;
+            
+            return needFillDataDict;
             
         } progress:^(NSProgress *progress) {
             

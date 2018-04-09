@@ -334,14 +334,16 @@ static const NSInteger maxPhotoCount = 9;
     }
 
     MBProgressHUD *hud = [MBProgressHUD showProgressToView:self.view Text:@"传输中"];
-    NSString *mineType = @"application/octet-stream";
     NSString *name = @"file";
-    [[LMJRequestManager sharedManager] upload:[LMJXMGBaseUrl stringByAppendingPathComponent:@"upload"] parameters:@{@"username" : @"NJHu"} formDataBlock:^(id<AFMultipartFormData> formData) {
+    [[LMJRequestManager sharedManager] upload:[LMJXMGBaseUrl stringByAppendingPathComponent:@"upload"] parameters:@{@"username" : @"NJHu"} formDataBlock:^NSDictionary<NSData *,LMJDataName *> *(id<AFMultipartFormData> formData, NSMutableDictionary<NSData *,LMJDataName *> *needFillDataDict) {
         
         [self.selectedImages enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             // 压缩率控制
-            [formData appendPartWithFileData:UIImageJPEGRepresentation(obj, 1) name:name fileName:@"test.png" mimeType:mineType];
+//            [formData appendPartWithFileData:UIImageJPEGRepresentation(obj, 1) name:name fileName:@"test.png" mimeType:mineType];
+            needFillDataDict[UIImageJPEGRepresentation(obj, 1)] = name;
         }];
+        
+        return needFillDataDict;
         
     } progress:^(NSProgress *progress) {
         

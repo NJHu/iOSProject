@@ -10,6 +10,8 @@
 #import "LMJBaseResponse.h"
 #import <AFNetworking.h>
 
+typedef NSString LMJDataName;
+
 typedef enum : NSInteger {
     // 自定义错误码
     LMJRequestManagerStatusCodeCustomDemo = -10000,
@@ -27,14 +29,18 @@ typedef LMJBaseResponse *(^ResponseFormat)(LMJBaseResponse *response);
 //预处理返回的数据
 @property (copy, nonatomic) ResponseFormat responseFormat;
 
+// https 验证
+@property (nonatomic, copy) NSString *cerFilePath;
+
 - (void)POST:(NSString *)urlString parameters:(id)parameters completion:(void (^)(LMJBaseResponse *response))completion;
 
 - (void)GET:(NSString *)urlString parameters:(id)parameters completion:(void (^)(LMJBaseResponse *response))completion;
 
-/**
-  data 对应的二进制数据
-  name 服务端需要参数
+/*
+  上传
+   data 数据对应的二进制数据
+   LMJDataName data对应的参数
  */
-- (void)upload:(NSString *)urlString parameters:(id)parameters formDataBlock:(void(^)(id<AFMultipartFormData> formData))formDataBlock progress:(void (^)(NSProgress *progress))progress completion:(void (^)(LMJBaseResponse *response))completion;
+- (void)upload:(NSString *)urlString parameters:(id)parameters formDataBlock:(NSDictionary<NSData *, LMJDataName *> *(^)(id<AFMultipartFormData> formData, NSMutableDictionary<NSData *, LMJDataName *> *needFillDataDict))formDataBlock progress:(void (^)(NSProgress *progress))progress completion:(void (^)(LMJBaseResponse *response))completion;
 
 @end
