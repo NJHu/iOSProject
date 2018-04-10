@@ -17,17 +17,12 @@
 
 @implementation BSJReommmendCategoryCell
 
-+ (instancetype)reommmendCategoryCellWithTableView:(UITableView *)tableView
-{
-    
++ (instancetype)reommmendCategoryCellWithTableView:(UITableView *)tableView {
     
     BSJReommmendCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class])];
-    
     if (cell == nil) {
         cell = [NSBundle.mainBundle loadNibNamed:NSStringFromClass(self.class) owner:nil options:nil].lastObject;
     }
-    
-    
     return cell;
 }
 
@@ -61,14 +56,12 @@
 - (void)setCategory:(BSJRecommendCategory *)category
 {
     _category = category;
-    
     self.categoryLabel.text = category.name;
 }
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     self.indicatorView.hidden = !selected;
 }
 

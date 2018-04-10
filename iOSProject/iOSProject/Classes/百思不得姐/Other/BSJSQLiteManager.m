@@ -38,7 +38,6 @@ static NSString *_dbPath = nil;
             
             for (int i = 0; i < resultSet.columnCount; i++) {
                 
-                
                 NSString *colName = [resultSet columnNameForIndex:i];
                 
                 NSString *colValue = [resultSet objectForColumn:colName];
@@ -49,11 +48,9 @@ static NSString *_dbPath = nil;
             [dictArrayM addObject:dictM];
         }
         
-        
         completion(dictArrayM);
         
     }];
-    
     
 }
 

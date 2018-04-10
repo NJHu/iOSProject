@@ -11,9 +11,6 @@
 
 @implementation BSJRecommendCategory
 
-
-
-
 - (NSMutableArray<BSJRecommendUser *> *)users
 {
     if(_users == nil)

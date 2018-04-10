@@ -124,7 +124,7 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
     //    parameters[@"maxtime"] = isMore ? self.maxtime : nil;
     //    parameters[@"per"] = @10;
     
-    if (!maxTime && [LMJRequestManager sharedManager].reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable) {
+    if (!maxTime && ([LMJRequestManager sharedManager].reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable || [LMJRequestManager sharedManager].reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusUnknown)) {
         
         if ([topicType isEqualToString:@"1"]) {
             sql = [NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY t DESC LIMIT %@", tableName, count];
@@ -154,7 +154,7 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
             
             @try {
                 
-                NSDictionary *topicDict = [NSJSONSerialization JSONObjectWithData:topicData options:NSJSONReadingMutableLeaves error:nil];
+                NSDictionary *topicDict = [NSJSONSerialization JSONObjectWithData:topicData options:NSJSONReadingMutableContainers error:nil];
                 
                 [dictArrayM_new addObject:[NSMutableDictionary dictionaryWithDictionary:topicDict]];
                 

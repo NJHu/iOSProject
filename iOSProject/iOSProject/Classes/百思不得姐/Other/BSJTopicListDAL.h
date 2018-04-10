@@ -18,11 +18,7 @@
 
 + (void)queryTopicListFromDiskWithAreaType:(NSString *)areaType topicType:(NSString *)topicType maxTime:(NSString *)maxTime per:(NSInteger)per completion:(void(^)(NSMutableArray<NSMutableDictionary *> *dictArrayM))completion;
 
-
-
 + (void)cachesTopicList:(NSMutableArray<NSMutableDictionary *> *)topics areaType:(NSString *)areaType;
-
-
 
 + (void)clearOutTimeCashes;
 

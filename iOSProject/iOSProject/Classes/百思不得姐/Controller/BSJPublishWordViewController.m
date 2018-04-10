@@ -108,12 +108,7 @@
         BSJWordToolBar *wordToolBar = [[BSJWordToolBar alloc] init];
         [self.view addSubview:wordToolBar];
         _wordToolBar = wordToolBar;
-        
         wordToolBar.frame = CGRectMake(0, self.view.lmj_height - 100, self.view.lmj_width, 100);
-        
-        
-        
-        
     }
     return _wordToolBar;
 }

@@ -29,22 +29,14 @@
     [self GET:BSJBaiSiJieHTTPAPI parameters:parameters completion:^(LMJBaseResponse *response) {
         
         if (!response.error) {
-            
-        
             [self.recommendCategorys removeAllObjects];
-            
             self.recommendCategorys = [BSJRecommendCategory mj_objectArrayWithKeyValuesArray:response.responseObject[@"list"]];
-            
-            
             BSJRecommendCategory *defaultCategory = [BSJRecommendCategory new];
             defaultCategory.ID = @"";
             defaultCategory.name = @"全部";
-            
             [self.recommendCategorys insertObject:defaultCategory atIndex:0];
             
         }
-        
-        
         completion(response.error);
     }];
 
@@ -60,43 +52,30 @@
     parameters[@"c"] = @"user";
     
     if (isMore) {
-        
         parameters[@"last_flag"] = @"toplist";
-        
         parameters[@"last_record"] = self.recommendCategorys.firstObject.users.lastObject.uid;
     }
     
     NSInteger page = isMore ? (self.recommendCategorys.firstObject.page + 1) : 1;
     
     [self GET:BSJBaiSiJieHTTPAPI parameters:parameters completion:^(LMJBaseResponse *response) {
-        
         if (response.error) {
             completion(response.error);
             return ;
         }
-        
         
         if (!isMore) {
             [self.recommendCategorys.firstObject.users removeAllObjects];
         }
         
         if (!LMJIsEmpty(response.responseObject)) {
-            
             [self.recommendCategorys.firstObject.users addObjectsFromArray:[BSJRecommendUser mj_objectArrayWithKeyValuesArray:response.responseObject[@"top_list"]]];
-            
-            
         }
         
-        
         self.recommendCategorys.firstObject.page = page;
-        
         self.recommendCategorys.firstObject.totalPage = INFINITY;
-        
         completion(nil);
-        
     }];
-    
-    
 }
 
 
@@ -104,7 +83,6 @@
 {
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    
 
     NSInteger page = isMore ? (category.page + 1) : 1;
     
@@ -114,13 +92,10 @@
     parameters[@"pagesize"] = @20;
     parameters[@"category_id"] = category.ID;
     
-    
     [self GET:BSJBaiSiJieHTTPAPI parameters:parameters completion:^(LMJBaseResponse *response) {
         
         if (response.error) {
-            
             NSLog(@"%@", response.error);
-            
             completion(response.error);
             return ;
         }
@@ -131,16 +106,13 @@
         }
         
         if (!LMJIsEmpty(response.responseObject)) {
-            
             [category.users addObjectsFromArray:[BSJRecommendUser mj_objectArrayWithKeyValuesArray:response.responseObject[@"list"]]];
         }
         
         category.page = [response.responseObject[@"next_page"] integerValue] - 1;
         category.totalPage = [response.responseObject[@"total_page"] integerValue];
         
-        
         completion(nil);
-        
     }];
 }
 

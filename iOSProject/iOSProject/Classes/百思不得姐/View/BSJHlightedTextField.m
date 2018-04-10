@@ -36,6 +36,8 @@ static NSString *const BSJHlightTextFieldPlaceHolderColorKeyPath = @"_placeholde
 {   
     self.oriPlaceHolderColor = [self valueForKeyPath:BSJHlightTextFieldPlaceHolderColorKeyPath];
     self.tintColor = self.textColor;
+    self.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15, 20)];
+    self.leftViewMode = UITextFieldViewModeAlways;
 }
 
 
@@ -54,19 +56,5 @@ static NSString *const BSJHlightTextFieldPlaceHolderColorKeyPath = @"_placeholde
     return [super resignFirstResponder];
 }
 
-
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    
-}
-
-+ (void)load
-{
-    
-    
-}
 
 @end

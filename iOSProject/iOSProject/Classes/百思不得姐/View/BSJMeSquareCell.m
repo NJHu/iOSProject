@@ -49,11 +49,8 @@
 {
     _meSquare = meSquare;
     
-    
     [self.iconImageView sd_setImageWithURL:meSquare.icon];
-    
     self.nameLabel.text = meSquare.name;
-    
 }
 
 @end

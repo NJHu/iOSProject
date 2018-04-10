@@ -13,8 +13,14 @@
 @implementation LMJNavUIBaseViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
+
+    LMJWeak(self);
+    [self.navigationItem addObserverBlockForKeyPath:LMJKeyPath(self.navigationItem, title) block:^(id  _Nonnull obj, id  _Nonnull oldVal, NSString  *_Nonnull newVal) {
+        if (newVal.length > 0 && ![newVal isEqualToString:oldVal]) {
+            weakself.title = newVal;
+        }
+    }];
 }
 
 
@@ -46,8 +52,9 @@
     [UIApplication sharedApplication].statusBarStyle = [self navUIBaseViewControllerPreferStatusBarStyle:self];
 }
 
-
-
+- (void)dealloc {
+    [self.navigationItem removeObserverBlocksForKeyPath:LMJKeyPath(self.navigationItem, title)];
+}
 
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
@@ -176,16 +183,10 @@
 - (void)setTitle:(NSString *)title
 {
     [super setTitle:title];
-    
     self.lmj_navgationBar.title = [self changeTitle:title];
 }
 
-
 @end
-
-
-
-
 
 
 

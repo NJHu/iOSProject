@@ -54,8 +54,11 @@
             return;
         }
         
+        
         // 数据是空的时候不是字典了
         if (![response.responseObject isKindOfClass:[NSDictionary class]]) {
+            response.error = [NSError errorWithDomain:NSGlobalDomain code:-1 userInfo:nil];
+            completion(response.error, YES);
             return;
         }
         
@@ -81,7 +84,7 @@
         
         [self.latestCmts addObjectsFromArray:[BSJComment mj_objectArrayWithKeyValuesArray:response.responseObject[@"data"]]];
         
-        completion(nil, [response.responseObject[@"total"] integerValue] <= self.latestCmts.count);
+        completion(nil, [response.responseObject[@"total"] integerValue] > self.latestCmts.count);
         
     }];
 }
