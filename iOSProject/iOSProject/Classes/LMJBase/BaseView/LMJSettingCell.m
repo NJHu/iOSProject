@@ -49,7 +49,7 @@ static NSString *const ID = @"LMJSettingCell";
 
 - (void)setupBaseSettingCellUI
 {
-
+    self.detailTextLabel.numberOfLines = 0;
 }
 
 - (void)setItem:(LMJWordItem *)item
@@ -90,6 +90,7 @@ static NSString *const ID = @"LMJSettingCell";
     
     self.detailTextLabel.font = self.item.subTitleFont;
     self.detailTextLabel.textColor = self.item.subTitleColor;
+    self.detailTextLabel.numberOfLines = self.item.subTitleNumberOfLines;
     
     if ([self.item isKindOfClass:[LMJWordArrowItem class]]) {
         

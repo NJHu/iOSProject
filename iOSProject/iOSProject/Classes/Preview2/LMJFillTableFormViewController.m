@@ -30,6 +30,7 @@
     
     LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"姓名" subTitle:@"请输入姓名"];
     item1.subTitleColor = [UIColor lightGrayColor];
+    item1.subTitleNumberOfLines = 1;
 //    LMJWeak(item1);
     [item1 setItemOperation:^void(NSIndexPath *indexPath){
         // 拿到cell
@@ -87,6 +88,7 @@
     // 占位
     LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"家庭地址" subTitle:@"请输入家庭地址"];
 //    LMJWeak(item4);
+    item4.subTitleNumberOfLines = 1;
     [item4 setItemOperation:^void(NSIndexPath *indexPath){
         // 拿到cell
         UITableViewCell *cell = [weakself.tableView cellForRowAtIndexPath:indexPath];
