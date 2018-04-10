@@ -1,10 +1,4 @@
-<div>
-<div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/nj.jpg" width="14%"><b>Github&nbsp点个赞↑👍,感谢您的支持!</b><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qun.jpg" width="14%">
-</div>
-
-</div>
-
+<b>Github 点个赞↑👍,感谢您的支持!</b>
 <p>GitHub：<a href="https://github.com/njhu">NJHu</a> ｜ Blog：<a href="https://www.weibo.com/njhu" rel="nofollow">NJHu 微博(Chinese)</a> ｜ <a href="mailto:64hp@163.com">feedback</a>:<a href="mailto:64hp@163.com">64hp@163.com</a></p>
 
 <div>
@@ -13,6 +7,9 @@
 
 <h2><a id="Getting_Started">iOSProject</a></h2>
 
+<table>
+<tr>
+<td rowspan="2">
 <ul>
 <li><a href="#Getting_Started">开始</a></li>
 <li><a href="#homeList">首页功能列表</a></li>
@@ -35,6 +32,17 @@
 <li><a href="#other_s">Others 其他</a></li>
 <li><a href="#qidai">期待</a></li>
 </ul>
+</td>
+<td>
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/nj.jpg" width="150px" height="180px">
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qun.jpg" width="150px" height="180px">
+</td>
+</tr>
+</table>
 
 <h2><a id="homeList">首页功能列表</a></h2>
 <div>
