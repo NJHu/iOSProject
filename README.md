@@ -1,4 +1,4 @@
-<b>Github 点个赞↑👍,感谢您的支持!</b>
+<p align="right"><b>Github 点个赞↑👍,感谢您的支持!</b></p>
 <div>
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%">
 </div>
