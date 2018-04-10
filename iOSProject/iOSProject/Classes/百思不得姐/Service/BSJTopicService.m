@@ -11,17 +11,14 @@
 
 @interface BSJTopicService ()
 
-/** <#digest#> */
 @property (nonatomic, copy) NSString *maxtime;
 
-/** <#digest#> */
+/** 防止重复刷新 */
 @property (nonatomic, strong) id parameters;
 
 @end
 
 @implementation BSJTopicService
-
-
 
 - (void)getTopicIsMore:(BOOL)isMore typeA:(NSString *)typeA topicType:(NSInteger)topicType completion:(void(^)(NSError *error, NSInteger totalCount, NSInteger currentCount))completion
 {
@@ -72,9 +69,7 @@
                     return ;
                 }
                 
-                
                 if (!isMore) {
-                    
                     [self.topicViewModels removeAllObjects];
                 }
                 

@@ -10,7 +10,7 @@
 #import "BSJTopicViewModel.h"
 #import <M13ProgressViewRing.h>
 #import "BSJPictureShowViewController.h"
-
+#import "PresentAnimator.h"
 
 
 @interface BSJTopicPictureView ()
@@ -47,7 +47,6 @@
 {
     [super drawRect:rect];
     
-    
     UIImage *logo = [UIImage imageNamed:@"imageBackground"];
     
     [logo drawAtPoint:CGPointMake((rect.size.width - logo.size.width) * 0.5, 5)];
@@ -57,37 +56,6 @@
 - (void)setTopicViewModel:(BSJTopicViewModel *)topicViewModel
 {
     _topicViewModel = topicViewModel;
-    
-    
-    /*
-     self.ringProgressView.hidden = (topicViewModel.downloadPictureProgress >= 1);
-     
-     [self.ringProgressView setProgress:topicViewModel.downloadPictureProgress animated:NO];
-     
-     LMJWeak(self);
-     [self.pictureImageView lmj_setImageWithURL:topicViewModel.topic.largePicture thumbnailImageURL:topicViewModel.topic.smallPicture placeholderImage:nil options:SDWebImageTransformAnimatedImage progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-     
-     //关键步骤
-     topicViewModel.downloadPictureProgress = (CGFloat)receivedSize / expectedSize;
-     
-     // 关键步骤
-     [weakself.ringProgressView setProgress:weakself.topicViewModel.downloadPictureProgress animated:NO];
-     
-     
-     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-     
-     if (error || !weakself.topicViewModel.isBigPicture || weakself.topicViewModel.topic.isGif || !image || weakself.topicViewModel != topicViewModel) { // 关键步骤,
-     return ;
-     }
-     
-     CGFloat w = weakself.topicViewModel.topic.width;
-     CGFloat h = weakself.topicViewModel.pictureFrame.size.height / weakself.topicViewModel.pictureFrame.size.width * w;
-     
-     weakself.pictureImageView.image = [image imageByCropToRect:CGRectMake(0, 0, w, h)];
-     
-     }];
-     */
-    
     // 1, gif
     self.gifImageView.hidden = !topicViewModel.topic.isGif;
     
@@ -100,24 +68,20 @@
     
     // 3.2刷新进度立马
     [self.ringProgressView setProgress:topicViewModel.downloadPictureProgress animated:NO];
-    
+    LMJWeak(self);
     [self.pictureImageView lmj_setImageWithURL:topicViewModel.topic.largePicture thumbnailImageURL:topicViewModel.topic.smallPicture placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL *targetURL) {
         
-        // 3.3储存 "每个模型" 的进度
+        // 3.3储存 "每个模型" 的进度, topicViewModel
         topicViewModel.downloadPictureProgress = (CGFloat)receivedSize / expectedSize;
         
-        
-        // 3.4给每个cell对应的模型进度赋值
-        [self.ringProgressView setProgress:self.topicViewModel.downloadPictureProgress animated:NO];
-        
+        // 3.4给每个cell对应的模型进度赋值, self.topicViewModel, getter 获得
+        [weakself.ringProgressView setProgress:weakself.topicViewModel.downloadPictureProgress animated:NO];
         
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
         // 4, 处理大图, 必须是当前的模型
-        if (!image || error || !self.topicViewModel.isBigPicture || self.topicViewModel != topicViewModel) {
-            
+        if (!image || error || !weakself.topicViewModel.isBigPicture || weakself.topicViewModel != topicViewModel) {
             return ;
-            
         }
         
         // 4.1 裁剪
@@ -125,13 +89,11 @@
         // 控制隐藏, 当是当前的模型的时候才隐藏
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             
-            UIGraphicsBeginImageContextWithOptions(self.topicViewModel.pictureFrame.size, NO, 0);
+            UIGraphicsBeginImageContextWithOptions(weakself.topicViewModel.pictureFrame.size, NO, 0);
             
-            CGFloat w = self.topicViewModel.pictureFrame.size.width;
+            CGFloat w = weakself.topicViewModel.pictureFrame.size.width;
             
-            
-            CGFloat h = w * self.topicViewModel.topic.height / self.topicViewModel.topic.width;
-            
+            CGFloat h = w * weakself.topicViewModel.topic.height / weakself.topicViewModel.topic.width;
             
             [image drawInRect:CGRectMake(0, 0, w, h)];
             
@@ -141,7 +103,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                self.pictureImageView.image = newImage;
+                weakself.pictureImageView.image = newImage;
                 
             });
             
@@ -171,17 +133,27 @@
             
             BSJPictureShowViewController *showPicVc = [[BSJPictureShowViewController alloc] init];
             showPicVc.topicViewModel = weakself.topicViewModel;
-//            @property (nonatomic,retain) UIViewController *popUpViewController;
-//            @property (nonatomic,assign) CGPoint popUpOffset;               //相对于弹出位置的偏移
-//            @property (nonatomic,assign) CGSize popUpViewSize;              //弹出视图的大小
-//            @property (nonatomic,assign) DDPopUpPosition popUpPosition;     //弹出视图的位置
-//            @property (nonatomic,assign) BOOL dismissWhenTouchBackground;   //是否允许点击背景dismiss
-//            @property (nonatomic,copy) DismissCallback dismissCallback;
-            
-            
-            showPicVc.popUpViewSize = kScreenSize;
-            
-            [weakself.viewController showPopUpViewController:showPicVc animationType:DDPopUpAnimationTypeFade];
+
+            // 自写动画
+            [PresentAnimator viewController:weakself.viewController presentViewController:showPicVc presentViewFrame:[UIScreen mainScreen].bounds animated:YES completion:nil animatedDuration:0.5 presentAnimation:^(UIView *presentedView, UIView *containerView, void (^completionHandler)(BOOL finished)) {
+                
+                presentedView.alpha = 0;
+                [UIView animateWithDuration:0.5 animations:^{
+                    presentedView.alpha = 1;
+                } completion:^(BOOL finished) {
+                    completionHandler(finished);
+                }];
+                
+            } dismissAnimation:^(UIView *dismissView, void (^completionHandler)(BOOL finished)) {
+                
+                dismissView.alpha = 1;
+                [UIView animateWithDuration:0.5 animations:^{
+                    dismissView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    completionHandler(finished);
+                }];
+                
+            }];
             
         }];
         
@@ -298,3 +270,33 @@
 }
 
 @end
+
+
+/*
+ self.ringProgressView.hidden = (topicViewModel.downloadPictureProgress >= 1);
+ 
+ [self.ringProgressView setProgress:topicViewModel.downloadPictureProgress animated:NO];
+ 
+ LMJWeak(self);
+ [self.pictureImageView lmj_setImageWithURL:topicViewModel.topic.largePicture thumbnailImageURL:topicViewModel.topic.smallPicture placeholderImage:nil options:SDWebImageTransformAnimatedImage progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+ 
+ //关键步骤
+ topicViewModel.downloadPictureProgress = (CGFloat)receivedSize / expectedSize;
+ 
+ // 关键步骤
+ [weakself.ringProgressView setProgress:weakself.topicViewModel.downloadPictureProgress animated:NO];
+ 
+ 
+ } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+ 
+ if (error || !weakself.topicViewModel.isBigPicture || weakself.topicViewModel.topic.isGif || !image || weakself.topicViewModel != topicViewModel) { // 关键步骤,
+ return ;
+ }
+ 
+ CGFloat w = weakself.topicViewModel.topic.width;
+ CGFloat h = weakself.topicViewModel.pictureFrame.size.height / weakself.topicViewModel.pictureFrame.size.width * w;
+ 
+ weakself.pictureImageView.image = [image imageByCropToRect:CGRectMake(0, 0, w, h)];
+ 
+ }];
+ */

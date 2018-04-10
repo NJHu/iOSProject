@@ -23,7 +23,6 @@
 @end
 
 
-
 @interface UIView (GestureCallback)
 
 @property (nonatomic)     NSMutableDictionary *gestures;

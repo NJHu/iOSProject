@@ -10,10 +10,9 @@
 #import "BSJTopicTopComent.h"
 #import "BSJTopicCmtService.h"
 #import "BSJTopicCmtCell.h"
-#import "MenuPopOverView.h"
 #import "LMJCommentHeaderView.h"
 
-@interface BSJCommentPageViewController ()<MenuPopOverViewDelegate>
+@interface BSJCommentPageViewController ()
 /** <#digest#> */
 @property (nonatomic, strong) BSJTopicViewModel *c_topicViewModel;
 
@@ -39,9 +38,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"评论";
-    
+    self.title = @"评论";
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += self.cmtToolBar.lmj_height;
+    self.tableView.contentInset = insets;
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100;
@@ -53,13 +54,11 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
     [self.view bringSubviewToFront:self.cmtToolBar];
 }
 
 - (void)setupHeader
 {
-    
     BSJTopicCell *header = [BSJTopicCell topicCellWithTableView:self.tableView];
     
     header.topicViewModel = self.c_topicViewModel;
@@ -67,12 +66,7 @@
     header.lmj_height = self.c_topicViewModel.cellHeight;
     
     self.tableView.tableHeaderView = header;
-    
-    
 }
-
-
-
 
 - (void)loadMore:(BOOL)isMore
 {
@@ -80,70 +74,51 @@
     [self.topicCmtService getCmtsWithTopicID:self.topicViewModel.topic.ID.copy isMore:isMore completion:^(NSError *error, BOOL isHaveNextPage) {
         
         [weakself endHeaderFooterRefreshing];
+        
         if (error) {
             [weakself.view makeToast:error.localizedDescription];
             return ;
         }
         
-        
         [weakself.tableView reloadData];
-        
         [weakself.tableView.mj_footer setState:isHaveNextPage ? MJRefreshStateIdle : MJRefreshStateNoMoreData];
     }];
     
 }
 
-
+#pragma mark - tableViewDelegete
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (self.topicCmtService.hotCmts.count) {
-        
         return 2;
         
     } else if(self.topicCmtService.latestCmts.count) {
-        
         return 1;
-        
     }
-    
-    
     return 0;
-    
 }
-
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([self numberOfSectionsInTableView:tableView] == 1) {
-        
         return self.topicCmtService.latestCmts.count;
-        
     }else if ([self numberOfSectionsInTableView:tableView] == 2)
     {
         if (section == 0) {
             return self.topicCmtService.hotCmts.count;
         }
-        
         if (section == 1) {
-            
             return self.topicCmtService.latestCmts.count;
         }
     }
-    
-    
     return 0;
-    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BSJTopicCmtCell *cmtCell = [BSJTopicCmtCell cmtCellWithTableView:tableView];
-    
     cmtCell.cmt = [self commentWithIndexPath:indexPath];
-    
-    
     return cmtCell;
 }
 
@@ -153,16 +128,12 @@
     switch ([self numberOfSectionsInTableView:self.tableView]) {
         case 1:
             return self.topicCmtService.latestCmts[indexPath.row];
-            
             break;
         case 2:
-            
             if(indexPath.section == 0) return self.topicCmtService.hotCmts[indexPath.row];
             if(indexPath.section == 1) return self.topicCmtService.latestCmts[indexPath.row];
-            
             break;
     }
-    
     return nil;
 }
 
@@ -180,7 +151,6 @@
     switch ([self numberOfSectionsInTableView:self.tableView]) {
         case 1:
             headerView.title = @"最新评论";
-            
             break;
         case 2:
             if(section == 0) headerView.title = @"最热评论";
@@ -193,64 +163,25 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [super scrollViewWillBeginDragging:scrollView];
-    
     [self.menu setMenuVisible:NO animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
     // 注意要让cell成为第一响应者
     [cell becomeFirstResponder];
-    
     [self.menu setTargetRect:CGRectMake(0, cell.lmj_height/2, cell.lmj_width, cell.lmj_height/2) inView:cell];
-    
     [self.menu setMenuVisible:!self.menu.isMenuVisible animated:YES];
-    
 }
 
-#pragma mark - MenuPopOverViewDelegate
-- (void)ding:(UIMenuController *)menu
-{
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    
-    BSJComment *comment = [self commentWithIndexPath:indexPath];
-    
-    NSLog(@"%@", comment.content);
-    
-}
-
-- (void)repley:(UIMenuController *)menu
-{
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    
-    BSJComment *comment = [self commentWithIndexPath:indexPath];
-    
-    NSLog(@"%@", comment.content);
-    
-}
-
-- (void)jubao:(UIMenuController *)menu
-{
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    
-    BSJComment *comment = [self commentWithIndexPath:indexPath];
-    
-    NSLog(@"%@", comment.content);
-    
-}
 
 #pragma mark - setter
 - (void)setTopicViewModel:(BSJTopicViewModel *)topicViewModel
 {
     _topicViewModel = topicViewModel;
-    
-    
     BSJTopic *topic = [BSJTopic mj_objectWithKeyValues:topicViewModel.topic.mj_keyValues];
-    
     topic.topCmts = nil;
-    
     self.c_topicViewModel = [BSJTopicViewModel viewModelWithTopic:topic];
 }
 
@@ -280,11 +211,12 @@
     if(_menu == nil)
     {
         _menu = [UIMenuController sharedMenuController];
-        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
         UIMenuItem *item0 = [[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
         UIMenuItem *item1 = [[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(repley:)];
         UIMenuItem *item2= [[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(jubao:)];
-        
+#pragma clang diagnostic pop
         _menu.menuItems = @[item0, item1, item2];
     }
     return _menu;

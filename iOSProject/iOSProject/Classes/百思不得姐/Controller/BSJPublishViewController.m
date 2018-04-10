@@ -24,9 +24,6 @@
 @implementation BSJPublishViewController
 
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -196,7 +193,8 @@
 
 - (void)closePage
 {
-    [self dismissPopUpViewController:DDPopUpAnimationTypeNone];
+//    [self dismissPopUpViewController:DDPopUpAnimationTypeNone];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 /*

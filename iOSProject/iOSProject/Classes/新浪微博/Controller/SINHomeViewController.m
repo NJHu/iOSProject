@@ -164,13 +164,13 @@
 {
     
     NSLog(@"%s", __func__);
-    SINHomeCategoryViewController *categoryVc = [[SINHomeCategoryViewController alloc] init];
-    categoryVc.popUpOffset = CGPointMake(0, 60);
-    categoryVc.popUpPosition = DDPopUpPositionTop;
-    categoryVc.popUpViewSize = CGSizeMake(kScreenWidth * 0.5, AdaptedHeight(250));
+//    SINHomeCategoryViewController *categoryVc = [[SINHomeCategoryViewController alloc] init];
+//    categoryVc.popUpOffset = CGPointMake(0, 60);
+//    categoryVc.popUpPosition = DDPopUpPositionTop;
+//    categoryVc.popUpViewSize = CGSizeMake(kScreenWidth * 0.5, AdaptedHeight(250));
     
     
-    [self showPopUpViewController:categoryVc animationType:DDPopUpAnimationTypeFade];
+//    [self showPopUpViewController:categoryVc animationType:DDPopUpAnimationTypeFade];
     
 }
 

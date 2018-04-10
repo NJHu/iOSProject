@@ -14,7 +14,7 @@
 #import "BSJMeViewController.h"
 #import "BSJTabBar.h"
 #import "BSJGuidePushView.h"
-
+#import "PresentAnimator.h"
 
 @interface BSJTabBarController ()<UITabBarControllerDelegate>
 
@@ -25,58 +25,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.tabBar.tintColor = [UIColor redColor];
-    
     [self setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, -3)] forKeyPath:LMJKeyPath(self, titlePositionAdjustment)];
-    
     [self addTabarItems];
     [self addChildViewControllers];
-    
     self.delegate = self;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
-        //        if (![GVUserDefaults standardUserDefaults].isHaveBSJFirstLaunch) {
-        
         [[UIApplication sharedApplication].keyWindow addSubview:[BSJGuidePushView guidePushView]];
-        //            BBUserDefault.isHaveBSJFirstLaunch = YES;
-        //        }
     });
 }
+
 
 /**
  *  利用 KVC 把系统的 tabBar 类型改为自定义类型。覆盖父类方法
  */
 - (void)setUpTabBar {
-    
     BSJTabBar *tabBar = [[BSJTabBar alloc] init];
-    
     LMJWeak(self);
     [tabBar setPublishBtnClick:^(BSJTabBar *tabBar, UIButton *publishBtn){
-        
-        BSJPublishViewController *publishVc = [[BSJPublishViewController alloc] init];
-        
-        //            @property (nonatomic,retain) UIViewController *popUpViewController;
-        //            @property (nonatomic,assign) CGPoint popUpOffset;               //相对于弹出位置的偏移
-        //            @property (nonatomic,assign) CGSize popUpViewSize;              //弹出视图的大小
-        //            @property (nonatomic,assign) DDPopUpPosition popUpPosition;     //弹出视图的位置
-        //            @property (nonatomic,assign) BOOL dismissWhenTouchBackground;   //是否允许点击背景dismiss
-        //            @property (nonatomic,copy) DismissCallback dismissCallback;
-        
-        
-        publishVc.popUpViewSize = kScreenSize;
-        
-        [weakself showPopUpViewController:publishVc animationType:DDPopUpAnimationTypeNone];
-        
+        [weakself showPublishVc];
     }];
-    
     [self setValue:tabBar forKeyPath:LMJKeyPath(self, tabBar)];
 }
 
@@ -96,7 +66,6 @@
 
 - (void)addTabarItems
 {
-    
     
     NSDictionary *firstTabBarItemsAttributes = @{
                                                  CYLTabBarItemTitle : @"精华",
@@ -130,9 +99,37 @@
     
 }
 
+#pragma mark - UITabBarControllerDelegate
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     return YES;
+}
+
+- (void)showPublishVc
+{
+    LMJWeak(self);
+    BSJPublishViewController *publishVc = [[BSJPublishViewController alloc] init];
+    
+    [PresentAnimator viewController:weakself presentViewController:publishVc presentViewFrame:[UIScreen mainScreen].bounds animated:YES completion:nil animatedDuration:0.5 presentAnimation:^(UIView *presentedView, UIView *containerView, void (^completion)(BOOL finished)) {
+        
+        // 自己做动画
+        presentedView.transform = CGAffineTransformMakeTranslation(0, -kScreenHeight);
+        [UIView animateWithDuration:0.5 animations:^{
+            presentedView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            completion(finished);
+        }];
+        
+    } dismissAnimation:^(UIView *dismissView, void (^completion)(BOOL finished)) {
+        // 自己做动画
+        [UIView animateWithDuration:0.5 animations:^{
+            dismissView.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
+        } completion:^(BOOL finished) {
+            completion(finished);
+        }];
+        
+    }];
+    
 }
 
 @end

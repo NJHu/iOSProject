@@ -20,12 +20,10 @@
     [super viewDidLoad];
     
 //    1为全部，10为图片，29为段子，31为音频，41为视频
-    
     BSJTopicViewController *words = [[BSJTopicViewController alloc] initWithTitle:@"段子"];
     BSJTopicViewController *voice = [[BSJTopicViewController alloc] initWithTitle:@"音频"];
     BSJTopicViewController *picture = [[BSJTopicViewController alloc] initWithTitle:@"图片"];
     BSJTopicViewController *video = [[BSJTopicViewController alloc] initWithTitle:@"视频"];
-    
     BSJTopicViewController *all = [[BSJTopicViewController alloc] initWithTitle:@"全部"];
     
     words.topicType = BSJTopicTypeWords;
@@ -40,8 +38,9 @@
     [self addChildViewController:words];
     [self addChildViewController:voice];
     
+    [self.childViewControllers makeObjectsPerformSelector:@selector(setAreaType:) withObject:@"list"];
+    
     self.scrollPageView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-
 }
 
 
@@ -56,19 +55,13 @@
         style.showLine = YES;
         // 颜色渐变
         style.gradualChangeTitleColor = YES;
-        
         style.animatedContentViewWhenTitleClicked = NO;
-        
         style.autoAdjustTitlesWidth = YES;
         
         ZJScrollPageView *scrollPageView = [[ZJScrollPageView alloc] initWithFrame:CGRectMake(0, self.lmj_navgationBar.lmj_height, self.view.lmj_width, self.view.lmj_height - self.lmj_navgationBar.lmj_height) segmentStyle:style titles:[self.childViewControllers valueForKey:@"title"] parentViewController:self delegate:self];
-        
+        scrollPageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self.view addSubview:scrollPageView];
         _scrollPageView = scrollPageView;
-        
-        scrollPageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        
     }
     return _scrollPageView;
 }
@@ -76,22 +69,15 @@
 
 #pragma mark - ZJScrollPageViewDelegate
 - (NSInteger)numberOfChildViewControllers {
-    
     return self.childViewControllers.count;
-    
 }
 
 - (UIViewController <ZJScrollPageViewChildVcDelegate> *)childViewController:(UIViewController<ZJScrollPageViewChildVcDelegate> *)reuseViewController forIndex:(NSInteger)index {
     
-    
     UIViewController<ZJScrollPageViewChildVcDelegate> *childVc = reuseViewController;
-    
     if (!childVc) {
-        
         childVc = self.childViewControllers[index];
-        
     }
-    
     return childVc;
 }
 
@@ -101,8 +87,6 @@
 
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
-
-
 - (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
 {
     return UIStatusBarStyleLightContent;
@@ -126,8 +110,6 @@
     return ({
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
         imageView.backgroundColor = [UIColor whiteColor];
-        
-        
         imageView;
     });
 }
@@ -143,30 +125,5 @@
     [rightButton setImage:[UIImage imageNamed:@"nav_coin_icon_click"] forState:UIControlStateHighlighted];
     return [UIImage imageNamed:@"nav_coin_icon"];
 }
-
-
-
-#pragma mark - LMJNavUIBaseViewControllerDelegate
-/** 左边的按钮的点击 */
--(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-/** 右边的按钮的点击 */
--(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-/** 中间如果是 label 就会有点击 */
--(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-
-
-
-
-
-
 
 @end

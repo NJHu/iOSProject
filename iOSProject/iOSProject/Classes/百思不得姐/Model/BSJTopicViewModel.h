@@ -27,7 +27,7 @@
 /** 高度 */
 @property (assign, nonatomic, readonly) CGFloat cellHeight;
 
-/** 下载图片 的进度 */
+/** 下载图片的进度 */
 @property (assign, nonatomic) CGFloat downloadPictureProgress;
 
 /** 创建时间的格式化 */
@@ -36,32 +36,27 @@
 /** 评论的布局文字 */
 @property (nonatomic, strong) YYTextLayout *topCmtLayout;
 
-
-
-/** <#digest#> */
+/** 点击热评的用户 */
 @property (nonatomic, copy) void(^topCmtClick)(BSJUser *user, BSJTopicTopComent *topCmt);
 
 
 /*
- 
- |-10-|-10-|-Header80-|-10-|-content-|-10-|-botBar44-|
+ |-10-|-10-|-Header50-|-10-|-content-|-10-|-botBar44-|
  */
 
-/** <#digest#> */
+/** 点赞 */
 @property (nonatomic, copy) NSString *zanCount;
 
-/** <#digest#> */
+/** 踩   */
 @property (nonatomic, copy) NSString *caiCount;
 
-/** <#digest#> */
+/** 转发 */
 @property (nonatomic, copy) NSString *repostCount;
 
-/** <#digest#> */
+/** 评论 */
 @property (nonatomic, copy) NSString *commentCount;
 
 /** 播放时长 00 : 00 */
 @property (nonatomic, copy) NSString *playLength;
-
-
 
 @end

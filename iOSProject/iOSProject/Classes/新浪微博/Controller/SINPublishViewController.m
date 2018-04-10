@@ -568,7 +568,9 @@ static const NSInteger maxPhotoCount = 9;
 /** 左边的按钮的点击 */
 -(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    [self dismissPopUpViewController:DDPopUpAnimationTypeFade];
+//    PopUp
+//    [self dismissPopUpViewController:DDPopUpAnimationTypeFade];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar

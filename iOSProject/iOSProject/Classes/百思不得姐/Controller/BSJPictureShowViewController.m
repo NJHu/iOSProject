@@ -11,6 +11,9 @@
 #import <M13ProgressViewRing.h>
 
 @interface BSJPictureShowViewController ()<UIScrollViewDelegate>
+{
+    BOOL _statusBarStatus;
+}
 /** <#digest#> */
 @property (weak, nonatomic) UIImageView *pictureImageView;
 
@@ -23,7 +26,6 @@
 /** <#digest#> */
 @property (weak, nonatomic) UIButton *backButton;
 
-
 @end
 
 @implementation BSJPictureShowViewController
@@ -33,32 +35,30 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     
+    BSJTopicViewModel *topicViewModel = self.topicViewModel;
+    
     LMJWeak(self);
     [self.view addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
-        
-        [weakself dismissPopUpViewController:DDPopUpAnimationTypeFade];
+//        PopUp
+        [weakself dismissViewControllerAnimated:YES completion:nil];
     }];
     
     // 3, 处理进度,
     // 3.1 隐藏
+    self.ringProgressView.hidden = self.topicViewModel.downloadPictureProgress >= 1;
     
     // 3.2刷新进度立马
     [self.ringProgressView setProgress:self.topicViewModel.downloadPictureProgress animated:NO];
     
-    self.ringProgressView.hidden = self.topicViewModel.downloadPictureProgress >= 1;
-    
     [self.pictureImageView lmj_setImageWithURL:self.topicViewModel.topic.largePicture thumbnailImageURL:self.topicViewModel.topic.smallPicture placeholderImage:nil options:SDWebImageTransformAnimatedImage progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         
         // 3.3储存 "每个模型" 的进度
-        self.topicViewModel.downloadPictureProgress = (CGFloat)receivedSize / expectedSize;
-        
+        topicViewModel.downloadPictureProgress = (CGFloat)receivedSize / expectedSize;
         
         // 3.4给每个cell对应的模型进度赋值
         [self.ringProgressView setProgress:self.topicViewModel.downloadPictureProgress animated:NO];
         
-        
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
         
         self.ringProgressView.hidden = self.topicViewModel.downloadPictureProgress >= 1;
         
@@ -70,38 +70,37 @@
     CGFloat picHeight = picWidth * self.topicViewModel.topic.height / self.topicViewModel.topic.width;
     
     if (picHeight <= kScreenHeight) {
-        
         self.pictureImageView.frame = CGRectMake(0, (kScreenHeight - picHeight) * 0.5, kScreenWidth, picHeight);
-        
-
-    }else
-    {
+    } else {
         self.pictureImageView.frame = CGRectMake(0, 0, kScreenWidth, picHeight);
-        
-
     }
-    
     self.scrollView.contentSize = CGSizeMake(kScreenWidth, picHeight);
-    
     [self backButton];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _statusBarStatus = [UIApplication sharedApplication].isStatusBarHidden;
+    [UIApplication sharedApplication].statusBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [UIApplication sharedApplication].statusBarHidden = _statusBarStatus;
+}
 
 #pragma mark - UIScrollViewDelegate
-
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.pictureImageView;
 }
 
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView
-{
-    if (self.pictureImageView.lmj_height < kScreenHeight) {
-        
-        self.pictureImageView.lmj_centerY = kScreenHeight * 0.5;
-    }
-    
-}
+//- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+//{
+//    if (self.pictureImageView.lmj_height < kScreenHeight) {
+//        self.pictureImageView.lmj_centerY = kScreenHeight * 0.5;
+//    }
+//}
 
 - (UIImageView *)pictureImageView
 {
@@ -144,7 +143,7 @@
         UIButton *btn = [UIButton new];
         [self.view addSubview:btn];
         _backButton = btn;
-        
+        btn.backgroundColor = [UIColor redColor];
         [btn setTitle:@"返回" forState: UIControlStateNormal];
         
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -155,7 +154,8 @@
         
         LMJWeak(self);
         [btn addActionHandler:^(NSInteger tag) {
-            [weakself dismissPopUpViewController:DDPopUpAnimationTypeFade];
+//            PopUp
+            [weakself dismissViewControllerAnimated:YES completion:nil];
         }];
     }
     return _backButton;
@@ -169,8 +169,6 @@
         M13ProgressViewRing *ringProgressView = [[M13ProgressViewRing alloc] init];
         [self.view insertSubview:ringProgressView atIndex:0];
         _ringProgressView = ringProgressView;
-        
-        
         
         ringProgressView.backgroundRingWidth = 5;
         ringProgressView.progressRingWidth = 5;
@@ -186,12 +184,6 @@
         
     }
     return _ringProgressView;
-}
-
-
-- (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
-{
-    return UIStatusBarStyleLightContent;
 }
 
 

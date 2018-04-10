@@ -21,7 +21,6 @@
     
     LMJCommentHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ID];
     if (header == nil) {
-        
         header = [[LMJCommentHeaderView alloc] initWithReuseIdentifier:ID];
     }
     
@@ -46,16 +45,14 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
     self.label.frame = self.contentView.bounds;
     self.label.lmj_x = 10;
-    
+    self.label.backgroundColor = [UIColor RandomColor];
 }
 
 - (void)setTitle:(NSString *)title
 {
     _title = title.copy;
-    
     self.label.text = _title;
 }
 

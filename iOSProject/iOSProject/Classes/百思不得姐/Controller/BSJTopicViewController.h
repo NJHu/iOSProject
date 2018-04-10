@@ -14,4 +14,7 @@
 /** <#digest#> */
 @property (assign, nonatomic) BSJTopicType topicType;
 
+/** <#digest#> */
+@property (nonatomic, copy) NSString *areaType;
+
 @end

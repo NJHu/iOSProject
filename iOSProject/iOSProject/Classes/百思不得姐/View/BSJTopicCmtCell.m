@@ -130,12 +130,35 @@
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    if (action == @selector(ding:) || action == @selector(repley:) || action == @selector(jubao:)) {
+        return YES;
+    }
+#pragma clang diagnostic pop
+
     return NO;
 }
 
 - (IBAction)dingClick:(id)sender {
     
     NSLog(@"%s", __func__);
+}
+
+#pragma mark - MenuPopOverViewDelegate
+- (void)ding:(UIMenuController *)menu
+{
+    NSLog(@"%@", self.cmt.content);
+}
+
+- (void)repley:(UIMenuController *)menu
+{
+    NSLog(@"%@", self.cmt.content);
+}
+
+- (void)jubao:(UIMenuController *)menu
+{
+    NSLog(@"%@", self.cmt.content);
 }
 
 @end

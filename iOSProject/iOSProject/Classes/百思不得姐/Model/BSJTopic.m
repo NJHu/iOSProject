@@ -8,18 +8,7 @@
 
 #import "BSJTopic.h"
 
-@interface BSJTopic ()
-
-@end
-
 @implementation BSJTopic
-
-
-
-
-
-
-
 
 /**
  *  数组中需要转换的模型类
@@ -54,7 +43,6 @@
              @"gif" : @"is_gif",
              
              @"topCmts" : @"top_cmt",
-             
              };
 }
 

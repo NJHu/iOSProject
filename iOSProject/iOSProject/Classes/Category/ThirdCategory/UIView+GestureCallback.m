@@ -20,10 +20,6 @@ const NSString *UIView_GestureCallback_gestureKeysHashKey = @"UIView_GestureCall
 
 @implementation UIView (GestureCallback)
 @dynamic gestures, gestureKeysHash;
-
-
-#pragma mark - ##### TAP
-
 #pragma mark add tap gestures
 
 -(NSString*)addTapGestureRecognizer:(void(^)(UITapGestureRecognizer* recognizer, NSString* gestureId))tapCallback
@@ -573,10 +569,5 @@ const NSString *UIView_GestureCallback_gestureKeysHashKey = @"UIView_GestureCall
     objc_setAssociatedObject(self, &UIView_GestureCallback_gestureKeysHashKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-
 //TODO : CustomGestureRecognizer
-
-
-
-
 @end

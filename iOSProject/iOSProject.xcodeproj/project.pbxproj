@@ -13,7 +13,6 @@
 		581A3E4020450B3E00AF08C0 /* MJDownloadConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E3A20450B3D00AF08C0 /* MJDownloadConst.m */; };
 		581A3E4120450B3E00AF08C0 /* NSString+MJDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A3E3D20450B3D00AF08C0 /* NSString+MJDownload.m */; };
 		58223312201821910008251F /* UIView+GestureCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330A201821910008251F /* UIView+GestureCallback.m */; };
-		58223313201821910008251F /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */; };
 		58223314201821910008251F /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822330D201821910008251F /* UITextView+WZB.m */; };
 		58223315201821910008251F /* NSDecimalNumber+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 58223311201821910008251F /* NSDecimalNumber+Addtion.m */; };
 		58223317201821C00008251F /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58223316201821C00008251F /* NullSafe.m */; };
@@ -243,6 +242,7 @@
 		58A8584E207878430063DE98 /* LMJWebImageCacheCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A8584C207878430063DE98 /* LMJWebImageCacheCell.m */; };
 		58A8584F207878430063DE98 /* LMJWebImageCacheCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A8584D207878430063DE98 /* LMJWebImageCacheCell.xib */; };
 		58A858522078842B0063DE98 /* LMJStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A858512078842B0063DE98 /* LMJStudent.m */; };
+		58A858A6207C934E0063DE98 /* PresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A858A5207C934E0063DE98 /* PresentAnimator.m */; };
 		58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */; };
 		58B4EE2F205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */; };
 		58B4EE31205FA4E100FFF4F8 /* H5Bridge.css in Resources */ = {isa = PBXBuildFile; fileRef = 58B4EE30205FA4E100FFF4F8 /* H5Bridge.css */; };
@@ -328,14 +328,7 @@
 		58DC846B1FFC94B30060DC03 /* LMJTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84681FFC94B30060DC03 /* LMJTeam.m */; };
 		58DC846C1FFC94B30060DC03 /* LMJGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84691FFC94B30060DC03 /* LMJGroup.m */; };
 		58DC846F1FFC967E0060DC03 /* LMJBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC846E1FFC967D0060DC03 /* LMJBaseRequest.m */; };
-		58DC84EC1FFC972B0060DC03 /* MenuPopOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84741FFC97280060DC03 /* MenuPopOverView.m */; };
 		58DC84EE1FFC972B0060DC03 /* BSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84761FFC97280060DC03 /* BSJ.m */; };
-		58DC84F01FFC972B0060DC03 /* libopenssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DC847A1FFC97280060DC03 /* libopenssl.a */; };
-		58DC84F11FFC972C0060DC03 /* NJVitamioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC847B1FFC97280060DC03 /* NJVitamioViewController.m */; };
-		58DC84F21FFC972C0060DC03 /* libVitamio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DC847C1FFC97280060DC03 /* libVitamio.a */; };
-		58DC84F31FFC972C0060DC03 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 58DC847D1FFC97280060DC03 /* LICENSE */; };
-		58DC84F41FFC972C0060DC03 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 58DC847E1FFC97280060DC03 /* CHANGELOG.md */; };
-		58DC84F51FFC972C0060DC03 /* libffmpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DC84891FFC97280060DC03 /* libffmpeg.a */; };
 		58DC84F61FFC972C0060DC03 /* BSJLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DC848D1FFC97280060DC03 /* BSJLoginRegisterViewController.xib */; };
 		58DC84F71FFC972C0060DC03 /* BSJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC848F1FFC97280060DC03 /* BSJNewViewController.m */; };
 		58DC84F81FFC972C0060DC03 /* BSJTrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84901FFC97280060DC03 /* BSJTrendViewController.m */; };
@@ -351,11 +344,6 @@
 		58DC85021FFC972C0060DC03 /* BSJPublishWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84A41FFC97290060DC03 /* BSJPublishWordViewController.m */; };
 		58DC85031FFC972C0060DC03 /* BSJPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84A51FFC97290060DC03 /* BSJPublishViewController.m */; };
 		58DC85041FFC972C0060DC03 /* BSJRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84A61FFC97290060DC03 /* BSJRecommendViewController.m */; };
-		58DC85051FFC972C0060DC03 /* NJPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DC84A91FFC97290060DC03 /* NJPlayerView.xib */; };
-		58DC85061FFC972C0060DC03 /* NJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84AC1FFC97290060DC03 /* NJPlayerView.m */; };
-		58DC85071FFC972C0060DC03 /* NJVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84AD1FFC97290060DC03 /* NJVideoPlayViewController.m */; };
-		58DC85081FFC972C0060DC03 /* NJPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 58DC84AE1FFC97290060DC03 /* NJPlayer.bundle */; };
-		58DC85091FFC972C0060DC03 /* NJAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84AF1FFC97290060DC03 /* NJAVPlayerViewController.m */; };
 		58DC850A1FFC972C0060DC03 /* BSJRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84B21FFC97290060DC03 /* BSJRecommendUser.m */; };
 		58DC850B1FFC972C0060DC03 /* BSJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84B31FFC97290060DC03 /* BSJUser.m */; };
 		58DC850C1FFC972C0060DC03 /* BSJTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC84B41FFC97290060DC03 /* BSJTopic.m */; };
@@ -405,11 +393,9 @@
 		581A3E3E20450B3D00AF08C0 /* MJDownloadConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDownloadConst.h; sourceTree = "<group>"; };
 		5822330A201821910008251F /* UIView+GestureCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GestureCallback.m"; sourceTree = "<group>"; };
 		5822330B201821910008251F /* NSDecimalNumber+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Addtion.h"; sourceTree = "<group>"; };
-		5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DDPopUpViewController.m"; sourceTree = "<group>"; };
 		5822330D201821910008251F /* UITextView+WZB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+WZB.m"; sourceTree = "<group>"; };
 		5822330E201821910008251F /* UIView+GestureCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GestureCallback.h"; sourceTree = "<group>"; };
 		5822330F201821910008251F /* UITextView+WZB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+WZB.h"; sourceTree = "<group>"; };
-		58223310201821910008251F /* UIViewController+DDPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DDPopUpViewController.h"; sourceTree = "<group>"; };
 		58223311201821910008251F /* NSDecimalNumber+Addtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Addtion.m"; sourceTree = "<group>"; };
 		58223316201821C00008251F /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
 		5822331D20182C5D0008251F /* MCCornersRoundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCCornersRoundViewController.h; sourceTree = "<group>"; };
@@ -798,6 +784,8 @@
 		58A8584D207878430063DE98 /* LMJWebImageCacheCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LMJWebImageCacheCell.xib; sourceTree = "<group>"; };
 		58A858502078842B0063DE98 /* LMJStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJStudent.h; sourceTree = "<group>"; };
 		58A858512078842B0063DE98 /* LMJStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJStudent.m; sourceTree = "<group>"; };
+		58A858A4207C934E0063DE98 /* PresentAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentAnimator.h; sourceTree = "<group>"; };
+		58A858A5207C934E0063DE98 /* PresentAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentAnimator.m; sourceTree = "<group>"; };
 		58AE5CF320103BA3003BD369 /* VIDMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDMoviePlayerViewController.h; sourceTree = "<group>"; };
 		58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDMoviePlayerViewController.m; sourceTree = "<group>"; };
 		58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = LMJH5JSBridgeViewController.html; sourceTree = "<group>"; };
@@ -950,24 +938,7 @@
 		58DC846D1FFC967C0060DC03 /* LMJBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJBaseRequest.h; sourceTree = "<group>"; };
 		58DC846E1FFC967D0060DC03 /* LMJBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJBaseRequest.m; sourceTree = "<group>"; };
 		58DC84721FFC97280060DC03 /* BSJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJ.h; sourceTree = "<group>"; };
-		58DC84741FFC97280060DC03 /* MenuPopOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuPopOverView.m; sourceTree = "<group>"; };
 		58DC84761FFC97280060DC03 /* BSJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJ.m; sourceTree = "<group>"; };
-		58DC84771FFC97280060DC03 /* MenuPopOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuPopOverView.h; sourceTree = "<group>"; };
-		58DC847A1FFC97280060DC03 /* libopenssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopenssl.a; sourceTree = "<group>"; };
-		58DC847B1FFC97280060DC03 /* NJVitamioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJVitamioViewController.m; sourceTree = "<group>"; };
-		58DC847C1FFC97280060DC03 /* libVitamio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVitamio.a; sourceTree = "<group>"; };
-		58DC847D1FFC97280060DC03 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		58DC847E1FFC97280060DC03 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		58DC84811FFC97280060DC03 /* VPlayerManageDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPlayerManageDef.h; sourceTree = "<group>"; };
-		58DC84821FFC97280060DC03 /* VMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMediaPlayer.h; sourceTree = "<group>"; };
-		58DC84831FFC97280060DC03 /* Vitamio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vitamio.h; sourceTree = "<group>"; };
-		58DC84841FFC97280060DC03 /* VDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDefines.h; sourceTree = "<group>"; };
-		58DC84851FFC97280060DC03 /* VMediaPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMediaPlayerDelegate.h; sourceTree = "<group>"; };
-		58DC84861FFC97280060DC03 /* VMediaExtracter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMediaExtracter.h; sourceTree = "<group>"; };
-		58DC84871FFC97280060DC03 /* VSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSingleton.h; sourceTree = "<group>"; };
-		58DC84881FFC97280060DC03 /* VMediaExtracterDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMediaExtracterDef.h; sourceTree = "<group>"; };
-		58DC84891FFC97280060DC03 /* libffmpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libffmpeg.a; sourceTree = "<group>"; };
-		58DC848A1FFC97280060DC03 /* NJVitamioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJVitamioViewController.h; sourceTree = "<group>"; };
 		58DC848C1FFC97280060DC03 /* BSJCommentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJCommentPageViewController.h; sourceTree = "<group>"; };
 		58DC848D1FFC97280060DC03 /* BSJLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSJLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		58DC848E1FFC97280060DC03 /* BSJLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJLoginRegisterViewController.h; sourceTree = "<group>"; };
@@ -995,14 +966,6 @@
 		58DC84A41FFC97290060DC03 /* BSJPublishWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPublishWordViewController.m; sourceTree = "<group>"; };
 		58DC84A51FFC97290060DC03 /* BSJPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPublishViewController.m; sourceTree = "<group>"; };
 		58DC84A61FFC97290060DC03 /* BSJRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendViewController.m; sourceTree = "<group>"; };
-		58DC84A81FFC97290060DC03 /* NJPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJPlayerView.h; sourceTree = "<group>"; };
-		58DC84A91FFC97290060DC03 /* NJPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NJPlayerView.xib; sourceTree = "<group>"; };
-		58DC84AA1FFC97290060DC03 /* NJVideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJVideoPlayViewController.h; sourceTree = "<group>"; };
-		58DC84AB1FFC97290060DC03 /* NJAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJAVPlayerViewController.h; sourceTree = "<group>"; };
-		58DC84AC1FFC97290060DC03 /* NJPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJPlayerView.m; sourceTree = "<group>"; };
-		58DC84AD1FFC97290060DC03 /* NJVideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJVideoPlayViewController.m; sourceTree = "<group>"; };
-		58DC84AE1FFC97290060DC03 /* NJPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NJPlayer.bundle; sourceTree = "<group>"; };
-		58DC84AF1FFC97290060DC03 /* NJAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJAVPlayerViewController.m; sourceTree = "<group>"; };
 		58DC84B11FFC97290060DC03 /* BSJTopicViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJTopicViewModel.h; sourceTree = "<group>"; };
 		58DC84B21FFC97290060DC03 /* BSJRecommendUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJRecommendUser.m; sourceTree = "<group>"; };
 		58DC84B31FFC97290060DC03 /* BSJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJUser.m; sourceTree = "<group>"; };
@@ -1071,13 +1034,10 @@
 			files = (
 				58DC88D01FFDEF030060DC03 /* libiconv.2.4.0.tbd in Frameworks */,
 				58DC88CE1FFDEEF70060DC03 /* libbz2.1.0.tbd in Frameworks */,
-				58DC84F01FFC972B0060DC03 /* libopenssl.a in Frameworks */,
 				5892ACC21FF4F45700E868C2 /* libUMessage_Sdk_1.5.0.a in Frameworks */,
 				584038001FF61D00002A0566 /* MapKit.framework in Frameworks */,
 				54E3991EBFDEC31145ED8B0F /* libPods-iOSProject.a in Frameworks */,
 				584038021FF61D1A002A0566 /* AudioToolbox.framework in Frameworks */,
-				58DC84F51FFC972C0060DC03 /* libffmpeg.a in Frameworks */,
-				58DC84F21FFC972C0060DC03 /* libVitamio.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1116,8 +1076,6 @@
 				58223311201821910008251F /* NSDecimalNumber+Addtion.m */,
 				5822330F201821910008251F /* UITextView+WZB.h */,
 				5822330D201821910008251F /* UITextView+WZB.m */,
-				58223310201821910008251F /* UIViewController+DDPopUpViewController.h */,
-				5822330C201821910008251F /* UIViewController+DDPopUpViewController.m */,
 			);
 			path = ThirdCategory;
 			sourceTree = "<group>";
@@ -1624,6 +1582,8 @@
 				58926474202DA70D007DA41E /* LMJEventTool.m */,
 				5892ADAD1FF60A8300E868C2 /* JXTAlertController.h */,
 				5892ADAE1FF60A8300E868C2 /* JXTAlertController.m */,
+				58A858A4207C934E0063DE98 /* PresentAnimator.h */,
+				58A858A5207C934E0063DE98 /* PresentAnimator.m */,
 				584038111FF63617002A0566 /* LMJEasyBlankPageView.h */,
 				584038121FF63617002A0566 /* LMJEasyBlankPageView.m */,
 				58DC85321FFCA30C0060DC03 /* UIImageView+FitNet.h */,
@@ -2240,9 +2200,7 @@
 			isa = PBXGroup;
 			children = (
 				58DC84711FFC97280060DC03 /* Other */,
-				58DC84791FFC97280060DC03 /* Vitamio */,
 				58DC848B1FFC97280060DC03 /* Controller */,
-				58DC84A71FFC97290060DC03 /* NJPlayer */,
 				58DC84B01FFC97290060DC03 /* Model */,
 				58DC84C21FFC97290060DC03 /* View */,
 				58DC84E21FFC97290060DC03 /* Service */,
@@ -2255,52 +2213,12 @@
 			children = (
 				58DC84721FFC97280060DC03 /* BSJ.h */,
 				58DC84761FFC97280060DC03 /* BSJ.m */,
-				58DC84771FFC97280060DC03 /* MenuPopOverView.h */,
-				58DC84741FFC97280060DC03 /* MenuPopOverView.m */,
 				58926424201B622B007DA41E /* BSJSQLiteManager.h */,
 				58926425201B622B007DA41E /* BSJSQLiteManager.m */,
 				58926427201B64D3007DA41E /* BSJTopicListDAL.h */,
 				58926428201B64D3007DA41E /* BSJTopicListDAL.m */,
 			);
 			path = Other;
-			sourceTree = "<group>";
-		};
-		58DC84791FFC97280060DC03 /* Vitamio */ = {
-			isa = PBXGroup;
-			children = (
-				58DC847A1FFC97280060DC03 /* libopenssl.a */,
-				58DC847C1FFC97280060DC03 /* libVitamio.a */,
-				58DC847D1FFC97280060DC03 /* LICENSE */,
-				58DC847E1FFC97280060DC03 /* CHANGELOG.md */,
-				58DC847F1FFC97280060DC03 /* include */,
-				58DC84891FFC97280060DC03 /* libffmpeg.a */,
-				58DC848A1FFC97280060DC03 /* NJVitamioViewController.h */,
-				58DC847B1FFC97280060DC03 /* NJVitamioViewController.m */,
-			);
-			path = Vitamio;
-			sourceTree = "<group>";
-		};
-		58DC847F1FFC97280060DC03 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				58DC84801FFC97280060DC03 /* Vitamio */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		58DC84801FFC97280060DC03 /* Vitamio */ = {
-			isa = PBXGroup;
-			children = (
-				58DC84811FFC97280060DC03 /* VPlayerManageDef.h */,
-				58DC84821FFC97280060DC03 /* VMediaPlayer.h */,
-				58DC84831FFC97280060DC03 /* Vitamio.h */,
-				58DC84841FFC97280060DC03 /* VDefines.h */,
-				58DC84851FFC97280060DC03 /* VMediaPlayerDelegate.h */,
-				58DC84861FFC97280060DC03 /* VMediaExtracter.h */,
-				58DC84871FFC97280060DC03 /* VSingleton.h */,
-				58DC84881FFC97280060DC03 /* VMediaExtracterDef.h */,
-			);
-			path = Vitamio;
 			sourceTree = "<group>";
 		};
 		58DC848B1FFC97280060DC03 /* Controller */ = {
@@ -2310,13 +2228,13 @@
 				58DC849A1FFC97290060DC03 /* BSJTabBarController.m */,
 				58DC84A01FFC97290060DC03 /* BSJEssenceViewController.h */,
 				58DC84931FFC97280060DC03 /* BSJEssenceViewController.m */,
+				58DC849C1FFC97290060DC03 /* BSJNewViewController.h */,
+				58DC848F1FFC97280060DC03 /* BSJNewViewController.m */,
 				58DC84971FFC97280060DC03 /* BSJTopicViewController.h */,
 				58DC84A31FFC97290060DC03 /* BSJTopicViewController.m */,
 				58DC848C1FFC97280060DC03 /* BSJCommentPageViewController.h */,
 				58DC849E1FFC97290060DC03 /* BSJCommentPageViewController.m */,
 				58DC84A21FFC97290060DC03 /* BSJCommentPageViewController.xib */,
-				58DC849C1FFC97290060DC03 /* BSJNewViewController.h */,
-				58DC848F1FFC97280060DC03 /* BSJNewViewController.m */,
 				58DC849B1FFC97290060DC03 /* BSJTrendViewController.h */,
 				58DC84901FFC97280060DC03 /* BSJTrendViewController.m */,
 				58DC84941FFC97280060DC03 /* BSJTrendViewController.xib */,
@@ -2335,21 +2253,6 @@
 				58DC84991FFC97280060DC03 /* BSJPictureShowViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		58DC84A71FFC97290060DC03 /* NJPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				58DC84A81FFC97290060DC03 /* NJPlayerView.h */,
-				58DC84AC1FFC97290060DC03 /* NJPlayerView.m */,
-				58DC84A91FFC97290060DC03 /* NJPlayerView.xib */,
-				58DC84AE1FFC97290060DC03 /* NJPlayer.bundle */,
-				58DC84AB1FFC97290060DC03 /* NJAVPlayerViewController.h */,
-				58DC84AF1FFC97290060DC03 /* NJAVPlayerViewController.m */,
-				58DC84AA1FFC97290060DC03 /* NJVideoPlayViewController.h */,
-				58DC84AD1FFC97290060DC03 /* NJVideoPlayViewController.m */,
-			);
-			path = NJPlayer;
 			sourceTree = "<group>";
 		};
 		58DC84B01FFC97290060DC03 /* Model */ = {
@@ -2392,22 +2295,22 @@
 				58DC84D61FFC97290060DC03 /* BSJTopicCell.h */,
 				58DC84C31FFC97290060DC03 /* BSJTopicCell.m */,
 				58DC84D11FFC97290060DC03 /* BSJTopicCell.xib */,
-				58DC84D41FFC97290060DC03 /* BSJTopicCmtCell.h */,
-				58DC84C51FFC97290060DC03 /* BSJTopicCmtCell.m */,
-				58DC84D81FFC97290060DC03 /* BSJTopicCmtCell.xib */,
 				58DC84C81FFC97290060DC03 /* BSJTopicPictureView.h */,
 				58DC84D71FFC97290060DC03 /* BSJTopicPictureView.m */,
 				58DC84DD1FFC97290060DC03 /* BSJTopicVoiceView.h */,
 				58DC84CB1FFC97290060DC03 /* BSJTopicVoiceView.m */,
 				58DC84E11FFC97290060DC03 /* BSJTopicVideoView.h */,
 				58DC84D01FFC97290060DC03 /* BSJTopicVideoView.m */,
-				58DC84C71FFC97290060DC03 /* BSJMeSquareCell.xib */,
+				58DC84D41FFC97290060DC03 /* BSJTopicCmtCell.h */,
+				58DC84C51FFC97290060DC03 /* BSJTopicCmtCell.m */,
+				58DC84D81FFC97290060DC03 /* BSJTopicCmtCell.xib */,
+				58DC852B1FFC9B710060DC03 /* LMJCommentHeaderView.h */,
+				58DC852C1FFC9B720060DC03 /* LMJCommentHeaderView.m */,
 				58DC84C91FFC97290060DC03 /* BSJWordToolBar.h */,
 				58DC84DF1FFC97290060DC03 /* BSJWordToolBar.m */,
 				58DC84DA1FFC97290060DC03 /* BSJMeSquareCell.h */,
 				58DC84CD1FFC97290060DC03 /* BSJMeSquareCell.m */,
-				58DC852B1FFC9B710060DC03 /* LMJCommentHeaderView.h */,
-				58DC852C1FFC9B720060DC03 /* LMJCommentHeaderView.m */,
+				58DC84C71FFC97290060DC03 /* BSJMeSquareCell.xib */,
 				58DC84D91FFC97290060DC03 /* BSJHlightedTextField.h */,
 				58DC84CE1FFC97290060DC03 /* BSJHlightedTextField.m */,
 			);
@@ -2570,7 +2473,6 @@
 				583D507020731574001480C8 /* LMJLocalJsons in Resources */,
 				589B56F41FFFC52F00B2D5A8 /* Musics.plist in Resources */,
 				589B56D31FFFC52F00B2D5A8 /* 339744.lrc in Resources */,
-				58DC84F41FFC972C0060DC03 /* CHANGELOG.md in Resources */,
 				58DC83871FFB43460060DC03 /* LMJDYViewController.xib in Resources */,
 				589B56F01FFFC52F00B2D5A8 /* 10405520.mp3 in Resources */,
 				589B56E61FFFC52F00B2D5A8 /* nanquan@2x.jpg in Resources */,
@@ -2601,9 +2503,7 @@
 				5892ACA11FF4EB4A00E868C2 /* Assets.xcassets in Resources */,
 				58DC85241FFC972C0060DC03 /* BSJReommmendCategoryCell.xib in Resources */,
 				589B56E71FFFC52F00B2D5A8 /* bb_icon@2x.jpg in Resources */,
-				58DC85051FFC972C0060DC03 /* NJPlayerView.xib in Resources */,
 				589B56D51FFFC52F00B2D5A8 /* 120125029.lrc in Resources */,
-				58DC85081FFC972C0060DC03 /* NJPlayer.bundle in Resources */,
 				589B56DE1FFFC52F00B2D5A8 /* jj@2x.jpg in Resources */,
 				589B56FA1FFFC52F00B2D5A8 /* MUSPlayingViewController.xib in Resources */,
 				5840385C1FF873A8002A0566 /* LMJAnnotationCustomPopView.xib in Resources */,
@@ -2620,7 +2520,6 @@
 				589B56DB1FFFC52F00B2D5A8 /* zxy@2x.jpg in Resources */,
 				589B56D81FFFC52F00B2D5A8 /* lkq_icon@2x.jpg in Resources */,
 				589B56EA1FFFC52F00B2D5A8 /* 14945107.mp3 in Resources */,
-				58DC84F31FFC972C0060DC03 /* LICENSE in Resources */,
 				584038691FF88594002A0566 /* LMJUpLoadImageCell.xib in Resources */,
 				58DC83F11FFB47710060DC03 /* 小新.jpg in Resources */,
 				589B56D71FFFC52F00B2D5A8 /* jay@2x.jpg in Resources */,
@@ -2739,7 +2638,6 @@
 				58651AA21FFE6D6F0087419D /* SINHomeCategoryViewController.m in Sources */,
 				58DC85181FFC972C0060DC03 /* BSJTabBar.m in Sources */,
 				5892AD8D1FF5E2D700E868C2 /* LMJIntroductoryPagesView.m in Sources */,
-				58DC85071FFC972C0060DC03 /* NJVideoPlayViewController.m in Sources */,
 				5892AD071FF4F9D200E868C2 /* LMJAutoRefreshFooter.m in Sources */,
 				58223317201821C00008251F /* NullSafe.m in Sources */,
 				58DC84EE1FFC972B0060DC03 /* BSJ.m in Sources */,
@@ -2757,7 +2655,6 @@
 				589B57762000339800B2D5A8 /* VIDTableViewController.m in Sources */,
 				58DC83D11FFB43E30060DC03 /* LMJClipImageViewController.m in Sources */,
 				589B56F91FFFC52F00B2D5A8 /* MUSLrcTableViewController.m in Sources */,
-				58DC84EC1FFC972B0060DC03 /* MenuPopOverView.m in Sources */,
 				5892AD591FF5079C00E868C2 /* LMJTextViewController.m in Sources */,
 				58651AB91FFE6D6F0087419D /* SINTabBar.m in Sources */,
 				58DC83D81FFB440E0060DC03 /* LMJDynamicViewController.m in Sources */,
@@ -2765,7 +2662,6 @@
 				5892AD081FF4F9D200E868C2 /* LMJNavigationBar.m in Sources */,
 				5892AD001FF4F9D200E868C2 /* LMJItemSection.m in Sources */,
 				589B570B1FFFC53000B2D5A8 /* QQMusicTool.m in Sources */,
-				58DC84F11FFC972C0060DC03 /* NJVitamioViewController.m in Sources */,
 				5892ADAF1FF60A8300E868C2 /* JXTAlertController.m in Sources */,
 				5892AD051FF4F9D200E868C2 /* LMJHorizontalFlowLayout.m in Sources */,
 				58DC846B1FFC94B30060DC03 /* LMJTeam.m in Sources */,
@@ -2773,7 +2669,6 @@
 				588CCD8A205DF92F0067E3C4 /* LMJGirdLayout.m in Sources */,
 				58DC83CC1FFB43E30060DC03 /* LMJJuZhenCaoZuoViewController.m in Sources */,
 				58DC838E1FFB43460060DC03 /* LMJHDZSQViewController.m in Sources */,
-				58DC85061FFC972C0060DC03 /* NJPlayerView.m in Sources */,
 				58DC84FC1FFC972C0060DC03 /* BSJPictureShowViewController.m in Sources */,
 				58DC83C91FFB43E30060DC03 /* LMJDrawBaseViewController.m in Sources */,
 				58DC83C01FFB43E30060DC03 /* LMJDrawLineViewController.m in Sources */,
@@ -2793,7 +2688,6 @@
 				5892AD531FF5079C00E868C2 /* LMJCollectionViewController.m in Sources */,
 				584038831FF9F2F1002A0566 /* LMJAlertViewsViewController.m in Sources */,
 				58DC85131FFC972C0060DC03 /* BSJTopicCell.m in Sources */,
-				58223313201821910008251F /* UIViewController+DDPopUpViewController.m in Sources */,
 				58DC837F1FFB43460060DC03 /* LMJYinLZDTViewController.m in Sources */,
 				58DC825A1FFA7D7C0060DC03 /* LMJXGMVideo.m in Sources */,
 				58DC84001FFB47ED0060DC03 /* LMJHandleView.m in Sources */,
@@ -2910,11 +2804,11 @@
 				58DC850A1FFC972C0060DC03 /* BSJRecommendUser.m in Sources */,
 				58DC85101FFC972C0060DC03 /* BSJRecommendCategory.m in Sources */,
 				58DC83D91FFB440E0060DC03 /* WPFDemoController.m in Sources */,
-				58DC85091FFC972C0060DC03 /* NJAVPlayerViewController.m in Sources */,
 				58DC843F1FFBD1290060DC03 /* LMJGCDViewController.m in Sources */,
 				58DC85291FFC972C0060DC03 /* BSJTopicCmtService.m in Sources */,
 				58651AA71FFE6D6F0087419D /* SINTabBarController.m in Sources */,
 				58DC83CD1FFB43E30060DC03 /* LMJShangXiaWenZhanViewController.m in Sources */,
+				58A858A6207C934E0063DE98 /* PresentAnimator.m in Sources */,
 				58DC84F91FFC972C0060DC03 /* BSJMeViewController.m in Sources */,
 				58DC81721FFA29E00060DC03 /* LMJDragTableViewController.m in Sources */,
 				589888A3206B34BF00BDAACD /* RSAEncryptor.m in Sources */,
@@ -3088,7 +2982,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSProject/Classes/Libs/UMessage_Sdk_1.5.0",
-					"$(PROJECT_DIR)/iOSProject/Classes/百思不得姐/Vitamio",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -3219,7 +3112,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSProject/Classes/Libs/UMessage_Sdk_1.5.0",
-					"$(PROJECT_DIR)/iOSProject/Classes/百思不得姐/Vitamio",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

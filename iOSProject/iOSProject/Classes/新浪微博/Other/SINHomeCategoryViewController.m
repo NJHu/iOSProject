@@ -61,7 +61,8 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [self dismissPopUpViewController:DDPopUpAnimationTypeFade];
+//    [self dismissPopUpViewController:DDPopUpAnimationTypeFade];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - getter

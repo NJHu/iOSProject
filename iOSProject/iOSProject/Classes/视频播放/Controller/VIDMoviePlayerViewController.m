@@ -70,7 +70,7 @@
         //        [self.playerView pause];
         self.playerView.playerPushedOrPresented = YES;
     }
-    [UIApplication sharedApplication].statusBarHidden = NO;
+//    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 
@@ -180,7 +180,7 @@
 {
     NSLog(@"控制层即将显示 %@", controlView);
     NSLog(@"控制层即将显示 %zd", fullscreen);
-    [UIApplication sharedApplication].statusBarHidden = NO;
+//    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 /** 控制层即将隐藏 */
 - (void)zf_playerControlViewWillHidden:(UIView *)controlView isFullscreen:(BOOL)fullscreen
@@ -188,7 +188,7 @@
     NSLog(@"控制层即将隐藏 %@", controlView);
     NSLog(@"控制层即将隐藏 %zd", fullscreen);
     
-    [UIApplication sharedApplication].statusBarHidden = YES;
+//    [UIApplication sharedApplication].statusBarHidden = YES;
 }
 
 

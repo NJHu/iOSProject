@@ -105,9 +105,6 @@
     [self.commentBtn setTitle:topicViewModel.commentCount forState:UIControlStateNormal];
     
     
-
-    
-    
     if (topicViewModel.topic.type == BSJTopicTypePicture) {
         
         self.pictureView.topicViewModel = topicViewModel;
@@ -150,18 +147,13 @@
         self.topCmtContentView.textLayout = topicViewModel.topCmtLayout;
         self.topCmtHeightConstraint.constant = topicViewModel.topCmtLayout.textBoundingSize.height;
         self.topicViewModel.topCmtClick = ^(BSJUser *user, BSJTopicTopComent *topCmt) {
-          
             NSLog(@"%@,   %@", user.username, topCmt.content);
-            
         };
         
     }else
     {
         self.cmtContainerView.hidden = YES;
     }
-    
-    
-    
 }
 
 
@@ -223,14 +215,10 @@
 
 + (instancetype)topicCellWithTableView:(UITableView *)tableView
 {
-    
     BSJTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class])];
-    
     if (cell == nil) {
         cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:nil options:nil].lastObject;
     }
-    
-    
     return cell;
 }
 
@@ -239,7 +227,6 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setupBSJTopicCellUIOnce];
     }
-    
     return self;
 }
 

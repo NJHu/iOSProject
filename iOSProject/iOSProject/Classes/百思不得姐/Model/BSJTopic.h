@@ -11,11 +11,6 @@
 #import "BSJTopicTopComent.h"
 #import "BSJUser.h"
 
-
-
-
-
-
 @interface BSJTopic : NSObject
 
 /** 帖子的类型 */
@@ -101,10 +96,8 @@
 /** 图片的高度 */
 @property (assign, nonatomic) CGFloat height;
 
-
 /** 热门评论 */
 @property (nonatomic, strong) NSMutableArray<BSJTopicTopComent *> *topCmts;
-
 
 @end
 

@@ -49,16 +49,9 @@
         }
         
         SINPublishViewController *publishVc = [[SINPublishViewController alloc] init];
-        
-//        @property (nonatomic,retain) UIViewController *popUpViewController;
-//        @property (nonatomic,assign) CGPoint popUpOffset;               //相对于弹出位置的偏移
-//        @property (nonatomic,assign) CGSize popUpViewSize;              //弹出视图的大小
-//        @property (nonatomic,assign) DDPopUpPosition popUpPosition;     //弹出视图的位置
-//        @property (nonatomic,assign) BOOL dismissWhenTouchBackground;   //是否允许点击背景dismiss
-//        @property (nonatomic,copy) DismissCallback dismissCallback;
-        
-        publishVc.popUpViewSize = kScreenSize;
-        [weakself showPopUpViewController:[[LMJNavigationController alloc] initWithRootViewController:publishVc] animationType:DDPopUpAnimationTypeFade dismissWhenTouchBackground:NO];
+
+//        popup
+        [weakself presentViewController:[[LMJNavigationController alloc] initWithRootViewController:publishVc] animated:YES completion:nil];
         
     }];
     

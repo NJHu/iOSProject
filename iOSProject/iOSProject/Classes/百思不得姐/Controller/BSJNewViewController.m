@@ -7,6 +7,7 @@
 //
 
 #import "BSJNewViewController.h"
+#import "BSJTopicViewController.h"
 
 @interface BSJNewViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.childViewControllers makeObjectsPerformSelector:@selector(setAreaType:) withObject:@"newlist"];
 }
 
 @end

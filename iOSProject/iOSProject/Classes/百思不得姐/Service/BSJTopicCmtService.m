@@ -60,7 +60,6 @@
         }
         
         if (!response.responseObject || response.error) {
-            
             completion(response.error, YES);
             return;
         }
@@ -80,17 +79,12 @@
         }
         
         
-        
         [self.latestCmts addObjectsFromArray:[BSJComment mj_objectArrayWithKeyValuesArray:response.responseObject[@"data"]]];
         
         completion(nil, [response.responseObject[@"total"] integerValue] <= self.latestCmts.count);
         
-        
     }];
-    
- 
 }
-
 
 
 - (NSMutableArray<BSJComment *> *)latestCmts
