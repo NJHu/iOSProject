@@ -2,7 +2,8 @@
 <div>
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%">
 </div>
-<h2><a id="Getting_Started">iOSProject</a></h2>
+
+<h1><a id="Getting_Started">iOSProject</a></h1>
 
 <table>
 <tr>
