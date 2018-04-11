@@ -35,6 +35,8 @@
     [item0 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[BSJTabBarController alloc] init] animated:YES completion:nil];
     }];
+    LMJWordArrowItem *item01 = [LMJWordArrowItem itemWithTitle:@"百思不得姐知识点" subTitle: @"知识点总结"];
+    item01.destVc = NSClassFromString(@"BSJSummaryViewController");
 
     
     LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"SIN" subTitle: @"新浪微博"];
@@ -57,7 +59,7 @@
         [weakself presentViewController:[[VIDTabBarController alloc] init] animated:YES completion:nil];
     }];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item3, item4] andHeaderTitle:nil footerTitle:nil];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item01, item1, item3, item4] andHeaderTitle:nil footerTitle:nil];
     
     [self.sections addObject:section0];
 }

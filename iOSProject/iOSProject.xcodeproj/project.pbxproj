@@ -65,6 +65,7 @@
 		584038801FF9F128002A0566 /* LMJH5_OCViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 5840387E1FF9F128002A0566 /* LMJH5_OCViewController.html */; };
 		584038831FF9F2F1002A0566 /* LMJAlertViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038811FF9F2F0002A0566 /* LMJAlertViewsViewController.m */; };
 		584038861FF9F602002A0566 /* LMJFillTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038841FF9F602002A0566 /* LMJFillTableFormViewController.m */; };
+		585A22E4207D8768001BD3AD /* BSJSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A22E3207D8768001BD3AD /* BSJSummaryViewController.m */; };
 		58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */; };
 		58651A9F1FFE6D6F0087419D /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5D1FFE6D6E0087419D /* SINUserManager.m */; };
 		58651AA01FFE6D6F0087419D /* SINSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5F1FFE6D6E0087419D /* SINSQLiteManager.m */; };
@@ -491,6 +492,8 @@
 		584038821FF9F2F1002A0566 /* LMJAlertViewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAlertViewsViewController.h; sourceTree = "<group>"; };
 		584038841FF9F602002A0566 /* LMJFillTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJFillTableFormViewController.m; sourceTree = "<group>"; };
 		584038851FF9F602002A0566 /* LMJFillTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFillTableFormViewController.h; sourceTree = "<group>"; };
+		585A22E2207D8768001BD3AD /* BSJSummaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSJSummaryViewController.h; sourceTree = "<group>"; };
+		585A22E3207D8768001BD3AD /* BSJSummaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSJSummaryViewController.m; sourceTree = "<group>"; };
 		58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListDAL.m; sourceTree = "<group>"; };
 		58651A5D1FFE6D6E0087419D /* SINUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUserManager.m; sourceTree = "<group>"; };
 		58651A5E1FFE6D6E0087419D /* SINSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINSQLiteManager.h; sourceTree = "<group>"; };
@@ -2217,6 +2220,8 @@
 				58926425201B622B007DA41E /* BSJSQLiteManager.m */,
 				58926427201B64D3007DA41E /* BSJTopicListDAL.h */,
 				58926428201B64D3007DA41E /* BSJTopicListDAL.m */,
+				585A22E2207D8768001BD3AD /* BSJSummaryViewController.h */,
+				585A22E3207D8768001BD3AD /* BSJSummaryViewController.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -2729,6 +2734,7 @@
 				589B577C2000339800B2D5A8 /* ZFVideoModel.m in Sources */,
 				58DC835A1FFB43100060DC03 /* LMJCoreAnimationViewController.m in Sources */,
 				589B57081FFFC53000B2D5A8 /* QQTimeTool.m in Sources */,
+				585A22E4207D8768001BD3AD /* BSJSummaryViewController.m in Sources */,
 				589B57051FFFC53000B2D5A8 /* NeteaseMusicAPI.m in Sources */,
 				584038131FF63617002A0566 /* LMJEasyBlankPageView.m in Sources */,
 				5892AD7B1FF5133800E868C2 /* MBProgressHUD+LMJ.m in Sources */,
