@@ -49,7 +49,7 @@
 //        [weakself presentViewController:[[IMHTabBarController alloc] init] animated:YES completion:nil];
 //    }];
     
-    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"音乐播放" subTitle: @"Music"];
+    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"音乐音频播放" subTitle: @"Music"];
     [item3 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[LMJNavigationController alloc] initWithRootViewController:[[MUSHomeListViewController alloc] init]] animated:YES completion:nil];
     }];
