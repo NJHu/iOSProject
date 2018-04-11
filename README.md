@@ -19,10 +19,10 @@
 </ul>
 </li>
 <li><a href="#homeBaseShareLogin">分享和第三方登录</a></li>
-<li><a href="#demo_s">综合案例 App 模仿</a>
+<li><a href="#demo_s">综合案例 Apps 模仿</a>
 <ul>
-<li><a href="#bsj">模仿娱乐App-BSJ</a></li>
-<li><a href="#wb">模仿微博-NJSina</a></li>
+<li><a href="#bsj">模仿百思不得姐App-BSJ</a></li>
+<li><a href="#wb">模仿微博App-NJSina</a></li>
 <li><a href="#qqmusic">音乐音频播放-Music</a></li>
 <li><a href="#videos">列表视频-Video</a></li>
 </ul>
@@ -98,12 +98,12 @@ Email: <a href="mailto:64hp@163.com">64hp@163.com</a>
 <br>
 <br>
 
-<h2><a id="demo_s">综合案例 App 模仿</a></h2>
+<h2><a id="demo_s">综合案例 Apps 模仿</a></h2>
 <div>
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/demos.png" width="31%">
 </div>
 
-<h3><a id="bsj">模仿娱乐App-BSJ</a></h3>
+<h3><a id="bsj">模仿百思不得姐App-BSJ</a></h3>
 <div>
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/bsqb.png" width="31%">|
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/bssp.png" width="31%">|
@@ -129,7 +129,7 @@ Email: <a href="mailto:64hp@163.com">64hp@163.com</a>
 <br>
 <br>
 
-<h3><a id="wb">模仿微博-NJSina</a></h3>
+<h3><a id="wb">模仿微博App-NJSina</a></h3>
 <div>
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/wb1.png" width="31%">|
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/wb2.png" width="31%">|

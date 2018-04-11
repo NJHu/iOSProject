@@ -31,15 +31,15 @@
     self.tableView.contentInset = edgeInsets;
     
     
-    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"模仿娱乐App" subTitle: @"NJBSJ"];
+    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"模仿百思不得姐App" subTitle: @"NJBSJ"];
     [item0 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[BSJTabBarController alloc] init] animated:YES completion:nil];
     }];
-    LMJWordArrowItem *item01 = [LMJWordArrowItem itemWithTitle:@"娱乐App-知识点" subTitle: @"知识点总结"];
+    LMJWordArrowItem *item01 = [LMJWordArrowItem itemWithTitle:@"模仿百思不得姐App" subTitle: @"知识点总结"];
     item01.destVc = NSClassFromString(@"BSJSummaryViewController");
 
     
-    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"模仿微博" subTitle: @"NJSina"];
+    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"模仿微博App" subTitle: @"NJSina"];
     [item1 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[SINTabBarController alloc] init] animated:YES completion:nil];
     }];
