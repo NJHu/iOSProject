@@ -30,7 +30,7 @@
     [self addTabarItems];
     [self addChildViewControllers];
     self.delegate = self;
-    
+
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [[UIApplication sharedApplication].keyWindow addSubview:[BSJGuidePushView guidePushView]];

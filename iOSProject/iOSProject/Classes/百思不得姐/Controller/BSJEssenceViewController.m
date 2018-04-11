@@ -9,6 +9,7 @@
 #import "BSJEssenceViewController.h"
 #import <ZJScrollPageView.h>
 #import "BSJTopicViewController.h"
+#import "BSJRecommendViewController.h"
 
 @interface BSJEssenceViewController ()<ZJScrollPageViewDelegate>
 @property (nonatomic, weak) ZJScrollPageView *scrollPageView;
@@ -124,6 +125,18 @@
 {
     [rightButton setImage:[UIImage imageNamed:@"nav_coin_icon_click"] forState:UIControlStateHighlighted];
     return [UIImage imageNamed:@"nav_coin_icon"];
+}
+
+- (void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar {
+     [self.navigationController pushViewController:[[BSJRecommendViewController alloc] init] animated:YES];
+}
+
+- (void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar {
+       [self.navigationController pushViewController:[[BSJRecommendViewController alloc] init] animated:YES];
+}
+
+- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar {
+       [self.navigationController pushViewController:[[BSJRecommendViewController alloc] init] animated:YES];
 }
 
 @end

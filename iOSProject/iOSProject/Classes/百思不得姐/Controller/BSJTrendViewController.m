@@ -64,12 +64,12 @@
 /** 右边的按钮的点击 */
 -(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    
+        [self.navigationController pushViewController:[[BSJRecommendViewController alloc] init] animated:YES];
 }
 /** 中间如果是 label 就会有点击 */
 -(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    
+        [self.navigationController pushViewController:[[BSJRecommendViewController alloc] init] animated:YES];
 }
 
 

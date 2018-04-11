@@ -12,7 +12,7 @@
 @interface SINSQLiteManager : NSObject
 
 
-/** <#digest#> */
+
 @property (nonatomic, strong) FMDatabaseQueue *dbQueue;
 
 + (instancetype)sharedManager;

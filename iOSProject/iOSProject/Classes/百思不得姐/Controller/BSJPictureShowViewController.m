@@ -64,7 +64,7 @@
         
     }];
     
-    
+
 
     CGFloat picWidth = kScreenWidth;
     CGFloat picHeight = picWidth * self.topicViewModel.topic.height / self.topicViewModel.topic.width;

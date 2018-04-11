@@ -31,15 +31,15 @@
     self.tableView.contentInset = edgeInsets;
     
     
-    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"百思不得姐" subTitle: @"BSJ"];
+    LMJWordItem *item0 = [LMJWordItem itemWithTitle:@"模仿娱乐App" subTitle: @"NJBSJ"];
     [item0 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[BSJTabBarController alloc] init] animated:YES completion:nil];
     }];
-    LMJWordArrowItem *item01 = [LMJWordArrowItem itemWithTitle:@"百思不得姐知识点" subTitle: @"知识点总结"];
+    LMJWordArrowItem *item01 = [LMJWordArrowItem itemWithTitle:@"娱乐App-知识点" subTitle: @"知识点总结"];
     item01.destVc = NSClassFromString(@"BSJSummaryViewController");
 
     
-    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"SIN" subTitle: @"新浪微博"];
+    LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"模仿微博" subTitle: @"NJSina"];
     [item1 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[SINTabBarController alloc] init] animated:YES completion:nil];
     }];
@@ -49,12 +49,12 @@
 //        [weakself presentViewController:[[IMHTabBarController alloc] init] animated:YES completion:nil];
 //    }];
     
-    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"Musics" subTitle: @"QQ音乐"];
+    LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"音乐播放" subTitle: @"Music"];
     [item3 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[LMJNavigationController alloc] initWithRootViewController:[[MUSHomeListViewController alloc] init]] animated:YES completion:nil];
     }];
     
-    LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"Videos" subTitle: @"列表视频"];
+    LMJWordItem *item4 = [LMJWordItem itemWithTitle:@"列表视频" subTitle: @"Video"];
     [item4 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[VIDTabBarController alloc] init] animated:YES completion:nil];
     }];

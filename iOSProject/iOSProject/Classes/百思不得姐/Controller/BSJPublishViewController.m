@@ -51,24 +51,12 @@
         
     } completion:^(BOOL finished) {
         
-        
-        
         [self.publishButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            
             [UIView animateWithDuration:0.5 delay:0.2 * idx usingSpringWithDamping:0.4 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-                
                 obj.transform = CGAffineTransformIdentity;
-                
             } completion:nil];
-            
-            
         }];
-        
-        
     }];
-    
-    
 }
 
 - (UIImageView *)sloganImageView
