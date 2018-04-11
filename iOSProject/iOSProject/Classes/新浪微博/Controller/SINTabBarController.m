@@ -13,6 +13,7 @@
 #import "SINDiscoveryViewController.h"
 #import "SINProfileViewController.h"
 #import "SINTabBar.h"
+#import "PresentAnimator.h"
 
 @interface SINTabBarController ()
 
@@ -22,14 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.tabBar.tintColor = [UIColor orangeColor];
     self.tabBar.unselectedItemTintColor = [UIColor darkTextColor];
     [self setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, -3)] forKeyPath:LMJKeyPath(self, titlePositionAdjustment)];
-   
     [self addTabarItems];
     [self addChildViewControllers];
-    
 }
 
 
@@ -39,20 +37,32 @@
  */
 - (void)setUpTabBar {
     SINTabBar *tabBar = [[SINTabBar alloc] init];
-    
     LMJWeak(self);
     [tabBar setPublishBtnClick:^(SINTabBar *tabBar, UIButton *publishBtn){
-        
         if (![SINUserManager sharedManager].isLogined) {
             [weakself.view makeToast:@"请登录" duration:3 position:CSToastPositionCenter];
             return ;
         }
-        
         SINPublishViewController *publishVc = [[SINPublishViewController alloc] init];
 
-//        popup
-        [weakself presentViewController:[[LMJNavigationController alloc] initWithRootViewController:publishVc] animated:YES completion:nil];
-        
+        // 封装好了, 直接在 block 里边写动画
+        [PresentAnimator viewController:weakself presentViewController:[[LMJNavigationController alloc] initWithRootViewController:publishVc] presentViewFrame:[UIScreen mainScreen].bounds animated:YES completion:nil animatedDuration:0.5 presentAnimation:^(UIView *presentedView, UIView *containerView, void (^completionHandler)(BOOL finished)) {
+            
+            containerView.transform = CGAffineTransformMakeTranslation(0, -kScreenHeight);
+            [UIView animateWithDuration:0.5 animations:^{
+                containerView.transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                completionHandler(finished);
+            }];
+            
+        } dismissAnimation:^(UIView *dismissView, void (^completionHandler)(BOOL finished)) {
+            CGAffineTransform transform = CGAffineTransformMakeScale(0.2, 0.2);
+            [UIView animateWithDuration:1 animations:^{
+                dismissView.transform = CGAffineTransformRotate(transform, M_PI);
+            } completion:^(BOOL finished) {
+                completionHandler(finished);
+            }];
+        }];
     }];
     
     [self setValue:tabBar forKeyPath:LMJKeyPath(self, tabBar)];
@@ -69,7 +79,6 @@
     LMJNavigationController *five = [[LMJNavigationController alloc] initWithRootViewController:[[SINProfileViewController alloc] init]];
     
     self.viewControllers = @[one, two, four, five];
-    
 }
 
 /*
@@ -79,8 +88,6 @@
 
 - (void)addTabarItems
 {
-    
-    
     NSDictionary *firstTabBarItemsAttributes = @{
                                                  CYLTabBarItemTitle : @"首页",
                                                  CYLTabBarItemImage : @"tabbar_home",

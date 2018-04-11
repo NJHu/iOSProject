@@ -1,89 +1,55 @@
 //
-//  LMJUpLoadImagesViewController.m
-//  PLMMPRJK
+//  SINPickPhotoTool.m
+//  iOSProject
 //
-//  Created by HuXuPeng on 2017/5/4.
-//  Copyright © 2017年 GoMePrjk. All rights reserved.
+//  Created by HuXuPeng on 2018/4/11.
+//  Copyright © 2018年 github.com/njhu. All rights reserved.
 //
 
-#import "LMJUpLoadImagesViewController.h"
-#import "LMJUpLoadImageCell.h"
+#import "SINPickPhotoTool.h"
 #import <TZImagePickerController.h>
-#import <AVFoundation/AVFoundation.h>
 #import <TZImageManager.h>
 #import <TZLocationManager.h>
 
-static const NSInteger maxPhotoCount = 9;
+@interface SINPickPhotoTool () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, TZImagePickerControllerDelegate>
 
-@interface LMJUpLoadImagesViewController ()<LMJElementsFlowLayoutDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, TZImagePickerControllerDelegate>
-/** <#digest#> */
+/** 选中的图片 */
 @property (nonatomic, strong) NSMutableArray<UIImage *> *selectedImages;
-/** <#digest#> */
+/** 选中的相册 */
 @property (nonatomic, strong) NSMutableArray<PHAsset *> *selectedAccest;
-
-/** <#digest#> */
+/** 定位 */
 @property (nonatomic, strong) CLLocation *location;
 
 @property (nonatomic, strong) UIImagePickerController *imagePickerVc;
+/** 当前的页面 */
+@property (weak, nonatomic) UIViewController *currentViewController;
+
+@property (nonatomic, assign) NSUInteger maxPhotoCount;
+
+/** 选中图片的回调 */
+@property (nonatomic, copy) void(^choosePhotoHandler)(NSMutableArray<UIImage *> *selectedImages, NSMutableArray<PHAsset *> *selectedAccest);
+
+/** 拍照图片的回调 */
+@property (nonatomic, copy) void(^takePhotoHandler)(NSMutableArray<UIImage *> *selectedImages, NSMutableArray<PHAsset *> *selectedAccest);
 @end
 
-@implementation LMJUpLoadImagesViewController
+@implementation SINPickPhotoTool
 
 - (UIImagePickerController *)imagePickerVc {
     if (_imagePickerVc == nil) {
         _imagePickerVc = [[UIImagePickerController alloc] init];
         _imagePickerVc.delegate = self;
         // set appearance / 改变相册选择页的导航栏外观
-        if (iOS7Later) {
-            _imagePickerVc.navigationBar.barTintColor = [UIColor greenColor];
-        }
+        _imagePickerVc.navigationBar.barTintColor = [UIColor greenColor];
         // 红色
         _imagePickerVc.navigationBar.tintColor = [UIColor redColor];
         UIBarButtonItem *tzBarItem, *BarItem;
-        if (iOS9Later) {
-            tzBarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[TZImagePickerController class]]];
-            BarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UIImagePickerController class]]];
-        } else {
-            tzBarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[TZImagePickerController class]]];
-            BarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UIImagePickerController class]]];
-        }
+        tzBarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[TZImagePickerController class]]];
+        BarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UIImagePickerController class]]];
         NSDictionary *titleTextAttributes = [tzBarItem titleTextAttributesForState:UIControlStateNormal];
         [BarItem setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
-        
     }
     return _imagePickerVc;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.selectedAccest = [NSMutableArray array];
-    self.selectedImages = [NSMutableArray array];
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([LMJUpLoadImageCell class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:NSStringFromClass([LMJUpLoadImageCell class])];
-}
-
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    LMJUpLoadImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LMJUpLoadImageCell class]) forIndexPath:indexPath];
-    LMJWeak(self);
-    if (indexPath.item == self.selectedImages.count) {
-        cell.photoImage = nil;
-        cell.addPhotoClick = ^(LMJUpLoadImageCell *uploadImageCell) {
-            [weakself alertAction];
-        };
-        cell.deletePhotoClick = nil;
-    }else {
-        cell.photoImage = self.selectedImages[indexPath.item];
-        cell.addPhotoClick = nil;
-        cell.deletePhotoClick = ^(UIImage *photoImage) {
-            [weakself.selectedAccest removeObjectAtIndex:indexPath.item];
-            [weakself.selectedImages removeObject:photoImage];
-//            [weakself.collectionView deleteItemsAtIndexPaths:@[indexPath]];
-            [weakself.collectionView reloadData];
-        };
-    }
-    
-    return cell;
 }
 
 - (void)alertAction
@@ -92,26 +58,29 @@ static const NSInteger maxPhotoCount = 9;
         alertMaker.addActionDefaultTitle(@"选择相册").addActionDefaultTitle(@"照相").addActionCancelTitle(@"取消");
     } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
         if (buttonIndex == 0) {
-            [self choosePhoto];
+            [self pushTZImagePickerController];
         }else if (buttonIndex == 1) {
             [self takePhoto];
         }
     }];
 }
 
-- (void)choosePhoto
+- (void)pushTZImagePickerController
 {
-    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:maxPhotoCount columnNumber:4 delegate:self pushPhotoPickerVc:YES];
+    if (self.maxPhotoCount <= 0) {
+        return;
+    }
+    
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxPhotoCount columnNumber:4 delegate:self pushPhotoPickerVc:YES];
     // imagePickerVc.navigationBar.translucent = NO;
     
 #pragma mark - 五类个性化设置，这些参数都可以不传，此时会走默认设置
     imagePickerVc.isSelectOriginalPhoto = NO;
-    
-    if (maxPhotoCount > 1) {
+    if (self.maxPhotoCount > 1) {
         // 1.设置目前已经选中的图片数组
         imagePickerVc.selectedAssets = self.selectedAccest; // 目前已经选中的图片数组
     }
-    imagePickerVc.allowTakePicture = YES; // 在内部显示拍照按钮
+    imagePickerVc.allowTakePicture = NO; // 在内部显示拍照按钮
     
     // imagePickerVc.photoWidth = 1000;
     
@@ -148,8 +117,8 @@ static const NSInteger maxPhotoCount = 9;
     imagePickerVc.needCircleCrop = NO;
     // 设置竖屏下的裁剪尺寸
     NSInteger left = 30;
-    NSInteger widthHeight = self.view.lmj_width - 2 * left;
-    NSInteger top = (self.view.lmj_height - widthHeight) / 2;
+    NSInteger widthHeight = kScreenWidth - 2 * left;
+    NSInteger top = (kScreenHeight - widthHeight) / 2;
     imagePickerVc.cropRect = CGRectMake(left, top, widthHeight, widthHeight);
     // 设置横屏下的裁剪尺寸
     // imagePickerVc.cropRectLandscape = CGRectMake((self.view.tz_height - widthHeight) / 2, left, widthHeight, widthHeight);
@@ -169,22 +138,25 @@ static const NSInteger maxPhotoCount = 9;
      imagePickerVc.delegate = self;
      */
     
-    imagePickerVc.isStatusBarDefault = NO;
+    // Deprecated, Use statusBarStyle
+    // imagePickerVc.isStatusBarDefault = NO;
+    imagePickerVc.isStatusBarDefault = YES;
+    
+    // 设置首选语言 / Set preferred language
+    // imagePickerVc.preferredLanguage = @"zh-Hans";
+    
+    // 设置languageBundle以使用其它语言 / Set languageBundle to use other language
+    // imagePickerVc.languageBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"tz-ru" ofType:@"lproj"]];
 #pragma mark - 到这里为止
     LMJWeak(self);
     // You can get the photos by block, the same as by delegate.
     // 你可以通过block或者代理，来得到用户选择的照片.
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-        
         weakself.selectedImages = [NSMutableArray arrayWithArray:photos];
         weakself.selectedAccest = [NSMutableArray arrayWithArray:assets];
-
-        [weakself.collectionView reloadData];
-        
+        !weakself.choosePhotoHandler ?: weakself.choosePhotoHandler(weakself.selectedImages, weakself.selectedAccest);
     }];
-    
-    [self presentViewController:imagePickerVc animated:YES completion:nil];
-    
+    [self.currentViewController presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
 - (void)takePhoto
@@ -192,18 +164,12 @@ static const NSInteger maxPhotoCount = 9;
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if ((authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied) && iOS7Later) {
         // 无相机权限 做一个友好的提示
-        
         [UIAlertController mj_showAlertWithTitle:@"无法使用相机" message:@"请在iPhone的""设置-隐私-相机""中允许访问相机" appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-            
             alertMaker.addActionDestructiveTitle(@"取消").addActionDefaultTitle(@"确认");
-            
         } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-            
             if (buttonIndex == 1) {
-                
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
             }
-            
         }];
         
     } else if (authStatus == AVAuthorizationStatusNotDetermined) {
@@ -223,16 +189,11 @@ static const NSInteger maxPhotoCount = 9;
     } else if ([TZImageManager authorizationStatus] == 2) { // 已被拒绝，没有相册权限，将无法保存拍的照片
         if (iOS8Later) {
             [UIAlertController mj_showAlertWithTitle:@"无法使用相机" message:@"请在iPhone的""设置-隐私-相机""中允许访问相机" appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-                
                 alertMaker.addActionDestructiveTitle(@"取消").addActionDefaultTitle(@"确认");
-                
             } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-                
                 if (buttonIndex == 1) {
-                    
                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
                 }
-                
             }];
         }
     } else if ([TZImageManager authorizationStatus] == 0) { // 未请求过相册权限
@@ -262,7 +223,7 @@ static const NSInteger maxPhotoCount = 9;
         if(iOS8Later) {
             self.imagePickerVc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         }
-        [self presentViewController:self.imagePickerVc animated:YES completion:nil];
+        [self.currentViewController presentViewController:self.imagePickerVc animated:YES completion:nil];
     } else {
         NSLog(@"模拟器中无法打开照相机,请在真机中使用");
     }
@@ -292,13 +253,13 @@ static const NSInteger maxPhotoCount = 9;
                         }
                         if (/* DISABLES CODE */ (NO)) { // 允许裁剪,去裁剪
                             TZImagePickerController *imagePicker = [[TZImagePickerController alloc] initCropTypeWithAsset:assetModel.asset photo:image completion:^(UIImage *cropImage, id asset) {
-                                [self refreshCollectionViewWithAddedAsset:asset image:cropImage];
+                                [self refreshAsset:asset image:cropImage];
                             }];
                             imagePicker.needCircleCrop = NO;
                             imagePicker.circleCropRadius = 100;
-                            [self presentViewController:imagePicker animated:YES completion:nil];
+                            [self.currentViewController presentViewController:imagePicker animated:YES completion:nil];
                         } else {
-                            [self refreshCollectionViewWithAddedAsset:assetModel.asset image:image];
+                            [self refreshAsset:assetModel.asset image:image];
                         }
                     }];
                 }];
@@ -307,112 +268,73 @@ static const NSInteger maxPhotoCount = 9;
     }
 }
 
+- (void)refreshAsset:(id)asset image:(UIImage *)image {
+    if ([asset isKindOfClass:[PHAsset class]]) {
+        PHAsset *phAsset = asset;
+        NSLog(@"location:%@",phAsset.location);
+    }
+    [self.selectedAccest addObject:asset];
+    [self.selectedImages addObject:image];
+    !self.takePhotoHandler ?: self.takePhotoHandler(self.selectedImages, self.selectedAccest);
+    
+}
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     if ([picker isKindOfClass:[UIImagePickerController class]]) {
         [picker dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
-- (void)refreshCollectionViewWithAddedAsset:(id)asset image:(UIImage *)image {
-    [self.selectedAccest addObject:asset];
-    [self.selectedImages addObject:image];
-    [self.collectionView reloadData];
-    
-    if ([asset isKindOfClass:[PHAsset class]]) {
-        PHAsset *phAsset = asset;
-        NSLog(@"location:%@",phAsset.location);
-    }
-}
-
-
-
-- (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
+static void *pickToolKey = &pickToolKey;
++ (void)showPickPhotoToolWithViewController:(UIViewController *)viewController maxPhotoCount:(NSUInteger)maxPhotoCount choosePhotoHandler:(void(^)(NSMutableArray<UIImage *> *selectedImages, NSMutableArray<PHAsset *> *selectedAccest))choosePhotoHandler takePhotoHandler:(void(^)(NSMutableArray<UIImage *> *selectedImages, NSMutableArray<PHAsset *> *selectedAccest))takePhotoHandler deleteImage:(void(^)(void(^deleteHandler)(NSUInteger index)))deleteImage
 {
-    if (self.selectedImages.count <= 0) {
-        [MBProgressHUD showAutoMessage:@"请选择照片进行上传" ToView:nil];
+    SINPickPhotoTool *pickTool;
+    pickTool = objc_getAssociatedObject(viewController, pickToolKey);
+    if (pickTool) {
+        [pickTool alertAction];
         return;
     }
-
-    MBProgressHUD *hud = [MBProgressHUD showProgressToView:self.view Text:@"传输中"];
-    NSString *name = @"file";
-    [[LMJRequestManager sharedManager] upload:[LMJXMGBaseUrl stringByAppendingPathComponent:@"upload"] parameters:@{@"username" : @"NJHu"} formDataBlock:^NSDictionary<NSData *,LMJDataName *> *(id<AFMultipartFormData> formData, NSMutableDictionary<NSData *,LMJDataName *> *needFillDataDict) {
-        
-        [self.selectedImages enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            // 压缩率控制
-//            [formData appendPartWithFileData:UIImageJPEGRepresentation(obj, 1) name:name fileName:@"test.png" mimeType:mineType];
-            needFillDataDict[UIImageJPEGRepresentation(obj, 1)] = name;
-        }];
-        
-        return needFillDataDict;
-        
-    } progress:^(NSProgress *progress) {
-        
-//        hud.progress = (CGFloat)progress.completedUnitCount / progress.totalUnitCount;
-        hud.label.text = [NSString stringWithFormat:@"%.2f", (CGFloat)progress.completedUnitCount / progress.totalUnitCount];
-        
-    } completion:^(LMJBaseResponse *response) {
-        
-        [hud hideAnimated:YES];
-        
-        if (response.error) {
-            [MBProgressHUD showError:response.errorMsg ToView:self.view];
-        }else {
-            [MBProgressHUD showSuccess:@"success" ToView:self.view];
-        }
-        
-    }];
-
-}
-
-
-
-#pragma mark - LMJVerticalFlowLayoutDelegate
-
-- (UICollectionViewLayout *)collectionViewController:(LMJCollectionViewController *)collectionViewController layoutForCollectionView:(UICollectionView *)collectionView
-{
-    return [[LMJElementsFlowLayout alloc] initWithDelegate:self];
-}
-
-
-- (CGSize)waterflowLayout:(LMJElementsFlowLayout *)waterflowLayout collectionView:(UICollectionView *)collectionView sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake((kScreenWidth - 10 * 4) / 3, (kScreenWidth - 10 * 4) / 3);
-}
-#pragma mark - collectionViewDelegate
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return self.selectedImages.count + 1;
-}
-
-
-
-#pragma mark - LMJNavUIBaseViewControllerDataSource
-
-/** 导航条左边的按钮 */
-- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
-{
-    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
+    pickTool = [[self alloc] init];
+    pickTool.currentViewController = viewController;
+    pickTool.maxPhotoCount = maxPhotoCount ?: pickTool.maxPhotoCount;
+    pickTool.choosePhotoHandler = [choosePhotoHandler copy];
+    pickTool.takePhotoHandler = [takePhotoHandler copy];
     
-    return [UIImage imageNamed:@"NavgationBar_blue_back"];
+    LMJWeak(pickTool);
+    void(^deleteImageHandler)(NSUInteger index) = ^void(NSUInteger index) {
+        [weakpickTool.selectedImages removeObjectAtIndex:index];
+        [weakpickTool.selectedAccest removeObjectAtIndex:index];
+    };
+    !deleteImage ?: deleteImage(deleteImageHandler);
+    objc_setAssociatedObject(viewController, pickToolKey, pickTool, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [pickTool alertAction];
 }
 
-- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
+- (instancetype)init
 {
-    [rightButton setTitle:@"保存" forState: UIControlStateNormal];
-    [rightButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    
-    [rightButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-    
-    return nil;
+    self = [super init];
+    if (self) {
+        _selectedAccest = [NSMutableArray array];
+        _selectedImages = [NSMutableArray array];
+        _maxPhotoCount = 6;
+    }
+    return self;
 }
 
+@end
 
+@implementation UIViewController (LMJImagePickTool)
 
-#pragma mark - LMJNavUIBaseViewControllerDelegate
-/** 左边的按钮的点击 */
--(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    [self.navigationController popViewControllerAnimated:YES];
+- (NSMutableArray<UIImage *> *)lmj_selectedImages {
+    SINPickPhotoTool *pickTool;
+    pickTool = objc_getAssociatedObject(self, pickToolKey);
+    return pickTool.selectedImages;
+}
+
+- (NSMutableArray<PHAsset *> *)lmj_selectedAccests {
+    SINPickPhotoTool *pickTool;
+    pickTool = objc_getAssociatedObject(self, pickToolKey);
+    return pickTool.selectedAccest;
 }
 
 @end

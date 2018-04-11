@@ -15,9 +15,7 @@
 /** <#digest#> */
 @property (nonatomic, copy) NSString *userId;
 
-
 @end
-
 
 static NSString *const tableName_ = @"t_statuses";
 
@@ -39,40 +37,21 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
     [[SINSQLiteManager sharedManager].dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         
         [status enumerateObjectsUsingBlock:^(NSMutableDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            
             @try {
-                
                 NSData *statusData = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
-                
-               if (![db executeUpdate:sql withArgumentsInArray:@[obj[@"idstr"], statusData, [SINUserManager sharedManager].uid]])
-               {
-                   *stop = YES;
-                   *rollback = YES;
-               }
+                if (![db executeUpdate:sql withArgumentsInArray:@[obj[@"idstr"], statusData, [SINUserManager sharedManager].uid]]){
+                    *stop = YES;
+                    *rollback = YES;
+                }
                 
             } @catch (NSException *exception) {
-                
                 NSLog(@"存储错误: %@", exception);
-                
-
-                
             } @finally {
-                
-//                *stop = YES;
-//                *rollback = YES;
-                
             }
             
             NSLog(@"向数据库新增%zd条数据", db.changes);
         }];
-
-        
     }];
-    
-    
-    
-    
 }
 
 
@@ -88,7 +67,6 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
         sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE statusid > %@ AND userid = %@ ORDER BY statusid DESC LIMIT 10", tableName_, since_id, [SINUserManager sharedManager].uid];
     }
     
-    
     [[SINSQLiteManager sharedManager] queryArrayOfDicts:sql completion:^(NSMutableArray<NSMutableDictionary *> *dictArrayM) {
         
         NSMutableArray<NSMutableDictionary *> *dictArrayM_new = [NSMutableArray array];
@@ -96,7 +74,7 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
         [dictArrayM enumerateObjectsUsingBlock:^(NSMutableDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
             NSData *statusData = obj[@"status"];
-
+            
             @try {
                 NSDictionary *statusDict = [NSJSONSerialization JSONObjectWithData:statusData options:NSJSONReadingMutableLeaves error:nil];
                 
@@ -106,17 +84,12 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
                 
             } @finally {
                 
-                
             }
             
         }];
         
-        
         completion(dictArrayM_new);
-        
     }];
-    
-    
 }
 
 + (void)clearOutTimeCashes

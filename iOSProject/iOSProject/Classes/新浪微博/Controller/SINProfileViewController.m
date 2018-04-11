@@ -18,23 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"我的";
 }
-
-
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     if ([SINUserManager sharedManager].isLogined) {
-        //        self.tableView.hidden = NO;
         self.unLoginRegisterView.hidden = YES;
     }else
     {
-        //        self.tableView.hidden = YES;
         self.unLoginRegisterView.hidden = NO;
-        //        [self endHeaderFooterRefreshing];
     }
 }
 
@@ -57,10 +52,8 @@
             [weakself gotoLogin];
         }];
         
-        
         [self.view addSubview:unLoginRegisterView];
         _unLoginRegisterView = unLoginRegisterView;
-        
         
         [unLoginRegisterView mas_makeConstraints:^(MASConstraintMaker *make) {
             
@@ -76,7 +69,6 @@
 - (void)gotoLogin
 {
     [[SINUserManager sharedManager] sinaLogin:^(NSError *error) {
-        
         if (!error) {
             self.unLoginRegisterView.hidden = YES;
         }

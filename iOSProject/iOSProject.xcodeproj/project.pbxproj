@@ -66,6 +66,7 @@
 		584038831FF9F2F1002A0566 /* LMJAlertViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038811FF9F2F0002A0566 /* LMJAlertViewsViewController.m */; };
 		584038861FF9F602002A0566 /* LMJFillTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038841FF9F602002A0566 /* LMJFillTableFormViewController.m */; };
 		585A22E4207D8768001BD3AD /* BSJSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A22E3207D8768001BD3AD /* BSJSummaryViewController.m */; };
+		585A22E7207DAB77001BD3AD /* SINPickPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A22E6207DAB77001BD3AD /* SINPickPhotoTool.m */; };
 		58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */; };
 		58651A9F1FFE6D6F0087419D /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5D1FFE6D6E0087419D /* SINUserManager.m */; };
 		58651AA01FFE6D6F0087419D /* SINSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5F1FFE6D6E0087419D /* SINSQLiteManager.m */; };
@@ -494,6 +495,8 @@
 		584038851FF9F602002A0566 /* LMJFillTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJFillTableFormViewController.h; sourceTree = "<group>"; };
 		585A22E2207D8768001BD3AD /* BSJSummaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSJSummaryViewController.h; sourceTree = "<group>"; };
 		585A22E3207D8768001BD3AD /* BSJSummaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSJSummaryViewController.m; sourceTree = "<group>"; };
+		585A22E5207DAB77001BD3AD /* SINPickPhotoTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SINPickPhotoTool.h; sourceTree = "<group>"; };
+		585A22E6207DAB77001BD3AD /* SINPickPhotoTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SINPickPhotoTool.m; sourceTree = "<group>"; };
 		58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListDAL.m; sourceTree = "<group>"; };
 		58651A5D1FFE6D6E0087419D /* SINUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUserManager.m; sourceTree = "<group>"; };
 		58651A5E1FFE6D6E0087419D /* SINSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINSQLiteManager.h; sourceTree = "<group>"; };
@@ -1285,6 +1288,8 @@
 				58651A5D1FFE6D6E0087419D /* SINUserManager.m */,
 				58651A611FFE6D6E0087419D /* SINStatusListDAL.h */,
 				58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */,
+				585A22E5207DAB77001BD3AD /* SINPickPhotoTool.h */,
+				585A22E6207DAB77001BD3AD /* SINPickPhotoTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1350,6 +1355,8 @@
 			children = (
 				58651A8B1FFE6D6F0087419D /* SINTabBar.h */,
 				58651A921FFE6D6F0087419D /* SINTabBar.m */,
+				58651A941FFE6D6F0087419D /* SINUnLoginRegisterView.h */,
+				58651A891FFE6D6F0087419D /* SINUnLoginRegisterView.m */,
 				58651A951FFE6D6F0087419D /* SINStatusCell.h */,
 				58651A871FFE6D6F0087419D /* SINStatusCell.m */,
 				58651A911FFE6D6F0087419D /* SINStatusToolBarView.h */,
@@ -1359,8 +1366,6 @@
 				58651A971FFE6D6F0087419D /* SINStatusRetweetView.m */,
 				58651A961FFE6D6F0087419D /* SINStatusPicsView.h */,
 				58651A8D1FFE6D6F0087419D /* SINStatusPicsView.m */,
-				58651A941FFE6D6F0087419D /* SINUnLoginRegisterView.h */,
-				58651A891FFE6D6F0087419D /* SINUnLoginRegisterView.m */,
 				58651A931FFE6D6F0087419D /* SINPublishToolBar.h */,
 				58651A8A1FFE6D6F0087419D /* SINPublishToolBar.m */,
 				58651A881FFE6D6F0087419D /* SINPublishToolBar.xib */,
@@ -2833,6 +2838,7 @@
 				58651AAA1FFE6D6F0087419D /* SINBroswerCell.m in Sources */,
 				583D508420765948001480C8 /* TDTouchID.m in Sources */,
 				589B57001FFFC52F00B2D5A8 /* QQLrcCell.m in Sources */,
+				585A22E7207DAB77001BD3AD /* SINPickPhotoTool.m in Sources */,
 				5892AD021FF4F9D200E868C2 /* LMJWordArrowItem.m in Sources */,
 				58651AA51FFE6D6F0087419D /* SINHomeViewController.m in Sources */,
 				58DC84171FFBC19A0060DC03 /* LMJLiftCycleViewController.m in Sources */,

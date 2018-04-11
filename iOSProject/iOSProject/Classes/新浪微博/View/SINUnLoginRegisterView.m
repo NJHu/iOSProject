@@ -40,12 +40,9 @@
 + (instancetype)unLoginRegisterViewWithType:(SINUnLoginRegisterViewType)type registClick:(void (^)())registClick loginClick:(void (^)())loginClick
 {
     SINUnLoginRegisterView *unLoginRegisterView = [[SINUnLoginRegisterView alloc] init];
-    
     unLoginRegisterView.registClick = registClick;
     unLoginRegisterView.loginClick = loginClick;
     unLoginRegisterView.type = type;
-    
-    
     return unLoginRegisterView;
 }
 
@@ -97,21 +94,11 @@
     
     [btns mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:30 leadSpacing:30 tailSpacing:30];
     [btns mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.top.mas_equalTo(self.encourageLabel.mas_bottom).offset(20);
         make.height.mas_equalTo(44);
-        
     }];
-     
-    
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    
-}
 
 - (void)login:(UIButton *)btn
 {
@@ -130,7 +117,6 @@
     switch (type) {
         case SINUnLoginRegisterViewTypeHomePage:
         {
-            
         }
             break;
         case SINUnLoginRegisterViewTypeMsgPage:
@@ -144,11 +130,9 @@
         {
             self.coverImageView.hidden = YES;
             self.caCycleImageView.hidden = YES;
-            
             self.slognImageView.image = [UIImage imageNamed:@"visitordiscover_image_profile"];
         }
             break;
-
     }
 }
 
@@ -161,19 +145,14 @@
     {
         UIImageView *caCycleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"visitordiscover_feed_image_smallicon"]];
         [self addSubview:caCycleImageView];
-        
         _caCycleImageView = caCycleImageView;
-        
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
         animation.duration = 5;
         animation.removedOnCompletion = NO;
         animation.repeatCount = INFINITY;
         animation.fromValue = @0;
         animation.toValue = @(M_PI * 2);
-        
-        
         [caCycleImageView.layer addAnimation:animation forKey:nil];
-        
     }
     return _caCycleImageView;
 }

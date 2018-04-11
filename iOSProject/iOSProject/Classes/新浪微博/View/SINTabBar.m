@@ -21,21 +21,21 @@
     [super layoutSubviews];
     
     CGFloat itemWidth = self.lmj_width / (self.items.count + 1);
-    
-    
     NSMutableArray<UIView *> *tabBarButtonMutableArray = [NSMutableArray array];
+    __block CGFloat itemY = 0;
+    __block CGFloat itemheight = 0;
     
     [self.subviews enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
             [tabBarButtonMutableArray addObject:obj];
             obj.lmj_width = itemWidth;
+            itemY = obj.lmj_y;
+            itemheight = obj.lmj_height;
         }
         
     }];
     
-    
     [tabBarButtonMutableArray enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
         obj.lmj_x = idx * itemWidth;
         
         if (idx > 1) {
@@ -44,14 +44,11 @@
         
         if (idx == 2) {
             [self.publishBtn sizeToFit];
+            self.publishBtn.lmj_size = CGSizeMake(itemWidth, itemheight);
             self.publishBtn.lmj_centerX = self.lmj_width * 0.5;
-            self.publishBtn.lmj_y = 5;
-            //            self.publishBtn.lmj_size = CGSizeMake(itemWidth, itemWidth);
+            self.publishBtn.lmj_y = itemY;
         }
-        
-        
     }];
-    
     [self bringSubviewToFront:self.publishBtn];
 }
 
@@ -73,26 +70,11 @@
         LMJWeak(self);
         LMJWeak(btn);
         [btn addActionHandler:^(NSInteger tag) {
-            
             !weakself.publishBtnClick ?: weakself.publishBtnClick(weakself, weakbtn);
         }];
-        
     }
     return _publishBtn;
 }
 
-//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
-//{
-//    
-//    if ([self pointInside:point withEvent:event] &&  CGRectContainsPoint(self.publishBtn.frame, point)) {
-//        
-//        return self.publishBtn;
-//        
-//    }
-//    
-//    return [super hitTest:point withEvent:event];
-//    
-//    
-//}
 
 @end

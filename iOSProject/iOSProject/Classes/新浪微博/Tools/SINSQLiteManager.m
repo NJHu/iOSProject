@@ -81,14 +81,9 @@ static NSString *_dbPath = nil;
                 dictM[colName] = colValue;
             }
             
-            
             NSLog(@"%@", dictM);
-            
-            
         }
-        
     }];
-    
 }
 
 // 查询
@@ -96,20 +91,14 @@ static NSString *_dbPath = nil;
 {
     
     NSString *sql = @"SELECT id, userid, statusid FROM t_statuses";
-    
     [self.dbQueue inDatabase:^(FMDatabase *db) {
-        
         FMResultSet *resultSet = [db executeQuery:sql withArgumentsInArray:@[]];
-        
         while (resultSet.next) {
-            
             int ID = [resultSet intForColumn:@"id"];
             NSString *userid = [resultSet stringForColumn:@"userid"];
             NSString *statusid = [resultSet stringForColumn:@"statusid"];
-            
             NSLog(@"%zd, %@, %@", ID, userid, statusid);
         }
-        
     }];
 }
 
