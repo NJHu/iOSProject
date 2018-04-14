@@ -11,10 +11,7 @@
 #import "SINSQLiteManager.h"
 
 @interface SINStatusListDAL ()
-
-/** <#digest#> */
 @property (nonatomic, copy) NSString *userId;
-
 @end
 
 static NSString *const tableName_ = @"t_statuses";
@@ -23,8 +20,6 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
 
 
 @implementation SINStatusListDAL
-
-
 
 + (void)cachesStatusList:(NSMutableArray<NSMutableDictionary *> *)status
 {
@@ -38,7 +33,9 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
         
         [status enumerateObjectsUsingBlock:^(NSMutableDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             @try {
+                
                 NSData *statusData = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
+                
                 if (![db executeUpdate:sql withArgumentsInArray:@[obj[@"idstr"], statusData, [SINUserManager sharedManager].uid]]){
                     *stop = YES;
                     *rollback = YES;
@@ -48,7 +45,6 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
                 NSLog(@"存储错误: %@", exception);
             } @finally {
             }
-            
             NSLog(@"向数据库新增%zd条数据", db.changes);
         }];
     }];
@@ -74,20 +70,13 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
         [dictArrayM enumerateObjectsUsingBlock:^(NSMutableDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
             NSData *statusData = obj[@"status"];
-            
             @try {
                 NSDictionary *statusDict = [NSJSONSerialization JSONObjectWithData:statusData options:NSJSONReadingMutableLeaves error:nil];
-                
                 [dictArrayM_new addObject:[NSMutableDictionary dictionaryWithDictionary:statusDict]];
-                
             } @catch (NSException *exception) {
-                
             } @finally {
-                
             }
-            
         }];
-        
         completion(dictArrayM_new);
     }];
 }

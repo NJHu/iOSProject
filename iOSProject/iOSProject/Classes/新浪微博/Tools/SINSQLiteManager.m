@@ -107,9 +107,7 @@ static NSString *_dbPath = nil;
 - (void)update
 {
     NSString *sql = @"UPDATE t_statuses SET userid=0000 WHERE id = 2";
-    
     [self.dbQueue inDatabase:^(FMDatabase *db) {
-       
        BOOL result = [db executeUpdate:sql withArgumentsInArray:@[]];
         
         if (result) {
@@ -159,11 +157,6 @@ static NSString *_dbPath = nil;
     
 }
 
-
-
-
-
-
 #pragma mark - creatTable
 - (void)creatTable
 {
@@ -198,12 +191,6 @@ static NSString *_dbPath = nil;
     }
     return _dbQueue;
 }
-
-
-
-
-
-
 
 
 #pragma mark - 单例

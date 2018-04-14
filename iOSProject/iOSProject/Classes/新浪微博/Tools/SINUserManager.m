@@ -44,12 +44,15 @@
         NSLog(@"%@", result.iconurl);
         NSLog(@"%@", result.name);
         NSLog(@"%@", result.originalResponse);
+        
         self.name = result.name;
         self.expiration = result.expiration;
         self.accessToken = result.accessToken;
         self.iconurl = result.iconurl;
         self.uid = result.uid;
+        
         [HMEmoticonManager sharedManager].userIdentifier = self.uid;
+        
         [self saveToFile];
         completion(nil);
     }];
@@ -95,7 +98,6 @@
 {
     self = [super init];
     if (self) {
-
         // 测试作者信息, 自己获取请注释
         if ([LMJThirdSDKSinaAppKey isEqualToString:@"4061770881"]) {
             _name = @"NJ影伴人久";
@@ -104,7 +106,6 @@
             _uid = @"5460642906";
             _expiration = [NSDate distantFuture];
         }
-
     }
     return self;
 }
