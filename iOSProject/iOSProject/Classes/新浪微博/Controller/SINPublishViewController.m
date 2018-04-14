@@ -98,7 +98,6 @@
         cell.addPhotoClick = nil;
         cell.deletePhotoClick = ^(UIImage *photoImage) {
             !weakself.deleteHandler ?: weakself.deleteHandler(indexPath.item);
-//            [weakself.collectionView reloadData];
             [collectionView performBatchUpdates:^{
                 [collectionView deleteItemsAtIndexPaths:@[indexPath]];
             } completion:^(BOOL finished) {
