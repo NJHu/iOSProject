@@ -38,10 +38,8 @@ PODS:
   - FMDB/standard (2.7.2)
   - HMEmoticon (1.0.12)
   - HMQRCodeScanner (1.0.6)
-  - iflyMSC (1.144)
   - IQKeyboardManager (5.0.7)
   - KILabel (1.0.1)
-  - LxGridView (1.0.0)
   - M13ProgressSuite (1.2.9)
   - MagicWindowSDK (4.2.171115):
     - WechatOpenSDK
@@ -77,7 +75,6 @@ PODS:
     - UMengUShare/Social/ReducedSina
   - UMengUShare/UI (6.4.8):
     - UMengUShare/Core
-  - WebViewJavascriptBridge (6.0.3)
   - WechatOpenSDK (1.8.1)
   - YYAsyncLayer (1.0)
   - YYCategories (1.0.4):
@@ -104,10 +101,8 @@ DEPENDENCIES:
   - FMDB
   - HMEmoticon
   - HMQRCodeScanner
-  - iflyMSC
   - IQKeyboardManager
   - KILabel
-  - LxGridView
   - M13ProgressSuite
   - MagicWindowSDK
   - Masonry
@@ -125,7 +120,6 @@ DEPENDENCIES:
   - UMengUShare/Social/ReducedWeChat
   - UMengUShare/Social/Sina
   - UMengUShare/UI
-  - WebViewJavascriptBridge
   - YYAsyncLayer
   - YYCategories
   - YYImage
@@ -145,10 +139,8 @@ SPEC CHECKSUMS:
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   HMEmoticon: 7cac18c01b74a2eaf833e2083c0238cb3c29b6a8
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
-  iflyMSC: 7631cefeb1493b4bf0812a2a9b4fcdc6fe9f782e
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   KILabel: 4797807cdc0b4992dad8bf91175ddc973c3b569b
-  LxGridView: af7b9360cce8eec2bcb11aa9d3cb7b9674372b74
   M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
   MagicWindowSDK: aa91ae646bb8b1ccd9479ea7fb0f4f7277ef31de
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -164,7 +156,6 @@ SPEC CHECKSUMS:
   UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: 7a0ab762ccd445ccfcf11bde8e7f81b29b9f5e1c
-  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WechatOpenSDK: 491d965d79335070328571d3e79f714549e79a5e
   YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
@@ -174,6 +165,6 @@ SPEC CHECKSUMS:
   ZFPlayer: 8a80bf8eb4638b97fbceaefcd3ca9978e9f17c9d
   ZJScrollPageView: dd8778909cb2413782616ab156e873956f6b0682
 
-PODFILE CHECKSUM: 6a5b23bcb7bc65a9e01cda34652d15b3eab782d4
+PODFILE CHECKSUM: 9d78811c593a7c872149042d5f2193177a2935f1
 
 COCOAPODS: 1.2.0

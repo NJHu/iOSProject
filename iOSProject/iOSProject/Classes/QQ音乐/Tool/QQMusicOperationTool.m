@@ -30,39 +30,6 @@
 @implementation QQMusicOperationTool
 
 #pragma mark --------------------------
-#pragma mark 单例
-
-static id _instance = nil;
-+ (instancetype)shareInstance
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-            _instance = [[self alloc] init];
-    });
-    
-    return _instance;
-}
-
-+ (instancetype)allocWithZone:(struct _NSZone *)zone
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _instance = [super allocWithZone:zone];
-    });
-    
-    return _instance;
-}
-
-- (id)copyWithZone:(NSZone *)zone
-{
-    return _instance;
-}
-
-- (id)mutableCopyWithZone:(NSZone *)zone
-{
-    return _instance;
-}
-
 - (instancetype)init
 {
     self = [super init];
@@ -141,9 +108,7 @@ static id _instance = nil;
 - (void)nextMusic{
     
     self.index += 1;
-    
     if (self.musicMList) {
-        
         QQMusicModel *music = self.musicMList[self.index];
         [self playMusic:music];
     }
@@ -152,9 +117,7 @@ static id _instance = nil;
 - (void)preMusic{
     
     self.index -= 1;
-    
     if (self.musicMList) {
-        
         QQMusicModel *music = self.musicMList[self.index];
         [self playMusic:music];
     }
@@ -251,21 +214,46 @@ static id _instance = nil;
 }
 
 
-
-
-
 - (NSArray *)musicMList
 {
     if(_musicMList == nil)
     {
-        _musicMList = [QQMusicModel mj_objectArrayWithFilename:@"Musics.plist"];
+        _musicMList = [QQMusicModel mj_objectArrayWithFilename:QQResources(@"Musics.plist")];
     }
     return _musicMList;
 }
 
+#pragma mark 单例
 
+static id _instance = nil;
++ (instancetype)shareInstance
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[self alloc] init];
+    });
+    return _instance;
+}
 
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    
+    return _instance;
+}
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
+
+- (id)mutableCopyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
 
 @end
 

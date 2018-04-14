@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define QQResources(file) [@"QQResources.bundle/" stringByAppendingString:file]
+
 @interface QQMusicModel : NSObject
 
 #pragma mark --------------------------
@@ -30,8 +32,5 @@
 
 /** 专辑图片*/
 @property (nonatomic, strong) NSString *icon;
-
-
-
 
 @end

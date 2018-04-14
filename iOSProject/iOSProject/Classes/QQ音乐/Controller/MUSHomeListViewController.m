@@ -10,9 +10,7 @@
 #import "MUSPlayingViewController.h"
 #import "MUSMusicCell.h"
 #import "QQMusicOperationTool.h"
-#import "MUSAnimationTool.h"
 #import "NeteaseMusicAPI.h"
-
 
 @interface MUSHomeListViewController ()<UISearchBarDelegate>
 
@@ -22,15 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.navigationItem.title = @"音乐";
-    
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"QQListBack"]];
-    
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return QQMusicOperationTool.shareInstance.musicMList.count;
 }
 
@@ -46,8 +40,8 @@
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    [MUSAnimationTool animate:cell type:MUSAnimationTypeTranslation];
-    [MUSAnimationTool animate:cell type:MUSAnimationTypeRotation];
+//    [MUSAnimationTool animate:cell type:MUSAnimationTypeTranslation];
+//    [MUSAnimationTool animate:cell type:MUSAnimationTypeRotation];
     
     return cell;
 }
@@ -74,9 +68,7 @@
     UITextField *textField = (UITextField *)self.lmj_navgationBar.titleView;
     NSString *searchMusicText = textField.text;
     
-    
     NSLog(@"%@", searchMusicText);
-    
     [NeteaseMusicAPI searchWithQuery:@"经典老歌" type:NMSearch_PlayList offset:0 limit:3 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (!error) {
@@ -84,9 +76,7 @@
         }
         NSLog(@"%@", response);
         NSLog(@"%@", error);
-        
     }];
-    
 }
 
 

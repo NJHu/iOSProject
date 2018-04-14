@@ -107,9 +107,6 @@
 }
 
 - (void)dealloc{
-    
-    //NSLog(@"移除监听");
-    
     // 移除监听
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -542,9 +539,6 @@
 
 
 
-
-
-
 #pragma mark - LMJNavUIBaseViewControllerDataSource
 
 - (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
@@ -565,27 +559,12 @@
     return YES;
 }
 
-/** 导航条左边的按钮 */
-- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
-{
-    [leftButton setTitle:@"back" forState:UIControlStateNormal];
-    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    return nil;
-}
-/** 导航条右边的按钮 */
-- (UIImage *)lmjNavigationBarRightButtonImage:(UIButton *)rightButton navigationBar:(LMJNavigationBar *)navigationBar
-{
-//    [rightButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
-    
-    return [UIImage imageNamed:@"main_tab_more"];
-}
 
 - (NSMutableAttributedString *)changeTitle:(NSString *)curTitle
 {
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:curTitle ?: @""];
     
-    [title addAttribute:NSForegroundColorAttributeName value:[UIColor RandomColor] range:NSMakeRange(0, title.length)];
+    [title addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, title.length)];
     
     [title addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, title.length)];
     
@@ -593,24 +572,19 @@
 }
 
 
+#pragma mark - LMJNavUIBaseViewControllerDataSource
 
-#pragma mark - LMJNavUIBaseViewControllerDelegate
+/** 导航条左边的按钮 */
+- (UIImage *)lmjNavigationBarLeftButtonImage:(UIButton *)leftButton navigationBar:(LMJNavigationBar *)navigationBar
+{
+    [leftButton setImage:[UIImage imageNamed:@"NavgationBar_white_back"] forState:UIControlStateHighlighted];
+    
+    return [UIImage imageNamed:@"NavgationBar_white_back"];
+}
 /** 左边的按钮的点击 */
 -(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
-/** 右边的按钮的点击 */
--(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    NSLog(@"%s", __func__);
-}
-/** 中间如果是 label 就会有点击 */
--(void)titleClickEvent:(UILabel *)sender navigationBar:(LMJNavigationBar *)navigationBar
-{
-    
-}
-
-
 
 @end

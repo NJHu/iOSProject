@@ -26,9 +26,9 @@
 #pragma mark --------------------------
 #pragma mark 时间格式
 /** 当前播放时长 字符串格式*/
-@property (nonatomic, strong) NSString *costTimeFormat;
+@property (nonatomic, strong, readonly) NSString *costTimeFormat;
 
 /** 歌曲总时长 字符串格式*/
-@property (nonatomic, strong) NSString *totalTimeFormat;
+@property (nonatomic, strong, readonly) NSString *totalTimeFormat;
 
 @end
