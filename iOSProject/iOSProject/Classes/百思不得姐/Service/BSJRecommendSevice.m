@@ -24,8 +24,6 @@
     parameters[@"a"] = @"category";
     parameters[@"c"] = @"subscribe";
     
-    
-    
     [self GET:BSJBaiSiJieHTTPAPI parameters:parameters completion:^(LMJBaseResponse *response) {
         
         if (!response.error) {

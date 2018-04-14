@@ -12,20 +12,15 @@
 
 @interface SINStatusListService ()
 
-/** <#digest#> */
 @property (nonatomic, strong) id lastParams;
 
 @end
 
 @implementation SINStatusListService
 
-
-
-- (void)getStatusList:(BOOL)isFresh complation:(void(^)(NSError *error, BOOL isEnd))completion
-{
+- (void)getStatusList:(BOOL)isFresh complation:(void(^)(NSError *error, BOOL isEnd))completion {
     
     NSString *URL = @"https://api.weibo.com/2/statuses/home_timeline.json";
-    
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [SINUserManager sharedManager].accessToken.copy;
@@ -44,91 +39,54 @@
         params[@"since_id"] = @"0";
         params[@"max_id"] = self.statusViewModels.lastObject.status.idstr.length ? SNSub(self.statusViewModels.lastObject.status.idstr, @"1").stringValue : @"0";
     }
-
-    self.lastParams = params;
     
+    self.lastParams = params;
     [SINStatusListDAL queryStatusListFromDiskWithSinceId:params[@"since_id"] maxId:params[@"max_id"] completion:^(NSMutableArray<NSMutableDictionary *> *dictArrayM) {
         if (self.lastParams != params) {
             return ;
         }
         
-        
-        
         if (dictArrayM.count >= 1) {
-            
             [self dictConverModels:dictArrayM complation:^(NSError *error, NSMutableArray<SINStatusViewModel *> *statusViewModels) {
                 if (self.lastParams != params) {
                     return ;
                 }
-                
                 if (isFresh) {
-                    
                     [self.statusViewModels insertObjects:statusViewModels atIndex:0];
-                    
-                }else
-                {
+                }else{
                     [self.statusViewModels addObjectsFromArray:statusViewModels];
                 }
-                
-                
                 completion(nil, NO);
-                
             }];
             
         }else
         {
-            
             [self GET:URL parameters:params completion:^(LMJBaseResponse *response) {
                 if (self.lastParams != params) {
                     return ;
                 }
-                
-                
                 if (response.error || !response.responseObject) {
-                    
                     completion(response.error, NO);
-                    
                     return ;
                 }
-                
                 NSDictionary *responObj = response.responseObject;
-                
                 NSLog(@"%@", response.responseObject);
                 
                 [SINStatusListDAL cachesStatusList:responObj[@"statuses"]];
-                
                 [self dictConverModels:responObj[@"statuses"] complation:^(NSError *error, NSMutableArray<SINStatusViewModel *> *statusViewModels) {
                     if (self.lastParams != params) {
                         return ;
                     }
-                    
                     if (isFresh) {
-                        
                         [self.statusViewModels insertObjects:statusViewModels atIndex:0];
-                        
-                    }else
-                    {
+                    }else{
                         [self.statusViewModels addObjectsFromArray:statusViewModels];
                     }
-                    
-                    
                     completion(nil, (SNCompare(@(self.statusViewModels.count), responObj[@"total_number"])) != LMJXY);
-                    
-                    
-                    
                 }];
-                
-                
-                
-                
             }];
-
         }
-        
-        
-        
     }];
-
 }
 
 

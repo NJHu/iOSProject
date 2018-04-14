@@ -14,19 +14,15 @@
 
 @interface SINStatusPicsView ()<UICollectionViewDelegate, UICollectionViewDataSource, LMJVerticalFlowLayoutDelegate, SINBroswerAnimatorPresentDelegate>
 
-/** <#digest#> */
 @property (weak, nonatomic) UICollectionView *collectionView;
 
-/** <#digest#> */
 @property (nonatomic, strong) SINBroswerAnimator *broswerAnimator;
 
-/** <#digest#> */
 @property (nonatomic, strong) NSIndexPath *lastSelectedIndexPath;
 
 @end
 
 @implementation SINStatusPicsView
-
 
 
 - (void)setupUIOnce
@@ -41,102 +37,68 @@
 - (void)setStatusViewModel:(SINStatusViewModel *)statusViewModel
 {
     _statusViewModel = statusViewModel;
-    
     [self.collectionView reloadData];
 }
 
 #pragma mark - <UICollectionViewDelegate, UICollectionViewDataSource,
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.statusViewModel.status.pic_urls.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SINStatusPicsViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SINStatusPicsViewCell class]) forIndexPath:indexPath];
-    
     cell.contentView.layer.contentMode = UIViewContentModeScaleAspectFill;
     cell.contentView.layer.masksToBounds = YES;
-    
-    
     [cell.imageView sd_setImageWithURL:self.statusViewModel.status.pic_urls[indexPath.item].bmiddle_pic placeholderImage:[UIImage imageNamed:@"empty_picture"]];
-    
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // 不能用
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    
     self.lastSelectedIndexPath = indexPath;
-    
-    
     SINBroswerViewController *broswerViewController = [[SINBroswerViewController alloc] init];
     broswerViewController.imageUrls = self.statusViewModel.status.pic_urls;
     broswerViewController.startIndexPath = indexPath;
-    
     broswerViewController.transitioningDelegate = self.broswerAnimator;
     broswerViewController.modalPresentationStyle = UIModalPresentationCustom;
-    
     self.broswerAnimator.dismissDelegate = broswerViewController;
-    
     [self.viewController presentViewController:broswerViewController animated:YES completion:nil];
-    
 }
 
 
 
 #pragma mark - SINBroswerAnimatorPresentDelegate
-
-- (CGRect)startRectWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator withCurrentIndexPath:(NSIndexPath *)currentIndexPath
-{
+- (CGRect)startRectWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator withCurrentIndexPath:(NSIndexPath *)currentIndexPath {
     UICollectionViewCell *currentCell = [self.collectionView cellForItemAtIndexPath:currentIndexPath];
-
    return [currentCell convertRect:currentCell.contentView.frame toView:[UIApplication sharedApplication].keyWindow];
-    
 }
 
-- (CGRect)endRectWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator withStartIndexPath:(NSIndexPath *)startIndexPath
-{
+- (CGRect)endRectWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator withStartIndexPath:(NSIndexPath *)startIndexPath {
     SINStatusPicsViewCell *currentCell = (SINStatusPicsViewCell *)[self.collectionView cellForItemAtIndexPath:startIndexPath];
-    
     UIImage *image = currentCell.imageView.image;
-    
     CGFloat imageViewY = 0;
-    
     CGFloat imageWidth = image.size.width;
     CGFloat imageHeight = image.size.height;
-    
-    
     CGFloat fitWidth = kScreenWidth;
     CGFloat fitHeight = fitWidth * imageHeight / imageWidth;
-    
     if (fitHeight < kScreenHeight) {
-        
         imageViewY = (kScreenHeight - fitHeight) * 0.5;
     }
-    
     return CGRectMake(0, imageViewY, fitWidth, fitHeight);
-    
-    
 }
 
-- (NSIndexPath *)startIndexPathWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator
-{
+- (NSIndexPath *)startIndexPathWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator {
     return self.lastSelectedIndexPath;
 }
 
-- (UIImageView *)startImageViewWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator
-{
+- (UIImageView *)startImageViewWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator {
     UIImageView *imageView = [[UIImageView alloc] init];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
-    
     [imageView sd_setImageWithURL:self.statusViewModel.status.pic_urls[self.lastSelectedIndexPath.item].bmiddle_pic placeholderImage:nil];
-    
-    
     return imageView;
 }
 
@@ -196,24 +158,17 @@
     if(_collectionView == nil)
     {
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:[UICollectionViewFlowLayout new]];
-        
         [self addSubview:collectionView];
         _collectionView = collectionView;
-        
         UICollectionViewLayout *myLayout = [[LMJVerticalFlowLayout alloc] initWithDelegate:self];
-        
         collectionView.collectionViewLayout = myLayout;
-        
         collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         collectionView.dataSource = self;
         collectionView.delegate = self;
         collectionView.scrollEnabled = NO;
-        
         [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.edges.insets(UIEdgeInsetsZero);
         }];
-        
     }
     return _collectionView;
 }
@@ -248,8 +203,6 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    
 }
 
 
@@ -270,19 +223,13 @@
 {
     if(_imageView == nil)
     {
-        
         UIImageView *imageView = [[UIImageView alloc] init];
         [self.contentView addSubview:imageView];
         _imageView = imageView;
-        
         imageView.contentMode = UIViewContentModeScaleAspectFill;
-        
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.edges.insets(UIEdgeInsetsZero);
-            
         }];
-        
     }
     return _imageView;
 }

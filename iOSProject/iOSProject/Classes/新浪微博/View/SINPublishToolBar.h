@@ -16,9 +16,7 @@ typedef enum : NSUInteger {
 
 @interface SINPublishToolBar : UIToolbar
 
-/** <#digest#> */
 @property (nonatomic, copy) void(^selectInput)(SINPublishToolBarClickType type);
-
 
 + (instancetype)publishToolBar;
 

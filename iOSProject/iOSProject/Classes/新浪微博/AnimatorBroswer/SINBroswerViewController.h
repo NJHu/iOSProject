@@ -12,11 +12,8 @@
 
 @interface SINBroswerViewController : LMJCollectionViewController<SINBroswerAnimatorDismissDelegate>
 
-/** <#digest#> */
 @property (nonatomic, strong) NSIndexPath *startIndexPath;
 
-
-/** <#digest#> */
 @property (nonatomic, strong) NSArray<SINDictURL *> *imageUrls;
 
 @end

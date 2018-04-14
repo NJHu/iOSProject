@@ -63,31 +63,25 @@
 - (void)setupUIOnce
 {
     [self.caCycleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.centerX.offset(0);
         make.centerY.offset(-100);
         make.size.mas_equalTo(CGSizeMake(200, 200));
     }];
     
     [self.coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.left.right.mas_equalTo(self.caCycleImageView);
         make.top.mas_equalTo(self.caCycleImageView).offset(-30);
         make.bottom.mas_equalTo(self.caCycleImageView).offset(0);
     }];
     
     [self.slognImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.center.mas_equalTo(self.caCycleImageView);
-        
     }];
     
     [self.encourageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.top.mas_equalTo(self.coverImageView.mas_bottom).offset(20);
         make.left.mas_equalTo(self.coverImageView).offset(-30);
         make.right.mas_equalTo(self.coverImageView).offset(30);
-        
     }];
     
     NSArray *btns = @[self.registerButton, self.loginButton];

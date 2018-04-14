@@ -103,7 +103,9 @@ static const NSUInteger showtime = 5;
 // 移除广告页面
 - (void)dismiss
 {
-    dispatch_cancel(_gcdTimer);
+    if (_gcdTimer) {
+        dispatch_cancel(_gcdTimer);
+    }
     _gcdTimer = nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:0.3f animations:^{

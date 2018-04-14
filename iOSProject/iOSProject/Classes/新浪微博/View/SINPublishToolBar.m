@@ -10,9 +10,6 @@
 
 @implementation SINPublishToolBar
 
-
-
-
 - (IBAction)addPics:(UIBarButtonItem *)sender {
     
     !self.selectInput ?: self.selectInput(SINPublishToolBarClickTypePics);

@@ -12,10 +12,7 @@
 
 @interface SINStatusListService : LMJBaseRequest
 
-
-/** <#digest#> */
 @property (nonatomic, strong) NSMutableArray<SINStatusViewModel *> *statusViewModels;
-
 
 - (void)getStatusList:(BOOL)isFresh complation:(void(^)(NSError *error, BOOL isEnd))completion;
 

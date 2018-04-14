@@ -46,15 +46,10 @@
             NSMutableArray<BSJTopicViewModel *> *newTopicViewModels = [NSMutableArray array];
             
             [[BSJTopic mj_objectArrayWithKeyValuesArray:dictArrayM] enumerateObjectsUsingBlock:^(BSJTopic  *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                
                 [newTopicViewModels addObject:[BSJTopicViewModel viewModelWithTopic:obj]];
-                
             }];
-            
             [self.topicViewModels addObjectsFromArray:newTopicViewModels];
-            
             self.maxtime = self.topicViewModels.lastObject.topic.t;
-            
             completion(nil, 999999999, self.topicViewModels.count);
             
         } else {
@@ -81,23 +76,15 @@
                 NSMutableArray<BSJTopicViewModel *> *newTopicViewModels = [NSMutableArray array];
                 
                 [[BSJTopic mj_objectArrayWithKeyValuesArray:response.responseObject[@"list"]] enumerateObjectsUsingBlock:^(BSJTopic  *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    
                     [newTopicViewModels addObject:[BSJTopicViewModel viewModelWithTopic:obj]];
-                    
                 }];
                 
                 [self.topicViewModels addObjectsFromArray:newTopicViewModels];
-                
                 self.maxtime = self.topicViewModels.lastObject.topic.t;
-                
                 completion(nil, [response.responseObject[@"info"][@"count"] integerValue], self.topicViewModels.count);
-                
             }];
         }
-        
     }];
-    
-    
 }
 
 

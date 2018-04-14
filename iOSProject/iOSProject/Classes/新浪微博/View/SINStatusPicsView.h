@@ -11,20 +11,13 @@
 @class SINStatusViewModel;
 @interface SINStatusPicsView : UIView
 
-
-
-
-/** <#digest#> */
 @property (nonatomic, strong) SINStatusViewModel *statusViewModel;
-
 
 @end
 
 
-
 @interface SINStatusPicsViewCell : UICollectionViewCell
 
-/** <#digest#> */
 @property (weak, nonatomic) UIImageView *imageView;
 
 @end

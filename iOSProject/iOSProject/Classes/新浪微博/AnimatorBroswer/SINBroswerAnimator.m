@@ -22,20 +22,17 @@
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
     self.isPresented = YES;
-    
     return self;
 }
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
-    
     self.isPresented = NO;
     return self;
 }
 
 
 #pragma mark - UIViewControllerAnimatedTransitioning
-
 - (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext
 {
     return 0.6;
@@ -43,9 +40,7 @@
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
 {
-    
     self.isPresented ? [self doPresentWithAnimateTransition:transitionContext] : [self doDismissWithAnimateTransition:transitionContext];
-    
 }
 
 
@@ -64,31 +59,23 @@
     // 首先出来的 ImageView
     UIImageView *startImageView = [self.presentDelegate startImageViewWithBroswerAnimator:self];
     [transitionContext.containerView addSubview:startImageView];
+    
     startImageView.frame = [self.presentDelegate startRectWithBroswerAnimator:self withCurrentIndexPath:[self.presentDelegate startIndexPathWithBroswerAnimator:self]];
     
-    
     transitionContext.containerView.backgroundColor = [UIColor blackColor];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        
-        
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-            
             startImageView.frame = [self.presentDelegate endRectWithBroswerAnimator:self withStartIndexPath:[self.presentDelegate startIndexPathWithBroswerAnimator:self]];
-            
         } completion:^(BOOL finished) {
-            
             transitionContext.containerView.backgroundColor = [UIColor clearColor];
             [startImageView removeFromSuperview];
             presentView.hidden = NO;
             [transitionContext completeTransition:finished];
         }];
         
-        
-        
     });
-    
-    
 }
 
 
@@ -114,22 +101,15 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             
             startImageView.frame = endRect;
             
         } completion:^(BOOL finished) {
-            
             [startImageView removeFromSuperview];
             [transitionContext completeTransition:finished];
-            
         }];
-        
     });
-    
-    
-
 }
 @end
 

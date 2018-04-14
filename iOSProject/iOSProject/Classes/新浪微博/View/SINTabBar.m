@@ -53,10 +53,8 @@
 }
 
 
-- (UIButton *)publishBtn
-{
-    if(_publishBtn == nil)
-    {
+- (UIButton *)publishBtn {
+    if(_publishBtn == nil) {
         UIButton *btn = [[UIButton alloc] init];
         [self addSubview:btn];
         

@@ -47,7 +47,7 @@
 
         // 封装好了, 直接在 block 里边写动画
         [PresentAnimator viewController:weakself presentViewController:[[LMJNavigationController alloc] initWithRootViewController:publishVc] presentViewFrame:[UIScreen mainScreen].bounds animated:YES completion:nil animatedDuration:0.5 presentAnimation:^(UIView *presentedView, UIView *containerView, void (^completionHandler)(BOOL finished)) {
-            
+
             containerView.transform = CGAffineTransformMakeTranslation(0, -kScreenHeight);
             [UIView animateWithDuration:0.5 animations:^{
                 containerView.transform = CGAffineTransformIdentity;
@@ -56,12 +56,14 @@
             }];
             
         } dismissAnimation:^(UIView *dismissView, void (^completionHandler)(BOOL finished)) {
+            
             CGAffineTransform transform = CGAffineTransformMakeScale(0.2, 0.2);
             [UIView animateWithDuration:1 animations:^{
                 dismissView.transform = CGAffineTransformRotate(transform, M_PI);
             } completion:^(BOOL finished) {
                 completionHandler(finished);
             }];
+            
         }];
     }];
     

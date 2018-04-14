@@ -28,7 +28,6 @@
 
 - (CGRect)startRectWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator;
 
-
 - (UIImageView *)startImageViewWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator;
 
 - (NSIndexPath *)currentIndexPathWithBroswerAnimator:(SINBroswerAnimator *)broswerAnimator;
@@ -38,11 +37,8 @@
 
 @interface SINBroswerAnimator : NSObject<UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 
-
-/** <#digest#> */
 @property (weak, nonatomic) id<SINBroswerAnimatorPresentDelegate> presentDelegate;
 
-/** <#digest#> */
 @property (weak, nonatomic) id<SINBroswerAnimatorDismissDelegate> dismissDelegate;
 
 @end

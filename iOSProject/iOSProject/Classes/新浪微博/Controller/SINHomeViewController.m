@@ -14,10 +14,10 @@
 #import "PresentAnimator.h"
 
 @interface SINHomeViewController ()
-/** <#digest#> */
+/** 没有登录的状态 */
 @property (weak, nonatomic) SINUnLoginRegisterView *unLoginRegisterView;
 
-/** <#digest#> */
+/** 网络数据 */
 @property (nonatomic, strong) SINStatusListService *statusListService;
 @end
 
@@ -149,15 +149,22 @@
     CGFloat width = kScreenWidth * 0.5;
     
     CGPoint center = [self.lmj_navgationBar convertPoint:self.lmj_navgationBar.titleView.center toView:[UIApplication sharedApplication].keyWindow];
+    LMJWeak(categoryVc);
     
+    // 写个present 动画吧
     [PresentAnimator viewController:self presentViewController:categoryVc presentViewFrame:CGRectMake((kScreenWidth - width) * 0.5, center.y + 20, width, width * 1.2) animated:YES completion:nil animatedDuration:0.5 presentAnimation:^(UIView *presentedView, UIView *containerView, void (^completionHandler)(BOOL finished)) {
         
+        containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.1];
         presentedView.layer.anchorPoint = CGPointMake(0.5, 0);
         presentedView.layer.transform = CATransform3DMakeScale(1, 0.1, 1);
         [UIView animateWithDuration:0.5 animations:^{
             presentedView.layer.transform = CATransform3DIdentity;
         } completion:^(BOOL finished) {
             completionHandler(finished);
+        }];
+        
+        [containerView addTapGestureRecognizer:^(UITapGestureRecognizer *recognizer, NSString *gestureId) {
+            [weakcategoryVc dismissViewControllerAnimated:YES completion:nil];
         }];
         
     } dismissAnimation:^(UIView *dismissView, void (^completionHandler)(BOOL finished)) {
@@ -187,6 +194,23 @@
 
 
 #pragma mark - getter
+- (void)gotoLogin
+{
+    LMJWeak(self);
+    [[SINUserManager sharedManager] sinaLogin:^(NSError *error) {
+        if (error) {
+            [weakself.view makeToast:error.domain];
+            return ;
+        }
+        
+        weakself.tableView.hidden = NO;
+        weakself.unLoginRegisterView.hidden = YES;
+        weakself.lmj_navgationBar.leftView.hidden = YES;
+        weakself.lmj_navgationBar.rightView.hidden = YES;
+        [weakself changeTitle:[SINUserManager sharedManager].name];
+        [weakself.tableView.mj_header beginRefreshing];
+    }];
+}
 
 - (SINUnLoginRegisterView *)unLoginRegisterView
 {
@@ -211,26 +235,6 @@
     }
     return _unLoginRegisterView;
 }
-
-
-- (void)gotoLogin
-{
-    LMJWeak(self);
-    [[SINUserManager sharedManager] sinaLogin:^(NSError *error) {
-        if (error) {
-            [weakself.view makeToast:error.domain];
-            return ;
-        }
-        
-        weakself.tableView.hidden = NO;
-        weakself.unLoginRegisterView.hidden = YES;
-        weakself.lmj_navgationBar.leftView.hidden = YES;
-        weakself.lmj_navgationBar.rightView.hidden = YES;
-        [weakself changeTitle:[SINUserManager sharedManager].name];
-        [weakself.tableView.mj_header beginRefreshing];
-    }];
-}
-
 
 - (SINStatusListService *)statusListService
 {

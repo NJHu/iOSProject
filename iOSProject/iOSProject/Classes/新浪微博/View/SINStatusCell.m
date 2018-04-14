@@ -72,13 +72,9 @@ static const CGFloat margin = 10.0;
     self.screen_nameLabel.text = statusViewModel.status.user.screen_name;
     self.mbrankImageView.image = statusViewModel.sin_mbrankImage;
     self.textPostLabel.attributedText = statusViewModel.sin_textPost ?: [[NSMutableAttributedString alloc] initWithString:@""];
-    
     [self.textPostLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        
         make.height.mas_equalTo(statusViewModel.postTextHeight);
-        
     }];
-    
     
     self.bottomToolBarView.statusViewModel = statusViewModel;
     
@@ -91,21 +87,15 @@ static const CGFloat margin = 10.0;
     }];
     
     [self layoutIfNeeded];
-    
     self.statusPicsView.statusViewModel = statusViewModel;
-    
     self.reweetView.hidden = !statusViewModel.sin_retweetStatusViewModel;
-    
     self.reweetView.retweetStatusViewModel = statusViewModel.sin_retweetStatusViewModel;
-    
-    
 }
 
 
 - (void)setupUIOnce
 {
     self.contentView.backgroundColor = [UIColor whiteColor];
-    
 }
 
 
@@ -119,20 +109,15 @@ static const CGFloat margin = 10.0;
         UIImageView *profile_image_urlImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"avatar_default"]];
         [self.contentView addSubview:profile_image_urlImageView];
         _profile_image_urlImageView = profile_image_urlImageView;
-        
         profile_image_urlImageView.layer.cornerRadius = 25;
         profile_image_urlImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
         profile_image_urlImageView.layer.borderWidth = 0.3;
         profile_image_urlImageView.layer.masksToBounds = YES;
         profile_image_urlImageView.contentMode = UIViewContentModeScaleAspectFill;
-        
         [profile_image_urlImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.left.top.offset(margin);
             make.size.mas_equalTo(CGSizeMake(50, 50));
-            
         }];
-        
     }
     return _profile_image_urlImageView;
 }
@@ -140,51 +125,37 @@ static const CGFloat margin = 10.0;
 
 - (YYLabel *)screen_nameLabel
 {
-    if(_screen_nameLabel == nil)
-    {
-        
+    if(_screen_nameLabel == nil) {
         YYLabel *screen_nameLabel = [[YYLabel alloc] init];
         [self.contentView addSubview:screen_nameLabel];
         _screen_nameLabel = screen_nameLabel;
-        
         screen_nameLabel.textAlignment = NSTextAlignmentLeft;
         screen_nameLabel.textColor = [UIColor blackColor];
         screen_nameLabel.font = [UIFont systemFontOfSize:AdaptedWidth(14)];
-        
         [screen_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.left.mas_equalTo(self.profile_image_urlImageView.mas_right).offset(10);
             make.right.lessThanOrEqualTo(self.contentView.mas_right).offset(-50);
-            
             make.bottom.mas_equalTo(self.profile_image_urlImageView.mas_centerY);
         }];
-        
     }
     return _screen_nameLabel;
 }
 
 - (UIImageView *)avatarVipImageView
 {
-    if(_avatarVipImageView == nil)
-    {
+    if(_avatarVipImageView == nil) {
         UIImageView *avatarVipImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"avatar_enterprise_vip"]];
         [self.contentView addSubview:avatarVipImageView];
         _avatarVipImageView = avatarVipImageView;
-        
-        
         avatarVipImageView.layer.cornerRadius = 8;
         //        avatarVipImageView.layer.borderColor = [UIColor whiteColor].CGColor;
         //        avatarVipImageView.layer.borderWidth = 1;
         avatarVipImageView.contentMode = UIViewContentModeScaleToFill;;
         avatarVipImageView.backgroundColor = [UIColor whiteColor];
-        
         [avatarVipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.bottom.right.mas_equalTo(self.profile_image_urlImageView).offset(0);
             make.size.mas_equalTo(CGSizeMake(16, 16));
-            
         }];
-        
     }
     return _avatarVipImageView;
 }
@@ -196,13 +167,9 @@ static const CGFloat margin = 10.0;
         UIImageView *mbrankImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_membership_level1"]];
         [self.contentView addSubview:mbrankImageView];
         _mbrankImageView = mbrankImageView;
-        
-        
         [mbrankImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.centerY.mas_equalTo(self.screen_nameLabel.mas_centerY);
             make.left.mas_equalTo(self.screen_nameLabel.mas_right).offset(margin);
-            
         }];
     }
     return _mbrankImageView;
@@ -216,18 +183,12 @@ static const CGFloat margin = 10.0;
         SINStatusToolBarView *bottomToolBarView = [SINStatusToolBarView tooBarView];
         [self.contentView addSubview:bottomToolBarView];
         _bottomToolBarView = bottomToolBarView;
-        
-        
         bottomToolBarView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [bottomToolBarView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.left.right.offset(0);
             make.bottom.mas_equalTo(self.sepLineView.mas_top);
             make.height.mas_equalTo(32.5);
-            
         }];
-        
-        
     }
     return _bottomToolBarView;
 }
@@ -241,12 +202,9 @@ static const CGFloat margin = 10.0;
         [self.contentView addSubview:lineView];
         _sepLineView = lineView;
         lineView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        
         [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.bottom.right.left.offset(0);
             make.height.mas_equalTo(margin);
-            
         }];
     }
     return _sepLineView;
@@ -259,14 +217,11 @@ static const CGFloat margin = 10.0;
         KILabel *textPostLabel = [[KILabel alloc] init];
         [self.contentView addSubview:textPostLabel];
         _textPostLabel = textPostLabel;
-        
         textPostLabel.numberOfLines = 0;
         textPostLabel.textAlignment = NSTextAlignmentLeft;
         textPostLabel.preferredMaxLayoutWidth = kScreenWidth - 2 * margin;
         textPostLabel.backgroundColor = [UIColor RandomColor];
-        
         [textPostLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.left.offset(margin);
             make.right.offset(-margin);
             make.top.mas_equalTo(self.profile_image_urlImageView.mas_bottom).offset(margin);
@@ -292,31 +247,21 @@ static const CGFloat margin = 10.0;
         [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeHashtag];
         [textPostLabel setAttributes:@{NSForegroundColorAttributeName : UIColor.greenColor} forLinkType:KILinkTypeURL];
         
-//        LMJWeak(self);
-        
-        
         textPostLabel.userHandleLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
-            
             NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
         };
         
         textPostLabel.hashtagLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
-            
             NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
-            
         };
         
         
         textPostLabel.urlLinkTapHandler = ^(KILabel * _Nonnull label, NSString * _Nonnull string, NSRange range) {
-            
             NSLog(@"%@ %@ %@", label, string, NSStringFromRange(range));
 //            LMJWebViewController *webVc = [[LMJWebViewController alloc] init];
 //            webVc.gotoURL = string.copy;
-//            
 //            [weakself.viewController.navigationController pushViewController:webVc animated:YES];
         };
-        
-        
     }
     return _textPostLabel;
 }
@@ -328,13 +273,10 @@ static const CGFloat margin = 10.0;
         UILabel *created_atTimeLabel = [[UILabel alloc] init];
         [self.contentView addSubview:created_atTimeLabel];
         _created_atTimeLabel = created_atTimeLabel;
-        
         created_atTimeLabel.textAlignment = NSTextAlignmentLeft;
         created_atTimeLabel.textColor = [UIColor lightGrayColor];
         created_atTimeLabel.font = [UIFont systemFontOfSize:AdaptedWidth(11)];
-        
         [created_atTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.left.mas_equalTo(self.screen_nameLabel.mas_left);
             make.top.mas_equalTo(self.profile_image_urlImageView.mas_centerY).offset(3);
         }];
@@ -350,16 +292,12 @@ static const CGFloat margin = 10.0;
         UILabel *sourceCreatLabel = [[UILabel alloc] init];
         [self.contentView addSubview:sourceCreatLabel];
         _sourceCreatLabel = sourceCreatLabel;
-        
         sourceCreatLabel.textAlignment = NSTextAlignmentLeft;
         sourceCreatLabel.textColor = [UIColor lightGrayColor];
         sourceCreatLabel.font = [UIFont systemFontOfSize:AdaptedWidth(11)];
-        
         [sourceCreatLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.left.mas_equalTo(self.created_atTimeLabel.mas_right).offset(5);
             make.centerY.mas_equalTo(self.created_atTimeLabel);
-            
         }];
     }
     return _sourceCreatLabel;
@@ -373,16 +311,11 @@ static const CGFloat margin = 10.0;
         SINStatusPicsView *statusPicsView = [[SINStatusPicsView alloc] init];
         [self.contentView addSubview:statusPicsView];
         _statusPicsView = statusPicsView;
-        
         [statusPicsView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.top.mas_equalTo(self.textPostLabel.mas_bottom).offset(margin);
             make.left.mas_equalTo(self.textPostLabel.mas_left);
-            
             make.size.mas_equalTo(CGSizeMake(66, 66));
-            
         }];
-        
     }
     return _statusPicsView;
 }
@@ -394,39 +327,28 @@ static const CGFloat margin = 10.0;
         SINStatusRetweetView *reweetView = [[SINStatusRetweetView alloc] init];
         [self.contentView addSubview:reweetView];
         _reweetView = reweetView;
-        
         [reweetView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
             make.left.right.offset(0);
             make.top.mas_equalTo(self.textPostLabel.mas_bottom).offset(margin);
             make.bottom.mas_equalTo(reweetView.statusPicsView.mas_bottom).offset(margin);
-            
         }];
-        
     }
     return _reweetView;
 }
 
 #pragma mark - base
-+ (instancetype)statusCellWithTableView:(UITableView *)tableView
-{
-    
++ (instancetype)statusCellWithTableView:(UITableView *)tableView {
     SINStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class])];
-    
-    
     if (cell == nil) {
         cell = [[self alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(self)];
     }
-    
     return cell;
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setupUIOnce];
     }
-    
     return self;
 }
 
@@ -438,16 +360,12 @@ static const CGFloat margin = 10.0;
 
 
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews{
     [super layoutSubviews];
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
-    
 }
 
 @end

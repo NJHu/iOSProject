@@ -21,13 +21,13 @@
 /** 过期时间 */
 @property (nonatomic, strong) NSDate *expiration;
 
-/** <#digest#> */
+/** accessToken */
 @property (nonatomic, copy) NSString *accessToken;
 
 /** 头像 */
 @property (nonatomic, copy) NSString *iconurl;
 
-/** <#digest#> */
+/** 用户 ID */
 @property (nonatomic, copy) NSString *uid;
 
 
