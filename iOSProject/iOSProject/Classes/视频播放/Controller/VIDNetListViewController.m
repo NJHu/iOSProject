@@ -39,7 +39,7 @@
     
     [urls enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        LMJWordArrowItem *item = [LMJWordArrowItem itemWithTitle:[NSString stringWithFormat:@"%zd, %@", idx, obj.lastPathComponent] subTitle:obj];
+        LMJWordArrowItem *item = [LMJWordArrowItem itemWithTitle:obj subTitle:nil];
         [items addObject:item];
     }];
     
@@ -63,7 +63,7 @@
     LMJWordItem *item = self.sections[indexPath.section].items[indexPath.row];
     
     VIDMoviePlayerViewController *playerVc = [[VIDMoviePlayerViewController alloc] init];
-    playerVc.videoURL = item.subTitle.copy;
+    playerVc.videoURL = item.title.copy;
     [self.navigationController pushViewController:playerVc animated:YES];
     
     
