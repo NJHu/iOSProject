@@ -79,9 +79,7 @@
 
 /** 歌词控制器*/
 - (MUSLrcTableViewController *)lrcTVC{
-    
     if (_lrcTVC == nil) {
-        
         _lrcTVC = [[MUSLrcTableViewController alloc] init];
         [self addChildViewController:_lrcTVC];
     }
@@ -94,16 +92,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setUpViewOnce];
     
     // 监听播放完毕后的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextMusic:) name:kPlayFinishNotificationName object:nil];
-    
-    // 给进度条添加一个手势
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sliderTap:)];
-    self.tap = tap;
-    [self.progressSlider addGestureRecognizer:tap];
 }
 
 - (void)dealloc{
@@ -162,7 +154,6 @@
 - (void)addLrcView{
     
     // 歌词视图
-    
     [self.lrcBackView addSubview:self.lrcTVC.view];
     
     // 歌词的背景视图
@@ -253,45 +244,31 @@
 /** 上一首*/
 - (IBAction)preMusic:(UIButton *)sender {
     
-    [[QQMusicOperationTool shareInstance] preMusic];
-    
-    [self setUpDataOnce];
+    if ([[QQMusicOperationTool shareInstance] preMusic]) {
+        [self setUpDataOnce];
+    }
 }
 
 /** 下一首*/
 - (IBAction)nextMusic:(UIButton *)sender {
     
-    self.progressSlider.value = 0.0;
-    self.costTimeLabel.text = @"00:00";
-    
-    [[QQMusicOperationTool shareInstance] nextMusic];
-    
-    [self setUpDataOnce];
+    if ([[QQMusicOperationTool shareInstance] nextMusic]) {
+        [self setUpDataOnce];
+    }
 }
 
-/** 点击了关闭按钮*/
-- (IBAction)closeButtonDidClicked:(UIButton *)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 
 #pragma mark --------------------------
 #pragma mark 进度条监听
 - (IBAction)sliderDidTouchDown:(UISlider *)sender {
-    
-    [self.progressSlider removeGestureRecognizer:self.tap];
-    
     // 移除定时器
     [self removeTimer];
 }
 
 - (IBAction)sliderDidTouchUp:(UISlider *)sender {
     
-    [self.progressSlider addGestureRecognizer:self.tap];
-    
     // 控制当前的播放进度
-    
     // 1.添加定时器
     [self addTimer];
     
@@ -327,32 +304,6 @@
     //NSLog(@"%lf", sender.value);
 }
 
-/** 进度条手势操作*/
-- (void)sliderTap:(UITapGestureRecognizer *)sender{
-    
-    // 1.获取手势在进度条上的位置
-    CGPoint point = [sender locationInView:self.progressSlider];
-    
-    // 2.当前的位置x, 与进度条的总长度构成的一个比例, 就可以当做当前进度条的值
-    CGFloat scale = 1.0 * point.x / self.progressSlider.lmj_width;
-    
-    // 3.设置进图条的值
-    self.progressSlider.value = scale;
-    
-    // 4. 总时长
-    NSTimeInterval totalTime = [[QQMusicOperationTool shareInstance] getNewMusicMessageModel].totalTime;
-    
-    // 5. 当前时间
-    NSTimeInterval currentTime = self.progressSlider.value * totalTime;
-    
-    // 6.设置当前播放进度
-    [[QQMusicOperationTool shareInstance] seekTo:currentTime];
-    
-    [self addTimer];
-    
-}
-
-
 
 #pragma mark --------------------------
 #pragma mark 界面数据变化
@@ -378,6 +329,10 @@
     
     self.lmj_navgationBar.title = [self changeTitle:[musicMessageModel.musicM.name stringByAppendingFormat:@"\n%@", musicMessageModel.musicM.singer]];
     
+    // 进度恢复成0
+    self.progressSlider.value = 0.0;
+    // 播放时长是0
+    self.costTimeLabel.text = @"00:00";
     // 总时长
     self.totalTimeLabel.text = musicMessageModel.totalTimeFormat;
     
@@ -440,8 +395,7 @@
     // 7.设置锁屏信息
     // 前台不更新, 进入后台之后才更新
     UIApplicationState state =  [UIApplication sharedApplication].applicationState;
-    if (state & UIApplicationStateBackground) {
-        
+    if (state == UIApplicationStateBackground) {
         [[QQMusicOperationTool shareInstance] setUpLockMessage];
     }
 }

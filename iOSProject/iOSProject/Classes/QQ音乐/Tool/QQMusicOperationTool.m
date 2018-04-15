@@ -22,6 +22,12 @@
 /** 锁屏 所需的图片参数设置*/
 @property (nonatomic, strong) MPMediaItemArtwork *artwork;
 
+/** 当前播放音乐的信息*/
+@property (nonatomic, strong) QQMusicMessageModel *musicMessageModel;
+
+/** 当前播放音乐的索引*/
+@property (nonatomic, assign) NSInteger index;
+
 /** 记录当前歌曲的歌词 播放到哪一行*/
 @property (nonatomic, assign) NSInteger lrcRow;
 
@@ -81,18 +87,21 @@
 #pragma mark --------------------------
 #pragma mark 单首音乐的操作
 
-- (void)playMusic:(QQMusicModel *)music{
+- (BOOL)playMusic:(QQMusicModel *)music{
     
     NSString *fileName = music.filename;
-    [self.tool playMusic:fileName];
+    BOOL isPlayMusicSucceed = [self.tool playMusic:fileName];
     
     if (self.musicMList == nil || self.musicMList.count <= 1) {
         NSLog(@"没有播放列表, 只能播放一首歌");
-        return;
+//        isPlayMusicSucceed = NO;
+        return NO;
     }
     
     // 记录当前播放歌曲的索引
     self.index = [self.musicMList indexOfObject:music];
+    
+    return isPlayMusicSucceed;
 }
 
 - (void)playCurrentMusic{
@@ -105,22 +114,24 @@
     [self.tool pauseCurrentMusic];
 }
 
-- (void)nextMusic{
+- (BOOL)nextMusic{
     
     self.index += 1;
     if (self.musicMList) {
         QQMusicModel *music = self.musicMList[self.index];
-        [self playMusic:music];
+       return [self playMusic:music];
     }
+    return NO;
 }
 
-- (void)preMusic{
+- (BOOL)preMusic{
     
     self.index -= 1;
     if (self.musicMList) {
         QQMusicModel *music = self.musicMList[self.index];
-        [self playMusic:music];
+       return [self playMusic:music];
     }
+    return NO;
 }
 
 - (void)seekTo:(NSTimeInterval)timeInteval{
@@ -161,7 +172,6 @@
     
     NSString *icon = musicMessageModel.musicM.icon;
     if (icon) {
-        
         UIImage *image = [UIImage imageNamed:icon];
         if (image) {
             
@@ -223,8 +233,9 @@
     return _musicMList;
 }
 
-#pragma mark 单例
 
+
+#pragma mark 单例
 static id _instance = nil;
 + (instancetype)shareInstance
 {

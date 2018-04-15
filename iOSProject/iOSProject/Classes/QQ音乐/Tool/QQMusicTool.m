@@ -48,18 +48,20 @@
 #pragma mark --------------------------
 #pragma mark 单首音乐操作
 
-- (void)playMusic:(NSString *)musicName {
+- (BOOL)playMusic:(NSString *)musicName {
     
     // 判断路径是否正确
     NSURL *url = [[NSBundle  mainBundle] URLForResource:musicName withExtension:nil];
     if (url == nil) {
-        return;
+        return NO;
     }
     
     // 判断是否播放同一首歌曲
     if (self.player.url && [self.player.url isEqual:url]) {
-        [self.player play]; // 为了暂停后, 能够再播放
-        return;
+        if (!self.player.isPlaying) {
+            [self.player play]; // 为了暂停后, 能够再播放
+        }
+        return NO;
     }
     
     // 1.创建 player
@@ -68,7 +70,7 @@
     self.player.delegate = self;
     if (error) {
         NSLog(@"%@", error);
-        return;
+        return NO;
     }
     
     // 2.准备播放
@@ -76,9 +78,10 @@
     
     // 3.开始播放
     [self.player play];
+    return YES;
 }
 
-- (void)pauseCurrentMusic{
+- (void)pauseCurrentMusic {
     
     [self.player pause];
 }

@@ -15,7 +15,8 @@
     
     // 1.开启图形上下文
     CGSize size = sourceImage.size;
-    UIGraphicsBeginImageContext(size);
+//    UIGraphicsBeginImageContext(size);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
     
     // 2.绘制大的图片
     [sourceImage drawInRect:CGRectMake(0, 0, size.width, size.height)];

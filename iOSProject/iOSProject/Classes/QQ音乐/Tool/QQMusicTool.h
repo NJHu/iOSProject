@@ -22,7 +22,7 @@ static NSString * const kPlayFinishNotificationName = @"kPlayFinishNotificationN
  *
  *  @param musicName 音乐文件名
  */
-- (void)playMusic:(NSString *)musicName;
+- (BOOL)playMusic:(NSString *)musicName;
 
 /**
  *  暂停当前音乐

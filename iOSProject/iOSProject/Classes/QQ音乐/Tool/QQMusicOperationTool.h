@@ -16,14 +16,8 @@
 #pragma mark --------------------------
 #pragma mark 属性
 
-/** 当前播放音乐的索引*/
-@property (nonatomic, assign) NSInteger index;
-
 /** 音乐播放列表*/
 @property (nonatomic, strong) NSArray<QQMusicModel *> *musicMList;
-
-/** 当前播放音乐的信息*/
-@property (nonatomic, strong) QQMusicMessageModel *musicMessageModel;
 
 #pragma mark --------------------------
 #pragma mark 单例
@@ -49,10 +43,10 @@
 
 /**
  *  播放音乐
- *
- *  @param music 音乐对象模型
+ *  是否播放成功
+ *  @param music 音乐对象模型,
  */
-- (void)playMusic:(QQMusicModel *)music;
+- (BOOL)playMusic:(QQMusicModel *)music;
 
 
 #pragma mark --------------------------
@@ -72,12 +66,12 @@
 /**
  *  播放 下一首
  */
-- (void)nextMusic;
+- (BOOL)nextMusic;
 
 /**
  *  播放 上一首
  */
-- (void)preMusic;
+- (BOOL)preMusic;
 
 
 /**

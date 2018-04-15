@@ -15,7 +15,7 @@
     
     _progress = progress;
     
-    if (_progress >= 0.97) {
+    if (_progress >= 0.99) {
         _progress = 0;
     }
     

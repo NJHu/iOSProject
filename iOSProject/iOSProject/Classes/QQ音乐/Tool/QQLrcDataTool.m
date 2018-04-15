@@ -67,6 +67,11 @@
                 
                 NSString *content = timeAndContent[1];
                 lrcModel.lrcStr = content;
+            }else if (timeAndContent.count == 1) {
+                
+                NSString *time = timeAndContent[0];
+                lrcModel.beginTime = [QQTimeTool getTimeInterval:time];
+                lrcModel.lrcStr = nil;
             }
         }
     }];
@@ -74,9 +79,7 @@
     // 修改模型的结束时间
     NSInteger count = lrcMs.count;
     [lrcMs enumerateObjectsUsingBlock:^(QQLrcModel *lrcModel, NSUInteger idx, BOOL * _Nonnull stop) {
-        
         if (idx != count - 1) {
-            
             lrcMs[idx].endTime = lrcMs[idx + 1].beginTime;
         }
     }];
