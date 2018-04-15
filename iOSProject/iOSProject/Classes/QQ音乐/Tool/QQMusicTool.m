@@ -73,11 +73,19 @@
         return NO;
     }
     
-    // 2.准备播放
-    [self.player prepareToPlay];
+    @try {
+        // 2.准备播放
+        [self.player prepareToPlay];
+        
+        // 3.开始播放
+        [self.player play];
+        
+    } @catch (NSException *ex) {
+        
+    } @finally {
+        
+    }
     
-    // 3.开始播放
-    [self.player play];
     return YES;
 }
 
@@ -98,7 +106,7 @@
     if (self.player) {
         [self.player stop];
         self.player.delegate = nil;
-        self.player = nil;        
+        self.player = nil;
     }
 }
 
@@ -115,7 +123,7 @@
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     
     //NSLog(@"歌曲播放完毕");
-
+    
     // 发布通知
     [[NSNotificationCenter defaultCenter] postNotificationName:kPlayFinishNotificationName object:nil];
     
