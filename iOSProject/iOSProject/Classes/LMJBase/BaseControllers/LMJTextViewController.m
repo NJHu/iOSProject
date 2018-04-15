@@ -45,7 +45,13 @@
     [self.view endEditing:YES];
 }
 
-
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (_returnKeyHandler) {
+        [_returnKeyHandler setDelegate:nil];
+        _returnKeyHandler = nil;
+    }
+}
 
 #pragma mark - UITextViewDelegate, UITextFieldDelegate
 
@@ -55,7 +61,6 @@
     if (![IQKeyboardManager sharedManager].canGoNext) {
         [self textViewController:self inputViewDone:textField];
     }
-    
     return YES;
 }
 
@@ -150,7 +155,7 @@
     manager.shouldShowToolbarPlaceholder = YES;
  
     [self requiredTextFields];
-    [self returnKeyHandler];;
+    [self initReturnKeyHandler];;
 }
 
 
@@ -198,15 +203,13 @@
 }
 
 
-- (IQKeyboardReturnKeyHandler *)returnKeyHandler
-{
-    if(_returnKeyHandler == nil)
-    {
+- (void)initReturnKeyHandler {
+    
+    if(_returnKeyHandler == nil) {
         _returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
         _returnKeyHandler.delegate = self;
         _returnKeyHandler.lastTextFieldReturnKeyType = [self textViewControllerLastReturnKeyType:self];
     }
-    return _returnKeyHandler;
 }
 
 

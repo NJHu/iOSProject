@@ -24,6 +24,11 @@
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"QQListBack"]];
 }
 
+- (void)dealloc {
+    NSLog(@"%s", __func__);
+    [[QQMusicOperationTool shareInstance] stopCurrentMusic];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return QQMusicOperationTool.shareInstance.musicMList.count;
 }

@@ -91,6 +91,17 @@
     [self.player play];
 }
 
+/**
+ 停止当前音乐
+ */
+- (void)stopCurrentMusic {
+    if (self.player) {
+        [self.player stop];
+        self.player.delegate = nil;
+        self.player = nil;        
+    }
+}
+
 - (void)seekTo:(NSTimeInterval)timeInteval{
     
     self.player.currentTime = timeInteval;

@@ -73,6 +73,10 @@
  */
 - (BOOL)preMusic;
 
+/**
+ 停止当前音乐
+ */
+- (void)stopCurrentMusic;
 
 /**
  *  指定当前播放进度

@@ -114,6 +114,13 @@
     [self.tool pauseCurrentMusic];
 }
 
+/**
+ 停止当前音乐
+ */
+- (void)stopCurrentMusic {
+    [self.tool stopCurrentMusic];
+}
+
 - (BOOL)nextMusic{
     
     self.index += 1;

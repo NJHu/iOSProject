@@ -36,6 +36,11 @@ static NSString * const kPlayFinishNotificationName = @"kPlayFinishNotificationN
 
 
 /**
+ 停止当前音乐
+ */
+- (void)stopCurrentMusic;
+
+/**
  *  指定播放进度
  *
  *  @param timeInteval 时间, 指定歌曲已经播放了多长时间
