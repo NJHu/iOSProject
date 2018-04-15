@@ -81,14 +81,6 @@
     
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    
-    
-}
-
 - (void)setModel:(ZFVideoModel *)model {
     
     [self.picView sd_setImageWithURL:[NSURL URLWithString:model.coverForFeed] placeholderImage:[UIImage imageWithColor:[UIColor RandomColor]]];

@@ -10,19 +10,18 @@
 #import "VIDTableViewVideoCell.h"
 #import <ZFPlayer.h>
 #import <ZFPlayerView.h>
-#import <ZFDownloadManager.h>
 #import "ZFVideoResolution.h"
 
 
 @interface VIDTableViewController ()<ZFPlayerDelegate>
 
-/** <#digest#> */
+/** 列表视频  */
 @property (nonatomic, strong) NSMutableArray<ZFVideoModel *> *videoModels;
 
-/** <#digest#> */
+/** 播放视频单例 */
 @property (nonatomic, strong) ZFPlayerView *playerView;
 
-/** <#digest#> */
+/** 控制层 */
 @property (nonatomic, strong) ZFPlayerControlView *controlView;
 
 @end
@@ -69,7 +68,6 @@
     __weak typeof(model) weakModel = model;
     // 点击播放的回调
     cell.playBlock = ^(UIButton *btn){
-        
 
         // 取出字典中的第一视频URL
         NSURL *videoURL = [NSURL URLWithString:weakModel.playInfos.firstObject.url];
@@ -86,20 +84,20 @@
         for (ZFVideoResolution * resolution in weakModel.playInfos) {
             [dic setValue:resolution.url forKey:resolution.name];
         }
+        // 赋值分辨率字典
         playerModel.resolutionDic    = dic;
-        
         // player的父视图tag
         playerModel.fatherViewTag    = weakCell.picView.tag;
         
         // 设置播放控制层和model
         [weakSelf.playerView playerControlView:weakSelf.controlView playerModel:playerModel];
+        
         // 下载功能
         weakSelf.playerView.hasDownload = YES;
+        
         // 自动播放
         [weakSelf.playerView autoPlayTheVideo];
     };
-    
-    
     return cell;
 }
 
@@ -111,17 +109,12 @@
 #pragma mark - getter
 - (NSMutableArray<ZFVideoModel *> *)videoModels
 {
-    if(_videoModels == nil)
-    {
-        
+    if(_videoModels == nil) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"videoData" ofType:@"json"];
         NSData *data = [NSData dataWithContentsOfFile:path];
         NSDictionary *rootDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        
         NSArray *videoList = [rootDict objectForKey:@"videoList"];
-        
         _videoModels = [ZFVideoModel mj_objectArrayWithKeyValuesArray:videoList];
-        
     }
     return _videoModels;
 }
@@ -141,6 +134,7 @@
         // _playerView.mute = YES;
         // 移除屏幕移除player
         // _playerView.stopPlayWhileCellNotVisable = YES;
+        _playerView.forcePortrait = NO;
         
         ZFPlayerShared.isLockScreen = YES;
         ZFPlayerShared.isStatusBarHidden = NO;
@@ -160,11 +154,11 @@
 
 - (void)zf_playerDownload:(NSString *)url {
     //     此处是截取的下载地址，可以自己根据服务器的视频名称来赋值
-    NSString *name = [url lastPathComponent];
-    [[ZFDownloadManager sharedDownloadManager] downFileUrl:url filename:name fileimage:nil];
-    // 设置最多同时下载个数（默认是3）
-    [ZFDownloadManager sharedDownloadManager].maxCount = 4;
-
+//    NSString *name = [url lastPathComponent];
+//    [[ZFDownloadManager sharedDownloadManager] downFileUrl:url filename:name fileimage:nil];
+//    // 设置最多同时下载个数（默认是3）
+//    [ZFDownloadManager sharedDownloadManager].maxCount = 4;
+    [[MJDownloadManager defaultManager] download:url];
 }
 
 @end

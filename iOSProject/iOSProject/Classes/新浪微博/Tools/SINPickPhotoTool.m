@@ -140,7 +140,7 @@
     
     // Deprecated, Use statusBarStyle
     // imagePickerVc.isStatusBarDefault = NO;
-    imagePickerVc.isStatusBarDefault = YES;
+//    imagePickerVc.isStatusBarDefault = YES;
     
     // 设置首选语言 / Set preferred language
     // imagePickerVc.preferredLanguage = @"zh-Hans";
@@ -209,9 +209,9 @@
 - (void)pushImagePickerController {
     // 提前定位
     __weak typeof(self) weakSelf = self;
-    [[TZLocationManager manager] startLocationWithSuccessBlock:^(CLLocation *location, CLLocation *oldLocation) {
+    [[TZLocationManager manager] startLocationWithSuccessBlock:^(NSArray<CLLocation *> *locations) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.location = location;
+        strongSelf.location = locations.lastObject;
     } failureBlock:^(NSError *error) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.location = nil;
@@ -244,7 +244,7 @@
                 [tzImagePickerVc hideProgressHUD];
                 NSLog(@"图片保存失败 %@",error);
             } else {
-                [[TZImageManager manager] getCameraRollAlbum:NO allowPickingImage:YES completion:^(TZAlbumModel *model) {
+                [[TZImageManager manager] getCameraRollAlbum:NO allowPickingImage:YES needFetchAssets:YES completion:^(TZAlbumModel *model) {
                     [[TZImageManager manager] getAssetsFromFetchResult:model.result allowPickingVideo:NO allowPickingImage:YES completion:^(NSArray<TZAssetModel *> *models) {
                         [tzImagePickerVc hideProgressHUD];
                         TZAssetModel *assetModel = [models firstObject];

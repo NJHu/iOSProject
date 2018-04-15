@@ -300,8 +300,8 @@ static NSString * const MJDowndloadManagerDefaultIdentifier = @"com.github.njhu.
 @interface MJDownloadManager() <NSURLSessionDataDelegate>
 /** session */
 @property (strong, nonatomic) NSURLSession *session;
-/** 存放所有文件的下载信息 */
-@property (strong, nonatomic) NSMutableArray<MJDownloadInfo *> *downloadInfoArray;
+///** 存放所有文件的下载信息 */
+//@property (strong, nonatomic) NSMutableArray<MJDownloadInfo *> *downloadInfoArray;
 /** 是否正在批量处理 */
 @property (assign, nonatomic, getter=isBatching) BOOL batching;
 @end
@@ -381,7 +381,7 @@ static NSLock *_lock;
 - (NSMutableArray<MJDownloadInfo *> *)downloadInfoArray
 {
     if (!_downloadInfoArray) {
-        self.downloadInfoArray = [NSMutableArray array];
+        _downloadInfoArray = [NSMutableArray array];
     }
     return _downloadInfoArray;
 }
@@ -446,17 +446,22 @@ static NSLock *_lock;
 {
     if (self.isBatching) return;
     
-//    MJDownloadInfo *willInfo = [self.downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateWillResume]].firstObject;
-    
     @synchronized(self) {
-        [self.downloadInfoArray enumerateObjectsUsingBlock:^(MJDownloadInfo * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            if (obj.state == MJDownloadStateWillResume) {
-                [self resume:obj.url];
-                *stop = YES;
-            }
-        }];
+        if (self.downloadInfoArray.count > 0) {
+            MJDownloadInfo *willInfo = [self.downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateWillResume]].firstObject;
+            [self resume:willInfo.url];
+        }
     }
+    
+//    @synchronized(self) {
+//        [self.downloadInfoArray enumerateObjectsUsingBlock:^(MJDownloadInfo * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//
+//            if (obj.state == MJDownloadStateWillResume) {
+//                [self resume:obj.url];
+//                *stop = YES;
+//            }
+//        }];
+//    }
 }
 
 - (void)cancelAll
@@ -545,20 +550,14 @@ static NSLock *_lock;
     // 下载中的
 //    NSArray *downloadingDownloadInfoArray = [self.downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateResumed]];
     
-    // 需要调用 getter 方法
-    NSMutableArray<MJDownloadInfo *> *downloadingDownloadInfoArrayM = [NSMutableArray array];
-    
     // 加锁, 多个线程同时访问就不准确了
     @synchronized(self) {
-     
-        [self.downloadInfoArray enumerateObjectsUsingBlock:^(MJDownloadInfo * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            if (obj.state == MJDownloadStateResumed) {
-                [downloadingDownloadInfoArrayM addObject:obj];
-            }
-        }];
+        if (self.downloadInfoArray.count == 0) {
+            return;
+        }
         
-        
+        // 需要调用 getter 方法
+        NSArray<MJDownloadInfo *> *downloadingDownloadInfoArrayM = [self.downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateResumed]];
         if (self.maxDownloadingCount > 0 && downloadingDownloadInfoArrayM.count >= self.maxDownloadingCount) {
             // 等待下载
             [info willResume];

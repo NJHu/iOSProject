@@ -7,7 +7,7 @@ inhibit_all_warnings!
 
 # 网络请求
 pod 'AFNetworking'
-pod 'ASIHTTPRequest'
+#pod 'ASIHTTPRequest'
 # 网络监控
 pod 'Reachability'
 
@@ -87,7 +87,7 @@ pod 'ZJScrollPageView'
 
 # 列表视频
 pod 'ZFPlayer'
-pod 'ZFDownload'
+#pod 'ZFDownload'
 
 # mark- 好玩的
 # 泡泡uibutton

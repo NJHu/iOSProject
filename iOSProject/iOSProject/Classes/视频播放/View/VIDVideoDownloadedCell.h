@@ -7,14 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZFDownloadManager.h"
-
 @interface VIDVideoDownloadedCell : UITableViewCell
 
 + (instancetype)videoCellWithTableView:(UITableView *)tableView;
 
-
 /** <#digest#> */
-@property (nonatomic, strong) ZFFileModel *fileInfo;
+@property (nonatomic, strong) MJDownloadInfo *fileInfo;
 
 @end

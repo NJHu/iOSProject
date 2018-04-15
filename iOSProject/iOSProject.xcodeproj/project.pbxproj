@@ -67,6 +67,7 @@
 		584038861FF9F602002A0566 /* LMJFillTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038841FF9F602002A0566 /* LMJFillTableFormViewController.m */; };
 		585A22E7207DAB77001BD3AD /* SINPickPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A22E6207DAB77001BD3AD /* SINPickPhotoTool.m */; };
 		585A22F52081FD1F001BD3AD /* QQResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 585A22F42081FD1E001BD3AD /* QQResources.bundle */; };
+		585A22FE2082FA28001BD3AD /* JSBridge_js in Resources */ = {isa = PBXBuildFile; fileRef = 585A22FD2082FA28001BD3AD /* JSBridge_js */; };
 		58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */; };
 		58651A9F1FFE6D6F0087419D /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5D1FFE6D6E0087419D /* SINUserManager.m */; };
 		58651AA01FFE6D6F0087419D /* SINSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5F1FFE6D6E0087419D /* SINSQLiteManager.m */; };
@@ -97,7 +98,6 @@
 		58651ABD1FFE6D6F0087419D /* SINStatusListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A9C1FFE6D6F0087419D /* SINStatusListService.m */; };
 		588CCD76205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD75205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m */; };
 		588CCD7A205D45DC0067E3C4 /* WKWebViewJsBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD79205D45DC0067E3C4 /* WKWebViewJsBridge.m */; };
-		588CCD7C205D49000067E3C4 /* H5Bridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 588CCD7B205D49000067E3C4 /* H5Bridge.js */; };
 		588CCD7F205D4FA60067E3C4 /* WKBridgeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD7E205D4FA60067E3C4 /* WKBridgeTool.m */; };
 		588CCD82205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD81205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m */; };
 		588CCD89205DF92F0067E3C4 /* LMJLineFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 588CCD85205DF92E0067E3C4 /* LMJLineFlowLayout.m */; };
@@ -203,8 +203,6 @@
 		58A858522078842B0063DE98 /* LMJStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A858512078842B0063DE98 /* LMJStudent.m */; };
 		58A858A6207C934E0063DE98 /* PresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A858A5207C934E0063DE98 /* PresentAnimator.m */; };
 		58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */; };
-		58B4EE2F205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html in Resources */ = {isa = PBXBuildFile; fileRef = 58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */; };
-		58B4EE31205FA4E100FFF4F8 /* H5Bridge.css in Resources */ = {isa = PBXBuildFile; fileRef = 58B4EE30205FA4E100FFF4F8 /* H5Bridge.css */; };
 		58B59D0A2015B17800C4C4C9 /* LMJCasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B59D092015B17800C4C4C9 /* LMJCasesViewController.m */; };
 		58DC81721FFA29E00060DC03 /* LMJDragTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81711FFA29E00060DC03 /* LMJDragTableViewController.m */; };
 		58DC81781FFA2CF90060DC03 /* LMJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC81761FFA2CF80060DC03 /* LMJCalendarViewController.m */; };
@@ -453,6 +451,7 @@
 		585A22E5207DAB77001BD3AD /* SINPickPhotoTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SINPickPhotoTool.h; sourceTree = "<group>"; };
 		585A22E6207DAB77001BD3AD /* SINPickPhotoTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SINPickPhotoTool.m; sourceTree = "<group>"; };
 		585A22F42081FD1E001BD3AD /* QQResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QQResources.bundle; sourceTree = "<group>"; };
+		585A22FD2082FA28001BD3AD /* JSBridge_js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSBridge_js; sourceTree = "<group>"; };
 		58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListDAL.m; sourceTree = "<group>"; };
 		58651A5D1FFE6D6E0087419D /* SINUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUserManager.m; sourceTree = "<group>"; };
 		58651A5E1FFE6D6E0087419D /* SINSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINSQLiteManager.h; sourceTree = "<group>"; };
@@ -512,7 +511,6 @@
 		588CCD75205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJH5JSBridgeViewController.m; sourceTree = "<group>"; };
 		588CCD78205D45DC0067E3C4 /* WKWebViewJsBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewJsBridge.h; sourceTree = "<group>"; };
 		588CCD79205D45DC0067E3C4 /* WKWebViewJsBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJsBridge.m; sourceTree = "<group>"; };
-		588CCD7B205D49000067E3C4 /* H5Bridge.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = H5Bridge.js; sourceTree = "<group>"; };
 		588CCD7D205D4FA60067E3C4 /* WKBridgeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKBridgeTool.h; sourceTree = "<group>"; };
 		588CCD7E205D4FA60067E3C4 /* WKBridgeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKBridgeTool.m; sourceTree = "<group>"; };
 		588CCD80205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJCuteFlowLayoutViewController.h; sourceTree = "<group>"; };
@@ -706,8 +704,6 @@
 		58A858A5207C934E0063DE98 /* PresentAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentAnimator.m; sourceTree = "<group>"; };
 		58AE5CF320103BA3003BD369 /* VIDMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDMoviePlayerViewController.h; sourceTree = "<group>"; };
 		58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDMoviePlayerViewController.m; sourceTree = "<group>"; };
-		58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = LMJH5JSBridgeViewController.html; sourceTree = "<group>"; };
-		58B4EE30205FA4E100FFF4F8 /* H5Bridge.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = H5Bridge.css; sourceTree = "<group>"; };
 		58B59D082015B17800C4C4C9 /* LMJCasesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJCasesViewController.h; sourceTree = "<group>"; };
 		58B59D092015B17800C4C4C9 /* LMJCasesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJCasesViewController.m; sourceTree = "<group>"; };
 		58DC81701FFA29DF0060DC03 /* LMJDragTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDragTableViewController.h; sourceTree = "<group>"; };
@@ -1324,13 +1320,11 @@
 		588CCD77205D45450067E3C4 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				585A22FD2082FA28001BD3AD /* JSBridge_js */,
 				588CCD78205D45DC0067E3C4 /* WKWebViewJsBridge.h */,
 				588CCD79205D45DC0067E3C4 /* WKWebViewJsBridge.m */,
 				588CCD7D205D4FA60067E3C4 /* WKBridgeTool.h */,
 				588CCD7E205D4FA60067E3C4 /* WKBridgeTool.m */,
-				588CCD7B205D49000067E3C4 /* H5Bridge.js */,
-				58B4EE30205FA4E100FFF4F8 /* H5Bridge.css */,
-				58B4EE2E205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2277,6 +2271,7 @@
 			files = (
 				58A8584F207878430063DE98 /* LMJWebImageCacheCell.xib in Resources */,
 				58DC83821FFB43460060DC03 /* LMJLZDHDTSViewController.xib in Resources */,
+				585A22FE2082FA28001BD3AD /* JSBridge_js in Resources */,
 				58DC83CF1FFB43E30060DC03 /* LMJDotRemoveViewController.xib in Resources */,
 				5892ACBE1FF4EF4500E868C2 /* Public.xcassets in Resources */,
 				58DC83831FFB43460060DC03 /* LMJLZDHDTViewController.xib in Resources */,
@@ -2285,7 +2280,6 @@
 				58A043DB206B2E1E003CB4E5 /* RSA证书 in Resources */,
 				58651AB81FFE6D6F0087419D /* SINStatusToolBarView.xib in Resources */,
 				5892ACBB1FF4EF4500E868C2 /* Sina.xcassets in Resources */,
-				58B4EE2F205F697E00FFF4F8 /* LMJH5JSBridgeViewController.html in Resources */,
 				58DC83F71FFB478E0060DC03 /* CATransition3.png in Resources */,
 				589B57842000339800B2D5A8 /* VIDCollectionViewVideoCell.xib in Resources */,
 				58DC851D1FFC972C0060DC03 /* BSJGuidePushView.xib in Resources */,
@@ -2299,7 +2293,6 @@
 				58DC851F1FFC972C0060DC03 /* BSJTopicCell.xib in Resources */,
 				589B57041FFFC52F00B2D5A8 /* QQLrcCell.xib in Resources */,
 				589B57792000339800B2D5A8 /* videoData.json in Resources */,
-				588CCD7C205D49000067E3C4 /* H5Bridge.js in Resources */,
 				583D507020731574001480C8 /* LMJLocalJsons in Resources */,
 				58DC83871FFB43460060DC03 /* LMJDYViewController.xib in Resources */,
 				58DC83F31FFB47710060DC03 /* 钟表.png in Resources */,
@@ -2308,7 +2301,6 @@
 				58A17C532007112A00B350AB /* intro_2.jpg in Resources */,
 				58A17C562007112A00B350AB /* intro_1.jpg in Resources */,
 				584038801FF9F128002A0566 /* LMJH5_OCViewController.html in Resources */,
-				58B4EE31205FA4E100FFF4F8 /* H5Bridge.css in Resources */,
 				58DC84F61FFC972C0060DC03 /* BSJLoginRegisterViewController.xib in Resources */,
 				58DC83ED1FFB472B0060DC03 /* 卡哇伊.jpg in Resources */,
 				58DC84FB1FFC972C0060DC03 /* BSJTrendViewController.xib in Resources */,

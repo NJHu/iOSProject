@@ -169,7 +169,7 @@ static const NSInteger maxPhotoCount = 9;
      imagePickerVc.delegate = self;
      */
     
-    imagePickerVc.isStatusBarDefault = NO;
+//    imagePickerVc.isStatusBarDefault = NO;
 #pragma mark - 到这里为止
     LMJWeak(self);
     // You can get the photos by block, the same as by delegate.
@@ -248,9 +248,9 @@ static const NSInteger maxPhotoCount = 9;
 - (void)pushImagePickerController {
     // 提前定位
     __weak typeof(self) weakSelf = self;
-    [[TZLocationManager manager] startLocationWithSuccessBlock:^(CLLocation *location, CLLocation *oldLocation) {
+    [[TZLocationManager manager] startLocationWithSuccessBlock:^(NSArray<CLLocation *> *locations) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.location = location;
+        strongSelf.location = locations.lastObject;
     } failureBlock:^(NSError *error) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.location = nil;
@@ -283,7 +283,7 @@ static const NSInteger maxPhotoCount = 9;
                 [tzImagePickerVc hideProgressHUD];
                 NSLog(@"图片保存失败 %@",error);
             } else {
-                [[TZImageManager manager] getCameraRollAlbum:NO allowPickingImage:YES completion:^(TZAlbumModel *model) {
+                [[TZImageManager manager] getCameraRollAlbum:NO allowPickingImage:YES needFetchAssets:YES completion:^(TZAlbumModel *model) {
                     [[TZImageManager manager] getAssetsFromFetchResult:model.result allowPickingVideo:NO allowPickingImage:YES completion:^(NSArray<TZAssetModel *> *models) {
                         [tzImagePickerVc hideProgressHUD];
                         TZAssetModel *assetModel = [models firstObject];

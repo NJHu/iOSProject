@@ -8,7 +8,6 @@
 
 #import "VIDMoviePlayerViewController.h"
 #import <ZFPlayer.h>
-#import <ZFDownloadManager.h>
 
 @interface VIDMoviePlayerViewController ()<ZFPlayerDelegate>
 
@@ -29,6 +28,11 @@
 @end
 
 @implementation VIDMoviePlayerViewController
+
+- (void)setVideoURL:(NSString *)videoURL {
+    //    @"`#%^{}\"[]|\\<> "   最后有一位空格
+    _videoURL = [videoURL stringByAddingPercentEncodingWithAllowedCharacters:[[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "] invertedSet]];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -91,12 +95,12 @@
     NSLog(@"下载点击: \n%@", url);
     
     //     此处是截取的下载地址，可以自己根据服务器的视频名称来赋值
-    NSString *name = [url lastPathComponent];
-    [[ZFDownloadManager sharedDownloadManager] downFileUrl:url filename:name fileimage:nil];
+//    NSString *name = [url lastPathComponent];
+//    [[ZFDownloadManager sharedDownloadManager] downFileUrl:url filename:name fileimage:nil];
+    
     // 设置最多同时下载个数（默认是3）
-    [ZFDownloadManager sharedDownloadManager].maxCount = 4;
-    
-    
+//    [ZFDownloadManager sharedDownloadManager].maxCount = 4;
+    [[MJDownloadManager defaultManager] download:url];
 }
 /** 控制层即将显示 */
 - (void)zf_playerControlViewWillShow:(UIView *)controlView isFullscreen:(BOOL)fullscreen

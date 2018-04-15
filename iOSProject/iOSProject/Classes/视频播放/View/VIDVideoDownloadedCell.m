@@ -46,46 +46,13 @@
     
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUIOnce];
-    }
-    
-    return self;
-}
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self setupUIOnce];
-}
-
-- (void)setupUIOnce
-{
-    
-    
-
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    
-}
-
-- (void)setFileInfo:(ZFFileModel *)fileInfo
+- (void)setFileInfo:(MJDownloadInfo *)fileInfo
 {
     _fileInfo = fileInfo;
-    NSString *totalSize = [ZFCommonHelper getFileSizeString:fileInfo.fileSize];
-    self.fileNameLabel.text = fileInfo.fileName;
-    self.fileSizeLabel.text = totalSize;
+//    NSString *totalSize = [ZFCommonHelper getFileSizeString:fileInfo.fileSize];
+    self.fileNameLabel.text = fileInfo.filename;
+    self.fileSizeLabel.text = [NSString stringWithFormat:@"%zd", fileInfo.totalBytesExpectedToWrite];
 }
 
 

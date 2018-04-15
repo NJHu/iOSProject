@@ -25,6 +25,7 @@
 #import "JXTAlertController.h"
 #import "LMJEasyBlankPageView.h"
 #import "UIImageView+FitNet.h"
+#import "MJDownload.h"
 
 
 // libs

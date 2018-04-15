@@ -14,19 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
-  - ASIHTTPRequest (1.8.2):
-    - ASIHTTPRequest/ASIWebPageRequest (= 1.8.2)
-    - ASIHTTPRequest/CloudFiles (= 1.8.2)
-    - ASIHTTPRequest/Core (= 1.8.2)
-    - ASIHTTPRequest/S3 (= 1.8.2)
-  - ASIHTTPRequest/ASIWebPageRequest (1.8.2):
-    - ASIHTTPRequest/Core
-  - ASIHTTPRequest/CloudFiles (1.8.2):
-    - ASIHTTPRequest/Core
-  - ASIHTTPRequest/Core (1.8.2):
-    - Reachability
-  - ASIHTTPRequest/S3 (1.8.2):
-    - ASIHTTPRequest/Core
   - BaiduMapKit (3.4.4)
   - CYLTabBarController (1.17.6)
   - DWBubbleMenuButton (1.0.1)
@@ -84,15 +71,12 @@ PODS:
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
   - YYText (1.0.7)
-  - ZFDownload (1.0.2):
-    - ASIHTTPRequest
   - ZFPlayer (2.1.6):
     - Masonry
   - ZJScrollPageView (0.4.0)
 
 DEPENDENCIES:
   - AFNetworking
-  - ASIHTTPRequest
   - BaiduMapKit
   - CYLTabBarController
   - DWBubbleMenuButton
@@ -124,13 +108,11 @@ DEPENDENCIES:
   - YYCategories
   - YYImage
   - YYText
-  - ZFDownload
   - ZFPlayer
   - ZJScrollPageView
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
-  ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   BaiduMapKit: 4ac88f5a363500760392825b69709f4a0125f81e
   CYLTabBarController: c374643dea6dadece8bdff9c70f7387f8ffd7d08
   DWBubbleMenuButton: 4d9bdbb9d662bdf65c93ceb7fc65901871143d1e
@@ -161,10 +143,9 @@ SPEC CHECKSUMS:
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
-  ZFDownload: a52f94ebb080833b8a8ceb19a409f2941343fe7f
   ZFPlayer: 833cb3974b619bfd01a0ec1ebaabfe6f629e85b4
   ZJScrollPageView: dd8778909cb2413782616ab156e873956f6b0682
 
-PODFILE CHECKSUM: d5c388975e8c4889dc356b4de31d9a5a3c38545d
+PODFILE CHECKSUM: 863a73dda302cb77bc1e161a51f41aefa315db98
 
 COCOAPODS: 1.2.0

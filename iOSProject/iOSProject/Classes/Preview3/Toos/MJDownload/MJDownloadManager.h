@@ -77,6 +77,8 @@ typedef void (^MJDownloadStateChangeBlock)(MJDownloadState state, NSString *file
 @property (strong, nonatomic) NSOperationQueue *queue;
 /** 最大同时下载数 */
 @property (assign, nonatomic) int maxDownloadingCount;
+/** 存放所有文件的下载信息 */
+@property (strong, nonatomic) NSMutableArray<MJDownloadInfo *> *downloadInfoArray;
 
 + (instancetype)defaultManager;
 + (instancetype)manager;

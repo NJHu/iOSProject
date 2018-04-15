@@ -7,8 +7,6 @@
 //
 
 #import "VIDVideoDownloadingCell.h"
-#import <ZFDownloadManager.h>
-#import <ZFFileModel.h>
 
 @interface VIDVideoDownloadingCell ()
 @property (weak, nonatomic) IBOutlet UILabel *fileNameLabel;
@@ -18,7 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalSizeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *downloadedRadioLabel;
 @property (weak, nonatomic) IBOutlet UILabel *speedStateLabel;
-
+/** <#digest#> */
+@property (nonatomic, assign) CFTimeInterval lasTime;
 @end
 
 @implementation VIDVideoDownloadingCell
@@ -52,51 +51,22 @@
     
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUIOnce];
-    }
-    
-    return self;
-}
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self setupUIOnce];
-}
-
-- (void)setupUIOnce
-{
-    
-    
-    
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    
-}
 - (IBAction)clickDownloadBtn:(UIButton *)sender {
     
     // 执行操作过程中应该禁止该按键的响应 否则会引起异常
     sender.userInteractionEnabled = NO;
-    ZFFileModel *downFile = self.fileInfo;
-    ZFDownloadManager *filedownmanage = [ZFDownloadManager sharedDownloadManager];
-    if(downFile.downloadState == ZFDownloading) { //文件正在下载，点击之后暂停下载 有可能进入等待状态
+    MJDownloadInfo *downFile = self.fileInfo;
+    
+//    ZFDownloadManager *filedownmanage = [ZFDownloadManager sharedDownloadManager];
+    
+    if(downFile.state == MJDownloadStateResumed) { //文件正在下载，点击之后暂停下载 有可能进入等待状态
         self.stopOrStartBtn.selected = YES;
-        [filedownmanage stopRequest:self.request];
+//        [filedownmanage stopRequest:self.request];
+        [[MJDownloadManager defaultManager] suspend:downFile.url];
     } else {
         self.stopOrStartBtn.selected = NO;
-        [filedownmanage resumeRequest:self.request];
+//        [filedownmanage resumeRequest:self.request];
+        [[MJDownloadManager defaultManager] resume:downFile.url];
     }
     
     // 暂停意味着这个Cell里的ASIHttprequest已被释放，要及时更新table的数据，使最新的ASIHttpreqst控制Cell
@@ -109,48 +79,53 @@
 
 
 
-- (void)setFileInfo:(ZFFileModel *)fileInfo
+- (void)setFileInfo:(MJDownloadInfo *)fileInfo
 {
     _fileInfo = fileInfo;
-    self.fileNameLabel.text = fileInfo.fileName;
+    self.fileNameLabel.text = fileInfo.filename;
     // 服务器可能响应的慢，拿不到视频总长度 && 不是下载状态
-    if ([fileInfo.fileSize longLongValue] == 0 && !(fileInfo.downloadState == ZFDownloading)) {
+    if (fileInfo.totalBytesExpectedToWrite == 0 && !(fileInfo.state == MJDownloadStateResumed)) {
         self.speedStateLabel.text = @"";
-        if (fileInfo.downloadState == ZFStopDownload) {
+        if (fileInfo.state == MJDownloadStateSuspened) {
             self.speedStateLabel.text = @"已暂停";
-        } else if (fileInfo.downloadState == ZFWillDownload) {
+        } else if (fileInfo.state == MJDownloadStateWillResume) {
             self.stopOrStartBtn.selected = YES;
             self.speedStateLabel.text = @"等待下载";
         }
         self.downloadProgressView.progress = 0.0;
         return;
     }
-    NSString *currentSize = [ZFCommonHelper getFileSizeString:fileInfo.fileReceivedSize];
-    NSString *totalSize = [ZFCommonHelper getFileSizeString:fileInfo.fileSize];
-    // 下载进度
-    float progress = (float)[fileInfo.fileReceivedSize longLongValue] / [fileInfo.fileSize longLongValue];
     
-    self.downloadedSizeLabel.text = currentSize;
-    self.totalSizeLabel.text = totalSize;
+    // 下载进度
+    CGFloat progress = (CGFloat)fileInfo.totalBytesWritten / (CGFloat)fileInfo.totalBytesExpectedToWrite;
+    
     self.downloadedRadioLabel.text = [NSString stringWithFormat:@"(%.2f%%)",progress*100];
     
     self.downloadProgressView.progress = progress;
     
-     NSString *speed = [NSString stringWithFormat:@"%@/S",[ZFCommonHelper getFileSizeString:[NSString stringWithFormat:@"%lu",[ASIHTTPRequest averageBandwidthUsedPerSecond]]]];
-    
-    
-    if (progress > 0) {
-        self.speedStateLabel.text = speed;
-    } else {
-        self.speedStateLabel.text = @"正在获取";
+    if (self.lasTime > 0) {
+        
+        CGFloat minusSize = (fileInfo.totalBytesWritten - self.downloadedSizeLabel.text.floatValue);
+        
+        CGFloat minusTime = CFAbsoluteTimeGetCurrent() - self.lasTime;
+        
+        if (progress > 0) {
+            self.speedStateLabel.text = [NSString stringWithFormat:@"%.2fkb/s", minusSize / minusTime];
+        } else {
+            self.speedStateLabel.text = @"正在获取";
+        }
     }
     
-    if (fileInfo.downloadState == ZFDownloading) { //文件正在下载
+    self.downloadedSizeLabel.text = [NSString stringWithFormat:@"%zd", fileInfo.totalBytesWritten];
+    self.totalSizeLabel.text = [NSString stringWithFormat:@"%zd", fileInfo.totalBytesExpectedToWrite];
+    self.lasTime = CFAbsoluteTimeGetCurrent();
+    
+    if (fileInfo.state == MJDownloadStateResumed) { //文件正在下载
         self.stopOrStartBtn.selected = NO;
-    } else if (fileInfo.downloadState == ZFStopDownload&&!fileInfo.error) {
+    } else if (fileInfo.state == MJDownloadStateSuspened && !fileInfo.error) {
         self.stopOrStartBtn.selected = YES;
         self.speedStateLabel.text = @"已暂停";
-    }else if (fileInfo.downloadState == ZFWillDownload&&!fileInfo.error) {
+    }else if (fileInfo.state == MJDownloadStateWillResume && !fileInfo.error) {
         self.stopOrStartBtn.selected = YES;
         self.speedStateLabel.text = @"等待下载";
     } else if (fileInfo.error) {

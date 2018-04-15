@@ -21,8 +21,12 @@
     
     self.jsBridge = [[WKWebViewJsBridge alloc] initWithWebView:self.webView delegate:self];
     
-    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:NSStringFromClass([self class]) withExtension:@"html"];
-    NSURL *jsCssSorceUrl = [NSURL URLWithString: [[[NSBundle mainBundle] URLForResource:NSStringFromClass([self class]) withExtension:@"html"].absoluteString stringByReplacingOccurrencesOfString:@"LMJH5JSBridgeViewController.html" withString:@""]];
+    
+    NSString *htmlPath = [@"JSBridge_js" stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.html", NSStringFromClass([self class])]];
+    
+    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:htmlPath withExtension:nil];
+    
+    NSURL *jsCssSorceUrl = [[NSBundle mainBundle] URLForResource:[htmlPath pathComponents].firstObject withExtension:nil];
     
     [self.webView loadFileURL:fileUrl allowingReadAccessToURL:jsCssSorceUrl];
     

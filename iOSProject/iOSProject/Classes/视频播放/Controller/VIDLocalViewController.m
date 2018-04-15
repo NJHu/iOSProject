@@ -10,13 +10,9 @@
 #import "VIDVideoDownloadedCell.h"
 #import "VIDVideoDownloadingCell.h"
 #import <ZFPlayer.h>
-#import <ZFDownloadManager.h>
-#define  DownloadManager  [ZFDownloadManager sharedDownloadManager]
 #import "VIDMoviePlayerViewController.h"
 
-
-
-@interface VIDLocalViewController ()<ZFDownloadDelegate>
+@interface VIDLocalViewController ()
 
 @end
 
@@ -28,15 +24,16 @@
     UIEdgeInsets insets = self.tableView.contentInset;
     insets.bottom += self.tabBarController.tabBar.lmj_height;
     self.tableView.contentInset = insets;
-    
-    DownloadManager.downloadDelegate = self;
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    //    DownloadManager.downloadDelegate = self;
     // NSLog(@"%@", NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES));
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downLoadStateChange:) name:MJDownloadStateDidChangeNotification object:nil];
     
 }
 
 - (void)initData{
-    [DownloadManager startLoad];
-    
+    //    [DownloadManager startLoad];
+    [[MJDownloadManager defaultManager] resumeAll];
     [self.tableView reloadData];
 }
 
@@ -55,13 +52,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return DownloadManager.finishedlist.count;
-    }else if (section == 1)
-    {
-        return DownloadManager.downinglist.count;
+    if ([MJDownloadManager defaultManager].downloadInfoArray.count > 0) {
+        if (section == 0) {
+            return [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateCompleted]].count;
+        }else if (section == 1) {
+            return [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d || state==%d || state==%d", MJDownloadStateWillResume, MJDownloadStateSuspened, MJDownloadStateResumed]].count;
+        }
     }
-    
     return 0;
 }
 
@@ -79,26 +76,21 @@
     
     if (indexPath.section == 0) {
         
-      VIDVideoDownloadedCell  *cell = [VIDVideoDownloadedCell videoCellWithTableView:tableView];
-        cell.fileInfo = DownloadManager.finishedlist[indexPath.row];
+        VIDVideoDownloadedCell  *cell = [VIDVideoDownloadedCell videoCellWithTableView:tableView];
+        cell.fileInfo = [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateCompleted]][indexPath.row];
         return cell;
         
     }else if (indexPath.section == 1)
     {
-       VIDVideoDownloadingCell *cell = [VIDVideoDownloadingCell videoCellWithTableView:tableView];
-        cell.request = DownloadManager.downinglist[indexPath.row];
-        cell.fileInfo = cell.request.userInfo[@"File"];
+        VIDVideoDownloadingCell *cell = [VIDVideoDownloadingCell videoCellWithTableView:tableView];
+        cell.fileInfo = [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d || state==%d || state==%d", MJDownloadStateWillResume, MJDownloadStateSuspened, MJDownloadStateResumed]][indexPath.row];
         
         __weak typeof(self) weakSelf = self;
         
-        
-//         下载按钮点击时候的要刷新列表
+        //         下载按钮点击时候的要刷新列表
         cell.startOrStopClick = ^{
             [weakSelf initData];
         };
-        if (!cell.request) {
-            return nil;
-        }
         
         return cell;
         
@@ -106,7 +98,7 @@
     {
         return nil;
     }
-
+    
 }
 
 
@@ -124,15 +116,20 @@
         return;
     }
     
-    ZFFileModel *fileModel = DownloadManager.finishedlist[indexPath.row];
-    
-    // 文件存放路径
-    NSString *path                   = FILE_PATH(fileModel.fileName);
-    
+    NSArray<MJDownloadInfo *> *MJDownloadStateCompleteds = [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateCompleted]];
     
     VIDMoviePlayerViewController *player = [[VIDMoviePlayerViewController alloc] init];
-    player.videoURL = [NSURL fileURLWithPath:path].absoluteString;
+    player.videoURL = [NSURL fileURLWithPath:MJDownloadStateCompleteds[indexPath.row].file].absoluteString;
     [self.navigationController pushViewController:player animated:YES];
+    
+    
+    //    ZFFileModel *fileModel = DownloadManager.finishedlist[indexPath.row];
+    //
+    //    // 文件存放路径
+    //    NSString *path                   = FILE_PATH(fileModel.fileName);
+    //    VIDMoviePlayerViewController *player = [[VIDMoviePlayerViewController alloc] init];
+    //    player.videoURL = [NSURL fileURLWithPath:path].absoluteString;
+    //    [self.navigationController pushViewController:player animated:YES];
     
 }
 
@@ -161,10 +158,19 @@
         
         if (indexPath.section == 0) {
             
-            [DownloadManager deleteFinishFile:DownloadManager.finishedlist[indexPath.row]];
+            NSArray<MJDownloadInfo *> *finishedlist = [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state=%d", MJDownloadStateCompleted]];
+            
+            [[NSFileManager defaultManager] removeItemAtPath:finishedlist[indexPath.row].file error:nil];
+            
+            [[MJDownloadManager defaultManager].downloadInfoArray removeObject:finishedlist[indexPath.row]];
+            
         }else if (indexPath.section == 1) {
             
-            [DownloadManager deleteRequest:DownloadManager.downinglist[indexPath.row]];
+            NSArray<MJDownloadInfo *> *downinglist = [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d || state==%d || state==%d", MJDownloadStateWillResume, MJDownloadStateSuspened, MJDownloadStateResumed]];
+            
+            [[MJDownloadManager defaultManager] cancel:downinglist[indexPath.row].url];
+            
+            [[MJDownloadManager defaultManager].downloadInfoArray removeObject:downinglist[indexPath.row]];
         }
         
         [weaktableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
@@ -176,34 +182,24 @@
 
 
 #pragma mark - ZFDownloadDelegate
-- (void)startDownload:(ZFHttpRequest *)request
-{
-    NSLog(@"开始下载!");
-}
-- (void)updateCellProgress:(ZFHttpRequest *)request
-{
-    ZFFileModel *fileInfo = [request.userInfo objectForKey:@"File"];
-    [self performSelectorOnMainThread:@selector(updateCellOnMainThread:) withObject:fileInfo waitUntilDone:YES];
-}
-- (void)finishedDownload:(ZFHttpRequest *)request
-{
-    [self initData];
+- (void)downLoadStateChange:(NSNotification *)noti {
+    MJDownloadInfo *info = noti.userInfo[MJDownloadInfoKey];
+    
+    if (info.state == MJDownloadStateCompleted) {
+        [self initData];
+    } else {
+        [self performSelectorOnMainThread:@selector(updateCellOnMainThread:) withObject:info waitUntilDone:YES];
+    }
 }
 
 // 更新下载进度
-- (void)updateCellOnMainThread:(ZFFileModel *)fileInfo {
-    NSArray *cellArr = [self.tableView visibleCells];
-    
+- (void)updateCellOnMainThread:(MJDownloadInfo *)fileInfo {
+    NSArray<VIDVideoDownloadingCell *> *cellArr = [self.tableView visibleCells];
     for (id obj in cellArr) {
         if([obj isKindOfClass:[VIDVideoDownloadingCell class]]) {
-            
             VIDVideoDownloadingCell *cell = (VIDVideoDownloadingCell *)obj;
-            
-            if([cell.fileInfo.fileURL isEqualToString:fileInfo.fileURL]) {
-                
+            if([cell.fileInfo.url isEqualToString:fileInfo.url]) {
                 cell.fileInfo = fileInfo;
-                
-                
             }
         }
     }
@@ -233,12 +229,14 @@
 /** 左边的按钮的点击 */
 -(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    [DownloadManager startAllDownloads];
+    //    [DownloadManager startAllDownloads];
+    [[MJDownloadManager defaultManager] resumeAll];
 }
 /** 右边的按钮的点击 */
 -(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    [DownloadManager pauseAllDownloads];
+    //    [DownloadManager pauseAllDownloads];
+    [[MJDownloadManager defaultManager] suspendAll];
 }
 
 

@@ -72,17 +72,6 @@
     [self.picView addSubview:self.playBtn];
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    
-}
 
 - (void)setModel:(ZFVideoModel *)model {
     _model = model;
