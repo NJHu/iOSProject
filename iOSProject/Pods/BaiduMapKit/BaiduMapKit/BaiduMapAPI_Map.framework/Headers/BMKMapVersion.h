@@ -18,7 +18,7 @@
 
 /**
  *获取当前地图API map组件 的版本号
- *当前map组件版本 : 3.4.2
+ *当前map组件版本 : 3.4.4
  *return  返回当前API map组件 的版本号
  */
 UIKIT_EXTERN NSString* BMKGetMapApiMapComponentVersion();

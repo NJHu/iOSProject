@@ -1,1 +1,0 @@
-../../../MOFSPickerManager/MOFSPickerManagerDemo/GDataXMLNode/GDataXMLNode.h

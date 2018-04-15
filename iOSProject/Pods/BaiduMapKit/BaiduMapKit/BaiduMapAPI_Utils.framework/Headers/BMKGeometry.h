@@ -405,12 +405,41 @@ UIKIT_EXTERN BMKMapPoint BMKGetNearestMapPointFromPolyline(BMKMapPoint point, BM
 UIKIT_EXTERN double BMKAreaBetweenCoordinates(CLLocationCoordinate2D leftTop, CLLocationCoordinate2D rightBottom);
 
 /**
+ 由百度经纬度坐标转换得到百度墨卡托坐标
+
+ @param coordinate 百度经纬度坐标
+ @return 百度墨卡托坐标
+ */
+UIKIT_EXTERN CGPoint BMKConvertToBaiduMercatorFromBD09LL(CLLocationCoordinate2D bd09llCoordinate);
+
+/**
+ 由百度墨卡托坐标转换得到百度经纬度坐标
+
+ @param coordinate 百度墨卡托坐标
+ @return 百度经纬度坐标
+ */
+UIKIT_EXTERN CLLocationCoordinate2D BMKConvertToBD09LLFromBaiduMercator(CGPoint bdMCTCoordinate);
+
+/**
+ 经纬度坐标之间的坐标转换
+ 支持WGS84LL->BD09LL, GCJ02LL->BD09LL, BD09LL->GCJ02LL
+ 输入输出坐标为其他类型时，认为是非法输入，返回的坐标中经纬度均为0
+
+ @param coordinate 待转换的原始经纬度坐标
+ @param fromType 原始经纬度坐标的坐标类型
+ @param toType 目标的经纬度坐标类型
+ @return 转换后的经纬度坐标
+ */
+UIKIT_EXTERN CLLocationCoordinate2D BMKCoordTrans(CLLocationCoordinate2D coordinate, BMK_COORD_TYPE fromType, BMK_COORD_TYPE toType);
+
+/**
  *坐标转换函数，从原始GPS坐标，mapbar坐标,google坐标，51地图坐标，mapabc坐标转换为百度坐标（51地图坐标需要显出10000）
  *@param coordinate 待转换的坐标
  *@param type 待转换的坐标系类型，GPS为原始GPS坐标，COMMON为google坐标，51地图坐标，mapabc坐标
  *@return 返回的NSDictionry中包含“x”，“y”字段，各自对应经过base64加密之后的x，y坐标
  */
 UIKIT_EXTERN NSDictionary* BMKConvertBaiduCoorFrom(CLLocationCoordinate2D coordinate,BMK_COORD_TYPE type);
+
 /**
  *base64加密后的坐标字典解密函数
  *@param dictionary 带解密的NSDictionry，该NSDictionry中应包含“x”，“y”字段，各自对应经过base64加密之后的x，y坐标

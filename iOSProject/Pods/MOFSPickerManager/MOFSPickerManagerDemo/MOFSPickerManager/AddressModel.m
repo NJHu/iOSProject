@@ -7,7 +7,6 @@
 //
 
 #import "AddressModel.h"
-#import "GDataXMLNode.h"
 
 @implementation AddressModel
 
@@ -18,22 +17,13 @@
     return _list;
 }
 
-- (instancetype)initWithXML:(GDataXMLElement *)xml {
-    self.name = [[xml attributeForName:@"name"] stringValue];
-    if ([xml attributeForName:@"zipcode"]) {
-        self.zipcode = [[xml attributeForName:@"zipcode"] stringValue];
-    }
-    @try {
-        NSArray *arr = [xml nodesForXPath:@"city" error:nil];
-        for (int i = 0 ; i < arr.count ; i++ ) {
-            CityModel *model = [[CityModel alloc] initWithXML:arr[i]];
-            model.index = [NSString stringWithFormat:@"%i",i];
-            [self.list addObject:model];
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (self) {
+        if (dictionary) {
+            self.name = dictionary[@"name"];
+            self.zipcode = dictionary[@"zipcode"];
         }
-    } @catch (NSException *exception) {
-        
-    } @finally {
-        
     }
     return self;
 }
@@ -49,22 +39,13 @@
     return _list;
 }
 
-- (instancetype)initWithXML:(GDataXMLElement *)xml {
-    self.name = [[xml attributeForName:@"name"] stringValue];
-    if ([xml attributeForName:@"zipcode"]) {
-        self.zipcode = [[xml attributeForName:@"zipcode"] stringValue];
-    }
-    @try {
-        NSArray *arr = [xml nodesForXPath:@"district" error:nil];
-        for (int i = 0 ; i < arr.count ; i++ ) {
-            DistrictModel *model = [[DistrictModel alloc] initWithXML:arr[i]];
-            model.index = [NSString stringWithFormat:@"%i",i];
-            [self.list addObject:model];
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (self) {
+        if (dictionary) {
+            self.name = dictionary[@"name"];
+            self.zipcode = dictionary[@"zipcode"];
         }
-    } @catch (NSException *exception) {
-        
-    } @finally {
-        
     }
     return self;
 }
@@ -73,10 +54,13 @@
 
 @implementation DistrictModel
 
-- (instancetype)initWithXML:(GDataXMLElement *)xml {
-    self.name = [[xml attributeForName:@"name"] stringValue];
-    if ([xml attributeForName:@"zipcode"]) {
-        self.zipcode = [[xml attributeForName:@"zipcode"] stringValue];
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (self) {
+        if (dictionary) {
+            self.name = dictionary[@"name"];
+            self.zipcode = dictionary[@"zipcode"];
+        }
     }
     return self;
 }

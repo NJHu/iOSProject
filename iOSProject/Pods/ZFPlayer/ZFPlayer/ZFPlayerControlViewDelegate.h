@@ -24,7 +24,6 @@
 #ifndef ZFPlayerControlViewDelegate_h
 #define ZFPlayerControlViewDelegate_h
 
-
 #endif /* ZFPlayerControlViewDelegate_h */
 
 @protocol ZFPlayerControlViewDelagate <NSObject>
@@ -38,8 +37,10 @@
 - (void)zf_controlView:(UIView *)controlView playAction:(UIButton *)sender;
 /** 全屏按钮事件 */
 - (void)zf_controlView:(UIView *)controlView fullScreenAction:(UIButton *)sender;
-/** 锁定屏幕方向按钮时间 */
+/** 锁定屏幕方向按钮事件 */
 - (void)zf_controlView:(UIView *)controlView lockScreenAction:(UIButton *)sender;
+/** 静音按钮事件 */
+- (void)zf_controlView:(UIView *)controlView muteAction:(UIButton *)sender;
 /** 重播按钮事件 */
 - (void)zf_controlView:(UIView *)controlView repeatPlayAction:(UIButton *)sender;
 /** 中间播放按钮事件 */

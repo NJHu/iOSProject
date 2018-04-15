@@ -1,8 +1,12 @@
 # TZImagePickerController
+[![CocoaPods](https://img.shields.io/cocoapods/v/TZImagePickerController.svg?style=flat)](https://github.com/banchichen/TZImagePickerController)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+
  A clone of UIImagePickerController, support picking multiple photos、original photo、video, also allow preview photo and video, support iOS6+.   
  一个支持多选、选原图和视频的图片选择器，同时有预览功能，支持iOS6+。
  
- ## 重要提示：1.9.0版本已发布，移除了"prefs:root="的调用，这个API已经被列为私有API，请大家尽快升级。  
+ ## 重要提示："prefs:root="已经被列为私有API，请大家尽快升级到1.9.0+版本。
  其它同样使用了该API的库大家可以检查下，比如著名的[SVProgressHUD](http://www.cocoachina.com/bbs/read.php?tid=1722166)    
  
      关于升级iOS10和Xcdoe8的提示:    
@@ -14,8 +18,14 @@
 
 ## 一. Installation 安装
 
-  * CocoaPods：pod 'TZImagePickerController'
-  * 手动导入：将TZImagePickerController文件夹拽入项目中，导入头文件：#import "TZImagePickerController.h"
+#### CocoaPods
+> pod 'TZImagePickerController'
+
+#### Carthage
+> github "banchichen/TZImagePickerController"
+
+#### 手动安装
+> 将TZImagePickerController文件夹拽入项目中，导入头文件：#import "TZImagePickerController.h"
 
 ## 二. Example 例子
 
@@ -82,23 +92,28 @@ A：1.8.4版本已支持
 **Q：可否增加微信编辑图片的功能？**           
 A：考虑下，优先级低  
 
-      最近更新 
-1.9.5 优化视频导出API，和其它一些细节     
-1.9.4 适配iPhoneX       
-1.9.0 移除"prefs:root="的调用，这个API已经被列为私有API，请大家尽快升级     
-1.8.8 修复一些细节   
-1.8.5 修复一些样式细节    
-1.8.4 加入横竖屏适配；支持视频/gif多选；支持视频和照片一起选    
-1.8.1 新增2个代理方法，支持由上层来决定相册/照片的显示与否     
-1.8.0 修复若干bug, 提升流畅度     
+      最近更新
+2.0.1 修复一些bug
+2.0.0.6 优化自定义languageBundle的支持，加入使用示例     
+2.0.0.5 优化性能，提高选择器打开速度，新增越南语支持    
+2.0.0.2 新增繁体语言，可设置首选语言，国际化支持更强大；优化一些细节     
+1.9.8  支持Carthage，优化一些细节    
+1.9.6  优化视频预览和gif预览页toolbar在iPhoneX上的样式      
+1.9.5  优化视频导出API，和其它一些细节     
+1.9.4  适配iPhoneX       
+1.9.0  移除"prefs:root="的调用，这个API已经被列为私有API，请大家尽快升级     
 ...   
-1.7.7 支持GIF图片的播放和选择    
-1.7.6 支持对共享相册和同步相册的显示     
-1.7.5 允许不进入预览页面直接选择照片     
-1.7.4 支持单选模式下裁剪照片，支持任意矩形和圆形裁剪框    
-1.7.3 优化iCloud照片的显示与选择    
+1.8.4  加入横竖屏适配；支持视频/gif多选；支持视频和照片一起选    
+1.8.1  新增2个代理方法，支持由上层来决定相册/照片的显示与否     
+1.8.0  修复若干bug, 提升流畅度     
 ...   
-1.5.0 可把拍照按钮放在外面；可自定义照片排序方式；Demo页的UI大改版，新增若干开关；   
+1.7.7  支持GIF图片的播放和选择    
+1.7.6  支持对共享相册和同步相册的显示     
+1.7.5  允许不进入预览页面直接选择照片     
+1.7.4  支持单选模式下裁剪照片，支持任意矩形和圆形裁剪框    
+1.7.3  优化iCloud照片的显示与选择    
+...   
+1.5.0  可把拍照按钮放在外面；可自定义照片排序方式；Demo页的UI大改版，新增若干开关；   
 ...      
-1.4.5 性能大幅提升（性能测试截图请去博客查看）；可在照片列表页拍照；Demo大幅优化；   
+1.4.5  性能大幅提升（性能测试截图请去博客查看）；可在照片列表页拍照；Demo大幅优化；   
 ...        

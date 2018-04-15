@@ -140,6 +140,17 @@
 - (void)renderTexturedLinesWithPoints:(BMKMapPoint *)points pointCount:(NSUInteger)pointCount lineWidth:(CGFloat)lineWidth textureID:(GLuint)textureID strokeColor:(UIColor *)strokeColor  looped:(BOOL)looped tileTexture:(BOOL) tileTexture keepScale:(BOOL) keepScale;
 
 /**
+ *使用OpenGLES 按指定纹理绘制多边形，适配坐标数量过多产生飞线bug
+ @param points 直角坐标点
+ @param pointCount 点个数
+ @param lineWidth OpenGLES支持线宽尺寸
+ @param textureID 纹理ID,使用- (void)loadStrokeTextureImage:(UIImage *)textureImage;加载
+ @param tileTexture 是否纹理图片平铺绘制
+ @param keepScale 纹理图片是否缩放（tileTexture为YES时生效）
+ */
+- (void)renderTexturedLinesWithPoints:(BMKMapPoint *)points pointCount:(NSUInteger)pointCount lineWidth:(CGFloat)lineWidth textureID:(GLuint)textureID strokeColor:(UIColor *)strokeColor tileTexture:(BOOL) tileTexture keepScale:(BOOL) keepscale;
+
+/**
  *使用OpenGLES 分段纹理绘制线
  @param partPt 分段直角坐标点
  @param lineWidth OpenGLES支持线宽尺寸

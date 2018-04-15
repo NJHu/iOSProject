@@ -51,7 +51,6 @@
     if (!self.models.count) {
         self.models = [NSMutableArray arrayWithArray:_tzImagePickerVc.selectedModels];
         _assetsTemp = [NSMutableArray arrayWithArray:_tzImagePickerVc.selectedAssets];
-        self.isSelectOriginalPhoto = _tzImagePickerVc.isSelectOriginalPhoto;
     }
     [self configCollectionView];
     [self configCustomNaviBar];
@@ -182,7 +181,7 @@
 
 - (void)configCropView {
     TZImagePickerController *_tzImagePickerVc = (TZImagePickerController *)self.navigationController;
-    if (!_tzImagePickerVc.showSelectBtn && _tzImagePickerVc.allowCrop) {
+    if (_tzImagePickerVc.maxImagesCount <= 1 && _tzImagePickerVc.allowCrop) {
         [_cropView removeFromSuperview];
         [_cropBgView removeFromSuperview];
         
@@ -247,8 +246,9 @@
         _originalPhotoButton.frame = CGRectMake(0, 0, fullImageWidth + 56, 44);
         _originalPhotoLabel.frame = CGRectMake(fullImageWidth + 42, 0, 80, 44);
     }
-    _doneButton.frame = CGRectMake(self.view.tz_width - 44 - 12, 0, 44, 44);
-    _numberImageView.frame = CGRectMake(self.view.tz_width - 56 - 28, 7, 30, 30);
+    [_doneButton sizeToFit];
+    _doneButton.frame = CGRectMake(self.view.tz_width - _doneButton.tz_width - 12, 0, _doneButton.tz_width, 44);
+    _numberImageView.frame = CGRectMake(_doneButton.tz_left - 30 - 2, 7, 30, 30);
     _numberLabel.frame = _numberImageView.frame;
     
     [self configCropView];
@@ -427,13 +427,17 @@
         __weak typeof(_collectionView) weakCollectionView = _collectionView;
         __weak typeof(photoPreviewCell) weakCell = photoPreviewCell;
         [photoPreviewCell setImageProgressUpdateBlock:^(double progress) {
-            weakSelf.progress = progress;
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            __strong typeof(weakTzImagePickerVc) strongTzImagePickerVc = weakTzImagePickerVc;
+            __strong typeof(weakCollectionView) strongCollectionView = weakCollectionView;
+            __strong typeof(weakCell) strongCell = weakCell;
+            strongSelf.progress = progress;
             if (progress >= 1) {
-                if (weakSelf.isSelectOriginalPhoto) [weakSelf showPhotoBytes];
-                if (weakSelf.alertView && [weakCollectionView.visibleCells containsObject:weakCell]) {
-                    [weakTzImagePickerVc hideAlertView:weakSelf.alertView];
-                    weakSelf.alertView = nil;
-                    [weakSelf doneButtonClick];
+                if (strongSelf.isSelectOriginalPhoto) [strongSelf showPhotoBytes];
+                if (strongSelf.alertView && [strongCollectionView.visibleCells containsObject:strongCell]) {
+                    [strongTzImagePickerVc hideAlertView:strongSelf.alertView];
+                    strongSelf.alertView = nil;
+                    [strongSelf doneButtonClick];
                 }
             }
         }];
@@ -441,7 +445,8 @@
     
     cell.model = model;
     [cell setSingleTapGestureBlock:^{
-        [weakSelf didTapPreviewCell];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf didTapPreviewCell];
     }];
     return cell;
 }

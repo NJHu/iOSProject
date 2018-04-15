@@ -1130,7 +1130,30 @@ v3.1.0
  1.删除annotation后，不再删除其对应的annotationView的subView。开发者dequeue出可重用的annotationView后，为了避免内容堆叠问题，可以自行去避免，如remove subview或者使用不同的reuseIdentifier等。
  2.每个reuseIdentifier可缓存多个annotationView，当开发者removeAnnotation时，SDK会将对应的annotationView加入缓存队列。
 
-
+ --------------------
+ v3.4.4
+ 
+ 
+ 【 新 版 提 示 】
+ 【 注 意 】
+ 1、自v3.2.0起，百度地图iOS SDK全面支持HTTPS，需要广大开发者导入第三方openssl静态库：libssl.a和libcrypto.a（存放于thirdlib目录下）
+ 添加方法：在 TARGETS->Build Phases-> Link Binary With Libaries中点击“+”按钮，在弹出的窗口中点击“Add Other”按钮，选择libssl.a和libcrypto.a添加到工程中 。
+ 
+ 2、支持CocoaPods导入
+ pod setup //更新CocoPods的本地库
+ pod search BaiduMapKit  //查看最新地图SDK
+ 
+ 【新增】
+ 1.新增 BMKConvertToBaiduMercatorFromBD09LL 与 BMKConvertToBD09LLFromBaiduMercator 方法，用于百度经纬度和百度墨卡托之间的转换。
+ 2.新增 CLLocationCoordinate2D BMKCoordTrans(CLLocationCoordinate2D coordinate, BMK_COORD_TYPE fromType, BMK_COORD_TYPE toType); 方法，支持WGS84LL->BD09LL, GCJ02LL->BD09LL, BD09LL->GCJ02LL三种经纬度之间的直接转换。
+ 
+ 【修复】
+ 1.支持iOS11系统定位权限
+ 2.个性化地图部分catlog不显示的问题
+ 3.室内图无背景色的问题
+ 4.polygon绘制大量节点折线，超出数量，产生飞线问题
+ 5.部分场景下，点击离线地图crash的问题
+ 
  *********************/
 /**
  *获取当前地图API的版本号
@@ -1138,12 +1161,12 @@ v3.1.0
  */
 UIKIT_STATIC_INLINE NSString* BMKGetMapApiVersion()
 {
-    return @"3.4.2";
+    return @"3.4.4";
 }
 
 /**
  *获取当前地图API base组件 的版本号
- *当前base组件版本 : 3.4.2
+ *当前base组件版本 : 3.4.4
  *return  返回当前API base组件 的版本号
  */
 UIKIT_EXTERN NSString* BMKGetMapApiBaseComponentVersion();

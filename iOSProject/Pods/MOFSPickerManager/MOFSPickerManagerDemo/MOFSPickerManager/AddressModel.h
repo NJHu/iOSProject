@@ -14,9 +14,9 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *zipcode;
 @property (nonatomic, strong) NSString *index;
-@property (nonatomic, strong) NSMutableArray *list;
+@property (nonatomic, strong) NSMutableArray<CityModel *> *list;
 
-- (instancetype)initWithXML:(GDataXMLElement *)xml;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
@@ -25,9 +25,9 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *zipcode;
 @property (nonatomic, strong) NSString *index;
-@property (nonatomic, strong) NSMutableArray *list;
+@property (nonatomic, strong) NSMutableArray<DistrictModel *> *list;
 
-- (instancetype)initWithXML:(GDataXMLElement *)xml;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
@@ -37,7 +37,7 @@
 @property (nonatomic, strong) NSString *zipcode;
 @property (nonatomic, strong) NSString *index;
 
-- (instancetype)initWithXML:(GDataXMLElement *)xml;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 
 @end

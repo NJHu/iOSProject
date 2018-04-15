@@ -144,7 +144,7 @@
 
 // ================================pickerView===================================//
 
-- (void)showPickerViewWithDataArray:(NSArray *)array tag:(NSInteger)tag title:(NSString *)title cancelTitle:(NSString *)cancelTitle commitTitle:(NSString *)commitTitle commitBlock:(PickerViewCommitBlock)commitBlock cancelBlock:(PickerViewCancelBlock)cancelBlock {
+- (void)showPickerViewWithDataArray:(NSArray<NSString *> *)array tag:(NSInteger)tag title:(NSString *)title cancelTitle:(NSString *)cancelTitle commitTitle:(NSString *)commitTitle commitBlock:(PickerViewCommitBlock)commitBlock cancelBlock:(PickerViewCancelBlock)cancelBlock {
     
     self.pickView.showTag = tag;
     self.pickView.toolBar.titleBarTitle = title;
@@ -160,6 +160,22 @@
         }
     }];
     
+}
+
+- (void)showPickerViewWithCustomDataArray:(NSArray *)array keyMapper:(NSString *)keyMapper tag:(NSInteger)tag title:(NSString *)title cancelTitle:(NSString *)cancelTitle commitTitle:(NSString *)commitTitle commitBlock:(PickerViewCustomCommitBlock)commitBlock cancelBlock:(PickerViewCancelBlock)cancelBlock {
+    self.pickView.showTag = tag;
+    self.pickView.toolBar.titleBarTitle = title;
+    self.pickView.toolBar.cancelBarTitle = cancelTitle;
+    self.pickView.toolBar.commitBarTitle = commitTitle;
+    [self.pickView showMOFSPickerViewWithCustomDataArray:array keyMapper:keyMapper commitBlock:^(id model) {
+        if (commitBlock) {
+            commitBlock(model);
+        }
+    } cancelBlock:^{
+        if (cancelBlock) {
+            cancelBlock();
+        }
+    }];
 }
 
 //===============================addressPicker===================================//

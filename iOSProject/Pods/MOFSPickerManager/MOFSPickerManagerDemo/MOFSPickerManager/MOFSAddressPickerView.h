@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MOFSToolbar.h"
+#import "MOFSToolView.h"
 #import "AddressModel.h"
 
 typedef NS_ENUM(NSInteger, SearchType) {
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, SearchType) {
 @interface MOFSAddressPickerView : UIPickerView
 
 @property (nonatomic, assign) NSInteger showTag;
-@property (nonatomic, strong) MOFSToolbar *toolBar;
+@property (nonatomic, strong) MOFSToolView *toolBar;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, assign) NSInteger numberOfSection;
 

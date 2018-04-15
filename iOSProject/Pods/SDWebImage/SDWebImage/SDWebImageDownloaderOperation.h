@@ -19,6 +19,7 @@ FOUNDATION_EXPORT NSString * _Nonnull const SDWebImageDownloadFinishNotification
 
 /**
  Describes a downloader operation. If one wants to use a custom downloader op, it needs to inherit from `NSOperation` and conform to this protocol
+ For the description about these methods, see `SDWebImageDownloaderOperation`
  */
 @protocol SDWebImageDownloaderOperationInterface<NSObject>
 
@@ -34,6 +35,8 @@ FOUNDATION_EXPORT NSString * _Nonnull const SDWebImageDownloadFinishNotification
 
 - (nullable NSURLCredential *)credential;
 - (void)setCredential:(nullable NSURLCredential *)value;
+
+- (BOOL)cancel:(nullable id)token;
 
 @end
 
@@ -60,7 +63,7 @@ FOUNDATION_EXPORT NSString * _Nonnull const SDWebImageDownloadFinishNotification
 @property (nonatomic, assign) BOOL shouldUseCredentialStorage __deprecated_msg("Property deprecated. Does nothing. Kept only for backwards compatibility");
 
 /**
- * The credential used for authentication challenges in `-connection:didReceiveAuthenticationChallenge:`.
+ * The credential used for authentication challenges in `-URLSession:task:didReceiveChallenge:completionHandler:`.
  *
  * This will be overridden by any shared credentials that exist for the username or password of the request URL, if present.
  */
@@ -77,7 +80,7 @@ FOUNDATION_EXPORT NSString * _Nonnull const SDWebImageDownloadFinishNotification
 @property (assign, nonatomic) NSInteger expectedSize;
 
 /**
- * The response returned by the operation's connection.
+ * The response returned by the operation's task.
  */
 @property (strong, nonatomic, nullable) NSURLResponse *response;
 

@@ -45,7 +45,6 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.datePickerMode = UIDatePickerModeDate;
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         
         [self initBgView];
     }
@@ -53,8 +52,8 @@
 }
 
 - (void)initToolBar {
-    self.toolBar = [[MOFSToolbar alloc] initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, 44)];
-    self.toolBar.translucent = NO;
+    self.toolBar = [[MOFSToolView alloc] initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, 44)];
+    self.toolBar.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)initContainerView {

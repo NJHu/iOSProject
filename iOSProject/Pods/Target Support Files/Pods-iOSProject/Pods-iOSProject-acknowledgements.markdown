@@ -598,12 +598,12 @@ Copyright 2011 - 2015 UMeng.com. All rights reserved.
 
 ## UMengUShare
 
-Copyright 2011 - 2017 UMeng.com. All rights reserved.
+Copyright 2011 - 2018 UMeng.com. All rights reserved.
 
 
 ## WechatOpenSDK
 
-Copyright 2017 tencent.com. All rights reserved.
+Copyright 2018 tencent.com. All rights reserved.
 
 
 ## YYAsyncLayer

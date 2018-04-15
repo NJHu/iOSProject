@@ -9,7 +9,26 @@
 #import "SDWebImageDownloader.h"
 #import "SDWebImageDownloaderOperation.h"
 
+#define LOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+#define UNLOCK(lock) dispatch_semaphore_signal(lock);
+
+@interface SDWebImageDownloadToken ()
+
+@property (nonatomic, weak, nullable) NSOperation<SDWebImageDownloaderOperationInterface> *downloadOperation;
+
+@end
+
 @implementation SDWebImageDownloadToken
+
+- (void)cancel {
+    if (self.downloadOperation) {
+        SDWebImageDownloadToken *cancelToken = self.downloadOperationCancelToken;
+        if (cancelToken) {
+            [self.downloadOperation cancel:cancelToken];
+        }
+    }
+}
+
 @end
 
 
@@ -20,8 +39,8 @@
 @property (assign, nonatomic, nullable) Class operationClass;
 @property (strong, nonatomic, nonnull) NSMutableDictionary<NSURL *, SDWebImageDownloaderOperation *> *URLOperations;
 @property (strong, nonatomic, nullable) SDHTTPHeadersMutableDictionary *HTTPHeaders;
-// This queue is used to serialize the handling of the network responses of all the download operation in a single queue
-@property (strong, nonatomic, nullable) dispatch_queue_t barrierQueue;
+@property (strong, nonatomic, nonnull) dispatch_semaphore_t operationsLock; // a lock to keep the access to `URLOperations` thread-safe
+@property (strong, nonatomic, nonnull) dispatch_semaphore_t headersLock; // a lock to keep the access to `HTTPHeaders` thread-safe
 
 // The session in which data tasks will run
 @property (strong, nonatomic) NSURLSession *session;
@@ -80,7 +99,8 @@
 #else
         _HTTPHeaders = [@{@"Accept": @"image/*;q=0.8"} mutableCopy];
 #endif
-        _barrierQueue = dispatch_queue_create("com.hackemist.SDWebImageDownloaderBarrierQueue", DISPATCH_QUEUE_CONCURRENT);
+        _operationsLock = dispatch_semaphore_create(1);
+        _headersLock = dispatch_semaphore_create(1);
         _downloadTimeout = 15.0;
 
         [self createNewSessionWithConfiguration:sessionConfiguration];
@@ -108,6 +128,9 @@
 }
 
 - (void)invalidateSessionAndCancel:(BOOL)cancelPendingOperations {
+    if (self == [SDWebImageDownloader sharedDownloader]) {
+        return;
+    }
     if (cancelPendingOperations) {
         [self.session invalidateAndCancel];
     } else {
@@ -123,15 +146,27 @@
 }
 
 - (void)setValue:(nullable NSString *)value forHTTPHeaderField:(nullable NSString *)field {
+    LOCK(self.headersLock);
     if (value) {
         self.HTTPHeaders[field] = value;
     } else {
         [self.HTTPHeaders removeObjectForKey:field];
     }
+    UNLOCK(self.headersLock);
 }
 
 - (nullable NSString *)valueForHTTPHeaderField:(nullable NSString *)field {
-    return self.HTTPHeaders[field];
+    if (!field) {
+        return nil;
+    }
+    return [[self allHTTPHeaderFields] objectForKey:field];
+}
+
+- (nonnull SDHTTPHeadersDictionary *)allHTTPHeaderFields {
+    LOCK(self.headersLock);
+    SDHTTPHeadersDictionary *allHTTPHeaderFields = [self.HTTPHeaders copy];
+    UNLOCK(self.headersLock);
+    return allHTTPHeaderFields;
 }
 
 - (void)setMaxConcurrentDownloads:(NSInteger)maxConcurrentDownloads {
@@ -180,10 +215,10 @@
         request.HTTPShouldHandleCookies = (options & SDWebImageDownloaderHandleCookies);
         request.HTTPShouldUsePipelining = YES;
         if (sself.headersFilter) {
-            request.allHTTPHeaderFields = sself.headersFilter(url, [sself.HTTPHeaders copy]);
+            request.allHTTPHeaderFields = sself.headersFilter(url, [sself allHTTPHeaderFields]);
         }
         else {
-            request.allHTTPHeaderFields = sself.HTTPHeaders;
+            request.allHTTPHeaderFields = [sself allHTTPHeaderFields];
         }
         SDWebImageDownloaderOperation *operation = [[sself.operationClass alloc] initWithRequest:request inSession:sself.session options:options];
         operation.shouldDecompressImages = sself.shouldDecompressImages;
@@ -199,8 +234,7 @@
         } else if (options & SDWebImageDownloaderLowPriority) {
             operation.queuePriority = NSOperationQueuePriorityLow;
         }
-
-        [sself.downloadQueue addOperation:operation];
+        
         if (sself.executionOrder == SDWebImageDownloaderLIFOExecutionOrder) {
             // Emulate LIFO execution order by systematically adding new operations as last operation's dependency
             [sself.lastAddedOperation addDependency:operation];
@@ -212,13 +246,19 @@
 }
 
 - (void)cancel:(nullable SDWebImageDownloadToken *)token {
-    dispatch_barrier_async(self.barrierQueue, ^{
-        SDWebImageDownloaderOperation *operation = self.URLOperations[token.url];
+    NSURL *url = token.url;
+    if (!url) {
+        return;
+    }
+    LOCK(self.operationsLock);
+    SDWebImageDownloaderOperation *operation = [self.URLOperations objectForKey:url];
+    if (operation) {
         BOOL canceled = [operation cancel:token.downloadOperationCancelToken];
         if (canceled) {
-            [self.URLOperations removeObjectForKey:token.url];
+            [self.URLOperations removeObjectForKey:url];
         }
-    });
+    }
+    UNLOCK(self.operationsLock);
 }
 
 - (nullable SDWebImageDownloadToken *)addProgressCallback:(SDWebImageDownloaderProgressBlock)progressBlock
@@ -232,32 +272,34 @@
         }
         return nil;
     }
+    
+    LOCK(self.operationsLock);
+    SDWebImageDownloaderOperation *operation = [self.URLOperations objectForKey:url];
+    if (!operation) {
+        operation = createCallback();
+        __weak typeof(self) wself = self;
+        operation.completionBlock = ^{
+            __strong typeof(wself) sself = wself;
+            if (!sself) {
+                return;
+            }
+            LOCK(sself.operationsLock);
+            [sself.URLOperations removeObjectForKey:url];
+            UNLOCK(sself.operationsLock);
+        };
+        [self.URLOperations setObject:operation forKey:url];
+        // Add operation to operation queue only after all configuration done according to Apple's doc.
+        // `addOperation:` does not synchronously execute the `operation.completionBlock` so this will not cause deadlock.
+        [self.downloadQueue addOperation:operation];
+    }
+    UNLOCK(self.operationsLock);
 
-    __block SDWebImageDownloadToken *token = nil;
-
-    dispatch_barrier_sync(self.barrierQueue, ^{
-        SDWebImageDownloaderOperation *operation = self.URLOperations[url];
-        if (!operation) {
-            operation = createCallback();
-            self.URLOperations[url] = operation;
-
-            __weak SDWebImageDownloaderOperation *woperation = operation;
-            operation.completionBlock = ^{
-				dispatch_barrier_sync(self.barrierQueue, ^{
-					SDWebImageDownloaderOperation *soperation = woperation;
-					if (!soperation) return;
-					if (self.URLOperations[url] == soperation) {
-						[self.URLOperations removeObjectForKey:url];
-					};
-				});
-            };
-        }
-        id downloadOperationCancelToken = [operation addHandlersForProgress:progressBlock completed:completedBlock];
-
-        token = [SDWebImageDownloadToken new];
-        token.url = url;
-        token.downloadOperationCancelToken = downloadOperationCancelToken;
-    });
+    id downloadOperationCancelToken = [operation addHandlersForProgress:progressBlock completed:completedBlock];
+    
+    SDWebImageDownloadToken *token = [SDWebImageDownloadToken new];
+    token.downloadOperation = operation;
+    token.url = url;
+    token.downloadOperationCancelToken = downloadOperationCancelToken;
 
     return token;
 }
@@ -292,16 +334,22 @@ didReceiveResponse:(NSURLResponse *)response
 
     // Identify the operation that runs this task and pass it the delegate method
     SDWebImageDownloaderOperation *dataOperation = [self operationWithTask:dataTask];
-
-    [dataOperation URLSession:session dataTask:dataTask didReceiveResponse:response completionHandler:completionHandler];
+    if ([dataOperation respondsToSelector:@selector(URLSession:dataTask:didReceiveResponse:completionHandler:)]) {
+        [dataOperation URLSession:session dataTask:dataTask didReceiveResponse:response completionHandler:completionHandler];
+    } else {
+        if (completionHandler) {
+            completionHandler(NSURLSessionResponseAllow);
+        }
+    }
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
 
     // Identify the operation that runs this task and pass it the delegate method
     SDWebImageDownloaderOperation *dataOperation = [self operationWithTask:dataTask];
-
-    [dataOperation URLSession:session dataTask:dataTask didReceiveData:data];
+    if ([dataOperation respondsToSelector:@selector(URLSession:dataTask:didReceiveData:)]) {
+        [dataOperation URLSession:session dataTask:dataTask didReceiveData:data];
+    }
 }
 
 - (void)URLSession:(NSURLSession *)session
@@ -311,8 +359,13 @@ didReceiveResponse:(NSURLResponse *)response
 
     // Identify the operation that runs this task and pass it the delegate method
     SDWebImageDownloaderOperation *dataOperation = [self operationWithTask:dataTask];
-
-    [dataOperation URLSession:session dataTask:dataTask willCacheResponse:proposedResponse completionHandler:completionHandler];
+    if ([dataOperation respondsToSelector:@selector(URLSession:dataTask:willCacheResponse:completionHandler:)]) {
+        [dataOperation URLSession:session dataTask:dataTask willCacheResponse:proposedResponse completionHandler:completionHandler];
+    } else {
+        if (completionHandler) {
+            completionHandler(proposedResponse);
+        }
+    }
 }
 
 #pragma mark NSURLSessionTaskDelegate
@@ -321,19 +374,21 @@ didReceiveResponse:(NSURLResponse *)response
     
     // Identify the operation that runs this task and pass it the delegate method
     SDWebImageDownloaderOperation *dataOperation = [self operationWithTask:task];
-
-    [dataOperation URLSession:session task:task didCompleteWithError:error];
+    if ([dataOperation respondsToSelector:@selector(URLSession:task:didCompleteWithError:)]) {
+        [dataOperation URLSession:session task:task didCompleteWithError:error];
+    }
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler {
     
     // Identify the operation that runs this task and pass it the delegate method
     SDWebImageDownloaderOperation *dataOperation = [self operationWithTask:task];
-    
     if ([dataOperation respondsToSelector:@selector(URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:)]) {
         [dataOperation URLSession:session task:task willPerformHTTPRedirection:response newRequest:request completionHandler:completionHandler];
     } else {
-        completionHandler(request);
+        if (completionHandler) {
+            completionHandler(request);
+        }
     }
 }
 
@@ -341,8 +396,13 @@ didReceiveResponse:(NSURLResponse *)response
 
     // Identify the operation that runs this task and pass it the delegate method
     SDWebImageDownloaderOperation *dataOperation = [self operationWithTask:task];
-
-    [dataOperation URLSession:session task:task didReceiveChallenge:challenge completionHandler:completionHandler];
+    if ([dataOperation respondsToSelector:@selector(URLSession:task:didReceiveChallenge:completionHandler:)]) {
+        [dataOperation URLSession:session task:task didReceiveChallenge:challenge completionHandler:completionHandler];
+    } else {
+        if (completionHandler) {
+            completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, nil);
+        }
+    }
 }
 
 @end

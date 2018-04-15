@@ -31,16 +31,16 @@
 
 @implementation TZAlbumModel
 
-- (void)setResult:(id)result {
+- (void)setResult:(id)result needFetchAssets:(BOOL)needFetchAssets {
     _result = result;
-    BOOL allowPickingImage = [[[NSUserDefaults standardUserDefaults] objectForKey:@"tz_allowPickingImage"] isEqualToString:@"1"];
-    BOOL allowPickingVideo = [[[NSUserDefaults standardUserDefaults] objectForKey:@"tz_allowPickingVideo"] isEqualToString:@"1"];
-    [[TZImageManager manager] getAssetsFromFetchResult:result allowPickingVideo:allowPickingVideo allowPickingImage:allowPickingImage completion:^(NSArray<TZAssetModel *> *models) {
-        _models = models;
-        if (_selectedModels) {
-            [self checkSelectedModels];
-        }
-    }];
+    if (needFetchAssets) {
+        [[TZImageManager manager] getAssetsFromFetchResult:result completion:^(NSArray<TZAssetModel *> *models) {
+            _models = models;
+            if (_selectedModels) {
+                [self checkSelectedModels];
+            }
+        }];
+    }
 }
 
 - (void)setSelectedModels:(NSArray *)selectedModels {

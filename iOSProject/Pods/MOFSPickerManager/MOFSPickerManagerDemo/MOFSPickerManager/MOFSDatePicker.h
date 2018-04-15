@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MOFSToolbar.h"
+#import "MOFSToolView.h"
 
 typedef void (^CommitBlock)(NSDate *date);
 typedef void (^CancelBlock)(void);
 
 @interface MOFSDatePicker : UIDatePicker
 
-@property (nonatomic, strong) MOFSToolbar *toolBar;
+@property (nonatomic, strong) MOFSToolView *toolBar;
 @property (nonatomic, strong) UIView *containerView;
 
 - (void)showMOFSDatePickerViewWithTag:(NSInteger)tag firstDate:(NSDate *)date commit:(CommitBlock)commitBlock cancel:(CancelBlock)cancelBlock;

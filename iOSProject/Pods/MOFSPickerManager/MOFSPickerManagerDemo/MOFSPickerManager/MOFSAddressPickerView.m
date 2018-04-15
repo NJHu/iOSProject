@@ -7,15 +7,16 @@
 //
 
 #import "MOFSAddressPickerView.h"
-#import "GDataXMLNode.h"
 
 #define UISCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 #define UISCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
-@interface MOFSAddressPickerView() <UIPickerViewDelegate,UIPickerViewDataSource>
+@interface MOFSAddressPickerView() <UIPickerViewDelegate, UIPickerViewDataSource, NSXMLParserDelegate>
+
+@property (nonatomic, strong) NSXMLParser *parser;
 
 @property (nonatomic, strong) UIView *bgView;
-@property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSMutableArray<AddressModel *> *dataArr;
 
 @property (nonatomic, assign) NSInteger selectedIndex_province;
 @property (nonatomic, assign) NSInteger selectedIndex_city;
@@ -62,7 +63,6 @@
     self = [super initWithFrame:initialFrame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         
         self.delegate = self;
         self.dataSource = self;
@@ -115,8 +115,8 @@
 }
 
 - (void)initToolBar {
-    self.toolBar = [[MOFSToolbar alloc] initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, 44)];
-    self.toolBar.translucent = NO;
+    self.toolBar = [[MOFSToolView alloc] initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, 44)];
+    self.toolBar.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)initContainerView {
@@ -219,35 +219,66 @@
     [self.containerView removeFromSuperview];
 }
 
+#pragma mark - get data
+
 - (void)getData {
     self.isGettingData = YES;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"province_data" ofType:@"xml"];
-    NSString *dataStr;
+    if (path == nil) {
+        for (NSBundle *bundle in [NSBundle allFrameworks]) {
+            path = [bundle pathForResource:@"province_data" ofType:@"xml"];
+            if (path != nil) {
+                break;
+            }
+        }
+    }
+    
+    if (path == nil) {
+        self.isGettingData = NO;
+        if (self.getDataCompleteBlock) {
+            self.getDataCompleteBlock();
+        }
+        return;
+    }
+    
     if (!_dataArr) {
         _dataArr = [NSMutableArray array];
     }
     if (_dataArr.count != 0) {
         [_dataArr removeAllObjects];
     }
-    @try {
-        dataStr = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        GDataXMLDocument *document = [[GDataXMLDocument alloc] initWithXMLString:dataStr options:0 error:nil];
-        NSArray *arr = [document nodesForXPath:@"root/province" error:nil];
-        for (int i = 0; i < arr.count; i++) {
-            AddressModel *model = [[AddressModel alloc] initWithXML:arr[i]];
-            model.index = [NSString stringWithFormat:@"%i", i];
-            [_dataArr addObject:model];
-        }
-        self.isGettingData = NO;
-        if (self.getDataCompleteBlock) {
-            self.getDataCompleteBlock();
-        }
-    } @catch (NSException *exception) {
-        
-    } @finally {
-        
+    
+    self.parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:path]];
+    self.parser.delegate = self;
+    [self.parser parse];
+    
+}
+
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
+    if ([elementName isEqualToString:@"province"]) {
+        AddressModel *model = [[AddressModel alloc] initWithDictionary:attributeDict];
+        model.index = [NSString stringWithFormat:@"%lu", (unsigned long)self.dataArr.count];
+        [self.dataArr addObject:model];
+    } else if ([elementName isEqualToString:@"city"]) {
+        CityModel *model = [[CityModel alloc] initWithDictionary:attributeDict];
+        model.index = [NSString stringWithFormat:@"%lu", (unsigned long)self.dataArr.lastObject.list.count];
+        [self.dataArr.lastObject.list addObject:model];
+    } else if ([elementName isEqualToString:@"district"]) {
+        DistrictModel *model = [[DistrictModel alloc] initWithDictionary:attributeDict];
+        model.index = [NSString stringWithFormat:@"%lu", (unsigned long)self.dataArr.lastObject.list.lastObject.list.count];
+        [self.dataArr.lastObject.list.lastObject.list addObject: model];
     }
 }
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    self.isGettingData = NO;
+    if (self.getDataCompleteBlock) {
+        self.getDataCompleteBlock();
+    }
+}
+
+#pragma mark - search
 
 - (void)searchType:(SearchType)searchType key:(NSString *)key block:(void(^)(NSString *result))block {
     

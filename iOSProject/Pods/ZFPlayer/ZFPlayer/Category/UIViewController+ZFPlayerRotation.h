@@ -26,3 +26,15 @@
 @interface UIViewController (ZFPlayerRotation)
 
 @end
+
+@interface UITabBarController (ZFPlayerRotation)
+
+@end
+
+@interface UINavigationController (ZFPlayerRotation)<UIGestureRecognizerDelegate>
+
+@end
+
+@interface UIAlertController (ZFPlayerRotation)
+
+@end
