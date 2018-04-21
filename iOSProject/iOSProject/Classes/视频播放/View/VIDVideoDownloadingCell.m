@@ -99,7 +99,11 @@
     // 下载进度
     CGFloat progress = (CGFloat)fileInfo.totalBytesWritten / (CGFloat)fileInfo.totalBytesExpectedToWrite;
     
-    self.downloadedRadioLabel.text = [NSString stringWithFormat:@"(%.2f%%)",progress*100];
+    if (!isnan(progress)) {
+         self.downloadedRadioLabel.text = [NSString stringWithFormat:@"(%.2f%%)",progress * 100];
+    }else {
+        self.downloadedRadioLabel.text = nil;
+    }
     
     self.downloadProgressView.progress = progress;
     
@@ -110,7 +114,7 @@
         CGFloat minusTime = CFAbsoluteTimeGetCurrent() - self.lasTime;
         
         if (progress > 0) {
-            self.speedStateLabel.text = [NSString stringWithFormat:@"%.2fkb/s", minusSize / minusTime];
+            self.speedStateLabel.text = [NSString stringWithFormat:@"%.2fkb/s", minusSize / minusTime / 1024];
         } else {
             self.speedStateLabel.text = @"正在获取";
         }

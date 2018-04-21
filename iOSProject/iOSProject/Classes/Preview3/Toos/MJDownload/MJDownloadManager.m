@@ -289,7 +289,7 @@ static NSString * const MJDowndloadManagerDefaultIdentifier = @"com.github.njhu.
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"url = %@, state= %zd", self.url, self.state];
+    return [NSString stringWithFormat:@"url = %@, state = %zd", self.url, self.state];
 }
 
 @end

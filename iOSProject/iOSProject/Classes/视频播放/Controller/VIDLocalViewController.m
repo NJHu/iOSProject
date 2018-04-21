@@ -76,15 +76,23 @@
     
     if (indexPath.section == 0) {
         
+        NSArray<MJDownloadInfo *> *MJDownloadStateCompleteds = [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateCompleted]];
+        
+        
         VIDVideoDownloadedCell  *cell = [VIDVideoDownloadedCell videoCellWithTableView:tableView];
-        cell.fileInfo = [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateCompleted]][indexPath.row];
+        if (MJDownloadStateCompleteds.count > indexPath.row) {
+            cell.fileInfo = MJDownloadStateCompleteds[indexPath.row];
+        }
         return cell;
         
     }else if (indexPath.section == 1)
     {
-        VIDVideoDownloadingCell *cell = [VIDVideoDownloadingCell videoCellWithTableView:tableView];
-        cell.fileInfo = [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d || state==%d || state==%d", MJDownloadStateWillResume, MJDownloadStateSuspened, MJDownloadStateResumed]][indexPath.row];
+        NSArray<MJDownloadInfo *> *MJDownloadStates = [[MJDownloadManager defaultManager].downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d || state==%d || state==%d", MJDownloadStateWillResume, MJDownloadStateSuspened, MJDownloadStateResumed]];
         
+        VIDVideoDownloadingCell *cell = [VIDVideoDownloadingCell videoCellWithTableView:tableView];
+        if (MJDownloadStates.count > indexPath.row) {
+            cell.fileInfo = MJDownloadStates[indexPath.row];
+        }
         __weak typeof(self) weakSelf = self;
         
         //         下载按钮点击时候的要刷新列表
@@ -186,7 +194,7 @@
     MJDownloadInfo *info = noti.userInfo[MJDownloadInfoKey];
     
     if (info.state == MJDownloadStateCompleted) {
-        [self initData];
+        [self performSelectorOnMainThread:@selector(initData) withObject:info waitUntilDone:YES];
     } else {
         [self performSelectorOnMainThread:@selector(updateCellOnMainThread:) withObject:info waitUntilDone:YES];
     }

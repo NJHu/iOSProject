@@ -51,8 +51,8 @@
 {
     _fileInfo = fileInfo;
 //    NSString *totalSize = [ZFCommonHelper getFileSizeString:fileInfo.fileSize];
-    self.fileNameLabel.text = fileInfo.filename;
-    self.fileSizeLabel.text = [NSString stringWithFormat:@"%zd", fileInfo.totalBytesExpectedToWrite];
+    self.fileNameLabel.text = fileInfo.url.lastPathComponent;
+    self.fileSizeLabel.text = [NSString stringWithFormat:@"%.0fkb", (CGFloat)fileInfo.totalBytesExpectedToWrite / 1024.0];
 }
 
 
