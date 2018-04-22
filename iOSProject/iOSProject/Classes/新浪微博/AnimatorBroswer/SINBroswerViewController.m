@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.modalPresentationCapturesStatusBarAppearance = YES;
     self.view.backgroundColor = self.collectionView.backgroundColor = [UIColor blackColor];
     self.collectionView.pagingEnabled = YES;
     LMJWeak(self);
@@ -36,6 +37,9 @@
     [self.collectionView setContentOffset:offset animated:NO];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
 #pragma mark - collectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

@@ -7,6 +7,7 @@
 //
 
 #import "VIDListViewController.h"
+#import "VIDMoviePlayerViewController.h"
 
 @interface VIDListViewController ()
 /** <#digest#> */
@@ -41,6 +42,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString *url = self.videoUrlStrs[indexPath.row];
+    VIDMoviePlayerViewController *moviePlayerVc = [[VIDMoviePlayerViewController alloc] init];
+    moviePlayerVc.videoURL = url;
+    [self.navigationController pushViewController:moviePlayerVc animated:YES];
 }
 
 @end

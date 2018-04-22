@@ -61,9 +61,9 @@ static NSString *_dbPath = nil;
     
     NSString *creatTableSql = @"CREATE TABLE IF NOT EXISTS t_topics \n\
     (id INTEGER PRIMARY KEY AUTOINCREMENT, \n\
+    t INTEGER PRIMARY KEY NOT NULL, \n\
     topic BLOB NOT NULL, \n\
     type TEXT NOT NULL, \n\
-    t INTEGER NOT NULL, \n\
     time TEXT NOT NULL  DEFAULT (datetime('now', 'localtime'))\n\
     )\n";
     

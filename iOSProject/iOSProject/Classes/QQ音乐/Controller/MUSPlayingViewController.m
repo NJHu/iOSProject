@@ -93,9 +93,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpViewOnce];
-    
     // 监听播放完毕后的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextMusic:) name:kPlayFinishNotificationName object:nil];
+    
+    [self setUpDataOnce];
+    
+    [self addTimer];
+    
+    [self addDisplayLink];
 }
 
 - (void)dealloc{
@@ -109,18 +114,12 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    
-    [self setUpDataOnce];
-    
-    [self addTimer];
-    
-    [self addDisplayLink];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
     
     [self removeTimer];
     
@@ -495,7 +494,7 @@
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
 
-- (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
+- (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }

@@ -48,29 +48,26 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    [UIApplication sharedApplication].statusBarStyle = [self navUIBaseViewControllerPreferStatusBarStyle:self];
 }
 
 - (void)dealloc {
     [self.navigationItem removeObserverBlocksForKeyPath:LMJKeyPath(self.navigationItem, title)];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
 
-#pragma mark - LMJNavUIBaseViewControllerDataSource
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
+#pragma mark - DataSource
 - (BOOL)navUIBaseViewControllerIsNeedNavBar:(LMJNavUIBaseViewController *)navUIBaseViewController
 {
     return YES;
 }
 
-
-- (UIStatusBarStyle)navUIBaseViewControllerPreferStatusBarStyle:(LMJNavUIBaseViewController *)navUIBaseViewController
-{
-    return UIStatusBarStyleDefault;
-}
-
-
-#pragma mark - DataSource
 /**头部标题*/
 - (NSMutableAttributedString*)lmjNavigationBarTitle:(LMJNavigationBar *)navigationBar
 {
@@ -165,14 +162,15 @@
 - (LMJNavigationBar *)lmj_navgationBar
 {
     // 父类控制器必须是导航控制器
-    if(!_lmj_navgationBar && [self.parentViewController isKindOfClass:[UINavigationController class]] && [self navUIBaseViewControllerIsNeedNavBar:self])
+    if(!_lmj_navgationBar && [self.parentViewController isKindOfClass:[UINavigationController class]])
     {
         LMJNavigationBar *navigationBar = [[LMJNavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0)];
         [self.view addSubview:navigationBar];
+        _lmj_navgationBar = navigationBar;
+        
         navigationBar.dataSource = self;
         navigationBar.lmjDelegate = self;
-        
-        _lmj_navgationBar = navigationBar;
+        navigationBar.hidden = ![self navUIBaseViewControllerIsNeedNavBar:self];
     }
     return _lmj_navgationBar;
 }

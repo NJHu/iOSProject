@@ -27,28 +27,17 @@
         
         if (mgr.isReachableViaWiFi || isInCache) {
             [self sd_setImageWithURL:originImageURL placeholderImage:placeholder options:options progress:progressBlock completed:completedBlock];
-        }else if (mgr.isReachableViaWWAN)
-        {
-            
+        }else if (mgr.isReachableViaWWAN) {
             // 沙盒中去取, 让用户选择
             BOOL is3GOr4GNeedOriginal = YES;
-            
             if (is3GOr4GNeedOriginal) {
-                
                 [self sd_setImageWithURL:originImageURL placeholderImage:placeholder options:options progress:progressBlock completed:completedBlock];
-            }else
-            {
-                
+            }else {
                 [self sd_setImageWithURL:thumbImageURL placeholderImage:placeholder options:options  progress:progressBlock completed:completedBlock];
-                
             }
-            
-        }else
-        {
+        }else{
             [self sd_setImageWithURL:thumbImageURL placeholderImage:placeholder options:options  progress:progressBlock completed:completedBlock];
         }
-        
-        
     }];
 }
 

@@ -21,9 +21,9 @@
     [super viewDidLoad];
     
     self.navigationBar.hidden = YES;
-    
 
-    [self setupPOPGes];
+    // 不让自控制器控制系统导航条
+    self.fd_viewControllerBasedNavigationBarAppearanceEnabled = NO;
 }
 /*
 #pragma mark - 全局侧滑代码------------BEGIN----
@@ -50,11 +50,6 @@
 #pragma mark - 全局侧滑代码------------END----
 */
 
-- (void)setupPOPGes
-{
-    self.fd_viewControllerBasedNavigationBarAppearanceEnabled = NO;
-}
-
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (self.childViewControllers.count != 0) {
@@ -63,8 +58,6 @@
     
     [super pushViewController:viewController animated:animated];
 }
-
-
 @end
 
 
