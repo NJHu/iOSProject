@@ -39,7 +39,7 @@
 @interface LMJWebViewController : LMJBaseViewController<WKNavigationDelegate, WKUIDelegate, LMJWebViewControllerDelegate, LMJWebViewControllerDataSource>
 
 /** webView */
-@property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong) IBOutlet WKWebView *webView;
 
 /** <#digest#> */
 @property (nonatomic, copy) NSString *gotoURL;

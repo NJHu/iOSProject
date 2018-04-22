@@ -9,9 +9,8 @@
 #import "LMJBaseViewController.h"
 
 
-@interface VIDMoviePlayerViewController : LMJBaseViewController
+@interface VIDMoviePlayerViewController : UIViewController
 
-/** <#digest#> */
 @property (nonatomic, copy) NSString *videoURL;
 
 @end

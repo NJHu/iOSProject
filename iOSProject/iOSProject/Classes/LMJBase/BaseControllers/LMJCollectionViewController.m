@@ -25,12 +25,17 @@
 
 - (void)setupBaseLMJCollectionViewControllerUI
 {
-    self.collectionView.backgroundColor = self.view.backgroundColor;
     if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
         UIEdgeInsets contentInset = self.collectionView.contentInset;
         contentInset.top += self.lmj_navgationBar.lmj_height;
         self.collectionView.contentInset = contentInset;
     }
+    
+    UICollectionViewLayout *myLayout = [self collectionViewController:self layoutForCollectionView:self.collectionView];
+    self.collectionView.collectionViewLayout = myLayout;
+    self.collectionView.backgroundColor = self.view.backgroundColor;
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
 }
 
 #pragma mark - delegate
@@ -69,6 +74,8 @@
     [self.view endEditing:YES];
 }
 
+
+#pragma mark - getter
 - (UICollectionView *)collectionView
 {
     if(_collectionView == nil)
@@ -76,12 +83,7 @@
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:[UICollectionViewFlowLayout new]];
         [self.view addSubview:collectionView];
         _collectionView = collectionView;
-        UICollectionViewLayout *myLayout = [self collectionViewController:self layoutForCollectionView:collectionView];
-        collectionView.collectionViewLayout = myLayout;
         collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        collectionView.dataSource = self;
-        collectionView.delegate = self;
-        
     }
     return _collectionView;
 }

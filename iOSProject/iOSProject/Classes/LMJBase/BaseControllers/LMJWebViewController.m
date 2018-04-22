@@ -34,6 +34,19 @@
     
     self.fd_interactivePopDisabled = YES;
     
+    self.webView.navigationDelegate = self;
+    self.webView.UIDelegate = self;
+    
+    if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
+        UIEdgeInsets contentInset = self.webView.scrollView.contentInset;
+        contentInset.top += self.lmj_navgationBar.lmj_height;
+        self.webView.scrollView.contentInset = contentInset;
+        if (@available(iOS 11.0, *)){
+            self.webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
+        self.webView.scrollView.scrollIndicatorInsets = self.webView.scrollView.contentInset;
+    }
+    
     LMJWeak(self);
     [self.webView addObserverBlockForKeyPath:LMJKeyPath(weakself.webView, estimatedProgress) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
         
@@ -258,26 +271,12 @@
         WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
         [self.view addSubview:webView];
         _webView = webView;
+        
         webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        webView.navigationDelegate = self;
-        webView.UIDelegate = self;
-        
         webView.opaque = NO;
         webView.backgroundColor = [UIColor clearColor];
-        
         //滑动返回看这里
         webView.allowsBackForwardNavigationGestures = YES;
-        
-        if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
-            UIEdgeInsets contentInset = webView.scrollView.contentInset;
-            contentInset.top += self.lmj_navgationBar.lmj_height;
-            webView.scrollView.contentInset = contentInset;
-            if (@available(iOS 11.0, *)){
-                webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-            }
-            webView.scrollView.scrollIndicatorInsets = webView.scrollView.contentInset;
-        }
     }
     return _webView;
 }

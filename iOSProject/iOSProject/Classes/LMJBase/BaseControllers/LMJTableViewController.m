@@ -29,6 +29,9 @@
         self.tableView.contentInset = contentInset;
     }
     
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
     // 适配 ios 11
     self.tableView.estimatedRowHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
@@ -59,11 +62,8 @@
 {
     if(_tableView == nil)
     {
-        
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:self.tableViewStyle];
         [self.view addSubview:tableView];
-        tableView.delegate = self;
-        tableView.dataSource = self;
         tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _tableView = tableView;
     }
@@ -75,12 +75,10 @@
     if (self = [super init]) {
         _tableViewStyle = style;
     }
-    
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     
 }
 

@@ -24,6 +24,6 @@
 @interface LMJCollectionViewController : LMJBaseViewController <UICollectionViewDelegate, UICollectionViewDataSource, LMJCollectionViewControllerDataSource>
 
 /** <#digest#> */
-@property (weak, nonatomic) UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
