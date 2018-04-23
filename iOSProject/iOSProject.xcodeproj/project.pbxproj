@@ -68,6 +68,9 @@
 		585A22E7207DAB77001BD3AD /* SINPickPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A22E6207DAB77001BD3AD /* SINPickPhotoTool.m */; };
 		585A22F52081FD1F001BD3AD /* QQResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 585A22F42081FD1E001BD3AD /* QQResources.bundle */; };
 		585A22FE2082FA28001BD3AD /* JSBridge_js in Resources */ = {isa = PBXBuildFile; fileRef = 585A22FD2082FA28001BD3AD /* JSBridge_js */; };
+		585FC1D3208DAADF003174A7 /* VIDCachesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1D2208DAADF003174A7 /* VIDCachesTool.m */; };
+		585FC1D6208DACC1003174A7 /* VIDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1D5208DACC1003174A7 /* VIDTableViewController.m */; };
+		585FC1D9208DB9CD003174A7 /* VIDCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1D8208DB9CD003174A7 /* VIDCollectionViewController.m */; };
 		58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */; };
 		58651A9F1FFE6D6F0087419D /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5D1FFE6D6E0087419D /* SINUserManager.m */; };
 		58651AA01FFE6D6F0087419D /* SINSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5F1FFE6D6E0087419D /* SINSQLiteManager.m */; };
@@ -438,6 +441,12 @@
 		585A22E6207DAB77001BD3AD /* SINPickPhotoTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SINPickPhotoTool.m; sourceTree = "<group>"; };
 		585A22F42081FD1E001BD3AD /* QQResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QQResources.bundle; sourceTree = "<group>"; };
 		585A22FD2082FA28001BD3AD /* JSBridge_js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSBridge_js; sourceTree = "<group>"; };
+		585FC1D1208DAADF003174A7 /* VIDCachesTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIDCachesTool.h; sourceTree = "<group>"; };
+		585FC1D2208DAADF003174A7 /* VIDCachesTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDCachesTool.m; sourceTree = "<group>"; };
+		585FC1D4208DACC1003174A7 /* VIDTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIDTableViewController.h; sourceTree = "<group>"; };
+		585FC1D5208DACC1003174A7 /* VIDTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDTableViewController.m; sourceTree = "<group>"; };
+		585FC1D7208DB9CD003174A7 /* VIDCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIDCollectionViewController.h; sourceTree = "<group>"; };
+		585FC1D8208DB9CD003174A7 /* VIDCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDCollectionViewController.m; sourceTree = "<group>"; };
 		58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListDAL.m; sourceTree = "<group>"; };
 		58651A5D1FFE6D6E0087419D /* SINUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUserManager.m; sourceTree = "<group>"; };
 		58651A5E1FFE6D6E0087419D /* SINSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINSQLiteManager.h; sourceTree = "<group>"; };
@@ -1134,6 +1143,15 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		585FC1D0208DAAC0003174A7 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				585FC1D1208DAADF003174A7 /* VIDCachesTool.h */,
+				585FC1D2208DAADF003174A7 /* VIDCachesTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		58651A5A1FFE6D6E0087419D /* 新浪微博 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1628,6 +1646,7 @@
 		589B570C2000339700B2D5A8 /* 视频播放 */ = {
 			isa = PBXGroup;
 			children = (
+				585FC1D0208DAAC0003174A7 /* Tool */,
 				589B573D2000339700B2D5A8 /* Controller */,
 				589B57482000339700B2D5A8 /* Model */,
 				589B574F2000339700B2D5A8 /* View */,
@@ -1642,6 +1661,10 @@
 				58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */,
 				58C51F8C208C2EF100EECAAA /* VIDListViewController.h */,
 				58C51F8D208C2EF100EECAAA /* VIDListViewController.m */,
+				585FC1D4208DACC1003174A7 /* VIDTableViewController.h */,
+				585FC1D5208DACC1003174A7 /* VIDTableViewController.m */,
+				585FC1D7208DB9CD003174A7 /* VIDCollectionViewController.h */,
+				585FC1D8208DB9CD003174A7 /* VIDCollectionViewController.m */,
 				58C51F8A208C221500EECAAA /* VideoDemo.storyboard */,
 			);
 			path = Controller;
@@ -2321,6 +2344,7 @@
 				58DC83E71FFB44380060DC03 /* WPFSnapView.m in Sources */,
 				5840384D1FF7FBCF002A0566 /* LMJMasonryViewController.m in Sources */,
 				58A8584E207878430063DE98 /* LMJWebImageCacheCell.m in Sources */,
+				585FC1D6208DACC1003174A7 /* VIDTableViewController.m in Sources */,
 				58DC85201FFC972C0060DC03 /* BSJGuidePushView.m in Sources */,
 				588CCD82205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m in Sources */,
 				58651AAC1FFE6D6F0087419D /* SINStatusViewModel.m in Sources */,
@@ -2520,6 +2544,7 @@
 				58DC85251FFC972C0060DC03 /* BSJWordToolBar.m in Sources */,
 				58651AB01FFE6D6F0087419D /* SINUser.m in Sources */,
 				5892AD721FF5113800E868C2 /* LMJMeViewController.m in Sources */,
+				585FC1D3208DAADF003174A7 /* VIDCachesTool.m in Sources */,
 				58DC850A1FFC972C0060DC03 /* BSJRecommendUser.m in Sources */,
 				58DC85101FFC972C0060DC03 /* BSJRecommendCategory.m in Sources */,
 				58DC83D91FFB440E0060DC03 /* WPFDemoController.m in Sources */,
@@ -2566,6 +2591,7 @@
 				58A858522078842B0063DE98 /* LMJStudent.m in Sources */,
 				584038751FF93A86002A0566 /* LMJCountDownModel.m in Sources */,
 				58DC85021FFC972C0060DC03 /* BSJPublishWordViewController.m in Sources */,
+				585FC1D9208DB9CD003174A7 /* VIDCollectionViewController.m in Sources */,
 				58DC81781FFA2CF90060DC03 /* LMJCalendarViewController.m in Sources */,
 				58651ABB1FFE6D6F0087419D /* SINPostStatusService.m in Sources */,
 				58DC83D01FFB43E30060DC03 /* LMJPicClipViewController.m in Sources */,
