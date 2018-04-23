@@ -50,7 +50,7 @@ Email: <a href="mailto:64hp@163.com">64hp@163.com</a>
 </tr>
 <tr>
 <td>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qun.jpg" width="150px" height="180px">
+<!--<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qun.jpg" width="150px" height="180px">--><b>扫码通过后进群</b>
 </td>
 </tr>
 </table>
