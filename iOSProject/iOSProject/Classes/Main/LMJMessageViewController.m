@@ -11,6 +11,7 @@
 #import "SINTabBarController.h"
 //#import "IMHTabBarController.h"
 #import "MUSHomeListViewController.h"
+#import "SINUserManager.h"
 
 @interface LMJMessageViewController ()
 /** <#digest#> */
@@ -39,11 +40,11 @@
     [item1 setItemOperation:^(NSIndexPath *indexPath){
         [weakself presentViewController:[[SINTabBarController alloc] init] animated:YES completion:nil];
     }];
-
-//    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"IM_HX" subTitle: @"环信聊天"];
-//    [item2 setItemOperation:^(NSIndexPath *indexPath){
-//        [weakself presentViewController:[[IMHTabBarController alloc] init] animated:YES completion:nil];
-//    }];
+    
+    //    LMJWordItem *item2 = [LMJWordItem itemWithTitle:@"IM_HX" subTitle: @"环信聊天"];
+    //    [item2 setItemOperation:^(NSIndexPath *indexPath){
+    //        [weakself presentViewController:[[IMHTabBarController alloc] init] animated:YES completion:nil];
+    //    }];
     
     LMJWordItem *item3 = [LMJWordItem itemWithTitle:@"音乐音频播放" subTitle: @"Music"];
     [item3 setItemOperation:^(NSIndexPath *indexPath){
@@ -58,6 +59,17 @@
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item3, item4] andHeaderTitle:nil footerTitle:nil];
     
     [self.sections addObject:section0];
+    
+    [[LMJRequestManager sharedManager] GET:@"https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/accesstoken.json" parameters:nil completion:^(LMJBaseResponse *response) {
+        NSLog(@"%@", response);
+        if (LMJIsEmpty(response.responseObject) || ![response.responseObject isKindOfClass:[NSDictionary class]]) {
+            return ;
+        }
+        // 作者的微博开放号
+        if ([LMJThirdSDKSinaAppKey isEqualToString:@"4061770881"]) {
+            SINUserManager.sharedManager.accessToken = response.responseObject[@"accessToken"];
+        }
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -95,11 +107,11 @@
             
         }];
         
-
+        
         LMJWeak(btn);
         [btn addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithActionBlock:^(UIPanGestureRecognizer  *_Nonnull sender) {
             
-//            NSLog(@"%@", sender);
+            //            NSLog(@"%@", sender);
             
             // 获取手势的触摸点
             // CGPoint curP = [pan locationInView:self.imageView];

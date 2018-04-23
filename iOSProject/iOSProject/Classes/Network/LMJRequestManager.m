@@ -243,13 +243,10 @@ static NSString *jsonFileDirectory = @"LMJLocalJsons";
 }
 
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self configSettings];
-    }
-    return self;
++ (instancetype)manager {
+    LMJRequestManager *manager = [super manager];
+    [manager configSettings];
+    return manager;
 }
 
 static LMJRequestManager *_instance = nil;

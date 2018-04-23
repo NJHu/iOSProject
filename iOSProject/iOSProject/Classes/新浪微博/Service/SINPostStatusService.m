@@ -14,7 +14,8 @@
 
 - (void)retweetText:(NSString *)postText images:(NSArray<UIImage *> *)images completion:(void(^)(BOOL isSucceed))completion
 {
-    if (![SINUserManager sharedManager].isLogined) {
+    // 大家不要发这个微博了
+    if (![SINUserManager sharedManager].isLogined || [LMJThirdSDKSinaAppKey isEqualToString:@"4061770881"]) {
         NSLog(@"没有登录没有登录没有登录没有登录没有登录");
         completion(NO);
         return;
