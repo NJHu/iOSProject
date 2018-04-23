@@ -71,6 +71,9 @@
 		585FC1D3208DAADF003174A7 /* VIDCachesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1D2208DAADF003174A7 /* VIDCachesTool.m */; };
 		585FC1D6208DACC1003174A7 /* VIDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1D5208DACC1003174A7 /* VIDTableViewController.m */; };
 		585FC1D9208DB9CD003174A7 /* VIDCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1D8208DB9CD003174A7 /* VIDCollectionViewController.m */; };
+		585FC1DC208DBD95003174A7 /* VIDDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1DB208DBD95003174A7 /* VIDDownLoadViewController.m */; };
+		585FC1DF208DC1CF003174A7 /* VIDDownLoadedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1DE208DC1CF003174A7 /* VIDDownLoadedCell.m */; };
+		585FC1E2208DC6B2003174A7 /* VIDDownLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1E1208DC6B2003174A7 /* VIDDownLoadingCell.m */; };
 		58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */; };
 		58651A9F1FFE6D6F0087419D /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5D1FFE6D6E0087419D /* SINUserManager.m */; };
 		58651AA01FFE6D6F0087419D /* SINSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5F1FFE6D6E0087419D /* SINSQLiteManager.m */; };
@@ -447,6 +450,12 @@
 		585FC1D5208DACC1003174A7 /* VIDTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDTableViewController.m; sourceTree = "<group>"; };
 		585FC1D7208DB9CD003174A7 /* VIDCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIDCollectionViewController.h; sourceTree = "<group>"; };
 		585FC1D8208DB9CD003174A7 /* VIDCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDCollectionViewController.m; sourceTree = "<group>"; };
+		585FC1DA208DBD95003174A7 /* VIDDownLoadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIDDownLoadViewController.h; sourceTree = "<group>"; };
+		585FC1DB208DBD95003174A7 /* VIDDownLoadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDDownLoadViewController.m; sourceTree = "<group>"; };
+		585FC1DD208DC1CF003174A7 /* VIDDownLoadedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIDDownLoadedCell.h; sourceTree = "<group>"; };
+		585FC1DE208DC1CF003174A7 /* VIDDownLoadedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDDownLoadedCell.m; sourceTree = "<group>"; };
+		585FC1E0208DC6B2003174A7 /* VIDDownLoadingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIDDownLoadingCell.h; sourceTree = "<group>"; };
+		585FC1E1208DC6B2003174A7 /* VIDDownLoadingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDDownLoadingCell.m; sourceTree = "<group>"; };
 		58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListDAL.m; sourceTree = "<group>"; };
 		58651A5D1FFE6D6E0087419D /* SINUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUserManager.m; sourceTree = "<group>"; };
 		58651A5E1FFE6D6E0087419D /* SINSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINSQLiteManager.h; sourceTree = "<group>"; };
@@ -1665,6 +1674,8 @@
 				585FC1D5208DACC1003174A7 /* VIDTableViewController.m */,
 				585FC1D7208DB9CD003174A7 /* VIDCollectionViewController.h */,
 				585FC1D8208DB9CD003174A7 /* VIDCollectionViewController.m */,
+				585FC1DA208DBD95003174A7 /* VIDDownLoadViewController.h */,
+				585FC1DB208DBD95003174A7 /* VIDDownLoadViewController.m */,
 				58C51F8A208C221500EECAAA /* VideoDemo.storyboard */,
 			);
 			path = Controller;
@@ -1680,6 +1691,10 @@
 		589B574F2000339700B2D5A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				585FC1DD208DC1CF003174A7 /* VIDDownLoadedCell.h */,
+				585FC1DE208DC1CF003174A7 /* VIDDownLoadedCell.m */,
+				585FC1E0208DC6B2003174A7 /* VIDDownLoadingCell.h */,
+				585FC1E1208DC6B2003174A7 /* VIDDownLoadingCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2515,6 +2530,7 @@
 				58DC83881FFB43460060DC03 /* LMJCALayerYSDHViewController.m in Sources */,
 				58DC83C61FFB43E30060DC03 /* LMJDrawProgressViewController.m in Sources */,
 				58651AA61FFE6D6F0087419D /* SINPublishViewController.m in Sources */,
+				585FC1DC208DBD95003174A7 /* VIDDownLoadViewController.m in Sources */,
 				58223315201821910008251F /* NSDecimalNumber+Addtion.m in Sources */,
 				58DC85191FFC972C0060DC03 /* BSJTopicVoiceView.m in Sources */,
 				58DC838F1FFB43460060DC03 /* LMJLZDHDTViewController.m in Sources */,
@@ -2528,10 +2544,12 @@
 				588CCD76205D42EE0067E3C4 /* LMJH5JSBridgeViewController.m in Sources */,
 				5892AD5D1FF5079C00E868C2 /* LMJWebViewController.m in Sources */,
 				58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */,
+				585FC1E2208DC6B2003174A7 /* VIDDownLoadingCell.m in Sources */,
 				58223314201821910008251F /* UITextView+WZB.m in Sources */,
 				5892ADA01FF5F23D00E868C2 /* AdvertiseHelper.m in Sources */,
 				58DC85151FFC972C0060DC03 /* BSJTopicCmtCell.m in Sources */,
 				58DC85271FFC972C0060DC03 /* BSJTopicService.m in Sources */,
+				585FC1DF208DC1CF003174A7 /* VIDDownLoadedCell.m in Sources */,
 				58DC84011FFB47ED0060DC03 /* LMJDrawingView.m in Sources */,
 				58DC838C1FFB43460060DC03 /* LMJCAKeyFrameAnimationViewController.m in Sources */,
 				58DC85331FFCA30C0060DC03 /* UIImageView+FitNet.m in Sources */,

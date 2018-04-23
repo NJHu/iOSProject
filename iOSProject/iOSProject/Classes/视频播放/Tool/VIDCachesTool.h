@@ -8,12 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "MJDownload.h"
+#define VIDSharedTool VIDCachesTool.sharedTool
+#define VIDToolDownloadManager VIDSharedTool.downloadManager
 
 @interface VIDCachesTool : NSObject
 
 + (instancetype)sharedTool;
 
-/** <#digest#> */
 @property (nonatomic, strong) MJDownloadManager *downloadManager;
+
+// 缓存url
+- (void)downLoad:(NSString *)url;
+
+// 缓存url
+- (void)deleteFile:(NSString *)url;
 
 @end

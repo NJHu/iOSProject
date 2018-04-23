@@ -80,7 +80,8 @@
 - (void)zf_playerDownload:(NSString *)url {
     // 此处是截取的下载地址，可以自己根据服务器的视频名称来赋值
 //    NSString *name = [url lastPathComponent];
-    [[VIDCachesTool sharedTool].downloadManager download:url];
+//    [[VIDCachesTool sharedTool].downloadManager download:url];
+    [VIDSharedTool downLoad:url];
 }
 
 - (void)zf_playerControlViewWillShow:(UIView *)controlView isFullscreen:(BOOL)fullscreen {

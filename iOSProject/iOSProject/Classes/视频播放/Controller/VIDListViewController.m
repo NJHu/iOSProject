@@ -8,6 +8,7 @@
 
 #import "VIDListViewController.h"
 #import "VIDMoviePlayerViewController.h"
+#import "VIDCachesTool.h"
 
 @interface VIDListViewController ()
 /** <#digest#> */
