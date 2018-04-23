@@ -16,8 +16,7 @@
 
 @implementation SINUserManager
 
-- (BOOL)isLogined
-{
+- (BOOL)isLogined {
     if (!self.accessToken) {
         return NO;
     }
