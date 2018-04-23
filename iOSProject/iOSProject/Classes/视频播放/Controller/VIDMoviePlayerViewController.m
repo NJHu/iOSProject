@@ -58,7 +58,7 @@
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return NO;
+    return ZFPlayerShared.isStatusBarHidden;
 }
 
 - (void)dealloc {

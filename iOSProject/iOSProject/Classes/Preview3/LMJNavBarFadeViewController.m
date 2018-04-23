@@ -10,6 +10,9 @@
 #import "LMJExpandHeader.h"
 
 @interface LMJNavBarFadeViewController ()
+{
+    UIStatusBarStyle _statusBarStyle;
+}
 /** <#digest#> */
 @property (nonatomic, strong) LMJExpandHeader *expandHander;
 @end
@@ -31,6 +34,8 @@
     imageView.lmj_width = kScreenWidth;
     
    _expandHander = [LMJExpandHeader expandWithScrollView:self.tableView expandView:imageView];
+    
+    _statusBarStyle = UIStatusBarStyleLightContent;
 }
 
 
@@ -44,7 +49,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
     
     cell.textLabel.text = [NSString stringWithFormat:@"第%zd行", indexPath.row];
-    
     
     return cell;
 }
@@ -70,7 +74,7 @@
         
         self.lmj_navgationBar.backgroundColor = [UIColor clearColor];
         
-        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+        _statusBarStyle = UIStatusBarStyleLightContent;
         
     }else if (contentOffset.y > kNavBarHeight && contentOffset.y < 0)
     {
@@ -80,7 +84,7 @@
         
         self.lmj_navgationBar.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:(1 - contentOffset.y / kNavBarHeight)];
         
-        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+        _statusBarStyle = UIStatusBarStyleLightContent;
         
     }else if (contentOffset.y >= 0)
     {
@@ -89,16 +93,25 @@
         rightBtn.selected = YES;
         self.lmj_navgationBar.backgroundColor = [UIColor whiteColor];
         
-        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+        _statusBarStyle = UIStatusBarStyleDefault;
     }
     
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
+
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return _statusBarStyle;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationFade;
 }
 
 /**头部标题*/
