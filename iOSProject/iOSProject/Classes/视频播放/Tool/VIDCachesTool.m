@@ -20,7 +20,7 @@ static NSString *const VIDCachesToolId = @"VIDCachesToolId";
 
 - (void)downLoad:(NSString *)url {
     [_cachesUrls addObject:url.copy];
-    [VIDToolDownloadManager download:url];
+    [self.downloadManager download:url];
     [_cachesUrls writeToFile:self.filePath atomically:YES];
 }
 
@@ -31,6 +31,7 @@ static NSString *const VIDCachesToolId = @"VIDCachesToolId";
         }
     }];
     
+    [self.downloadManager.downloadInfoArray removeObject:[self.downloadManager downloadInfoForURL:url]];
     [_cachesUrls writeToFile:self.filePath atomically:YES];
 }
 

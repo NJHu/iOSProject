@@ -119,5 +119,27 @@
     [self.navigationController pushViewController:playerVc animated:YES];
 }
 
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        return YES;
+    }else {
+        return NO;
+    }
+}
+
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    LMJWeak(self);
+    UITableViewRowAction *removeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        
+        NSArray<MJDownloadInfo *> *infos = [VIDToolDownloadManager.downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateCompleted]];
+        [VIDSharedTool deleteFile:infos[indexPath.row].url];
+        
+        [weakself.tableView deleteRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationLeft];
+    }];
+    
+    return @[removeAction];
+}
+
 @end
 
