@@ -32,6 +32,7 @@
 //        _cellHeight = AdaptedWidth(50);
         _titleFont = AdaptedFontSize(16);
         _subTitleFont = AdaptedFontSize(16);
+        _subTitleNumberOfLines = 2;
     }
     
     return self;
