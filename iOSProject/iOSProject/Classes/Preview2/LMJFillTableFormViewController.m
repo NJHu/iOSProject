@@ -60,30 +60,22 @@
     [item2 setItemOperation:^void(NSIndexPath *indexPath){
         
         [[MOFSPickerManager shareManger] showPickerViewWithDataArray:@[@"男",@"女"] tag:1 title:nil cancelTitle:@"取消" commitTitle:@"确定" commitBlock:^(NSString *string) {
-            
             weakitem2.subTitle = string;
             [weakself.tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationAutomatic];
-            
         } cancelBlock:^{
             
-            
         }];
-        
     }];
     
     LMJWordItem *item3 = [LMJWordArrowItem itemWithTitle:@"生日" subTitle: @"请选择出生日期"];
     item3.subTitleColor = [UIColor lightGrayColor];
     LMJWeak(item3);
     [item3 setItemOperation:^void(NSIndexPath *indexPath){
-        
         [[MOFSPickerManager shareManger] showDatePickerWithTag:1 commitBlock:^(NSDate *date) {
-            
             weakitem3.subTitle = [date stringWithFormat:@"yyyy-MM-dd"];
             [weakself.tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationAutomatic];
         } cancelBlock:^{
-            
         }];
-        
     }];
     
     
