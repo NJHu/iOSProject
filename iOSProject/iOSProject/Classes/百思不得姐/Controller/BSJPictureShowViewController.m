@@ -107,6 +107,7 @@
         _pictureImageView = pictureImageView;
         pictureImageView.userInteractionEnabled = YES;
         pictureImageView.contentMode = UIViewContentModeScaleToFill;
+//        pictureImageView.runloopMode = kCFRunLoopCommonModes;
     }
     return _pictureImageView;
 }

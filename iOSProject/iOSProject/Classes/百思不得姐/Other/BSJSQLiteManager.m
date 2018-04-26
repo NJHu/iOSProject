@@ -58,9 +58,9 @@ static NSString *_dbPath = nil;
 #pragma mark - creatTable
 - (void)creatTable
 {
-    
+//    id INTEGER PRIMARY KEY AUTOINCREMENT,
     NSString *creatTableSql = @"CREATE TABLE IF NOT EXISTS t_topics \n\
-    (id INTEGER PRIMARY KEY AUTOINCREMENT, \n\
+    (\n\
     t INTEGER PRIMARY KEY NOT NULL, \n\
     topic BLOB NOT NULL, \n\
     type TEXT NOT NULL, \n\
@@ -79,11 +79,12 @@ static NSString *_dbPath = nil;
         
     }];
     
+//    id INTEGER PRIMARY KEY AUTOINCREMENT,
     NSString *creatNewTopicTableSql = @"CREATE TABLE IF NOT EXISTS new_t_topics \n\
-    (id INTEGER PRIMARY KEY AUTOINCREMENT, \n\
+    (\n\
+    t INTEGER PRIMARY KEY NOT NULL, \n\
     topic BLOB NOT NULL, \n\
     type TEXT NOT NULL, \n\
-    t INTEGER NOT NULL, \n\
     time TEXT NOT NULL  DEFAULT (datetime('now', 'localtime'))\n\
     )\n";
     
