@@ -19,13 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight * 0.7)];
+    
     LMJWeak(self);
     LMJWordItem *item0 = [LMJWordArrowItem itemWithTitle:@"系统设置" subTitle: nil];
     item0.image = [UIImage imageNamed:@"mine-setting-icon"];
     [item0 setItemOperation:^void(NSIndexPath *indexPath){
-        
         [weakself.view makeToast:@"跳转成功"];
-        
     }];
     
     LMJWordItem *item1 = [LMJWordItem itemWithTitle:@"姓名" subTitle:@"请输入姓名"];
@@ -42,6 +43,7 @@
             textF = [[UITextField alloc] init];
             textF.tag = indexPath.row + 100;
             textF.delegate = self;
+            textF.lmj_size = CGSizeMake(1, 100);
 //            textF.textColor = [UIColor clearColor];
 //            textF.borderStyle = UITextBorderStyleNone;
             [cell.contentView addSubview:textF];
@@ -99,6 +101,7 @@
             textF = [[UITextField alloc] init];
             textF.tag = indexPath.row + 100;
             textF.delegate = self;
+            textF.lmj_size = CGSizeMake(1, 100);
 //            textF.textColor = [UIColor clearColor];
 //            textF.borderStyle = UITextBorderStyleNone;
             [cell.contentView addSubview:textF];
@@ -143,6 +146,10 @@
 }
 
 
+#pragma mark - LMJTextViewControllerDataSource
+- (BOOL)textViewControllerEnableAutoToolbar:(LMJTextViewController *)textViewController {
+    return NO;
+}
 
 #pragma mark - LMJNavUIBaseViewControllerDataSource
 

@@ -27,20 +27,17 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self initKeyboard];
 }
 
 
-- (void)viewDidLayoutSubviews
-{
+- (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
 }
@@ -56,8 +53,7 @@
 #pragma mark - UITextViewDelegate, UITextFieldDelegate
 
 #pragma mark - 处理 returnKey
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (![IQKeyboardManager sharedManager].canGoNext) {
         [self textViewController:self inputViewDone:textField];
     }
@@ -72,15 +68,13 @@
 }
 
 #pragma mark - LMJTextViewControllerDelegate
-- (void)textViewController:(LMJTextViewController *)textViewController inputViewDone:(id)inputView
-{
+- (void)textViewController:(LMJTextViewController *)textViewController inputViewDone:(id)inputView {
     NSLog(@"%@, %@", self.requiredTextFields, inputView);
 }
 
 #pragma mark - autoEmpty
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     // 九宫格 bug fix
     if ([@"➋➌➍➎➏➐➑➒" rangeOfString:string].location != NSNotFound) {
         return YES;
@@ -99,8 +93,7 @@
     return YES;
 }
 
-- (BOOL)textFieldShouldClear:(UITextField *)textField
-{
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
     if (textField.isEmptyAutoEnable) {
         [self checkIsEmpty:YES textField:textField];
     }
@@ -109,8 +102,7 @@
 
 
 #pragma mark - 设置 btn的 enable
-- (void)checkIsEmpty:(BOOL)isEmpty textField:(UITextField *)textField
-{
+- (void)checkIsEmpty:(BOOL)isEmpty textField:(UITextField *)textField {
     if (LMJIsEmpty(self.requiredTextFields)) {
         return;
     }
@@ -143,8 +135,7 @@
 
 
 #pragma mark - 初始化
-- (void)initKeyboard
-{
+- (void)initKeyboard {
     // 键盘
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;
@@ -173,8 +164,7 @@
 }
 
 
-- (NSArray<UITextField *> *)requiredTextFields
-{
+- (NSArray<UITextField *> *)requiredTextFields {
     if(_requiredTextFields == nil)
     {
         NSArray *responsedInputViews = [self.view deepResponderViews];
@@ -204,7 +194,6 @@
 
 
 - (void)initReturnKeyHandler {
-    
     if(_returnKeyHandler == nil) {
         _returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
         _returnKeyHandler.delegate = self;
