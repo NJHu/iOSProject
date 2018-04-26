@@ -9,10 +9,11 @@
 #import "BSJPictureShowViewController.h"
 #import "BSJTopicViewModel.h"
 #import <M13ProgressViewRing.h>
+#import <FLAnimatedImageView+WebCache.h>
 
 @interface BSJPictureShowViewController ()<UIScrollViewDelegate>
 /** <#digest#> */
-@property (weak, nonatomic) UIImageView *pictureImageView;
+@property (weak, nonatomic) FLAnimatedImageView *pictureImageView;
 
 /** <#digest#> */
 @property (weak, nonatomic) M13ProgressViewRing *ringProgressView;
@@ -98,16 +99,16 @@
 //    }
 //}
 
-- (UIImageView *)pictureImageView
+- (FLAnimatedImageView *)pictureImageView
 {
     if(_pictureImageView == nil)
     {
-        UIImageView *pictureImageView = [[UIImageView alloc] init];
+        FLAnimatedImageView *pictureImageView = [[FLAnimatedImageView alloc] init];
         [self.scrollView addSubview:pictureImageView];
         _pictureImageView = pictureImageView;
         pictureImageView.userInteractionEnabled = YES;
         pictureImageView.contentMode = UIViewContentModeScaleToFill;
-//        pictureImageView.runloopMode = kCFRunLoopCommonModes;
+        pictureImageView.runLoopMode = NSRunLoopCommonModes;
     }
     return _pictureImageView;
 }

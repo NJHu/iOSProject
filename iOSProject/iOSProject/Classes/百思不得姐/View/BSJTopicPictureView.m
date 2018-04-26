@@ -11,12 +11,13 @@
 #import <M13ProgressViewRing.h>
 #import "BSJPictureShowViewController.h"
 #import "PresentAnimator.h"
+#import <FLAnimatedImageView+WebCache.h>
 
 
 @interface BSJTopicPictureView ()
 
 /** <#digest#> */
-@property (weak, nonatomic) UIImageView *pictureImageView;
+@property (weak, nonatomic) FLAnimatedImageView *pictureImageView;
 
 /** <#digest#> */
 @property (weak, nonatomic) M13ProgressViewRing *ringProgressView;
@@ -69,7 +70,7 @@
     // 3.2刷新进度立马
     [self.ringProgressView setProgress:topicViewModel.downloadPictureProgress animated:NO];
     LMJWeak(self);
-    [self.pictureImageView lmj_setImageWithURL:topicViewModel.topic.largePicture thumbnailImageURL:topicViewModel.topic.smallPicture placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL *targetURL) {
+    [self.pictureImageView lmj_setImageWithURL:topicViewModel.topic.smallPicture thumbnailImageURL:topicViewModel.topic.smallPicture placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL *targetURL) {
         
         // 3.3储存 "每个模型" 的进度, topicViewModel
         topicViewModel.downloadPictureProgress = (CGFloat)receivedSize / expectedSize;
@@ -113,14 +114,14 @@
     
 }
 
-- (UIImageView *)pictureImageView
+- (FLAnimatedImageView *)pictureImageView
 {
     if(_pictureImageView == nil)
     {
-        UIImageView *pictureImageView = [[UIImageView alloc] init];
+        FLAnimatedImageView *pictureImageView = [[FLAnimatedImageView alloc] init];
         [self addSubview:pictureImageView];
         _pictureImageView = pictureImageView;
-        
+        pictureImageView.runLoopMode = NSRunLoopCommonModes;
         [pictureImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             
             make.edges.mas_equalTo(self).insets(UIEdgeInsetsMake(0, 0, 0, 0));
