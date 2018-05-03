@@ -201,7 +201,6 @@
 
 #pragma mark - null
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    [super tableView:tableView cellForRowAtIndexPath:indexPath];
     LMJWordItem *item = self.sections[indexPath.section].items[indexPath.row];
     LMJSettingCell *cell = [LMJSettingCell cellWithTableView:tableView andCellStyle:UITableViewCellStyleSubtitle];
     cell.item = item;

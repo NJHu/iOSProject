@@ -104,6 +104,7 @@
     }];
     
     
+    
     LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item4, item3, item2, item1, item0] andHeaderTitle:nil footerTitle:nil];
     
     [self.sections addObject:section0];
@@ -139,8 +140,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    
     LMJWordItem *item = self.sections[indexPath.section].items[indexPath.row];
     
     NSString *ID = [NSString stringWithFormat:@"%@%zd", LMJSettingCell.class, indexPath.row];
