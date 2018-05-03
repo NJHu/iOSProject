@@ -137,6 +137,21 @@
     return 10;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    LMJWordItem *item = self.sections[indexPath.section].items[indexPath.row];
+    
+    NSString *ID = [NSString stringWithFormat:@"%@%zd", LMJSettingCell.class, indexPath.row];
+    LMJSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if(cell == nil)
+    {
+        cell = [[LMJSettingCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
+    }
+    cell.item = item;
+    return cell;
+}
 
 #pragma mark - LMJTextViewControllerDataSource
 - (BOOL)textViewControllerEnableAutoToolbar:(LMJTextViewController *)textViewController {
