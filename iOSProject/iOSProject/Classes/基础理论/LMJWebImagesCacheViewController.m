@@ -77,7 +77,7 @@
                 if (![manager fileExistsAtPath:[cache stringByAppendingPathComponent:[NSString stringWithFormat:@"LMJWebImageCaches"]] isDirectory:nil]) {
                     [manager createDirectoryAtPath:[cache stringByAppendingPathComponent:[NSString stringWithFormat:@"LMJWebImageCaches"]] withIntermediateDirectories:YES attributes:nil error:nil];
                 }
-                NSString *file = [cache stringByAppendingPathComponent:[NSString stringWithFormat:@"LMJWebImageCaches/%@", video.image.absoluteString.md5String]];
+                NSString *file = [cache stringByAppendingPathComponent:[NSString stringWithFormat:@"LMJWebImageCaches/%@.png", video.image.absoluteString.md5String]];
                 
                 NSData *imageData = [NSData dataWithContentsOfFile:file];
                 
