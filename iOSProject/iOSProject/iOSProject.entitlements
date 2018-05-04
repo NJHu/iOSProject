@@ -6,6 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
+		<string>applinks:raw.githubusercontent.com/NJHu/iOSProject/master/images</string>
 		<string>applinks:njhu.github.io</string>
 	</array>
 	<key>inter-app-audio</key>
