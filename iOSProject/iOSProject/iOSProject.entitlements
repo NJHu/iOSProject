@@ -6,14 +6,13 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:zplantest.s3.cn-north-1.amazonaws.com.cn</string>
-		<string>applinks:www.zplantest.s3.cn-north-1.amazonaws.com.cn</string>
+		<string>applinks:njhu.github.io</string>
 	</array>
 	<key>inter-app-audio</key>
 	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)github.com.njhu</string>
+		<string>$(AppIdentifierPrefix)com.github.njhu</string>
 	</array>
 </dict>
 </plist>
