@@ -74,6 +74,11 @@
 		585FC1DC208DBD95003174A7 /* VIDDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1DB208DBD95003174A7 /* VIDDownLoadViewController.m */; };
 		585FC1DF208DC1CF003174A7 /* VIDDownLoadedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1DE208DC1CF003174A7 /* VIDDownLoadedCell.m */; };
 		585FC1E2208DC6B2003174A7 /* VIDDownLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1E1208DC6B2003174A7 /* VIDDownLoadingCell.m */; };
+		585FC1E5209B0481003174A7 /* MCTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1E4209B0481003174A7 /* MCTestViewController.m */; };
+		585FC1E8209B2DF5003174A7 /* MCTestDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1E6209B2DF5003174A7 /* MCTestDataModel.xcdatamodeld */; };
+		585FC1F6209B2FE4003174A7 /* MCStudent+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1F2209B2FE3003174A7 /* MCStudent+CoreDataProperties.m */; };
+		585FC1F7209B2FE4003174A7 /* MCStudent+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1F5209B2FE4003174A7 /* MCStudent+CoreDataClass.m */; };
+		585FC1FA209B312E003174A7 /* MCCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1F9209B312E003174A7 /* MCCoreDataManager.m */; };
 		58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */; };
 		58651A9F1FFE6D6F0087419D /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5D1FFE6D6E0087419D /* SINUserManager.m */; };
 		58651AA01FFE6D6F0087419D /* SINSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5F1FFE6D6E0087419D /* SINSQLiteManager.m */; };
@@ -456,6 +461,15 @@
 		585FC1DE208DC1CF003174A7 /* VIDDownLoadedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDDownLoadedCell.m; sourceTree = "<group>"; };
 		585FC1E0208DC6B2003174A7 /* VIDDownLoadingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIDDownLoadingCell.h; sourceTree = "<group>"; };
 		585FC1E1208DC6B2003174A7 /* VIDDownLoadingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIDDownLoadingCell.m; sourceTree = "<group>"; };
+		585FC1E3209B0481003174A7 /* MCTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTestViewController.h; sourceTree = "<group>"; };
+		585FC1E4209B0481003174A7 /* MCTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTestViewController.m; sourceTree = "<group>"; };
+		585FC1E7209B2DF5003174A7 /* MCTestDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MCTestDataModel.xcdatamodel; sourceTree = "<group>"; };
+		585FC1F2209B2FE3003174A7 /* MCStudent+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MCStudent+CoreDataProperties.m"; sourceTree = "<group>"; };
+		585FC1F3209B2FE3003174A7 /* MCStudent+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MCStudent+CoreDataClass.h"; sourceTree = "<group>"; };
+		585FC1F4209B2FE4003174A7 /* MCStudent+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MCStudent+CoreDataProperties.h"; sourceTree = "<group>"; };
+		585FC1F5209B2FE4003174A7 /* MCStudent+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MCStudent+CoreDataClass.m"; sourceTree = "<group>"; };
+		585FC1F8209B312E003174A7 /* MCCoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCCoreDataManager.h; sourceTree = "<group>"; };
+		585FC1F9209B312E003174A7 /* MCCoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCCoreDataManager.m; sourceTree = "<group>"; };
 		58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListDAL.m; sourceTree = "<group>"; };
 		58651A5D1FFE6D6E0087419D /* SINUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUserManager.m; sourceTree = "<group>"; };
 		58651A5E1FFE6D6E0087419D /* SINSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINSQLiteManager.h; sourceTree = "<group>"; };
@@ -1003,6 +1017,8 @@
 				5822334420185F790008251F /* MCSphereTagCloudViewController.m */,
 				5822335220188F5D0008251F /* MCLocalHTMLViewController.h */,
 				5822335320188F5D0008251F /* MCLocalHTMLViewController.m */,
+				585FC1E3209B0481003174A7 /* MCTestViewController.h */,
+				585FC1E4209B0481003174A7 /* MCTestViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1010,6 +1026,13 @@
 		5822331B20182B980008251F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				585FC1E6209B2DF5003174A7 /* MCTestDataModel.xcdatamodeld */,
+				585FC1F3209B2FE3003174A7 /* MCStudent+CoreDataClass.h */,
+				585FC1F5209B2FE4003174A7 /* MCStudent+CoreDataClass.m */,
+				585FC1F4209B2FE4003174A7 /* MCStudent+CoreDataProperties.h */,
+				585FC1F2209B2FE3003174A7 /* MCStudent+CoreDataProperties.m */,
+				585FC1F8209B312E003174A7 /* MCCoreDataManager.h */,
+				585FC1F9209B312E003174A7 /* MCCoreDataManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2373,6 +2396,7 @@
 				5892AD751FF5114A00E868C2 /* LMJMessageViewController.m in Sources */,
 				5822332020182C5D0008251F /* MCCornersRoundViewController.m in Sources */,
 				5892AD031FF4F9D200E868C2 /* LMJElementsFlowLayout.m in Sources */,
+				585FC1F7209B2FE4003174A7 /* MCStudent+CoreDataClass.m in Sources */,
 				58DC852D1FFC9B720060DC03 /* LMJCommentHeaderView.m in Sources */,
 				588CCD7F205D4FA60067E3C4 /* WKBridgeTool.m in Sources */,
 				58B59D0A2015B17800C4C4C9 /* LMJCasesViewController.m in Sources */,
@@ -2381,6 +2405,7 @@
 				58DC83D31FFB43E30060DC03 /* LMJDotRemoveViewController.m in Sources */,
 				58DC84FF1FFC972C0060DC03 /* BSJCommentPageViewController.m in Sources */,
 				5892AD5E1FF5079C00E868C2 /* LMJTableViewController.m in Sources */,
+				585FC1E5209B0481003174A7 /* MCTestViewController.m in Sources */,
 				58651AAE1FFE6D6F0087419D /* SINDictURL.m in Sources */,
 				58DC85031FFC972C0060DC03 /* BSJPublishViewController.m in Sources */,
 				5822334B20185FB10008251F /* DBSphereView.m in Sources */,
@@ -2400,6 +2425,7 @@
 				584038381FF7E2BE002A0566 /* LMJVerticalLayoutViewController.m in Sources */,
 				58DC84541FFBDDC40060DC03 /* LMJChildBlockViewController.m in Sources */,
 				581A3E2C2044434400AF08C0 /* LMJOfflineDownloadViewController.m in Sources */,
+				585FC1E8209B2DF5003174A7 /* MCTestDataModel.xcdatamodeld in Sources */,
 				584038681FF88594002A0566 /* LMJUpLoadImageCell.m in Sources */,
 				58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */,
 				58DC84F71FFC972C0060DC03 /* BSJNewViewController.m in Sources */,
@@ -2425,6 +2451,7 @@
 				58651AB91FFE6D6F0087419D /* SINTabBar.m in Sources */,
 				58DC83D81FFB440E0060DC03 /* LMJDynamicViewController.m in Sources */,
 				5840381F1FF64718002A0566 /* LMJYYTextViewController.m in Sources */,
+				585FC1F6209B2FE4003174A7 /* MCStudent+CoreDataProperties.m in Sources */,
 				5892AD081FF4F9D200E868C2 /* LMJNavigationBar.m in Sources */,
 				5892AD001FF4F9D200E868C2 /* LMJItemSection.m in Sources */,
 				589B570B1FFFC53000B2D5A8 /* QQMusicTool.m in Sources */,
@@ -2534,6 +2561,7 @@
 				58223315201821910008251F /* NSDecimalNumber+Addtion.m in Sources */,
 				58DC85191FFC972C0060DC03 /* BSJTopicVoiceView.m in Sources */,
 				58DC838F1FFB43460060DC03 /* LMJLZDHDTViewController.m in Sources */,
+				585FC1FA209B312E003174A7 /* MCCoreDataManager.m in Sources */,
 				584038781FF93AA5002A0566 /* LMJCountDownCell.m in Sources */,
 				58DC85111FFC972C0060DC03 /* BSJMeSquare.m in Sources */,
 				58DC843E1FFBD1290060DC03 /* LMJNSThreadViewController.m in Sources */,
@@ -3006,6 +3034,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		585FC1E6209B2DF5003174A7 /* MCTestDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				585FC1E7209B2DF5003174A7 /* MCTestDataModel.xcdatamodel */,
+			);
+			currentVersion = 585FC1E7209B2DF5003174A7 /* MCTestDataModel.xcdatamodel */;
+			path = MCTestDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5892AC8C1FF4EB4A00E868C2 /* Project object */;
 }

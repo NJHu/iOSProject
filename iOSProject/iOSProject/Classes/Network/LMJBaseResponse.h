@@ -21,7 +21,7 @@
 @property (assign, nonatomic) NSInteger statusCode;
 
 /** 响应头 */
-@property (nonatomic, copy) NSMutableDictionary *headers;
+@property (nonatomic, strong) NSMutableDictionary *headers;
 
 /** 响应体 */
 @property (nonatomic, strong) id responseObject;

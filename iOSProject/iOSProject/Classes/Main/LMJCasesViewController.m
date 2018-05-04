@@ -32,7 +32,11 @@
     LMJWordArrowItem *item2 = [LMJWordArrowItem itemWithTitle:@"加载本地html和css 需要建立实体文件夹" subTitle:@"MCLocalHTMLViewController"];
     item2.destVc = [MCLocalHTMLViewController class];
     
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2] andHeaderTitle:@"UI 更多案例" footerTitle:@"UI --end"];
+//    MCTestViewController
+    LMJWordArrowItem *item3 = [LMJWordArrowItem itemWithTitle:@"多项测试" subTitle:@"MCTestViewController"];
+    item3.destVc =  NSClassFromString(@"MCTestViewController");
+    
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item0, item1, item2, item3] andHeaderTitle:@"UI 更多案例" footerTitle:@"UI --end"];
     
     [self.sections addObject:section0];
 }
