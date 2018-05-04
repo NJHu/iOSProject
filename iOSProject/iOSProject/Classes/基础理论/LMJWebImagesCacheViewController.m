@@ -62,6 +62,7 @@
     cell.videoImageView.image = image;
     
     if (!image) {
+        cell.videoImageView.image = [UIImage imageNamed:@"empty_picture"];
         NSBlockOperation *operation = nil;
         // 对应的图片下载操作
         operation = self.operations[video.image.absoluteString];
@@ -76,7 +77,8 @@
                 if (![manager fileExistsAtPath:[cache stringByAppendingPathComponent:[NSString stringWithFormat:@"LMJWebImageCaches"]] isDirectory:nil]) {
                     [manager createDirectoryAtPath:[cache stringByAppendingPathComponent:[NSString stringWithFormat:@"LMJWebImageCaches"]] withIntermediateDirectories:YES attributes:nil error:nil];
                 }
-                NSString *file = [cache stringByAppendingPathComponent:[NSString stringWithFormat:@"LMJWebImageCaches/%@", video.name]];
+                NSString *file = [cache stringByAppendingPathComponent:[NSString stringWithFormat:@"LMJWebImageCaches/%@", video.image.absoluteString.md5String]];
+                
                 NSData *imageData = [NSData dataWithContentsOfFile:file];
                 
                 if (imageData) {
