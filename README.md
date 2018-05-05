@@ -1,4 +1,14 @@
 <p align="right"><b>Github 点个赞↑👍,感谢您的支持!</b></p>
+
+<div>
+<h3>近期更新</h3>
+<ul>
+<li>编写JS文件, OC交互</li>
+<li>RSA 加密解密</li>
+<li>iOS UniversalLink 通用链接 Demo(任意浏览器和WebView打开App); 需要真机测试的小伙伴加微信: NJCoderLi</li>
+</ul>
+</div>
+
 <div>
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/zh.gif" width="24%">
 </div>
