@@ -123,7 +123,7 @@ static const CGFloat topViewHeigt = 100;
     // 添加移动动画，使视图跟随键盘移动(动画时间和曲线都保持一致)
     [UIView animateWithDuration:[_duration doubleValue] animations:^{
         [UIView setAnimationBeginsFromCurrentState:YES];
-        [UIView setAnimationCurve:[_curve intValue]];
+        [UIView setAnimationCurve:[self->_curve intValue]];
         
         self.myTopView.frame = CGRectMake(0, self.view.lmj_height - topViewHeigt, kScreenWidth, topViewHeigt);
     }];
@@ -138,7 +138,7 @@ static const CGFloat topViewHeigt = 100;
     // 添加移动动画，使视图跟随键盘移动(动画时间和曲线都保持一致)
     [UIView animateWithDuration:[_duration doubleValue] animations:^{
         [UIView setAnimationBeginsFromCurrentState:YES];
-        [UIView setAnimationCurve:[_curve intValue]];
+        [UIView setAnimationCurve:[self->_curve intValue]];
         self.myTopView.frame=CGRectMake(0, kScreenHeight, kScreenWidth, topViewHeigt);
     }];
 }

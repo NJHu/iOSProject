@@ -119,7 +119,7 @@
             LMJParagraph *pa = [[LMJParagraph alloc] init];
             pa.words = obj;
             pa.date = [[NSDate date] stringWithFormat:@"yyyy-MM-dd ss"];
-            [_paragraphs addObject:pa];
+            [self->_paragraphs addObject:pa];
         }];
     }
     return _paragraphs;

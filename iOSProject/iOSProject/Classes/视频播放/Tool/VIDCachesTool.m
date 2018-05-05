@@ -27,7 +27,7 @@ static NSString *const VIDCachesToolId = @"VIDCachesToolId";
 - (void)deleteFile:(NSString *)url {
     [_cachesUrls enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isEqualToString:url]) {
-            [_cachesUrls removeObject:obj];
+            [self->_cachesUrls removeObject:obj];
         }
     }];
     

@@ -116,7 +116,7 @@
                 
             }];
             
-            [_groups addObject:group];
+            [self->_groups addObject:group];
         }];
         
         

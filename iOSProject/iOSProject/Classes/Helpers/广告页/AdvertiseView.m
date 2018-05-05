@@ -92,7 +92,7 @@ static const NSUInteger showtime = 5;
             [weakself dismiss];
         }else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [_countBtn setTitle:[NSString stringWithFormat:@"跳过%d",timeout] forState:UIControlStateNormal];
+                [self->_countBtn setTitle:[NSString stringWithFormat:@"跳过%d",timeout] forState:UIControlStateNormal];
             });
             timeout--;
         }

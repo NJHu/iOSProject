@@ -77,8 +77,8 @@ static const UIEdgeInsets LMJ_EdgeInsets_ = {20, 10, 10, 10};
     // 拿到最后的高度最小的那一列, 假设第0列最小
     CGFloat rightLeftWidth = self.collectionView.frame.size.width - CGRectGetMaxX(self.lmj_LastAtrbsFrame) - [self xMarginAtIndexPath:indexPath] - self.edgeInsets.right;
     
-    CGFloat x = self.edgeInsets.left;
-    CGFloat y = self.edgeInsets.top;
+    CGFloat x = 0;
+    CGFloat y = 0;
     
     
     if (rightLeftWidth >= w) {

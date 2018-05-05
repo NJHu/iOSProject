@@ -114,7 +114,9 @@
         NSLog(@"当前值没有被修改为：%@",self.student.name_1);
         [strM appendFormat:@"当前值没有被修改为：%@\n",self.student.name_1];
         
-        object_setIvar(self.student, name_1Ivar, @"njhu2");
+        if (name_1Ivar) {
+            object_setIvar(self.student, name_1Ivar, @"njhu2");            
+        }
         
         NSLog(@"当前修改后的变量值为：%@",self.student.name_1);
         [strM appendFormat:@"object_setIvar\n当前修改后的变量值为：%@\n",self.student.name_1];
@@ -191,9 +193,10 @@
         }
         [strM appendFormat:@"\n\n\n"];
         
-        NSLog(@"LMJStudent is %@ responsed to protocol %s", class_conformsToProtocol([weakself.student class], protocol) ? @"" : @" not", protocol_getName(protocol));
-        
-        [strM appendFormat:@"LMJStudent is %@ responsed to protocol %s", class_conformsToProtocol([weakself.student class], protocol) ? @"" : @" not", protocol_getName(protocol)];
+        if (protocol) {
+            NSLog(@"LMJStudent is %@ responsed to protocol %s", class_conformsToProtocol([weakself.student class], protocol) ? @"" : @" not", protocol_getName(protocol));
+            [strM appendFormat:@"LMJStudent is %@ responsed to protocol %s", class_conformsToProtocol([weakself.student class], protocol) ? @"" : @" not", protocol_getName(protocol)];
+        }
         
         [weakself alertTitle:@"获取类的协议列表" message:strM];
     }])

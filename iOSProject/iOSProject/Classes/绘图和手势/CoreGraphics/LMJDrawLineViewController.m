@@ -309,5 +309,7 @@
     
     // 4.渲染上下文
     CGContextStrokePath(ctx);
+    
+    CGPathRelease(path);
 }
 @end

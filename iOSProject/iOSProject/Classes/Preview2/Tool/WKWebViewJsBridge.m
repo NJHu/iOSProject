@@ -74,7 +74,7 @@
             }
 
             // 回调 H5
-            [WKBridgeTool dispatchMsgToh5:responseMsg webView:_webView];
+            [WKBridgeTool dispatchMsgToh5:responseMsg webView:self->_webView];
         };
     }else {
         responseCallback = ^(id responseData) {

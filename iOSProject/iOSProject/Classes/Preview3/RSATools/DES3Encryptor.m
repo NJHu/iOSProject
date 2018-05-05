@@ -73,7 +73,7 @@
                        (void *)dataOut,// 用于返回数据
                        dataOutAvailable,
                        &dataOutMoved);
-    
+    NSLog(@"%zd", ccStatus);
     NSString *result = nil;
     NSData *data = [NSData dataWithBytes:(const void *)dataOut length:(NSUInteger)dataOutMoved];
     

@@ -91,8 +91,8 @@
         // SpringWithDamping:弹性系数,越小，弹簧效果越明显
         [UIView animateWithDuration:0.6 delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
-            _topView.layer.transform = CATransform3DIdentity;
-            _gradientL.opacity = 0;
+            self->_topView.layer.transform = CATransform3DIdentity;
+            self->_gradientL.opacity = 0;
             
         } completion:^(BOOL finished) {
             

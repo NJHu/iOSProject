@@ -126,7 +126,8 @@
         cell = [BSJReommmendCategoryCell reommmendCategoryCellWithTableView:tableView];
         BSJReommmendCategoryCell *categoryCell = (BSJReommmendCategoryCell *)cell;
         categoryCell.category = self.recommendSevice.recommendCategorys[indexPath.row];
-    }else if (tableView == self.tableView) {
+    }else // if (tableView == self.tableView)
+    {
         cell = [BSJRecommendUserCell userCellWithTableView:tableView];
         BSJRecommendUserCell *userCell = (BSJRecommendUserCell *)cell;
         userCell.user = BSJSelectedCategory.users[indexPath.row];
