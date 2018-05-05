@@ -38,7 +38,7 @@
 #import "LMJVFLLayoutViewController.h"
 #import "LMJOfflineDownloadViewController.h"
 #import "LMJRSAViewController.h"
-
+#import "LMJUniversalLinkViewController.h"
 
 @interface LMJNewViewController ()
 
@@ -193,8 +193,12 @@
     LMJWordArrowItem *item40 = [LMJWordArrowItem itemWithTitle:@"RSA 加密解密" subTitle: @"网络数据加密解密"];
     
     item40.destVc = [LMJRSAViewController class];
+    
+    LMJWordArrowItem *item41 = [LMJWordArrowItem itemWithTitle:@"通用链接跳转" subTitle: @"浏览器,短信,邮件,其它App,都可以跳转本 App"];
+    
+    item41.destVc = [LMJUniversalLinkViewController class];
 
-    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item40, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item101, item11, item12, item121,item13, item29, item30, item15, item16, item17, item18, item19, item20, item201, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
+    LMJItemSection *section0 = [LMJItemSection sectionWithItems:@[item40, item41, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item101, item11, item12, item121,item13, item29, item30, item15, item16, item17, item18, item19, item20, item201, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
 
 //    [section0.items sortUsingComparator:^NSComparisonResult(LMJWordItem  *_Nonnull obj1, LMJWordItem  *_Nonnull obj2) {
 //

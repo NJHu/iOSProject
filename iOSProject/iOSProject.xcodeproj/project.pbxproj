@@ -331,6 +331,8 @@
 		58DC85331FFCA30C0060DC03 /* UIImageView+FitNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC85311FFCA30B0060DC03 /* UIImageView+FitNet.m */; };
 		58DC88CE1FFDEEF70060DC03 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DC88CD1FFDEEF70060DC03 /* libbz2.1.0.tbd */; };
 		58DC88D01FFDEF030060DC03 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DC88CF1FFDEF020060DC03 /* libiconv.2.4.0.tbd */; };
+		58E02EEB209D8A23005431BA /* LMJUniversalLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E02EEA209D8A23005431BA /* LMJUniversalLinkViewController.m */; };
+		58E02EEE209D8BA4005431BA /* LMJUniversalLink.html in Resources */ = {isa = PBXBuildFile; fileRef = 58E02EED209D8BA4005431BA /* LMJUniversalLink.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -932,6 +934,9 @@
 		58DC85321FFCA30C0060DC03 /* UIImageView+FitNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FitNet.h"; sourceTree = "<group>"; };
 		58DC88CD1FFDEEF70060DC03 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
 		58DC88CF1FFDEF020060DC03 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
+		58E02EE9209D8A23005431BA /* LMJUniversalLinkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJUniversalLinkViewController.h; sourceTree = "<group>"; };
+		58E02EEA209D8A23005431BA /* LMJUniversalLinkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJUniversalLinkViewController.m; sourceTree = "<group>"; };
+		58E02EED209D8BA4005431BA /* LMJUniversalLink.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LMJUniversalLink.html; sourceTree = "<group>"; };
 		AA64D526EE098D357A7E6B09 /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1743,6 +1748,9 @@
 				588CCD81205DF7860067E3C4 /* LMJCuteFlowLayoutViewController.m */,
 				58A043D7206B28A1003CB4E5 /* LMJRSAViewController.h */,
 				58A043D8206B28A1003CB4E5 /* LMJRSAViewController.m */,
+				58E02EE9209D8A23005431BA /* LMJUniversalLinkViewController.h */,
+				58E02EEA209D8A23005431BA /* LMJUniversalLinkViewController.m */,
+				58E02EEC209D8B9E005431BA /* Ohter */,
 				58988892206B34BE00BDAACD /* RSATools */,
 				58A043DA206B2E1D003CB4E5 /* RSA证书 */,
 				581A3E2D2044448700AF08C0 /* Toos */,
@@ -2168,6 +2176,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		58E02EEC209D8B9E005431BA /* Ohter */ = {
+			isa = PBXGroup;
+			children = (
+				58E02EED209D8BA4005431BA /* LMJUniversalLink.html */,
+			);
+			path = Ohter;
+			sourceTree = "<group>";
+		};
 		8FC3A5937CA448C8AE6DDE55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2282,6 +2298,7 @@
 				5892ACBB1FF4EF4500E868C2 /* Sina.xcassets in Resources */,
 				58DC83F71FFB478E0060DC03 /* CATransition3.png in Resources */,
 				58DC851D1FFC972C0060DC03 /* BSJGuidePushView.xib in Resources */,
+				58E02EEE209D8BA4005431BA /* LMJUniversalLink.html in Resources */,
 				58DC846A1FFC94B30060DC03 /* team_dictionary.plist in Resources */,
 				5892ACB91FF4EF4500E868C2 /* Preview.xcassets in Resources */,
 				5892ACBA1FF4EF4500E868C2 /* QQMusic.xcassets in Resources */,
@@ -2637,6 +2654,7 @@
 				58A858522078842B0063DE98 /* LMJStudent.m in Sources */,
 				584038751FF93A86002A0566 /* LMJCountDownModel.m in Sources */,
 				58DC85021FFC972C0060DC03 /* BSJPublishWordViewController.m in Sources */,
+				58E02EEB209D8A23005431BA /* LMJUniversalLinkViewController.m in Sources */,
 				585FC1D9208DB9CD003174A7 /* VIDCollectionViewController.m in Sources */,
 				58DC81781FFA2CF90060DC03 /* LMJCalendarViewController.m in Sources */,
 				58651ABB1FFE6D6F0087419D /* SINPostStatusService.m in Sources */,
