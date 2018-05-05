@@ -2787,6 +2787,7 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = EH8D228RS6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = iOSProject/LMJiOSProject.pch;
@@ -2916,6 +2917,7 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = EH8D228RS6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = iOSProject/LMJiOSProject.pch;

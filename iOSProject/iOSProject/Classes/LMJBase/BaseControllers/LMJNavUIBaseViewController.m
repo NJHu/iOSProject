@@ -8,7 +8,6 @@
 
 #import "LMJNavUIBaseViewController.h"
 #import "LMJNavigationBar.h"
-#import <sys/utsname.h>
 
 @implementation LMJNavUIBaseViewController
 

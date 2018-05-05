@@ -5,7 +5,7 @@
 <ul>
 <li>编写JS文件, OC交互</li>
 <li>RSA 加密解密</li>
-<li>iOS UniversalLink 通用链接 Demo(任意浏览器和WebView打开App); 需要真机测试的小伙伴加微信: NJCoderLi</li>
+<li>iOS UniversalLink 通用链接 Demo(任意浏览器和WebView打开App); 需要真机测试的小伙伴加<b>微信</b>: NJCoderLi</li>
 </ul>
 </div>
 
@@ -41,9 +41,9 @@
 <li><a href="#qidai">期待</a></li>
 </ul>
 </td>
-<td>
+<!--<td>
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/nj.jpg" width="150px" height="180px">
-</td>
+</td>-->
 <td rowspan="2">
 <ul>
 <li>
@@ -59,9 +59,9 @@ Email: <a href="mailto:64hp@163.com">64hp@163.com</a>
 </td>
 </tr>
 <tr>
-<td>
-<!--<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qun.jpg" width="150px" height="180px">--><b>扫码通过后进群</b>
-</td>
+<!--<td>
+<b>扫码通过后进群</b>
+</td>-->
 </tr>
 </table>
 
