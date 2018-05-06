@@ -179,40 +179,82 @@
 }
 
 
-//五：maxConcurrentOperationCount设置 并发或串行
+//五：maxConcurrentOperationCount设置 并发或串行,
 -(void)addMaxConcurrentOperation
 {
-    // 1. 创建队列
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//    凡是学习NSOperationQueue的人，都会遇到setMaxConcurrentOperationCount这个函数。在网上的许多博文中，都将setMaxConcurrentOperationCount解释为“设置线程池中的线程数”，我觉得这是一种以讹传讹的说法，相当不准确，容易误导初学者，至少我曾经就被误导过。实际上，NSOperationQueue 可以认为是线程池，但setMaxConcurrentOperationCount并不是设置在其中运行的线程数，看看官方文档：
+//
+//setMaxConcurrentOperationCount:
+//
+//    Sets the maximum number of concurrent operations that the receiver can execute.
     
-    //并发操作的最大值：你可以设定NSOperationQueue可以并发运行的最大操作数。NSOperationQueue会选择去运行任何数量的并发操作，但是不会超过最大值
-    queue.maxConcurrentOperationCount = 10;
-    //修改成它的默认值
-    //queue.MaxConcurrentOperationCount = NSOperationQueueDefaultMaxConcurrentOperationCount;
+//    从描述中可以看出，该函数设置的是queue里面最多能并发运行的operation个数，而不是线程个数，因为一个operation并非只能运行一个线程，看以下代码：
     
-    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-        // 在子线程
-        NSLog(@"addMaxConcurrentOperation当前的线程：%@", [NSThread currentThread]);
+    
+    // 多尝试几次!!!
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        
+        
+//        for (int i = 0; i<100;i++)
+//        {
+            NSLog(@"%@:i",[NSThread currentThread]);
+//        }
     }];
     
-    // 添加额外的任务（部分在新的子线程运行）
-    [op addExecutionBlock:^{
-        NSLog(@"addMaxConcurrentOperation当前的线程2------%@", [NSThread currentThread]);
-    }];
-    [op addExecutionBlock:^{
-        NSLog(@"addMaxConcurrentOperation当前的线程3------%@", [NSThread currentThread]);
-    }];
-    [op addExecutionBlock:^{
-        NSLog(@"addMaxConcurrentOperation当前的线程4------%@", [NSThread currentThread]);
+    [op1 addExecutionBlock:^{
+        
+//        for (int m = 0; m<100;m++)
+//        {
+            NSLog(@"%@:m",[NSThread currentThread]);
+//        }
     }];
     
-    [queue addOperation:op];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        
+        
+//        for (int j = 0; j<100;j++)
+//        {
+            NSLog(@"%@:j",[NSThread currentThread]);
+//        }
+    }];
+    [op2 addExecutionBlock:^{
+        
+//        for (int k = 0; k<100;k++)
+//        {
+            NSLog(@"%@:k",[NSThread currentThread]);
+//        }
+    }];
     
     
-    //    addMaxConcurrentOperation当前的线程：<NSThread: 0x600000460ac0>{number = 8, name = (null)}
-    //    addMaxConcurrentOperation当前的线程2------<NSThread: 0x600000460ac0>{number = 8, name = (null)}
-    //    addMaxConcurrentOperation当前的线程3------<NSThread: 0x600000460ac0>{number = 8, name = (null)}
-    //    addMaxConcurrentOperation当前的线程4------<NSThread: 0x60800026fc80>{number = 5, name = (null)}
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        
+        
+//        for (int n = 0; n<100;n++)
+//        {
+            NSLog(@"%@:n",[NSThread currentThread]);
+//        }
+    }];
+    [op3 addExecutionBlock:^{
+        
+//        for (int r = 0; r<100;r++)
+//        {
+            NSLog(@"%@:r",[NSThread currentThread]);
+//        }
+    }];
+    
+    
+    NSOperationQueue *q = [[NSOperationQueue alloc]init];
+    [q setMaxConcurrentOperationCount:1];
+    [q addOperation:op1];
+    [q addOperation:op2];
+    [q addOperation:op3];
+    
+//    2018-05-06 22:54:04.745338+0800 iOSProject[642:344741] <NSThread: 0x1c1862c00>{number = 11, name = (null)}:i
+//    2018-05-06 22:54:04.746223+0800 iOSProject[642:344741] <NSThread: 0x1c1862c00>{number = 11, name = (null)}:m
+//    2018-05-06 22:54:04.746715+0800 iOSProject[642:344774] <NSThread: 0x1c0a6f080>{number = 6, name = (null)}:j
+//    2018-05-06 22:54:04.746899+0800 iOSProject[642:344774] <NSThread: 0x1c0a6f080>{number = 6, name = (null)}:k
+//    2018-05-06 22:54:04.747159+0800 iOSProject[642:344774] <NSThread: 0x1c0a6f080>{number = 6, name = (null)}:n
+//    2018-05-06 22:54:04.747310+0800 iOSProject[642:344774] <NSThread: 0x1c0a6f080>{number = 6, name = (null)}:r
     
     //说明：
     //    maxConcurrentOperationCount默认情况下为-1，表示不进行限制，默认为并发执行。
