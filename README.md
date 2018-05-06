@@ -17,7 +17,7 @@
 
 <table>
 <tr>
-<td>
+<td rowspan="2">
 <ul>
 <li><a href="#Getting_Started">开始</a></li>
 <li><a href="#homeList">首页功能列表</a></li>
@@ -43,7 +43,10 @@
 </td>
 <td>
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/nj.jpg" width="150px" height="180px">
-<ul>
+</td>
+</tr>
+<tr>
+<td>
 <li>
 GitHub: <a href="https://github.com/njhu">NJHu</a>
 </li>
@@ -53,7 +56,6 @@ Blog: <a href="https://www.weibo.com/njhu" rel="nofollow">NJHu 微博</a>
 <li>
 Email: <a href="mailto:64hp@163.com">64hp@163.com</a>
 </li>
-</ul>
 </td>
 </tr>
 </table>
