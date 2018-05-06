@@ -7,6 +7,7 @@
 //
 
 #import "LMJTableViewController.h"
+#import "LMJAutoRefreshFooter.h"
 
 @interface LMJTableViewController ()
 /** <#digest#> */

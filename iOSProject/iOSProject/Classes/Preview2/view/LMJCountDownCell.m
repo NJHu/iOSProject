@@ -19,7 +19,7 @@
     
     self.textLabel.text = [NSString stringWithFormat:@"%.0lf", countDownModel.date];
     
-    self.textLabel.text = countDownModel.date <= 0 ? @"End" : [NSString stringWithFormat:@"%lu", (NSUInteger)countDownModel.date];
+    self.textLabel.text = countDownModel.date <= 0 ? @"End" : [NSString stringWithFormat:@"%zd", (NSUInteger)countDownModel.date];
 }
 
 

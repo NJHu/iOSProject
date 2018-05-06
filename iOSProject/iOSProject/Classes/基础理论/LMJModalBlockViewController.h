@@ -10,6 +10,6 @@
 
 @interface LMJModalBlockViewController : LMJBaseViewController
 
-@property(nonatomic,copy) void(^successBlock)();
+@property(nonatomic,copy) void(^successBlock)(void);
 
 @end

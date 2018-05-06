@@ -12,7 +12,7 @@
 #import "BSJPictureShowViewController.h"
 #import "PresentAnimator.h"
 #import <FLAnimatedImageView+WebCache.h>
-
+#import "UIView+GestureCallback.h"
 
 @interface BSJTopicPictureView ()
 

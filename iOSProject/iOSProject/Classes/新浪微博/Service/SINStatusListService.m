@@ -9,6 +9,7 @@
 #import "SINStatusListService.h"
 #import "SINDictURL.h"
 #import "SINStatusListDAL.h"
+#import "NSDecimalNumber+Addtion.h"
 
 @interface SINStatusListService ()
 

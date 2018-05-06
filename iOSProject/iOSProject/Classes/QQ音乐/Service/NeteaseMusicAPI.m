@@ -22,7 +22,7 @@ NSString *urlEncode(NSString *input);
  搜索
  */
 + (void)searchWithQuery:(NSString *)query type:(NMSearchType)type offset:(NSInteger)offset limit:(NSInteger)limit completionHandler:(NeteaseMusicAPICompletionHandler)completionHandler {
-    NSString *HTTPBody = [NSString stringWithFormat:@"s=%@&type=%ld&offset=%ld&limit=%ld", urlEncode(query), type, offset, limit];
+    NSString *HTTPBody = [NSString stringWithFormat:@"s=%@&type=%zd&offset=%zd&limit=%zd", urlEncode(query), type, offset, limit];
     NSMutableURLRequest *request = [self requestWithURLString:@"http://music.163.com/api/search/pc"];
     request.HTTPBody = [HTTPBody dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPMethod = @"POST";
@@ -33,8 +33,8 @@ NSString *urlEncode(NSString *input);
  获取音乐信息
  */
 + (void)musicInfoWithId:(NSInteger)musicId completionHandler:(NeteaseMusicAPICompletionHandler)completionHandler {
-    NSString *ids = [NSString stringWithFormat:@"[%ld]", musicId];
-    NSString *parameters = [NSString stringWithFormat:@"id=%ld&ids=%@", musicId, urlEncode(ids)];
+    NSString *ids = [NSString stringWithFormat:@"[%zd]", musicId];
+    NSString *parameters = [NSString stringWithFormat:@"id=%zd&ids=%@", musicId, urlEncode(ids)];
     NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/song/detail?%@", parameters];
     NSMutableURLRequest *request = [self requestWithURLString:URLString];
     request.HTTPMethod = @"GET";
@@ -45,7 +45,7 @@ NSString *urlEncode(NSString *input);
  获取歌手专辑列表
  */
 + (void)artistAlbumWithArtistId:(NSInteger)artistId limit:(NSInteger)limit completionHandler:(NeteaseMusicAPICompletionHandler)completionHandler {
-    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/artist/albums/%ld?limit=%ld", artistId, limit];
+    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/artist/albums/%zd?limit=%zd", artistId, limit];
     NSMutableURLRequest *request = [self requestWithURLString:URLString];
     request.HTTPMethod = @"GET";
     [[session dataTaskWithRequest:request completionHandler:completionHandler] resume];
@@ -55,7 +55,7 @@ NSString *urlEncode(NSString *input);
  专辑信息
  */
 + (void)albumInfoWithAlbumId:(NSInteger)albumId completionHandler:(NeteaseMusicAPICompletionHandler)completionHandler {
-    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/album/%ld", albumId];
+    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/album/%zd", albumId];
     NSMutableURLRequest *request = [self requestWithURLString:URLString];
     request.HTTPMethod = @"GET";
     [[session dataTaskWithRequest:request completionHandler:completionHandler] resume];
@@ -65,7 +65,7 @@ NSString *urlEncode(NSString *input);
  歌单
  */
 + (void)playlistInfoWithPlaylistId:(NSInteger)playlistId completionHandler:(NeteaseMusicAPICompletionHandler)completionHandler {
-    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/playlist/detail?id=%ld", playlistId];
+    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/playlist/detail?id=%zd", playlistId];
     NSMutableURLRequest *request = [self requestWithURLString:URLString];
     request.HTTPMethod = @"GET";
     [[session dataTaskWithRequest:request completionHandler:completionHandler] resume];
@@ -75,7 +75,7 @@ NSString *urlEncode(NSString *input);
  歌词
  */
 + (void)musicLyricWithMusicId:(NSInteger)musicId completionHandler:(NeteaseMusicAPICompletionHandler)completionHandler {
-    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/song/lyric?os=pc&id=%ld&lv=-1&kv=-1&tv=-1", musicId];
+    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/song/lyric?os=pc&id=%zd&lv=-1&kv=-1&tv=-1", musicId];
     NSMutableURLRequest *request = [self requestWithURLString:URLString];
     request.HTTPMethod = @"GET";
     [[session dataTaskWithRequest:request completionHandler:completionHandler] resume];
@@ -85,14 +85,14 @@ NSString *urlEncode(NSString *input);
  MV信息
  */
 + (void)mvInfoWithMvID:(NSInteger)mvId completionHandler:(NeteaseMusicAPICompletionHandler)completionHandler {
-    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/mv/detail?id=%ld&type=mp4", mvId];
+    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/mv/detail?id=%zd&type=mp4", mvId];
     NSMutableURLRequest *request = [self requestWithURLString:URLString];
     request.HTTPMethod = @"GET";
     [[session dataTaskWithRequest:request completionHandler:completionHandler] resume];
 }
 
 + (void)programInfoWithProgramId:(NSInteger)programId completionHandler:(NeteaseMusicAPICompletionHandler)completionHandler {
-    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/dj/program/detail?id=%ld", programId];
+    NSString *URLString = [NSString stringWithFormat:@"http://music.163.com/api/dj/program/detail?id=%zd", programId];
     NSMutableURLRequest *request = [self requestWithURLString:URLString];
     request.HTTPMethod = @"GET";
     [[session dataTaskWithRequest:request completionHandler:completionHandler] resume];

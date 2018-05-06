@@ -12,6 +12,7 @@
 //#import "IMHTabBarController.h"
 #import "MUSHomeListViewController.h"
 #import "SINUserManager.h"
+#import "UIView+GestureCallback.h"
 
 @interface LMJMessageViewController ()
 /** <#digest#> */

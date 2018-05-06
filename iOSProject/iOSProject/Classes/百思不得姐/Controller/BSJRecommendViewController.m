@@ -51,11 +51,12 @@
         LMJWeak(self);
         [self.recommendSevice getRecommendCategorys:^(NSError *error) {
             [weakself dismissLoading];
-            
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wint-conversion"
             [weakself.view configBlankPage:0 hasData:!error hasError:error reloadButtonBlock:^(id sender) {
                 [weakself getCategorys];
             }];
-            
+#pragma clang diagnostic pop
             if (error) {
                 [weakself.view makeToast:error.localizedDescription];
             }

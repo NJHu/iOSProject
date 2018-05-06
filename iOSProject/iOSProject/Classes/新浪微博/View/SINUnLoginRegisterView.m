@@ -11,10 +11,10 @@
 @interface SINUnLoginRegisterView ()
 
 /** <#digest#> */
-@property (nonatomic, copy) void(^registClick)();
+@property (nonatomic, copy) void(^registClick)(void);
 
 /** <#digest#> */
-@property (nonatomic, copy) void(^loginClick)();
+@property (nonatomic, copy) void(^loginClick)(void);
 
 /** <#digest#> */
 @property (assign, nonatomic) SINUnLoginRegisterViewType type;
@@ -37,7 +37,7 @@
 
 @implementation SINUnLoginRegisterView
 
-+ (instancetype)unLoginRegisterViewWithType:(SINUnLoginRegisterViewType)type registClick:(void (^)())registClick loginClick:(void (^)())loginClick
++ (instancetype)unLoginRegisterViewWithType:(SINUnLoginRegisterViewType)type registClick:(void (^)(void))registClick loginClick:(void (^)(void))loginClick
 {
     SINUnLoginRegisterView *unLoginRegisterView = [[SINUnLoginRegisterView alloc] init];
     unLoginRegisterView.registClick = registClick;

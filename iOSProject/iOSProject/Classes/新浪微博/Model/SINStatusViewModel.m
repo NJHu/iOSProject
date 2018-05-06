@@ -12,6 +12,7 @@
 #import "SINUser.h"
 #import <HMEmoticonManager.h>
 #import <UIImage+HMEmoticon.h>
+#import "NSDecimalNumber+Addtion.h"
 
 static const CGFloat margin = 10.0;
 

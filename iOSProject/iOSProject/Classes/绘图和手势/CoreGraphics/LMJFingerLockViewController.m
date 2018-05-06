@@ -58,7 +58,7 @@
         NSMutableString *strM = [NSMutableString string];
         
         for (UIButton *btn in self.selectedBtns) {
-            [strM appendFormat:@"%ld", btn.tag];
+            [strM appendFormat:@"%zd", btn.tag];
         }
         
         NSLog(@"%@", strM);

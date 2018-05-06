@@ -21,6 +21,6 @@ typedef enum : NSUInteger {
 
 @interface SINUnLoginRegisterView : UIView
 
-+ (instancetype)unLoginRegisterViewWithType:(SINUnLoginRegisterViewType)type registClick:(void(^)())registClick loginClick:(void(^)())loginClick;
++ (instancetype)unLoginRegisterViewWithType:(SINUnLoginRegisterViewType)type registClick:(void(^)(void))registClick loginClick:(void(^)(void))loginClick;
 
 @end

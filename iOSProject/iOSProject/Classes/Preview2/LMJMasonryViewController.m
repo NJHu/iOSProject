@@ -7,7 +7,7 @@
 //
 
 #import "LMJMasonryViewController.h"
-
+#import "UIView+GestureCallback.h"
 @interface LMJMasonryViewController ()
 
 @end

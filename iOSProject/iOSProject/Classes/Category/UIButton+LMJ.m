@@ -7,6 +7,7 @@
 //
 
 #import "UIButton+LMJ.h"
+#import "UIView+GestureCallback.h"
 
 static const void *UIButtonBlockKey = &UIButtonBlockKey;
 

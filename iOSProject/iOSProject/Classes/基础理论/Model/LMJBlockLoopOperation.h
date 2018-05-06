@@ -10,7 +10,7 @@
 
 @interface LMJBlockLoopOperation : NSObject
 
-+ (void)operateWithSuccessBlock:(void(^)())successBlock;
++ (void)operateWithSuccessBlock:(void(^)(void))successBlock;
 
 /** <#digest#> */
 @property (nonatomic, copy) NSString *address;

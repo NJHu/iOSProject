@@ -10,6 +10,7 @@
 #import "BSJTopicViewModel.h"
 #import <M13ProgressViewRing.h>
 #import <FLAnimatedImageView+WebCache.h>
+#import "UIView+GestureCallback.h"
 
 @interface BSJPictureShowViewController ()<UIScrollViewDelegate>
 /** <#digest#> */

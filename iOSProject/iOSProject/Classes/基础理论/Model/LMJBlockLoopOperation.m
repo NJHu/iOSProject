@@ -10,7 +10,7 @@
 
 @implementation LMJBlockLoopOperation
 
-+ (void)operateWithSuccessBlock:(void(^)())successBlock
++ (void)operateWithSuccessBlock:(void(^)(void))successBlock
 {
     if (successBlock) {
         successBlock();

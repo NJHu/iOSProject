@@ -16,7 +16,7 @@
 
 
 /** <#digest#> */
-@property (nonatomic, copy) BOOL(^selectGroup)();
+@property (nonatomic, copy) BOOL(^selectGroup)(void);
 
 
 + (instancetype)headerViewWithTableView:(UITableView *)tableView;

@@ -103,7 +103,7 @@
     
     leftView.backgroundColor = [UIColor yellowColor];
     
-    self.backBtn.mj_origin = CGPointZero;
+    self.backBtn.lmj_origin = CGPointZero;
     
     self.closeBtn.lmj_x = leftView.lmj_width - self.closeBtn.lmj_width;
     

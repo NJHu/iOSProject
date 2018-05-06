@@ -7,6 +7,7 @@
 //
 
 #import "LMJDownLoadFileViewController.h"
+#import "MBProgressHUD+LMJ.h"
 
 @interface LMJDownLoadFileViewController ()
 

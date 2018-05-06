@@ -7,6 +7,8 @@
 //
 
 #import "AdvertiseView.h"
+#import <YYAnimatedImageView.h>
+#import <YYImage.h>
 
 NSString *const NotificationContants_Advertise_Key = @"NotificationContants_Advertise_Key";
 

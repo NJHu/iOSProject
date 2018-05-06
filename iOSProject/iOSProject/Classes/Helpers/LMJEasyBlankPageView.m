@@ -7,6 +7,7 @@
 //
 
 #import "LMJEasyBlankPageView.h"
+#import <YYAnimatedImageView.h>
 
 @interface LMJEasyBlankPageView()
 /** 加载按钮 */

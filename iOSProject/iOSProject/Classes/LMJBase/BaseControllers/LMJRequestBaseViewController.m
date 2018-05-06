@@ -7,6 +7,7 @@
 //
 
 #import "LMJRequestBaseViewController.h"
+#import "MBProgressHUD+LMJ.h"
 
 @interface LMJRequestBaseViewController ()
 

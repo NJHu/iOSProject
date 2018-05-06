@@ -7,6 +7,8 @@
 //
 
 #import "LMJIntroductoryPagesView.h"
+#import <YYAnimatedImageView.h>
+#import <YYImage.h>
 
 @interface LMJIntroductoryPagesView ()<UIScrollViewDelegate>
 /** <#digest#> */

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MJRefresh.h>
 
 @interface LMJAutoRefreshFooter : MJRefreshAutoNormalFooter
 

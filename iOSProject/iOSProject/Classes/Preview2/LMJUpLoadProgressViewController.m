@@ -12,6 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <TZImageManager.h>
 #import <TZLocationManager.h>
+#import "MBProgressHUD+LMJ.h"
 
 static const NSInteger maxPhotoCount = 9;
 

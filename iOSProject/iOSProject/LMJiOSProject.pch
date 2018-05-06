@@ -9,15 +9,14 @@
 #ifndef NJiOSProject_pch
 #define NJiOSProject_pch
 
-#pragma clang diagnostic ignored "-Wstrict-prototypes"
 // category
 #import "UIView+LMJNjHuFrame.h"
 #import "MBProgressHUD+LMJ.h"
 #import "UIView+GestureCallback.h"
 #import "UIColor+Random.h"
 #import "UIButton+LMJ.h"
-#import "UITextView+WZB.h"
-#import "NSDecimalNumber+Addtion.h"
+//#import "UITextView+WZB.h"
+//#import "NSDecimalNumber+Addtion.h"
 
 // helpers
 #import "LMJConst.h"
@@ -29,17 +28,17 @@
 
 
 // libs
-#import <AFNetworking.h>
+//#import <AFNetworking.h>
 #import <IQKeyboardManager.h>
 #import <Masonry.h>
-#import <MBProgressHUD.h>
+//#import <MBProgressHUD.h>
 #import <MJExtension.h>
-#import <MJRefresh.h>
-#import <SDCycleScrollView.h>
+//#import <MJRefresh.h>
+//#import <SDCycleScrollView.h>
 #import <UIImageView+WebCache.h>
-#import <YYAsyncLayer.h>
+//#import <YYAsyncLayer.h>
 #import <YYCategories.h>
-#import <YYImage.h>
+//#import <YYImage.h>
 #import <YYText.h>
 #import <Toast.h>
 

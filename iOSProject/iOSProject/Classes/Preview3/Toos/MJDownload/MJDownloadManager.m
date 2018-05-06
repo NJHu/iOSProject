@@ -240,7 +240,7 @@ static NSString * const MJDowndloadManagerDefaultIdentifier = @"com.github.njhu.
     // 获得文件总长度
     if (!self.totalBytesExpectedToWrite) {
         NSLog(@"%@", response.allHeaderFields);
-        NSLog(@"==== %lu =====", (NSUInteger)response.expectedContentLength);
+        NSLog(@"==== %zd =====", (NSUInteger)response.expectedContentLength);
         self.totalBytesExpectedToWrite = [response.allHeaderFields[@"Content-Length"] integerValue] + self.totalBytesWritten;
         
         // 存储文件总长度

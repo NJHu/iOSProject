@@ -54,11 +54,12 @@
     [self.topicService getTopicIsMore:isMore typeA:self.areaType topicType:self.topicType completion:^(NSError *error, NSInteger totalCount, NSInteger currentCount) {
         
         [weakself endHeaderFooterRefreshing];
-        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wint-conversion"
         [weakself.tableView configBlankPage:LMJEasyBlankPageViewTypeNoData hasData:currentCount hasError:error reloadButtonBlock:^(id sender) {
             [weakself.tableView.mj_header beginRefreshing];
         }];
-        
+#pragma clang diagnostic pop
         if (error) {
             [weakself.view makeToast:error.localizedDescription duration:3 position:CSToastPositionCenter];
             return ;

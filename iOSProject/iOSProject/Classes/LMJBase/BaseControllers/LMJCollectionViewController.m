@@ -7,9 +7,9 @@
 //
 
 #import "LMJCollectionViewController.h"
+#import "LMJAutoRefreshFooter.h"
 
 @interface LMJCollectionViewController ()<LMJVerticalFlowLayoutDelegate>
-
 
 @end
 

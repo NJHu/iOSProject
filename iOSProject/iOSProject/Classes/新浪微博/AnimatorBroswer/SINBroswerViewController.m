@@ -8,6 +8,7 @@
 
 #import "SINBroswerViewController.h"
 #import "SINBroswerCell.h"
+#import "UIView+GestureCallback.h"
 
 @interface SINBroswerViewController ()<LMJHorizontalFlowLayoutDelegate>
 
