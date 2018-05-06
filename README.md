@@ -42,7 +42,7 @@
 </ul>
 </td>
 <td>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/nj.jpg" width="150px" height="180px">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/nj.jpg" width="150px" height="180px" onclick="javascript:void(0);"/>
 </td>
 </tr>
 <tr>
