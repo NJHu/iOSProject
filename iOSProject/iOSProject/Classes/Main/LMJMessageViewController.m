@@ -60,7 +60,7 @@
     
     [self.sections addObject:section0];
     
-    [[LMJRequestManager sharedManager] GET:@"https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/accesstoken.json" parameters:nil completion:^(LMJBaseResponse *response) {
+    [[LMJRequestManager sharedManager] GET:[LMJNJHuBaseUrl stringByAppendingPathComponent:@"jsons/accesstoken.json"] parameters:nil completion:^(LMJBaseResponse *response) {
         NSLog(@"%@", response);
         if (LMJIsEmpty(response.responseObject) || ![response.responseObject isKindOfClass:[NSDictionary class]]) {
             return ;

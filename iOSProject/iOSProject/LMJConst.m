@@ -61,6 +61,8 @@ NSString *const  USER_APPID = @"56ce54a5";
 // 服务器XMG
 NSString *const LMJXMGBaseUrl = @"http://120.25.226.186:32812";
 
+// NJHu
+NSString *const LMJNJHuBaseUrl = @"https://njhu.github.io/data/iosproject";
 
 // 通知
 NSString *const LMJUMSocialShareSucceedNotification = @"LMJUMSocialShareSucceedNotification";

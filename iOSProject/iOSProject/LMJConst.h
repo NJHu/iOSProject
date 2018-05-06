@@ -64,3 +64,6 @@ UIKIT_EXTERN NSString *const LMJTableViewControllerDeallocNotification;
 
 // 服务器XMG
 UIKIT_EXTERN NSString *const LMJXMGBaseUrl;
+
+// NJHu
+UIKIT_EXTERN NSString *const LMJNJHuBaseUrl;
