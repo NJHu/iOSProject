@@ -114,7 +114,7 @@
 
     item12.destVc = [LMJDownLoadFileViewController class];
     
-    LMJWordArrowItem *item121 = [LMJWordArrowItem itemWithTitle:@"文件 断点 离线 缓存 下载" subTitle: @""];
+    LMJWordArrowItem *item121 = [LMJWordArrowItem itemWithTitle:@"文件 断点 缓存 下载" subTitle: @""];
     
     item121.destVc = [LMJOfflineDownloadViewController class];
 
