@@ -17,15 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CAReplicatorLayer *layer =  (CAReplicatorLayer *)_repView.layer;
+    CAReplicatorLayer *layer = (CAReplicatorLayer *)_repView.layer;
     
     layer.instanceCount = 2;
-    
     
     CATransform3D transform = CATransform3DMakeTranslation(0, _repView.bounds.size.height, 0);
     // 绕着X轴旋转
     transform = CATransform3DRotate(transform, M_PI, 1, 0, 0);
-    
     
     // 往下面平移控件的高度
     layer.instanceTransform = transform;
