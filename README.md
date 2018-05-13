@@ -5,7 +5,7 @@
 <ul>
 <li>编写JS文件, OC交互</li>
 <li>RSA 加密解密</li>
-<li>iOS UniversalLink 通用链接 Demo(任意浏览器和WebView打开App); 需要真机测试的小伙伴加<b>微信</b>: NJCoderLi</li>
+<li>iOS UniversalLink 通用链接 Demo(任意浏览器和WebView打开App)</li>
 </ul>
 </div>
 
