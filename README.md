@@ -10,7 +10,7 @@
 </div>
 
 <div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/zh.gif" width="24%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%">
 </div>
 
 <h1><a id="Getting_Started">iOSProject</a></h1>
@@ -29,14 +29,6 @@
 </ul>
 </li>
 <li><a href="#homeBaseShareLogin">分享和第三方登录</a></li>
-<li><a href="#demo_s">综合案例 Apps 模仿</a>
-<ul>
-<li><a href="#bsj">模仿百思不得姐App-BSJ</a></li>
-<li><a href="#wb">模仿微博App-Sina</a></li>
-<li><a href="#qqmusic">音乐音频播放-Music</a></li>
-<li><a href="#videos">列表视频-Video</a></li>
-</ul>
-</li>
 <li><a href="#other_s">Others 其他</a></li>
 <li><a href="#qidai">期待</a></li>
 </ul>
@@ -102,38 +94,6 @@ Email: <a href="mailto:64hp@163.com">64hp@163.com</a>
 <br>
 <br>
 
-<h2><a id="demo_s">综合案例 Apps 模仿</a></h2>
-<div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/demos.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/bsj.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/wb.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/sp.gif" width="24%">
-</div>
-
-<h3><a id="bsj">模仿百思不得姐App-BSJ</a></h3>
-<div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/1.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/2.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/3.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/4.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/5.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/6.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/7.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/12.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/13.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/14.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/bsj/15.png" width="24%">
-</div>
-<br>
-<br>
-
-<h3><a id="wb">模仿微博App-Sina</a></h3>
-<div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/1.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/2.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/3.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/4.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/5.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wb/6.png" width="24%">
-</div>
-<br>
-<br>
-
-<h3><a id="qqmusic">音乐音频播放-Music</a></h3>
-<div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qqmusic/1.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qqmusic/2.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/qqmusic/3.png" width="24%">
-</div>
-<br>
-<br>
-
-<h3><a id="videos">列表视频-Video</a></h3>
-<div>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/1.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/2.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/3.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/4.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/5.png" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/sp/6.png" width="24%">
-</div>
-<br>
-<br>
 
 <h2><a id="other_s">其他</a></h2> 
 <div>
