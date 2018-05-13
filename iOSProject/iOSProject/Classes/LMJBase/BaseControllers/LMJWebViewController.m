@@ -38,12 +38,12 @@
     self.webView.UIDelegate = self;
     
     if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
-        UIEdgeInsets contentInset = self.webView.scrollView.contentInset;
-        contentInset.top += self.lmj_navgationBar.lmj_height;
-        self.webView.scrollView.contentInset = contentInset;
         if (@available(iOS 11.0, *)){
             self.webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
+        UIEdgeInsets contentInset = self.webView.scrollView.contentInset;
+        contentInset.top += self.lmj_navgationBar.lmj_height;
+        self.webView.scrollView.contentInset = contentInset;
         self.webView.scrollView.scrollIndicatorInsets = self.webView.scrollView.contentInset;
     }
     
@@ -83,6 +83,10 @@
     }else if (!LMJIsEmpty(self.contentHTML)) {
         [self.webView loadHTMLString:self.contentHTML baseURL:nil];
     }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.webView reload];
+    });
 }
 
 

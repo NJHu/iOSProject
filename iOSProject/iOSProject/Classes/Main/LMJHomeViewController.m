@@ -174,7 +174,11 @@
 /** 左边的按钮的点击 */
 -(void)leftButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
+    LMJWebViewController *ac = [LMJWebViewController new];
+    ac.gotoURL = @"https://baidu.com";
     
+    [self.navigationController pushViewController:ac animated:YES];
+    NSLog(@"%s", __func__);
 }
 /** 右边的按钮的点击 */
 -(void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
