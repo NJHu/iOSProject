@@ -27,7 +27,6 @@
 		583D507020731574001480C8 /* LMJLocalJsons in Resources */ = {isa = PBXBuildFile; fileRef = 583D506F20731574001480C8 /* LMJLocalJsons */; };
 		583D508420765948001480C8 /* TDTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 583D508320765948001480C8 /* TDTouchID.m */; };
 		583D508720765978001480C8 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 583D508520765978001480C8 /* YYFPSLabel.m */; };
-		584038001FF61D00002A0566 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584037FF1FF61D00002A0566 /* MapKit.framework */; };
 		584038061FF62371002A0566 /* LMJAddressPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038051FF62371002A0566 /* LMJAddressPickerViewController.m */; };
 		584038091FF629AC002A0566 /* LMJNoNavBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584038071FF629AB002A0566 /* LMJNoNavBarViewController.m */; };
 		5840380C1FF62ECF002A0566 /* LMJAdaptFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5840380B1FF62ECF002A0566 /* LMJAdaptFontViewController.m */; };
@@ -78,7 +77,6 @@
 		585FC1F6209B2FE4003174A7 /* MCStudent+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1F2209B2FE3003174A7 /* MCStudent+CoreDataProperties.m */; };
 		585FC1F7209B2FE4003174A7 /* MCStudent+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1F5209B2FE4003174A7 /* MCStudent+CoreDataClass.m */; };
 		585FC1FA209B312E003174A7 /* MCCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FC1F9209B312E003174A7 /* MCCoreDataManager.m */; };
-		585FC1FF209C348E003174A7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585FC1FE209C348E003174A7 /* AudioToolbox.framework */; };
 		58651A9E1FFE6D6F0087419D /* SINStatusListDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */; };
 		58651A9F1FFE6D6F0087419D /* SINUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5D1FFE6D6E0087419D /* SINUserManager.m */; };
 		58651AA01FFE6D6F0087419D /* SINSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58651A5F1FFE6D6E0087419D /* SINSQLiteManager.m */; };
@@ -376,7 +374,6 @@
 		583D508520765978001480C8 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		583D508620765978001480C8 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		584037FE1FF61CF8002A0566 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
-		584037FF1FF61D00002A0566 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		584038041FF62370002A0566 /* LMJAddressPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJAddressPickerViewController.h; sourceTree = "<group>"; };
 		584038051FF62371002A0566 /* LMJAddressPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJAddressPickerViewController.m; sourceTree = "<group>"; };
 		584038071FF629AB002A0566 /* LMJNoNavBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJNoNavBarViewController.m; sourceTree = "<group>"; };
@@ -471,7 +468,6 @@
 		585FC1F5209B2FE4003174A7 /* MCStudent+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MCStudent+CoreDataClass.m"; sourceTree = "<group>"; };
 		585FC1F8209B312E003174A7 /* MCCoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCCoreDataManager.h; sourceTree = "<group>"; };
 		585FC1F9209B312E003174A7 /* MCCoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCCoreDataManager.m; sourceTree = "<group>"; };
-		585FC1FE209C348E003174A7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		58651A5C1FFE6D6E0087419D /* SINStatusListDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINStatusListDAL.m; sourceTree = "<group>"; };
 		58651A5D1FFE6D6E0087419D /* SINUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SINUserManager.m; sourceTree = "<group>"; };
 		58651A5E1FFE6D6E0087419D /* SINSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SINSQLiteManager.h; sourceTree = "<group>"; };
@@ -948,9 +944,7 @@
 				58DC88D01FFDEF030060DC03 /* libiconv.2.4.0.tbd in Frameworks */,
 				58DC88CE1FFDEEF70060DC03 /* libbz2.1.0.tbd in Frameworks */,
 				5892ACC21FF4F45700E868C2 /* libUMessage_Sdk_1.5.0.a in Frameworks */,
-				584038001FF61D00002A0566 /* MapKit.framework in Frameworks */,
 				54E3991EBFDEC31145ED8B0F /* libPods-iOSProject.a in Frameworks */,
-				585FC1FF209C348E003174A7 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2187,10 +2181,8 @@
 		8FC3A5937CA448C8AE6DDE55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				585FC1FE209C348E003174A7 /* AudioToolbox.framework */,
 				58DC88CF1FFDEF020060DC03 /* libiconv.2.4.0.tbd */,
 				58DC88CD1FFDEEF70060DC03 /* libbz2.1.0.tbd */,
-				584037FF1FF61D00002A0566 /* MapKit.framework */,
 				195AF1DB9976AB51691A659C /* libPods-iOSProject.a */,
 			);
 			name = Frameworks;
@@ -2242,14 +2234,17 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.InterAppAudio = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -2789,7 +2784,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 44HDC9YG72;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = iOSProject/LMJiOSProject.pch;
 				INFOPLIST_FILE = iOSProject/Info.plist;
@@ -2901,7 +2896,7 @@
 					"-framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.njhu;
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.njhu.iosproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2920,7 +2915,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 44HDC9YG72;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = iOSProject/LMJiOSProject.pch;
 				INFOPLIST_FILE = iOSProject/Info.plist;
@@ -3032,7 +3027,7 @@
 					"-framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.njhu;
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.njhu.iosproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

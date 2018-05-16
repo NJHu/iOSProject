@@ -20,6 +20,11 @@
     
     self.window.rootViewController = [[LMJTabBarController alloc] init];
     
+    // 检查更新
+    [[LMJRequestManager sharedManager] GET:[LMJNJHuBaseUrl stringByAppendingPathComponent:@"jsons/updateapp.json"] parameters:nil completion:^(LMJBaseResponse *response) {
+        [self checkVersion:response];
+    }];
+    
     // 欢迎视图
     [LMJIntroductoryPagesHelper showIntroductoryPageView:@[@"intro_0.jpg", @"intro_1.jpg", @"intro_2.jpg", @"intro_3.jpg"]];
     
@@ -185,6 +190,46 @@
     }
 }
 
+
+#pragma mark - checkVersion
+- (void)checkVersion:(LMJBaseResponse *)response
+{
+    if (response.error || LMJIsEmpty(response.responseObject)) {
+        return;
+    }
+    
+    NSDictionary *responseData = response.responseObject;
+    NSInteger lastest = [responseData[@"lastest"] integerValue];
+    NSString *lastestUrl = responseData[@"lastestUrl"];
+    
+    if (!lastest || LMJIsEmpty(lastestUrl)) {
+        return;
+    }
+    
+    BOOL isForce = [responseData[@"isForce"] boolValue];
+    NSInteger minSupport = [responseData[@"minSupport"] integerValue];
+    NSString *suggestion = responseData[@"suggestion"];
+    
+    NSInteger currentVersion = [[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] integerValue];
+    
+    if (currentVersion < lastest) {
+        [UIAlertController mj_showAlertWithTitle:@"提示" message:suggestion appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+            
+            alertMaker.addActionDefaultTitle(@"确认升级");
+            if (!isForce && minSupport <= currentVersion) {
+                alertMaker.addActionCancelTitle(@"先用着吧");
+            }
+            
+        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+            
+            if (buttonIndex == 0) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:lastestUrl] options:@{} completionHandler:^(BOOL success) {
+                    NSLog(@"%zd", success);
+                }];
+            }
+        }];
+    }
+}
 
 #pragma mark - getter
 - (UIWindow *)window
