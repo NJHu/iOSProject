@@ -196,6 +196,7 @@
 		58A858522078842B0063DE98 /* LMJStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A858512078842B0063DE98 /* LMJStudent.m */; };
 		58A858A6207C934E0063DE98 /* PresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A858A5207C934E0063DE98 /* PresentAnimator.m */; };
 		58AE5CF520103BA3003BD369 /* VIDMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */; };
+		58B36C6220ABF3C700915868 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B36C6120ABF3C700915868 /* AudioToolbox.framework */; };
 		58B59D0A2015B17800C4C4C9 /* LMJCasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B59D092015B17800C4C4C9 /* LMJCasesViewController.m */; };
 		58C51F8B208C221500EECAAA /* VideoDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C51F8A208C221500EECAAA /* VideoDemo.storyboard */; };
 		58C51F8E208C2EF100EECAAA /* VIDListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C51F8D208C2EF100EECAAA /* VIDListViewController.m */; };
@@ -693,6 +694,7 @@
 		58A858A5207C934E0063DE98 /* PresentAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentAnimator.m; sourceTree = "<group>"; };
 		58AE5CF320103BA3003BD369 /* VIDMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDMoviePlayerViewController.h; sourceTree = "<group>"; };
 		58AE5CF420103BA3003BD369 /* VIDMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDMoviePlayerViewController.m; sourceTree = "<group>"; };
+		58B36C6120ABF3C700915868 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		58B59D082015B17800C4C4C9 /* LMJCasesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJCasesViewController.h; sourceTree = "<group>"; };
 		58B59D092015B17800C4C4C9 /* LMJCasesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJCasesViewController.m; sourceTree = "<group>"; };
 		58C51F8A208C221500EECAAA /* VideoDemo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoDemo.storyboard; sourceTree = "<group>"; };
@@ -943,6 +945,7 @@
 			files = (
 				58DC88D01FFDEF030060DC03 /* libiconv.2.4.0.tbd in Frameworks */,
 				58DC88CE1FFDEEF70060DC03 /* libbz2.1.0.tbd in Frameworks */,
+				58B36C6220ABF3C700915868 /* AudioToolbox.framework in Frameworks */,
 				5892ACC21FF4F45700E868C2 /* libUMessage_Sdk_1.5.0.a in Frameworks */,
 				54E3991EBFDEC31145ED8B0F /* libPods-iOSProject.a in Frameworks */,
 			);
@@ -2181,6 +2184,7 @@
 		8FC3A5937CA448C8AE6DDE55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58B36C6120ABF3C700915868 /* AudioToolbox.framework */,
 				58DC88CF1FFDEF020060DC03 /* libiconv.2.4.0.tbd */,
 				58DC88CD1FFDEEF70060DC03 /* libbz2.1.0.tbd */,
 				195AF1DB9976AB51691A659C /* libPods-iOSProject.a */,
@@ -2238,7 +2242,7 @@
 								enabled = 0;
 							};
 							com.apple.InterAppAudio = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Keychain = {
 								enabled = 1;
@@ -2247,7 +2251,7 @@
 								enabled = 0;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.SafariKeychain = {
 								enabled = 1;
