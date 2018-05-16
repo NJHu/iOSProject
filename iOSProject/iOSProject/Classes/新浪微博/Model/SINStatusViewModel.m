@@ -10,8 +10,6 @@
 #import "SINStatus.h"
 #import "SINDictURL.h"
 #import "SINUser.h"
-#import <HMEmoticonManager.h>
-#import <UIImage+HMEmoticon.h>
 #import "NSDecimalNumber+Addtion.h"
 
 static const CGFloat margin = 10.0;
@@ -68,7 +66,10 @@ static const CGFloat margin = 10.0;
     if(_sin_textPost == nil && !LMJIsEmpty(self.status.text))
     {
         //        LMJWeak(self);
-        NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithAttributedString:[[HMEmoticonManager sharedManager] emoticonStringWithString:self.status.text font:[UIFont systemFontOfSize:AdaptedWidth(15)] textColor:UIColor.redColor]];
+//        NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithAttributedString:[[HMEmoticonManager sharedManager] emoticonStringWithString:self.status.text font:[UIFont systemFontOfSize:AdaptedWidth(15)] textColor:UIColor.redColor]];
+        
+        NSMutableAttributedString *postTextM = [[NSMutableAttributedString alloc] initWithString:self.status.text];
+
         
         postTextM.yy_lineSpacing = 4.0;
         postTextM.yy_font = [UIFont systemFontOfSize:AdaptedWidth(15)];

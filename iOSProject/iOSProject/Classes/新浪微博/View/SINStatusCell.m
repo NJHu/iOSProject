@@ -14,7 +14,7 @@
 #import "SINStatusToolBarView.h"
 #import "SINStatusPicsView.h"
 #import "SINStatusRetweetView.h"
-#import <HMEmoticonManager.h>
+//#import <HMEmoticonManager.h>
 #import <KILabel.h>
 #import "LMJWebViewController.h"
 

@@ -24,7 +24,6 @@ PODS:
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
-  - HMEmoticon (1.0.12)
   - HMQRCodeScanner (1.0.6)
   - IQKeyboardManager (6.0.0)
   - KILabel (1.0.1)
@@ -87,7 +86,6 @@ DEPENDENCIES:
   - FCUUID
   - FDFullscreenPopGesture
   - FMDB
-  - HMEmoticon
   - HMQRCodeScanner
   - IQKeyboardManager
   - KILabel
@@ -125,7 +123,6 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
-  HMEmoticon: 7cac18c01b74a2eaf833e2083c0238cb3c29b6a8
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
   IQKeyboardManager: fdba62488e23c48a3fa8591635aff166ed946632
   KILabel: 4797807cdc0b4992dad8bf91175ddc973c3b569b
@@ -152,6 +149,6 @@ SPEC CHECKSUMS:
   ZFPlayer: 833cb3974b619bfd01a0ec1ebaabfe6f629e85b4
   ZJScrollPageView: dd8778909cb2413782616ab156e873956f6b0682
 
-PODFILE CHECKSUM: c6265453adf9fc173ff9be7d4c44169cc5e579a9
+PODFILE CHECKSUM: ec0f49702c6228fa3c32d892a026cbfc2a67c178
 
 COCOAPODS: 1.2.0

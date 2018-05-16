@@ -37,7 +37,7 @@ pod 'BaiduMapKit'
 pod 'CYLTabBarController'
 
 # 表情键盘
-pod 'HMEmoticon'
+#pod 'HMEmoticon'
 # 正则匹配点击
 pod 'KILabel'
 

@@ -7,7 +7,7 @@
 //
 
 #import "SINUserManager.h"
-#import <HMEmoticonManager.h>
+//#import <HMEmoticonManager.h>
 #import "LMJUMengHelper.h"
 
 @interface SINUserManager ()
@@ -50,7 +50,7 @@
         self.iconurl = result.iconurl;
         self.uid = result.uid;
         
-        [HMEmoticonManager sharedManager].userIdentifier = self.uid;
+//        [HMEmoticonManager sharedManager].userIdentifier = self.uid;
         
         [self saveToFile];
         completion(nil);

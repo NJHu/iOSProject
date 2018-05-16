@@ -7,17 +7,18 @@
 //
 
 #import "SINPublishViewController.h"
-#import <HMEmoticonManager.h>
-#import <HMEmoticonTextView.h>
+//#import <HMEmoticonManager.h>
+//#import <HMEmoticonTextView.h>
 #import "SINPublishToolBar.h"
 #import "SINPostStatusService.h"
 #import "LMJUpLoadImageCell.h"
 #import "SINPickPhotoTool.h"
+#import "UITextView+WZB.h"
 
 @interface SINPublishViewController ()<YYTextKeyboardObserver, LMJVerticalFlowLayoutDelegate>
 
 /** <#digest#> */
-@property (weak, nonatomic) HMEmoticonTextView *postTextView;
+@property (weak, nonatomic) UITextView *postTextView;
 
 /** <#digest#> */
 @property (weak, nonatomic) SINPublishToolBar *publishTooBar;
@@ -122,25 +123,25 @@
 }
 
 #pragma mark - textviewdelegate
-- (void)textViewDidChange:(HMEmoticonTextView *)textView
+- (void)textViewDidChange:(UITextView *)textView
 {
-    [(UIButton *)self.lmj_navgationBar.rightView setEnabled:textView.emoticonText.length >= 20];
+    [(UIButton *)self.lmj_navgationBar.rightView setEnabled:textView.text.length >= 20];
 }
 
-- (HMEmoticonTextView *)postTextView
+- (UITextView *)postTextView
 {
     if(_postTextView == nil)
     {
-        HMEmoticonTextView *postTextView = [[HMEmoticonTextView alloc] init];
+        UITextView *postTextView = [[UITextView alloc] init];
         [self.view addSubview:postTextView];
         _postTextView = postTextView;
         postTextView.delegate = self;
         // 1> 使用表情视图
-        postTextView.useEmoticonInputView = YES;
+//        postTextView.useEmoticonInputView = YES;
         // 2> 设置占位文本
-        postTextView.placeholder = @"分享新鲜事...";
+        postTextView.wzb_placeholder = @"分享新鲜事...";
         // 3> 设置最大文本长度
-        postTextView.maxInputLength = 200;
+//        postTextView.len = 200;
 //        与原生键盘之间的切换
 //        _textView.useEmoticonInputView = !_textView.isUseEmoticonInputView;
         [postTextView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -164,9 +165,9 @@
         LMJWeak(self);
         publishTooBar.selectInput = ^(SINPublishToolBarClickType type) {
             if (type == SINPublishToolBarClickTypeKeyboard) {
-                weakself.postTextView.useEmoticonInputView = NO;
+//                weakself.postTextView.useEmoticonInputView = NO;
             }else if (type == SINPublishToolBarClickTypeEmos){
-                weakself.postTextView.useEmoticonInputView = YES;
+//                weakself.postTextView.useEmoticonInputView = YES;
             }
             BOOL isf = weakself.postTextView.isFirstResponder;
             if (!isf) {
@@ -264,13 +265,13 @@
 
 - (void)rightButtonEvent:(UIButton *)sender navigationBar:(LMJNavigationBar *)navigationBar
 {
-    if (self.postTextView.emoticonText.stringByTrim.length < 20) {
+    if (self.postTextView.text.stringByTrim.length < 20) {
         [self.view makeToast:@"少于20个文字" duration:3 position:CSToastPositionCenter];
         return;
     }
     LMJWeak(self);
     [self showLoading];
-    [self.postStatusService retweetText:self.postTextView.emoticonText images:self.lmj_selectedImages completion:^(BOOL isSucceed) {
+    [self.postStatusService retweetText:self.postTextView.text images:self.lmj_selectedImages completion:^(BOOL isSucceed) {
         [weakself dismissLoading];
         [MBProgressHUD showInfo:isSucceed ? @"发布成功" : @"发布失败" ToView:weakself.view];
     }];
