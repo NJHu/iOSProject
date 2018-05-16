@@ -297,6 +297,8 @@
 	<string>App需要您的同意,才能访问日历</string>
 	<key>NSCameraUsageDescription</key>
 	<string>App需要使用您的相机</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>获取当前的位置</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
