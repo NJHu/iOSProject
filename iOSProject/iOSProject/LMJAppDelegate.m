@@ -44,7 +44,7 @@
     [LMJUMengHelper UMSocialStart];
     // 友盟推送
     [LMJUMengHelper UMPushStart:launchOptions];
-    
+
     if (launchOptions) {
         [UIAlertController mj_showAlertWithTitle:@"有launchOptions!!" message:launchOptions.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
             alertMaker.addActionCancelTitle(@"cancel").addActionDestructiveTitle(@"按钮1");
@@ -127,12 +127,12 @@
     
     NSLog(@"%@", string);
     
-    [UIAlertController mj_showAlertWithTitle:@"get deviceToken" message:string appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-
-        alertMaker.addActionDefaultTitle(@"确认");
-    } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-        
-    }];
+//    [UIAlertController mj_showAlertWithTitle:@"get deviceToken" message:string appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+//
+//        alertMaker.addActionDefaultTitle(@"确认");
+//    } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+//
+//    }];
 }
 
 
