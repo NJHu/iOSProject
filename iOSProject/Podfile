@@ -34,7 +34,7 @@ pod 'UMengUShare/Social/Sina'
 #百度地图SDK
 pod 'BaiduMapKit'
 
-pod 'CYLTabBarController'
+#pod 'CYLTabBarController'
 
 # 表情键盘
 #pod 'HMEmoticon'

@@ -6,8 +6,6 @@
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import <CYLTabBarController/CYLTabBarController.h>
-
-@interface SINTabBarController : CYLTabBarController
+@interface SINTabBarController : UITabBarController
 
 @end

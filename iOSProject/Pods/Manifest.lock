@@ -15,7 +15,6 @@ PODS:
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
   - BaiduMapKit (3.4.4)
-  - CYLTabBarController (1.17.6)
   - DWBubbleMenuButton (1.0.1)
   - FCUUID (1.3.1):
     - UICKeyChainStore (~> 2.1.0)
@@ -81,7 +80,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BaiduMapKit
-  - CYLTabBarController
   - DWBubbleMenuButton
   - FCUUID
   - FDFullscreenPopGesture
@@ -117,7 +115,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   BaiduMapKit: 4ac88f5a363500760392825b69709f4a0125f81e
-  CYLTabBarController: c374643dea6dadece8bdff9c70f7387f8ffd7d08
   DWBubbleMenuButton: 4d9bdbb9d662bdf65c93ceb7fc65901871143d1e
   FCUUID: bb054fc90cd7cd99320f9f6ff8e130fe607fba05
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
@@ -149,6 +146,6 @@ SPEC CHECKSUMS:
   ZFPlayer: 833cb3974b619bfd01a0ec1ebaabfe6f629e85b4
   ZJScrollPageView: dd8778909cb2413782616ab156e873956f6b0682
 
-PODFILE CHECKSUM: ec0f49702c6228fa3c32d892a026cbfc2a67c178
+PODFILE CHECKSUM: 46eb3f994331c758300b7ecba832f6cbc28aff94
 
 COCOAPODS: 1.2.0

@@ -46,10 +46,10 @@
     [LMJUMengHelper UMPushStart:launchOptions];
 
     if (launchOptions) {
-        [UIAlertController mj_showAlertWithTitle:@"有launchOptions!!" message:launchOptions.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-            alertMaker.addActionCancelTitle(@"cancel").addActionDestructiveTitle(@"按钮1");
-        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-        }];
+//        [UIAlertController mj_showAlertWithTitle:@"有launchOptions!!" message:launchOptions.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+//            alertMaker.addActionCancelTitle(@"cancel").addActionDestructiveTitle(@"按钮1");
+//        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+//        }];
     }
     return YES;
 }
@@ -85,12 +85,12 @@
     
     if (url) {
         NSLog(@"%@", url);
-        [UIAlertController mj_showAlertWithTitle:@"iOS9+scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-            
-            alertMaker.addActionDefaultTitle(@"确认");
-        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-            
-        }];
+//        [UIAlertController mj_showAlertWithTitle:@"iOS9+scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+//
+//            alertMaker.addActionDefaultTitle(@"确认");
+//        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+//
+//        }];
     }
     
     return result;
@@ -107,10 +107,10 @@
     }
     if (url) {
         NSLog(@"%@", url);
-        [UIAlertController mj_showAlertWithTitle:@"iOS9以下系统scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-            
-            alertMaker.addActionDefaultTitle(@"确认");
-        } actionsBlock:nil];
+//        [UIAlertController mj_showAlertWithTitle:@"iOS9以下系统scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+//
+//            alertMaker.addActionDefaultTitle(@"确认");
+//        } actionsBlock:nil];
         
     }
     
@@ -207,6 +207,8 @@
     }
     
     BOOL isForce = [responseData[@"isForce"] boolValue];
+    // 是否在审核
+    BOOL isInGod = [responseData[@"isInGod"] boolValue];
     NSInteger minSupport = [responseData[@"minSupport"] integerValue];
     NSString *suggestion = responseData[@"suggestion"];
     
@@ -228,6 +230,11 @@
                 }];
             }
         }];
+    }else {
+        if (isInGod) {
+            LMJNJIsInGod = isInGod;
+            self.window.rootViewController = [[LMJTabBarController alloc] init];
+        }
     }
 }
 

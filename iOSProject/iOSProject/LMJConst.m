@@ -68,3 +68,6 @@ NSString *const LMJNJHuBaseUrl = @"https://njhu.github.io/data/iosproject";
 NSString *const LMJUMSocialShareSucceedNotification = @"LMJUMSocialShareSucceedNotification";
 
 NSString *const LMJTableViewControllerDeallocNotification = @"LMJTableViewControllerDeallocNotification";
+
+BOOL LMJNJIsInGod = NO;
+

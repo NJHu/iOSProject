@@ -67,3 +67,8 @@ UIKIT_EXTERN NSString *const LMJXMGBaseUrl;
 
 // NJHu
 UIKIT_EXTERN NSString *const LMJNJHuBaseUrl;
+
+// 是否审核状态
+UIKIT_EXTERN  BOOL LMJNJIsInGod;
+
+
