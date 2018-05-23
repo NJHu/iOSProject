@@ -96,27 +96,6 @@
     return result;
 }
 
-// 支持所有iOS9以下系统,scheme 跳转
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    
-    if (!result) {
-        // 其他如支付等SDK的回调   
-    }
-    if (url) {
-        NSLog(@"%@", url);
-//        [UIAlertController mj_showAlertWithTitle:@"iOS9以下系统scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-//
-//            alertMaker.addActionDefaultTitle(@"确认");
-//        } actionsBlock:nil];
-        
-    }
-    
-    return result;
-}
-
 
 #pragma mark - deviceToken
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
