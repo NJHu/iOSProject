@@ -2,6 +2,15 @@
 #import "WKWebViewJsBridge.h"
 #import "WKBridgeTool.h"
 
+#define kHandlerName @"handlerName"
+#define kCallbackId @"callbackId"
+#define khandlerName @"handlerName"
+#define kData @"data"
+#define kCallbackId @"callbackId"
+#define kResponseId @"responseId"
+#define kResponseData @"responseData"
+#define KResponseData @"responseData"
+
 
 @interface WKWebViewJsBridge ()
 {
@@ -33,11 +42,7 @@
  abc=1&bcd=3
  */
 
-#define khandlerName @"handlerName"
-#define kData @"data"
-#define kCallbackId @"callbackId"
-#define kResponseId @"responseId"
-#define kResponseData @"responseData"
+
 
 #pragma mark - action
 - (void)continueAction:(NSURL *)url
@@ -86,7 +91,7 @@
     !handlerBlock ?: handlerBlock(data, responseCallback);
     
     
-#define KResponseData @"responseData"
+
     // response==========================================================================
     NSString *responseId = messageJsonDict[kResponseId];
     if (!LMJIsEmpty(responseId)) {
@@ -100,8 +105,6 @@
 
 - (void)callHandler:(NSString*)handlerName data:(id)data responseCallback:(void(^)(id responseData))responseCallback {
 
-#define kHandlerName @"handlerName"
-#define kCallbackId @"callbackId"
     
     NSDictionary *message01 = @{kHandlerName: handlerName, kData: data};
     
