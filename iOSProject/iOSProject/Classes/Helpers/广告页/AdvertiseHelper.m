@@ -133,7 +133,7 @@ static AdvertiseHelper* _instance = nil;
     if (!LMJIsEmpty(url)) {
         if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{@"username" : @"njhu"} completionHandler:^(BOOL success) {
-                NSLog(@"%zd", success);
+                NSLog(@"%d", success);
             }];
         }
     }

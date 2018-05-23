@@ -226,14 +226,14 @@
             
             if (buttonIndex == 0) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:lastestUrl] options:@{} completionHandler:^(BOOL success) {
-                    NSLog(@"%zd", success);
+                    NSLog(@"%d", success);
                 }];
             }
         }];
     }else {
         if (isInGod) {
-            LMJNJIsInGod = isInGod;
-            self.window.rootViewController = [[LMJTabBarController alloc] init];
+//            LMJNJIsInGod = isInGod;
+//            self.window.rootViewController = [[LMJTabBarController alloc] init];
         }
     }
 }

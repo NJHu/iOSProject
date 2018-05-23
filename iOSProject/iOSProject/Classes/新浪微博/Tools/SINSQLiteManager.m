@@ -97,7 +97,7 @@ static NSString *_dbPath = nil;
             int ID = [resultSet intForColumn:@"id"];
             NSString *userid = [resultSet stringForColumn:@"userid"];
             NSString *statusid = [resultSet stringForColumn:@"statusid"];
-            NSLog(@"%zd, %@, %@", ID, userid, statusid);
+            NSLog(@"%d, %@, %@", ID, userid, statusid);
         }
     }];
 }

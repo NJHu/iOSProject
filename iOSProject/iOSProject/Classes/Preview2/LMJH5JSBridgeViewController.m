@@ -58,7 +58,7 @@
     static int i = 0;
     i+=2;
     LMJWeak(self);
-    [self.jsBridge callHandler:@"insertContent" data:[NSString stringWithFormat:@"我是oc调用js传给js的内容, 内容: %zd", i] responseCallback:^(id responseData) {
+    [self.jsBridge callHandler:@"insertContent" data:[NSString stringWithFormat:@"我是oc调用js传给js的内容, 内容: %d", i] responseCallback:^(id responseData) {
         NSLog(@"%@", responseData);
         [weakself.view makeToast:responseData duration:3 position:CSToastPositionCenter];
     }];
