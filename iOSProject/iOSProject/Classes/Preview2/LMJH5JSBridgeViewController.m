@@ -45,6 +45,12 @@
     }];
     
     [self.view addSubview:btn];
+
+//    <script type="text/javascript" src="./H5Bridge.js"></script>
+    // js 引入的第二种方式, 第一种方式是H5 页面直接引入
+//    NSString *jsbridge_js = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"JSBridge_js/H5Bridge.js" ofType:nil] encoding:NSUTF8StringEncoding error:nil];
+//    WKUserScript *userJs = [[WKUserScript alloc] initWithSource:jsbridge_js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:NO];
+//    [self.webView.configuration.userContentController addUserScript:userJs];
 }
 
 - (void)addData

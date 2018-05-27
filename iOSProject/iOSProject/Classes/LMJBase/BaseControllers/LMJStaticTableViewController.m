@@ -111,7 +111,7 @@ const UIEdgeInsets tableViewDefaultLayoutMargins = {8, 8, 8, 8};
     if (!self.sections.firstObject) {
         [self.sections addObject:[LMJItemSection sectionWithItems:@[] andHeaderTitle:nil footerTitle:nil]];
     }
-    return  ^(LMJWordItem *item) {
+    return  ^LMJStaticTableViewController *(LMJWordItem *item) {
         [weakself.sections.firstObject.items addObject:item];
         return weakself;
     };
