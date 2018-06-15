@@ -34,8 +34,6 @@ pod 'UMengUShare/Social/Sina'
 #百度地图SDK
 pod 'BaiduMapKit'
 
-#pod 'CYLTabBarController'
-
 # 表情键盘
 #pod 'HMEmoticon'
 # 正则匹配点击
@@ -47,9 +45,6 @@ pod 'YYImage'
 pod 'YYText'
 pod 'YYAsyncLayer'
 pod 'YYCategories'
-
-# 通用链接跳转
-pod 'MagicWindowSDK'
 
 # 数据库
 pod 'FMDB'
@@ -72,7 +67,6 @@ pod 'FCUUID'
 
 # 三级联动 时间 地址
 pod 'MOFSPickerManager'
-
 
 # 全局滑动
 pod 'FDFullscreenPopGesture'
