@@ -46,11 +46,7 @@
     
     LMJNavigationController *five = [[LMJNavigationController alloc] initWithRootViewController:[[LMJCasesViewController alloc] init]];
     
-    if (!LMJNJIsInGod) {
-        self.viewControllers = @[two, one, three, five, four];
-    }else {
-        self.viewControllers = @[two, one];
-    }
+    self.viewControllers = @[two, one, three, five, four];
     
 }
 

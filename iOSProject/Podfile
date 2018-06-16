@@ -84,7 +84,7 @@ pod 'TZImagePickerController'
 pod 'ZJScrollPageView'
 
 # 列表视频
-pod 'ZFPlayer'
+pod 'ZFPlayer', '2.1.6'
 #pod 'ZFDownload'
 
 # mark- 好玩的

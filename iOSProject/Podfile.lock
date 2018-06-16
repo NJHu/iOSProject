@@ -70,9 +70,8 @@ PODS:
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
   - YYText (1.0.7)
-  - ZFPlayer (3.0.5):
-    - ZFPlayer/Core (= 3.0.5)
-  - ZFPlayer/Core (3.0.5)
+  - ZFPlayer (2.1.6):
+    - Masonry
   - ZJScrollPageView (0.4.0)
 
 DEPENDENCIES:
@@ -106,7 +105,7 @@ DEPENDENCIES:
   - YYCategories
   - YYImage
   - YYText
-  - ZFPlayer
+  - ZFPlayer (= 2.1.6)
   - ZJScrollPageView
 
 SPEC REPOS:
@@ -171,9 +170,9 @@ SPEC CHECKSUMS:
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
-  ZFPlayer: d341db8f7a52d4a51a935af2ba54ac949fe1f2c6
+  ZFPlayer: 833cb3974b619bfd01a0ec1ebaabfe6f629e85b4
   ZJScrollPageView: dd8778909cb2413782616ab156e873956f6b0682
 
-PODFILE CHECKSUM: 8098fcd87cf3265de83fc8856e2f26d6a9e38e07
+PODFILE CHECKSUM: a1680f3db982cfafdcff1a6a67163cd27a34b5ce
 
 COCOAPODS: 1.5.3

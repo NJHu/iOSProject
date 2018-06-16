@@ -2375,6 +2375,7 @@
 				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle",
+				"${PODS_ROOT}/ZFPlayer/ZFPlayer/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -2388,6 +2389,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TencentOpenApi_IOS_Bundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2821,7 +2823,6 @@
 					"-l\"MJExtension\"",
 					"-l\"MJRefresh\"",
 					"-l\"MOFSPickerManager\"",
-					"-l\"MagicWindowSDK\"",
 					"-l\"Masonry\"",
 					"-l\"Reachability\"",
 					"-l\"SDCycleScrollView\"",
@@ -2832,7 +2833,6 @@
 					"-l\"Toast\"",
 					"-l\"UICKeyChainStore\"",
 					"-l\"UMSocialLog\"",
-					"-l\"WeChatSDK\"",
 					"-l\"WeiboSDK\"",
 					"-l\"YYAsyncLayer\"",
 					"-l\"YYCategories\"",
@@ -2950,7 +2950,6 @@
 					"-l\"MJExtension\"",
 					"-l\"MJRefresh\"",
 					"-l\"MOFSPickerManager\"",
-					"-l\"MagicWindowSDK\"",
 					"-l\"Masonry\"",
 					"-l\"Reachability\"",
 					"-l\"SDCycleScrollView\"",
@@ -2961,7 +2960,6 @@
 					"-l\"Toast\"",
 					"-l\"UICKeyChainStore\"",
 					"-l\"UMSocialLog\"",
-					"-l\"WeChatSDK\"",
 					"-l\"WeiboSDK\"",
 					"-l\"YYAsyncLayer\"",
 					"-l\"YYCategories\"",

@@ -46,10 +46,10 @@
     [LMJUMengHelper UMPushStart:launchOptions];
 
     if (launchOptions) {
-//        [UIAlertController mj_showAlertWithTitle:@"有launchOptions!!" message:launchOptions.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-//            alertMaker.addActionCancelTitle(@"cancel").addActionDestructiveTitle(@"按钮1");
-//        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-//        }];
+        [UIAlertController mj_showAlertWithTitle:@"有launchOptions!!" message:launchOptions.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+            alertMaker.addActionCancelTitle(@"cancel").addActionDestructiveTitle(@"按钮1");
+        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+        }];
     }
     return YES;
 }
@@ -73,6 +73,17 @@
     return YES;
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+        BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    if (!result) {
+        // 其他如支付等SDK的回调
+        
+    }
+    return result;
+}
+#pragma clang diagnostic pop
 //iOS9+scheme跳转
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(nonnull NSDictionary *)options
 {
@@ -85,12 +96,12 @@
     
     if (url) {
         NSLog(@"%@", url);
-//        [UIAlertController mj_showAlertWithTitle:@"iOS9+scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-//
-//            alertMaker.addActionDefaultTitle(@"确认");
-//        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-//
-//        }];
+        [UIAlertController mj_showAlertWithTitle:@"iOS9+scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+
+            alertMaker.addActionDefaultTitle(@"确认");
+        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+
+        }];
     }
     
     return result;
@@ -106,12 +117,12 @@
     
     NSLog(@"%@", string);
     
-//    [UIAlertController mj_showAlertWithTitle:@"get deviceToken" message:string appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-//
-//        alertMaker.addActionDefaultTitle(@"确认");
-//    } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-//
-//    }];
+    [UIAlertController mj_showAlertWithTitle:@"get deviceToken" message:string appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+
+        alertMaker.addActionDefaultTitle(@"确认");
+    } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+
+    }];
 }
 
 

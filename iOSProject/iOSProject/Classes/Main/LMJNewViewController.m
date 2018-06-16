@@ -199,11 +199,7 @@
     item41.destVc = [LMJUniversalLinkViewController class];
 
     LMJItemSection *section0;
-    if (!LMJNJIsInGod) {
-            section0 = [LMJItemSection sectionWithItems:@[item40, item41, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item101, item11, item12, item121,item13, item29, item30, item15, item16, item17, item18, item19, item20, item201, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
-    }else {
-            section0 = [LMJItemSection sectionWithItems:@[item40, item41, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item101, item11, item12, item121,item13, item29, item30, item16, item17, item18, item19, item20, item201, item21, item22, item24, item25, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
-    }
+    section0 = [LMJItemSection sectionWithItems:@[item40, item41, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item101, item11, item12, item121,item13, item29, item30, item15, item16, item17, item18, item19, item20, item201, item21, item22, item24, item25, item26, item27, item28] andHeaderTitle:@"静态单元格的头部标题" footerTitle:@"静态单元格的尾部标题"];
 //    [section0.items sortUsingComparator:^NSComparisonResult(LMJWordItem  *_Nonnull obj1, LMJWordItem  *_Nonnull obj2) {
 //
 //        return [NSString stringWithFormat:@"%@%@", obj2.title, obj2.subTitle].length > [NSString stringWithFormat:@"%@%@", obj1.title, obj1.subTitle].length;
