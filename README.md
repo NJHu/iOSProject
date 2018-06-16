@@ -43,7 +43,10 @@
 GitHub: <a href="https://github.com/njhu">NJHu</a>
 </li>
 <li>
-Blog: <a href="https://www.weibo.com/njhu" rel="nofollow">NJHu 微博</a>
+简书: <a href="https://www.jianshu.com/u/dbc8e7afeb3d">NJHu 简书</a>
+</li>
+<li>
+Blog: <a href="https://www.weibo.com/njhu">NJHu 微博</a>
 </li>
 <li>
 Email: <a href="mailto:64hp@163.com">64hp@163.com</a>
