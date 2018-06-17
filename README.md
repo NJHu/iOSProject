@@ -3,7 +3,7 @@
 <div>
 <h3>近期更新</h3>
 <ul>
-<li>编写JS文件, OC交互</li>
+<li><a href="https://github.com/NJHu/swiftProject">swiftProject组件化学习</a></li>
 <li>RSA 加密解密</li>
 <li>iOS UniversalLink 通用链接 Demo(任意浏览器和WebView打开App)</li>
 </ul>
