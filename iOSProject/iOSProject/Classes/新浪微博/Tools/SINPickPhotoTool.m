@@ -162,7 +162,7 @@
 - (void)takePhoto
 {
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    if ((authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied) && iOS7Later) {
+    if ((authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied)) {
         // 无相机权限 做一个友好的提示
         [UIAlertController mj_showAlertWithTitle:@"无法使用相机" message:@"请在iPhone的""设置-隐私-相机""中允许访问相机" appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
             alertMaker.addActionDestructiveTitle(@"取消").addActionDefaultTitle(@"确认");
@@ -174,7 +174,6 @@
         
     } else if (authStatus == AVAuthorizationStatusNotDetermined) {
         // fix issue 466, 防止用户首次拍照拒绝授权时相机页黑屏
-        if (iOS7Later) {
             [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
                 if (granted) {
                     dispatch_sync(dispatch_get_main_queue(), ^{
@@ -182,12 +181,9 @@
                     });
                 }
             }];
-        } else {
-            [self takePhoto];
-        }
         // 拍照之前还需要检查相册权限
-    } else if ([TZImageManager authorizationStatus] == 2) { // 已被拒绝，没有相册权限，将无法保存拍的照片
-        if (iOS8Later) {
+    } else if (authStatus == AVAuthorizationStatusDenied) { // 已被拒绝，没有相册权限，将无法保存拍的照片
+
             [UIAlertController mj_showAlertWithTitle:@"无法使用相机" message:@"请在iPhone的""设置-隐私-相机""中允许访问相机" appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
                 alertMaker.addActionDestructiveTitle(@"取消").addActionDefaultTitle(@"确认");
             } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
@@ -195,8 +191,7 @@
                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
                 }
             }];
-        }
-    } else if ([TZImageManager authorizationStatus] == 0) { // 未请求过相册权限
+    } else if (authStatus == AVAuthorizationStatusNotDetermined) { // 未请求过相册权限
         [[TZImageManager manager] requestAuthorizationWithCompletion:^{
             [self takePhoto];
         }];
@@ -220,9 +215,7 @@
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
         self.imagePickerVc.sourceType = sourceType;
-        if(iOS8Later) {
             self.imagePickerVc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        }
         [self.currentViewController presentViewController:self.imagePickerVc animated:YES completion:nil];
     } else {
         NSLog(@"模拟器中无法打开照相机,请在真机中使用");
@@ -239,7 +232,7 @@
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
         
         // save photo and get asset / 保存图片，获取到asset
-        [[TZImageManager manager] savePhotoWithImage:image location:self.location completion:^(NSError *error){
+        [[TZImageManager manager] savePhotoWithImage:image location:self.location completion:^(PHAsset *asset, NSError *error){
             if (error) {
                 [tzImagePickerVc hideProgressHUD];
                 NSLog(@"图片保存失败 %@",error);

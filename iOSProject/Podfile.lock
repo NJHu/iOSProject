@@ -24,25 +24,25 @@ PODS:
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
   - HMQRCodeScanner (1.0.6)
-  - IQKeyboardManager (6.0.4)
+  - IQKeyboardManager (6.1.1)
   - KILabel (1.0.1)
   - M13ProgressSuite (1.2.9)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
-  - MJExtension (3.0.15)
-  - MJRefresh (3.1.15.3)
-  - MOFSPickerManager (2.0.5)
+  - MJExtension (3.0.15.1)
+  - MJRefresh (3.1.15.6)
+  - MOFSPickerManager (2.0.7)
   - Reachability (3.2)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.1):
-    - SDWebImage/Core (= 4.4.1)
-  - SDWebImage/Core (4.4.1)
-  - SDWebImage/GIF (4.4.1):
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SDWebImage/GIF (4.4.2):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - Toast (4.0.0)
-  - TZImagePickerController (2.1.6)
+  - TZImagePickerController (3.0.2)
   - UICKeyChainStore (2.1.1)
   - UMengAnalytics (4.2.4)
   - UMengUShare/Core (6.4.8.2):
@@ -150,19 +150,19 @@ SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
-  IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   KILabel: 4797807cdc0b4992dad8bf91175ddc973c3b569b
   M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  MJExtension: 3f039575db1b135a20699ad298713b26acec1528
-  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  MOFSPickerManager: 045a02911030fa0181a541181bbddc9fb22eb204
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
+  MOFSPickerManager: 7dbc2231ef7078d04f0bf7453a5963ebce8d8b8c
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TZImagePickerController: bc25e933c9d970a622d052f0d4de16202bbcd863
+  TZImagePickerController: c6736038f5016a8be14132fd07e4e92ce6496385
   UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
