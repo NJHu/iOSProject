@@ -30,8 +30,8 @@ PODS:
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - MJExtension (3.0.15.1)
-  - MJRefresh (3.1.15.6)
-  - MOFSPickerManager (2.0.7)
+  - MJRefresh (3.1.15.7)
+  - MOFSPickerManager (2.0.8)
   - Reachability (3.2)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
@@ -42,7 +42,7 @@ PODS:
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - Toast (4.0.0)
-  - TZImagePickerController (3.0.2)
+  - TZImagePickerController (3.0.7)
   - UICKeyChainStore (2.1.1)
   - UMengAnalytics (4.2.4)
   - UMengUShare/Core (6.4.8.2):
@@ -76,7 +76,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - BaiduMapKit
+  - BaiduMapKit (= 4.1.1)
   - DWBubbleMenuButton
   - FCUUID
   - FDFullscreenPopGesture
@@ -156,13 +156,13 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
-  MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
-  MOFSPickerManager: 7dbc2231ef7078d04f0bf7453a5963ebce8d8b8c
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  MOFSPickerManager: a04ebc6aa938885b24bcd1facc44a62c47a5f5e7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TZImagePickerController: c6736038f5016a8be14132fd07e4e92ce6496385
+  TZImagePickerController: eec24e7c5628288a6657a942d8d296476e66251b
   UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
@@ -173,6 +173,6 @@ SPEC CHECKSUMS:
   ZFPlayer: 833cb3974b619bfd01a0ec1ebaabfe6f629e85b4
   ZJScrollPageView: dd8778909cb2413782616ab156e873956f6b0682
 
-PODFILE CHECKSUM: a1680f3db982cfafdcff1a6a67163cd27a34b5ce
+PODFILE CHECKSUM: eb944b8090833ced99eac8c062404fd534cd2707
 
 COCOAPODS: 1.5.3

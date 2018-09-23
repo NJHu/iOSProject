@@ -32,7 +32,7 @@ pod 'UMengUShare/Social/QQ'
 pod 'UMengUShare/Social/Sina'
 
 #百度地图SDK
-pod 'BaiduMapKit'
+pod 'BaiduMapKit', '4.1.1'
 
 # 表情键盘
 #pod 'HMEmoticon'
