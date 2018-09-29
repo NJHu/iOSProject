@@ -67,7 +67,7 @@
     
     [self.webView addObserverBlockForKeyPath:LMJKeyPath(self.webView, title) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
         
-        if (!LMJIsEmpty(newVal) && [newVal isKindOfClass:[NSString class]] && [self webViewController:self webViewIsNeedAutoTitle:self.webView]) {
+        if (!LMJIsEmpty(newVal) && [newVal isKindOfClass:[NSString class]] && [weakself webViewController:weakself webViewIsNeedAutoTitle:weakself.webView]) {
             weakself.title = newVal;
         }
         
