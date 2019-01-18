@@ -58,7 +58,7 @@
 
 #pragma mark -应用跳转
 //Universal link
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 {
     if (userActivity.webpageURL) {
         NSLog(@"%@", userActivity.webpageURL);
