@@ -35,14 +35,14 @@ PODS:
   - Reachability (3.2)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
-  - SDWebImage/GIF (4.4.3):
+  - SDWebImage (4.4.5):
+    - SDWebImage/Core (= 4.4.5)
+  - SDWebImage/Core (4.4.5)
+  - SDWebImage/GIF (4.4.5):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - Toast (4.0.0)
-  - TZImagePickerController (3.1.7)
+  - TZImagePickerController (3.1.9)
   - UICKeyChainStore (2.1.2)
   - UMengAnalytics (4.2.4)
   - UMengUShare/Core (6.4.8.2):
@@ -160,9 +160,9 @@ SPEC CHECKSUMS:
   MOFSPickerManager: 6efc539fec50b01cf525f429abe60dad05a87b1a
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TZImagePickerController: 3027e1e2029c830186c6a167c88c933b8556fdc7
+  TZImagePickerController: c3f7c505d23281e21e98df6dbeae372946caa28f
   UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
