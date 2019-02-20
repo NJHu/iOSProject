@@ -2235,7 +2235,7 @@
 				TargetAttributes = {
 					5892AC931FF4EB4A00E868C2 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -2798,7 +2798,8 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 44HDC9YG72;
 				ENABLE_BITCODE = NO;
@@ -2910,6 +2911,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = github.com.njhu.iosproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = iosprojectID_dev_profile_MPB;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2925,7 +2927,8 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 44HDC9YG72;
 				ENABLE_BITCODE = NO;
@@ -3037,6 +3040,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = github.com.njhu.iosproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = iosprojectID_dev_profile_MPB;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
