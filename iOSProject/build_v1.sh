@@ -49,3 +49,25 @@ open $MWBuildDir
 #函数调用
 # $1 工程名  $2 scheme名字  $3 Release还是Debug  $4 工程路径  $5 ipa文件输出路径 $6 plist文件名字
 packaging "iOSProject" "iOSProject"  "DEBUG"  "./build/archive" "./build/ipa" "./build/ExportOptions.plist"
+
+
+
+
+
+
+
+
+#构建
+xcodebuild archive \
+-workspace "$Workspace.xcworkspace" \
+-scheme "$Workspace" \
+-configuration "DEBUG" \
+-archivePath "./build/archive/$Workspace.xcarchive"
+#CODE_SIGN_IDENTITY="iPhone Developer: peng Hu (E3XR665Z27)" \
+#PROVISIONING_PROFILE_SPECIFIER="iosprojectID_dev_profile_MPB"
+
+#生成ipa
+xcodebuild -exportArchive \
+-archivePath "./build/archive/$Workspace.xcarchive" \
+-exportPath "./build/ipa/" \
+-exportOptionsPlist "./build/ExportOptions.plist"
