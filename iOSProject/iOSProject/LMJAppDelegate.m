@@ -58,7 +58,7 @@
 
 #pragma mark -应用跳转
 //Universal link
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 {
     if (userActivity.webpageURL) {
         NSLog(@"%@", userActivity.webpageURL);
@@ -73,6 +73,17 @@
     return YES;
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+        BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    if (!result) {
+        // 其他如支付等SDK的回调
+        
+    }
+    return result;
+}
+#pragma clang diagnostic pop
 //iOS9+scheme跳转
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(nonnull NSDictionary *)options
 {
@@ -86,32 +97,11 @@
     if (url) {
         NSLog(@"%@", url);
         [UIAlertController mj_showAlertWithTitle:@"iOS9+scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-            
+
             alertMaker.addActionDefaultTitle(@"确认");
         } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-            
-        }];
-    }
-    
-    return result;
-}
 
-// 支持所有iOS9以下系统,scheme 跳转
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    
-    if (!result) {
-        // 其他如支付等SDK的回调   
-    }
-    if (url) {
-        NSLog(@"%@", url);
-        [UIAlertController mj_showAlertWithTitle:@"iOS9以下系统scheme跳转应用" message:url.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-            
-            alertMaker.addActionDefaultTitle(@"确认");
-        } actionsBlock:nil];
-        
+        }];
     }
     
     return result;
@@ -127,12 +117,12 @@
     
     NSLog(@"%@", string);
     
-//    [UIAlertController mj_showAlertWithTitle:@"get deviceToken" message:string appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
-//
-//        alertMaker.addActionDefaultTitle(@"确认");
-//    } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
-//
-//    }];
+    [UIAlertController mj_showAlertWithTitle:@"get deviceToken" message:string appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
+
+        alertMaker.addActionDefaultTitle(@"确认");
+    } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, JXTAlertController * _Nonnull alertSelf) {
+
+    }];
 }
 
 
@@ -207,6 +197,8 @@
     }
     
     BOOL isForce = [responseData[@"isForce"] boolValue];
+    // 是否在审核
+    BOOL isInGod = [responseData[@"isInGod"] boolValue];
     NSInteger minSupport = [responseData[@"minSupport"] integerValue];
     NSString *suggestion = responseData[@"suggestion"];
     
@@ -224,10 +216,15 @@
             
             if (buttonIndex == 0) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:lastestUrl] options:@{} completionHandler:^(BOOL success) {
-                    NSLog(@"%zd", success);
+                    NSLog(@"%d", success);
                 }];
             }
         }];
+    }else {
+        if (isInGod) {
+//            LMJNJIsInGod = isInGod;
+//            self.window.rootViewController = [[LMJTabBarController alloc] init];
+        }
     }
 }
 

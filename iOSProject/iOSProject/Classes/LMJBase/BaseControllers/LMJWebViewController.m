@@ -67,7 +67,7 @@
     
     [self.webView addObserverBlockForKeyPath:LMJKeyPath(self.webView, title) block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
         
-        if (!LMJIsEmpty(newVal) && [newVal isKindOfClass:[NSString class]] && [self webViewController:self webViewIsNeedAutoTitle:self.webView]) {
+        if (!LMJIsEmpty(newVal) && [newVal isKindOfClass:[NSString class]] && [weakself webViewController:weakself webViewIsNeedAutoTitle:weakself.webView]) {
             weakself.title = newVal;
         }
         
@@ -264,9 +264,7 @@
         config.allowsInlineMediaPlayback = YES;
 
         // 交互对象设置
-//        LMJWeak(self);
-//        config.userContentController = [[WKUserContentController alloc] init];
-//        [config.userContentController addScriptMessageHandler:weakself name:<#(nonnull NSString *)#>];
+        config.userContentController = [[WKUserContentController alloc] init];
         
         WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
         [self.view addSubview:webView];
@@ -277,6 +275,7 @@
         webView.backgroundColor = [UIColor clearColor];
         //滑动返回看这里
         webView.allowsBackForwardNavigationGestures = YES;
+        webView.allowsLinkPreview = YES;
     }
     return _webView;
 }

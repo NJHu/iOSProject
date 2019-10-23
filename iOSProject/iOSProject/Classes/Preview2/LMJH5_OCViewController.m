@@ -23,8 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.webView.configuration.userContentController = [[WKUserContentController alloc] init];
-    
     // 获取设备 deviceID 并回显到 H5
     [self.webView.configuration.userContentController addScriptMessageHandler:self.ocjsHelper name:LMJOCJSHelperScriptMessageHandlerName1_];
     

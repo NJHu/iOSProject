@@ -1,1 +1,0 @@
-../../../../BaiduMapKit/BaiduMapKit/BaiduMapAPI_Radar.framework/Headers/BMKRadarManager.h

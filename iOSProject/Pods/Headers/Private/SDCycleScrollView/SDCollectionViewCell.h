@@ -1,1 +1,0 @@
-../../../SDCycleScrollView/SDCycleScrollView/Lib/SDCycleScrollView/SDCollectionViewCell.h

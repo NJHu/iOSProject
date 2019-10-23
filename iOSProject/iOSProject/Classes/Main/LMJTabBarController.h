@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CYLTabBarController.h>
 
-@interface LMJTabBarController : CYLTabBarController
+@interface LMJTabBarController : UITabBarController
 
 @end

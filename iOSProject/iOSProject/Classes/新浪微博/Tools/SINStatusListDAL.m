@@ -45,7 +45,7 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
                 NSLog(@"存储错误: %@", exception);
             } @finally {
             }
-            NSLog(@"向数据库新增%zd条数据", db.changes);
+            NSLog(@"向数据库新增%d条数据", db.changes);
         }];
     }];
 }
@@ -94,7 +94,7 @@ static const NSTimeInterval  maxTime_ = -7 * 24 * 3600;
         BOOL isSucceed = [db executeUpdate:sql withArgumentsInArray:@[]];
         
         if (isSucceed) {
-            NSLog(@"%zd 删除数据成功", db.changes);
+            NSLog(@"%d 删除数据成功", db.changes);
             *rollback = NO;
         }else
         {

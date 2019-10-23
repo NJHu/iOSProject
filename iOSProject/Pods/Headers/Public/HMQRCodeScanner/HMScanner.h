@@ -1,1 +1,0 @@
-../../../HMQRCodeScanner/HMQRCodeScanner/QRCode/HMScanner.h

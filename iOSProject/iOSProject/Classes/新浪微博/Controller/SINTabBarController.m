@@ -15,7 +15,7 @@
 #import "SINTabBar.h"
 #import "PresentAnimator.h"
 
-@interface SINTabBarController ()
+@interface SINTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -23,11 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBar.tintColor = [UIColor orangeColor];
-    self.tabBar.unselectedItemTintColor = [UIColor darkTextColor];
-    [self setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, -3)] forKeyPath:LMJKeyPath(self, titlePositionAdjustment)];
-    [self addTabarItems];
+    [self setUpTabBar];
     [self addChildViewControllers];
+    [self addTabarItems];
+    self.delegate = self;
 }
 
 
@@ -90,35 +89,45 @@
 - (void)addTabarItems
 {
     NSDictionary *firstTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"首页",
-                                                 CYLTabBarItemImage : @"tabbar_home",
-                                                 CYLTabBarItemSelectedImage : @"tabbar_home_highlighted",
+                                                 @"TabBarItemTitle" : @"首页",
+                                                 @"TabBarItemImage" : @"tabbar_home",
+                                                 @"TabBarItemSelectedImage" : @"tabbar_home_highlighted",
                                                  };
     
     NSDictionary *secondTabBarItemsAttributes = @{
-                                                  CYLTabBarItemTitle : @"消息",
-                                                  CYLTabBarItemImage : @"tabbar_message_center",
-                                                  CYLTabBarItemSelectedImage : @"tabbar_message_center_highlighted",
+                                                  @"TabBarItemTitle" : @"消息",
+                                                  @"TabBarItemImage" : @"tabbar_message_center",
+                                                  @"TabBarItemSelectedImage" : @"tabbar_message_center_highlighted",
                                                   };
     NSDictionary *thirdTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"发现",
-                                                 CYLTabBarItemImage : @"tabbar_discover",
-                                                 CYLTabBarItemSelectedImage : @"tabbar_discover_highlighted",
+                                                 @"TabBarItemTitle" : @"发现",
+                                                 @"TabBarItemImage" : @"tabbar_discover",
+                                                 @"TabBarItemSelectedImage" : @"tabbar_discover_highlighted",
                                                  };
     
     NSDictionary *fourthTabBarItemsAttributes = @{
-                                                  CYLTabBarItemTitle : @"我的",
-                                                  CYLTabBarItemImage : @"tabbar_profile",
-                                                  CYLTabBarItemSelectedImage : @"tabbar_profile_highlighted"
+                                                  @"TabBarItemTitle" : @"我的",
+                                                  @"TabBarItemImage" : @"tabbar_profile",
+                                                  @"TabBarItemSelectedImage" : @"tabbar_profile_highlighted"
                                                   };
     
-    self.tabBarItemsAttributes = @[
+    NSArray<NSDictionary *>  *tabBarItemsAttributes = @[
                                    firstTabBarItemsAttributes,
                                    secondTabBarItemsAttributes,
                                    thirdTabBarItemsAttributes,
                                    fourthTabBarItemsAttributes
                                    ];
     
+    [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        obj.tabBarItem.title = tabBarItemsAttributes[idx][@"TabBarItemTitle"];
+        obj.tabBarItem.image = [UIImage imageNamed:tabBarItemsAttributes[idx][@"TabBarItemImage"]];
+        obj.tabBarItem.selectedImage = [UIImage imageNamed:tabBarItemsAttributes[idx][@"TabBarItemSelectedImage"]];
+        obj.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -3);
+    }];
+    
+    self.tabBar.tintColor = [UIColor orangeColor];
+    self.tabBar.unselectedItemTintColor = [UIColor darkTextColor];
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController

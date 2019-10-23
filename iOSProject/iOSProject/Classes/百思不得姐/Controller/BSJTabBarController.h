@@ -6,9 +6,8 @@
 //  Copyright © 2017年 GoMePrjk. All rights reserved.
 //
 
-#import <CYLTabBarController/CYLTabBarController.h>
 #import "BSJ.h"
 
-@interface BSJTabBarController : CYLTabBarController
+@interface BSJTabBarController : UITabBarController
 
 @end

@@ -446,12 +446,10 @@ static NSLock *_lock;
 {
     if (self.isBatching) return;
     
-    @synchronized(self) {
         if (self.downloadInfoArray.count > 0) {
             MJDownloadInfo *willInfo = [self.downloadInfoArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"state==%d", MJDownloadStateWillResume]].firstObject;
             [self resume:willInfo.url];
         }
-    }
     
 //    @synchronized(self) {
 //        [self.downloadInfoArray enumerateObjectsUsingBlock:^(MJDownloadInfo * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
