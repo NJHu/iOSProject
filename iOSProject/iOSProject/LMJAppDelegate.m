@@ -39,11 +39,11 @@
     [self.window addSubview:[[YYFPSLabel alloc] initWithFrame:CGRectMake(20, 70, 0, 0)]];
     
     // 友盟统计
-    [LMJUMengHelper UMAnalyticStart];
+//    [LMJUMengHelper UMAnalyticStart];
     // 友盟社交化
-    [LMJUMengHelper UMSocialStart];
+//    [LMJUMengHelper UMSocialStart];
     // 友盟推送
-    [LMJUMengHelper UMPushStart:launchOptions];
+//    [LMJUMengHelper UMPushStart:launchOptions];
 
     if (launchOptions) {
         [UIAlertController mj_showAlertWithTitle:@"有launchOptions!!" message:launchOptions.description appearanceProcess:^(JXTAlertController * _Nonnull alertMaker) {
