@@ -51,7 +51,10 @@
         
         [weakself.meSquares removeAllObjects];
         [weakself.meSquares addObjectsFromArray:[BSJMeSquare mj_objectArrayWithKeyValuesArray:response.responseObject[@"square_list"]]];
-        [self.collectionView reloadData];
+        if ([weakself.meSquares.lastObject isKindOfClass:NSArray.class]) {
+            [weakself.meSquares removeLastObject];
+        }
+        [weakself.collectionView reloadData];
     }];
 }
 

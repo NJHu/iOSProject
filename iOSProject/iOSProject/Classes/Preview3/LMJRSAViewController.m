@@ -100,7 +100,7 @@
     //content DES3 pkey
     NSString *contentDES = [DES3Encryptor DES3EncryptString:content keyString:pkey ivString:@"01234567"];
     
-    [self.manager POST:@"https://mob-test-tech.meme2c.com/ums/app/mmUserInfo" parameters:contentDES progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager POST:@"https://mob-test-tech.meme2c.com/ums/app/mmUserInfo" parameters:contentDES headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         if (![responseObject isKindOfClass:[NSDictionary class]]) {
             return ;

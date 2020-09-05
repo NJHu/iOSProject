@@ -54,12 +54,12 @@
     
     if ([method isEqualToString:@"GET"]) {
         
-        [self GET:urlString parameters:parameters progress:nil success:success failure:failure];
+        [self GET:urlString parameters:parameters headers:nil progress:nil success:success failure:failure];
         
     }
     
     if ([method isEqualToString:@"POST"]) {
-        [self POST:urlString parameters:parameters progress:nil success:success failure:failure];
+        [self POST:urlString parameters:parameters headers:nil progress:nil success:success failure:failure];
     }
     
 }
@@ -151,7 +151,7 @@ static NSString *jsonFileDirectory = @"LMJLocalJsons";
 {
     static NSString *mineType = @"application/octet-stream";
     
-    [self POST:urlString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [self POST:urlString parameters:parameters headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
         NSMutableDictionary *needFillDataDict = [NSMutableDictionary dictionary];
         NSDictionary *datas = !formDataBlock ? nil : formDataBlock(formData, needFillDataDict);

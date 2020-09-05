@@ -16,7 +16,7 @@
 
 @interface LMJMessageViewController ()
 /** <#digest#> */
-@property (weak, nonatomic) UILabel *backBtn;
+@property (strong, nonatomic) UILabel *backBtn;
 @end
 
 @implementation LMJMessageViewController
@@ -81,6 +81,7 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     self.backBtn.hidden = !self.presentedViewController;
+    [[UIApplication sharedApplication].keyWindow addSubview:self.backBtn];
 }
 
 - (UILabel *)backBtn
@@ -137,15 +138,9 @@
             
         }]];
         
-        
-        
-        [[UIApplication sharedApplication].keyWindow addSubview:btn];
-        
         _backBtn = btn;
     }
     return _backBtn;
 }
-
-
 
 @end

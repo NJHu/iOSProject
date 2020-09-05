@@ -169,6 +169,17 @@
     self.lmj_navgationBar.title = [self changeTitle:title];
 }
 
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion
+{
+    if (@available(iOS 13.0, *)) {
+        if (viewControllerToPresent.modalPresentationStyle == UIModalPresentationPageSheet || viewControllerToPresent.modalPresentationStyle == UIModalPresentationAutomatic){
+            viewControllerToPresent.modalPresentationStyle = UIModalPresentationFullScreen;
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+    [super presentViewController:viewControllerToPresent animated:flag completion:completion];
+}
 @end
 
 

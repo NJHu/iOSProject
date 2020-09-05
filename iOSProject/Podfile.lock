@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - BaiduMapKit (4.1.1)
   - DWBubbleMenuButton (1.0.1)
@@ -24,25 +24,25 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - HMQRCodeScanner (1.0.6)
-  - IQKeyboardManager (6.4.2)
+  - IQKeyboardManager (6.5.6)
   - KILabel (1.0.1)
   - M13ProgressSuite (1.2.9)
   - Masonry (1.1.0)
-  - MBProgressHUD (1.1.0)
-  - MJExtension (3.1.2)
-  - MJRefresh (3.2.0)
-  - MOFSPickerManager (2.1.7)
+  - MBProgressHUD (1.2.0)
+  - MJExtension (3.2.2)
+  - MJRefresh (3.5.0)
+  - MOFSPickerManager (2.2.4)
   - Reachability (3.2)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.7):
-    - SDWebImage/Core (= 4.4.7)
-  - SDWebImage/Core (4.4.7)
-  - SDWebImage/GIF (4.4.7):
+  - SDWebImage (4.4.8):
+    - SDWebImage/Core (= 4.4.8)
+  - SDWebImage/Core (4.4.8)
+  - SDWebImage/GIF (4.4.8):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - Toast (4.0.0)
-  - TZImagePickerController (3.2.3)
+  - TZImagePickerController (3.4.2)
   - UICKeyChainStore (2.1.2)
   - UMengAnalytics (4.2.4)
   - UMengUShare/Core (6.4.8.2):
@@ -142,7 +142,7 @@ SPEC REPOS:
     - ZJScrollPageView
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   BaiduMapKit: 51bba432a28316680676b4d453a70e5031f3a7eb
   DWBubbleMenuButton: 4d9bdbb9d662bdf65c93ceb7fc65901871143d1e
   FCUUID: bb054fc90cd7cd99320f9f6ff8e130fe607fba05
@@ -150,19 +150,19 @@ SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
-  IQKeyboardManager: b41e0a4943fbac4c11a239d31a688667675f962e
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   KILabel: 4797807cdc0b4992dad8bf91175ddc973c3b569b
   M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  MJExtension: 81e8e411ced318561dd09334b0c83d8227cef79c
-  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
-  MOFSPickerManager: b162741ad5cb080e045a11ea157ca542eb1cf829
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  MOFSPickerManager: 24c0a437874696622f132c47a351b89df5030f19
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TZImagePickerController: f321e8db6cd18dc6ac8e23694961c158a9345a87
+  TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
   UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
