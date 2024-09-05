@@ -1,19 +1,13 @@
-<p align="right"><b>Github 点个赞↑👍,感谢您的支持!</b></p>
-
 <div>
-<h3>近期更新</h3>
-<ul>
-<li><a href="https://github.com/NJHu/swiftProject">swiftProject组件化</a></li>
-<li>RSA 加密解密</li>
-<li>iOS UniversalLink 通用链接 Demo(任意浏览器和WebView打开App)</li>
-</ul>
+<h3>在武汉打算换工作啦, 有坑位推荐的朋友请加我微信~谢谢~</h3>
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wx_code.png" width="28%">
 </div>
+
+<h1><a id="Getting_Started">iOSProject</a></h1>
 
 <div>
 <img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images//home.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/jc.gif" width="24%"><img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/anidynquar.gif" width="24%">
 </div>
-
-<h1><a id="Getting_Started">iOSProject</a></h1>
 
 <table>
 <tr>
