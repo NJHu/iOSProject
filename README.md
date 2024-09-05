@@ -1,6 +1,6 @@
 <div>
 <p>在武汉打算换工作啦, 有坑位推荐的朋友请加我微信~谢谢~</p>
-<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wx_code.png" width="28%">
+<img src="https://raw.githubusercontent.com/NJHu/iOSProject/master/images/wx_code.jpg" width="28%">
 </div>
 
 <h1><a id="Getting_Started">iOSProject</a></h1>
